@@ -14,8 +14,8 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, orientação de IA e templates de issue/PR (AC-01; depende de T00-05) | Concluído ([PR #2](https://github.com/RamonRDR/git-study-guide/pull/2)) |
 | T02-01 | Estrutura, navegação, validadores, testes, CI; status checks obrigatórios após execuções observadas e aprovação separada (AC-02; depende de T01-01) | Concluído ([PR #3](https://github.com/RamonRDR/git-study-guide/pull/3)) |
 | T03-01 | Módulos 00–01: primeiros passos, história e fundamentos (AC-03; depende de T02-01) | Concluído ([PR #4](https://github.com/RamonRDR/git-study-guide/pull/4)) |
-| T04-01 | Módulos 02–03: arquitetura Git e comandos básicos (AC-04; depende de T03-01) | Submetido à revisão |
-| T05-01 | Módulo 04: gerenciamento de branches (AC-05; depende de T04-01) | Pendente |
+| T04-01 | Módulos 02–03: arquitetura Git e comandos básicos (AC-04; depende de T03-01) | Concluído ([PR #5](https://github.com/RamonRDR/git-study-guide/pull/5)) |
+| T05-01 | Módulo 04: gerenciamento de branches (AC-05; depende de T04-01) | Submetido à revisão |
 | T06-01 | Módulo 05: merge, squash, rebase e conflitos (AC-06; depende de T05-01) | Pendente |
 | T07-01 | Módulo 06: remotes e colaboração (AC-07; depende de T06-01) | Pendente |
 | T08-01 | Módulo 07: histórico e recuperação (AC-08; depende de T07-01) | Pendente |
@@ -47,3 +47,5 @@ Evidência Sprint 01: [PR #2](https://github.com/RamonRDR/git-study-guide/pull/2
 Evidência Sprint 02: [PR #3](https://github.com/RamonRDR/git-study-guide/pull/3), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45717835244), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45718411371), [Codex](https://github.com/RamonRDR/git-study-guide/pull/3#issuecomment-7176975402), [ruleset](https://github.com/RamonRDR/git-study-guide/rules/28108699). Main e exclusão da branch verificadas; checks Linux e Windows obrigatórios com política estrita de atualização após autorização do mantenedor.
 
 Evidência Sprint 03: [PR #4](https://github.com/RamonRDR/git-study-guide/pull/4), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45721626737), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45722633012), [Codex](https://github.com/RamonRDR/git-study-guide/pull/4#issuecomment-7177485378), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/ef430abd68aa476fc9fff898bfb7c1e83b4d55da). Main e exclusão da branch verificadas; CI final aprovado, sem avisos de depreciação ou apontamentos pendentes. Instalações limpas, macOS e interação GUI não testados.
+
+Evidência Sprint 04: [PR #5](https://github.com/RamonRDR/git-study-guide/pull/5), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45723113329), [Codex](https://github.com/RamonRDR/git-study-guide/pull/5#issuecomment-7177929221), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/6695bea89c76fc6a52499ab4f17e9c89cff37fa1), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45724230029). Main e exclusão da branch verificadas; CI final do PR aprovou seis validadores e 24 testes por plataforma, sem avisos nem apontamentos pendentes. macOS e interação GUI não testados. CI pós-merge aprovado.
