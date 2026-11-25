@@ -1,0 +1,40 @@
+# Registro de tarefas
+
+[English](tasks.md) · [Português](tasks.pt-BR.md) · [Español](tasks.es.md)
+
+Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+
+| Task | Descrição | Status |
+| --- | --- | --- |
+| T00-01 | Auditar repositórios, branches, ruleset e referência Python | Auditoria de leitura concluída; ver auditoria |
+| T00-02 | Elaborar Constitution, specification, plano, tarefas, critérios e ADRs trilíngues | Submetido para revisão nesta alteração |
+| T00-03 | Elaborar contrato, guias relacionados, índices, roadmap e README provisório | Submetido para revisão nesta alteração |
+| T00-04 | Validar estrutura de idiomas, links, alinhamento e último PR; solicitar Codex Review | Evidências a registrar no PR; CI não configurado |
+| T00-05 | Aprovação do mantenedor, squash merge, verificar main | Pendente |
+| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, orientação de IA e templates de issue/PR (AC-01; depende de T00-05) | Pendente |
+| T02-01 | Estrutura, navegação, validadores, testes, CI; status checks obrigatórios após execuções observadas e aprovação separada (AC-02; depende de T01-01) | Pendente |
+| T03-01 | Módulos 00–01: primeiros passos, história e fundamentos (AC-03; depende de T02-01) | Pendente |
+| T04-01 | Módulos 02–03: arquitetura Git e comandos básicos (AC-04; depende de T03-01) | Pendente |
+| T05-01 | Módulo 04: gerenciamento de branches (AC-05; depende de T04-01) | Pendente |
+| T06-01 | Módulo 05: merge, squash, rebase e conflitos (AC-06; depende de T05-01) | Pendente |
+| T07-01 | Módulo 06: remotes e colaboração (AC-07; depende de T06-01) | Pendente |
+| T08-01 | Módulo 07: histórico e recuperação (AC-08; depende de T07-01) | Pendente |
+| T09-01 | Módulo 08: GitHub (AC-09; depende de T08-01) | Pendente |
+| T10-01 | Módulo 09: GitLab (AC-10; depende de T09-01) | Pendente |
+| T11-01 | Módulo 10: CI/CD e automação (AC-11; depende de T10-01) | Pendente |
+| T12-01 | Módulo 11: fluxos profissionais (AC-12; depende de T11-01) | Pendente |
+| T13-01 | Módulo 12: segurança e governança (AC-13; depende de T12-01) | Pendente |
+| T14-01 | Módulos 13–14: Git avançado e internals (AC-14; depende de T13-01) | Pendente |
+| T15-01 | Módulo 15: referência de comandos (AC-15; depende de T14-01) | Pendente |
+| T16-01 | Módulo 16: oito projetos práticos (AC-16; depende de T15-01) | Pendente |
+| T17-01 | Módulo 17: desafios, quizzes e entrevistas; piloto de registros estruturados (AC-17; depende de T16-01) | Pendente |
+| T18-01 | Finalizar contrato, manifestos, schemas, fixtures do consumidor; avaliar playground opcional separadamente (AC-18; depende de T17-01) | Pendente |
+| T19-01 | Identidade fornecida pelo mantenedor, README final, QA, handoff (AC-19; depende de T18-01) | Pendente |
+
+Atualizar evidências em cada PR focado. Entrega proposta ou PR aberto não é conclusão. Usar links reais de checks/reviews e SHAs; após merge aprovado, verificar main e exclusão da branch, registrar handoff na próxima alteração autorizada se necessário.
+
+## Documentos relacionados
+
+- [Plano de implementação](implementation-plan.pt-BR.md)
+- [Critérios de aceite](acceptance-criteria.pt-BR.md)
+- [Auditoria inicial](audit.pt-BR.md)
