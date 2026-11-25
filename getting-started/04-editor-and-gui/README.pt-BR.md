@@ -18,18 +18,18 @@ Editor altera arquivos; Git registra conteúdo selecionado. VS Code tem suporte 
 
 ## Prática
 
-Instale VS Code pela página oficial se desejar; editor de texto simples serve. Use File > Open Folder para abrir APENAS seu lab. Se configurado, `code .` é alternativa. Abra Terminal > New Terminal e confira raiz e status.
+Instale VS Code pela página oficial se desejar; editor de texto simples também serve. Use File > Open Folder para abrir APENAS a subpasta repo do lab. Se configurado, `code .` no terminal dedicado é alternativa. Source Control pode mostrar mudanças, mas o processo do editor pode não herdar ambiente Git isolado. Use apenas para editar texto e inspecionar mudanças; não faça stage, commit ou rode Git pelo editor ou terminal integrado. Volte ao shell dedicado original para todos comandos Git. Confira nele:
 
 ```text
 git rev-parse --show-toplevel
 git status
 ```
 
-Source Control deve detectar repo. Rótulos podem variar. Compare mudanças ali na próxima aula. GUI baseada em documentação, não executada em CI.
+Source Control deve detectar repo; rótulos podem variar. GUI baseada em documentação, não executada em CI. Se shell original fechou, repita capítulo 03 em lab novo.
 
 ## Erros comuns e segurança
 
-Não clique Publish, Sync, Clone ou Initialize Repository neste lab. Se Git não detectado, confira `git --version` no terminal integrado e reinicie editor. Confie só em pastas criadas/revisadas; evite extensões e tarefas desconhecidas.
+Não clique Publish, Sync, Clone ou Initialize Repository neste lab. Se Git não detectado, confira `git --version` no terminal dedicado do lab e reinicie editor se necessário. Confie só em pastas criadas/revisadas; evite extensões e tarefas desconhecidas.
 
 ## Exercício e autocorreção
 

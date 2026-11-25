@@ -18,7 +18,7 @@ Git records selected versions of files locally. It is neither an editor nor a pr
 
 ## Practice
 
-Open PowerShell on Windows or Terminal on Linux/macOS. Try `git --version`. If Git is already present, use a maintained version at least 2.28. Otherwise choose ONLY your OS:
+Open PowerShell on Windows or Terminal on Linux/macOS. Try `git --version`. If Git is already present, use a maintained version at least 2.40. Otherwise choose ONLY your OS:
 
 Windows: use the official installer for your architecture, or WinGet if available. Reopen the terminal.
 

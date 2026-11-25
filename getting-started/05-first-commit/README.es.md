@@ -18,6 +18,8 @@ Commit registra snapshot del contenido preparado con información histórica. Wo
 
 ## Práctica
 
+Use shell dedicado original del capítulo 03. Si se cerró, repita capítulo en lab nuevo. Compruebe raíz y ambas identidades efectivas con `git var GIT_AUTHOR_IDENT` y `git var GIT_COMMITTER_IDENT`. Ambas deben comenzar con `Study Guide Example <learner@example.invalid>`; si alguna difiere, deténgase. No haga commit desde editor ni terminal integrada.
+
 Use mismo lab desechable, compruebe raíz y status, y cree note.txt nuevo con línea practice y salto final. Comandos sobrescriben archivos; no ejecute si note.txt ya existe.
 
 ```powershell
@@ -35,17 +37,20 @@ git status
 git add note.txt
 git status
 git diff --cached
+git var GIT_AUTHOR_IDENT
+git var GIT_COMMITTER_IDENT
 git commit -m "docs: add note"
 git status
 git log -1 --oneline
 git show HEAD:note.txt
+git log -1 --format=fuller
 ```
 
-Antes de add: archivo no rastreado; después: archivo nuevo preparado; diff cached: línea practice; tras commit: status limpio, un commit con mensaje, practice almacenado. HEAD identifica checkout actual, normalmente rama actual. Hashes, fechas, salidas localizadas y avisos de finales varían. Flujo: archivo de trabajo -> add -> index -> commit -> historial local.
+Deténgase inmediatamente antes del commit si alguna identidad difiere de la ficticia; no ejecute comandos restantes. Log final muestra autor y committer, ambos ficticios. Antes de add: archivo no rastreado; después: archivo nuevo preparado; diff cached: línea practice; tras commit: status limpio, un commit con mensaje, practice almacenado. HEAD identifica checkout actual, normalmente rama actual. Hashes, fechas, salidas localizadas y avisos de finales varían. Flujo: archivo de trabajo -> add -> index -> commit -> historial local.
 
 ## Errores comunes y seguridad
 
-Si falta autoría, compruebe configuración local. Si nada preparado, mire status y seleccione solo archivo deseado. Evite `git add .` en proyectos desconocidos. Si preparó contenido incorrecto, deténgase y cree lab nuevo en vez de comandos destructivos. No eluda políticas de firma o hooks. Conserve lab para módulo 01; luego cierre editor, salga con `cd $HOME` (PowerShell) o `cd "$HOME"` (Bash/Zsh), borre solo carpeta temporal exacta con gestor si no necesita.
+Si falta autoría, compruebe configuración local. Si nada preparado, mire status y seleccione solo archivo deseado. Evite `git add .` en proyectos desconocidos. Si preparó contenido incorrecto, deténgase y cree lab nuevo en vez de comandos destructivos. No eluda políticas de firma o hooks. Conserve lab y shell original para módulo 01. Tras práctica, cierre editor y terminal dedicada (descartando entorno aislado); borre solo carpeta padre temporal anotada mediante gestor si ya no necesita. Nunca borre proyectos ni configuración normal.
 
 ## Ejercicio y autoevaluación
 

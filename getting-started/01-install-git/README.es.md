@@ -18,7 +18,7 @@ Git registra versiones seleccionadas de archivos localmente. No es editor ni len
 
 ## Práctica
 
-Abra PowerShell en Windows o Terminal en Linux/macOS. Pruebe `git --version`. Si ya existe, use versión mantenida al menos 2.28. Si no, elija SOLO su SO:
+Abra PowerShell en Windows o Terminal en Linux/macOS. Pruebe `git --version`. Si ya existe, use versión mantenida al menos 2.40. Si no, elija SOLO su SO:
 
 Windows: use instalador oficial de su arquitectura o WinGet si disponible. Reabra terminal.
 
