@@ -6,8 +6,11 @@
 
 A multilingual, practical guide to Git, GitHub, GitLab, version control, and collaborative software engineering, from fundamentals to advanced workflows. Free, public and independent; no programming experience required.
 
-Status: Sprint 00 foundation integrated; Sprint 01 governance submitted for review. Curriculum, command catalog, labs, visual identity, quality automation and Learning Hub integration are planned, not yet implemented. Start with the roadmap; lessons will be added after foundation and governance.
+Status: foundation and governance integrated; Sprint 02 quality automation submitted for review. Curriculum indexes are planned; no lessons published yet. Visual identity, command catalog, labs and Learning Hub integration remain planned.
 
+- [Learning path](docs/learning-path.md)
+- [Project structure](docs/project-structure.md)
+- [Quality automation](docs/quality-automation.md)
 - [Roadmap](docs/roadmap.md)
 - [Specifications](docs/specs/README.md)
 - [Architecture decisions](docs/adr/README.md)

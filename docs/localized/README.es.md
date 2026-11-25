@@ -6,8 +6,11 @@
 
 Guía práctica y multilingüe de Git, GitHub, GitLab, control de versiones e ingeniería de software colaborativa, desde fundamentos hasta flujos avanzados. Gratuita, pública e independiente; sin experiencia previa de programación.
 
-Estado: fundación Sprint 00 integrada; gobernanza Sprint 01 presentada para revisión. Currículo, catálogo de comandos, labs, identidad visual, automatización de calidad e integración Learning Hub previstos, aún no implementados. Comienza por la hoja de ruta; lecciones se añadirán tras fundación y gobernanza.
+Estado: fundación y gobernanza integradas; automatización Sprint 02 presentada a revisión. Índices del currículo previstos; ninguna lección publicada. Identidad visual, catálogo, labs e integración Learning Hub siguen previstos.
 
+- [Ruta de aprendizaje](../learning-path.es.md)
+- [Estructura del proyecto](../project-structure.es.md)
+- [Automatización de calidad](../quality-automation.es.md)
 - [Hoja de ruta](../roadmap.es.md)
 - [Especificaciones](../specs/README.es.md)
 - [Decisiones arquitectónicas](../adr/README.es.md)

@@ -11,8 +11,8 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | T00-03 | Elaborar contrato, guias relacionados, índices, roadmap e README provisório | Concluído ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
 | T00-04 | Validar estrutura de idiomas, links, alinhamento e último PR; solicitar Codex Review | Concluído ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
 | T00-05 | Aprovação do mantenedor, squash merge, verificar main | Concluído ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
-| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, orientação de IA e templates de issue/PR (AC-01; depende de T00-05) | Submetido para revisão; CI não configurado |
-| T02-01 | Estrutura, navegação, validadores, testes, CI; status checks obrigatórios após execuções observadas e aprovação separada (AC-02; depende de T01-01) | Pendente |
+| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, orientação de IA e templates de issue/PR (AC-01; depende de T00-05) | Concluído ([PR #2](https://github.com/RamonRDR/git-study-guide/pull/2)) |
+| T02-01 | Estrutura, navegação, validadores, testes, CI; status checks obrigatórios após execuções observadas e aprovação separada (AC-02; depende de T01-01) | Submetido; evidência CI pendente; checks obrigatórios separados |
 | T03-01 | Módulos 00–01: primeiros passos, história e fundamentos (AC-03; depende de T02-01) | Pendente |
 | T04-01 | Módulos 02–03: arquitetura Git e comandos básicos (AC-04; depende de T03-01) | Pendente |
 | T05-01 | Módulo 04: gerenciamento de branches (AC-05; depende de T04-01) | Pendente |
@@ -41,3 +41,5 @@ Evidência Sprint 00: [Codex](https://github.com/RamonRDR/git-study-guide/pull/1
 - [Plano de implementação](implementation-plan.pt-BR.md)
 - [Critérios de aceite](acceptance-criteria.pt-BR.md)
 - [Auditoria inicial](audit.pt-BR.md)
+
+Evidência Sprint 01: [PR #2](https://github.com/RamonRDR/git-study-guide/pull/2), [Codex](https://github.com/RamonRDR/git-study-guide/pull/2#issuecomment-7176325295), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/df139992ae109145184a4de86b2a95b7e1187e0b). Última revisão sem apontamentos; main e exclusão de branch verificadas.
