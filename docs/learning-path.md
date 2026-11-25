@@ -2,7 +2,7 @@
 
 [English](learning-path.md) · [Português](learning-path.pt-BR.md) · [Español](learning-path.es.md)
 
-Start at module 00 and follow the order. Modules 00–01 contain lessons; modules 02–17 are planned indexes. No programming or AI account required.
+Start at module 00 and follow the order. Modules 00–03 contain lessons; modules 04–17 are planned indexes. No programming or AI account required.
 
 - 00 [Getting Started](../getting-started/README.md)
 - 01 [History & Fundamentals](../fundamentals/README.md)

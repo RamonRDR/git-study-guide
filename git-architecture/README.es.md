@@ -6,10 +6,12 @@
 [Anterior](../fundamentals/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../basic-commands/README.es.md)
 <!-- /navigation -->
 
-**Estado: previsto.** Este índice reserva la ruta estable del módulo y conecta la secuencia de aprendizaje. Lecciones, prácticas y fuentes se añadirán en el sprint correspondiente.
+**Estado: lecciones incluidas en Sprint 04.** Siga capítulos en orden y complete cada autoevaluación.
 
 ## Capítulos
 
 <!-- chapters -->
-Todavía no hay capítulos publicados.
+- 01 [Working tree, index y repositorio](01-three-locations/README.es.md)
+- 02 [Snapshots, HEAD y referencias](02-snapshots-head-and-refs/README.es.md)
+- 03 [Estados de archivos y límites del remoto](03-file-states/README.es.md)
 <!-- /chapters -->
