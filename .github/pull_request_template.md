@@ -1,6 +1,6 @@
 # Pull request
 
-[English](pull_request_template.md) · [Português](pull_request_template.pt-BR.md) · [Español](pull_request_template.es.md)
+[English](https://github.com/RamonRDR/git-study-guide/blob/main/.github/pull_request_template.md) · [Português](https://github.com/RamonRDR/git-study-guide/blob/main/.github/pull_request_template.pt-BR.md) · [Español](https://github.com/RamonRDR/git-study-guide/blob/main/.github/pull_request_template.es.md)
 
 Use EN, PT-BR or ES; paths, identifiers and commit messages stay English. Never include secrets or private information. State what actually ran and disclose omissions.
 
