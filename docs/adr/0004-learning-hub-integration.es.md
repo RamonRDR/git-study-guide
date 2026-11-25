@@ -2,7 +2,7 @@
 
 [English](0004-learning-hub-integration.md) · [Português](0004-learning-hub-integration.pt-BR.md) · [Español](0004-learning-hub-integration.es.md)
 
-Propuesta para revisión del mantenedor; no autoriza iniciar el Sprint 01.
+Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriores requieren revisión y aprobación explícita del mantenedor.
 
 ## Contexto
 

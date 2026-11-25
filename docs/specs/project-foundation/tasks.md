@@ -2,16 +2,16 @@
 
 [English](tasks.md) · [Português](tasks.pt-BR.md) · [Español](tasks.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 | Task | Description | Status |
 | --- | --- | --- |
 | T00-01 | Audit repositories, branches, ruleset and Python reference | Read-only audit completed; see audit |
-| T00-02 | Draft trilingual Constitution, specification, plan, tasks, acceptance criteria and ADRs | Submitted for review with this change |
-| T00-03 | Draft contract, related guides, indexes, roadmap and provisional README | Submitted for review with this change |
-| T00-04 | Validate locale structure, links, content alignment and latest PR; request Codex review | Evidence to be recorded in PR; CI not configured |
-| T00-05 | Maintainer approval, squash merge, verify main | Pending |
-| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, AI guidance and issue/PR templates (AC-01; depends on T00-05) | Pending |
+| T00-02 | Draft trilingual Constitution, specification, plan, tasks, acceptance criteria and ADRs | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
+| T00-03 | Draft contract, related guides, indexes, roadmap and provisional README | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
+| T00-04 | Validate locale structure, links, content alignment and latest PR; request Codex review | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
+| T00-05 | Maintainer approval, squash merge, verify main | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
+| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, AI guidance and issue/PR templates (AC-01; depends on T00-05) | Submitted for review; CI not configured |
 | T02-01 | Structure, navigation, validators, tests, CI; required status checks after observed runs and separate approval (AC-02; depends on T01-01) | Pending |
 | T03-01 | Modules 00–01: onboarding, history and fundamentals (AC-03; depends on T02-01) | Pending |
 | T04-01 | Modules 02–03: Git architecture and basic commands (AC-04; depends on T03-01) | Pending |
@@ -32,6 +32,9 @@ Proposed for maintainer review; not authorization to start Sprint 01.
 | T19-01 | Maintainer-supplied identity, final README, QA, release handoff (AC-19; depends on T18-01) | Pending |
 
 Update task evidence in each focused PR. A proposed deliverable or opened PR is not completion. Use actual check/review links and commit SHAs; after approved merge, verify main and branch deletion, and record handoff in the next authorized change if necessary.
+
+
+Sprint 00 evidence: [Codex](https://github.com/RamonRDR/git-study-guide/pull/1#issuecomment-7174894634), [validation](https://github.com/RamonRDR/git-study-guide/pull/1#issuecomment-7174867993), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/38fd45048a036ef377a05ec8429e624464841159). Maintainer approved; main and branch deletion verified; CI absent by plan.
 
 ## Related documents
 

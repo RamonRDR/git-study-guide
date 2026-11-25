@@ -2,7 +2,7 @@
 
 [English](acceptance-criteria.md) · [Português](acceptance-criteria.pt-BR.md) · [Español](acceptance-criteria.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 | ID | Sprint | Observable acceptance condition |
 | --- | --- | --- |

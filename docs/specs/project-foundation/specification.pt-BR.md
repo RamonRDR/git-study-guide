@@ -2,7 +2,7 @@
 
 [English](specification.md) · [Português](specification.pt-BR.md) · [Español](specification.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 Objetivo: Git Study Guide público, prático, MIT, do iniciante à engenharia avançada. Baseline main: b4bd782519ebc8e52e6751362443aa634e86e56d. Referência Python: 9102bbbf8f8dd846f2fb9682dd3f55bcacc10c95.
 

@@ -2,7 +2,7 @@
 
 [English](implementation-plan.md) · [Português](implementation-plan.pt-BR.md) · [Español](implementation-plan.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 ## Sequência de entregas
 
