@@ -20,11 +20,21 @@
     },
     {
       "slug": "git-architecture",
-      "chapters": []
+      "chapters": [
+        "01-three-locations",
+        "02-snapshots-head-and-refs",
+        "03-file-states"
+      ]
     },
     {
       "slug": "basic-commands",
-      "chapters": []
+      "chapters": [
+        "01-init-config-help",
+        "02-status-add-commit",
+        "03-diff-log-show",
+        "04-move-and-remove",
+        "05-ignore-and-review"
+      ]
     },
     {
       "slug": "branches",

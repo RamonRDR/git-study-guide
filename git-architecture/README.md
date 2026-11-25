@@ -6,10 +6,12 @@
 [Previous](../fundamentals/README.md) · [Index](../docs/learning-path.md) · [Next](../basic-commands/README.md)
 <!-- /navigation -->
 
-**Status: planned.** This index reserves the stable module path and connects the learning sequence. Lessons, practice and sources will be added in the assigned sprint.
+**Status: lessons included in Sprint 04.** Follow the chapters in order and complete each self-check.
 
 ## Chapters
 
 <!-- chapters -->
-No chapters published yet.
+- 01 [Working tree, index and repository](01-three-locations/README.md)
+- 02 [Snapshots, HEAD and references](02-snapshots-head-and-refs/README.md)
+- 03 [File states and remote boundaries](03-file-states/README.md)
 <!-- /chapters -->
