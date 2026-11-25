@@ -2,7 +2,7 @@
 
 [English](learning-path.md) · [Português](learning-path.pt-BR.md) · [Español](learning-path.es.md)
 
-Comience en el módulo 00 y siga el orden. Estos son índices previstos, no lecciones publicadas. Los módulos estarán disponibles en sus sprints. No se requiere programación previa ni cuenta de IA.
+Comience por módulo 00 y siga el orden. Módulos 00–01 contienen lecciones; 02–17 son índices previstos. No requiere programación ni cuenta IA.
 
 - 00 [Primeros pasos](../getting-started/README.es.md)
 - 01 [Historia y fundamentos](../fundamentals/README.es.md)

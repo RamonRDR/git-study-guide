@@ -6,10 +6,12 @@
 [Previous](../getting-started/README.md) · [Index](../docs/learning-path.md) · [Next](../git-architecture/README.md)
 <!-- /navigation -->
 
-**Status: planned.** This index reserves the stable module path and connects the learning sequence. Lessons, practice and sources will be added in the assigned sprint.
+**Status: lessons included in Sprint 03.** Follow the chapters in order and complete each self-check.
 
 ## Chapters
 
 <!-- chapters -->
-No chapters published yet.
+- 01 [Why version control exists](01-version-control/README.md)
+- 02 [Linux, BitKeeper and the birth of Git](02-history-of-git/README.md)
+- 03 [Centralized, distributed and hosting platforms](03-distributed-and-platforms/README.md)
 <!-- /chapters -->

@@ -6,10 +6,14 @@
 — · [Índice](../docs/learning-path.es.md) · [Siguiente](../fundamentals/README.es.md)
 <!-- /navigation -->
 
-**Estado: previsto.** Este índice reserva la ruta estable del módulo y conecta la secuencia de aprendizaje. Lecciones, prácticas y fuentes se añadirán en el sprint correspondiente.
+**Estado: lecciones incluidas en Sprint 03.** Siga capítulos en orden y complete cada autoevaluación.
 
 ## Capítulos
 
 <!-- chapters -->
-Todavía no hay capítulos publicados.
+- 01 [Instalar Git](01-install-git/README.es.md)
+- 02 [Terminal y ayuda](02-terminal-and-help/README.es.md)
+- 03 [Primer repositorio y configuración](03-first-repository/README.es.md)
+- 04 [VS Code e interfaces gráficas](04-editor-and-gui/README.es.md)
+- 05 [Primer commit](05-first-commit/README.es.md)
 <!-- /chapters -->

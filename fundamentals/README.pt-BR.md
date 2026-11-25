@@ -6,10 +6,12 @@
 [Anterior](../getting-started/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../git-architecture/README.pt-BR.md)
 <!-- /navigation -->
 
-**Status: planejado.** Este índice reserva o caminho estável do módulo e conecta a sequência de aprendizagem. Aulas, práticas e fontes serão adicionadas na sprint correspondente.
+**Status: aulas incluídas na Sprint 03.** Siga capítulos em ordem e complete cada autocorreção.
 
 ## Capítulos
 
 <!-- chapters -->
-Nenhum capítulo publicado ainda.
+- 01 [Por que controle de versão existe](01-version-control/README.pt-BR.md)
+- 02 [Linux, BitKeeper e nascimento do Git](02-history-of-git/README.pt-BR.md)
+- 03 [Centralizado, distribuído e plataformas](03-distributed-and-platforms/README.pt-BR.md)
 <!-- /chapters -->
