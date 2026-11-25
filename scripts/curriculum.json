@@ -1,0 +1,76 @@
+{
+  "modules": [
+    {
+      "slug": "getting-started",
+      "chapters": []
+    },
+    {
+      "slug": "fundamentals",
+      "chapters": []
+    },
+    {
+      "slug": "git-architecture",
+      "chapters": []
+    },
+    {
+      "slug": "basic-commands",
+      "chapters": []
+    },
+    {
+      "slug": "branches",
+      "chapters": []
+    },
+    {
+      "slug": "merge-and-conflicts",
+      "chapters": []
+    },
+    {
+      "slug": "remote-repositories",
+      "chapters": []
+    },
+    {
+      "slug": "history-and-recovery",
+      "chapters": []
+    },
+    {
+      "slug": "github",
+      "chapters": []
+    },
+    {
+      "slug": "gitlab",
+      "chapters": []
+    },
+    {
+      "slug": "ci-cd",
+      "chapters": []
+    },
+    {
+      "slug": "professional-workflows",
+      "chapters": []
+    },
+    {
+      "slug": "security",
+      "chapters": []
+    },
+    {
+      "slug": "advanced-git",
+      "chapters": []
+    },
+    {
+      "slug": "git-internals",
+      "chapters": []
+    },
+    {
+      "slug": "command-reference",
+      "chapters": []
+    },
+    {
+      "slug": "practical-projects",
+      "chapters": []
+    },
+    {
+      "slug": "exercises",
+      "chapters": []
+    }
+  ]
+}

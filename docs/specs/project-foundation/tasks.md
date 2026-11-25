@@ -11,8 +11,8 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | T00-03 | Draft contract, related guides, indexes, roadmap and provisional README | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
 | T00-04 | Validate locale structure, links, content alignment and latest PR; request Codex review | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
 | T00-05 | Maintainer approval, squash merge, verify main | Done ([PR #1](https://github.com/RamonRDR/git-study-guide/pull/1)) |
-| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, AI guidance and issue/PR templates (AC-01; depends on T00-05) | Submitted for review; CI not configured |
-| T02-01 | Structure, navigation, validators, tests, CI; required status checks after observed runs and separate approval (AC-02; depends on T01-01) | Pending |
+| T01-01 | AGENTS, AUTHORS, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY, SUPPORT, AI guidance and issue/PR templates (AC-01; depends on T00-05) | Done ([PR #2](https://github.com/RamonRDR/git-study-guide/pull/2)) |
+| T02-01 | Structure, navigation, validators, tests, CI; required status checks after observed runs and separate approval (AC-02; depends on T01-01) | Submitted; CI evidence pending; required checks separate |
 | T03-01 | Modules 00–01: onboarding, history and fundamentals (AC-03; depends on T02-01) | Pending |
 | T04-01 | Modules 02–03: Git architecture and basic commands (AC-04; depends on T03-01) | Pending |
 | T05-01 | Module 04: branch management (AC-05; depends on T04-01) | Pending |
@@ -41,3 +41,5 @@ Sprint 00 evidence: [Codex](https://github.com/RamonRDR/git-study-guide/pull/1#i
 - [Implementation plan](implementation-plan.md)
 - [Acceptance criteria](acceptance-criteria.md)
 - [Baseline audit](audit.md)
+
+Sprint 01 evidence: [PR #2](https://github.com/RamonRDR/git-study-guide/pull/2), [Codex](https://github.com/RamonRDR/git-study-guide/pull/2#issuecomment-7176325295), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/df139992ae109145184a4de86b2a95b7e1187e0b). Latest review had no findings; main and branch deletion verified.

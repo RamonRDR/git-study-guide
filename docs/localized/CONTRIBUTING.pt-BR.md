@@ -17,7 +17,7 @@ Ler Constitution, roadmap e instruções; pesquisar issues, descrever uma melhor
 
 ## Qualidade educacional e técnica
 
-Explicar o quê, por quê, uso/evitar, efeitos, risco e recuperação antes da prática. Ensinar iniciantes sem termos inexplicados. Priorizar fontes oficiais Git/plataformas e exemplos originais. Separar Git nativo de GitHub/GitLab. Identificar versão, SO, shell e pré-requisitos quando relevantes. Sem material privado, segredos ou exemplos proprietários. Não executar comandos destrutivos no guia. CI planejado para Sprint 02; não listar comandos inexistentes como aprovados. Depois usar checks documentados e exemplos em allowlist.
+Explicar o quê, por quê, uso/evitar, efeitos, risco e recuperação antes da prática. Ensinar iniciantes sem termos inexplicados. Priorizar fontes oficiais Git/plataformas e exemplos originais. Separar Git nativo de GitHub/GitLab. Identificar versão, SO, shell e pré-requisitos quando relevantes. Sem material privado, segredos ou exemplos proprietários. Não executar comandos destrutivos no guia. Rodar checks de qualidade documentados antes de solicitar revisão; não executar exemplos não aprovados nem declarar aprovados checks não rodados.
 
 ## IA e licenciamento
 
@@ -29,3 +29,5 @@ Declarar apoio de IA e verificar material pessoalmente; não enviar conteúdo ge
 - [Autoria](AUTHORS.pt-BR.md)
 - [Desenvolvimento assistido por IA](../ai-assisted-development/README.pt-BR.md)
 - [Licença MIT](../../LICENSE)
+
+- [Automação de qualidade](../quality-automation.pt-BR.md)

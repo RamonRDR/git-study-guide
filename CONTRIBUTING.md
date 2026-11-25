@@ -17,7 +17,7 @@ Read the constitution, roadmap and instructions; search existing issues, describ
 
 ## Educational and technical quality
 
-Explain what, why, use/avoid, effects, risk and recovery before practice. Teach beginners without unexplained terms. Prefer official Git/hosting documentation and original examples. Separate native Git from GitHub/GitLab. Identify version, OS, shell and prerequisites when relevant. No private material, secrets or proprietary examples. Do not execute destructive commands on the guide. CI is planned for Sprint 02; do not list nonexistent commands as passing. Later use documented repository checks and allowlisted examples.
+Explain what, why, use/avoid, effects, risk and recovery before practice. Teach beginners without unexplained terms. Prefer official Git/hosting documentation and original examples. Separate native Git from GitHub/GitLab. Identify version, OS, shell and prerequisites when relevant. No private material, secrets or proprietary examples. Do not execute destructive commands on the guide. Run the documented quality checks before requesting review; do not execute unapproved examples or claim unrun checks passed.
 
 ## AI and licensing
 
@@ -29,3 +29,5 @@ Disclose AI assistance and verify all material personally; do not send unreviewe
 - [Authorship](AUTHORS.md)
 - [AI-assisted development](docs/ai-assisted-development/README.en.md)
 - [MIT license](LICENSE)
+
+- [Quality automation](docs/quality-automation.md)
