@@ -2,11 +2,21 @@
   "modules": [
     {
       "slug": "getting-started",
-      "chapters": []
+      "chapters": [
+        "01-install-git",
+        "02-terminal-and-help",
+        "03-first-repository",
+        "04-editor-and-gui",
+        "05-first-commit"
+      ]
     },
     {
       "slug": "fundamentals",
-      "chapters": []
+      "chapters": [
+        "01-version-control",
+        "02-history-of-git",
+        "03-distributed-and-platforms"
+      ]
     },
     {
       "slug": "git-architecture",
