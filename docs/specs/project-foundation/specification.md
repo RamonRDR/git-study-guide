@@ -2,7 +2,7 @@
 
 [English](specification.md) · [Português](specification.pt-BR.md) · [Español](specification.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 Goal: a public, practical, MIT-licensed Git Study Guide from beginner to advanced engineering. Baseline main: b4bd782519ebc8e52e6751362443aa634e86e56d. Python reference: 9102bbbf8f8dd846f2fb9682dd3f55bcacc10c95.
 

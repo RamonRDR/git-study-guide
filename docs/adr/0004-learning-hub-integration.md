@@ -2,7 +2,7 @@
 
 [English](0004-learning-hub-integration.md) · [Português](0004-learning-hub-integration.pt-BR.md) · [Español](0004-learning-hub-integration.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 ## Context
 

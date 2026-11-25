@@ -2,7 +2,7 @@
 
 [English](0001-content-source-of-truth.md) · [Português](0001-content-source-of-truth.pt-BR.md) · [Español](0001-content-source-of-truth.es.md)
 
-Propuesta para revisión del mantenedor; no autoriza iniciar el Sprint 01.
+Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriores requieren revisión y aprobación explícita del mantenedor.
 
 ## Contexto
 

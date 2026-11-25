@@ -2,7 +2,7 @@
 
 [English](0001-content-source-of-truth.md) · [Português](0001-content-source-of-truth.pt-BR.md) · [Español](0001-content-source-of-truth.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 ## Context
 

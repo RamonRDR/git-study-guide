@@ -2,7 +2,7 @@
 
 [English](0003-practice-environments.md) · [Português](0003-practice-environments.pt-BR.md) · [Español](0003-practice-environments.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 ## Contexto
 

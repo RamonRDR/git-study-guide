@@ -2,7 +2,7 @@
 
 [English](0003-practice-environments.md) · [Português](0003-practice-environments.pt-BR.md) · [Español](0003-practice-environments.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 ## Context
 

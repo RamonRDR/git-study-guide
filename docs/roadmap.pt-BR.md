@@ -2,7 +2,7 @@
 
 [English](roadmap.md) · [Português](roadmap.pt-BR.md) · [Español](roadmap.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 ## Currículo (18 módulos)
 
@@ -54,7 +54,7 @@ Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo p
 | 18 | VI | Finalizar contrato, manifestos, schemas, fixtures do consumidor; avaliar playground opcional separadamente |
 | 19 | VI | Identidade fornecida pelo mantenedor, README final, QA, handoff |
 
-Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprint 00 em andamento; demais sprints planejadas, não implementadas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
+Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprint 00 integrada pelo PR #1; Sprint 01 submetida para revisão; Sprints 02–19 planejadas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
 
 ## Documentos relacionados
 

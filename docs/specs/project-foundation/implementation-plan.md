@@ -2,7 +2,7 @@
 
 [English](implementation-plan.md) · [Português](implementation-plan.pt-BR.md) · [Español](implementation-plan.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 ## Delivery sequence
 

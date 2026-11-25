@@ -2,7 +2,7 @@
 
 [English](0002-multilingual-architecture.md) · [Português](0002-multilingual-architecture.pt-BR.md) · [Español](0002-multilingual-architecture.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 ## Contexto
 

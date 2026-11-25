@@ -2,7 +2,7 @@
 
 [English](constitution.md) · [Português](constitution.pt-BR.md) · [Español](constitution.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 > Study. Understand. Practice.
 
@@ -21,7 +21,7 @@ Proposed for maintainer review; not authorization to start Sprint 01.
 11. Every change requires an up-to-date focused branch, PR, applicable validation, review of the latest revision, addressed findings and explicit maintainer approval before squash merge. Never modify main directly, bypass protections, fabricate approvals or confuse requested review with completed review.
 12. Disclose limitations and unrun checks, including unavailable Codex review or CI. Do not claim completion without evidence; change constitutional principles only via a reviewed specification PR.
 
-AGENTS.md will implement contributor guidance in Sprint 01. Conflicts require maintainer resolution. Engineering sprint numbers are distinct from curriculum order.
+AGENTS.md defines repository contributor guidance. Conflicts require maintainer resolution. Engineering sprint numbers are distinct from curriculum order.
 
 ## Related documents
 

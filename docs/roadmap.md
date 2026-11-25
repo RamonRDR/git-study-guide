@@ -2,7 +2,7 @@
 
 [English](roadmap.md) · [Português](roadmap.pt-BR.md) · [Español](roadmap.es.md)
 
-Proposed for maintainer review; not authorization to start Sprint 01.
+Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes require review and explicit maintainer approval.
 
 ## Curriculum (18 modules)
 
@@ -54,7 +54,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 18 | VI | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately |
 | 19 | VI | Maintainer-supplied identity, final README, QA, release handoff |
 
-Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprint 00 is in progress; all later sprints are planned, not implemented. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
+Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprint 00 integrated via PR #1; Sprint 01 submitted for review; Sprints 02–19 planned. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
 
 ## Related documents
 

@@ -2,7 +2,7 @@
 
 [English](constitution.md) · [Português](constitution.pt-BR.md) · [Español](constitution.es.md)
 
-Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
+Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes exigem revisão e aprovação explícita do mantenedor.
 
 > Study. Understand. Practice.
 
@@ -21,7 +21,7 @@ Proposta para revisão do mantenedor; não autoriza iniciar a Sprint 01.
 11. Toda alteração exige branch focada e atualizada, PR, validação aplicável, revisão da última revisão, tratamento dos apontamentos e aprovação explícita do mantenedor antes do squash merge. Nunca alterar main diretamente, contornar proteções, inventar aprovações ou confundir revisão solicitada com concluída.
 12. Declarar limitações e verificações não executadas, inclusive indisponibilidade de Codex Review ou CI. Não alegar conclusão sem evidência; alterar princípios constitucionais apenas por PR de especificação revisado.
 
-AGENTS.md detalhará orientações a colaboradores na Sprint 01. Conflitos exigem decisão do mantenedor. A numeração das sprints de engenharia é distinta da ordem curricular.
+AGENTS.md define orientações aos colaboradores. Conflitos exigem decisão do mantenedor. A numeração das sprints de engenharia é distinta da ordem curricular.
 
 ## Documentos relacionados
 
