@@ -55,6 +55,24 @@ class ValidationTests(unittest.TestCase):
         self.paths.add("docs/a.md")
         self.assertTrue(any("Case-colliding" in e for e in v.check_structure(self.root, self.paths)))
 
+    def test_structure_file_directory_collision(self):
+        self.write("scripts/curriculum.json", "{}")
+        # Synthetic tracked paths avoid creating an impossible layout on Windows.
+        self.paths.add("scripts/Curriculum.json/notes.txt")
+        self.assertTrue(any("Case-colliding" in e and "directory" in e and "file" in e
+                            for e in v.check_structure(self.root, self.paths)))
+
+    def test_structure_directory_case_collision(self):
+        self.paths.update({"docs/Topic/a.md", "docs/topic/b.md"})
+        self.assertTrue(any("Case-colliding" in e and "directory" in e
+                            for e in v.check_structure(self.root, self.paths)))
+
+    def test_structure_shared_directory_allowed(self):
+        self.write("docs/topic/a.md", "")
+        self.write("docs/topic/b.md", "")
+        self.assertFalse(any("Case-colliding" in e
+                             for e in v.check_structure(self.root, self.paths)))
+
     def test_manifest_order(self):
         self.write("scripts/curriculum.json", json.dumps({"modules": [{"slug": s, "chapters": []} for s in v.SLUGS]}))
         self.assertEqual(len(v.load_modules(self.root)), 18)
@@ -87,6 +105,20 @@ class ValidationTests(unittest.TestCase):
         self.assertTrue(v.check_examples(self.root, self.paths))
         self.write("scripts/example_manifest.json", '["getting-started/examples/run.sh"]')
         self.assertTrue(v.check_examples(self.root, self.paths))
+
+    def test_examples_reject_all_files_until_protocol(self):
+        self.write("scripts/example_manifest.json", "[]")
+        for path, content in (
+            ("getting-started/examples/run.bash", "#!/bin/sh\necho test"),
+            ("getting-started/examples/run.txt", "#!/bin/sh\necho test"),
+            ("getting-started/examples/unknown.xyz", "test"),
+            ("getting-started/examples/notes.txt", "inert text"),
+            ("getting-started/Examples/run.txt", "test"),
+        ):
+            with self.subTest(path=path):
+                self.write(path, content)
+                self.assertIn("Unapproved example file: " + path,
+                              v.check_examples(self.root, self.paths))
 
     def test_secret_redaction(self):
         synthetic = "gh" + "p_" + "A" * 36

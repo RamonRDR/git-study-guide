@@ -26,7 +26,6 @@ SECRET_PATTERNS = (
     re.compile(r"\bsk-(?:proj-)?[A-Za-z0-9_-]{24,}\b"),
 )
 TEXT_SUFFIXES = {".md", ".py", ".json", ".yml", ".yaml", ".txt", ".sh", ".ps1", ".bat", ".cmd", ".svg", ".toml", ".ini", ".cfg", ".js", ".ts", ".html", ".css"}
-EXEC_SUFFIXES = {".py", ".sh", ".ps1", ".bat", ".cmd", ".exe", ".dll", ".js", ".mjs", ".rb", ".pl", ".jar", ".com", ".msi", ".vbs", ".fish", ".zsh"}
 
 def tracked_paths(root):
     result = subprocess.run(["git", "ls-files", "-z"], cwd=root, check=True, stdout=subprocess.PIPE)
@@ -67,9 +66,17 @@ def check_structure(root, paths):
         if not portable_path(path):
             errors.append("Non-portable repository path: " + path)
             continue
-        if path.casefold() in folded:
-            errors.append("Case-colliding paths: " + path + " and " + folded[path.casefold()])
-        folded[path.casefold()] = path
+        parts = path.split("/")
+        for length in range(1, len(parts) + 1):
+            prefix = "/".join(parts[:length])
+            kind = "file" if length == len(parts) else "directory"
+            key = prefix.casefold()
+            previous = folded.get(key)
+            if previous is not None and previous != (prefix, kind):
+                errors.append("Case-colliding paths: " + prefix + " (" + kind + ") and "
+                              + previous[0] + " (" + previous[1] + ")")
+            else:
+                folded[key] = (prefix, kind)
         p = root / path
         if not p.is_file() or p.is_symlink() or any(parent.is_symlink() for parent in p.parents if parent != root and root in parent.parents):
             errors.append("Missing, non-file or symbolic tracked path: " + path)
@@ -210,8 +217,8 @@ def check_examples(root, paths):
     errors = []
     for p in sorted(paths):
         parts = PurePosixPath(p).parts
-        if "examples" in parts and (PurePosixPath(p).suffix.lower() in EXEC_SUFFIXES or not PurePosixPath(p).suffix):
-            errors.append("Unapproved executable example: " + p)
+        if any(part.casefold() == "examples" for part in parts[:-1]):
+            errors.append("Unapproved example file: " + p)
     return errors
 
 def check_secrets(root, paths):
