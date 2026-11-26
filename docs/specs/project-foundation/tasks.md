@@ -16,8 +16,8 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | T03-01 | Modules 00–01: onboarding, history and fundamentals (AC-03; depends on T02-01) | Done ([PR #4](https://github.com/RamonRDR/git-study-guide/pull/4)) |
 | T04-01 | Modules 02–03: Git architecture and basic commands (AC-04; depends on T03-01) | Done ([PR #5](https://github.com/RamonRDR/git-study-guide/pull/5)) |
 | T05-01 | Module 04: branch management (AC-05; depends on T04-01) | Done ([PR #6](https://github.com/RamonRDR/git-study-guide/pull/6)) |
-| T06-01 | Module 05: merge, squash, rebase and conflicts (AC-06; depends on T05-01) | Submitted for review |
-| T07-01 | Module 06: remotes and collaboration (AC-07; depends on T06-01) | Pending |
+| T06-01 | Module 05: merge, squash, rebase and conflicts (AC-06; depends on T05-01) | Done ([PR #7](https://github.com/RamonRDR/git-study-guide/pull/7)) |
+| T07-01 | Module 06: remotes and collaboration (AC-07; depends on T06-01) | Submitted for review |
 | T08-01 | Module 07: history and recovery (AC-08; depends on T07-01) | Pending |
 | T09-01 | Module 08: GitHub (AC-09; depends on T08-01) | Pending |
 | T10-01 | Module 09: GitLab (AC-10; depends on T09-01) | Pending |
@@ -51,3 +51,5 @@ Sprint 03 evidence: [PR #4](https://github.com/RamonRDR/git-study-guide/pull/4),
 Sprint 04 evidence: [PR #5](https://github.com/RamonRDR/git-study-guide/pull/5), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45723113329), [Codex](https://github.com/RamonRDR/git-study-guide/pull/5#issuecomment-7177929221), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/6695bea89c76fc6a52499ab4f17e9c89cff37fa1), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45724230029). Main and branch deletion verified; final PR CI passed six validators and 24 tests per platform, no warnings or unresolved findings. macOS and GUI interaction not tested. Post-merge CI passed.
 
 Sprint 05 evidence: [PR #6](https://github.com/RamonRDR/git-study-guide/pull/6), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45724512229), [Codex](https://github.com/RamonRDR/git-study-guide/pull/6#issuecomment-7178166184), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/da1a8b591e9d0349e4991cc5cef99a7a44a47ee0), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45727648558). Main and branch deletion verified; final PR CI passed six validators and 29 tests per platform, no warnings or unresolved findings. macOS and GUI interaction not tested. Post-merge CI passed.
+
+Sprint 06 evidence: [PR #7](https://github.com/RamonRDR/git-study-guide/pull/7), [CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45728027152), [Codex](https://github.com/RamonRDR/git-study-guide/pull/7#issuecomment-7178708117), [final audit](https://github.com/RamonRDR/git-study-guide/pull/7#issuecomment-7178951280), [squash commit](https://github.com/RamonRDR/git-study-guide/commit/3dcd547401632bfbfbcb6105d2ab8b5414b13d01), [main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/45730087351). Main and branch deletion verified; post-merge Linux and Windows jobs succeeded.

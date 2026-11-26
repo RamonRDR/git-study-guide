@@ -60,7 +60,13 @@
     },
     {
       "slug": "remote-repositories",
-      "chapters": []
+      "chapters": [
+        "01-remote-concepts",
+        "02-fetch-and-tracking",
+        "03-pull-push-and-divergence",
+        "04-remote-branch-lifecycle",
+        "05-secure-authentication"
+      ]
     },
     {
       "slug": "history-and-recovery",
