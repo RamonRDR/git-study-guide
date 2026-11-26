@@ -22,7 +22,6 @@ Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriore
 | 11 | `professional-workflows/` | Flujos profesionales | Git Flow, GitHub Flow, trunk-based, feature branches, Conventional Commits, SemVer, code review, SDD/TDD, asistencia de IA, releases. |
 | 12 | `security/` | Seguridad y gobernanza | SSH, HTTPS, tokens, credential managers, secrets, permisos, protección de ramas, rulesets, CODEOWNERS, firma, cadena de suministro, exposición accidental, mínimo privilegio. |
 | 13 | `advanced-git/` | Git avanzado | bisect, worktree, submodules, subtree, hooks, rerere, sparse-checkout, partial/shallow clone, blame, grep, archive, bundle y compensaciones. |
-| 13.1 | IV | Complementaria: navegación educativa continua y UX, pruebas de regresión y estándares |
 | 14 | `git-internals/` | Internals de Git | Blobs, trees, commits, tags, hashes, refs, object database, packfiles, garbage collection, reflogs, porcelain/plumbing. |
 | 15 | `command-reference/` | Referencia de comandos | Catálogo consultable por operación e intención, 100+ entradas relevantes; distinguir subcomandos, opciones, usos, combinaciones y operaciones de plataformas. |
 | 16 | `practical-projects/` | Proyectos prácticos | Ocho proyectos integrados: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
@@ -48,6 +47,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 11 | IV | Módulo 10: CI/CD y automatización |
 | 12 | IV | Módulo 11: flujos profesionales |
 | 13 | IV | Módulo 12: seguridad y gobernanza |
+| 13.1 | IV | Complementaria: navegación educativa continua y UX, pruebas de regresión y estándares |
 | 14 | V | Módulos 13–14: Git avanzado e internals |
 | 15 | V | Módulo 15: referencia de comandos |
 | 16 | V | Módulo 16: ocho proyectos prácticos |

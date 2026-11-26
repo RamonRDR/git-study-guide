@@ -263,7 +263,7 @@ def check_navigation(root, paths):
             except (ValueError, IndexError):
                 errors.append("Invalid navigation block: " + document)
     for p in sorted(paths):
-        if p.split("/")[0] in SLUGS and re.search(r"(^|/)README(?:\\.pt-BR|\\.es)?\\.md$", p) and p not in expected_docs:
+        if p.split("/")[0] in SLUGS and re.search(r"(^|/)README(?:\.pt-BR|\.es)?\.md$", p) and p not in expected_docs:
             errors.append("Unregistered module/chapter README: " + p)
     return errors
 

@@ -22,7 +22,6 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | 11 | `professional-workflows/` | Professional Workflows | Git Flow, GitHub Flow, trunk-based, feature branches, Conventional Commits, SemVer, code review, SDD/TDD, AI assistance, releases. |
 | 12 | `security/` | Security & Governance | SSH, HTTPS, tokens, credential managers, secrets, permissions, branch protection, rulesets, CODEOWNERS, signing, supply chain, accidental disclosure, least privilege. |
 | 13 | `advanced-git/` | Advanced Git | bisect, worktree, submodules, subtree, hooks, rerere, sparse-checkout, partial/shallow clone, blame, grep, archive, bundle and trade-offs. |
-| 13.1 | IV | Complementary: continuous learning navigation and UX, regression tests and standards |
 | 14 | `git-internals/` | Git Internals | Blobs, trees, commits, tags, hashes, refs, object database, packfiles, garbage collection, reflogs, porcelain/plumbing. |
 | 15 | `command-reference/` | Command Reference | Searchable catalog by operation and intent, 100+ meaningful entries; distinguish subcommands, flags, usages, combinations and hosting operations. |
 | 16 | `practical-projects/` | Practical Projects | Eight integrated projects: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
@@ -48,6 +47,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 11 | IV | Module 10: CI/CD and automation |
 | 12 | IV | Module 11: professional workflows |
 | 13 | IV | Module 12: security and governance |
+| 13.1 | IV | Complementary: continuous learning navigation and UX, regression tests and standards |
 | 14 | V | Modules 13–14: advanced Git and internals |
 | 15 | V | Module 15: command reference |
 | 16 | V | Module 16: eight practical projects |

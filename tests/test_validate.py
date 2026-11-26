@@ -180,6 +180,17 @@ class ValidationTests(unittest.TestCase):
                 self.assertEqual(v.navigation_body(content, "navigation"), expected)
                 self.assertEqual(v.navigation_body(content, "navigation-footer"), expected)
 
+    def test_navigation_unregistered_pages_all_locales(self):
+        self.navigation_fixture()
+        self.assertEqual(v.check_navigation(self.root, self.paths), [])
+        unexpected = ["getting-started/99-unregistered/README" + suffix + ".md"
+                      for suffix in v.SUFFIXES]
+        for path in unexpected:
+            self.write(path, "# Unregistered chapter\n")
+        errors = v.check_navigation(self.root, self.paths)
+        self.assertEqual(sorted(errors), sorted(
+            "Unregistered module/chapter README: " + path for path in unexpected))
+
     def test_navigation_missing_footer(self):
         self.navigation_fixture()
         path = "getting-started/01-start/README.md"
