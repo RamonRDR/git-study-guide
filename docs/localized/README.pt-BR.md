@@ -6,7 +6,7 @@
 
 Guia prático e multilíngue de Git, GitHub, GitLab, controle de versão e engenharia de software colaborativa, dos fundamentos aos fluxos avançados. Gratuito, público e independente; sem experiência prévia em programação.
 
-Status: fundação, governança e automação integradas. Módulos 00–05 contêm aulas; 06–17 permanecem planejados. Identidade visual, catálogo e integração Learning Hub planejados.
+Status: fundação, governança e automação integradas. Módulos 00–06 contêm aulas; 07–17 permanecem planejados. Identidade visual, catálogo e integração Learning Hub planejados.
 
 - [Trilha de aprendizagem](../learning-path.pt-BR.md)
 - [Estrutura do projeto](../project-structure.pt-BR.md)

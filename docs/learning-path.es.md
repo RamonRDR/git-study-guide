@@ -2,7 +2,7 @@
 
 [English](learning-path.md) · [Português](learning-path.pt-BR.md) · [Español](learning-path.es.md)
 
-Comience por módulo 00 y siga el orden. Módulos 00–05 contienen lecciones; 06–17 son índices previstos. No requiere programación ni cuenta IA.
+Comience por módulo 00 y siga el orden. Módulos 00–06 contienen lecciones; 07–17 son índices previstos. No requiere programación ni cuenta IA.
 
 - 00 [Primeros pasos](../getting-started/README.es.md)
 - 01 [Historia y fundamentos](../fundamentals/README.es.md)
