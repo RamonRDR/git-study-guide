@@ -484,9 +484,9 @@
         "es": "Usa un repositorio de práctica confiable con working tree e index; revisa git status primero."
       },
       "effect_notes": {
-        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
-        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
-        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+        "en": "Working files, staged blob IDs, commit refs and remote stay unchanged under built-in behavior; diff.autoRefreshIndex can refresh cached file stat metadata in the index.",
+        "pt-BR": "Arquivos de trabalho, IDs dos blobs preparados, referências de commits e remoto permanecem inalterados no comportamento interno; diff.autoRefreshIndex pode atualizar metadados stat de arquivos no index.",
+        "es": "Archivos de trabajo, IDs de blobs preparados, referencias de commits y remoto permanecen sin cambios con el comportamiento interno; diff.autoRefreshIndex puede actualizar metadatos stat de archivos en el index."
       },
       "recovery": {
         "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
@@ -518,17 +518,17 @@
       },
       "effects": {
         "working_tree": "unchanged",
-        "index": "unchanged",
+        "index": "conditional",
         "history": "unchanged",
         "remote": "unchanged",
         "other": "unchanged"
       },
       "risk": {
-        "class": "read-only",
+        "class": "state-change",
         "notes": {
-          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
-          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
-          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+          "en": "An inspection operation with possible index metadata writes, not a staging operation; avoid untrusted external diff drivers and review sensitive output before sharing.",
+          "pt-BR": "Operação de inspeção com possíveis escritas em metadados do index, não operação de staging; evite drivers externos de diff não confiáveis e revise saída sensível antes de compartilhar.",
+          "es": "Operación de inspección con posibles escrituras en metadatos del index, no una operación de preparación; evita controladores externos de diff no confiables y revisa la salida sensible antes de compartir."
         }
       },
       "related_chapters": [
@@ -536,7 +536,8 @@
         "git-architecture/01-three-locations"
       ],
       "references": [
-        "https://git-scm.com/docs/git-diff"
+        "https://git-scm.com/docs/git-diff",
+        "https://git-scm.com/docs/git-config/2.36.3.html"
       ]
     },
     {
@@ -807,9 +808,9 @@
         "es": "Usa un repositorio de práctica confiable con working tree e index; revisa git status primero."
       },
       "effect_notes": {
-        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
-        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
-        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+        "en": "Working files, staged blob IDs, commit refs and remote stay unchanged under built-in behavior; diff.autoRefreshIndex can refresh cached file stat metadata in the index.",
+        "pt-BR": "Arquivos de trabalho, IDs dos blobs preparados, referências de commits e remoto permanecem inalterados no comportamento interno; diff.autoRefreshIndex pode atualizar metadados stat de arquivos no index.",
+        "es": "Archivos de trabajo, IDs de blobs preparados, referencias de commits y remoto permanecen sin cambios con el comportamiento interno; diff.autoRefreshIndex puede actualizar metadatos stat de archivos en el index."
       },
       "recovery": {
         "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
@@ -841,17 +842,17 @@
       },
       "effects": {
         "working_tree": "unchanged",
-        "index": "unchanged",
+        "index": "conditional",
         "history": "unchanged",
         "remote": "unchanged",
         "other": "unchanged"
       },
       "risk": {
-        "class": "read-only",
+        "class": "state-change",
         "notes": {
-          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
-          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
-          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+          "en": "An inspection operation with possible index metadata writes, not a staging operation; avoid untrusted external diff drivers and review sensitive output before sharing.",
+          "pt-BR": "Operação de inspeção com possíveis escritas em metadados do index, não operação de staging; evite drivers externos de diff não confiáveis e revise saída sensível antes de compartilhar.",
+          "es": "Operación de inspección con posibles escrituras en metadatos del index, no una operación de preparación; evita controladores externos de diff no confiables y revisa la salida sensible antes de compartir."
         }
       },
       "related_chapters": [
@@ -859,7 +860,8 @@
         "git-architecture/01-three-locations"
       ],
       "references": [
-        "https://git-scm.com/docs/git-diff"
+        "https://git-scm.com/docs/git-diff",
+        "https://git-scm.com/docs/git-config/2.36.3.html"
       ]
     },
     {
