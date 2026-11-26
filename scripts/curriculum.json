@@ -38,7 +38,13 @@
     },
     {
       "slug": "branches",
-      "chapters": []
+      "chapters": [
+        "01-create-and-switch",
+        "02-start-points-and-comparison",
+        "03-switch-safety-and-naming",
+        "04-safe-local-deletion",
+        "05-detached-head"
+      ]
     },
     {
       "slug": "merge-and-conflicts",
