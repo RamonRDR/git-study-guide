@@ -493,9 +493,9 @@
         "es": "Si una etiqueta no publicada es incorrecta, registra su destino actual, elimínala localmente y recréala en el destino verificado."
       },
       "requirements": {
-        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
-        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
-        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
       },
       "examples": {
         "basic": {
@@ -535,7 +535,7 @@
         "professional-workflows/12-release-management"
       ],
       "references": [
-        "https://git-scm.com/docs/git-tag/2.34.0"
+        "https://git-scm.com/docs/git-tag/2.31.0"
       ]
     },
     {
@@ -600,9 +600,9 @@
         "es": "Inspecciona git show en la etiqueta; si no está publicada, conserva el ID anterior del objeto antes de corregirla. Para etiquetas publicadas coordina una nueva versión."
       },
       "requirements": {
-        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
-        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
-        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
       },
       "examples": {
         "basic": {
@@ -642,7 +642,7 @@
         "professional-workflows/12-release-management"
       ],
       "references": [
-        "https://git-scm.com/docs/git-tag/2.34.0"
+        "https://git-scm.com/docs/git-tag/2.31.0"
       ]
     },
     {
@@ -707,9 +707,9 @@
         "es": "Si el objeto exacto sigue disponible, recrea la referencia verificada con git update-ref; una etiqueta anotada no se restaura fielmente solo etiquetando de nuevo su commit."
       },
       "requirements": {
-        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
-        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
-        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
       },
       "examples": {
         "basic": {
@@ -749,7 +749,7 @@
         "professional-workflows/12-release-management"
       ],
       "references": [
-        "https://git-scm.com/docs/git-tag/2.34.0"
+        "https://git-scm.com/docs/git-tag/2.31.0"
       ]
     },
     {
@@ -814,9 +814,9 @@
         "es": "El listado no requiere recuperación; inspecciona patrón y referencias locales si el resultado es inesperado."
       },
       "requirements": {
-        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
-        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
-        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
       },
       "examples": {
         "basic": {
@@ -856,7 +856,7 @@
         "professional-workflows/12-release-management"
       ],
       "references": [
-        "https://git-scm.com/docs/git-tag/2.34.0"
+        "https://git-scm.com/docs/git-tag/2.31.0"
       ]
     }
   ]
