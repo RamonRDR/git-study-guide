@@ -121,3 +121,9 @@ Why did --ff-only refuse? Both tips have unique commits. Pass if the merge has e
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-fast-forward/README.md) · [Index](../README.md) · [Next](../04-conflict-resolution/README.md)
+<!-- /navigation-footer -->

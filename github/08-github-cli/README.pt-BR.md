@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../gitlab/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 25 min
@@ -57,3 +57,9 @@ Passe se classificar git status como inspeção local, gh pr list como inspeçã
 - <https://cli.github.com/manual/gh_repo_view>
 - <https://cli.github.com/manual/gh_issue_list>
 - <https://cli.github.com/manual/gh_pr_list>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../gitlab/README.pt-BR.md)
+<!-- /navigation-footer -->

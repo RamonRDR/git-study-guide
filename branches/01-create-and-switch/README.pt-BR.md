@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-start-points-and-comparison/README.pt-BR.md)
+[Módulo anterior](../../basic-commands/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-start-points-and-comparison/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 35 min
@@ -80,3 +80,9 @@ Preveja commit de main após commit de feature. Resposta: inalterado. Passe se b
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-switch](https://git-scm.com/docs/git-switch)
 - [Git: git-symbolic-ref](https://git-scm.com/docs/git-symbolic-ref)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../basic-commands/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-start-points-and-comparison/README.pt-BR.md)
+<!-- /navigation-footer -->

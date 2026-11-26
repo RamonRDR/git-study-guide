@@ -42,3 +42,9 @@ A new commit appears after approval: what next? Recheck the new diff, rerun appl
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews>
 - <https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-issues-and-planning/README.md) · [Index](../README.md) · [Next](../05-forks-and-open-source/README.md)
+<!-- /navigation-footer -->

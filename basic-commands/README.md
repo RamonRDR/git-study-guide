@@ -17,3 +17,9 @@
 - 04 [Rename and remove tracked files](04-move-and-remove/README.md)
 - 05 [Ignore rules and final review](05-ignore-and-review/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../git-architecture/README.md) · [Index](../docs/learning-path.md) · [Next](../branches/README.md)
+<!-- /navigation-footer -->

@@ -13,3 +13,9 @@
 <!-- chapters -->
 Todavía no hay capítulos publicados.
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../git-internals/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../practical-projects/README.es.md)
+<!-- /navigation-footer -->

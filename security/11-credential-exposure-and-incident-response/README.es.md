@@ -38,3 +38,9 @@ revoke / rotate / contain / investigate
 
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository>
 - <https://csrc.nist.gov/pubs/sp/800/61/r3/final>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../10-software-supply-chain/README.es.md) · [Índice](../README.es.md) · [Siguiente](../12-governance-audit-and-traceability/README.es.md)
+<!-- /navigation-footer -->

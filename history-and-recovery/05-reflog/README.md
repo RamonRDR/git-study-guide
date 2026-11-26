@@ -95,3 +95,9 @@ Why does git log miss C2 after reset but reflog can find it? Answer: ancestry ve
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-gc](https://git-scm.com/docs/git-gc)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-revert/README.md) · [Index](../README.md) · [Next](../06-stash/README.md)
+<!-- /navigation-footer -->

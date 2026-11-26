@@ -42,3 +42,9 @@ main / develop / feature / release / hotfix
 - <https://nvie.com/posts/a-successful-git-branching-model/>
 - <https://www.atlassian.com/git/tutorials/comparing-workflows>
 - <https://git-scm.com/docs/gitworkflows>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-feature-branch-workflow/README.md) · [Index](../README.md) · [Next](../03-github-flow/README.md)
+<!-- /navigation-footer -->

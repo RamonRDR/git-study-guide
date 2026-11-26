@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../12-release-management/README.md) · [Index](../README.md) · —
+[Previous](../12-release-management/README.md) · [Index](../README.md) · [Next module](../../security/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 60 min
@@ -81,3 +81,9 @@ Pass if initial draft does not satisfy the check, ready does, main is unchanged 
 - <https://git-scm.com/docs/git-tag>
 - <https://www.conventionalcommits.org/en/v1.0.0/>
 - <https://semver.org/spec/v2.0.0.html>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../12-release-management/README.md) · [Index](../README.md) · [Next module](../../security/README.md)
+<!-- /navigation-footer -->

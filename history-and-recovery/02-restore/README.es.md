@@ -95,3 +95,9 @@ Restore puede descartar ediciones unstaged permanentemente. Reflog no registra e
 
 - [Git: git-restore](https://git-scm.com/docs/git-restore)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-recovery-safety/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-reset/README.es.md)
+<!-- /navigation-footer -->

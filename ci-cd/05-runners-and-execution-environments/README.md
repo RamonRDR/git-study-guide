@@ -37,3 +37,9 @@ runner / executor / matrix
 - <https://docs.github.com/en/actions/concepts/runners/github-hosted-runners>
 - <https://docs.gitlab.com/runner/executors/>
 - <https://docs.gitlab.com/ci/runners/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-gitlab-ci-cd/README.md) · [Index](../README.md) · [Next](../06-jobs-steps-stages-and-dependencies/README.md)
+<!-- /navigation-footer -->

@@ -90,3 +90,9 @@ Does fast-forward add a commit? Answer: no; main moves to existing C2. Pass if m
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rev-parse](https://git-scm.com/docs/git-rev-parse)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-integration-safety/README.md) · [Index](../README.md) · [Next](../03-merge-commit/README.md)
+<!-- /navigation-footer -->

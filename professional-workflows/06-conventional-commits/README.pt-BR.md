@@ -36,3 +36,9 @@ Fix, feature, documentação, feature incompatível respectivamente. Título squ
 
 - <https://www.conventionalcommits.org/en/v1.0.0/>
 - <https://git-scm.com/docs/git-commit>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-workflow-trade-offs/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-semantic-versioning/README.pt-BR.md)
+<!-- /navigation-footer -->

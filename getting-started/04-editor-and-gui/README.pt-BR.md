@@ -45,3 +45,9 @@ Localize Source Control e terminal, ou use editor simples mais terminal. Dica: c
 - [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 - [https://code.visualstudio.com/docs/sourcecontrol/quickstart](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
 - [https://git-scm.com/docs/git-gui](https://git-scm.com/docs/git-gui)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-first-repository/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-first-commit/README.pt-BR.md)
+<!-- /navigation-footer -->

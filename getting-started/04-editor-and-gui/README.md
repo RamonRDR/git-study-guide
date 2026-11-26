@@ -45,3 +45,9 @@ Find Source Control and terminal, or use a plain-text editor plus terminal. Hint
 - [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 - [https://code.visualstudio.com/docs/sourcecontrol/quickstart](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
 - [https://git-scm.com/docs/git-gui](https://git-scm.com/docs/git-gui)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-first-repository/README.md) · [Index](../README.md) · [Next](../05-first-commit/README.md)
+<!-- /navigation-footer -->

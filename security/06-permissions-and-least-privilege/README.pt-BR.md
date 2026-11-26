@@ -37,3 +37,9 @@ role / resource / action / duration
 - <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization>
 - <https://docs.gitlab.com/user/permissions/>
 - <https://docs.github.com/en/actions/reference/security/secure-use>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-secrets-and-disclosure-prevention/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-branch-protection-and-rulesets/README.pt-BR.md)
+<!-- /navigation-footer -->

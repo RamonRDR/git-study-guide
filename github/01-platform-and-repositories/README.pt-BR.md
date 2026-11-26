@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-permissions-and-authentication/README.pt-BR.md)
+[Módulo anterior](../../history-and-recovery/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-permissions-and-authentication/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 25 min
@@ -39,3 +39,9 @@ Visitante pode fazer push por padrão em repo público? Não. Passe se distingui
 
 - <https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories>
 - <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../history-and-recovery/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-permissions-and-authentication/README.pt-BR.md)
+<!-- /navigation-footer -->

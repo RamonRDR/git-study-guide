@@ -34,3 +34,9 @@ Passe se distinguir pipeline, job e runner, identificar B como não validada e e
 - <https://docs.gitlab.com/ci/runners/>
 - <https://docs.gitlab.com/ci/pipelines/compute_minutes/>
 - <https://docs.gitlab.com/ci/pipelines/settings/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-protected-branches-and-merge-checks/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-tags-and-releases/README.pt-BR.md)
+<!-- /navigation-footer -->

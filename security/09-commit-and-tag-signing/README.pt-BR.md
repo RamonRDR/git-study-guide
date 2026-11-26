@@ -38,3 +38,9 @@ A não tem evidência de assinatura; B exige verificação de identidade confiá
 - <https://git-scm.com/docs/git-verify-tag>
 - <https://git-scm.com/docs/git-config>
 - <https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../08-codeowners-and-responsibilities/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../10-software-supply-chain/README.pt-BR.md)
+<!-- /navigation-footer -->

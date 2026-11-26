@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-ssh-authentication/README.pt-BR.md)
+[Módulo anterior](../../professional-workflows/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-ssh-authentication/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 30 min
@@ -36,3 +36,9 @@ confidentiality / integrity / availability / authentication / authorization
 
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github>
 - <https://git-scm.com/docs/git>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../professional-workflows/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-ssh-authentication/README.pt-BR.md)
+<!-- /navigation-footer -->

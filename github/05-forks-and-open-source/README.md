@@ -40,3 +40,9 @@ Where does a contributor push a proposed branch when they lack upstream write ac
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks>
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>
 - <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-open-source>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-pull-requests-and-review/README.md) · [Index](../README.md) · [Next](../06-protection-and-rulesets/README.md)
+<!-- /navigation-footer -->

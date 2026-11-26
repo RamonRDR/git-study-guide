@@ -25,3 +25,9 @@
 - 12 [Release management](12-release-management/README.md)
 - 13 [Integrated professional workflow lab](13-integrated-professional-workflow-lab/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../ci-cd/README.md) · [Index](../docs/learning-path.md) · [Next](../security/README.md)
+<!-- /navigation-footer -->

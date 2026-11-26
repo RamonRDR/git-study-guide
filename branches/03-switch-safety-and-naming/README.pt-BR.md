@@ -71,3 +71,9 @@ Por que switch falhou? Resposta: sobrescreveria edição local rastreada. Renome
 - [Git: git-switch](https://git-scm.com/docs/git-switch)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-check-ref-format](https://git-scm.com/docs/git-check-ref-format)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-start-points-and-comparison/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../04-safe-local-deletion/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -82,3 +82,9 @@ No hagas force push ni reset para silenciar el rechazo. Ante conflicto inesperad
 - [Git: git-push](https://git-scm.com/docs/git-push)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rebase](https://git-scm.com/docs/git-rebase)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-fetch-and-tracking/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-remote-branch-lifecycle/README.es.md)
+<!-- /navigation-footer -->

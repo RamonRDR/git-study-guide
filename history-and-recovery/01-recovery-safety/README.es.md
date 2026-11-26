@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-restore/README.es.md)
+[Módulo anterior](../../remote-repositories/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-restore/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 20 min
@@ -68,3 +68,9 @@ Un commit publicado es incorrecto; ¿qué operación normalmente preserva colabo
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../remote-repositories/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-restore/README.es.md)
+<!-- /navigation-footer -->

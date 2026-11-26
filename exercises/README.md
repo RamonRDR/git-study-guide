@@ -13,3 +13,9 @@
 <!-- chapters -->
 No chapters published yet.
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../practical-projects/README.md) · [Index](../docs/learning-path.md) · —
+<!-- /navigation-footer -->

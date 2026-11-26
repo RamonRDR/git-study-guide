@@ -35,3 +35,9 @@ Can a public reader push to main automatically? No. Pass if you identify separat
 - <https://docs.gitlab.com/user/ssh/>
 - <https://docs.gitlab.com/user/profile/personal_access_tokens/>
 - <https://docs.gitlab.com/user/profile/account/two_factor_authentication/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-projects-groups-and-offerings/README.md) · [Index](../README.md) · [Next](../03-issues-labels-milestones-and-boards/README.md)
+<!-- /navigation-footer -->

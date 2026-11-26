@@ -141,3 +141,9 @@ Commit squash é merge de dois pais? Não. Passe se HEAD ficar igual até commit
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-conflict-resolution/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-rebase-and-conflicts/README.pt-BR.md)
+<!-- /navigation-footer -->

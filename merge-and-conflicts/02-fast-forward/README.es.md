@@ -90,3 +90,9 @@ Tras cada lab independiente, cierre editor y shell dedicado, luego borre solo ca
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rev-parse](https://git-scm.com/docs/git-rev-parse)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-integration-safety/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-merge-commit/README.es.md)
+<!-- /navigation-footer -->

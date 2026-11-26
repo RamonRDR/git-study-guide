@@ -35,3 +35,9 @@ Maintainer em Allowed to push and merge impede push direto? Não. Passe se negar
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/>
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/rules/>
 - <https://docs.gitlab.com/user/project/merge_requests/auto_merge/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-merge-requests-review-and-forks/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-pipelines-and-runners/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -69,3 +69,9 @@ Identifique SO y shell. Pista: instale solo si falta. Apruebe si `git --version`
 - [https://git-scm.com/install/win](https://git-scm.com/install/win)
 - [https://git-scm.com/install/linux.html](https://git-scm.com/install/linux.html)
 - [https://git-scm.com/install/mac](https://git-scm.com/install/mac)
+
+---
+
+<!-- navigation-footer -->
+— · [Índice](../README.es.md) · [Siguiente](../02-terminal-and-help/README.es.md)
+<!-- /navigation-footer -->

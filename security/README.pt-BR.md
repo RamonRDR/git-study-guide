@@ -25,3 +25,9 @@
 - 12 [Governança, auditoria e rastreabilidade](12-governance-audit-and-traceability/README.pt-BR.md)
 - 13 [Laboratório integrado de segurança](13-integrated-security-lab/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../professional-workflows/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../advanced-git/README.pt-BR.md)
+<!-- /navigation-footer -->

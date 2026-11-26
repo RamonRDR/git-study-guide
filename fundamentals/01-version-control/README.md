@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-history-of-git/README.md)
+[Previous module](../../getting-started/README.md) · [Index](../README.md) · [Next](../02-history-of-git/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 20 min
@@ -40,3 +40,9 @@ Suggest two focused commit messages. Hint: one purpose per change. Reference: `d
 
 - [https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [https://git-scm.com/book/en/v2/Getting-Started-What-is-Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../getting-started/README.md) · [Index](../README.md) · [Next](../02-history-of-git/README.md)
+<!-- /navigation-footer -->

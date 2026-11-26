@@ -34,3 +34,9 @@ Apruebe si la issue tiene resultado medible, label y milestone tienen propósito
 - <https://docs.gitlab.com/user/project/labels/>
 - <https://docs.gitlab.com/user/project/milestones/>
 - <https://docs.gitlab.com/user/project/issue_board/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-visibility-permissions-and-authentication/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-merge-requests-review-and-forks/README.es.md)
+<!-- /navigation-footer -->

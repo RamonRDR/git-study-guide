@@ -37,3 +37,9 @@ public key / private key / host fingerprint / agent
 - <https://docs.github.com/en/authentication/connecting-to-github-with-ssh>
 - <https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection>
 - <https://docs.gitlab.com/user/ssh/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-security-foundations/README.md) · [Index](../README.md) · [Next](../03-https-and-access-tokens/README.md)
+<!-- /navigation-footer -->

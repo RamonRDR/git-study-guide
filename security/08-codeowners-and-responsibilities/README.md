@@ -43,3 +43,9 @@ CODEOWNERS / pattern / owner / required review
 
 - <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>
 - <https://docs.gitlab.com/user/project/codeowners/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../07-branch-protection-and-rulesets/README.md) · [Index](../README.md) · [Next](../09-commit-and-tag-signing/README.md)
+<!-- /navigation-footer -->

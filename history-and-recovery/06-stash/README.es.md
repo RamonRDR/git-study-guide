@@ -100,3 +100,9 @@ Si apply/pop genera conflicto, inspecciona estado; stash normalmente se conserva
 
 - [Git: git-stash](https://git-scm.com/docs/git-stash)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-reflog/README.es.md) · [Índice](../README.es.md) · [Siguiente](../07-cherry-pick/README.es.md)
+<!-- /navigation-footer -->

@@ -40,3 +40,9 @@ Passe se só A elegível, explicar por que squash não contorna exigência de PR
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-forks-and-open-source/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-tags-and-releases/README.pt-BR.md)
+<!-- /navigation-footer -->

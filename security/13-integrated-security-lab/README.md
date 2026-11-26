@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../12-governance-audit-and-traceability/README.md) · [Index](../README.md) · —
+[Previous](../12-governance-audit-and-traceability/README.md) · [Index](../README.md) · [Next module](../../advanced-git/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 50 min
@@ -61,3 +61,9 @@ Pass if local file remains untracked, template is staged, no remote exists, and 
 - <https://git-scm.com/docs/git-check-ignore>
 - <https://git-scm.com/docs/git-ls-files>
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../12-governance-audit-and-traceability/README.md) · [Index](../README.md) · [Next module](../../advanced-git/README.md)
+<!-- /navigation-footer -->

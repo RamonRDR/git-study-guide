@@ -47,6 +47,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 11 | IV | Módulo 10: CI/CD y automatización |
 | 12 | IV | Módulo 11: flujos profesionales |
 | 13 | IV | Módulo 12: seguridad y gobernanza |
+| 13.1 | IV | Complementaria: navegación educativa continua y UX, pruebas de regresión y estándares |
 | 14 | V | Módulos 13–14: Git avanzado e internals |
 | 15 | V | Módulo 15: referencia de comandos |
 | 16 | V | Módulo 16: ocho proyectos prácticos |
@@ -54,7 +55,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 18 | VI | Finalizar contrato, manifiestos, esquemas, fixtures del consumidor; evaluar playground opcional por separado |
 | 19 | VI | Identidad aportada por el mantenedor, README final, QA, entrega |
 
-Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–12 integradas mediante PR #1–13; Sprint 13 presentada para revisión; Sprints 14–19 previstas. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
+Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–13 integradas mediante PR #1–14; Sprint complementaria 13.1 presentada para revisión; Sprints 14–19 previstas. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
 
 ## Documentos relacionados
 

@@ -158,3 +158,9 @@ O que diferencia editado de resolvido? Resposta: add substitui estágios não in
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-merge-commit/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-squash-merge/README.pt-BR.md)
+<!-- /navigation-footer -->

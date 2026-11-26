@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-status-add-commit/README.md)
+[Previous module](../../git-architecture/README.md) · [Index](../README.md) · [Next](../02-status-add-commit/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 25 min
@@ -55,3 +55,9 @@ Predict the three core.autocrlf outputs. Answer: false, true, false. Pass if you
 - [Git: git-config](https://git-scm.com/docs/git-config)
 - [Git: git-help](https://git-scm.com/docs/git-help)
 - [Git: git](https://git-scm.com/docs/git)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../git-architecture/README.md) · [Index](../README.md) · [Next](../02-status-add-commit/README.md)
+<!-- /navigation-footer -->

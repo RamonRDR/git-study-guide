@@ -79,3 +79,9 @@ After Alice pushes, but before Bob fetches, can Bob be behind while status says 
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-remote-concepts/README.md) · [Index](../README.md) · [Next](../03-pull-push-and-divergence/README.md)
+<!-- /navigation-footer -->

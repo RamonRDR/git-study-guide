@@ -89,3 +89,9 @@ Compruebe raíz, nombre y correo. Apruebe si identidad ficticia, main e historia
 - [https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
 - [Git: git-var](https://git-scm.com/docs/git-var)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-terminal-and-help/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-editor-and-gui/README.es.md)
+<!-- /navigation-footer -->

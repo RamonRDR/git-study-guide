@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../02-history-of-git/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../02-history-of-git/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../git-architecture/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 25 min
@@ -46,3 +46,9 @@ Classifique `git commit`, pull request, merge request e `git log`. Dica: quais c
 - [https://git-scm.com/book/en/v2/Getting-Started-What-is-Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git)
 - [https://docs.github.com/](https://docs.github.com/)
 - [https://docs.gitlab.com/](https://docs.gitlab.com/)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-history-of-git/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../git-architecture/README.pt-BR.md)
+<!-- /navigation-footer -->

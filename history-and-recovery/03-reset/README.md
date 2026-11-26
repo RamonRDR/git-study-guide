@@ -106,3 +106,9 @@ After mixed reset of a clean C2 to C1, where is the C2 edit? Answer: working tre
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-restore/README.md) · [Index](../README.md) · [Next](../04-revert/README.md)
+<!-- /navigation-footer -->

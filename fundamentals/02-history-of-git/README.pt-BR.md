@@ -37,3 +37,9 @@ Relacionar origem do Git ao desenvolvimento distribuído.
 ## Fontes oficiais
 
 - [https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-version-control/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-distributed-and-platforms/README.pt-BR.md)
+<!-- /navigation-footer -->

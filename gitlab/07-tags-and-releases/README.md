@@ -32,3 +32,9 @@ Pass if a tag identifies a revision, notes communicate changes, and an asset is 
 
 - <https://docs.gitlab.com/user/project/releases/>
 - <https://git-scm.com/docs/git-tag>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../06-pipelines-and-runners/README.md) · [Index](../README.md) · [Next](../08-gitlab-cli-and-platform-comparison/README.md)
+<!-- /navigation-footer -->

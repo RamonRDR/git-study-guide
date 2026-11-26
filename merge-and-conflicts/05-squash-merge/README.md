@@ -141,3 +141,9 @@ Is a squash commit a two-parent merge commit? No. Pass if HEAD stays unchanged u
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-conflict-resolution/README.md) · [Index](../README.md) · [Next](../06-rebase-and-conflicts/README.md)
+<!-- /navigation-footer -->

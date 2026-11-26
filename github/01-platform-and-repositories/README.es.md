@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-permissions-and-authentication/README.es.md)
+[Módulo anterior](../../history-and-recovery/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-permissions-and-authentication/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 25 min
@@ -39,3 +39,9 @@ Cambiar público a privado no recupera clones existentes ni todas las copias; ha
 
 - <https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories>
 - <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../history-and-recovery/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-permissions-and-authentication/README.es.md)
+<!-- /navigation-footer -->

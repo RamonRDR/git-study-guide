@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-fast-forward/README.es.md)
+[Módulo anterior](../../branches/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-fast-forward/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 25 min
@@ -61,3 +61,9 @@ Elija paso seguro en merge conflictivo: status, luego merge --abort o resolver y
 - [Git: git-rebase](https://git-scm.com/docs/git-rebase)
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../branches/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-fast-forward/README.es.md)
+<!-- /navigation-footer -->

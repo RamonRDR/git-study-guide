@@ -38,3 +38,9 @@ manual practice / prompt / verification / human approval
 
 - <https://git-scm.com/docs/gitworkflows>
 - <https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../10-test-driven-development/README.es.md) · [Índice](../README.es.md) · [Siguiente](../12-release-management/README.es.md)
+<!-- /navigation-footer -->

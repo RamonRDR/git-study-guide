@@ -58,3 +58,9 @@ Encuentre carpeta actual y consulte `git add -h`. Pista: distinga shell y Git. A
 
 - [https://git-scm.com/docs/git-help](https://git-scm.com/docs/git-help)
 - [https://git-scm.com/docs/gittutorial](https://git-scm.com/docs/gittutorial)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-install-git/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-first-repository/README.es.md)
+<!-- /navigation-footer -->

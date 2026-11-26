@@ -38,3 +38,9 @@ artifact / cache / retention
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching>
 - <https://docs.gitlab.com/ci/jobs/job_artifacts/>
 - <https://docs.gitlab.com/ci/caching/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-jobs-steps-stages-and-dependencies/README.es.md) · [Índice](../README.es.md) · [Siguiente](../08-environments-variables-and-secrets/README.es.md)
+<!-- /navigation-footer -->

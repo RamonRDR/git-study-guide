@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-remote-branch-lifecycle/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../04-remote-branch-lifecycle/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../history-and-recovery/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 20 min
@@ -42,3 +42,9 @@ Un compañero necesita leer un repo. ¿Compartes un token amplio o clave SSH pri
 - [GitHub: authentication](https://docs.github.com/en/authentication)
 - [GitLab: SSH](https://docs.gitlab.com/user/ssh/)
 - [GitLab: access tokens](https://docs.gitlab.com/user/profile/personal_access_tokens/)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-remote-branch-lifecycle/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../history-and-recovery/README.es.md)
+<!-- /navigation-footer -->

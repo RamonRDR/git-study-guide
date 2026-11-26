@@ -47,6 +47,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 11 | IV | Module 10: CI/CD and automation |
 | 12 | IV | Module 11: professional workflows |
 | 13 | IV | Module 12: security and governance |
+| 13.1 | IV | Complementary: continuous learning navigation and UX, regression tests and standards |
 | 14 | V | Modules 13–14: advanced Git and internals |
 | 15 | V | Module 15: command reference |
 | 16 | V | Module 16: eight practical projects |
@@ -54,7 +55,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 18 | VI | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately |
 | 19 | VI | Maintainer-supplied identity, final README, QA, release handoff |
 
-Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–12 integrated via PRs #1–13; Sprint 13 submitted for review; Sprints 14–19 planned. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
+Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–13 integrated via PRs #1–14; complementary Sprint 13.1 submitted for review; Sprints 14–19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
 
 ## Related documents
 

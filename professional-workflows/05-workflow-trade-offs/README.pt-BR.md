@@ -37,3 +37,9 @@ branch lifetime / CI / release cadence / support
 - <https://www.atlassian.com/git/tutorials/comparing-workflows>
 - <https://dora.dev/capabilities/trunk-based-development/>
 - <https://nvie.com/posts/a-successful-git-branching-model/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-trunk-based-development/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-conventional-commits/README.pt-BR.md)
+<!-- /navigation-footer -->

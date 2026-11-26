@@ -37,3 +37,9 @@ Connect Git's origin to distributed development.
 ## Official sources
 
 - [https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git](https://git-scm.com/book/en/v2/Getting-Started-A-Short-History-of-Git)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-version-control/README.md) · [Index](../README.md) · [Next](../03-distributed-and-platforms/README.md)
+<!-- /navigation-footer -->

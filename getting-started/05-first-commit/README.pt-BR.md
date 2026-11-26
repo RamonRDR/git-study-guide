@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-editor-and-gui/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../04-editor-and-gui/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../fundamentals/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 35 min
@@ -71,3 +71,9 @@ Preveja status após escrever, add e commit. Dica: siga três locais. Passe quan
 - [https://git-scm.com/docs/git-add](https://git-scm.com/docs/git-add)
 - [https://git-scm.com/docs/git-commit](https://git-scm.com/docs/git-commit)
 - [https://git-scm.com/docs/git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-editor-and-gui/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../fundamentals/README.pt-BR.md)
+<!-- /navigation-footer -->

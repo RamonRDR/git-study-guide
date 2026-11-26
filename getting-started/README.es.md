@@ -17,3 +17,9 @@
 - 04 [VS Code e interfaces gráficas](04-editor-and-gui/README.es.md)
 - 05 [Primer commit](05-first-commit/README.es.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+— · [Índice](../docs/learning-path.es.md) · [Siguiente](../fundamentals/README.es.md)
+<!-- /navigation-footer -->

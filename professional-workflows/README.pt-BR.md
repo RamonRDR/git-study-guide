@@ -25,3 +25,9 @@
 - 12 [Gestão de releases](12-release-management/README.pt-BR.md)
 - 13 [Laboratório de fluxo profissional integrado](13-integrated-professional-workflow-lab/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../ci-cd/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../security/README.pt-BR.md)
+<!-- /navigation-footer -->

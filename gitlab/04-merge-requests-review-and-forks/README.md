@@ -34,3 +34,9 @@ Pass if you can distinguish clone, fork, branch and MR, name both refs and proje
 - <https://docs.gitlab.com/user/project/merge_requests/reviews/>
 - <https://docs.gitlab.com/user/project/merge_requests/authorization_for_merge_requests/>
 - <https://docs.gitlab.com/user/project/repository/forking_workflow/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-issues-labels-milestones-and-boards/README.md) · [Index](../README.md) · [Next](../05-protected-branches-and-merge-checks/README.md)
+<!-- /navigation-footer -->

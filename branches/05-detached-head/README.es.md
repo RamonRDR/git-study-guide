@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-safe-local-deletion/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../04-safe-local-deletion/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../merge-and-conflicts/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 30 min
@@ -79,3 +79,9 @@ Explique por qué crear rama conservó commit detached sin merge. Respuesta: nue
 - [Git: git-checkout](https://git-scm.com/docs/git-checkout)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-symbolic-ref](https://git-scm.com/docs/git-symbolic-ref)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-safe-local-deletion/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../merge-and-conflicts/README.es.md)
+<!-- /navigation-footer -->

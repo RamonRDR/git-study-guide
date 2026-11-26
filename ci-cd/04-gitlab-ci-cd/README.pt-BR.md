@@ -54,3 +54,9 @@ Passe se distinguir workflow rules, stages, jobs, scripts e executor do runner; 
 - <https://docs.gitlab.com/ci/yaml/lint/>
 - <https://docs.gitlab.com/ci/pipelines/merge_request_pipelines/>
 - <https://docs.gitlab.com/ci/jobs/ci_job_token/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-github-actions/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-runners-and-execution-environments/README.pt-BR.md)
+<!-- /navigation-footer -->

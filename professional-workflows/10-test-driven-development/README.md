@@ -40,3 +40,9 @@ red / green / refactor
 
 - <https://agilealliance.org/glossary/tdd/>
 - <https://www.gnu.org/software/grep/manual/grep.html>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../09-spec-driven-development/README.md) · [Index](../README.md) · [Next](../11-ai-assisted-development/README.md)
+<!-- /navigation-footer -->

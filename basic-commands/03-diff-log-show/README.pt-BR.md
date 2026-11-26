@@ -77,3 +77,9 @@ Qual diff mostra mudanças do próximo commit? Resposta: --cached. Qual mostra m
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-status-add-commit/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../04-move-and-remove/README.pt-BR.md)
+<!-- /navigation-footer -->

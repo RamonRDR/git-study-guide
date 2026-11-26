@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../04-remote-branch-lifecycle/README.md) · [Index](../README.md) · —
+[Previous](../04-remote-branch-lifecycle/README.md) · [Index](../README.md) · [Next module](../../history-and-recovery/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 20 min
@@ -42,3 +42,9 @@ A teammate needs to read one repository. Should you share a broad token or priva
 - [GitHub: authentication](https://docs.github.com/en/authentication)
 - [GitLab: SSH](https://docs.gitlab.com/user/ssh/)
 - [GitLab: access tokens](https://docs.gitlab.com/user/profile/personal_access_tokens/)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-remote-branch-lifecycle/README.md) · [Index](../README.md) · [Next module](../../history-and-recovery/README.md)
+<!-- /navigation-footer -->

@@ -61,3 +61,9 @@ Passe se tipo do objeto é tag, IDs de commits resolvidos coincidem, main não m
 - <https://git-scm.com/docs/git-tag>
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 - <https://semver.org/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-protection-and-rulesets/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../08-github-cli/README.pt-BR.md)
+<!-- /navigation-footer -->

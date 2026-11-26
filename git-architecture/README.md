@@ -15,3 +15,9 @@
 - 02 [Snapshots, HEAD and references](02-snapshots-head-and-refs/README.md)
 - 03 [File states and remote boundaries](03-file-states/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../fundamentals/README.md) · [Index](../docs/learning-path.md) · [Next](../basic-commands/README.md)
+<!-- /navigation-footer -->

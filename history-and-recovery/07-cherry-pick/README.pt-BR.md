@@ -106,3 +106,9 @@ Commit fonte é ancestral do novo tip main só porque alteração foi selecionad
 
 - [Git: git-cherry-pick](https://git-scm.com/docs/git-cherry-pick)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-stash/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../08-amend/README.pt-BR.md)
+<!-- /navigation-footer -->

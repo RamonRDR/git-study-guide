@@ -35,3 +35,9 @@ Does Maintainer in Allowed to push and merge prevent direct pushes? No. Pass if 
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/>
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/rules/>
 - <https://docs.gitlab.com/user/project/merge_requests/auto_merge/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-merge-requests-review-and-forks/README.md) · [Index](../README.md) · [Next](../06-pipelines-and-runners/README.md)
+<!-- /navigation-footer -->

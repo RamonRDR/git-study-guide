@@ -71,3 +71,9 @@ Qual comparação isola commits de docs/overview ausentes em feat/note? Resposta
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-create-and-switch/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-switch-safety-and-naming/README.pt-BR.md)
+<!-- /navigation-footer -->

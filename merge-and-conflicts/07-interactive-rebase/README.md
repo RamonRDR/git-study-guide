@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../06-rebase-and-conflicts/README.md) · [Index](../README.md) · —
+[Previous](../06-rebase-and-conflicts/README.md) · [Index](../README.md) · [Next module](../../remote-repositories/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 40 min
@@ -134,3 +134,9 @@ When would you choose squash instead of interactive rebase? Answer: squash integ
 - [Git: git-config](https://git-scm.com/docs/git-config)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../06-rebase-and-conflicts/README.md) · [Index](../README.md) · [Next module](../../remote-repositories/README.md)
+<!-- /navigation-footer -->

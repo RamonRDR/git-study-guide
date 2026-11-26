@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-fetch-and-tracking/README.md)
+[Previous module](../../merge-and-conflicts/README.md) · [Index](../README.md) · [Next](../02-fetch-and-tracking/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 35 min
@@ -88,3 +88,9 @@ Why does a bare origin have no checked-out note.txt? Hint: distinguish history f
 - [Git: git-init](https://git-scm.com/docs/git-init)
 - [Git: git-clone](https://git-scm.com/docs/git-clone)
 - [Git: git-remote](https://git-scm.com/docs/git-remote)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../merge-and-conflicts/README.md) · [Index](../README.md) · [Next](../02-fetch-and-tracking/README.md)
+<!-- /navigation-footer -->

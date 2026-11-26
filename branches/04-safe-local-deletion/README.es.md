@@ -69,3 +69,9 @@ No fuerce borrado aquí. Squash merge puede preservar contenido sin ancestralida
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-switch-safety-and-naming/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-detached-head/README.es.md)
+<!-- /navigation-footer -->

@@ -82,3 +82,9 @@ Does a refused ff-only pull imply nothing changed? Hint: fetch phase. Answer: lo
 - [Git: git-push](https://git-scm.com/docs/git-push)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rebase](https://git-scm.com/docs/git-rebase)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-fetch-and-tracking/README.md) · [Index](../README.md) · [Next](../04-remote-branch-lifecycle/README.md)
+<!-- /navigation-footer -->

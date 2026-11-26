@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../06-rebase-and-conflicts/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../06-rebase-and-conflicts/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../remote-repositories/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 40 min
@@ -134,3 +134,9 @@ Tras cada lab independiente, cierre editor y shell dedicado, luego borre solo ca
 - [Git: git-config](https://git-scm.com/docs/git-config)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-rebase-and-conflicts/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../remote-repositories/README.es.md)
+<!-- /navigation-footer -->

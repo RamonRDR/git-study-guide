@@ -38,3 +38,9 @@ revision / evidence / decision / residual risk
 
 - <https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/reviewing-the-audit-log-for-your-organization>
 - <https://docs.gitlab.com/user/compliance/audit_events/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../11-credential-exposure-and-incident-response/README.es.md) · [Índice](../README.es.md) · [Siguiente](../13-integrated-security-lab/README.es.md)
+<!-- /navigation-footer -->

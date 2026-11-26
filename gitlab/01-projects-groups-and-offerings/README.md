@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-visibility-permissions-and-authentication/README.md)
+[Previous module](../../github/README.md) · [Index](../README.md) · [Next](../02-visibility-permissions-and-authentication/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 30 min
@@ -33,3 +33,9 @@ Can a clone recover all issues and group memberships? No. Pass if Git objects an
 - <https://docs.gitlab.com/user/namespace/>
 - <https://docs.gitlab.com/user/group/>
 - <https://docs.gitlab.com/subscriptions/choosing_subscription/>
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../github/README.md) · [Index](../README.md) · [Next](../02-visibility-permissions-and-authentication/README.md)
+<!-- /navigation-footer -->

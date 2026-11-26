@@ -34,3 +34,9 @@ Passe se distinguir clone, fork, branch e MR, nomear refs e projetos, explicar p
 - <https://docs.gitlab.com/user/project/merge_requests/reviews/>
 - <https://docs.gitlab.com/user/project/merge_requests/authorization_for_merge_requests/>
 - <https://docs.gitlab.com/user/project/repository/forking_workflow/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-issues-labels-milestones-and-boards/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-protected-branches-and-merge-checks/README.pt-BR.md)
+<!-- /navigation-footer -->

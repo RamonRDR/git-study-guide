@@ -38,3 +38,9 @@ Respuesta: read, triage, write, admin, sujetos a política organizacional. Aprue
 
 - <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization>
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-platform-and-repositories/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-issues-and-planning/README.es.md)
+<!-- /navigation-footer -->

@@ -86,3 +86,9 @@ Após excluir feature remota, por que Bob ainda a vê? Dica: ref em cache. Respo
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-ls-remote](https://git-scm.com/docs/git-ls-remote)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-pull-push-and-divergence/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-secure-authentication/README.pt-BR.md)
+<!-- /navigation-footer -->

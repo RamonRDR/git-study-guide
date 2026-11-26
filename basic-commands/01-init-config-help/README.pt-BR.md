@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-status-add-commit/README.pt-BR.md)
+[Módulo anterior](../../git-architecture/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-status-add-commit/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 25 min
@@ -55,3 +55,9 @@ Preveja três saídas core.autocrlf. Resposta: false, true, false. Passe se expl
 - [Git: git-config](https://git-scm.com/docs/git-config)
 - [Git: git-help](https://git-scm.com/docs/git-help)
 - [Git: git](https://git-scm.com/docs/git)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../git-architecture/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-status-add-commit/README.pt-BR.md)
+<!-- /navigation-footer -->

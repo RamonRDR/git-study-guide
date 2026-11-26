@@ -38,3 +38,9 @@ Answer: read, triage, write, admin, subject to organization policy. Pass if auth
 
 - <https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/repository-roles-for-an-organization>
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-platform-and-repositories/README.md) · [Index](../README.md) · [Next](../03-issues-and-planning/README.md)
+<!-- /navigation-footer -->

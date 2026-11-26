@@ -159,6 +159,52 @@ def block_targets(text, name, source):
         raise ValueError("reversed " + name + " block")
     return [resolve_link(source, m.group(1) or m.group(2)) for m in LINK.finditer(middle)]
 
+def navigation_entries(modules, suffix):
+    """Map each curriculum page to its three ordered navigation slots."""
+    readme = "README" + suffix + ".md"
+    index = "docs/learning-path" + suffix + ".md"
+    module_paths = [m["slug"] + "/" + readme for m in modules]
+    labels = {
+        "": ("Previous", "Index", "Next", "Previous module", "Next module"),
+        ".pt-BR": ("Anterior", "Índice", "Próximo", "Módulo anterior", "Próximo módulo"),
+        ".es": ("Anterior", "Índice", "Siguiente", "Módulo anterior", "Siguiente módulo"),
+    }[suffix]
+    previous, middle, following, previous_module, next_module = labels
+    for pos, module in enumerate(modules):
+        path = module_paths[pos]
+        before = module_paths[pos - 1] if pos else None
+        after = module_paths[pos + 1] if pos + 1 < len(modules) else None
+        chapters = [module["slug"] + "/" + c + "/" + readme for c in module["chapters"]]
+        yield path, ((previous, before), (middle, index), (following, after)), chapters
+        for j, chapter in enumerate(chapters):
+            yield chapter, (
+                (previous if j else previous_module, chapters[j - 1] if j else before),
+                (middle, path),
+                (following if j + 1 < len(chapters) else next_module,
+                 chapters[j + 1] if j + 1 < len(chapters) else after),
+            ), None
+
+
+def navigation_line(document, entries):
+    """Canonical localized Markdown; relative paths use POSIX on every OS."""
+    from posixpath import relpath
+    return " · ".join(
+        "[" + label + "](" + relpath(target, str(PurePosixPath(document).parent)) + ")"
+        if target is not None else "—"
+        for label, target in entries
+    )
+
+
+def navigation_body(text, name):
+    start, end = "<!-- " + name + " -->", "<!-- /" + name + " -->"
+    if text.count(start) != 1 or text.count(end) != 1:
+        raise ValueError("missing/duplicate " + name + " block")
+    a, b = text.index(start), text.index(end)
+    if a >= b:
+        raise ValueError("reversed " + name + " block")
+    return text[a + len(start):b].strip()
+
+
 def check_navigation(root, paths):
     errors = []
     try:
@@ -178,29 +224,44 @@ def check_navigation(root, paths):
             actual = [p for p in actual if p in module_paths]
             if actual != module_paths:
                 errors.append("Learning index order/coverage: " + index)
-        for pos, module in enumerate(modules):
-            path = module_paths[pos]
-            chapters = [module["slug"] + "/" + c + "/" + readme for c in module["chapters"]]
-            expected_docs.update([path] + chapters)
-            targets = [p for p in (module_paths[pos-1] if pos else None, index,
-                                    module_paths[pos+1] if pos+1 < len(modules) else None) if p]
-            for document, expected, expected_chapters in [(path, targets, chapters)] + [
-                (c, [p for p in (chapters[j-1] if j else None, path, chapters[j+1] if j+1 < len(chapters) else None) if p], None)
-                for j, c in enumerate(chapters)]:
-                if document not in paths:
-                    errors.append("Missing curriculum document: " + document)
-                    continue
-                try:
-                    text = read_text(root, document)
-                    if block_targets(text, "navigation", document) != expected:
-                        errors.append("Incorrect navigation: " + document)
-                    if expected_chapters is not None and block_targets(text, "chapters", document) != expected_chapters:
-                        errors.append("Incorrect chapter index: " + document)
-                    links = {resolve_link(document, m.group(1) or m.group(2)) for m in LINK.finditer(text)}
-                    if not set(locale_group(document)).issubset(links):
-                        errors.append("Missing locale selector: " + document)
-                except ValueError:
-                    errors.append("Invalid navigation block: " + document)
+        for document, entries, expected_chapters in navigation_entries(modules, suffix):
+            expected_docs.add(document)
+            if document not in paths:
+                errors.append("Missing curriculum document: " + document)
+                continue
+            try:
+                text = read_text(root, document)
+                expected = navigation_line(document, entries)
+                # Remove fenced examples so navigation cannot be hidden inside code.
+                visible = FENCE.sub("", text)
+                top = navigation_body(text, "navigation")
+                bottom = navigation_body(text, "navigation-footer")
+                if (top != navigation_body(visible, "navigation")
+                        or bottom != navigation_body(visible, "navigation-footer")):
+                    raise ValueError("navigation hidden in code")
+                if top != expected:
+                    errors.append("Incorrect navigation: " + document)
+                if bottom != expected:
+                    errors.append("Incorrect footer navigation: " + document)
+                # Header immediately follows title and locale selector; footer ends page.
+                header = visible.split("<!-- navigation -->", 1)[0].strip().splitlines()
+                if (len([line for line in header if line.strip()]) != 2
+                        or not header[0].startswith("# ")
+                        or not set(locale_group(document)).issubset(
+                            {resolve_link(document, m.group(1) or m.group(2))
+                             for m in LINK.finditer(header[-1])})):
+                    errors.append("Incorrect navigation header placement: " + document)
+                if not text.rstrip().endswith("<!-- /navigation-footer -->"):
+                    errors.append("Incorrect navigation footer placement: " + document)
+                if visible.index("<!-- /navigation -->") > visible.index("<!-- navigation-footer -->"):
+                    errors.append("Incorrect navigation block order: " + document)
+                if expected_chapters is not None and block_targets(visible, "chapters", document) != expected_chapters:
+                    errors.append("Incorrect chapter index: " + document)
+                links = {resolve_link(document, m.group(1) or m.group(2)) for m in LINK.finditer(visible)}
+                if not set(locale_group(document)).issubset(links):
+                    errors.append("Missing locale selector: " + document)
+            except (ValueError, IndexError):
+                errors.append("Invalid navigation block: " + document)
     for p in sorted(paths):
         if p.split("/")[0] in SLUGS and re.search(r"(^|/)README(?:\.pt-BR|\.es)?\.md$", p) and p not in expected_docs:
             errors.append("Unregistered module/chapter README: " + p)

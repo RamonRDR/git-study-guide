@@ -71,3 +71,9 @@ No suponga que rangos log y diff significan lo mismo. Nombre de rama puede mover
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-create-and-switch/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-switch-safety-and-naming/README.es.md)
+<!-- /navigation-footer -->

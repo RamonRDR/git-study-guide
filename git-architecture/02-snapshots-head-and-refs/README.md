@@ -64,3 +64,9 @@ Explain HEAD versus main versus a commit ID. Hint: one points to a branch, one n
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitglossary](https://git-scm.com/docs/gitglossary)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-three-locations/README.md) · [Index](../README.md) · [Next](../03-file-states/README.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-git-flow/README.pt-BR.md)
+[Módulo anterior](../../ci-cd/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-git-flow/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 35 min
@@ -41,3 +41,9 @@ Duas branches mantêm correções independentes. Main permanece igual até integ
 - <https://git-scm.com/docs/gitworkflows>
 - <https://git-scm.com/docs/git-branch>
 - <https://git-scm.com/docs/git-merge>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../ci-cd/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-git-flow/README.pt-BR.md)
+<!-- /navigation-footer -->

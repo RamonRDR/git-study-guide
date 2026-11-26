@@ -45,3 +45,9 @@ Encuentre Source Control y terminal, o use editor simple más terminal. Pista: c
 - [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 - [https://code.visualstudio.com/docs/sourcecontrol/quickstart](https://code.visualstudio.com/docs/sourcecontrol/quickstart)
 - [https://git-scm.com/docs/git-gui](https://git-scm.com/docs/git-gui)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-first-repository/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-first-commit/README.es.md)
+<!-- /navigation-footer -->

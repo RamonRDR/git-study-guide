@@ -17,3 +17,9 @@
 - 04 [Exclusão segura de branches locais](04-safe-local-deletion/README.pt-BR.md)
 - 05 [Detached HEAD e preservação do trabalho](05-detached-head/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../basic-commands/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../merge-and-conflicts/README.pt-BR.md)
+<!-- /navigation-footer -->

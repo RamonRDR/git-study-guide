@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../02-snapshots-head-and-refs/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../02-snapshots-head-and-refs/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../basic-commands/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 25 min
@@ -49,3 +49,9 @@ Classifique note.txt e draft.txt. Resposta: note rastreado e modificado não pre
 - [Git: git-ls-files](https://git-scm.com/docs/git-ls-files)
 - [Git: git-remote](https://git-scm.com/docs/git-remote)
 - [Git: gitignore](https://git-scm.com/docs/gitignore)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-snapshots-head-and-refs/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../basic-commands/README.pt-BR.md)
+<!-- /navigation-footer -->

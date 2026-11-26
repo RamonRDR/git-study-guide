@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-cherry-pick/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../07-cherry-pick/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../github/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 25 min
@@ -94,3 +94,9 @@ Por que dois commits com mesmo pai podem ter IDs diferentes? Resposta: conteúdo
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-cherry-pick/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../github/README.pt-BR.md)
+<!-- /navigation-footer -->

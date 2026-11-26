@@ -38,3 +38,9 @@ environment / variable / secret
 - <https://docs.github.com/en/actions/reference/security/secure-use>
 - <https://docs.gitlab.com/ci/variables/>
 - <https://docs.gitlab.com/ci/environments/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../07-artifacts-and-cache/README.md) · [Index](../README.md) · [Next](../09-quality-gates-and-troubleshooting/README.md)
+<!-- /navigation-footer -->

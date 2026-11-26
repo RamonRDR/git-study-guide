@@ -42,3 +42,9 @@ Surge novo commit após aprovação: o que fazer? Revise novo diff, reexecute ch
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews>
 - <https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-issues-and-planning/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-forks-and-open-source/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -164,3 +164,9 @@ Por que commit recriado tem novo ID? Novo pai e metadados/conteúdo. Passe se ab
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-ls-files](https://git-scm.com/docs/git-ls-files)
 - [Git: git-config](https://git-scm.com/docs/git-config)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-squash-merge/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-interactive-rebase/README.pt-BR.md)
+<!-- /navigation-footer -->

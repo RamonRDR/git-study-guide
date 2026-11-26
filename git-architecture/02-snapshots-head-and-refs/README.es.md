@@ -64,3 +64,9 @@ Explique HEAD frente a main frente a ID. Pista: uno apunta rama, otro nombra com
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitglossary](https://git-scm.com/docs/gitglossary)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-three-locations/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-file-states/README.es.md)
+<!-- /navigation-footer -->

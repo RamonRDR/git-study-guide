@@ -71,3 +71,9 @@ Which comparison isolates commits made on docs/overview but not feat/note? Answe
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-create-and-switch/README.md) · [Index](../README.md) · [Next](../03-switch-safety-and-naming/README.md)
+<!-- /navigation-footer -->

@@ -100,3 +100,9 @@ Why prefer apply before drop for uncertain recovery? Answer: inspect while retai
 
 - [Git: git-stash](https://git-scm.com/docs/git-stash)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../05-reflog/README.md) · [Index](../README.md) · [Next](../07-cherry-pick/README.md)
+<!-- /navigation-footer -->

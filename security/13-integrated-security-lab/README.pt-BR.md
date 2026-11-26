@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../12-governance-audit-and-traceability/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../12-governance-audit-and-traceability/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../advanced-git/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 50 min
@@ -61,3 +61,9 @@ Passe se arquivo local não rastreado, template staged, sem remote e resposta si
 - <https://git-scm.com/docs/git-check-ignore>
 - <https://git-scm.com/docs/git-ls-files>
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../12-governance-audit-and-traceability/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../advanced-git/README.pt-BR.md)
+<!-- /navigation-footer -->

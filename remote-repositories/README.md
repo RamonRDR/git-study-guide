@@ -17,3 +17,9 @@
 - 04 [Remote branch lifecycle and pruning](04-remote-branch-lifecycle/README.md)
 - 05 [Secure authentication and hosting platforms](05-secure-authentication/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../merge-and-conflicts/README.md) · [Index](../docs/learning-path.md) · [Next](../history-and-recovery/README.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-move-and-remove/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../04-move-and-remove/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../branches/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 30 min
@@ -92,3 +92,9 @@ Si secreto fue registrado, ignore o rm --cached no basta; revoque/rote credencia
 - [Git: git-check-ignore](https://git-scm.com/docs/git-check-ignore)
 - [Git: git-rm](https://git-scm.com/docs/git-rm)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-move-and-remove/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../branches/README.es.md)
+<!-- /navigation-footer -->
