@@ -2,7 +2,7 @@
 
 [English](learning-path.md) · [Português](learning-path.pt-BR.md) · [Español](learning-path.es.md)
 
-Comece no módulo 00 e siga a ordem. Módulos 00–10 contêm aulas; 11–17 são índices planejados. Não exige programação ou conta IA.
+Comece no módulo 00 e siga a ordem. Módulos 00–11 contêm aulas; 12–17 são índices planejados. Não exige programação ou conta IA.
 
 - 00 [Primeiros passos](../getting-started/README.pt-BR.md)
 - 01 [História e fundamentos](../fundamentals/README.pt-BR.md)
