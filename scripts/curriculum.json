@@ -142,7 +142,21 @@
     },
     {
       "slug": "security",
-      "chapters": []
+      "chapters": [
+        "01-security-foundations",
+        "02-ssh-authentication",
+        "03-https-and-access-tokens",
+        "04-credential-managers",
+        "05-secrets-and-disclosure-prevention",
+        "06-permissions-and-least-privilege",
+        "07-branch-protection-and-rulesets",
+        "08-codeowners-and-responsibilities",
+        "09-commit-and-tag-signing",
+        "10-software-supply-chain",
+        "11-credential-exposure-and-incident-response",
+        "12-governance-audit-and-traceability",
+        "13-integrated-security-lab"
+      ]
     },
     {
       "slug": "advanced-git",
