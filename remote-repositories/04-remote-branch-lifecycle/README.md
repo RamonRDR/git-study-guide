@@ -35,12 +35,17 @@ git -C alice merge --ff-only feat/summary
 git -C alice push origin main
 git -C bob pull --ff-only origin main
 ```
-Expected: Bob's local branch tracks origin/feat/summary; main now contains summary commit in both clones. For deletion, first confirm all collaborators agree (Alice and Bob in this isolated lab), no additional work exists on feature, and remote feature is an ancestor of remote main. Run first three inspection commands below separately; ancestry must exit 0 and both refs returned by ls-remote must match the fetched refs. Only then delete feat/summary, never main. No concurrent actor may change these refs during this exercise; in real teams recheck and use hosting protection and agreed workflow.
+Expected: Bob's local branch tracks origin/feat/summary; main now contains summary commit in both clones. For deletion, first confirm all collaborators agree (Alice and Bob in this isolated lab), no additional work exists on feature, and remote feature is an ancestor of remote main. Run first four inspection commands below separately; ancestry must exit 0 and both refs returned by ls-remote must match the fetched refs. Only then delete feat/summary, never main. No concurrent actor may change these refs during this exercise; in real teams recheck and use hosting protection and agreed workflow.
 ```text
 git -C alice fetch origin
 git -C alice merge-base --is-ancestor origin/feat/summary origin/main
 git -C alice ls-remote --heads origin refs/heads/main refs/heads/feat/summary
 git -C alice rev-parse origin/main origin/feat/summary
+```
+
+Stop here unless the ancestry and both IDs match the checks above. With the verified local origin and only the agreed disposable branch, run:
+
+```text
 git -C alice push --delete origin feat/summary
 git -C bob ls-remote --heads origin refs/heads/feat/summary
 git -C bob branch -r

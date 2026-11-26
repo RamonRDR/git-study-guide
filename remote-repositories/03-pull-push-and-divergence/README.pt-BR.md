@@ -27,6 +27,11 @@ git -C alice push origin main
 git -C bob add -- bob.txt
 git -C bob diff --cached
 git -C bob commit -m "docs: add Bob note"
+```
+
+Agora tente deliberadamente este único push; a falha é esperada:
+
+```text
 git -C bob push origin main
 ```
 Esperado: o ÚLTIMO push falha (non-fast-forward, às vezes descrito como fetch first). Pare em qualquer falha anterior. Verifique origin main ainda igual ao tip de Alice e commit de Bob preservado. Então:
@@ -35,6 +40,11 @@ git -C bob fetch origin
 git -C bob rev-list --left-right --count main...origin/main
 git -C bob log --all --graph --oneline --decorate
 git -C bob diff main origin/main
+```
+
+Verifique a divergência, então tente deliberadamente o seguinte; a falha é esperada:
+
+```text
 git -C bob pull --ff-only origin main
 ```
 Esperado: contagem 1 1; último pull recusa. Diagrama: C2 -> A3 (origin/main); C2 -> B3 (main de Bob). Ambos têm commits exclusivos. Verifique HEAD de Bob ainda B3 e status limpo. Faça merge explícito da ref já inspecionada; não se espera conflito porque os arquivos diferem.

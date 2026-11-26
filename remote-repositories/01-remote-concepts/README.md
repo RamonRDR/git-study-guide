@@ -25,6 +25,11 @@ git -C origin.git rev-parse --is-bare-repository
 git -C origin.git symbolic-ref HEAD
 git -C repo remote add origin ../origin.git
 git -C repo remote -v
+```
+
+Check that both URLs resolve to the newly created local origin.git. Only then continue:
+
+```text
 git -C repo push -u origin main
 git -C origin.git rev-parse refs/heads/main
 git clone --no-local origin.git alice
@@ -55,7 +60,7 @@ git -C bob status --short
 Both clone roots must be the intended alice/bob folders, origin URLs must resolve to the same local origin.git, main tracks origin/main, and status is clean. All three main tips equal the seed commit. `--no-local` uses the normal Git transport rather than local copy optimizations. Keep the dedicated shell at the parent for chapters 02–04. Diagram: repo (seed) -> origin.git (bare); alice and bob each have their own HEAD, working tree, index and refs; both exchange commits with origin.git. For remote configuration practice, the temporary alias points to the SAME bare repository, not a second server.
 ```text
 git -C alice remote add upstream ../origin.git
-git -C alice remote set-url upstream ../origin.git
+git -C alice remote set-url upstream .././origin.git
 git -C alice remote rename upstream training
 git -C alice remote get-url training
 git -C alice remote remove training

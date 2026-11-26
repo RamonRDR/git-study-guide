@@ -25,6 +25,7 @@ git -C alice branch --show-current
 git -C alice status --short
 git -C alice var GIT_AUTHOR_IDENT
 git -C alice var GIT_COMMITTER_IDENT
+git -C alice remote get-url origin
 git -C alice remote get-url --push origin
 ```
 Crie alice/alice.txt em editor de texto simples com linha `alice update` e quebra final. Adicione ao index e inspecione; faça commit somente se esperado, depois envie apenas ao origin local verificado.
@@ -35,6 +36,11 @@ git -C alice commit -m "docs: add Alice note"
 git -C alice push origin main
 git -C origin.git rev-parse refs/heads/main
 git -C bob rev-parse HEAD refs/remotes/origin/main
+```
+
+Registre esses dois IDs antes de prosseguir. Confirme Bob em main limpa no clone verificado; então faça fetch:
+
+```text
 git -C bob fetch origin
 git -C bob rev-parse HEAD refs/remotes/origin/main
 git -C bob rev-list --left-right --count main...origin/main

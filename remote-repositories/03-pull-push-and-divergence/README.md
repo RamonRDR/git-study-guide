@@ -27,6 +27,11 @@ git -C alice push origin main
 git -C bob add -- bob.txt
 git -C bob diff --cached
 git -C bob commit -m "docs: add Bob note"
+```
+
+Now deliberately attempt this single push; failure is expected:
+
+```text
 git -C bob push origin main
 ```
 Expected: the LAST push fails (non-fast-forward, sometimes described as fetch first). Stop on any earlier failure. Verify origin main still equals Alice's tip, Bob's commit is retained. Then:
@@ -35,6 +40,11 @@ git -C bob fetch origin
 git -C bob rev-list --left-right --count main...origin/main
 git -C bob log --all --graph --oneline --decorate
 git -C bob diff main origin/main
+```
+
+Verify the divergence, then deliberately attempt the following; failure is expected:
+
+```text
 git -C bob pull --ff-only origin main
 ```
 Expected: count 1 1; last pull refuses. Diagram: C2 -> A3 (origin/main); C2 -> B3 (Bob main). Both have unique commits. Verify Bob HEAD is still B3 and status clean. Merge explicitly using the already inspected ref; no conflict is expected because files differ.

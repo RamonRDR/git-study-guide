@@ -35,12 +35,17 @@ git -C alice merge --ff-only feat/summary
 git -C alice push origin main
 git -C bob pull --ff-only origin main
 ```
-Esperado: branch local de Bob acompanha origin/feat/summary; main contém o commit summary nos dois clones. Para exclusão, primeiro confirme concordância de todos os colegas (Alice e Bob neste lab), ausência de trabalho adicional na feature e que feature remota é ancestral da main remota. Execute separadamente os três primeiros comandos de inspeção abaixo; ancestralidade deve retornar 0 e ambas as refs retornadas por ls-remote devem coincidir com as refs obtidas. Só então exclua feat/summary, nunca main. Nenhum ator concorrente pode alterar refs durante o exercício; em equipes reais reconfira e use proteção da plataforma e fluxo acordado.
+Esperado: branch local de Bob acompanha origin/feat/summary; main contém o commit summary nos dois clones. Para exclusão, primeiro confirme concordância de todos os colegas (Alice e Bob neste lab), ausência de trabalho adicional na feature e que feature remota é ancestral da main remota. Execute separadamente os quatro primeiros comandos de inspeção abaixo; ancestralidade deve retornar 0 e ambas as refs retornadas por ls-remote devem coincidir com as refs obtidas. Só então exclua feat/summary, nunca main. Nenhum ator concorrente pode alterar refs durante o exercício; em equipes reais reconfira e use proteção da plataforma e fluxo acordado.
 ```text
 git -C alice fetch origin
 git -C alice merge-base --is-ancestor origin/feat/summary origin/main
 git -C alice ls-remote --heads origin refs/heads/main refs/heads/feat/summary
 git -C alice rev-parse origin/main origin/feat/summary
+```
+
+Pare aqui se a ancestralidade e os dois IDs não corresponderem às verificações acima. Com origin local verificado e apenas a branch descartável acordada, execute:
+
+```text
 git -C alice push --delete origin feat/summary
 git -C bob ls-remote --heads origin refs/heads/feat/summary
 git -C bob branch -r

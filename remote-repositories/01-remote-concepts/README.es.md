@@ -25,6 +25,11 @@ git -C origin.git rev-parse --is-bare-repository
 git -C origin.git symbolic-ref HEAD
 git -C repo remote add origin ../origin.git
 git -C repo remote -v
+```
+
+Comprueba que ambas URL resuelven al origin.git local recién creado. Solo entonces continúa:
+
+```text
 git -C repo push -u origin main
 git -C origin.git rev-parse refs/heads/main
 git clone --no-local origin.git alice
@@ -55,7 +60,7 @@ git -C bob status --short
 Las raíces deben ser las carpetas alice/bob previstas, las URL origin deben resolver al mismo origin.git local, main sigue origin/main y el estado es limpio. Las tres puntas main coinciden con el commit inicial. `--no-local` utiliza el transporte Git normal en vez de optimizaciones de copia local. Mantén la sesión dedicada en el padre para capítulos 02–04. Diagrama: repo (inicial) -> origin.git (bare); alice y bob tienen HEAD, árbol de trabajo, index y refs propios; ambos intercambian commits con origin.git. Para practicar configuración, el alias temporal apunta al MISMO bare, no a un segundo servidor.
 ```text
 git -C alice remote add upstream ../origin.git
-git -C alice remote set-url upstream ../origin.git
+git -C alice remote set-url upstream .././origin.git
 git -C alice remote rename upstream training
 git -C alice remote get-url training
 git -C alice remote remove training
