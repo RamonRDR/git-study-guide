@@ -18,7 +18,7 @@ LOCAL_FIELDS = {"purpose", "prerequisites", "options", "when_to_use", "when_to_a
                 "expected_state", "effect_notes", "common_errors", "alternatives", "recovery", "requirements"}
 FIELDS = LOCAL_FIELDS | {"id", "command", "kind", "category", "level", "intent_tags",
                          "syntax", "examples", "effects", "risk", "related_chapters", "references"}
-ID = re.compile(r"[a-z0-9]+(?:[.-][a-z0-9]+)*")
+ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 SLUG = re.compile(r"[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*")
 CHAPTER = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*/[0-9]{2}-[a-z0-9]+(?:-[a-z0-9]+)*")
 OFFICIAL_HOSTS = {"git-scm.com", "docs.github.com", "cli.github.com", "docs.gitlab.com",
@@ -101,7 +101,7 @@ def validate_entry(entry, category, chapter_ids):
     require(entry["category"] == category, "Invalid category reference")
     require(entry["kind"] in KINDS and entry["level"] in LEVELS, "Invalid kind or level")
     require(unique_strings(entry["intent_tags"], token), "Invalid intent tags")
-    for key in LOCAL_FIELDS:
+    for key in sorted(LOCAL_FIELDS):
         require(locale_map(entry[key]), "Invalid localized field: " + key)
     effects = entry["effects"]
     require(isinstance(effects, dict) and set(effects) == EFFECT_KEYS and all(v in EFFECTS for v in effects.values()),
@@ -143,13 +143,15 @@ def load_catalog(root, paths, modules):
     labels = intents(root)
     chapter_ids = {m["slug"] + "/" + c for m in modules for c in m["chapters"] if m["slug"] != MODULE}
     expected = {f"{MODULE}/{item['slug']}/catalog.json" for item in registry}
-    actual = {p for p in paths if p.startswith(MODULE + "/") and p.endswith(".json")}
+    actual = {p for p in paths if p.casefold().startswith(MODULE + "/") and p.casefold().endswith(".json")}
     require(actual == expected, "Missing or unregistered catalog files")
     module = next(m for m in modules if m["slug"] == MODULE)
     require(module["chapters"] == [item["slug"] for item in registry], "Catalog curriculum mismatch")
     grouped = [(item, load_category(root, item, chapter_ids)) for item in registry]
     entries = [entry for _, records in grouped for entry in records]
     require(len(entries) >= MINIMUM, "Catalog contains fewer than 101 entries")
+    for item, records in grouped:
+        require(len(records) >= item["target"], "Category below approved target: " + item["slug"])
     require(len({e["id"] for e in entries}) == len(entries), "Duplicate catalog ID")
     require(len({" ".join(e["command"].split()) for e in entries}) == len(entries), "Duplicate command or operation")
     for entry in entries:

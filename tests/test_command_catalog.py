@@ -62,6 +62,12 @@ class CommandEntryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.validate(value)
 
+    def test_id_rejects_dot_for_stable_github_anchor(self):
+        value = entry()
+        value["id"] = "git.status"
+        with self.assertRaises(ValueError):
+            self.validate(value)
+
     def test_invalid_category(self):
         value = entry()
         value["category"] = "other"
@@ -176,6 +182,18 @@ class CatalogIntegrationTests(unittest.TestCase):
             self.records[slug] = self.records[slug][:7]
             self.save(slug)
         with self.assertRaisesRegex(ValueError, "fewer than 101"):
+            self.load()
+
+    def test_category_below_target(self):
+        slug = self.registry[0]["slug"]
+        self.records[slug].pop()
+        self.save(slug)
+        with self.assertRaisesRegex(ValueError, "Category below approved target"):
+            self.load()
+
+    def test_unregistered_uppercase_catalog(self):
+        self.paths.add(f"{cc.MODULE}/99-invalid/catalog.JSON")
+        with self.assertRaisesRegex(ValueError, "Missing or unregistered"):
             self.load()
 
     def test_duplicate_id(self):
