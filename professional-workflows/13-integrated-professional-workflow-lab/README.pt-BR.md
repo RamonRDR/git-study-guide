@@ -39,6 +39,8 @@ Pré-requisitos: Git 2.28+ e Bash com mktemp/grep (Linux, macOS ou Git Bash no W
   git switch -c feat/ready-catalog
   if grep -Fxq 'status: ready' catalog.txt; then
     exit 1
+  else
+    test "$?" -eq 1
   fi
   printf '%s\n' 'RED: ready line absent'
   printf '%s\n' 'status: ready' > catalog.txt
@@ -53,6 +55,7 @@ Pré-requisitos: Git 2.28+ e Bash com mktemp/grep (Linux, macOS ou Git Bash no W
   git tag -a v1.1.0 -m 'Release 1.1.0'
   test "$(git rev-parse 'v1.1.0^{commit}')" = "$(git rev-parse HEAD)"
   test -z "$(git status --porcelain)"
+  test -z "$(git remote)"
   grep -Fxq 'status: ready' catalog.txt
   git log --oneline --decorate -2
   printf '%s\n' 'PASS: integrated tagged clean revision'
