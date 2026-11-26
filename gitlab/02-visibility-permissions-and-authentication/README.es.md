@@ -35,3 +35,9 @@ Cambiar visibilidad no recupera copias. Si una credencial se expone, revóquela/
 - <https://docs.gitlab.com/user/ssh/>
 - <https://docs.gitlab.com/user/profile/personal_access_tokens/>
 - <https://docs.gitlab.com/user/profile/account/two_factor_authentication/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-projects-groups-and-offerings/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-issues-labels-milestones-and-boards/README.es.md)
+<!-- /navigation-footer -->

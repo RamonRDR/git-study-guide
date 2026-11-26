@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-fetch-and-tracking/README.pt-BR.md)
+[Módulo anterior](../../merge-and-conflicts/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-fetch-and-tracking/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 35 min
@@ -88,3 +88,9 @@ Por que o origin bare não tem note.txt em checkout? Dica: separe histórico e �
 - [Git: git-init](https://git-scm.com/docs/git-init)
 - [Git: git-clone](https://git-scm.com/docs/git-clone)
 - [Git: git-remote](https://git-scm.com/docs/git-remote)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../merge-and-conflicts/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-fetch-and-tracking/README.pt-BR.md)
+<!-- /navigation-footer -->

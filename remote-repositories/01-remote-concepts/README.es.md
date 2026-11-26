@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-fetch-and-tracking/README.es.md)
+[Módulo anterior](../../merge-and-conflicts/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-fetch-and-tracking/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 35 min
@@ -88,3 +88,9 @@ Nunca clones ni envíes a una URL desconocida. Clone no concede autenticación; 
 - [Git: git-init](https://git-scm.com/docs/git-init)
 - [Git: git-clone](https://git-scm.com/docs/git-clone)
 - [Git: git-remote](https://git-scm.com/docs/git-remote)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../merge-and-conflicts/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-fetch-and-tracking/README.es.md)
+<!-- /navigation-footer -->

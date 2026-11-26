@@ -22,7 +22,8 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | 11 | `feat/ci-cd` | 10 | Module 10: CI/CD and automation |
 | 12 | `feat/professional-workflows` | 11 | Module 11: professional workflows |
 | 13 | `feat/security-governance` | 12 | Module 12: security and governance |
-| 14 | `feat/advanced-git` | 13 | Modules 13–14: advanced Git and internals |
+| 13.1 | `feat/learning-navigation` | 13 | Complementary: continuous localized navigation, regression checks and documentation |
+| 14 | `feat/advanced-git` | 13.1 | Modules 13–14: advanced Git and internals |
 | 15 | `feat/command-reference` | 14 | Module 15: command reference |
 | 16 | `feat/practical-projects` | 15 | Module 16: eight practical projects |
 | 17 | `feat/challenges-interviews` | 16 | Module 17: challenges, quizzes and interviews; pilot structured records |

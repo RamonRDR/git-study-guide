@@ -141,3 +141,9 @@ Tras cada lab independiente, cierre editor y shell dedicado, luego borre solo ca
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-conflict-resolution/README.es.md) · [Índice](../README.es.md) · [Siguiente](../06-rebase-and-conflicts/README.es.md)
+<!-- /navigation-footer -->

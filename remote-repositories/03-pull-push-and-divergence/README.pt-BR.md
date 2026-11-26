@@ -82,3 +82,9 @@ Pull ff-only recusado implica que nada mudou? Dica: fase fetch. Resposta: main l
 - [Git: git-push](https://git-scm.com/docs/git-push)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rebase](https://git-scm.com/docs/git-rebase)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-fetch-and-tracking/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../04-remote-branch-lifecycle/README.pt-BR.md)
+<!-- /navigation-footer -->

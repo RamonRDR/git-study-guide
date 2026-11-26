@@ -37,3 +37,9 @@ TLS / PAT / scope / expiration
 - <https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens>
 - <https://docs.gitlab.com/user/profile/personal_access_tokens/>
 - <https://git-scm.com/docs/gitcredentials>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-ssh-authentication/README.md) · [Index](../README.md) · [Next](../04-credential-managers/README.md)
+<!-- /navigation-footer -->

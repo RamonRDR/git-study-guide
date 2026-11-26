@@ -20,3 +20,9 @@
 - 07 [Cherry-pick de commits selecionados](07-cherry-pick/README.pt-BR.md)
 - 08 [Amend de um commit não publicado](08-amend/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../remote-repositories/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../github/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -158,3 +158,9 @@ What distinguishes edited from resolved? Answer: add replaces unmerged index sta
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-merge-commit/README.md) · [Index](../README.md) · [Next](../05-squash-merge/README.md)
+<!-- /navigation-footer -->

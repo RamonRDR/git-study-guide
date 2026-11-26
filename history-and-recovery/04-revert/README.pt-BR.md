@@ -86,3 +86,9 @@ Reverter C2 exclui seu ID? Resposta: não. Passe se histórico tem três commits
 
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-reset/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-reflog/README.pt-BR.md)
+<!-- /navigation-footer -->

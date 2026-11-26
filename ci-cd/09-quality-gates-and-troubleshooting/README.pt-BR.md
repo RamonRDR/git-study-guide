@@ -37,3 +37,9 @@ required check / revision / log
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 - <https://docs.gitlab.com/user/project/merge_requests/auto_merge/>
 - <https://docs.gitlab.com/ci/pipelines/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../08-environments-variables-and-secrets/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../10-integrated-quality-pipeline-lab/README.pt-BR.md)
+<!-- /navigation-footer -->

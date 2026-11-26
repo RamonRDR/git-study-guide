@@ -43,3 +43,9 @@ Package fica bloqueado se test falha e elegível se ambos passam, sujeito a runn
 
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.gitlab.com/ci/yaml/needs/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-runners-and-execution-environments/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-artifacts-and-cache/README.pt-BR.md)
+<!-- /navigation-footer -->

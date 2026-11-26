@@ -32,3 +32,9 @@ Apruebe si tag identifica revisión, notas comunican cambios y asset no es confi
 
 - <https://docs.gitlab.com/user/project/releases/>
 - <https://git-scm.com/docs/git-tag>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-pipelines-and-runners/README.es.md) · [Índice](../README.es.md) · [Siguiente](../08-gitlab-cli-and-platform-comparison/README.es.md)
+<!-- /navigation-footer -->

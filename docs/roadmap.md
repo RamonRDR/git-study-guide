@@ -22,6 +22,7 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | 11 | `professional-workflows/` | Professional Workflows | Git Flow, GitHub Flow, trunk-based, feature branches, Conventional Commits, SemVer, code review, SDD/TDD, AI assistance, releases. |
 | 12 | `security/` | Security & Governance | SSH, HTTPS, tokens, credential managers, secrets, permissions, branch protection, rulesets, CODEOWNERS, signing, supply chain, accidental disclosure, least privilege. |
 | 13 | `advanced-git/` | Advanced Git | bisect, worktree, submodules, subtree, hooks, rerere, sparse-checkout, partial/shallow clone, blame, grep, archive, bundle and trade-offs. |
+| 13.1 | IV | Complementary: continuous learning navigation and UX, regression tests and standards |
 | 14 | `git-internals/` | Git Internals | Blobs, trees, commits, tags, hashes, refs, object database, packfiles, garbage collection, reflogs, porcelain/plumbing. |
 | 15 | `command-reference/` | Command Reference | Searchable catalog by operation and intent, 100+ meaningful entries; distinguish subcommands, flags, usages, combinations and hosting operations. |
 | 16 | `practical-projects/` | Practical Projects | Eight integrated projects: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
@@ -54,7 +55,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 18 | VI | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately |
 | 19 | VI | Maintainer-supplied identity, final README, QA, release handoff |
 
-Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–12 integrated via PRs #1–13; Sprint 13 submitted for review; Sprints 14–19 planned. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
+Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–13 integrated via PRs #1–14; complementary Sprint 13.1 submitted for review; Sprints 14–19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
 
 ## Related documents
 

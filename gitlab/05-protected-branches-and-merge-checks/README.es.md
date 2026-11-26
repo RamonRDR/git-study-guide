@@ -35,3 +35,9 @@ Nunca debilite protección para pasar merge. Si merge bloqueado, lea check exact
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/>
 - <https://docs.gitlab.com/user/project/merge_requests/approvals/rules/>
 - <https://docs.gitlab.com/user/project/merge_requests/auto_merge/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-merge-requests-review-and-forks/README.es.md) · [Índice](../README.es.md) · [Siguiente](../06-pipelines-and-runners/README.es.md)
+<!-- /navigation-footer -->

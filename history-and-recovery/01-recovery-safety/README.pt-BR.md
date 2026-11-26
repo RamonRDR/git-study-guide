@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-restore/README.pt-BR.md)
+[Módulo anterior](../../remote-repositories/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-restore/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 20 min
@@ -68,3 +68,9 @@ Um commit publicado está errado; qual operação normalmente preserva colabora�
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../remote-repositories/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-restore/README.pt-BR.md)
+<!-- /navigation-footer -->

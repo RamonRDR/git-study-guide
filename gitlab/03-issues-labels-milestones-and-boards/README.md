@@ -34,3 +34,9 @@ Pass if the issue has a measurable outcome, label and milestone serve different 
 - <https://docs.gitlab.com/user/project/labels/>
 - <https://docs.gitlab.com/user/project/milestones/>
 - <https://docs.gitlab.com/user/project/issue_board/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-visibility-permissions-and-authentication/README.md) · [Index](../README.md) · [Next](../04-merge-requests-review-and-forks/README.md)
+<!-- /navigation-footer -->

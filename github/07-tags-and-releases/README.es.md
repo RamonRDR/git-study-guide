@@ -61,3 +61,9 @@ Aprueba si tipo de objeto es tag, IDs de commits resueltos coinciden, main no ca
 - <https://git-scm.com/docs/git-tag>
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 - <https://semver.org/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-protection-and-rulesets/README.es.md) · [Índice](../README.es.md) · [Siguiente](../08-github-cli/README.es.md)
+<!-- /navigation-footer -->

@@ -95,3 +95,9 @@ Which command removes a file from stage but retains the edit? Answer: restore --
 
 - [Git: git-restore](https://git-scm.com/docs/git-restore)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-recovery-safety/README.md) · [Index](../README.md) · [Next](../03-reset/README.md)
+<!-- /navigation-footer -->

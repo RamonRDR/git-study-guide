@@ -49,3 +49,9 @@ mapping / sequence / scalar
 - <https://yaml.org/spec/1.2.2/>
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.gitlab.com/ci/yaml/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-ci-delivery-and-deployment/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-github-actions/README.pt-BR.md)
+<!-- /navigation-footer -->

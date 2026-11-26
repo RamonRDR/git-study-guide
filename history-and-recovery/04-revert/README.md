@@ -86,3 +86,9 @@ Does reverting C2 delete its ID? Answer: no. Pass if history has three commits a
 
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-reset/README.md) · [Index](../README.md) · [Next](../05-reflog/README.md)
+<!-- /navigation-footer -->

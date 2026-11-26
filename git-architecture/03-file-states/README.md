@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../02-snapshots-head-and-refs/README.md) · [Index](../README.md) · —
+[Previous](../02-snapshots-head-and-refs/README.md) · [Index](../README.md) · [Next module](../../basic-commands/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 25 min
@@ -49,3 +49,9 @@ Classify note.txt and draft.txt. Answer: note tracked and modified but not stage
 - [Git: git-ls-files](https://git-scm.com/docs/git-ls-files)
 - [Git: git-remote](https://git-scm.com/docs/git-remote)
 - [Git: gitignore](https://git-scm.com/docs/gitignore)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-snapshots-head-and-refs/README.md) · [Index](../README.md) · [Next module](../../basic-commands/README.md)
+<!-- /navigation-footer -->

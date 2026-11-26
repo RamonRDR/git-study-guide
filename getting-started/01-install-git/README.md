@@ -69,3 +69,9 @@ Identify your OS and shell. Hint: install only if missing. Pass if `git --versio
 - [https://git-scm.com/install/win](https://git-scm.com/install/win)
 - [https://git-scm.com/install/linux.html](https://git-scm.com/install/linux.html)
 - [https://git-scm.com/install/mac](https://git-scm.com/install/mac)
+
+---
+
+<!-- navigation-footer -->
+— · [Index](../README.md) · [Next](../02-terminal-and-help/README.md)
+<!-- /navigation-footer -->

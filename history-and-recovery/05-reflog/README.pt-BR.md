@@ -95,3 +95,9 @@ Por que log não vê C2 após reset mas reflog pode achar? Resposta: ancestralid
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-gc](https://git-scm.com/docs/git-gc)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-revert/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-stash/README.pt-BR.md)
+<!-- /navigation-footer -->

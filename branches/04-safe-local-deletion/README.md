@@ -69,3 +69,9 @@ Which branch may be safely removed in this specific lab? Answer: archive/base, w
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-switch-safety-and-naming/README.md) · [Index](../README.md) · [Next](../05-detached-head/README.md)
+<!-- /navigation-footer -->

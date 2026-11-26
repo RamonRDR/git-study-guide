@@ -20,6 +20,7 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | AC-11 | 11 | Module 10 distinguishes CI/delivery/deployment; safe YAML examples for both platforms; test/lint configuration as applicable; no privileged untrusted pipeline. |
 | AC-12 | 12 | Module 11 compares workflow trade-offs, SDD/TDD, manual practice, reviews and releases with original scenarios. |
 | AC-13 | 13 | Module 12 covers credential protection, least privilege, signing, supply chain and incident response; never expose real secrets. |
+| AC-13.1 | 13.1 | Every curriculum module index and chapter has identical localized top and bottom navigation; chapter edges lead to adjacent module indexes; correct endpoints, locale and ordering enforced by deterministic regression tests. Stable content and paths preserved. |
 | AC-14 | 14 | Modules 13–14 teach listed advanced operations and object/ref internals; safe bounded tests and accurate diagrams; version requirements identified. |
 | AC-15 | 15 | Catalog has at least 101 meaningful distinct entry IDs; report category counts separately and validate required fields, risk and sources. |
 | AC-16 | 16 | Eight projects documented in three locales with setup, objectives, expected states, cleanup, solutions and tests; account-dependent tasks optional. |

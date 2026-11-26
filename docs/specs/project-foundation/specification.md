@@ -8,7 +8,7 @@ Goal: a public, practical, MIT-licensed Git Study Guide from beginner to advance
 
 ## Functional requirements
 
-- FR-01 — Publish independent EN/PT-BR/ES content with language selectors, previous/index/next navigation, stable paths and explicit prerequisites. Follow the roadmap without requiring Python.
+- FR-01 — Publish independent EN/PT-BR/ES content with language selectors, previous/index/next navigation, stable paths and explicit prerequisites. Follow the roadmap without requiring Python. Each module index and chapter must have identical localized navigation at the top and bottom; chapter boundaries link to adjacent module indexes, including reserved indexes, with absent directions unlinked only at the ends of the roadmap. The curriculum registry defines the order.
 - FR-02 — Teach history, architecture, local operations, branches, remotes, merge strategies, recovery, platforms, CI/CD, professional workflows, security and internals. Distinguish native Git from hosting features and explain state changes.
 - FR-03 — Each applicable lesson includes objective, level, prerequisites, study time, definition, rationale/problem, syntax, use/avoid, relationships, internals, basic/professional examples, common mistakes, risk/recovery, exercise, checklist, quick reference and official sources. Adapt with rationale; do not introduce undefined terms.
 - FR-04 — Catalog 100+ meaningful commands/operations; stable ID, category, purpose, syntax, prerequisites, options, use/avoid, example and expected result, affected state, side effects, risk, alternatives, errors, recovery, minimum version when relevant, official references and intent tags. Do not inflate distinct subcommand counts.

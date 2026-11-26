@@ -41,3 +41,9 @@ trunk / short-lived branch / feature flag
 - <https://dora.dev/capabilities/trunk-based-development/>
 - <https://git-scm.com/docs/gitworkflows>
 - <https://www.atlassian.com/git/tutorials/comparing-workflows>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-github-flow/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-workflow-trade-offs/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -15,3 +15,9 @@
 - 02 [Snapshots, HEAD y referencias](02-snapshots-head-and-refs/README.es.md)
 - 03 [Estados de archivos y límites del remoto](03-file-states/README.es.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../fundamentals/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../basic-commands/README.es.md)
+<!-- /navigation-footer -->

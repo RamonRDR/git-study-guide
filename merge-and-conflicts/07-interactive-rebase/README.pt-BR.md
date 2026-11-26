@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../06-rebase-and-conflicts/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../06-rebase-and-conflicts/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../remote-repositories/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 40 min
@@ -134,3 +134,9 @@ Quando escolher squash em vez de rebase interativo? Resposta: squash integra mud
 - [Git: git-config](https://git-scm.com/docs/git-config)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-rebase-and-conflicts/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../remote-repositories/README.pt-BR.md)
+<!-- /navigation-footer -->

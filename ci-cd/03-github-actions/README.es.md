@@ -63,3 +63,9 @@ Apruebe si nombra ambos eventos, identifica runner/job/steps, explica permisos d
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.github.com/en/actions/reference/security/secure-use>
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-yaml-fundamentals/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-gitlab-ci-cd/README.es.md)
+<!-- /navigation-footer -->

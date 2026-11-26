@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../07-cherry-pick/README.md) · [Index](../README.md) · —
+[Previous](../07-cherry-pick/README.md) · [Index](../README.md) · [Next module](../../github/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 25 min
@@ -94,3 +94,9 @@ Why can two commits with the same parent have different IDs? Answer: content/mes
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../07-cherry-pick/README.md) · [Index](../README.md) · [Next module](../../github/README.md)
+<!-- /navigation-footer -->

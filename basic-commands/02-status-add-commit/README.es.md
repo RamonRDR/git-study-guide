@@ -60,3 +60,9 @@ Prediga si draft.txt entra al commit. Respuesta: no, no preparado. Apruebe si ls
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-add](https://git-scm.com/docs/git-add)
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-init-config-help/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-diff-log-show/README.es.md)
+<!-- /navigation-footer -->

@@ -20,3 +20,9 @@
 - 07 [Cherry-pick selected commits](07-cherry-pick/README.md)
 - 08 [Amend an unpublished commit](08-amend/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../remote-repositories/README.md) · [Index](../docs/learning-path.md) · [Next](../github/README.md)
+<!-- /navigation-footer -->

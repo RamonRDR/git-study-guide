@@ -89,3 +89,9 @@ Verify root, name and email. Pass if identity is fictional, branch main and hist
 - [https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 
 - [Git: git-var](https://git-scm.com/docs/git-var)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-terminal-and-help/README.md) · [Index](../README.md) · [Next](../04-editor-and-gui/README.md)
+<!-- /navigation-footer -->

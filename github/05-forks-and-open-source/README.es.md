@@ -40,3 +40,9 @@ No supongas que forks ocultan contenido público u obligaciones de licencia. Evi
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks>
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>
 - <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-open-source>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-pull-requests-and-review/README.es.md) · [Índice](../README.es.md) · [Siguiente](../06-protection-and-rulesets/README.es.md)
+<!-- /navigation-footer -->

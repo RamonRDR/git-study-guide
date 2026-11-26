@@ -164,3 +164,9 @@ Why does the recreated commit have a new ID? New parent and commit metadata/cont
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-ls-files](https://git-scm.com/docs/git-ls-files)
 - [Git: git-config](https://git-scm.com/docs/git-config)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../05-squash-merge/README.md) · [Index](../README.md) · [Next](../07-interactive-rebase/README.md)
+<!-- /navigation-footer -->

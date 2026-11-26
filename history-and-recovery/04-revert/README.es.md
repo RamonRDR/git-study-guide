@@ -86,3 +86,9 @@ Si hay conflicto, inspecciona estado y cambios staged; resuelve y usa revert --c
 
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-reset/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-reflog/README.es.md)
+<!-- /navigation-footer -->

@@ -22,6 +22,7 @@ Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriore
 | 11 | `professional-workflows/` | Flujos profesionales | Git Flow, GitHub Flow, trunk-based, feature branches, Conventional Commits, SemVer, code review, SDD/TDD, asistencia de IA, releases. |
 | 12 | `security/` | Seguridad y gobernanza | SSH, HTTPS, tokens, credential managers, secrets, permisos, protección de ramas, rulesets, CODEOWNERS, firma, cadena de suministro, exposición accidental, mínimo privilegio. |
 | 13 | `advanced-git/` | Git avanzado | bisect, worktree, submodules, subtree, hooks, rerere, sparse-checkout, partial/shallow clone, blame, grep, archive, bundle y compensaciones. |
+| 13.1 | IV | Complementaria: navegación educativa continua y UX, pruebas de regresión y estándares |
 | 14 | `git-internals/` | Internals de Git | Blobs, trees, commits, tags, hashes, refs, object database, packfiles, garbage collection, reflogs, porcelain/plumbing. |
 | 15 | `command-reference/` | Referencia de comandos | Catálogo consultable por operación e intención, 100+ entradas relevantes; distinguir subcomandos, opciones, usos, combinaciones y operaciones de plataformas. |
 | 16 | `practical-projects/` | Proyectos prácticos | Ocho proyectos integrados: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
@@ -54,7 +55,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 18 | VI | Finalizar contrato, manifiestos, esquemas, fixtures del consumidor; evaluar playground opcional por separado |
 | 19 | VI | Identidad aportada por el mantenedor, README final, QA, entrega |
 
-Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–12 integradas mediante PR #1–13; Sprint 13 presentada para revisión; Sprints 14–19 previstas. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
+Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–13 integradas mediante PR #1–14; Sprint complementaria 13.1 presentada para revisión; Sprints 14–19 previstas. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
 
 ## Documentos relacionados
 

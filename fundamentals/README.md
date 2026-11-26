@@ -15,3 +15,9 @@
 - 02 [Linux, BitKeeper and the birth of Git](02-history-of-git/README.md)
 - 03 [Centralized, distributed and hosting platforms](03-distributed-and-platforms/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../getting-started/README.md) · [Index](../docs/learning-path.md) · [Next](../git-architecture/README.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../04-safe-local-deletion/README.md) · [Index](../README.md) · —
+[Previous](../04-safe-local-deletion/README.md) · [Index](../README.md) · [Next module](../../merge-and-conflicts/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 30 min
@@ -79,3 +79,9 @@ Explain why branch creation saved the detached commit without merging. Answer: t
 - [Git: git-checkout](https://git-scm.com/docs/git-checkout)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-symbolic-ref](https://git-scm.com/docs/git-symbolic-ref)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-safe-local-deletion/README.md) · [Index](../README.md) · [Next module](../../merge-and-conflicts/README.md)
+<!-- /navigation-footer -->

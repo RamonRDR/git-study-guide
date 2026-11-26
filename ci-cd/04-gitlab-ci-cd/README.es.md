@@ -54,3 +54,9 @@ Apruebe si distingue workflow rules, stages, jobs, scripts y executor; explique 
 - <https://docs.gitlab.com/ci/yaml/lint/>
 - <https://docs.gitlab.com/ci/pipelines/merge_request_pipelines/>
 - <https://docs.gitlab.com/ci/jobs/ci_job_token/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-github-actions/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-runners-and-execution-environments/README.es.md)
+<!-- /navigation-footer -->

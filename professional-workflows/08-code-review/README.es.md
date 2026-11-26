@@ -36,3 +36,9 @@ diff / head SHA / review / approval / CI
 
 - <https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request>
 - <https://docs.gitlab.com/user/project/merge_requests/reviews/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-semantic-versioning/README.es.md) · [Índice](../README.es.md) · [Siguiente](../09-spec-driven-development/README.es.md)
+<!-- /navigation-footer -->

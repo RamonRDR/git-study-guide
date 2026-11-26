@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-safe-local-deletion/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../04-safe-local-deletion/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../merge-and-conflicts/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 30 min
@@ -79,3 +79,9 @@ Explique por que criação de branch preservou commit detached sem merge. Respos
 - [Git: git-checkout](https://git-scm.com/docs/git-checkout)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-symbolic-ref](https://git-scm.com/docs/git-symbolic-ref)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-safe-local-deletion/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../merge-and-conflicts/README.pt-BR.md)
+<!-- /navigation-footer -->

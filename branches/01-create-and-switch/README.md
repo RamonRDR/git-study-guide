@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-start-points-and-comparison/README.md)
+[Previous module](../../basic-commands/README.md) · [Index](../README.md) · [Next](../02-start-points-and-comparison/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 35 min
@@ -80,3 +80,9 @@ Predict the main commit after the feature commit. Answer: unchanged. Pass if bra
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-switch](https://git-scm.com/docs/git-switch)
 - [Git: git-symbolic-ref](https://git-scm.com/docs/git-symbolic-ref)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../basic-commands/README.md) · [Index](../README.md) · [Next](../02-start-points-and-comparison/README.md)
+<!-- /navigation-footer -->

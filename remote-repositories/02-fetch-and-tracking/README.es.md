@@ -79,3 +79,9 @@ Tras push de Alice y antes del fetch de Bob, ¿puede Bob estar atrasado aunque s
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-remote-concepts/README.es.md) · [Índice](../README.es.md) · [Siguiente](../03-pull-push-and-divergence/README.es.md)
+<!-- /navigation-footer -->

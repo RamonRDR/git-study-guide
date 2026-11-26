@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../ci-cd/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 30 min
@@ -36,3 +36,9 @@ No traduzca comandos CLI a ciegas ni prometa paridad. Planes gratuitos permiten 
 - <https://docs.gitlab.com/cli/issue/list/>
 - <https://docs.gitlab.com/cli/release/list/>
 - <https://docs.github.com/en/github-cli/github-cli/about-github-cli>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../ci-cd/README.es.md)
+<!-- /navigation-footer -->

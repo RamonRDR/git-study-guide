@@ -77,3 +77,9 @@ Which diff shows the next commit's changes? Answer: --cached. Which shows all tr
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-status-add-commit/README.md) · [Index](../README.md) · [Next](../04-move-and-remove/README.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-snapshots-head-and-refs/README.es.md)
+[Módulo anterior](../../fundamentals/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-snapshots-head-and-refs/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 30 min
@@ -67,3 +67,9 @@ Compruebe raíz e identidades efectivas antes de commit. Nunca edite archivos .g
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-show](https://git-scm.com/docs/git-show)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../fundamentals/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-snapshots-head-and-refs/README.es.md)
+<!-- /navigation-footer -->

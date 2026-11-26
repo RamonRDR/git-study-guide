@@ -43,3 +43,9 @@ Package is blocked when test fails and eligible when both pass, subject to runne
 
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.gitlab.com/ci/yaml/needs/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../05-runners-and-execution-environments/README.md) · [Index](../README.md) · [Next](../07-artifacts-and-cache/README.md)
+<!-- /navigation-footer -->

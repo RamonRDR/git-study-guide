@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-git-flow/README.md)
+[Previous module](../../ci-cd/README.md) · [Index](../README.md) · [Next](../02-git-flow/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 35 min
@@ -41,3 +41,9 @@ Two branches keep the fixes independent. Main stays unchanged until integration.
 - <https://git-scm.com/docs/gitworkflows>
 - <https://git-scm.com/docs/git-branch>
 - <https://git-scm.com/docs/git-merge>
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../ci-cd/README.md) · [Index](../README.md) · [Next](../02-git-flow/README.md)
+<!-- /navigation-footer -->

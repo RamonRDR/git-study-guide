@@ -17,3 +17,9 @@
 - 04 [Ciclo de vida de branches remotas e prune](04-remote-branch-lifecycle/README.pt-BR.md)
 - 05 [Autenticação segura e plataformas de hospedagem](05-secure-authentication/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../merge-and-conflicts/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../history-and-recovery/README.pt-BR.md)
+<!-- /navigation-footer -->

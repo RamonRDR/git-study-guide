@@ -106,3 +106,9 @@ Ediciones solapadas pueden generar conflicto. Inspecciona estado y marcadores, a
 
 - [Git: git-cherry-pick](https://git-scm.com/docs/git-cherry-pick)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-stash/README.es.md) · [Índice](../README.es.md) · [Siguiente](../08-amend/README.es.md)
+<!-- /navigation-footer -->

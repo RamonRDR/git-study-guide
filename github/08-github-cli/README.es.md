@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../gitlab/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 25 min
@@ -57,3 +57,9 @@ Aprueba si clasificas git status como consulta local, gh pr list como consulta a
 - <https://cli.github.com/manual/gh_repo_view>
 - <https://cli.github.com/manual/gh_issue_list>
 - <https://cli.github.com/manual/gh_pr_list>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-tags-and-releases/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../gitlab/README.es.md)
+<!-- /navigation-footer -->

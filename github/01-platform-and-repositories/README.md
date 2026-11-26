@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-permissions-and-authentication/README.md)
+[Previous module](../../history-and-recovery/README.md) · [Index](../README.md) · [Next](../02-permissions-and-authentication/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 25 min
@@ -39,3 +39,9 @@ Can a visitor push to a public repo by default? No. Pass if you distinguish read
 
 - <https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories>
 - <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility>
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../history-and-recovery/README.md) · [Index](../README.md) · [Next](../02-permissions-and-authentication/README.md)
+<!-- /navigation-footer -->

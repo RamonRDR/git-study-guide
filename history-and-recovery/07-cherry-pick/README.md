@@ -106,3 +106,9 @@ Is the source commit an ancestor of the new main tip just because its change was
 
 - [Git: git-cherry-pick](https://git-scm.com/docs/git-cherry-pick)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../06-stash/README.md) · [Index](../README.md) · [Next](../08-amend/README.md)
+<!-- /navigation-footer -->

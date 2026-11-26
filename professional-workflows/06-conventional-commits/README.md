@@ -36,3 +36,9 @@ Fix, feature, documentation, breaking feature respectively. A suitable squash ti
 
 - <https://www.conventionalcommits.org/en/v1.0.0/>
 - <https://git-scm.com/docs/git-commit>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../05-workflow-trade-offs/README.md) · [Index](../README.md) · [Next](../07-semantic-versioning/README.md)
+<!-- /navigation-footer -->

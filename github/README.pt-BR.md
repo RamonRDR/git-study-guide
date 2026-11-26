@@ -20,3 +20,9 @@
 - 07 [Tags e GitHub Releases](07-tags-and-releases/README.pt-BR.md)
 - 08 [GitHub CLI opcional e inspeção somente leitura](08-github-cli/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../history-and-recovery/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../gitlab/README.pt-BR.md)
+<!-- /navigation-footer -->

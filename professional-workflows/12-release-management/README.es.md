@@ -41,3 +41,9 @@ tag / release notes / artifact / deployment
 - <https://semver.org/spec/v2.0.0.html>
 - <https://git-scm.com/docs/git-tag>
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../11-ai-assisted-development/README.es.md) · [Índice](../README.es.md) · [Siguiente](../13-integrated-professional-workflow-lab/README.es.md)
+<!-- /navigation-footer -->

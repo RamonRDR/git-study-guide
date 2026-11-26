@@ -61,3 +61,9 @@ Pass if tag object type is tag, the two resolved commit IDs match, main is uncha
 - <https://git-scm.com/docs/git-tag>
 - <https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases>
 - <https://semver.org/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../06-protection-and-rulesets/README.md) · [Index](../README.md) · [Next](../08-github-cli/README.md)
+<!-- /navigation-footer -->

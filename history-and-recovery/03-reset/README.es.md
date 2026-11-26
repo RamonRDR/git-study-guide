@@ -106,3 +106,9 @@ Tras mixed de C2 limpio a C1, ¿dónde está edición C2? Respuesta: árbol, no 
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-restore/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-revert/README.es.md)
+<!-- /navigation-footer -->

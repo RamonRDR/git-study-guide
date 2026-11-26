@@ -34,3 +34,9 @@ Apruebe si distingue clon, fork, rama y MR, nombra refs y proyectos, explica por
 - <https://docs.gitlab.com/user/project/merge_requests/reviews/>
 - <https://docs.gitlab.com/user/project/merge_requests/authorization_for_merge_requests/>
 - <https://docs.gitlab.com/user/project/repository/forking_workflow/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-issues-labels-milestones-and-boards/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-protected-branches-and-merge-checks/README.es.md)
+<!-- /navigation-footer -->

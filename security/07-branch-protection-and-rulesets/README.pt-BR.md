@@ -37,3 +37,9 @@ protected branch / ruleset / required checks / bypass
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>
 - <https://docs.gitlab.com/user/project/repository/branches/protected/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-permissions-and-least-privilege/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../08-codeowners-and-responsibilities/README.pt-BR.md)
+<!-- /navigation-footer -->

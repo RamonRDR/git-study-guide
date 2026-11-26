@@ -86,3 +86,9 @@ After deleting remote feature, why can Bob still see it? Hint: cached ref. Answe
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-ls-remote](https://git-scm.com/docs/git-ls-remote)
 - [Git: git-merge-base](https://git-scm.com/docs/git-merge-base)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-pull-push-and-divergence/README.md) · [Index](../README.md) · [Next](../05-secure-authentication/README.md)
+<!-- /navigation-footer -->

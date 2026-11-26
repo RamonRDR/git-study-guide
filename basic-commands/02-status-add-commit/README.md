@@ -60,3 +60,9 @@ Predict whether draft.txt is committed. Answer: no, it was not staged. Pass if l
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-add](https://git-scm.com/docs/git-add)
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-init-config-help/README.md) · [Index](../README.md) · [Next](../03-diff-log-show/README.md)
+<!-- /navigation-footer -->

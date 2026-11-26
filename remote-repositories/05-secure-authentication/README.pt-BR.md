@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-remote-branch-lifecycle/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../04-remote-branch-lifecycle/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../history-and-recovery/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 20 min
@@ -42,3 +42,9 @@ Um colega precisa ler um repo. Você deve compartilhar token amplo ou chave SSH 
 - [GitHub: authentication](https://docs.github.com/en/authentication)
 - [GitLab: SSH](https://docs.gitlab.com/user/ssh/)
 - [GitLab: access tokens](https://docs.gitlab.com/user/profile/personal_access_tokens/)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-remote-branch-lifecycle/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../history-and-recovery/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -20,6 +20,7 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | AC-11 | 11 | Módulo 10 distingue CI/entrega/deploy; exemplos YAML seguros das duas plataformas; testar/lint conforme aplicável; sem pipeline privilegiado não confiável. |
 | AC-12 | 12 | Módulo 11 compara trade-offs de workflows, SDD/TDD, prática manual, reviews e releases com cenários originais. |
 | AC-13 | 13 | Módulo 12 cobre proteção de credenciais, menor privilégio, assinatura, cadeia de suprimentos e resposta a incidentes; nunca expor segredos reais. |
+| AC-13.1 | 13.1 | Cada índice de módulo e capítulo tem navegação localizada idêntica no topo e rodapé; extremos dos capítulos levam aos índices dos módulos adjacentes; limites, idioma e ordem corretos garantidos por testes determinísticos de regressão. Conteúdo e caminhos estáveis preservados. |
 | AC-14 | 14 | Módulos 13–14 ensinam operações avançadas e internals de objetos/refs; testes seguros e limitados, diagramas corretos; requisitos de versão identificados. |
 | AC-15 | 15 | Catálogo com pelo menos 101 IDs de entradas relevantes distintos; reportar contagens por categoria separadamente e validar campos, riscos e fontes. |
 | AC-16 | 16 | Oito projetos em três idiomas com preparação, objetivos, estados esperados, limpeza, soluções e testes; tarefas dependentes de conta opcionais. |

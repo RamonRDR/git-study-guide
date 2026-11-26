@@ -79,3 +79,9 @@ Compare rm e rm --cached. Resposta: ambos removem entrada index; só rm comum re
 - [Git: git-rm](https://git-scm.com/docs/git-rm)
 - [Git: git-add](https://git-scm.com/docs/git-add)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-diff-log-show/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-ignore-and-review/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -95,3 +95,9 @@ Qual comando retira arquivo do stage mas mantém edição? Resposta: restore --s
 
 - [Git: git-restore](https://git-scm.com/docs/git-restore)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-recovery-safety/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-reset/README.pt-BR.md)
+<!-- /navigation-footer -->

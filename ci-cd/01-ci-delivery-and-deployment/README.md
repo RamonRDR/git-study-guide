@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-yaml-fundamentals/README.md)
+[Previous module](../../gitlab/README.md) · [Index](../README.md) · [Next](../02-yaml-fundamentals/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 30 min
@@ -45,3 +45,9 @@ CI / delivery / deployment
 
 - <https://docs.gitlab.com/ci/introduction/>
 - <https://docs.github.com/en/actions/get-started/understand-github-actions>
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../gitlab/README.md) · [Index](../README.md) · [Next](../02-yaml-fundamentals/README.md)
+<!-- /navigation-footer -->

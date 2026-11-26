@@ -17,3 +17,9 @@
 - 04 [Renombrar y eliminar archivos rastreados](04-move-and-remove/README.es.md)
 - 05 [Reglas de ignore y revisión final](05-ignore-and-review/README.es.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../git-architecture/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../branches/README.es.md)
+<!-- /navigation-footer -->

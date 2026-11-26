@@ -37,3 +37,9 @@ constitution / spec / plan / task / AC / ADR
 ## Fontes
 
 - <https://github.github.com/spec-kit/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../08-code-review/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../10-test-driven-development/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../07-tags-and-releases/README.md) · [Index](../README.md) · —
+[Previous](../07-tags-and-releases/README.md) · [Index](../README.md) · [Next module](../../gitlab/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 25 min
@@ -57,3 +57,9 @@ Pass if you classify git status as local inspection, gh pr list as hosted inspec
 - <https://cli.github.com/manual/gh_repo_view>
 - <https://cli.github.com/manual/gh_issue_list>
 - <https://cli.github.com/manual/gh_pr_list>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../07-tags-and-releases/README.md) · [Index](../README.md) · [Next module](../../gitlab/README.md)
+<!-- /navigation-footer -->

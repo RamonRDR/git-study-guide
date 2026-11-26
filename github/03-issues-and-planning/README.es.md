@@ -42,3 +42,9 @@ Aprueba si issue tiene resultado observable, label y milestone con fines distint
 - <https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work>
 - <https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects>
 - <https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-permissions-and-authentication/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-pull-requests-and-review/README.es.md)
+<!-- /navigation-footer -->

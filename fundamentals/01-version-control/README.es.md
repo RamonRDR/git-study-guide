@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-history-of-git/README.es.md)
+[Módulo anterior](../../getting-started/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-history-of-git/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 20 min
@@ -40,3 +40,9 @@ Sugiera dos mensajes enfocados. Pista: un propósito por cambio. Respuesta: `doc
 
 - [https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)
 - [https://git-scm.com/book/en/v2/Getting-Started-What-is-Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../getting-started/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-history-of-git/README.es.md)
+<!-- /navigation-footer -->

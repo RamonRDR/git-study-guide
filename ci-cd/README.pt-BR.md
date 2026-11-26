@@ -22,3 +22,9 @@
 - 09 [Quality gates e diagnóstico](09-quality-gates-and-troubleshooting/README.pt-BR.md)
 - 10 [Laboratório de pipeline de qualidade integrado](10-integrated-quality-pipeline-lab/README.pt-BR.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../gitlab/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · [Próximo](../professional-workflows/README.pt-BR.md)
+<!-- /navigation-footer -->

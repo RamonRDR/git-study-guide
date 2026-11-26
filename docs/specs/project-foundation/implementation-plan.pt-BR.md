@@ -22,7 +22,8 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | 11 | `feat/ci-cd` | 10 | Módulo 10: CI/CD e automação |
 | 12 | `feat/professional-workflows` | 11 | Módulo 11: fluxos profissionais |
 | 13 | `feat/security-governance` | 12 | Módulo 12: segurança e governança |
-| 14 | `feat/advanced-git` | 13 | Módulos 13–14: Git avançado e internals |
+| 13.1 | `feat/learning-navigation` | 13 | Complementar: navegação contínua localizada, testes de regressão e documentação |
+| 14 | `feat/advanced-git` | 13.1 | Módulos 13–14: Git avançado e internals |
 | 15 | `feat/command-reference` | 14 | Módulo 15: referência de comandos |
 | 16 | `feat/practical-projects` | 15 | Módulo 16: oito projetos práticos |
 | 17 | `feat/challenges-interviews` | 16 | Módulo 17: desafios, quizzes e entrevistas; piloto de registros estruturados |

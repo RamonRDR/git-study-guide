@@ -95,3 +95,9 @@ Reflog no es respaldo remoto ni garantiza recuperación. No ejecutes reflog expi
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-gc](https://git-scm.com/docs/git-gc)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-revert/README.es.md) · [Índice](../README.es.md) · [Siguiente](../06-stash/README.es.md)
+<!-- /navigation-footer -->

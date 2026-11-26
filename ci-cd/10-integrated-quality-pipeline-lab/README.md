@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../09-quality-gates-and-troubleshooting/README.md) · [Index](../README.md) · —
+[Previous](../09-quality-gates-and-troubleshooting/README.md) · [Index](../README.md) · [Next module](../../professional-workflows/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 45 min
@@ -63,3 +63,9 @@ Pass if all three expected messages appear, you can explain why wrong/empty inpu
 - <https://www.gnu.org/software/grep/manual/grep.html>
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.gitlab.com/ci/yaml/>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../09-quality-gates-and-troubleshooting/README.md) · [Index](../README.md) · [Next module](../../professional-workflows/README.md)
+<!-- /navigation-footer -->

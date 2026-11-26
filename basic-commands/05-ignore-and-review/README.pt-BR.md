@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-move-and-remove/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../04-move-and-remove/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../branches/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 30 min
@@ -92,3 +92,9 @@ Por que keep.tmp ainda aparece modificado após regra ignore? Resposta: já rast
 - [Git: git-check-ignore](https://git-scm.com/docs/git-check-ignore)
 - [Git: git-rm](https://git-scm.com/docs/git-rm)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-move-and-remove/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../branches/README.pt-BR.md)
+<!-- /navigation-footer -->

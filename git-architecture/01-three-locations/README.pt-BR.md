@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-snapshots-head-and-refs/README.pt-BR.md)
+[Módulo anterior](../../fundamentals/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-snapshots-head-and-refs/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 30 min
@@ -67,3 +67,9 @@ Qual versão um commit registraria agora? Dica: siga segunda seta. Resposta: sec
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-show](https://git-scm.com/docs/git-show)
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../fundamentals/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-snapshots-head-and-refs/README.pt-BR.md)
+<!-- /navigation-footer -->

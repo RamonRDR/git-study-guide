@@ -63,3 +63,9 @@ Pass if you name both events, identify runner/job/steps, explain the token permi
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.github.com/en/actions/reference/security/secure-use>
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-yaml-fundamentals/README.md) · [Index](../README.md) · [Next](../04-gitlab-ci-cd/README.md)
+<!-- /navigation-footer -->

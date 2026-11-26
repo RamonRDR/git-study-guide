@@ -35,3 +35,9 @@ Um leitor público pode fazer push na main automaticamente? Não. Passe se ident
 - <https://docs.gitlab.com/user/ssh/>
 - <https://docs.gitlab.com/user/profile/personal_access_tokens/>
 - <https://docs.gitlab.com/user/profile/account/two_factor_authentication/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-projects-groups-and-offerings/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-issues-labels-milestones-and-boards/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -64,3 +64,9 @@ Explique HEAD versus main versus ID. Dica: um aponta branch, outro nomeia commit
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitglossary](https://git-scm.com/docs/gitglossary)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-three-locations/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-file-states/README.pt-BR.md)
+<!-- /navigation-footer -->

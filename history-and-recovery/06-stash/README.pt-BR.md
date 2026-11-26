@@ -100,3 +100,9 @@ Por que preferir apply antes de drop em recuperação incerta? Resposta: inspeci
 
 - [Git: git-stash](https://git-scm.com/docs/git-stash)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-reflog/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../07-cherry-pick/README.pt-BR.md)
+<!-- /navigation-footer -->

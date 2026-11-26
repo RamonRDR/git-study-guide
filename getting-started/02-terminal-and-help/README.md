@@ -58,3 +58,9 @@ Find your current folder and look up `git add -h`. Hint: distinguish shell and G
 
 - [https://git-scm.com/docs/git-help](https://git-scm.com/docs/git-help)
 - [https://git-scm.com/docs/gittutorial](https://git-scm.com/docs/gittutorial)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../01-install-git/README.md) · [Index](../README.md) · [Next](../03-first-repository/README.md)
+<!-- /navigation-footer -->

@@ -32,3 +32,9 @@ Passe se tag identifica revisão, notas comunicam mudanças e asset não é conf
 
 - <https://docs.gitlab.com/user/project/releases/>
 - <https://git-scm.com/docs/git-tag>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../06-pipelines-and-runners/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../08-gitlab-cli-and-platform-comparison/README.pt-BR.md)
+<!-- /navigation-footer -->

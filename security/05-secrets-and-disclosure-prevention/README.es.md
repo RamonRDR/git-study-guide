@@ -38,3 +38,9 @@ Ignore y tracking son distintos; plantilla es segura solo por contenido delibera
 - <https://git-scm.com/docs/git-check-ignore>
 - <https://git-scm.com/docs/git-ls-files>
 - <https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-credential-managers/README.es.md) · [Índice](../README.es.md) · [Siguiente](../06-permissions-and-least-privilege/README.es.md)
+<!-- /navigation-footer -->

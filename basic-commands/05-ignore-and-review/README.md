@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../04-move-and-remove/README.md) · [Index](../README.md) · —
+[Previous](../04-move-and-remove/README.md) · [Index](../README.md) · [Next module](../../branches/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 30 min
@@ -92,3 +92,9 @@ Why does keep.tmp still appear modified after adding an ignore rule? Answer: it 
 - [Git: git-check-ignore](https://git-scm.com/docs/git-check-ignore)
 - [Git: git-rm](https://git-scm.com/docs/git-rm)
 - [Git: git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Previous](../04-move-and-remove/README.md) · [Index](../README.md) · [Next module](../../branches/README.md)
+<!-- /navigation-footer -->

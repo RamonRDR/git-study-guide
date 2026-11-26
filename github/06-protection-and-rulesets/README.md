@@ -40,3 +40,9 @@ Pass if only A is eligible, you can explain why squash does not bypass a PR requ
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets>
 - <https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../05-forks-and-open-source/README.md) · [Index](../README.md) · [Next](../07-tags-and-releases/README.md)
+<!-- /navigation-footer -->

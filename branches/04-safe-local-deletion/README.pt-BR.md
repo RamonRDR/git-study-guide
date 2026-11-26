@@ -69,3 +69,9 @@ Qual branch pode ser removida neste lab específico? Resposta: archive/base, pon
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../03-switch-safety-and-naming/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-detached-head/README.pt-BR.md)
+<!-- /navigation-footer -->

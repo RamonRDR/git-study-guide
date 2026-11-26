@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · —
+[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../ci-cd/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 30 min
@@ -36,3 +36,9 @@ Qual ferramenta lista MRs hospedadas: `git log` ou `glab mr list`? `glab mr list
 - <https://docs.gitlab.com/cli/issue/list/>
 - <https://docs.gitlab.com/cli/release/list/>
 - <https://docs.github.com/en/github-cli/github-cli/about-github-cli>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-tags-and-releases/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../ci-cd/README.pt-BR.md)
+<!-- /navigation-footer -->

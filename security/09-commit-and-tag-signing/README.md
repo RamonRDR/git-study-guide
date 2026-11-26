@@ -38,3 +38,9 @@ A has no signature evidence; B needs trusted identity verification; C still fail
 - <https://git-scm.com/docs/git-verify-tag>
 - <https://git-scm.com/docs/git-config>
 - <https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../08-codeowners-and-responsibilities/README.md) · [Index](../README.md) · [Next](../10-software-supply-chain/README.md)
+<!-- /navigation-footer -->

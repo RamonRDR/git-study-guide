@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../04-editor-and-gui/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../04-editor-and-gui/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../fundamentals/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 35 min
@@ -71,3 +71,9 @@ Prediga status tras escribir, add y commit. Pista: siga tres ubicaciones. Aprueb
 - [https://git-scm.com/docs/git-add](https://git-scm.com/docs/git-add)
 - [https://git-scm.com/docs/git-commit](https://git-scm.com/docs/git-commit)
 - [https://git-scm.com/docs/git-status](https://git-scm.com/docs/git-status)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-editor-and-gui/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../fundamentals/README.es.md)
+<!-- /navigation-footer -->

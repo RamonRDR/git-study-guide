@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../09-quality-gates-and-troubleshooting/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../09-quality-gates-and-troubleshooting/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../professional-workflows/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 45 min
@@ -63,3 +63,9 @@ Apruebe si aparecen tres mensajes esperados, explica por qué entradas incorrect
 - <https://www.gnu.org/software/grep/manual/grep.html>
 - <https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax>
 - <https://docs.gitlab.com/ci/yaml/>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../09-quality-gates-and-troubleshooting/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../professional-workflows/README.es.md)
+<!-- /navigation-footer -->

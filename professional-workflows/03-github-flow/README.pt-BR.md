@@ -40,3 +40,9 @@ branch / PR / review / merge
 
 - <https://docs.github.com/en/get-started/using-github/github-flow>
 - <https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-git-flow/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../04-trunk-based-development/README.pt-BR.md)
+<!-- /navigation-footer -->

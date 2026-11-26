@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../07-cherry-pick/README.es.md) · [Índice](../README.es.md) · —
+[Anterior](../07-cherry-pick/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../github/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 25 min
@@ -94,3 +94,9 @@ Amend incluye cambios staged incluso ajenos a corrección. Inspecciona antes. Nu
 - [Git: git-commit](https://git-scm.com/docs/git-commit)
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../07-cherry-pick/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../github/README.es.md)
+<!-- /navigation-footer -->

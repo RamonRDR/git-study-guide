@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-fast-forward/README.md)
+[Previous module](../../branches/README.md) · [Index](../README.md) · [Next](../02-fast-forward/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 25 min
@@ -61,3 +61,9 @@ Choose the safe next step for a conflicting merge: inspect status, then merge --
 - [Git: git-rebase](https://git-scm.com/docs/git-rebase)
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../branches/README.md) · [Index](../README.md) · [Next](../02-fast-forward/README.md)
+<!-- /navigation-footer -->

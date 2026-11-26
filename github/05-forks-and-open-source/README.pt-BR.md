@@ -40,3 +40,9 @@ Onde colaborador envia branch proposta se não tem escrita upstream? Fork autori
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks>
 - <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork>
 - <https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-open-source>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-pull-requests-and-review/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-protection-and-rulesets/README.pt-BR.md)
+<!-- /navigation-footer -->

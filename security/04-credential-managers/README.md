@@ -38,3 +38,9 @@ helper / cache / store / credential manager
 - <https://git-scm.com/docs/git-credential-store>
 - <https://git-scm.com/docs/git-credential-cache>
 - <https://github.com/git-ecosystem/git-credential-manager>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../03-https-and-access-tokens/README.md) · [Index](../README.md) · [Next](../05-secrets-and-disclosure-prevention/README.md)
+<!-- /navigation-footer -->

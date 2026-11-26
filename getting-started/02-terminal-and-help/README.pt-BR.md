@@ -58,3 +58,9 @@ Descubra pasta atual e consulte `git add -h`. Dica: diferencie shell e Git. Pass
 
 - [https://git-scm.com/docs/git-help](https://git-scm.com/docs/git-help)
 - [https://git-scm.com/docs/gittutorial](https://git-scm.com/docs/gittutorial)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../01-install-git/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../03-first-repository/README.pt-BR.md)
+<!-- /navigation-footer -->

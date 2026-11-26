@@ -39,3 +39,9 @@ lockfile / SBOM / provenance / attestation
 - <https://docs.github.com/en/actions/reference/security/secure-use>
 - <https://slsa.dev/spec/v1.0/>
 - <https://www.cisa.gov/sbom>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../09-commit-and-tag-signing/README.es.md) · [Índice](../README.es.md) · [Siguiente](../11-credential-exposure-and-incident-response/README.es.md)
+<!-- /navigation-footer -->

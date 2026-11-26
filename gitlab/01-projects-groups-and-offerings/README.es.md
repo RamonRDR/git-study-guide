@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.es.md) · [Siguiente](../02-visibility-permissions-and-authentication/README.es.md)
+[Módulo anterior](../../github/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-visibility-permissions-and-authentication/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 30 min
@@ -33,3 +33,9 @@ No transfiera ni renombre proyectos reales como ejercicio: rutas, integraciones 
 - <https://docs.gitlab.com/user/namespace/>
 - <https://docs.gitlab.com/user/group/>
 - <https://docs.gitlab.com/subscriptions/choosing_subscription/>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../github/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-visibility-permissions-and-authentication/README.es.md)
+<!-- /navigation-footer -->

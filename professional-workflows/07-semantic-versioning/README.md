@@ -37,3 +37,9 @@ MAJOR.MINOR.PATCH / pre-release / build metadata
 - <https://semver.org/spec/v2.0.0.html>
 - <https://www.conventionalcommits.org/en/v1.0.0/>
 - <https://git-scm.com/docs/git-tag>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../06-conventional-commits/README.md) · [Index](../README.md) · [Next](../08-code-review/README.md)
+<!-- /navigation-footer -->

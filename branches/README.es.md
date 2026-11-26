@@ -17,3 +17,9 @@
 - 04 [Borrado seguro de ramas locales](04-safe-local-deletion/README.es.md)
 - 05 [Detached HEAD y preservación del trabajo](05-detached-head/README.es.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../basic-commands/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../merge-and-conflicts/README.es.md)
+<!-- /navigation-footer -->

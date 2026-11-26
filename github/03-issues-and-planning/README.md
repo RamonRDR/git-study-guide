@@ -42,3 +42,9 @@ Pass if your issue has an observable result, a label and milestone with differen
 - <https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work>
 - <https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects>
 - <https://docs.github.com/en/discussions/collaborating-with-your-community-using-discussions/about-discussions>
+
+---
+
+<!-- navigation-footer -->
+[Previous](../02-permissions-and-authentication/README.md) · [Index](../README.md) · [Next](../04-pull-requests-and-review/README.md)
+<!-- /navigation-footer -->

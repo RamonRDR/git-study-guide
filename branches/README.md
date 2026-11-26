@@ -17,3 +17,9 @@
 - 04 [Safe local branch deletion](04-safe-local-deletion/README.md)
 - 05 [Detached HEAD and preserving work](05-detached-head/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../basic-commands/README.md) · [Index](../docs/learning-path.md) · [Next](../merge-and-conflicts/README.md)
+<!-- /navigation-footer -->

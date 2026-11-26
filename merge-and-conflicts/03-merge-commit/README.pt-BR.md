@@ -121,3 +121,9 @@ Por que --ff-only recusou? Pontas têm commits exclusivos. Passe se merge tiver 
 - [Git: git-merge](https://git-scm.com/docs/git-merge)
 - [Git: git-rev-list](https://git-scm.com/docs/git-rev-list)
 - [Git: git-log](https://git-scm.com/docs/git-log)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-fast-forward/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../04-conflict-resolution/README.pt-BR.md)
+<!-- /navigation-footer -->

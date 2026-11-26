@@ -71,3 +71,9 @@ No use switch --discard-changes ni branch -M aquí. No borre ediciones reales pa
 - [Git: git-switch](https://git-scm.com/docs/git-switch)
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-check-ref-format](https://git-scm.com/docs/git-check-ref-format)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-start-points-and-comparison/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-safe-local-deletion/README.es.md)
+<!-- /navigation-footer -->

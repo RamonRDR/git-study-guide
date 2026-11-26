@@ -19,3 +19,9 @@
 - 06 [Rebase, abort and continue](06-rebase-and-conflicts/README.md)
 - 07 [Interactive rebase and strategy choice](07-interactive-rebase/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../branches/README.md) · [Index](../docs/learning-path.md) · [Next](../remote-repositories/README.md)
+<!-- /navigation-footer -->

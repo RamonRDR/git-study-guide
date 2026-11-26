@@ -77,3 +77,9 @@ Diff simple vacío no prueba ausencia de staging o no rastreados. Compruebe stat
 - [Git: git-log](https://git-scm.com/docs/git-log)
 - [Git: git-show](https://git-scm.com/docs/git-show)
 - [Git: gitrevisions](https://git-scm.com/docs/gitrevisions)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../02-status-add-commit/README.es.md) · [Índice](../README.es.md) · [Siguiente](../04-move-and-remove/README.es.md)
+<!-- /navigation-footer -->

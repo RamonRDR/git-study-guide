@@ -164,3 +164,9 @@ Tras cada lab independiente, cierre editor y shell dedicado, luego borre solo ca
 - [Git: git-branch](https://git-scm.com/docs/git-branch)
 - [Git: git-ls-files](https://git-scm.com/docs/git-ls-files)
 - [Git: git-config](https://git-scm.com/docs/git-config)
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../05-squash-merge/README.es.md) · [Índice](../README.es.md) · [Siguiente](../07-interactive-rebase/README.es.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-snapshots-head-and-refs/README.md)
+[Previous module](../../fundamentals/README.md) · [Index](../README.md) · [Next](../02-snapshots-head-and-refs/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 30 min
@@ -67,3 +67,9 @@ Which version would a commit record now? Hint: follow the second arrow. Answer: 
 - [Git: git-status](https://git-scm.com/docs/git-status)
 - [Git: git-diff](https://git-scm.com/docs/git-diff)
 - [Git: git-show](https://git-scm.com/docs/git-show)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../fundamentals/README.md) · [Index](../README.md) · [Next](../02-snapshots-head-and-refs/README.md)
+<!-- /navigation-footer -->

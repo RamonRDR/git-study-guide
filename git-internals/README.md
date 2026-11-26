@@ -13,3 +13,9 @@
 <!-- chapters -->
 No chapters published yet.
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../advanced-git/README.md) · [Index](../docs/learning-path.md) · [Next](../command-reference/README.md)
+<!-- /navigation-footer -->

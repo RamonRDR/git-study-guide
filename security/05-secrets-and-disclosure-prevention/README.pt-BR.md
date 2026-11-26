@@ -38,3 +38,9 @@ Ignore e tracking são distintos; template é seguro só por conteúdo não sens
 - <https://git-scm.com/docs/git-check-ignore>
 - <https://git-scm.com/docs/git-ls-files>
 - <https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning>
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../04-credential-managers/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../06-permissions-and-least-privilege/README.pt-BR.md)
+<!-- /navigation-footer -->

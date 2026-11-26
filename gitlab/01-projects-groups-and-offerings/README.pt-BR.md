@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Índice](../README.pt-BR.md) · [Próximo](../02-visibility-permissions-and-authentication/README.pt-BR.md)
+[Módulo anterior](../../github/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-visibility-permissions-and-authentication/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 30 min
@@ -33,3 +33,9 @@ Um clone recupera todas as issues e membros do grupo? Não. Passe se distinguir 
 - <https://docs.gitlab.com/user/namespace/>
 - <https://docs.gitlab.com/user/group/>
 - <https://docs.gitlab.com/subscriptions/choosing_subscription/>
+
+---
+
+<!-- navigation-footer -->
+[Módulo anterior](../../github/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-visibility-permissions-and-authentication/README.pt-BR.md)
+<!-- /navigation-footer -->

@@ -20,3 +20,9 @@
 - 07 [Tags Git y releases de GitLab](07-tags-and-releases/README.es.md)
 - 08 [CLI GitLab opcional y comparación de plataformas](08-gitlab-cli-and-platform-comparison/README.es.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Anterior](../github/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../ci-cd/README.es.md)
+<!-- /navigation-footer -->

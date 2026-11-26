@@ -20,3 +20,9 @@
 - 07 [Tags and GitHub Releases](07-tags-and-releases/README.md)
 - 08 [Optional GitHub CLI and read-only inspection](08-github-cli/README.md)
 <!-- /chapters -->
+
+---
+
+<!-- navigation-footer -->
+[Previous](../history-and-recovery/README.md) · [Index](../docs/learning-path.md) · [Next](../gitlab/README.md)
+<!-- /navigation-footer -->

@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-— · [Index](../README.md) · [Next](../02-restore/README.md)
+[Previous module](../../remote-repositories/README.md) · [Index](../README.md) · [Next](../02-restore/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 20 min
@@ -68,3 +68,9 @@ A published commit is wrong; which operation normally preserves collaboration? H
 - [Git: git-reflog](https://git-scm.com/docs/git-reflog)
 - [Git: git-reset](https://git-scm.com/docs/git-reset)
 - [Git: git-revert](https://git-scm.com/docs/git-revert)
+
+---
+
+<!-- navigation-footer -->
+[Previous module](../../remote-repositories/README.md) · [Index](../README.md) · [Next](../02-restore/README.md)
+<!-- /navigation-footer -->
