@@ -83,7 +83,16 @@
     },
     {
       "slug": "github",
-      "chapters": []
+      "chapters": [
+        "01-platform-and-repositories",
+        "02-permissions-and-authentication",
+        "03-issues-and-planning",
+        "04-pull-requests-and-review",
+        "05-forks-and-open-source",
+        "06-protection-and-rulesets",
+        "07-tags-and-releases",
+        "08-github-cli"
+      ]
     },
     {
       "slug": "gitlab",
