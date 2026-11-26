@@ -160,11 +160,35 @@
     },
     {
       "slug": "advanced-git",
-      "chapters": []
+      "chapters": [
+        "01-bisect",
+        "02-worktree",
+        "03-submodules",
+        "04-subtree",
+        "05-hooks",
+        "06-rerere",
+        "07-sparse-checkout",
+        "08-partial-and-shallow-clone",
+        "09-blame-and-grep",
+        "10-archive-and-bundle",
+        "11-integrated-advanced-lab"
+      ]
     },
     {
       "slug": "git-internals",
-      "chapters": []
+      "chapters": [
+        "01-object-database",
+        "02-blobs-and-trees",
+        "03-commits-and-tags",
+        "04-object-hashes",
+        "05-refs-and-head",
+        "06-index-internals",
+        "07-loose-objects-and-packfiles",
+        "08-gc-and-maintenance",
+        "09-reflogs-and-reachability",
+        "10-porcelain-and-plumbing",
+        "11-integrated-internals-lab"
+      ]
     },
     {
       "slug": "command-reference",
