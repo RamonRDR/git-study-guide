@@ -109,7 +109,18 @@
     },
     {
       "slug": "ci-cd",
-      "chapters": []
+      "chapters": [
+        "01-ci-delivery-and-deployment",
+        "02-yaml-fundamentals",
+        "03-github-actions",
+        "04-gitlab-ci-cd",
+        "05-runners-and-execution-environments",
+        "06-jobs-steps-stages-and-dependencies",
+        "07-artifacts-and-cache",
+        "08-environments-variables-and-secrets",
+        "09-quality-gates-and-troubleshooting",
+        "10-integrated-quality-pipeline-lab"
+      ]
     },
     {
       "slug": "professional-workflows",
