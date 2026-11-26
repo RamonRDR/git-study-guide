@@ -29,7 +29,7 @@ quality:
   timeout: 5m
   script:
     - test -s catalog.txt
-    - grep -Fxq 'status: ready' catalog.txt
+    - "grep -Fxq 'status: ready' catalog.txt"
 ```
 
 ## Practice
