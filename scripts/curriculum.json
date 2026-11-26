@@ -96,7 +96,16 @@
     },
     {
       "slug": "gitlab",
-      "chapters": []
+      "chapters": [
+        "01-projects-groups-and-offerings",
+        "02-visibility-permissions-and-authentication",
+        "03-issues-labels-milestones-and-boards",
+        "04-merge-requests-review-and-forks",
+        "05-protected-branches-and-merge-checks",
+        "06-pipelines-and-runners",
+        "07-tags-and-releases",
+        "08-gitlab-cli-and-platform-comparison"
+      ]
     },
     {
       "slug": "ci-cd",
