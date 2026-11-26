@@ -14,7 +14,7 @@
 
 ## Qué es y por qué
 
-Secreto es material confidencial de autenticación u otro valor sensible. Guarde secretos reales en gestor aprobado fuera de control de versiones. Publique solo plantillas saneadas con ejemplos no secretos. `.gitignore` coincide con rutas no rastreadas; no quita archivos ya en índice ni borra historial. `git check-ignore -- path` comprueba reglas de ruta no rastreada; `git ls-files -- path` inspecciona entradas rastreadas. Check de nombres staged ayuda a evitar adiciones accidentales pero no inspecciona contenido. Secret scanning y push protection son defensas heurísticas dependientes del proveedor, no prueba de ausencia. Redacte logs/artefactos; nunca publique secretos reales ni en repos privados.
+Secreto es material confidencial de autenticación u otro valor sensible. Guarde secretos reales en gestor aprobado fuera de control de versiones. Publique solo plantillas saneadas con ejemplos no secretos. `.gitignore` coincide con rutas no rastreadas; no quita archivos ya en índice ni borra historial. `git check-ignore -- path` comprueba reglas de ruta no rastreada; `git ls-files -- path` inspecciona entradas rastreadas. Check de nombres staged ayuda a evitar adiciones accidentales pero no inspecciona contenido. Secret scanning y push protection son defensas heurísticas dependientes del proveedor, no prueba de ausencia. Elimine u oculte los valores sensibles antes de compartir logs y artefactos; nunca publique secretos reales ni en repos privados.
 
 ## Práctica
 

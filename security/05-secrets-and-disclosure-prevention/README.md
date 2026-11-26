@@ -14,7 +14,7 @@
 
 ## What and why
 
-A secret is confidential authentication material or another sensitive value. Store real secrets in an approved secret manager outside source control. Publish only sanitized templates with non-secret examples. `.gitignore` matches intentionally untracked paths; it does not untrack files already in the index or erase history. `git check-ignore -- path` checks ignore rules for an untracked path; `git ls-files -- path` inspects tracked entries. A staged-name check helps prevent accidental additions but does not inspect content. Secret scanning and push protection are heuristic, provider-dependent defenses, not proof of absence. Redact logs and artifacts; never publish real secrets even in private repositories.
+A secret is confidential authentication material or another sensitive value. Store real secrets in an approved secret manager outside source control. Publish only sanitized templates with non-secret examples. `.gitignore` matches intentionally untracked paths; it does not untrack files already in the index or erase history. `git check-ignore -- path` checks ignore rules for an untracked path; `git ls-files -- path` inspects tracked entries. A staged-name check helps prevent accidental additions but does not inspect content. Secret scanning and push protection are heuristic, provider-dependent defenses, not proof of absence. Remove or mask sensitive values before sharing logs and artifacts; never publish real secrets even in private repositories.
 
 ## Practice
 
