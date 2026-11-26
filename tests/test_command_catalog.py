@@ -1,11 +1,13 @@
 """Negative fixtures for the internal catalog; no command execution."""
-import copy
+import json
+import tempfile
 import sys
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import command_catalog as cc
+import render_command_reference as render
 
 CATEGORY = "01-setup-and-configuration"
 CHAPTER = "basic-commands/01-init-config-help"
@@ -123,3 +125,112 @@ class CommandEntryTests(unittest.TestCase):
     def test_duplicate_json_keys(self):
         with self.assertRaises(ValueError):
             cc.unique_keys([("id", "a"), ("id", "b")])
+
+class CatalogIntegrationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.paths = set()
+        self.registry = cc.categories(render.ROOT)
+        self.intent_labels = {"inspect": localized("Inspect")}
+        self.write(cc.REGISTRY, {"schema_version": 1, "categories": self.registry})
+        self.write(cc.INTENT_REGISTRY, {"schema_version": 1, "intents": self.intent_labels})
+        self.modules = [
+            {"slug": "basic-commands", "chapters": ["01-init-config-help"]},
+            {"slug": cc.MODULE, "chapters": [c["slug"] for c in self.registry]},
+            {"slug": "practical-projects", "chapters": []},
+        ]
+        self.paths.update(CHAPTER + "/README" + suffix + ".md" for suffix in cc.SUFFIX.values())
+        self.records = {}
+        n = 0
+        for item in self.registry:
+            slug = item["slug"]
+            records = []
+            for _ in range(item["target"]):
+                n += 1
+                record = entry()
+                record.update(id=f"fixture-{n}", command=f"git fixture-{n}", category=slug)
+                records.append(record)
+            self.records[slug] = records
+            self.save(slug)
+
+    def write(self, path, data):
+        target = self.root / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+        self.paths.add(path)
+
+    def save(self, slug):
+        self.write(f"{cc.MODULE}/{slug}/catalog.json",
+                   {"schema_version": 1, "category": slug, "entries": self.records[slug]})
+
+    def load(self):
+        return cc.load_catalog(self.root, self.paths, self.modules)
+
+    def test_valid_catalog_count(self):
+        self.assertEqual(sum(len(records) for _, records in self.load()), 120)
+
+    def test_catalog_below_minimum(self):
+        for slug in self.records:
+            self.records[slug] = self.records[slug][:7]
+            self.save(slug)
+        with self.assertRaisesRegex(ValueError, "fewer than 101"):
+            self.load()
+
+    def test_duplicate_id(self):
+        slug = self.registry[1]["slug"]
+        self.records[slug][0]["id"] = self.records[self.registry[0]["slug"]][0]["id"]
+        self.save(slug)
+        with self.assertRaisesRegex(ValueError, "Duplicate catalog ID"):
+            self.load()
+
+    def test_duplicate_command(self):
+        slug = self.registry[1]["slug"]
+        self.records[slug][0]["command"] = self.records[self.registry[0]["slug"]][0]["command"]
+        self.save(slug)
+        with self.assertRaisesRegex(ValueError, "Duplicate command"):
+            self.load()
+
+    def test_missing_catalog(self):
+        self.paths.remove(f"{cc.MODULE}/{self.registry[0]['slug']}/catalog.json")
+        with self.assertRaisesRegex(ValueError, "Missing or unregistered"):
+            self.load()
+
+    def test_unregistered_catalog(self):
+        self.paths.add(f"{cc.MODULE}/99-invalid/catalog.json")
+        with self.assertRaisesRegex(ValueError, "Missing or unregistered"):
+            self.load()
+
+    def test_missing_chapter_locale(self):
+        self.paths.remove(CHAPTER + "/README.es.md")
+        with self.assertRaisesRegex(ValueError, "Missing related chapter locale"):
+            self.load()
+
+    def test_unregistered_intent(self):
+        slug = self.registry[0]["slug"]
+        self.records[slug][0]["intent_tags"] = ["unregistered"]
+        self.save(slug)
+        with self.assertRaisesRegex(ValueError, "Unregistered intent"):
+            self.load()
+
+    def test_curriculum_mismatch(self):
+        self.modules[1]["chapters"].pop()
+        with self.assertRaisesRegex(ValueError, "curriculum mismatch"):
+            self.load()
+
+    def test_generated_pages_deterministic_and_stale(self):
+        grouped = self.load()
+        output = render.render_all(grouped, self.modules, self.intent_labels)
+        self.assertEqual(len(output), 45)
+        self.assertEqual(output, render.render_all(grouped, self.modules, self.intent_labels))
+        for path, text in output.items():
+            target = self.root / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(text, encoding="utf-8")
+            self.paths.add(path)
+        self.assertEqual(render.compare_generated(self.root, self.paths, output), [])
+        path = cc.MODULE + "/README.es.md"
+        (self.root / path).write_text("stale", encoding="utf-8")
+        self.assertEqual(render.compare_generated(self.root, self.paths, output),
+                         ["Stale generated catalog page: " + path])

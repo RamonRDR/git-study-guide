@@ -1,13 +1,13 @@
 """Internal command reference pilot; validation only, never execute catalog commands."""
 import json
 import re
-from pathlib import PurePosixPath
 from urllib.parse import urlsplit
 
 LOCALES = ("en", "pt-BR", "es")
 SUFFIX = {"en": "", "pt-BR": ".pt-BR", "es": ".es"}
 MODULE = "command-reference"
 REGISTRY = "scripts/command_catalog_categories.json"
+INTENT_REGISTRY = "scripts/command_catalog_intents.json"
 MINIMUM = 101
 KINDS = {"native-command", "subcommand", "option-usage", "workflow", "external-tool", "platform-operation"}
 LEVELS = {"beginner", "intermediate", "advanced"}
@@ -56,7 +56,7 @@ def token(value):
     return isinstance(value, str) and bool(ID.fullmatch(value))
 
 def official_url(value):
-    if not isinstance(value, str):
+    if not isinstance(value, str) or any(ch.isspace() or ch in "<>\\\"" for ch in value):
         return False
     try:
         url = urlsplit(value)
@@ -83,6 +83,15 @@ def categories(root):
         require(locale_map(item["title"]), "Invalid category titles")
         require(type(item["target"]) is int and item["target"] > 0, "Invalid category target")
     require(sum(item["target"] for item in items) == 120, "Invalid approved target total")
+    return items
+
+def intents(root):
+    data = read_json(root, INTENT_REGISTRY)
+    require(isinstance(data, dict) and set(data) == {"schema_version", "intents"} and
+            type(data["schema_version"]) is int and data["schema_version"] == 1, "Invalid intent registry")
+    items = data["intents"]
+    require(isinstance(items, dict) and bool(items) and all(token(k) and locale_map(v) for k, v in items.items()),
+            "Invalid intent labels")
     return items
 
 def validate_entry(entry, category, chapter_ids):
@@ -130,7 +139,8 @@ def load_category(root, item, chapter_ids):
 
 def load_catalog(root, paths, modules):
     registry = categories(root)
-    require(REGISTRY in paths, "Untracked category registry")
+    require(REGISTRY in paths and INTENT_REGISTRY in paths, "Untracked catalog registries")
+    labels = intents(root)
     chapter_ids = {m["slug"] + "/" + c for m in modules for c in m["chapters"] if m["slug"] != MODULE}
     expected = {f"{MODULE}/{item['slug']}/catalog.json" for item in registry}
     actual = {p for p in paths if p.startswith(MODULE + "/") and p.endswith(".json")}
@@ -143,6 +153,7 @@ def load_catalog(root, paths, modules):
     require(len({e["id"] for e in entries}) == len(entries), "Duplicate catalog ID")
     require(len({" ".join(e["command"].split()) for e in entries}) == len(entries), "Duplicate command or operation")
     for entry in entries:
+        require(set(entry["intent_tags"]).issubset(labels), "Unregistered intent tag: " + entry["id"])
         for chapter in entry["related_chapters"]:
             for suffix in SUFFIX.values():
                 require(f"{chapter}/README{suffix}.md" in paths, "Missing related chapter locale")

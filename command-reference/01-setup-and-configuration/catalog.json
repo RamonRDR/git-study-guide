@@ -198,10 +198,10 @@
         "index": "unchanged",
         "history": "unchanged",
         "remote": "unchanged",
-        "other": "conditional"
+        "other": "unchanged"
       },
       "risk": {
-        "class": "state-change",
+        "class": "read-only",
         "notes": {
           "en": "The viewer may start a process or open a browser; Git data is not modified.",
           "pt-BR": "O visualizador pode iniciar um processo ou abrir um navegador; os dados do Git não são alterados.",
@@ -320,7 +320,8 @@
         "basic-commands/01-init-config-help"
       ],
       "references": [
-        "https://git-scm.com/docs/git-init"
+        "https://git-scm.com/docs/git-init",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
       ]
     },
     {
@@ -427,7 +428,8 @@
         "git-architecture/01-three-locations"
       ],
       "references": [
-        "https://git-scm.com/docs/git-init"
+        "https://git-scm.com/docs/git-init",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
       ]
     },
     {
@@ -750,7 +752,9 @@
         "security/05-secrets-and-disclosure-prevention"
       ],
       "references": [
-        "https://git-scm.com/docs/git-config"
+        "https://git-scm.com/docs/git-config",
+        "https://git-scm.com/docs/git-config/2.8.6",
+        "https://git-scm.com/docs/git-config/2.26.0"
       ]
     },
     {

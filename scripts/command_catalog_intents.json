@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "intents": {
+    "inspect-version": {
+      "en": "Check Git version",
+      "pt-BR": "Verificar versão do Git",
+      "es": "Comprobar versión de Git"
+    },
+    "configure-git": {
+      "en": "Configure Git",
+      "pt-BR": "Configurar Git",
+      "es": "Configurar Git"
+    },
+    "find-help": {
+      "en": "Find help",
+      "pt-BR": "Encontrar ajuda",
+      "es": "Encontrar ayuda"
+    },
+    "create-repository": {
+      "en": "Create a repository",
+      "pt-BR": "Criar repositório",
+      "es": "Crear repositorio"
+    },
+    "simulate-collaboration": {
+      "en": "Simulate collaboration",
+      "pt-BR": "Simular colaboração",
+      "es": "Simular colaboración"
+    },
+    "configure-identity": {
+      "en": "Configure identity",
+      "pt-BR": "Configurar identidade",
+      "es": "Configurar identidad"
+    },
+    "inspect-config": {
+      "en": "Inspect configuration",
+      "pt-BR": "Inspecionar configuração",
+      "es": "Inspeccionar configuración"
+    },
+    "troubleshoot-config": {
+      "en": "Troubleshoot configuration",
+      "pt-BR": "Diagnosticar configuração",
+      "es": "Diagnosticar configuración"
+    },
+    "inspect-state": {
+      "en": "Inspect repository state",
+      "pt-BR": "Inspecionar estado do repositório",
+      "es": "Inspeccionar estado del repositorio"
+    },
+    "inspect-files": {
+      "en": "Inspect files",
+      "pt-BR": "Inspecionar arquivos",
+      "es": "Inspeccionar archivos"
+    },
+    "stage-changes": {
+      "en": "Stage changes",
+      "pt-BR": "Preparar alterações",
+      "es": "Preparar cambios"
+    },
+    "unstage-changes": {
+      "en": "Unstage changes",
+      "pt-BR": "Retirar alterações do staging",
+      "es": "Retirar cambios del staging"
+    },
+    "manage-files": {
+      "en": "Manage files",
+      "pt-BR": "Gerenciar arquivos",
+      "es": "Gestionar archivos"
+    },
+    "ignore-files": {
+      "en": "Ignore files",
+      "pt-BR": "Ignorar arquivos",
+      "es": "Ignorar archivos"
+    },
+    "commit-changes": {
+      "en": "Commit changes",
+      "pt-BR": "Registrar alterações",
+      "es": "Registrar cambios"
+    },
+    "manage-tags": {
+      "en": "Manage tags",
+      "pt-BR": "Gerenciar tags",
+      "es": "Gestionar etiquetas"
+    },
+    "inspect-history": {
+      "en": "Inspect history",
+      "pt-BR": "Inspecionar histórico",
+      "es": "Inspeccionar historial"
+    },
+    "compare-changes": {
+      "en": "Compare changes",
+      "pt-BR": "Comparar alterações",
+      "es": "Comparar cambios"
+    },
+    "manage-branches": {
+      "en": "Manage branches",
+      "pt-BR": "Gerenciar branches",
+      "es": "Gestionar ramas"
+    },
+    "switch-context": {
+      "en": "Switch work context",
+      "pt-BR": "Trocar contexto de trabalho",
+      "es": "Cambiar contexto de trabajo"
+    },
+    "integrate-changes": {
+      "en": "Integrate changes",
+      "pt-BR": "Integrar alterações",
+      "es": "Integrar cambios"
+    },
+    "resolve-conflicts": {
+      "en": "Resolve conflicts",
+      "pt-BR": "Resolver conflitos",
+      "es": "Resolver conflictos"
+    },
+    "rewrite-local-history": {
+      "en": "Rewrite local history",
+      "pt-BR": "Reescrever histórico local",
+      "es": "Reescribir historial local"
+    },
+    "manage-remotes": {
+      "en": "Manage remotes",
+      "pt-BR": "Gerenciar remotos",
+      "es": "Gestionar remotos"
+    },
+    "synchronize": {
+      "en": "Synchronize repositories",
+      "pt-BR": "Sincronizar repositórios",
+      "es": "Sincronizar repositorios"
+    },
+    "recover-work": {
+      "en": "Recover work",
+      "pt-BR": "Recuperar trabalho",
+      "es": "Recuperar trabajo"
+    },
+    "undo-changes": {
+      "en": "Undo changes",
+      "pt-BR": "Desfazer alterações",
+      "es": "Deshacer cambios"
+    },
+    "shelve-work": {
+      "en": "Shelve work temporarily",
+      "pt-BR": "Guardar trabalho temporariamente",
+      "es": "Guardar trabajo temporalmente"
+    },
+    "find-regression": {
+      "en": "Find a regression",
+      "pt-BR": "Encontrar regressão",
+      "es": "Encontrar regresión"
+    },
+    "search-content": {
+      "en": "Search content",
+      "pt-BR": "Pesquisar conteúdo",
+      "es": "Buscar contenido"
+    },
+    "inspect-authorship": {
+      "en": "Inspect authorship",
+      "pt-BR": "Inspecionar autoria",
+      "es": "Inspeccionar autoría"
+    },
+    "parallel-work": {
+      "en": "Work in parallel",
+      "pt-BR": "Trabalhar em paralelo",
+      "es": "Trabajar en paralelo"
+    },
+    "manage-dependencies": {
+      "en": "Manage repository dependencies",
+      "pt-BR": "Gerenciar dependências de repositórios",
+      "es": "Gestionar dependencias de repositorios"
+    },
+    "limit-checkout": {
+      "en": "Limit checkout or clone",
+      "pt-BR": "Limitar checkout ou clone",
+      "es": "Limitar checkout o clonación"
+    },
+    "package-history": {
+      "en": "Package history or files",
+      "pt-BR": "Empacotar histórico ou arquivos",
+      "es": "Empaquetar historial o archivos"
+    },
+    "inspect-objects": {
+      "en": "Inspect Git objects",
+      "pt-BR": "Inspecionar objetos Git",
+      "es": "Inspeccionar objetos Git"
+    },
+    "inspect-refs": {
+      "en": "Inspect references",
+      "pt-BR": "Inspecionar referências",
+      "es": "Inspeccionar referencias"
+    },
+    "inspect-index": {
+      "en": "Inspect index internals",
+      "pt-BR": "Inspecionar internals do index",
+      "es": "Inspeccionar internals del index"
+    },
+    "verify-integrity": {
+      "en": "Verify integrity",
+      "pt-BR": "Verificar integridade",
+      "es": "Verificar integridad"
+    },
+    "maintain-repository": {
+      "en": "Maintain a repository",
+      "pt-BR": "Manter um repositório",
+      "es": "Mantener un repositorio"
+    },
+    "authenticate": {
+      "en": "Authenticate safely",
+      "pt-BR": "Autenticar com segurança",
+      "es": "Autenticar con seguridad"
+    },
+    "verify-signatures": {
+      "en": "Verify signatures",
+      "pt-BR": "Verificar assinaturas",
+      "es": "Verificar firmas"
+    },
+    "protect-history": {
+      "en": "Protect history",
+      "pt-BR": "Proteger histórico",
+      "es": "Proteger historial"
+    },
+    "review-changes": {
+      "en": "Review changes",
+      "pt-BR": "Revisar alterações",
+      "es": "Revisar cambios"
+    },
+    "manage-releases": {
+      "en": "Manage releases",
+      "pt-BR": "Gerenciar releases",
+      "es": "Gestionar versiones"
+    },
+    "inspect-ci": {
+      "en": "Inspect CI",
+      "pt-BR": "Inspecionar CI",
+      "es": "Inspeccionar CI"
+    },
+    "automate-workflow": {
+      "en": "Automate workflow",
+      "pt-BR": "Automatizar fluxo",
+      "es": "Automatizar flujo"
+    }
+  }
+}

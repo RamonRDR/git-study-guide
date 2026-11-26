@@ -114,12 +114,12 @@ def code(value):
 def field(lines, label, text):
     lines.extend([f"**{label}:** {md_text(text)}", ""])
 
-def entry_lines(entry, locale, document):
+def entry_lines(entry, locale, document, intents):
     labels = LABELS[locale]
     lines = [f"## {entry['id']}", "", f"**{code(entry['command'])}**", ""]
     field(lines, labels["kind"], term(entry["kind"], locale))
     field(lines, labels["level"], term(entry["level"], locale))
-    field(lines, labels["intent"], ", ".join(entry["intent_tags"]))
+    field(lines, labels["intent"], ", ".join(intents[tag][locale] for tag in entry["intent_tags"]))
     field(lines, labels["risk"], term(entry["risk"]["class"], locale) + ". " + entry["risk"]["notes"][locale])
     for key in BEFORE_EXAMPLES:
         field(lines, labels[key], entry[key][locale])
@@ -143,25 +143,25 @@ def entry_lines(entry, locale, document):
     lines.append("")
     return lines
 
-def render_category(item, records, locale, document, nav):
+def render_category(item, records, locale, document, nav, intents):
     labels = LABELS[locale]
-    lines = header(item["slug"][:2] + " " + item["title"][locale], document, nav)
+    lines = header(item["slug"][:2] + " " + md_text(item["title"][locale]), document, nav)
     lines.extend([labels["generated"], "", labels["intro"], "", f"**{labels['total']}: {len(records)}**", ""])
     for entry in records:
         lines.append(f"- [{code(entry['command'])}](#{entry['id']})")
     lines.append("")
     for entry in records:
-        lines.extend(entry_lines(entry, locale, document))
+        lines.extend(entry_lines(entry, locale, document, intents))
     return "\n".join(lines + footer(document, nav))
 
-def render_index(grouped, locale, document, nav):
+def render_index(grouped, locale, document, nav, intents):
     labels = LABELS[locale]
     lines = header(labels["module"], document, nav)
     entries = [entry for _, records in grouped for entry in records]
     lines.extend([labels["generated"], "", labels["intro"], "", f"**{labels['total']}: {len(entries)}**", "",
                   f"## {labels['chapters']}", "", "<!-- chapters -->"])
     for item, records in grouped:
-        lines.append(f"- [{item['title'][locale]}]({item['slug']}/{filename(locale)}) ({len(records)})")
+        lines.append(f"- [{md_text(item['title'][locale])}]({item['slug']}/{filename(locale)}) ({len(records)})")
     lines.extend(["<!-- /chapters -->", "", f"## {labels['counts']}", ""])
     counts = Counter(e["kind"] for e in entries)
     for kind in sorted(cc.KINDS):
@@ -173,21 +173,21 @@ def render_index(grouped, locale, document, nav):
             for tag in entry["intent_tags"]:
                 by_intent[tag].append((item, entry))
     for tag in sorted(by_intent):
-        lines.extend([f"### {tag}", ""])
+        lines.extend([f"### {md_text(intents[tag][locale])}", ""])
         for item, entry in by_intent[tag]:
             lines.append(f"- [{code(entry['command'])}]({item['slug']}/{filename(locale)}#{entry['id']})")
         lines.append("")
     return "\n".join(lines + footer(document, nav))
 
-def render_all(grouped, modules):
+def render_all(grouped, modules, intents):
     output = {}
     for locale in cc.LOCALES:
         navigation = {doc: nav for doc, nav, _ in navigation_entries(modules, cc.SUFFIX[locale])}
         document = cc.MODULE + "/" + filename(locale)
-        output[document] = render_index(grouped, locale, document, navigation[document])
+        output[document] = render_index(grouped, locale, document, navigation[document], intents)
         for item, records in grouped:
             document = f"{cc.MODULE}/{item['slug']}/{filename(locale)}"
-            output[document] = render_category(item, records, locale, document, navigation[document])
+            output[document] = render_category(item, records, locale, document, navigation[document], intents)
     return output
 
 def compare_generated(root, paths, output):
@@ -203,7 +203,7 @@ def check_catalog(root, paths):
     try:
         modules = load_modules(root)
         grouped = cc.load_catalog(root, paths, modules)
-        return compare_generated(root, paths, render_all(grouped, modules))
+        return compare_generated(root, paths, render_all(grouped, modules, cc.intents(root)))
     except (OSError, ValueError, TypeError, KeyError, StopIteration) as exc:
         return ["Invalid command catalog: " + str(exc)]
 
@@ -214,7 +214,7 @@ def main():
     paths = tracked_paths(ROOT)
     modules = load_modules(ROOT)
     grouped = cc.load_catalog(ROOT, paths, modules)
-    output = render_all(grouped, modules)
+    output = render_all(grouped, modules, cc.intents(ROOT))
     if args.write:
         for path, content in sorted(output.items()):
             target = ROOT / path
