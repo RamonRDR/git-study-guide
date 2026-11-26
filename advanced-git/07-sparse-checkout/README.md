@@ -22,8 +22,12 @@ Create a fresh isolated fixture using the module index before each practice. Run
 
 Use a clean fresh fixture with docs and src. Select docs and inspect the commit tree; src/state.txt remains in HEAD although absent from the working tree. Disable sparse checkout to restore the full checkout; do not force when local modifications are present.
 
+For compatibility with Git 2.34, initialize cone mode explicitly before setting directories. Confirm `core.sparseCheckoutCone` is true; the newer combined `set --cone` syntax is not used here.
+
 ```bash
-git sparse-checkout set --cone docs
+git sparse-checkout init --cone
+git sparse-checkout set docs
+test "$(git config --bool --get core.sparseCheckoutCone)" = true
 git sparse-checkout list
 git ls-tree -r --name-only HEAD
 test ! -f src/state.txt
@@ -42,7 +46,9 @@ Is a file outside the cone deleted from Git? No; its snapshot remains in the com
 
 ## Quick reference
 
-- `git sparse-checkout set --cone docs`
+- `git sparse-checkout init --cone`
+- `git sparse-checkout set docs`
+- `git config --bool --get core.sparseCheckoutCone`
 - `git sparse-checkout list`
 - `git ls-tree -r --name-only HEAD`
 - `git sparse-checkout disable`
@@ -50,6 +56,7 @@ Is a file outside the cone deleted from Git? No; its snapshot remains in the com
 ## Official sources
 
 - [https://git-scm.com/docs/git-sparse-checkout](https://git-scm.com/docs/git-sparse-checkout)
+- [https://git-scm.com/docs/git-sparse-checkout/2.34.0](https://git-scm.com/docs/git-sparse-checkout/2.34.0)
 - [https://git-scm.com/docs/git-ls-tree](https://git-scm.com/docs/git-ls-tree)
 
 ---

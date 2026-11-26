@@ -22,8 +22,12 @@ Cree laboratorio aislado nuevo desde índice del módulo antes de cada práctica
 
 Use laboratorio nuevo limpio con docs y src. Seleccione docs e inspeccione tree del commit; src/state.txt sigue en HEAD aunque ausente de working tree. Desactive sparse checkout para restaurar checkout completo; no fuerce con cambios locales.
 
+Para compatibilidad con Git 2.34, inicialice el modo cone explícitamente antes de seleccionar directorios. Confirme `core.sparseCheckoutCone` como true; aquí no se usa la sintaxis combinada más reciente `set --cone`.
+
 ```bash
-git sparse-checkout set --cone docs
+git sparse-checkout init --cone
+git sparse-checkout set docs
+test "$(git config --bool --get core.sparseCheckoutCone)" = true
 git sparse-checkout list
 git ls-tree -r --name-only HEAD
 test ! -f src/state.txt
@@ -42,7 +46,9 @@ Use solo laboratorio desechable y datos ficticios. Si estado difiere, pare; insp
 
 ## Referencia rápida
 
-- `git sparse-checkout set --cone docs`
+- `git sparse-checkout init --cone`
+- `git sparse-checkout set docs`
+- `git config --bool --get core.sparseCheckoutCone`
 - `git sparse-checkout list`
 - `git ls-tree -r --name-only HEAD`
 - `git sparse-checkout disable`
@@ -50,6 +56,7 @@ Use solo laboratorio desechable y datos ficticios. Si estado difiere, pare; insp
 ## Fuentes oficiales
 
 - [https://git-scm.com/docs/git-sparse-checkout](https://git-scm.com/docs/git-sparse-checkout)
+- [https://git-scm.com/docs/git-sparse-checkout/2.34.0](https://git-scm.com/docs/git-sparse-checkout/2.34.0)
 - [https://git-scm.com/docs/git-ls-tree](https://git-scm.com/docs/git-ls-tree)
 
 ---
