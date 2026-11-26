@@ -70,7 +70,16 @@
     },
     {
       "slug": "history-and-recovery",
-      "chapters": []
+      "chapters": [
+        "01-recovery-safety",
+        "02-restore",
+        "03-reset",
+        "04-revert",
+        "05-reflog",
+        "06-stash",
+        "07-cherry-pick",
+        "08-amend"
+      ]
     },
     {
       "slug": "github",
