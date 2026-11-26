@@ -27,7 +27,7 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | 16 | `practical-projects/` | Projetos práticos | Oito projetos integrados: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
 | 17 | `exercises/` | Desafios e entrevistas | Exercícios, quizzes, troubleshooting, desafios, entrevistas, simulações profissionais e rubricas de autoavaliação; mapear pré-requisitos primeiro. |
 
-Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo para o primeiro commit; 01–03 aprofundam. Módulo 04 ensina branches locais; prática de tracking/exclusão remota aguarda 06. Explicar recuperação/abort seguros antes de merge ou rebase de risco em 05, aprofundar em 07. Ensinar tratamento seguro de credenciais antes de 06 e menor privilégio antes de 10; módulo 12 consolida segurança. Introduzir conceitos de objetos/refs antes de tarefas avançadas. Referenciar ensino anterior antes da avaliação; módulos 00–04 têm aulas; índices seguintes são planejados.
+Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo para o primeiro commit; 01–03 aprofundam. Módulo 04 ensina branches locais; prática de tracking/exclusão remota aguarda 06. Explicar recuperação/abort seguros antes de merge ou rebase de risco em 05, aprofundar em 07. Ensinar tratamento seguro de credenciais antes de 06 e menor privilégio antes de 10; módulo 12 consolida segurança. Introduzir conceitos de objetos/refs antes de tarefas avançadas. Referenciar ensino anterior antes da avaliação; módulos 00–05 têm aulas; índices seguintes são planejados.
 
 ## Engenharia (20 sprints)
 
@@ -54,7 +54,7 @@ Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo p
 | 18 | VI | Finalizar contrato, manifestos, schemas, fixtures do consumidor; avaliar playground opcional separadamente |
 | 19 | VI | Identidade fornecida pelo mantenedor, README final, QA, handoff |
 
-Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprints 00–04 integradas pelos PRs #1–5; Sprint 05 submetida para revisão; Sprints 06–19 planejadas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
+Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprints 00–05 integradas pelos PRs #1–6; Sprint 06 submetida para revisão; Sprints 07–19 planejadas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
 
 ## Documentos relacionados
 

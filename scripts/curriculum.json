@@ -48,7 +48,15 @@
     },
     {
       "slug": "merge-and-conflicts",
-      "chapters": []
+      "chapters": [
+        "01-integration-safety",
+        "02-fast-forward",
+        "03-merge-commit",
+        "04-conflict-resolution",
+        "05-squash-merge",
+        "06-rebase-and-conflicts",
+        "07-interactive-rebase"
+      ]
     },
     {
       "slug": "remote-repositories",
