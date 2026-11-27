@@ -1,0 +1,857 @@
+{
+  "schema_version": 1,
+  "category": "10-search-and-troubleshooting",
+  "entries": [
+    {
+      "id": "git-grep",
+      "command": "git grep",
+      "kind": "native-command",
+      "category": "10-search-and-troubleshooting",
+      "level": "intermediate",
+      "intent_tags": [
+        "search-content"
+      ],
+      "syntax": "git grep -n -F \"TODO\"",
+      "purpose": {
+        "en": "Search matching lines in tracked files, index or selected trees.",
+        "pt-BR": "Buscar linhas correspondentes em arquivos rastreados, index ou árvores selecionadas.",
+        "es": "Buscar líneas coincidentes en archivos rastreados, index o árboles seleccionados."
+      },
+      "options": {
+        "en": "-n prints line numbers; -F treats patterns literally; --cached searches index content; a tree argument searches a committed tree.",
+        "pt-BR": "-n exibe números de linha; -F usa padrões literais; --cached busca conteúdo do index; argumento de árvore busca árvore registrada.",
+        "es": "-n muestra números de línea; -F usa patrones literales; --cached busca contenido del index; argumento de árbol busca árbol confirmada."
+      },
+      "when_to_use": {
+        "en": "When locating a symbol or text within versioned content.",
+        "pt-BR": "Ao localizar símbolo ou texto em conteúdo versionado.",
+        "es": "Al localizar símbolo o texto en contenido versionado."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume ignored or untracked files are searched by default.",
+        "pt-BR": "Não presuma busca padrão em arquivos ignorados ou não rastreados.",
+        "es": "No supongas búsqueda predeterminada en archivos ignorados o no rastreados."
+      },
+      "expected_state": {
+        "en": "Prints matches with requested context; exit 1 means no matches, not necessarily an execution error.",
+        "pt-BR": "Exibe correspondências com contexto solicitado; saída 1 significa ausência de correspondências, não necessariamente erro de execução.",
+        "es": "Muestra coincidencias con contexto solicitado; salida 1 significa ausencia de coincidencias, no necesariamente error de ejecución."
+      },
+      "common_errors": {
+        "en": "Confusing regular expressions with literal strings or searching the wrong snapshot.",
+        "pt-BR": "Confundir expressões regulares com literais ou buscar snapshot errado.",
+        "es": "Confundir expresiones regulares con literales o buscar instantánea incorrecta."
+      },
+      "alternatives": {
+        "en": "Use a trusted filesystem search for files outside the selected Git scope.",
+        "pt-BR": "Use busca confiável no sistema de arquivos para arquivos fora do escopo Git selecionado.",
+        "es": "Usa búsqueda confiable del sistema de archivos para archivos fuera del alcance Git seleccionado."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git grep -n -F \"TODO\"",
+          "context": {
+            "en": "Find literal TODO in tracked practice files.",
+            "pt-BR": "Encontre TODO literal em arquivos rastreados de prática.",
+            "es": "Encuentra TODO literal en archivos rastreados de práctica."
+          }
+        },
+        "professional": {
+          "command": "git grep -n -F \"timeout\" HEAD -- src/",
+          "context": {
+            "en": "Search a committed source directory in the lab.",
+            "pt-BR": "Busque diretório de código registrado no laboratório.",
+            "es": "Busca directorio de código confirmado en laboratorio."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/09-blame-and-grep"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-grep"
+      ]
+    },
+    {
+      "id": "git-blame",
+      "command": "git blame",
+      "kind": "native-command",
+      "category": "10-search-and-troubleshooting",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-authorship",
+        "inspect-history"
+      ],
+      "syntax": "git blame HEAD -- notes.txt",
+      "purpose": {
+        "en": "Trace each selected line to the revision that Git attributes it to.",
+        "pt-BR": "Rastrear cada linha selecionada à revisão à qual Git a atribui.",
+        "es": "Rastrear cada línea seleccionada a la revisión a la que Git la atribuye."
+      },
+      "options": {
+        "en": "-L limits line ranges; -w ignores whitespace differences; -M and -C can detect moved or copied lines with additional work.",
+        "pt-BR": "-L limita intervalos; -w ignora diferenças de espaços; -M e -C podem detectar linhas movidas ou copiadas com trabalho adicional.",
+        "es": "-L limita rangos; -w ignora diferencias de espacios; -M y -C pueden detectar líneas movidas o copiadas con trabajo adicional."
+      },
+      "when_to_use": {
+        "en": "When investigating the context of a line before making a change.",
+        "pt-BR": "Ao investigar contexto de linha antes de mudar.",
+        "es": "Al investigar contexto de línea antes de cambiar."
+      },
+      "when_to_avoid": {
+        "en": "Do not use attribution as proof of fault or original authorship of an idea.",
+        "pt-BR": "Não use atribuição como prova de culpa ou autoria original de ideia.",
+        "es": "No uses atribución como prueba de culpa o autoría original de una idea."
+      },
+      "expected_state": {
+        "en": "Displays attributed commits and lines; the result depends on revision and detection options.",
+        "pt-BR": "Exibe commits atribuídos e linhas; resultado depende de revisão e opções de detecção.",
+        "es": "Muestra commits atribuidos y líneas; resultado depende de revisión y opciones de detección."
+      },
+      "common_errors": {
+        "en": "Assuming the most recent attributed author introduced the underlying problem.",
+        "pt-BR": "Presumir que autor atribuído mais recente introduziu problema subjacente.",
+        "es": "Suponer que autor atribuido más reciente introdujo problema subyacente."
+      },
+      "alternatives": {
+        "en": "Inspect git show and earlier history for context; use git log -G for changed lines.",
+        "pt-BR": "Inspecione git show e histórico anterior para contexto; use git log -G para linhas alteradas.",
+        "es": "Inspecciona git show e historial anterior para contexto; usa git log -G para líneas cambiadas."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git blame HEAD -- notes.txt",
+          "context": {
+            "en": "Inspect attribution of committed practice lines.",
+            "pt-BR": "Inspecione atribuição de linhas registradas de prática.",
+            "es": "Inspecciona atribución de líneas confirmadas de práctica."
+          }
+        },
+        "professional": {
+          "command": "git blame -L 1,10 HEAD -- notes.txt",
+          "context": {
+            "en": "Review the first ten lines of the committed file, if present.",
+            "pt-BR": "Revise primeiras dez linhas do arquivo registrado, se presentes.",
+            "es": "Revisa primeras diez líneas del archivo confirmado, si existen."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/09-blame-and-grep"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-blame"
+      ]
+    },
+    {
+      "id": "git-log-pickaxe-string",
+      "command": "git log -S",
+      "kind": "option-usage",
+      "category": "10-search-and-troubleshooting",
+      "level": "advanced",
+      "intent_tags": [
+        "search-content",
+        "inspect-history"
+      ],
+      "syntax": "git log -S \"timeout\" -- notes.txt",
+      "purpose": {
+        "en": "Find commits whose diff changes the number of occurrences of a string.",
+        "pt-BR": "Encontrar commits cujo diff altera quantidade de ocorrências de string.",
+        "es": "Encontrar commits cuyo diff cambia cantidad de ocurrencias de cadena."
+      },
+      "options": {
+        "en": "-S uses a string; --pickaxe-regex changes its interpretation; -p shows patches.",
+        "pt-BR": "-S usa string; --pickaxe-regex altera interpretação; -p exibe patches.",
+        "es": "-S usa cadena; --pickaxe-regex cambia interpretación; -p muestra parches."
+      },
+      "when_to_use": {
+        "en": "When tracing when a literal was introduced or removed.",
+        "pt-BR": "Ao rastrear quando literal foi introduzido ou removido.",
+        "es": "Al rastrear cuándo se introdujo o eliminó un literal."
+      },
+      "when_to_avoid": {
+        "en": "Do not use as a general search for every line edit containing the text.",
+        "pt-BR": "Não use como busca geral de toda edição de linha contendo texto.",
+        "es": "No uses como búsqueda general de toda edición de línea que contiene texto."
+      },
+      "expected_state": {
+        "en": "Lists matching commits in selected history; edits preserving occurrence count may not match.",
+        "pt-BR": "Lista commits correspondentes no histórico selecionado; edições que preservam contagem podem não corresponder.",
+        "es": "Lista commits coincidentes en historial seleccionado; ediciones que conservan recuento pueden no coincidir."
+      },
+      "common_errors": {
+        "en": "Expecting -S and -G to select the same commits or overlooking merge diff settings.",
+        "pt-BR": "Esperar que -S e -G selecionem mesmos commits ou ignorar configuração de diff de merges.",
+        "es": "Esperar que -S y -G seleccionen mismos commits o ignorar configuración de diff de merges."
+      },
+      "alternatives": {
+        "en": "Use git log -G to find matching added or removed lines.",
+        "pt-BR": "Use git log -G para localizar linhas adicionadas ou removidas correspondentes.",
+        "es": "Usa git log -G para localizar líneas añadidas o eliminadas coincidentes."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log -S \"timeout\" -- notes.txt",
+          "context": {
+            "en": "Find changes in the occurrence count of timeout.",
+            "pt-BR": "Encontre mudanças na contagem de ocorrências de timeout.",
+            "es": "Encuentra cambios en el recuento de ocurrencias de timeout."
+          }
+        },
+        "professional": {
+          "command": "git log -p -S \"timeout\" -- notes.txt",
+          "context": {
+            "en": "Inspect matching patches in the practice file.",
+            "pt-BR": "Inspecione patches correspondentes no arquivo de prática.",
+            "es": "Inspecciona parches coincidentes en archivo de práctica."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "advanced-git/09-blame-and-grep"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-log-pickaxe-regex",
+      "command": "git log -G",
+      "kind": "option-usage",
+      "category": "10-search-and-troubleshooting",
+      "level": "advanced",
+      "intent_tags": [
+        "search-content",
+        "inspect-history"
+      ],
+      "syntax": "git log -G \"timeout\" -- notes.txt",
+      "purpose": {
+        "en": "Find commits with added or removed patch lines matching a regular expression.",
+        "pt-BR": "Encontrar commits com linhas de patch adicionadas ou removidas que correspondem à expressão regular.",
+        "es": "Encontrar commits con líneas de parche añadidas o eliminadas que coinciden con expresión regular."
+      },
+      "options": {
+        "en": "-G accepts a regular expression; -p displays matching commit patches.",
+        "pt-BR": "-G aceita expressão regular; -p exibe patches dos commits correspondentes.",
+        "es": "-G acepta expresión regular; -p muestra parches de commits coincidentes."
+      },
+      "when_to_use": {
+        "en": "When tracing changes to a matching line even if occurrence counts stay equal.",
+        "pt-BR": "Ao rastrear mudanças em linha correspondente mesmo quando contagens ficam iguais.",
+        "es": "Al rastrear cambios en línea coincidente aunque recuentos sigan iguales."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume it searches unchanged lines or every historical snapshot.",
+        "pt-BR": "Não presuma busca em linhas inalteradas ou todos snapshots históricos.",
+        "es": "No supongas búsqueda en líneas sin cambios o todas instantáneas históricas."
+      },
+      "expected_state": {
+        "en": "Lists commits with matching diff lines under the selected revision and diff settings.",
+        "pt-BR": "Lista commits com linhas de diff correspondentes conforme revisão e configurações selecionadas.",
+        "es": "Lista commits con líneas de diff coincidentes según revisión y configuración seleccionadas."
+      },
+      "common_errors": {
+        "en": "Using unescaped regex metacharacters unintentionally or expecting default merge diffs to be included.",
+        "pt-BR": "Usar metacaracteres regex sem intenção ou esperar inclusão padrão de diffs de merge.",
+        "es": "Usar metacaracteres regex sin intención o esperar inclusión predeterminada de diffs de merge."
+      },
+      "alternatives": {
+        "en": "Use -S when the change in occurrence count is the relevant signal.",
+        "pt-BR": "Use -S quando mudança na contagem de ocorrências for sinal relevante.",
+        "es": "Usa -S cuando cambio en recuento de ocurrencias sea señal relevante."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log -G \"timeout\" -- notes.txt",
+          "context": {
+            "en": "Find patches with added or removed matching lines.",
+            "pt-BR": "Encontre patches com linhas correspondentes adicionadas ou removidas.",
+            "es": "Encuentra parches con líneas coincidentes añadidas o eliminadas."
+          }
+        },
+        "professional": {
+          "command": "git log -p -G \"timeout[ ]*=\" -- notes.txt",
+          "context": {
+            "en": "Inspect matching assignment changes in practice history.",
+            "pt-BR": "Inspecione mudanças de atribuição correspondentes no histórico de prática.",
+            "es": "Inspecciona cambios de asignación coincidentes en historial de práctica."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "advanced-git/09-blame-and-grep"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-log-follow",
+      "command": "git log --follow",
+      "kind": "option-usage",
+      "category": "10-search-and-troubleshooting",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-history",
+        "search-content"
+      ],
+      "syntax": "git log --follow -- notes.txt",
+      "purpose": {
+        "en": "Continue the history of one file across detected renames.",
+        "pt-BR": "Continuar histórico de um arquivo através de renomeações detectadas.",
+        "es": "Continuar historial de un archivo a través de renombrados detectados."
+      },
+      "options": {
+        "en": "--follow operates on a single path; -p includes patches.",
+        "pt-BR": "--follow opera em caminho único; -p inclui patches.",
+        "es": "--follow opera en una sola ruta; -p incluye parches."
+      },
+      "when_to_use": {
+        "en": "When investigating a file whose path changed.",
+        "pt-BR": "Ao investigar arquivo cujo caminho mudou.",
+        "es": "Al investigar archivo cuya ruta cambió."
+      },
+      "when_to_avoid": {
+        "en": "Do not expect complete directory history or perfect tracking through complex renames and merges.",
+        "pt-BR": "Não espere histórico completo de diretório ou rastreamento perfeito em renomeações e merges complexos.",
+        "es": "No esperes historial completo de directorio o seguimiento perfecto en renombrados y merges complejos."
+      },
+      "expected_state": {
+        "en": "Displays history of the selected file including detected previous names, subject to history and rename detection.",
+        "pt-BR": "Exibe histórico do arquivo selecionado incluindo nomes anteriores detectados, sujeito a histórico e detecção.",
+        "es": "Muestra historial del archivo seleccionado con nombres anteriores detectados, sujeto a historial y detección."
+      },
+      "common_errors": {
+        "en": "Passing multiple paths or interpreting absence of a detected rename as proof of no relationship.",
+        "pt-BR": "Passar vários caminhos ou interpretar ausência de renomeação detectada como prova de falta de relação.",
+        "es": "Pasar varias rutas o interpretar ausencia de renombrado detectado como prueba de falta de relación."
+      },
+      "alternatives": {
+        "en": "Inspect git log --name-status and commit diffs for complex file reorganizations.",
+        "pt-BR": "Inspecione git log --name-status e diffs de commits para reorganizações complexas.",
+        "es": "Inspecciona git log --name-status y diffs de commits para reorganizaciones complejas."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log --follow -- notes.txt",
+          "context": {
+            "en": "Inspect history of one current file across detected renames.",
+            "pt-BR": "Inspecione histórico de arquivo atual através de renomeações detectadas.",
+            "es": "Inspecciona historial de archivo actual a través de renombrados detectados."
+          }
+        },
+        "professional": {
+          "command": "git log -p --follow -- docs/notes.txt",
+          "context": {
+            "en": "Inspect patches of one documentation file across detected renames.",
+            "pt-BR": "Inspecione patches de arquivo de documentação através de renomeações detectadas.",
+            "es": "Inspecciona parches de archivo de documentación a través de renombrados detectados."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "advanced-git/09-blame-and-grep"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-diff-check",
+      "command": "git diff --check",
+      "kind": "option-usage",
+      "category": "10-search-and-troubleshooting",
+      "level": "intermediate",
+      "intent_tags": [
+        "review-changes",
+        "inspect-state"
+      ],
+      "syntax": "git diff --check",
+      "purpose": {
+        "en": "Flag introduced conflict markers and whitespace errors according to configuration.",
+        "pt-BR": "Sinalizar marcadores de conflito e erros de espaços introduzidos conforme configuração.",
+        "es": "Señalar marcadores de conflicto y errores de espacios introducidos según configuración."
+      },
+      "options": {
+        "en": "--check reports problems and exits nonzero when detected; --cached selects staged changes.",
+        "pt-BR": "--check relata problemas e retorna código não zero quando detectados; --cached seleciona mudanças preparadas.",
+        "es": "--check informa problemas y devuelve código no cero al detectarlos; --cached selecciona cambios preparados."
+      },
+      "when_to_use": {
+        "en": "When checking a proposed change before commit or review.",
+        "pt-BR": "Ao conferir mudança proposta antes de commit ou revisão.",
+        "es": "Al comprobar cambio propuesto antes de commit o revisión."
+      },
+      "when_to_avoid": {
+        "en": "Do not substitute it for tests or a full conflict inspection.",
+        "pt-BR": "Não substitua testes ou inspeção completa de conflitos por ele.",
+        "es": "No lo sustituyas por pruebas o inspección completa de conflictos."
+      },
+      "expected_state": {
+        "en": "Reports offending lines when detected; no automatic correction occurs.",
+        "pt-BR": "Relata linhas problemáticas quando detectadas; não ocorre correção automática.",
+        "es": "Informa líneas problemáticas al detectarlas; no hay corrección automática."
+      },
+      "common_errors": {
+        "en": "Checking only unstaged edits when the intended commit is staged.",
+        "pt-BR": "Conferir apenas edições não preparadas quando commit pretendido está preparado.",
+        "es": "Comprobar solo ediciones no preparadas cuando commit previsto está preparado."
+      },
+      "alternatives": {
+        "en": "Use git diff --cached for content review and a project-specific linter for broader formatting rules.",
+        "pt-BR": "Use git diff --cached para revisão de conteúdo e linter do projeto para regras mais amplas.",
+        "es": "Usa git diff --cached para revisar contenido y linter del proyecto para reglas más amplias."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff --check",
+          "context": {
+            "en": "Check unstaged changes for introduced whitespace errors or conflict markers.",
+            "pt-BR": "Confira mudanças não preparadas quanto a erros de espaços ou marcadores de conflito introduzidos.",
+            "es": "Comprueba cambios no preparados por errores de espacios o marcadores de conflicto introducidos."
+          }
+        },
+        "professional": {
+          "command": "git diff --cached --check",
+          "context": {
+            "en": "Check staged changes before a reviewed commit.",
+            "pt-BR": "Confira mudanças preparadas antes de commit revisado.",
+            "es": "Comprueba cambios preparados antes de commit revisado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Does not edit file content; ordinary working-tree diff may refresh index stat metadata.",
+        "pt-BR": "Não edita conteúdo; diff comum de working tree pode atualizar metadados stat do index.",
+        "es": "No edita contenido; diff ordinario de working tree puede actualizar metadatos stat del index."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Inspection may refresh index metadata; it does not fix errors.",
+          "pt-BR": "Inspeção pode atualizar metadados do index; não corrige erros.",
+          "es": "Inspección puede actualizar metadatos del index; no corrige errores."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/05-ignore-and-review"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff"
+      ]
+    },
+    {
+      "id": "git-ls-files-unmerged",
+      "command": "git ls-files --unmerged",
+      "kind": "option-usage",
+      "category": "10-search-and-troubleshooting",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-index",
+        "resolve-conflicts"
+      ],
+      "syntax": "git ls-files --unmerged",
+      "purpose": {
+        "en": "Inspect index entries that still have unmerged stages.",
+        "pt-BR": "Inspecionar entradas do index que ainda possuem estágios não mesclados.",
+        "es": "Inspeccionar entradas del index que aún tienen etapas no fusionadas."
+      },
+      "options": {
+        "en": "-u or --unmerged shows unmerged paths with mode, object ID and stage; a pathspec narrows output.",
+        "pt-BR": "-u ou --unmerged exibe caminhos não mesclados com modo, ID de objeto e estágio; pathspec restringe saída.",
+        "es": "-u o --unmerged muestra rutas no fusionadas con modo, ID de objeto y etapa; pathspec limita salida."
+      },
+      "when_to_use": {
+        "en": "When diagnosing conflicts before staging a resolution.",
+        "pt-BR": "Ao diagnosticar conflitos antes de preparar resolução.",
+        "es": "Al diagnosticar conflictos antes de preparar resolución."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat empty output as proof that the final resolution is correct.",
+        "pt-BR": "Não trate saída vazia como prova de resolução final correta.",
+        "es": "No trates salida vacía como prueba de resolución final correcta."
+      },
+      "expected_state": {
+        "en": "Lists available conflict stages; stages 1, 2 and 3 represent base and two sides when present.",
+        "pt-BR": "Lista estágios de conflito disponíveis; estágios 1, 2 e 3 representam base e dois lados quando presentes.",
+        "es": "Lista etapas de conflicto disponibles; etapas 1, 2 y 3 representan base y dos lados cuando existen."
+      },
+      "common_errors": {
+        "en": "Assuming every conflict has all three stages or that ours always means the original feature during rebase.",
+        "pt-BR": "Presumir que todo conflito tem três estágios ou que ours sempre significa feature original durante rebase.",
+        "es": "Suponer que todo conflicto tiene tres etapas o que ours siempre significa feature original durante rebase."
+      },
+      "alternatives": {
+        "en": "Use git status for a summary and inspect each available stage with git show.",
+        "pt-BR": "Use git status para resumo e inspecione cada estágio disponível com git show.",
+        "es": "Usa git status para resumen e inspecciona cada etapa disponible con git show."
+      },
+      "prerequisites": {
+        "en": "Use a disposable repository with the named files and revisions present; inspect the repository and use trusted configuration.",
+        "pt-BR": "Use repositório descartável com arquivos e revisões indicados existentes; confira o repositório e use configuração confiável.",
+        "es": "Usa repositorio desechable con archivos y revisiones indicados existentes; comprueba el repositorio y usa configuración confiable."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git ls-files --unmerged",
+          "context": {
+            "en": "Inspect unmerged index entries during a practice conflict.",
+            "pt-BR": "Inspecione entradas não mescladas do index durante conflito de prática.",
+            "es": "Inspecciona entradas no fusionadas del index durante conflicto de práctica."
+          }
+        },
+        "professional": {
+          "command": "git ls-files -u -- notes.txt",
+          "context": {
+            "en": "Inspect conflict stages of a named file in the lab.",
+            "pt-BR": "Inspecione estágios de conflito de arquivo nomeado no laboratório.",
+            "es": "Inspecciona etapas de conflicto de archivo nombrado en laboratorio."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown inspection does not intentionally modify tracked content, index, refs or remote.",
+        "pt-BR": "A inspeção mostrada não modifica intencionalmente conteúdo rastreado, index, referências ou remoto.",
+        "es": "La inspección mostrada no modifica intencionalmente contenido rastreado, index, referencias ni remoto."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection; verify the revision, path, search expression and exit status before interpreting results.",
+        "pt-BR": "Inspeção não exige desfazer; verifique revisão, caminho, expressão de busca e código de saída antes de interpretar resultados.",
+        "es": "La inspección no requiere deshacer; verifica revisión, ruta, expresión de búsqueda y código de salida antes de interpretar resultados."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown ordinary local context; avoid disclosing sensitive output. Use trusted configuration and complete local objects.",
+          "pt-BR": "Somente leitura no contexto local comum mostrado; evite divulgar saída sensível. Use configuração confiável e objetos locais completos.",
+          "es": "Solo lectura en contexto local ordinario mostrado; evita divulgar salida sensible. Usa configuración confiable y objetos locales completos."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/04-conflict-resolution",
+        "git-internals/06-index-internals"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-ls-files"
+      ]
+    },
+    {
+      "id": "git-bisect",
+      "command": "git bisect",
+      "kind": "workflow",
+      "category": "10-search-and-troubleshooting",
+      "level": "advanced",
+      "intent_tags": [
+        "find-regression",
+        "inspect-history"
+      ],
+      "syntax": "git bisect start",
+      "purpose": {
+        "en": "Find a regression boundary by repeatedly classifying historical commits.",
+        "pt-BR": "Encontrar limite de regressão classificando repetidamente commits históricos.",
+        "es": "Encontrar límite de regresión clasificando repetidamente commits históricos."
+      },
+      "options": {
+        "en": "Start, mark bad and good revisions, test each candidate, classify with good or bad, skip untestable commits and finish with git bisect reset.",
+        "pt-BR": "Inicie, marque revisões bad e good, teste cada candidato, classifique com good ou bad, pule commits não testáveis com skip e finalize com git bisect reset.",
+        "es": "Inicia, marca revisiones bad y good, prueba cada candidato, clasifica con good o bad, omite commits no comprobables con skip y termina con git bisect reset."
+      },
+      "when_to_use": {
+        "en": "When a repeatable test distinguishes a known failing revision from an earlier passing revision.",
+        "pt-BR": "Quando teste repetível distingue revisão com falha conhecida de revisão anterior aprovada.",
+        "es": "Cuando prueba repetible distingue revisión con fallo conocido de revisión anterior aprobada."
+      },
+      "when_to_avoid": {
+        "en": "Avoid with unpreserved edits or unreliable tests; historical code may be untrusted.",
+        "pt-BR": "Evite com edições não preservadas ou testes não confiáveis; código histórico pode não ser confiável.",
+        "es": "Evita con ediciones no preservadas o pruebas no confiables; código histórico puede no ser confiable."
+      },
+      "expected_state": {
+        "en": "Git selects candidates, typically detached, until it identifies a boundary or reports ambiguity; reset returns to the original checkout by default.",
+        "pt-BR": "Git seleciona candidatos, tipicamente destacados, até identificar limite ou relatar ambiguidade; reset retorna ao checkout original por padrão.",
+        "es": "Git selecciona candidatos, típicamente separados, hasta identificar límite o informar ambigüedad; reset vuelve al checkout original por defecto."
+      },
+      "common_errors": {
+        "en": "Marking a candidate without testing or leaving bisect state active after investigation.",
+        "pt-BR": "Marcar candidato sem testar ou deixar estado bisect ativo após investigação.",
+        "es": "Marcar candidato sin probar o dejar estado bisect activo tras investigación."
+      },
+      "alternatives": {
+        "en": "Use git log -G or manual inspection when a reliable test cannot classify revisions.",
+        "pt-BR": "Use git log -G ou inspeção manual quando teste confiável não puder classificar revisões.",
+        "es": "Usa git log -G o inspección manual cuando prueba confiable no pueda clasificar revisiones."
+      },
+      "prerequisites": {
+        "en": "Use a clean disposable repository with complete history, saved original tip, known good and bad commits and a repeatable safe test.",
+        "pt-BR": "Use repositório descartável limpo com histórico completo, ponta original salva, commits good e bad conhecidos e teste seguro repetível.",
+        "es": "Usa repositorio desechable limpio con historial completo, punta original guardada, commits good y bad conocidos y prueba segura repetible."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for the guide labs.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía."
+      },
+      "examples": {
+        "basic": {
+          "command": "git bisect start",
+          "context": {
+            "en": "Start a bisect in a clean isolated lab with known good and bad commits; mark them separately.",
+            "pt-BR": "Inicie bisect em laboratório isolado limpo com commits bons e ruins conhecidos; marque-os separadamente.",
+            "es": "Inicia bisect en laboratorio aislado limpio con commits buenos y malos conocidos; márcalos por separado."
+          }
+        },
+        "professional": {
+          "command": "git bisect good",
+          "context": {
+            "en": "After testing the checked-out candidate with a repeatable trusted test, mark it good; use bad when it fails.",
+            "pt-BR": "Após testar candidato selecionado com teste confiável repetível, marque good; use bad quando falhar.",
+            "es": "Tras probar candidato seleccionado con prueba confiable repetible, marca good; usa bad cuando falle."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "effect_notes": {
+        "en": "Bisect can select commits, update index and files, and create temporary refs and metadata; test scripts can have independent effects.",
+        "pt-BR": "Bisect pode selecionar commits, atualizar index e arquivos e criar referências e metadados temporários; scripts de teste podem ter efeitos independentes.",
+        "es": "Bisect puede seleccionar commits, actualizar index y archivos y crear referencias y metadatos temporales; scripts de prueba pueden tener efectos independientes."
+      },
+      "recovery": {
+        "en": "Save the result and any desired work; run git bisect reset and verify original checkout and status. Stop and inspect if restoration fails.",
+        "pt-BR": "Salve resultado e trabalho desejado; execute git bisect reset e confira checkout original e status. Pare e inspecione se restauração falhar.",
+        "es": "Guarda resultado y trabajo deseado; ejecuta git bisect reset y comprueba checkout original y estado. Detente e inspecciona si restauración falla."
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Check out only trusted historical code in an isolated lab; do not automatically run unknown scripts. Keep original work safe.",
+          "pt-BR": "Selecione só código histórico confiável em laboratório isolado; não execute scripts desconhecidos automaticamente. Preserve trabalho original.",
+          "es": "Selecciona solo código histórico confiable en laboratorio aislado; no ejecutes scripts desconocidos automáticamente. Conserva trabajo original."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/01-bisect"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-bisect"
+      ]
+    }
+  ]
+}
