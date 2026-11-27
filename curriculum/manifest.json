@@ -1,0 +1,584 @@
+{
+  "schema_version": "1.0.0",
+  "guide_id": "git-study-guide",
+  "default_locale": "en",
+  "supported_locales": [
+    "en",
+    "pt-BR",
+    "es"
+  ],
+  "association_status": "pending",
+  "assets": [],
+  "banks": {
+    "quizzes": {
+      "schema_version": 1,
+      "records": "exercises/01-quizzes/records.json",
+      "schema": "schemas/assessment-bank.schema.json"
+    },
+    "exercises": {
+      "schema_version": 1,
+      "records": "exercises/02-challenges/records.json",
+      "schema": "schemas/assessment-bank.schema.json"
+    },
+    "interviews": {
+      "schema_version": 1,
+      "records": "exercises/03-interviews/records.json",
+      "schema": "schemas/assessment-bank.schema.json"
+    },
+    "mocks": {
+      "schema_version": 1,
+      "records": "exercises/04-mock-assessments/records.json",
+      "schema": "schemas/assessment-bank.schema.json"
+    }
+  },
+  "command_catalog": {
+    "schema_version": 1,
+    "registry": "scripts/command_catalog_categories.json",
+    "intent_registry": "scripts/command_catalog_intents.json",
+    "schema": "schemas/command-catalog.schema.json",
+    "categories": [
+      {
+        "id": "01-setup-and-configuration",
+        "path": "command-reference/01-setup-and-configuration/catalog.json"
+      },
+      {
+        "id": "02-repository-inspection",
+        "path": "command-reference/02-repository-inspection/catalog.json"
+      },
+      {
+        "id": "03-working-tree-and-staging",
+        "path": "command-reference/03-working-tree-and-staging/catalog.json"
+      },
+      {
+        "id": "04-commits-and-tags",
+        "path": "command-reference/04-commits-and-tags/catalog.json"
+      },
+      {
+        "id": "05-history-and-comparison",
+        "path": "command-reference/05-history-and-comparison/catalog.json"
+      },
+      {
+        "id": "06-branch-management",
+        "path": "command-reference/06-branch-management/catalog.json"
+      },
+      {
+        "id": "07-merge-rebase-and-conflicts",
+        "path": "command-reference/07-merge-rebase-and-conflicts/catalog.json"
+      },
+      {
+        "id": "08-remotes-and-synchronization",
+        "path": "command-reference/08-remotes-and-synchronization/catalog.json"
+      },
+      {
+        "id": "09-recovery-and-stash",
+        "path": "command-reference/09-recovery-and-stash/catalog.json"
+      },
+      {
+        "id": "10-search-and-troubleshooting",
+        "path": "command-reference/10-search-and-troubleshooting/catalog.json"
+      },
+      {
+        "id": "11-advanced-git-operations",
+        "path": "command-reference/11-advanced-git-operations/catalog.json"
+      },
+      {
+        "id": "12-internals-and-plumbing",
+        "path": "command-reference/12-internals-and-plumbing/catalog.json"
+      },
+      {
+        "id": "13-security-and-maintenance",
+        "path": "command-reference/13-security-and-maintenance/catalog.json"
+      },
+      {
+        "id": "14-platforms-and-automation",
+        "path": "command-reference/14-platforms-and-automation/catalog.json"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "id": "getting-started",
+      "order": 0,
+      "slug": "getting-started",
+      "title": {
+        "en": "Getting Started",
+        "pt-BR": "Primeiros passos",
+        "es": "Primeros pasos"
+      },
+      "index": {
+        "en": "getting-started/README.md",
+        "pt-BR": "getting-started/README.pt-BR.md",
+        "es": "getting-started/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "getting-started.01-install-git",
+          "order": 0,
+          "slug": "01-install-git",
+          "kind": "lesson",
+          "title": {
+            "en": "Install Git",
+            "pt-BR": "Instalar o Git",
+            "es": "Instalar Git"
+          },
+          "content": {
+            "en": "getting-started/01-install-git/README.md",
+            "pt-BR": "getting-started/01-install-git/README.pt-BR.md",
+            "es": "getting-started/01-install-git/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": null,
+          "next_id": "getting-started.02-terminal-and-help",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "getting-started.02-terminal-and-help",
+          "order": 1,
+          "slug": "02-terminal-and-help",
+          "kind": "lesson",
+          "title": {
+            "en": "Terminal and help",
+            "pt-BR": "Terminal e ajuda",
+            "es": "Terminal y ayuda"
+          },
+          "content": {
+            "en": "getting-started/02-terminal-and-help/README.md",
+            "pt-BR": "getting-started/02-terminal-and-help/README.pt-BR.md",
+            "es": "getting-started/02-terminal-and-help/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "getting-started.01-install-git",
+          "next_id": "getting-started.03-first-repository",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "getting-started.03-first-repository",
+          "order": 2,
+          "slug": "03-first-repository",
+          "kind": "lesson",
+          "title": {
+            "en": "First repository and configuration",
+            "pt-BR": "Primeiro repositório e configuração",
+            "es": "Primer repositorio y configuración"
+          },
+          "content": {
+            "en": "getting-started/03-first-repository/README.md",
+            "pt-BR": "getting-started/03-first-repository/README.pt-BR.md",
+            "es": "getting-started/03-first-repository/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "getting-started.02-terminal-and-help",
+          "next_id": "getting-started.04-editor-and-gui",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "getting-started.04-editor-and-gui",
+          "order": 3,
+          "slug": "04-editor-and-gui",
+          "kind": "lesson",
+          "title": {
+            "en": "VS Code and graphical interfaces",
+            "pt-BR": "VS Code e interfaces gráficas",
+            "es": "VS Code e interfaces gráficas"
+          },
+          "content": {
+            "en": "getting-started/04-editor-and-gui/README.md",
+            "pt-BR": "getting-started/04-editor-and-gui/README.pt-BR.md",
+            "es": "getting-started/04-editor-and-gui/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "getting-started.03-first-repository",
+          "next_id": "getting-started.05-first-commit",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "getting-started.05-first-commit",
+          "order": 4,
+          "slug": "05-first-commit",
+          "kind": "lesson",
+          "title": {
+            "en": "Your first commit",
+            "pt-BR": "Primeiro commit",
+            "es": "Primer commit"
+          },
+          "content": {
+            "en": "getting-started/05-first-commit/README.md",
+            "pt-BR": "getting-started/05-first-commit/README.pt-BR.md",
+            "es": "getting-started/05-first-commit/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "getting-started.04-editor-and-gui",
+          "next_id": "fundamentals.01-version-control",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "fundamentals",
+      "order": 1,
+      "slug": "fundamentals",
+      "title": {
+        "en": "History & Fundamentals",
+        "pt-BR": "História e fundamentos",
+        "es": "Historia y fundamentos"
+      },
+      "index": {
+        "en": "fundamentals/README.md",
+        "pt-BR": "fundamentals/README.pt-BR.md",
+        "es": "fundamentals/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "fundamentals.01-version-control",
+          "order": 0,
+          "slug": "01-version-control",
+          "kind": "lesson",
+          "title": {
+            "en": "Why version control exists",
+            "pt-BR": "Por que controle de versão existe",
+            "es": "Por qué existe control de versiones"
+          },
+          "content": {
+            "en": "fundamentals/01-version-control/README.md",
+            "pt-BR": "fundamentals/01-version-control/README.pt-BR.md",
+            "es": "fundamentals/01-version-control/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "getting-started.05-first-commit",
+          "next_id": "fundamentals.02-history-of-git",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "fundamentals.02-history-of-git",
+          "order": 1,
+          "slug": "02-history-of-git",
+          "kind": "lesson",
+          "title": {
+            "en": "Linux, BitKeeper and the birth of Git",
+            "pt-BR": "Linux, BitKeeper e nascimento do Git",
+            "es": "Linux, BitKeeper y nacimiento de Git"
+          },
+          "content": {
+            "en": "fundamentals/02-history-of-git/README.md",
+            "pt-BR": "fundamentals/02-history-of-git/README.pt-BR.md",
+            "es": "fundamentals/02-history-of-git/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "fundamentals.01-version-control",
+          "next_id": "fundamentals.03-distributed-and-platforms",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "fundamentals.03-distributed-and-platforms",
+          "order": 2,
+          "slug": "03-distributed-and-platforms",
+          "kind": "lesson",
+          "title": {
+            "en": "Centralized, distributed and hosting platforms",
+            "pt-BR": "Centralizado, distribuído e plataformas",
+            "es": "Centralizado, distribuido y plataformas"
+          },
+          "content": {
+            "en": "fundamentals/03-distributed-and-platforms/README.md",
+            "pt-BR": "fundamentals/03-distributed-and-platforms/README.pt-BR.md",
+            "es": "fundamentals/03-distributed-and-platforms/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "fundamentals.02-history-of-git",
+          "next_id": "git-architecture.01-three-locations",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "git-architecture",
+      "order": 2,
+      "slug": "git-architecture",
+      "title": {
+        "en": "Git Architecture",
+        "pt-BR": "Arquitetura do Git",
+        "es": "Arquitectura de Git"
+      },
+      "index": {
+        "en": "git-architecture/README.md",
+        "pt-BR": "git-architecture/README.pt-BR.md",
+        "es": "git-architecture/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "git-architecture.01-three-locations",
+          "order": 0,
+          "slug": "01-three-locations",
+          "kind": "lesson",
+          "title": {
+            "en": "Working tree, index and repository",
+            "pt-BR": "Working tree, index e repositório",
+            "es": "Working tree, index y repositorio"
+          },
+          "content": {
+            "en": "git-architecture/01-three-locations/README.md",
+            "pt-BR": "git-architecture/01-three-locations/README.pt-BR.md",
+            "es": "git-architecture/01-three-locations/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "fundamentals.03-distributed-and-platforms",
+          "next_id": "git-architecture.02-snapshots-head-and-refs",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-architecture.02-snapshots-head-and-refs",
+          "order": 1,
+          "slug": "02-snapshots-head-and-refs",
+          "kind": "lesson",
+          "title": {
+            "en": "Snapshots, HEAD and references",
+            "pt-BR": "Snapshots, HEAD e referências",
+            "es": "Snapshots, HEAD y referencias"
+          },
+          "content": {
+            "en": "git-architecture/02-snapshots-head-and-refs/README.md",
+            "pt-BR": "git-architecture/02-snapshots-head-and-refs/README.pt-BR.md",
+            "es": "git-architecture/02-snapshots-head-and-refs/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-architecture.01-three-locations",
+          "next_id": "git-architecture.03-file-states",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-architecture.03-file-states",
+          "order": 2,
+          "slug": "03-file-states",
+          "kind": "lesson",
+          "title": {
+            "en": "File states and remote boundaries",
+            "pt-BR": "Estados dos arquivos e limites do remote",
+            "es": "Estados de archivos y límites del remoto"
+          },
+          "content": {
+            "en": "git-architecture/03-file-states/README.md",
+            "pt-BR": "git-architecture/03-file-states/README.pt-BR.md",
+            "es": "git-architecture/03-file-states/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-architecture.02-snapshots-head-and-refs",
+          "next_id": "basic-commands.01-init-config-help",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "basic-commands",
+      "order": 3,
+      "slug": "basic-commands",
+      "title": {
+        "en": "Basic Git Commands",
+        "pt-BR": "Comandos básicos do Git",
+        "es": "Comandos básicos de Git"
+      },
+      "index": {
+        "en": "basic-commands/README.md",
+        "pt-BR": "basic-commands/README.pt-BR.md",
+        "es": "basic-commands/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "basic-commands.01-init-config-help",
+          "order": 0,
+          "slug": "01-init-config-help",
+          "kind": "lesson",
+          "title": {
+            "en": "Initialize, configure and ask for help",
+            "pt-BR": "Inicializar, configurar e consultar ajuda",
+            "es": "Inicializar, configurar y consultar ayuda"
+          },
+          "content": {
+            "en": "basic-commands/01-init-config-help/README.md",
+            "pt-BR": "basic-commands/01-init-config-help/README.pt-BR.md",
+            "es": "basic-commands/01-init-config-help/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-architecture.03-file-states",
+          "next_id": "basic-commands.02-status-add-commit",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "basic-commands.02-status-add-commit",
+          "order": 1,
+          "slug": "02-status-add-commit",
+          "kind": "lesson",
+          "title": {
+            "en": "Inspect, stage and commit",
+            "pt-BR": "Inspecionar, preparar e registrar",
+            "es": "Inspeccionar, preparar y registrar"
+          },
+          "content": {
+            "en": "basic-commands/02-status-add-commit/README.md",
+            "pt-BR": "basic-commands/02-status-add-commit/README.pt-BR.md",
+            "es": "basic-commands/02-status-add-commit/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "basic-commands.01-init-config-help",
+          "next_id": "basic-commands.03-diff-log-show",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "basic-commands.03-diff-log-show",
+          "order": 2,
+          "slug": "03-diff-log-show",
+          "kind": "lesson",
+          "title": {
+            "en": "Compare and inspect history",
+            "pt-BR": "Comparar e inspecionar histórico",
+            "es": "Comparar e inspeccionar historial"
+          },
+          "content": {
+            "en": "basic-commands/03-diff-log-show/README.md",
+            "pt-BR": "basic-commands/03-diff-log-show/README.pt-BR.md",
+            "es": "basic-commands/03-diff-log-show/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "basic-commands.02-status-add-commit",
+          "next_id": "basic-commands.04-move-and-remove",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "basic-commands.04-move-and-remove",
+          "order": 3,
+          "slug": "04-move-and-remove",
+          "kind": "lesson",
+          "title": {
+            "en": "Rename and remove tracked files",
+            "pt-BR": "Renomear e remover arquivos rastreados",
+            "es": "Renombrar y eliminar archivos rastreados"
+          },
+          "content": {
+            "en": "basic-commands/04-move-and-remove/README.md",
+            "pt-BR": "basic-commands/04-move-and-remove/README.pt-BR.md",
+            "es": "basic-commands/04-move-and-remove/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "basic-commands.03-diff-log-show",
+          "next_id": "basic-commands.05-ignore-and-review",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "basic-commands.05-ignore-and-review",
+          "order": 4,
+          "slug": "05-ignore-and-review",
+          "kind": "lesson",
+          "title": {
+            "en": "Ignore rules and final review",
+            "pt-BR": "Regras de ignore e revisão final",
+            "es": "Reglas de ignore y revisión final"
+          },
+          "content": {
+            "en": "basic-commands/05-ignore-and-review/README.md",
+            "pt-BR": "basic-commands/05-ignore-and-review/README.pt-BR.md",
+            "es": "basic-commands/05-ignore-and-review/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "basic-commands.04-move-and-remove",
+          "next_id": "branches.01-create-and-switch",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    }
+  ]
+}
