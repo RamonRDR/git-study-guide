@@ -710,9 +710,9 @@
         "es": "Límites de stash"
       },
       "prompt": {
-        "en": "What should you check before using stash to change tasks?",
-        "pt-BR": "O que conferir antes de usar stash para trocar tarefas?",
-        "es": "¿Qué comprobar antes de usar stash para cambiar tareas?"
+        "en": "What should you check before using stash to change tasks? Explain untracked and ignored file scope and how apply differs from pop on success or conflict.",
+        "pt-BR": "O que conferir antes de usar stash para trocar tarefas? Explique o escopo de arquivos não rastreados e ignorados e como apply difere de pop em sucesso ou conflito.",
+        "es": "¿Qué comprobar antes de usar stash para cambiar tareas? Explica el ámbito de archivos no rastreados e ignorados y cómo apply difiere de pop en éxito o conflicto."
       },
       "hints": [
         {
@@ -732,9 +732,9 @@
         "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
       },
       "expected_answer": {
-        "en": "Inspect staged, unstaged and untracked files; choose stash scope deliberately, record the entry, verify clean state, and inspect conflicts when applying. A stash is local and not a substitute for durable backups.",
-        "pt-BR": "Inspecione preparados, não preparados e não rastreados; escolha escopo, registre entrada, confira limpeza e inspecione conflitos ao aplicar. Stash é local e não substitui backup durável.",
-        "es": "Inspecciona preparados, sin preparar y no rastreados; elige ámbito, registra entrada, comprueba limpieza e inspecciona conflictos al aplicar. Stash es local y no sustituye respaldo duradero."
+        "en": "Inspect staged, unstaged and untracked files. By default stash push saves tracked changes; -u includes untracked files, and --all also includes ignored files. Choose scope deliberately, record the entry and verify the working state. Apply attempts to restore changes while retaining the stash entry; pop removes it after successful application but retains it if conflicts prevent application. Inspect and resolve conflicts before any deliberate drop. Stash is local, not a durable backup.",
+        "pt-BR": "Inspecione arquivos preparados, não preparados e não rastreados. Por padrão stash push guarda mudanças rastreadas; -u inclui não rastreados e --all também inclui ignorados. Escolha o escopo deliberadamente, registre a entrada e confira o estado de trabalho. Apply tenta restaurar mudanças mantendo a entrada do stash; pop a remove após aplicação bem-sucedida, mas a mantém se conflitos impedirem a aplicação. Inspecione e resolva conflitos antes de qualquer drop deliberado. Stash é local, não backup durável.",
+        "es": "Inspecciona archivos preparados, sin preparar y no rastreados. Por defecto stash push guarda cambios rastreados; -u incluye no rastreados y --all también incluye ignorados. Elige el ámbito deliberadamente, registra la entrada y comprueba el estado de trabajo. Apply intenta restaurar cambios conservando la entrada del stash; pop la elimina tras aplicación exitosa, pero la conserva si conflictos impiden la aplicación. Inspecciona y resuelve conflictos antes de cualquier drop deliberado. Stash es local, no un respaldo duradero."
       },
       "rubric": [
         {

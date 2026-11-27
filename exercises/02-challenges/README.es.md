@@ -293,6 +293,9 @@ Confirma ready y deshaz contenido con nuevo commit. Conserva dos commits origina
 - kind=commit-count, value=3
 - kind=parent-count, value=1
 - file=notes.txt, kind=head-content, value=status: draft
+- file=notes.txt, kind=ref-content, ref=HEAD^1, value=status: ready
+- file=notes.txt, kind=ref-content, ref=HEAD\~2, value=status: draft
+- kind=same-tree, left=HEAD, right=HEAD\~2
 - kind=clean
 
 **Explicación:** Revert crea cambio inverso nuevo. No es reset.
@@ -428,6 +431,10 @@ Crea dos commits feature y haz squash en main intacta. Main debe tener exactamen
 - file=review.txt, kind=head-content, value=review: done
 - kind=same-tree, left=main, right=feat/notes
 - kind=different-ref, left=main, right=feat/notes
+- kind=ref-commit-count, ref=feat/notes, value=3
+- kind=same-ref, left=HEAD^1, right=feat/notes\~2
+- file=notes.txt, kind=ref-content, ref=HEAD^1, value=status: draft
+- file=notes.txt, kind=ref-content, ref=feat/notes^1, value=status: ready
 - kind=clean
 
 **Explicación:** No supongas merge --abort para squash con conflicto. Detente, conserva ediciones e inspecciona; recrea fixture desechable si hace falta.

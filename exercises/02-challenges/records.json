@@ -750,6 +750,23 @@
           "value": "status: draft"
         },
         {
+          "kind": "ref-content",
+          "ref": "HEAD^1",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "HEAD~2",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "same-tree",
+          "left": "HEAD",
+          "right": "HEAD~2"
+        },
+        {
           "kind": "clean"
         }
       ],
@@ -1130,6 +1147,28 @@
           "kind": "different-ref",
           "left": "main",
           "right": "feat/notes"
+        },
+        {
+          "kind": "ref-commit-count",
+          "ref": "feat/notes",
+          "value": 3
+        },
+        {
+          "kind": "same-ref",
+          "left": "HEAD^1",
+          "right": "feat/notes~2"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "HEAD^1",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "feat/notes^1",
+          "file": "notes.txt",
+          "value": "status: ready"
         },
         {
           "kind": "clean"

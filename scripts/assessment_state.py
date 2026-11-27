@@ -50,8 +50,8 @@ def evaluate(check, run, read_file):
         if a is None or b is None:
             return False
         return a != b if kind == "different-ref" else a == b
-    if kind == "commit-count":
-        return output("rev-list", "--count", "HEAD") == (str(check["value"]) + "\n").encode()
+    if kind in {"commit-count", "ref-commit-count"}:
+        return output("rev-list", "--count", check.get("ref", "HEAD")) == (str(check["value"]) + "\n").encode()
     if kind == "parent-count":
         value = output("rev-list", "--parents", "-1", "HEAD")
         return value is not None and len(value.split()) - 1 == check["value"]

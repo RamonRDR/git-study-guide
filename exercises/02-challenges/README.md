@@ -293,6 +293,9 @@ Commit ready then undo its content with a new commit. Preserve the two original 
 - kind=commit-count, value=3
 - kind=parent-count, value=1
 - file=notes.txt, kind=head-content, value=status: draft
+- file=notes.txt, kind=ref-content, ref=HEAD^1, value=status: ready
+- file=notes.txt, kind=ref-content, ref=HEAD\~2, value=status: draft
+- kind=same-tree, left=HEAD, right=HEAD\~2
 - kind=clean
 
 **Explanation:** Revert creates a new inverse change. This is not a reset.
@@ -428,6 +431,10 @@ Create two feature commits and squash onto unchanged main. Main must have exactl
 - file=review.txt, kind=head-content, value=review: done
 - kind=same-tree, left=main, right=feat/notes
 - kind=different-ref, left=main, right=feat/notes
+- kind=ref-commit-count, ref=feat/notes, value=3
+- kind=same-ref, left=HEAD^1, right=feat/notes\~2
+- file=notes.txt, kind=ref-content, ref=HEAD^1, value=status: draft
+- file=notes.txt, kind=ref-content, ref=feat/notes^1, value=status: ready
 - kind=clean
 
 **Explanation:** Do not assume merge --abort handles a conflicting squash. Stop, preserve edits and inspect; recreate this disposable fixture if needed.

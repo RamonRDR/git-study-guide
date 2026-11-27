@@ -352,14 +352,14 @@ ID: interview-stash
 
 **Prerequisites:** [history-and-recovery/06-stash](../../history-and-recovery/06-stash/README.md)
 
-What should you check before using stash to change tasks?
+What should you check before using stash to change tasks? Explain untracked and ignored file scope and how apply differs from pop on success or conflict.
 
 **Hints:**
 
 - Explain the relevant state or policy before naming commands.
 - Mention untracked/ignored scope.
 
-**Expected answer:** Inspect staged, unstaged and untracked files; choose stash scope deliberately, record the entry, verify clean state, and inspect conflicts when applying. A stash is local and not a substitute for durable backups.
+**Expected answer:** Inspect staged, unstaged and untracked files. By default stash push saves tracked changes; -u includes untracked files, and --all also includes ignored files. Choose scope deliberately, record the entry and verify the working state. Apply attempts to restore changes while retaining the stash entry; pop removes it after successful application but retains it if conflicts prevent application. Inspect and resolve conflicts before any deliberate drop. Stash is local, not a durable backup.
 
 **Rubric:**
 

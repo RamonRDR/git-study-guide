@@ -22,9 +22,12 @@ CHECK_FIELDS = {"clean": set(), "branch": {"value"}, "head-content": {"file", "v
                 "same-ref": {"left", "right"}, "commit-count": {"value"},
                 "parent-count": {"value"}, "tag-type": {"tag", "value"}, "no-unmerged": set(),
                 "ref-content": {"ref", "file", "value"}, "same-tree": {"left", "right"},
-                "different-ref": {"left", "right"}}
+                "different-ref": {"left", "right"},
+                "ref-commit-count": {"ref", "value"}}
 FILES = {"notes.txt", "review.txt", "catalog.txt", "ignored.txt", ".gitignore", "future.txt"}
-REF = re.compile(r"(?:HEAD(?:\^[12])?|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\.[0-9]+\.[0-9]+)")
+BRANCH = re.compile(r"(?:main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+)")
+TAG = re.compile(r"v[0-9]+\.[0-9]+\.[0-9]+")
+REF = re.compile(r"(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\.[0-9]+\.[0-9]+)(?:\^[12]|~[12])?")
 VALUES = {"status: draft", "status: ready", "status: reviewed", "status: recovered",
           "review: done", "status: experiment", "future work", "ignored.txt"}
 
@@ -48,12 +51,14 @@ def valid_check(check):
             return False
         if key in {"older", "newer", "left", "right", "tag", "ref"} and not valid_ref(value):
             return False
+        if key == "tag" and not TAG.fullmatch(value):
+            return False
         if key == "value":
-            if kind in {"commit-count", "parent-count"}:
+            if kind in {"commit-count", "parent-count", "ref-commit-count"}:
                 if type(value) is not int or not 0 <= value <= 20:
                     return False
             elif kind == "branch":
-                if not valid_ref(value) or value.startswith(("HEAD", "v")):
+                if not isinstance(value, str) or not BRANCH.fullmatch(value):
                     return False
             elif kind == "tag-type":
                 if value not in ("tag", "commit"):

@@ -352,14 +352,14 @@ ID: interview-stash
 
 **Pré-requisitos:** [history-and-recovery/06-stash](../../history-and-recovery/06-stash/README.pt-BR.md)
 
-O que conferir antes de usar stash para trocar tarefas?
+O que conferir antes de usar stash para trocar tarefas? Explique o escopo de arquivos não rastreados e ignorados e como apply difere de pop em sucesso ou conflito.
 
 **Dicas:**
 
 - Explique estado ou política relevante antes de citar comandos.
 - Mencione escopo não rastreado/ignorado.
 
-**Resposta esperada:** Inspecione preparados, não preparados e não rastreados; escolha escopo, registre entrada, confira limpeza e inspecione conflitos ao aplicar. Stash é local e não substitui backup durável.
+**Resposta esperada:** Inspecione arquivos preparados, não preparados e não rastreados. Por padrão stash push guarda mudanças rastreadas; -u inclui não rastreados e --all também inclui ignorados. Escolha o escopo deliberadamente, registre a entrada e confira o estado de trabalho. Apply tenta restaurar mudanças mantendo a entrada do stash; pop a remove após aplicação bem-sucedida, mas a mantém se conflitos impedirem a aplicação. Inspecione e resolva conflitos antes de qualquer drop deliberado. Stash é local, não backup durável.
 
 **Rubrica:**
 

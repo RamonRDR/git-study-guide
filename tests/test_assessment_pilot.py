@@ -61,6 +61,10 @@ class AssessmentPilotTest(unittest.TestCase):
                   {"kind": "work-content", "file": "../notes.txt", "value": "status: ready"},
                   {"kind": "same-ref", "left": "--help", "right": "main"},
                   {"kind": "commit-count", "value": True},
+                  {"kind": "ref-commit-count", "ref": "feat/notes~99", "value": 3},
+                  {"kind": "ref-commit-count", "ref": "--all", "value": 3},
+                  {"kind": "branch", "value": "main~2"},
+                  {"kind": "tag-type", "tag": "HEAD", "value": "tag"},
                   {"kind": "clean", "extra": "unexpected"}):
             with self.subTest(check=c):
                 self.assertFalse(p.valid_check(c))

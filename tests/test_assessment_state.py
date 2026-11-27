@@ -146,6 +146,12 @@ class AssessmentStateTest(unittest.TestCase):
         self.commit_file("status: ready")
         self.assert_state("revert", False)
 
+    def test_revert_rejects_empty_history(self):
+        self.seed()
+        self.git("commit", "--allow-empty", "-m", "docs: empty first")
+        self.git("commit", "--allow-empty", "-m", "docs: empty second")
+        self.assert_state("revert", False)
+
     def test_stash(self):
         self.seed()
         self.write("status: ready")
@@ -182,6 +188,18 @@ class AssessmentStateTest(unittest.TestCase):
         self.git("commit", "-m", "feat: deliver reviewed notes")
         self.assert_state("squash", True)
         self.commit_file("status: experiment")
+        self.assert_state("squash", False)
+
+    def test_squash_rejects_single_feature_commit(self):
+        self.seed()
+        self.git("switch", "-c", "feat/notes")
+        self.write("status: ready")
+        self.write("review: done", "review.txt")
+        self.git("add", "notes.txt", "review.txt")
+        self.git("commit", "-m", "feat: combined change")
+        self.git("switch", "main")
+        self.git("merge", "--squash", "feat/notes")
+        self.git("commit", "-m", "feat: deliver reviewed notes")
         self.assert_state("squash", False)
 
     def test_release_tag(self):
