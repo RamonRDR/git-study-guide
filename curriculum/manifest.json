@@ -579,6 +579,724 @@
           "execution": "unverified"
         }
       ]
+    },
+    {
+      "id": "branches",
+      "order": 4,
+      "slug": "branches",
+      "title": {
+        "en": "Branch Management",
+        "pt-BR": "Gerenciamento de branches",
+        "es": "Gestión de ramas"
+      },
+      "index": {
+        "en": "branches/README.md",
+        "pt-BR": "branches/README.pt-BR.md",
+        "es": "branches/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "branches.01-create-and-switch",
+          "order": 0,
+          "slug": "01-create-and-switch",
+          "kind": "lesson",
+          "title": {
+            "en": "Create and switch local branches",
+            "pt-BR": "Criar e alternar branches locais",
+            "es": "Crear y cambiar ramas locales"
+          },
+          "content": {
+            "en": "branches/01-create-and-switch/README.md",
+            "pt-BR": "branches/01-create-and-switch/README.pt-BR.md",
+            "es": "branches/01-create-and-switch/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "basic-commands.05-ignore-and-review",
+          "next_id": "branches.02-start-points-and-comparison",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "branches.02-start-points-and-comparison",
+          "order": 1,
+          "slug": "02-start-points-and-comparison",
+          "kind": "lesson",
+          "title": {
+            "en": "Start points and branch comparison",
+            "pt-BR": "Pontos de partida e comparação de branches",
+            "es": "Puntos de partida y comparación de ramas"
+          },
+          "content": {
+            "en": "branches/02-start-points-and-comparison/README.md",
+            "pt-BR": "branches/02-start-points-and-comparison/README.pt-BR.md",
+            "es": "branches/02-start-points-and-comparison/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "branches.01-create-and-switch",
+          "next_id": "branches.03-switch-safety-and-naming",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "branches.03-switch-safety-and-naming",
+          "order": 2,
+          "slug": "03-switch-safety-and-naming",
+          "kind": "lesson",
+          "title": {
+            "en": "Switching safely and branch naming",
+            "pt-BR": "Alternância segura e nomes de branches",
+            "es": "Cambio seguro y nombres de ramas"
+          },
+          "content": {
+            "en": "branches/03-switch-safety-and-naming/README.md",
+            "pt-BR": "branches/03-switch-safety-and-naming/README.pt-BR.md",
+            "es": "branches/03-switch-safety-and-naming/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "branches.02-start-points-and-comparison",
+          "next_id": "branches.04-safe-local-deletion",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "branches.04-safe-local-deletion",
+          "order": 3,
+          "slug": "04-safe-local-deletion",
+          "kind": "lesson",
+          "title": {
+            "en": "Safe local branch deletion",
+            "pt-BR": "Exclusão segura de branches locais",
+            "es": "Borrado seguro de ramas locales"
+          },
+          "content": {
+            "en": "branches/04-safe-local-deletion/README.md",
+            "pt-BR": "branches/04-safe-local-deletion/README.pt-BR.md",
+            "es": "branches/04-safe-local-deletion/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "branches.03-switch-safety-and-naming",
+          "next_id": "branches.05-detached-head",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "branches.05-detached-head",
+          "order": 4,
+          "slug": "05-detached-head",
+          "kind": "lesson",
+          "title": {
+            "en": "Detached HEAD and preserving work",
+            "pt-BR": "Detached HEAD e preservação do trabalho",
+            "es": "Detached HEAD y preservación del trabajo"
+          },
+          "content": {
+            "en": "branches/05-detached-head/README.md",
+            "pt-BR": "branches/05-detached-head/README.pt-BR.md",
+            "es": "branches/05-detached-head/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "branches.04-safe-local-deletion",
+          "next_id": "merge-and-conflicts.01-integration-safety",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "merge-and-conflicts",
+      "order": 5,
+      "slug": "merge-and-conflicts",
+      "title": {
+        "en": "Merge & Conflicts",
+        "pt-BR": "Merge e conflitos",
+        "es": "Merge y conflictos"
+      },
+      "index": {
+        "en": "merge-and-conflicts/README.md",
+        "pt-BR": "merge-and-conflicts/README.pt-BR.md",
+        "es": "merge-and-conflicts/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "merge-and-conflicts.01-integration-safety",
+          "order": 0,
+          "slug": "01-integration-safety",
+          "kind": "lesson",
+          "title": {
+            "en": "Integration safety and recovery first",
+            "pt-BR": "Segurança e recuperação antes da integração",
+            "es": "Seguridad y recuperación antes de integrar"
+          },
+          "content": {
+            "en": "merge-and-conflicts/01-integration-safety/README.md",
+            "pt-BR": "merge-and-conflicts/01-integration-safety/README.pt-BR.md",
+            "es": "merge-and-conflicts/01-integration-safety/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "branches.05-detached-head",
+          "next_id": "merge-and-conflicts.02-fast-forward",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.02-fast-forward",
+          "order": 1,
+          "slug": "02-fast-forward",
+          "kind": "lesson",
+          "title": {
+            "en": "Fast-forward merge",
+            "pt-BR": "Merge fast-forward",
+            "es": "Merge fast-forward"
+          },
+          "content": {
+            "en": "merge-and-conflicts/02-fast-forward/README.md",
+            "pt-BR": "merge-and-conflicts/02-fast-forward/README.pt-BR.md",
+            "es": "merge-and-conflicts/02-fast-forward/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.01-integration-safety",
+          "next_id": "merge-and-conflicts.03-merge-commit",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.03-merge-commit",
+          "order": 2,
+          "slug": "03-merge-commit",
+          "kind": "lesson",
+          "title": {
+            "en": "Divergence and merge commits",
+            "pt-BR": "Divergência e commits de merge",
+            "es": "Divergencia y commits de merge"
+          },
+          "content": {
+            "en": "merge-and-conflicts/03-merge-commit/README.md",
+            "pt-BR": "merge-and-conflicts/03-merge-commit/README.pt-BR.md",
+            "es": "merge-and-conflicts/03-merge-commit/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.02-fast-forward",
+          "next_id": "merge-and-conflicts.04-conflict-resolution",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.04-conflict-resolution",
+          "order": 3,
+          "slug": "04-conflict-resolution",
+          "kind": "lesson",
+          "title": {
+            "en": "Resolve and abort merge conflicts",
+            "pt-BR": "Resolver e abortar conflitos de merge",
+            "es": "Resolver y abortar conflictos de merge"
+          },
+          "content": {
+            "en": "merge-and-conflicts/04-conflict-resolution/README.md",
+            "pt-BR": "merge-and-conflicts/04-conflict-resolution/README.pt-BR.md",
+            "es": "merge-and-conflicts/04-conflict-resolution/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.03-merge-commit",
+          "next_id": "merge-and-conflicts.05-squash-merge",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.05-squash-merge",
+          "order": 4,
+          "slug": "05-squash-merge",
+          "kind": "lesson",
+          "title": {
+            "en": "Squash integration",
+            "pt-BR": "Integração por squash",
+            "es": "Integración por squash"
+          },
+          "content": {
+            "en": "merge-and-conflicts/05-squash-merge/README.md",
+            "pt-BR": "merge-and-conflicts/05-squash-merge/README.pt-BR.md",
+            "es": "merge-and-conflicts/05-squash-merge/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.04-conflict-resolution",
+          "next_id": "merge-and-conflicts.06-rebase-and-conflicts",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.06-rebase-and-conflicts",
+          "order": 5,
+          "slug": "06-rebase-and-conflicts",
+          "kind": "lesson",
+          "title": {
+            "en": "Rebase, abort and continue",
+            "pt-BR": "Rebase, abort e continue",
+            "es": "Rebase, abort y continue"
+          },
+          "content": {
+            "en": "merge-and-conflicts/06-rebase-and-conflicts/README.md",
+            "pt-BR": "merge-and-conflicts/06-rebase-and-conflicts/README.pt-BR.md",
+            "es": "merge-and-conflicts/06-rebase-and-conflicts/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.05-squash-merge",
+          "next_id": "merge-and-conflicts.07-interactive-rebase",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "merge-and-conflicts.07-interactive-rebase",
+          "order": 6,
+          "slug": "07-interactive-rebase",
+          "kind": "lesson",
+          "title": {
+            "en": "Interactive rebase and strategy choice",
+            "pt-BR": "Rebase interativo e escolha de estratégia",
+            "es": "Rebase interactivo y elección de estrategia"
+          },
+          "content": {
+            "en": "merge-and-conflicts/07-interactive-rebase/README.md",
+            "pt-BR": "merge-and-conflicts/07-interactive-rebase/README.pt-BR.md",
+            "es": "merge-and-conflicts/07-interactive-rebase/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.06-rebase-and-conflicts",
+          "next_id": "remote-repositories.01-remote-concepts",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "remote-repositories",
+      "order": 6,
+      "slug": "remote-repositories",
+      "title": {
+        "en": "Remote Repositories",
+        "pt-BR": "Repositórios remotos",
+        "es": "Repositorios remotos"
+      },
+      "index": {
+        "en": "remote-repositories/README.md",
+        "pt-BR": "remote-repositories/README.pt-BR.md",
+        "es": "remote-repositories/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "remote-repositories.01-remote-concepts",
+          "order": 0,
+          "slug": "01-remote-concepts",
+          "kind": "lesson",
+          "title": {
+            "en": "Remotes, bare repositories and clones",
+            "pt-BR": "Remotos, repositórios bare e clones",
+            "es": "Remotos, repositorios bare y clones"
+          },
+          "content": {
+            "en": "remote-repositories/01-remote-concepts/README.md",
+            "pt-BR": "remote-repositories/01-remote-concepts/README.pt-BR.md",
+            "es": "remote-repositories/01-remote-concepts/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "merge-and-conflicts.07-interactive-rebase",
+          "next_id": "remote-repositories.02-fetch-and-tracking",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "remote-repositories.02-fetch-and-tracking",
+          "order": 1,
+          "slug": "02-fetch-and-tracking",
+          "kind": "lesson",
+          "title": {
+            "en": "Fetch, references and upstream tracking",
+            "pt-BR": "Fetch, referências e upstream tracking",
+            "es": "Fetch, referencias y seguimiento upstream"
+          },
+          "content": {
+            "en": "remote-repositories/02-fetch-and-tracking/README.md",
+            "pt-BR": "remote-repositories/02-fetch-and-tracking/README.pt-BR.md",
+            "es": "remote-repositories/02-fetch-and-tracking/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "remote-repositories.01-remote-concepts",
+          "next_id": "remote-repositories.03-pull-push-and-divergence",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "remote-repositories.03-pull-push-and-divergence",
+          "order": 2,
+          "slug": "03-pull-push-and-divergence",
+          "kind": "lesson",
+          "title": {
+            "en": "Pull, push and divergent histories",
+            "pt-BR": "Pull, push e históricos divergentes",
+            "es": "Pull, push e historiales divergentes"
+          },
+          "content": {
+            "en": "remote-repositories/03-pull-push-and-divergence/README.md",
+            "pt-BR": "remote-repositories/03-pull-push-and-divergence/README.pt-BR.md",
+            "es": "remote-repositories/03-pull-push-and-divergence/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "remote-repositories.02-fetch-and-tracking",
+          "next_id": "remote-repositories.04-remote-branch-lifecycle",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "remote-repositories.04-remote-branch-lifecycle",
+          "order": 3,
+          "slug": "04-remote-branch-lifecycle",
+          "kind": "lesson",
+          "title": {
+            "en": "Remote branch lifecycle and pruning",
+            "pt-BR": "Ciclo de vida de branches remotas e prune",
+            "es": "Ciclo de vida de ramas remotas y prune"
+          },
+          "content": {
+            "en": "remote-repositories/04-remote-branch-lifecycle/README.md",
+            "pt-BR": "remote-repositories/04-remote-branch-lifecycle/README.pt-BR.md",
+            "es": "remote-repositories/04-remote-branch-lifecycle/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "remote-repositories.03-pull-push-and-divergence",
+          "next_id": "remote-repositories.05-secure-authentication",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "remote-repositories.05-secure-authentication",
+          "order": 4,
+          "slug": "05-secure-authentication",
+          "kind": "lesson",
+          "title": {
+            "en": "Secure authentication and hosting platforms",
+            "pt-BR": "Autenticação segura e plataformas de hospedagem",
+            "es": "Autenticación segura y plataformas de alojamiento"
+          },
+          "content": {
+            "en": "remote-repositories/05-secure-authentication/README.md",
+            "pt-BR": "remote-repositories/05-secure-authentication/README.pt-BR.md",
+            "es": "remote-repositories/05-secure-authentication/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "remote-repositories.04-remote-branch-lifecycle",
+          "next_id": "history-and-recovery.01-recovery-safety",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "history-and-recovery",
+      "order": 7,
+      "slug": "history-and-recovery",
+      "title": {
+        "en": "History & Recovery",
+        "pt-BR": "Histórico e recuperação",
+        "es": "Historial y recuperación"
+      },
+      "index": {
+        "en": "history-and-recovery/README.md",
+        "pt-BR": "history-and-recovery/README.pt-BR.md",
+        "es": "history-and-recovery/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "history-and-recovery.01-recovery-safety",
+          "order": 0,
+          "slug": "01-recovery-safety",
+          "kind": "lesson",
+          "title": {
+            "en": "Inspect before undoing",
+            "pt-BR": "Inspecione antes de desfazer",
+            "es": "Inspecciona antes de deshacer"
+          },
+          "content": {
+            "en": "history-and-recovery/01-recovery-safety/README.md",
+            "pt-BR": "history-and-recovery/01-recovery-safety/README.pt-BR.md",
+            "es": "history-and-recovery/01-recovery-safety/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "remote-repositories.05-secure-authentication",
+          "next_id": "history-and-recovery.02-restore",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.02-restore",
+          "order": 1,
+          "slug": "02-restore",
+          "kind": "lesson",
+          "title": {
+            "en": "Restore working files and index",
+            "pt-BR": "Restore: arquivos de trabalho e index",
+            "es": "Restore: archivos de trabajo e index"
+          },
+          "content": {
+            "en": "history-and-recovery/02-restore/README.md",
+            "pt-BR": "history-and-recovery/02-restore/README.pt-BR.md",
+            "es": "history-and-recovery/02-restore/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.01-recovery-safety",
+          "next_id": "history-and-recovery.03-reset",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.03-reset",
+          "order": 2,
+          "slug": "03-reset",
+          "kind": "lesson",
+          "title": {
+            "en": "Reset and its three modes",
+            "pt-BR": "Reset e seus três modos",
+            "es": "Reset y sus tres modos"
+          },
+          "content": {
+            "en": "history-and-recovery/03-reset/README.md",
+            "pt-BR": "history-and-recovery/03-reset/README.pt-BR.md",
+            "es": "history-and-recovery/03-reset/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.02-restore",
+          "next_id": "history-and-recovery.04-revert",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.04-revert",
+          "order": 3,
+          "slug": "04-revert",
+          "kind": "lesson",
+          "title": {
+            "en": "Revert without rewriting history",
+            "pt-BR": "Revert sem reescrever histórico",
+            "es": "Revert sin reescribir historial"
+          },
+          "content": {
+            "en": "history-and-recovery/04-revert/README.md",
+            "pt-BR": "history-and-recovery/04-revert/README.pt-BR.md",
+            "es": "history-and-recovery/04-revert/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.03-reset",
+          "next_id": "history-and-recovery.05-reflog",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.05-reflog",
+          "order": 4,
+          "slug": "05-reflog",
+          "kind": "lesson",
+          "title": {
+            "en": "Reflog and lost commit recovery",
+            "pt-BR": "Reflog e recuperação de commits perdidos",
+            "es": "Reflog y recuperación de commits perdidos"
+          },
+          "content": {
+            "en": "history-and-recovery/05-reflog/README.md",
+            "pt-BR": "history-and-recovery/05-reflog/README.pt-BR.md",
+            "es": "history-and-recovery/05-reflog/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.04-revert",
+          "next_id": "history-and-recovery.06-stash",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.06-stash",
+          "order": 5,
+          "slug": "06-stash",
+          "kind": "lesson",
+          "title": {
+            "en": "Stash temporary work",
+            "pt-BR": "Stash: trabalho temporário",
+            "es": "Stash: trabajo temporal"
+          },
+          "content": {
+            "en": "history-and-recovery/06-stash/README.md",
+            "pt-BR": "history-and-recovery/06-stash/README.pt-BR.md",
+            "es": "history-and-recovery/06-stash/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.05-reflog",
+          "next_id": "history-and-recovery.07-cherry-pick",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.07-cherry-pick",
+          "order": 6,
+          "slug": "07-cherry-pick",
+          "kind": "lesson",
+          "title": {
+            "en": "Cherry-pick selected commits",
+            "pt-BR": "Cherry-pick de commits selecionados",
+            "es": "Cherry-pick de commits seleccionados"
+          },
+          "content": {
+            "en": "history-and-recovery/07-cherry-pick/README.md",
+            "pt-BR": "history-and-recovery/07-cherry-pick/README.pt-BR.md",
+            "es": "history-and-recovery/07-cherry-pick/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.06-stash",
+          "next_id": "history-and-recovery.08-amend",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "history-and-recovery.08-amend",
+          "order": 7,
+          "slug": "08-amend",
+          "kind": "lesson",
+          "title": {
+            "en": "Amend an unpublished commit",
+            "pt-BR": "Amend de um commit não publicado",
+            "es": "Amend de un commit no publicado"
+          },
+          "content": {
+            "en": "history-and-recovery/08-amend/README.md",
+            "pt-BR": "history-and-recovery/08-amend/README.pt-BR.md",
+            "es": "history-and-recovery/08-amend/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.07-cherry-pick",
+          "next_id": "github.01-platform-and-repositories",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
     }
   ]
 }
