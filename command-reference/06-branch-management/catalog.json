@@ -1,0 +1,1072 @@
+{
+  "schema_version": 1,
+  "category": "06-branch-management",
+  "entries": [
+    {
+      "id": "git-branch-list",
+      "command": "git branch --list",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-branches",
+        "inspect-refs"
+      ],
+      "syntax": "git branch --list \"feat/*\"",
+      "purpose": {
+        "en": "List local branch names, optionally filtered by a pattern.",
+        "pt-BR": "Listar nomes de branches locais, opcionalmente filtrados por padrão.",
+        "es": "Listar nombres de ramas locales, opcionalmente filtrados por un patrón."
+      },
+      "options": {
+        "en": "--list selects listing explicitly; -a includes remote-tracking refs and -vv shows upstream information and other details.",
+        "pt-BR": "--list seleciona listagem explicitamente; -a inclui referências de rastreamento remoto e -vv mostra informações de upstream e outros detalhes.",
+        "es": "--list selecciona el listado explícitamente; -a incluye referencias de seguimiento remoto y -vv muestra información de upstream y otros detalles."
+      },
+      "when_to_use": {
+        "en": "When inspecting available branches before selecting or cleaning up work.",
+        "pt-BR": "Ao inspecionar branches disponíveis antes de selecionar ou limpar trabalho.",
+        "es": "Al inspeccionar ramas disponibles antes de seleccionar o limpiar trabajo."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat the local list as live remote inventory.",
+        "pt-BR": "Não trate lista local como inventário remoto em tempo real.",
+        "es": "No trates el listado local como inventario remoto en tiempo real."
+      },
+      "expected_state": {
+        "en": "Displays matching branches; the checked-out local branch is marked with an asterisk in normal output.",
+        "pt-BR": "Exibe branches correspondentes; a branch local atual é marcada com asterisco na saída normal.",
+        "es": "Muestra ramas coincidentes; la rama local actual se marca con asterisco en la salida normal."
+      },
+      "effect_notes": {
+        "en": "No tracked content, staged snapshot, local refs or remote state is changed by this inspection.",
+        "pt-BR": "Nenhum conteúdo rastreado, snapshot preparado, referência local ou estado remoto é alterado por esta inspeção.",
+        "es": "Esta inspección no modifica contenido rastreado, instantánea preparada, referencias locales ni estado remoto."
+      },
+      "common_errors": {
+        "en": "Omitting --list with a name or pattern can be interpreted as branch creation.",
+        "pt-BR": "Omitir --list com nome ou padrão pode ser interpretado como criação de branch.",
+        "es": "Omitir --list con nombre o patrón puede interpretarse como creación de rama."
+      },
+      "alternatives": {
+        "en": "Use git branch --show-current for only the current branch or git show-ref to inspect IDs.",
+        "pt-BR": "Use git branch --show-current para apenas a branch atual ou git show-ref para inspecionar IDs.",
+        "es": "Usa git branch --show-current para solo la rama actual o git show-ref para inspeccionar IDs."
+      },
+      "recovery": {
+        "en": "No recovery is needed for listing; inspect the selected reference or filter if output is unexpected.",
+        "pt-BR": "Listagem não exige recuperação; inspecione referência ou filtro selecionado se a saída for inesperada.",
+        "es": "El listado no requiere recuperación; inspecciona la referencia o filtro seleccionado si la salida es inesperada."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit. Inspect status and refs before operating.",
+        "pt-BR": "Use repositório próprio descartável com commit existente. Inspecione status e referências antes de operar.",
+        "es": "Usa un repositorio propio desechable con un commit existente. Inspecciona estado y referencias antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch --list",
+          "context": {
+            "en": "Inspect local branches.",
+            "pt-BR": "Inspecione branches locais.",
+            "es": "Inspecciona ramas locales."
+          }
+        },
+        "professional": {
+          "command": "git branch --list \"feat/*\"",
+          "context": {
+            "en": "Inspect local feature branches without creating one.",
+            "pt-BR": "Inspecione branches locais de feature sem criar uma.",
+            "es": "Inspecciona ramas locales de feature sin crear una."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only inspection; check branch names before sharing output.",
+          "pt-BR": "Inspeção somente leitura; confira nomes de branches antes de compartilhar saída.",
+          "es": "Inspección de solo lectura; comprueba los nombres de ramas antes de compartir la salida."
+        }
+      },
+      "related_chapters": [
+        "branches/01-create-and-switch"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-branch-create",
+      "command": "git branch NAME",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-branches",
+        "parallel-work"
+      ],
+      "syntax": "git branch feat/notes main",
+      "purpose": {
+        "en": "Create a named local branch at an existing commit without switching to it.",
+        "pt-BR": "Criar branch local nomeada em commit existente sem trocar para ela.",
+        "es": "Crear una rama local con nombre en un commit existente sin cambiar a ella."
+      },
+      "options": {
+        "en": "Supply a new name and optional start point; without a start point use HEAD. --no-track prevents automatic upstream configuration.",
+        "pt-BR": "Informe nome novo e ponto inicial opcional; sem ponto inicial usa HEAD. --no-track impede configuração automática de upstream.",
+        "es": "Proporciona nombre nuevo y punto inicial opcional; sin punto inicial usa HEAD. --no-track impide configuración automática de upstream."
+      },
+      "when_to_use": {
+        "en": "When preparing an independent line of work or preserving a commit.",
+        "pt-BR": "Ao preparar linha de trabalho independente ou preservar commit.",
+        "es": "Al preparar una línea de trabajo independiente o preservar un commit."
+      },
+      "when_to_avoid": {
+        "en": "Avoid creating a branch from an unverified revision or overwriting an existing branch with -f.",
+        "pt-BR": "Evite criar branch de revisão não verificada ou sobrescrever branch existente com -f.",
+        "es": "Evita crear una rama desde una revisión no verificada o sobrescribir una rama existente con -f."
+      },
+      "expected_state": {
+        "en": "A new local ref points to the selected commit; HEAD remains where it was.",
+        "pt-BR": "Nova referência local aponta para commit selecionado; HEAD permanece onde estava.",
+        "es": "Una nueva referencia local apunta al commit seleccionado; HEAD permanece donde estaba."
+      },
+      "effect_notes": {
+        "en": "Adds a branch ref and possibly its reflog or tracking configuration; working files and index are unchanged.",
+        "pt-BR": "Adiciona referência de branch e possivelmente reflog ou configuração de rastreamento; arquivos de trabalho e index não mudam.",
+        "es": "Añade referencia de rama y posiblemente reflog o configuración de seguimiento; archivos de trabajo e index no cambian."
+      },
+      "common_errors": {
+        "en": "Assuming creating a branch also switches to it or copies a folder.",
+        "pt-BR": "Presumir que criar branch também troca para ela ou copia uma pasta.",
+        "es": "Suponer que crear una rama también cambia a ella o copia una carpeta."
+      },
+      "alternatives": {
+        "en": "Use git switch -c to create and select in one operation.",
+        "pt-BR": "Use git switch -c para criar e selecionar em uma operação.",
+        "es": "Usa git switch -c para crear y seleccionar en una operación."
+      },
+      "recovery": {
+        "en": "Inspect both refs; if a new unused branch is mistaken, remove it only after confirming its tip is reachable from an intended surviving ref.",
+        "pt-BR": "Inspecione ambas referências; se branch nova sem uso estiver errada, remova só após confirmar ponta alcançável por referência sobrevivente pretendida.",
+        "es": "Inspecciona ambas referencias; si una rama nueva sin uso es incorrecta, elimínala solo tras confirmar que su punta es alcanzable desde una referencia superviviente prevista."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit. Inspect status and refs before operating.",
+        "pt-BR": "Use repositório próprio descartável com commit existente. Inspecione status e referências antes de operar.",
+        "es": "Usa un repositorio propio desechable con un commit existente. Inspecciona estado y referencias antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch feat/notes",
+          "context": {
+            "en": "Create a local branch at current HEAD.",
+            "pt-BR": "Crie branch local em HEAD atual.",
+            "es": "Crea una rama local en HEAD actual."
+          }
+        },
+        "professional": {
+          "command": "git branch feat/review main",
+          "context": {
+            "en": "Create a branch at the verified existing main tip.",
+            "pt-BR": "Crie branch na ponta existente verificada da main.",
+            "es": "Crea una rama en la punta existente verificada de main."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Verify the name and start point; do not use force to resolve name collisions.",
+          "pt-BR": "Verifique nome e ponto inicial; não use força para resolver colisões de nome.",
+          "es": "Verifica nombre y punto inicial; no uses fuerza para resolver colisiones de nombre."
+        }
+      },
+      "related_chapters": [
+        "branches/01-create-and-switch"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-branch-show-current",
+      "command": "git branch --show-current",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-state",
+        "manage-branches"
+      ],
+      "syntax": "git branch --show-current",
+      "purpose": {
+        "en": "Print the current local branch name when HEAD is attached.",
+        "pt-BR": "Exibir nome da branch local atual quando HEAD está associado.",
+        "es": "Mostrar el nombre de la rama local actual cuando HEAD está asociado."
+      },
+      "options": {
+        "en": "--show-current selects this single-name output; it is empty in detached HEAD.",
+        "pt-BR": "--show-current seleciona saída de nome único; fica vazia em HEAD destacado.",
+        "es": "--show-current selecciona salida de nombre único; queda vacía en HEAD separado."
+      },
+      "when_to_use": {
+        "en": "When confirming the active branch before a commit or switch.",
+        "pt-BR": "Ao confirmar branch ativa antes de commit ou troca.",
+        "es": "Al confirmar la rama activa antes de commit o cambio."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume empty output is a branch name or proof of command failure.",
+        "pt-BR": "Não presuma que saída vazia é nome de branch ou prova de falha do comando.",
+        "es": "No supongas que una salida vacía es nombre de rama o prueba de fallo del comando."
+      },
+      "expected_state": {
+        "en": "Displays the branch name or no name if HEAD is detached.",
+        "pt-BR": "Exibe nome da branch ou nenhum nome se HEAD estiver destacado.",
+        "es": "Muestra el nombre de la rama o ningún nombre si HEAD está separado."
+      },
+      "effect_notes": {
+        "en": "No tracked content, staged snapshot, local refs or remote state is changed by this inspection.",
+        "pt-BR": "Nenhum conteúdo rastreado, snapshot preparado, referência local ou estado remoto é alterado por esta inspeção.",
+        "es": "Esta inspección no modifica contenido rastreado, instantánea preparada, referencias locales ni estado remoto."
+      },
+      "common_errors": {
+        "en": "Assuming it returns the commit ID or remote upstream.",
+        "pt-BR": "Presumir que retorna ID do commit ou upstream remoto.",
+        "es": "Suponer que devuelve ID del commit o upstream remoto."
+      },
+      "alternatives": {
+        "en": "Use git symbolic-ref --quiet --short HEAD for a symbolic HEAD check, or git rev-parse HEAD for the commit ID.",
+        "pt-BR": "Use git symbolic-ref --quiet --short HEAD para conferir HEAD simbólico, ou git rev-parse HEAD para ID do commit.",
+        "es": "Usa git symbolic-ref --quiet --short HEAD para comprobar HEAD simbólico, o git rev-parse HEAD para el ID del commit."
+      },
+      "recovery": {
+        "en": "No recovery is needed for listing; inspect the selected reference or filter if output is unexpected.",
+        "pt-BR": "Listagem não exige recuperação; inspecione referência ou filtro selecionado se a saída for inesperada.",
+        "es": "El listado no requiere recuperación; inspecciona la referencia o filtro seleccionado si la salida es inesperada."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit. Inspect status and refs before operating.",
+        "pt-BR": "Use repositório próprio descartável com commit existente. Inspecione status e referências antes de operar.",
+        "es": "Usa un repositorio propio desechable con un commit existente. Inspecciona estado y referencias antes de operar."
+      },
+      "requirements": {
+        "en": "Git 2.22 or newer supports --show-current; the guide uses Git 2.40 or newer for labs.",
+        "pt-BR": "Git 2.22 ou superior suporta --show-current; o guia usa Git 2.40 ou superior nos laboratórios.",
+        "es": "Git 2.22 o superior admite --show-current; el guía usa Git 2.40 o superior en laboratorios."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch --show-current",
+          "context": {
+            "en": "Check which branch is active.",
+            "pt-BR": "Confira qual branch está ativa.",
+            "es": "Comprueba qué rama está activa."
+          }
+        },
+        "professional": {
+          "command": "git branch --show-current",
+          "context": {
+            "en": "Before committing, verify the expected feature branch is selected.",
+            "pt-BR": "Antes do commit, confirme a branch de feature esperada.",
+            "es": "Antes del commit, verifica la rama de feature esperada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only inspection; check branch names before sharing output.",
+          "pt-BR": "Inspeção somente leitura; confira nomes de branches antes de compartilhar saída.",
+          "es": "Inspección de solo lectura; comprueba los nombres de ramas antes de compartir la salida."
+        }
+      },
+      "related_chapters": [
+        "branches/01-create-and-switch",
+        "branches/05-detached-head"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-switch",
+      "command": "git switch",
+      "kind": "native-command",
+      "category": "06-branch-management",
+      "level": "beginner",
+      "intent_tags": [
+        "switch-context",
+        "manage-branches"
+      ],
+      "syntax": "git switch main",
+      "purpose": {
+        "en": "Select an existing branch for subsequent work.",
+        "pt-BR": "Selecionar branch existente para trabalho posterior.",
+        "es": "Seleccionar una rama existente para trabajo posterior."
+      },
+      "options": {
+        "en": "--no-guess disables automatic creation based on a unique matching remote-tracking branch; - is shorthand for the previous checkout.",
+        "pt-BR": "--no-guess desativa criação automática baseada em branch de rastreamento remoto correspondente única; - abrevia checkout anterior.",
+        "es": "--no-guess desactiva creación automática basada en una rama de seguimiento remoto coincidente única; - abrevia checkout anterior."
+      },
+      "when_to_use": {
+        "en": "When changing between existing local lines of work.",
+        "pt-BR": "Ao alternar entre linhas locais de trabalho existentes.",
+        "es": "Al alternar entre líneas locales de trabajo existentes."
+      },
+      "when_to_avoid": {
+        "en": "Avoid switching away from unsaved detached commits or forcing past conflicting edits.",
+        "pt-BR": "Evite sair de commits destacados não preservados ou forçar diante de edições conflitantes.",
+        "es": "Evita salir de commits separados no preservados o forzar ante ediciones conflictivas."
+      },
+      "expected_state": {
+        "en": "HEAD points to the selected branch; tracked files and index reflect the new context with compatible edits preserved when possible.",
+        "pt-BR": "HEAD aponta para branch selecionada; arquivos rastreados e index refletem novo contexto com edições compatíveis preservadas quando possível.",
+        "es": "HEAD apunta a la rama seleccionada; archivos rastreados e index reflejan el nuevo contexto con ediciones compatibles preservadas cuando sea posible."
+      },
+      "effect_notes": {
+        "en": "Selects HEAD and updates the index and working files as needed; configured post-checkout hooks may affect other local state. No push or merge occurs.",
+        "pt-BR": "Seleciona HEAD e atualiza index e arquivos de trabalho conforme necessário; hooks post-checkout configurados podem afetar outros estados locais. Não ocorre push nem merge.",
+        "es": "Selecciona HEAD y actualiza index y archivos de trabajo según sea necesario; los hooks post-checkout configurados pueden afectar otro estado local. No hay push ni merge."
+      },
+      "common_errors": {
+        "en": "Confusing switching with merging or expecting all uncommitted edits to remain on the old branch.",
+        "pt-BR": "Confundir troca com merge ou esperar que todas edições não registradas fiquem na branch antiga.",
+        "es": "Confundir cambio con merge o esperar que todas las ediciones sin confirmar permanezcan en la rama anterior."
+      },
+      "alternatives": {
+        "en": "Older Git uses git checkout with a verified branch name; prefer switch for clarity in current labs.",
+        "pt-BR": "Git antigo usa git checkout com nome de branch verificado; prefira switch pela clareza nos laboratórios atuais.",
+        "es": "Git antiguo usa git checkout con un nombre de rama verificado; prefiere switch por claridad en laboratorios actuales."
+      },
+      "recovery": {
+        "en": "If a switch fails, inspect status and preserve edits; do not force it. Return to the original branch when clean and save any desired detached commits first.",
+        "pt-BR": "Se troca falhar, inspecione status e preserve edições; não force. Retorne à branch original quando limpo e salve antes commits destacados desejados.",
+        "es": "Si el cambio falla, inspecciona el estado y preserva ediciones; no lo fuerces. Vuelve a la rama original con estado limpio y guarda antes los commits separados deseados."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with clean status, an existing commit and trusted local hooks. Preserve valuable work first.",
+        "pt-BR": "Use repositório próprio descartável com status limpo, commit existente e hooks locais confiáveis. Preserve trabalho valioso primeiro.",
+        "es": "Usa un repositorio propio desechable con estado limpio, commit existente y hooks locales confiables. Preserva primero el trabajo valioso."
+      },
+      "requirements": {
+        "en": "Git 2.23 introduced switch; the guide's practice baseline is Git 2.40 or newer. The shown syntax is documented in the Git 2.35 manual.",
+        "pt-BR": "Git 2.23 introduziu switch; a base de prática do guia é Git 2.40 ou superior. A sintaxe mostrada está documentada no manual Git 2.35.",
+        "es": "Git 2.23 introdujo switch; la base de práctica del guía es Git 2.40 o superior. La sintaxis mostrada está documentada en el manual Git 2.35."
+      },
+      "examples": {
+        "basic": {
+          "command": "git switch main",
+          "context": {
+            "en": "Return to existing local main after preserving work.",
+            "pt-BR": "Retorne à main local existente após preservar trabalho.",
+            "es": "Vuelve a main local existente tras preservar trabajo."
+          }
+        },
+        "professional": {
+          "command": "git switch --no-guess feat/notes",
+          "context": {
+            "en": "Select a verified existing local feature branch without automatic tracking branch creation.",
+            "pt-BR": "Selecione branch local de feature existente verificada sem criação automática de branch de rastreamento.",
+            "es": "Selecciona rama local de feature existente verificada sin creación automática de rama de seguimiento."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Compatible edits can carry over; conflicting edits can block switching. Do not use force or discard options.",
+          "pt-BR": "Edições compatíveis podem acompanhar a troca; edições conflitantes podem bloqueá-la. Não use opções de força ou descarte.",
+          "es": "Las ediciones compatibles pueden acompañar el cambio; las conflictivas pueden bloquearlo. No uses opciones de fuerza ni descarte."
+        }
+      },
+      "related_chapters": [
+        "branches/01-create-and-switch",
+        "branches/03-switch-safety-and-naming"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-switch/2.35.0"
+      ]
+    },
+    {
+      "id": "git-switch-create",
+      "command": "git switch -c",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-branches",
+        "switch-context",
+        "parallel-work"
+      ],
+      "syntax": "git switch -c feat/notes main",
+      "purpose": {
+        "en": "Create a new local branch and switch to it as one operation.",
+        "pt-BR": "Criar branch local nova e trocar para ela em uma operação.",
+        "es": "Crear una rama local nueva y cambiar a ella en una operación."
+      },
+      "options": {
+        "en": "-c requires a new name and accepts an optional start point; do not confuse it with -C, which can reset an existing branch.",
+        "pt-BR": "-c exige nome novo e aceita ponto inicial opcional; não confunda com -C, que pode redefinir branch existente.",
+        "es": "-c exige nombre nuevo y acepta punto inicial opcional; no lo confundas con -C, que puede restablecer una rama existente."
+      },
+      "when_to_use": {
+        "en": "When starting an isolated task or naming a detached commit before leaving it.",
+        "pt-BR": "Ao iniciar tarefa isolada ou nomear commit destacado antes de sair dele.",
+        "es": "Al iniciar una tarea aislada o nombrar un commit separado antes de salir de él."
+      },
+      "when_to_avoid": {
+        "en": "Avoid using an unverified start point or overwriting an existing name.",
+        "pt-BR": "Evite usar ponto inicial não verificado ou sobrescrever nome existente.",
+        "es": "Evita usar un punto inicial no verificado o sobrescribir un nombre existente."
+      },
+      "expected_state": {
+        "en": "On success, the new branch points at the chosen start point and HEAD selects it; if switching fails the branch is not created.",
+        "pt-BR": "Em sucesso, branch nova aponta ao ponto inicial escolhido e HEAD a seleciona; se troca falhar a branch não é criada.",
+        "es": "Si tiene éxito, la rama nueva apunta al punto inicial elegido y HEAD la selecciona; si el cambio falla no se crea la rama."
+      },
+      "effect_notes": {
+        "en": "Selects HEAD and updates the index and working files as needed; configured post-checkout hooks may affect other local state. No push or merge occurs.",
+        "pt-BR": "Seleciona HEAD e atualiza index e arquivos de trabalho conforme necessário; hooks post-checkout configurados podem afetar outros estados locais. Não ocorre push nem merge.",
+        "es": "Selecciona HEAD y actualiza index y archivos de trabajo según sea necesario; los hooks post-checkout configurados pueden afectar otro estado local. No hay push ni merge."
+      },
+      "common_errors": {
+        "en": "Using -C to bypass a collision or assuming the new branch always starts at main.",
+        "pt-BR": "Usar -C para contornar colisão ou presumir que branch nova sempre começa na main.",
+        "es": "Usar -C para evitar una colisión o suponer que la rama nueva siempre empieza en main."
+      },
+      "alternatives": {
+        "en": "Use git branch NAME START and git switch NAME separately when creation without switching is useful.",
+        "pt-BR": "Use git branch NAME START e git switch NAME separadamente quando criar sem trocar for útil.",
+        "es": "Usa git branch NAME START y git switch NAME por separado cuando crear sin cambiar sea útil."
+      },
+      "recovery": {
+        "en": "Verify HEAD and both refs; preserve any new commits before returning to the original branch or cleaning up.",
+        "pt-BR": "Verifique HEAD e ambas referências; preserve commits novos antes de retornar à branch original ou limpar.",
+        "es": "Verifica HEAD y ambas referencias; preserva commits nuevos antes de volver a la rama original o limpiar."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with clean status, an existing commit and trusted local hooks. Preserve valuable work first.",
+        "pt-BR": "Use repositório próprio descartável com status limpo, commit existente e hooks locais confiáveis. Preserve trabalho valioso primeiro.",
+        "es": "Usa un repositorio propio desechable con estado limpio, commit existente y hooks locales confiables. Preserva primero el trabajo valioso."
+      },
+      "requirements": {
+        "en": "Git 2.23 introduced switch; the guide's practice baseline is Git 2.40 or newer. The shown syntax is documented in the Git 2.35 manual.",
+        "pt-BR": "Git 2.23 introduziu switch; a base de prática do guia é Git 2.40 ou superior. A sintaxe mostrada está documentada no manual Git 2.35.",
+        "es": "Git 2.23 introdujo switch; la base de práctica del guía es Git 2.40 o superior. La sintaxis mostrada está documentada en el manual Git 2.35."
+      },
+      "examples": {
+        "basic": {
+          "command": "git switch -c feat/notes",
+          "context": {
+            "en": "Start a task at the current commit.",
+            "pt-BR": "Inicie tarefa no commit atual.",
+            "es": "Inicia una tarea en el commit actual."
+          }
+        },
+        "professional": {
+          "command": "git switch -c feat/review main",
+          "context": {
+            "en": "Start a review task from a verified local main commit.",
+            "pt-BR": "Inicie tarefa de revisão de commit local verificado da main.",
+            "es": "Inicia una tarea de revisión desde un commit local verificado de main."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Compatible edits can carry over; conflicting edits can block switching. Do not use force or discard options.",
+          "pt-BR": "Edições compatíveis podem acompanhar a troca; edições conflitantes podem bloqueá-la. Não use opções de força ou descarte.",
+          "es": "Las ediciones compatibles pueden acompañar el cambio; las conflictivas pueden bloquearlo. No uses opciones de fuerza ni descarte."
+        }
+      },
+      "related_chapters": [
+        "branches/01-create-and-switch"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-switch/2.35.0"
+      ]
+    },
+    {
+      "id": "git-switch-detach",
+      "command": "git switch --detach",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "intermediate",
+      "intent_tags": [
+        "switch-context",
+        "inspect-history",
+        "recover-work"
+      ],
+      "syntax": "git switch --detach HEAD~1",
+      "purpose": {
+        "en": "Select a commit directly without attaching HEAD to a branch.",
+        "pt-BR": "Selecionar commit diretamente sem associar HEAD a branch.",
+        "es": "Seleccionar un commit directamente sin asociar HEAD a una rama."
+      },
+      "options": {
+        "en": "--detach explicitly requests detached HEAD; use a verified commit or tag that resolves to a commit.",
+        "pt-BR": "--detach solicita HEAD destacado explicitamente; use commit verificado ou tag que resolve para commit.",
+        "es": "--detach solicita HEAD separado explícitamente; usa un commit verificado o etiqueta que resuelva a commit."
+      },
+      "when_to_use": {
+        "en": "When inspecting historical snapshots or performing a disposable experiment.",
+        "pt-BR": "Ao inspecionar snapshots históricos ou realizar experimento descartável.",
+        "es": "Al inspeccionar instantáneas históricas o realizar un experimento desechable."
+      },
+      "when_to_avoid": {
+        "en": "Avoid leaving desired commits unnamed or treating detached work as updates to main.",
+        "pt-BR": "Evite deixar commits desejados sem nome ou tratar trabalho destacado como atualizações da main.",
+        "es": "Evita dejar commits deseados sin nombre o tratar trabajo separado como actualizaciones de main."
+      },
+      "expected_state": {
+        "en": "HEAD points directly at the commit; branch tips are unchanged and --show-current prints no name.",
+        "pt-BR": "HEAD aponta diretamente para commit; pontas de branches não mudam e --show-current não imprime nome.",
+        "es": "HEAD apunta directamente al commit; puntas de ramas no cambian y --show-current no imprime nombre."
+      },
+      "effect_notes": {
+        "en": "Selects HEAD and updates the index and working files as needed; configured post-checkout hooks may affect other local state. No push or merge occurs.",
+        "pt-BR": "Seleciona HEAD e atualiza index e arquivos de trabalho conforme necessário; hooks post-checkout configurados podem afetar outros estados locais. Não ocorre push nem merge.",
+        "es": "Selecciona HEAD y actualiza index y archivos de trabajo según sea necesario; los hooks post-checkout configurados pueden afectar otro estado local. No hay push ni merge."
+      },
+      "common_errors": {
+        "en": "Assuming commits created while detached advance the previously selected branch.",
+        "pt-BR": "Presumir que commits criados em estado destacado avançam branch selecionada anteriormente.",
+        "es": "Suponer que commits creados en estado separado avanzan la rama seleccionada anteriormente."
+      },
+      "alternatives": {
+        "en": "Create a temporary named branch instead if changes are expected to be retained.",
+        "pt-BR": "Crie branch temporária nomeada se houver expectativa de preservar mudanças.",
+        "es": "Crea una rama temporal con nombre si esperas conservar cambios."
+      },
+      "recovery": {
+        "en": "Before leaving, use git switch -c with an unused name to retain desired commits; if already left, inspect reflog and name the verified commit if available.",
+        "pt-BR": "Antes de sair, use git switch -c com nome livre para preservar commits desejados; se já saiu, inspecione reflog e nomeie commit verificado se disponível.",
+        "es": "Antes de salir, usa git switch -c con nombre libre para conservar commits deseados; si ya saliste, inspecciona reflog y nombra el commit verificado si está disponible."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with clean status, an existing commit and trusted local hooks. Preserve valuable work first.",
+        "pt-BR": "Use repositório próprio descartável com status limpo, commit existente e hooks locais confiáveis. Preserve trabalho valioso primeiro.",
+        "es": "Usa un repositorio propio desechable con estado limpio, commit existente y hooks locales confiables. Preserva primero el trabajo valioso."
+      },
+      "requirements": {
+        "en": "Git 2.23 introduced switch; the guide's practice baseline is Git 2.40 or newer. The shown syntax is documented in the Git 2.35 manual.",
+        "pt-BR": "Git 2.23 introduziu switch; a base de prática do guia é Git 2.40 ou superior. A sintaxe mostrada está documentada no manual Git 2.35.",
+        "es": "Git 2.23 introdujo switch; la base de práctica del guía es Git 2.40 o superior. La sintaxis mostrada está documentada en el manual Git 2.35."
+      },
+      "examples": {
+        "basic": {
+          "command": "git switch --detach HEAD~1",
+          "context": {
+            "en": "Inspect the first parent of a non-root current commit.",
+            "pt-BR": "Inspecione o primeiro pai de commit atual não inicial.",
+            "es": "Inspecciona el primer padre de un commit actual no inicial."
+          }
+        },
+        "professional": {
+          "command": "git switch --detach v1.0.0",
+          "context": {
+            "en": "Inspect an existing local version tag that resolves to a commit.",
+            "pt-BR": "Inspecione tag local de versão existente que resolve para commit.",
+            "es": "Inspecciona una etiqueta local de versión existente que resuelve a commit."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Detached commits may become unreachable; recovery is not guaranteed. Preserve them before switching away.",
+          "pt-BR": "Commits destacados podem ficar inalcançáveis; recuperação não é garantida. Preserve antes de trocar.",
+          "es": "Los commits separados pueden quedar inalcanzables; recuperación no garantizada. Presérvalos antes de cambiar."
+        }
+      },
+      "related_chapters": [
+        "branches/05-detached-head"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-switch/2.35.0"
+      ]
+    },
+    {
+      "id": "git-branch-rename",
+      "command": "git branch -m",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-branches"
+      ],
+      "syntax": "git branch -m feat/old feat/new",
+      "purpose": {
+        "en": "Rename a local branch and move its associated configuration and reflog when present.",
+        "pt-BR": "Renomear branch local e mover configuração associada e reflog quando presentes.",
+        "es": "Renombrar una rama local y mover su configuración asociada y reflog cuando existan."
+      },
+      "options": {
+        "en": "-m accepts old and new names or just a new name for the current branch; -M forces replacement and is not used here.",
+        "pt-BR": "-m aceita nomes antigo e novo ou só nome novo para branch atual; -M força substituição e não é usado aqui.",
+        "es": "-m acepta nombres anterior y nuevo o solo nombre nuevo para rama actual; -M fuerza reemplazo y no se usa aquí."
+      },
+      "when_to_use": {
+        "en": "When correcting a private branch name to match team conventions.",
+        "pt-BR": "Ao corrigir nome de branch privada conforme convenções da equipe.",
+        "es": "Al corregir nombre de rama privada conforme convenciones del equipo."
+      },
+      "when_to_avoid": {
+        "en": "Avoid renaming shared branches without coordination or using -M to replace another branch.",
+        "pt-BR": "Evite renomear branches compartilhadas sem coordenação ou usar -M para substituir outra branch.",
+        "es": "Evita renombrar ramas compartidas sin coordinación o usar -M para reemplazar otra rama."
+      },
+      "expected_state": {
+        "en": "The new local name identifies the same tip; the old name disappears. If current, HEAD follows the renamed branch.",
+        "pt-BR": "Novo nome local identifica a mesma ponta; nome antigo desaparece. Se atual, HEAD acompanha branch renomeada.",
+        "es": "El nuevo nombre local identifica la misma punta; el nombre anterior desaparece. Si es actual, HEAD sigue la rama renombrada."
+      },
+      "effect_notes": {
+        "en": "Moves local refs, configuration and reflog where present, not commit contents or remote branch names.",
+        "pt-BR": "Move referências locais, configuração e reflog quando presentes, não conteúdo de commits nem nomes de branches remotas.",
+        "es": "Mueve referencias locales, configuración y reflog cuando existen, no contenido de commits ni nombres de ramas remotas."
+      },
+      "common_errors": {
+        "en": "Expecting the remote branch or upstream target name to be renamed automatically.",
+        "pt-BR": "Esperar que branch remota ou nome do destino upstream seja renomeado automaticamente.",
+        "es": "Esperar que rama remota o nombre de destino upstream se renombre automáticamente."
+      },
+      "alternatives": {
+        "en": "Keep the existing name when collaborators or automation depend on it.",
+        "pt-BR": "Mantenha nome existente quando colaboradores ou automação dependerem dele.",
+        "es": "Conserva nombre existente cuando colaboradores o automatización dependan de él."
+      },
+      "recovery": {
+        "en": "Verify the tip, upstream and free original name before renaming back with -m; coordinate if already shared.",
+        "pt-BR": "Verifique ponta, upstream e nome original livre antes de renomear de volta com -m; coordene se já compartilhada.",
+        "es": "Verifica punta, upstream y nombre original libre antes de renombrar de vuelta con -m; coordina si ya se compartió."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit. Inspect status and refs before operating.",
+        "pt-BR": "Use repositório próprio descartável com commit existente. Inspecione status e referências antes de operar.",
+        "es": "Usa un repositorio propio desechable con un commit existente. Inspecciona estado y referencias antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch -m feat/notes feat/docs",
+          "context": {
+            "en": "Rename an existing private branch to an unused name.",
+            "pt-BR": "Renomeie branch privada existente para nome livre.",
+            "es": "Renombra una rama privada existente a nombre libre."
+          }
+        },
+        "professional": {
+          "command": "git branch -m feat/review",
+          "context": {
+            "en": "Rename the currently checked-out private branch to an unused name.",
+            "pt-BR": "Renomeie branch privada atual para nome livre.",
+            "es": "Renombra la rama privada actual a nombre libre."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Check both names and downstream dependencies; avoid force replacement.",
+          "pt-BR": "Confira ambos nomes e dependências; evite substituição forçada.",
+          "es": "Comprueba ambos nombres y dependencias; evita reemplazo forzado."
+        }
+      },
+      "related_chapters": [
+        "branches/03-switch-safety-and-naming"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-branch-delete",
+      "command": "git branch -d",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-branches",
+        "protect-history"
+      ],
+      "syntax": "git branch -d feat/notes",
+      "purpose": {
+        "en": "Delete a local branch with a merged-status safeguard.",
+        "pt-BR": "Excluir branch local com proteção de estado integrado.",
+        "es": "Eliminar una rama local con protección de estado integrado."
+      },
+      "options": {
+        "en": "-d checks full merge into its configured upstream, or HEAD if no upstream exists; -D bypasses that guard and is not an alternative when unsure.",
+        "pt-BR": "-d confere integração completa no upstream configurado, ou HEAD se não houver upstream; -D ignora essa proteção e não é alternativa em dúvida.",
+        "es": "-d comprueba integración completa en upstream configurado, o HEAD si no existe upstream; -D omite esa protección y no es alternativa ante dudas."
+      },
+      "when_to_use": {
+        "en": "When cleaning up private branches whose commits are retained by the intended target.",
+        "pt-BR": "Ao limpar branches privadas cujos commits são preservados pelo destino pretendido.",
+        "es": "Al limpiar ramas privadas cuyos commits se conservan en el destino previsto."
+      },
+      "when_to_avoid": {
+        "en": "Avoid deleting work not verified as reachable, or forcing deletion after a squash merge without reviewing the content and history.",
+        "pt-BR": "Evite excluir trabalho sem alcance verificado, ou forçar exclusão após squash merge sem revisar conteúdo e histórico.",
+        "es": "Evita eliminar trabajo sin alcance verificado, o forzar eliminación tras squash merge sin revisar contenido e historial."
+      },
+      "expected_state": {
+        "en": "The local ref and its branch reflog, if present, are removed on success; otherwise Git may refuse.",
+        "pt-BR": "Referência local e reflog da branch, se presente, são removidos em sucesso; caso contrário Git pode recusar.",
+        "es": "La referencia local y reflog de la rama, si existe, se eliminan si tiene éxito; de lo contrario Git puede negarse."
+      },
+      "effect_notes": {
+        "en": "Removes a local name and associated metadata; does not immediately erase commit objects or remove remote branches.",
+        "pt-BR": "Remove nome local e metadados associados; não apaga imediatamente objetos de commit nem remove branches remotas.",
+        "es": "Elimina nombre local y metadatos asociados; no borra inmediatamente objetos de commit ni elimina ramas remotas."
+      },
+      "common_errors": {
+        "en": "Assuming -d always checks main or that squash merging preserves commit ancestry.",
+        "pt-BR": "Presumir que -d sempre confere main ou que squash merge preserva ancestralidade dos commits.",
+        "es": "Suponer que -d siempre comprueba main o que squash merge conserva ascendencia de commits."
+      },
+      "alternatives": {
+        "en": "Keep the branch if uncertain; inspect git branch --merged main and git log main..NAME first.",
+        "pt-BR": "Mantenha branch se houver dúvida; inspecione git branch --merged main e git log main..NAME antes.",
+        "es": "Conserva la rama si hay duda; inspecciona git branch --merged main y git log main..NAME primero."
+      },
+      "recovery": {
+        "en": "If the recorded commit still exists, recreate a branch at its verified ID; old configuration and reflog are not automatically restored.",
+        "pt-BR": "Se commit registrado ainda existir, recrie branch no ID verificado; configuração e reflog antigos não são restaurados automaticamente.",
+        "es": "Si el commit registrado aún existe, recrea una rama en su ID verificado; configuración y reflog anteriores no se restauran automáticamente."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; verify the target branch is not checked out in any worktree and its tip is reachable from the intended surviving branch. Record its ID.",
+        "pt-BR": "Use repositório próprio descartável; verifique que branch alvo não está selecionada em nenhum worktree e ponta é alcançável pela branch sobrevivente pretendida. Registre seu ID.",
+        "es": "Usa un repositorio propio desechable; verifica que rama objetivo no esté seleccionada en ningún worktree y punta sea alcanzable desde la rama superviviente prevista. Registra su ID."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch -d feat/notes",
+          "context": {
+            "en": "With main selected, remove only a verified contained private branch without upstream.",
+            "pt-BR": "Com main selecionada, remova apenas branch privada contida verificada sem upstream.",
+            "es": "Con main seleccionada, elimina solo una rama privada contenida verificada sin upstream."
+          }
+        },
+        "professional": {
+          "command": "git branch -d feat/review",
+          "context": {
+            "en": "After confirming ancestry, upstream and worktree status, remove the local review branch.",
+            "pt-BR": "Após confirmar ancestralidade, upstream e estado de worktrees, remova branch local de revisão.",
+            "es": "Tras confirmar ascendencia, upstream y estado de worktrees, elimina la rama local de revisión."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Deletion can remove the last convenient name for work; never use -D to bypass a refusal without separate assessment. Recovery is not guaranteed.",
+          "pt-BR": "Exclusão pode remover último nome conveniente do trabalho; nunca use -D para contornar recusa sem avaliação separada. Recuperação não é garantida.",
+          "es": "La eliminación puede quitar el último nombre conveniente del trabajo; nunca uses -D para evitar una negativa sin evaluación separada. Recuperación no garantizada."
+        }
+      },
+      "related_chapters": [
+        "branches/04-safe-local-deletion"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-branch-merged",
+      "command": "git branch --merged",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-branches",
+        "inspect-history",
+        "protect-history"
+      ],
+      "syntax": "git branch --merged main",
+      "purpose": {
+        "en": "List branches whose tip commits are reachable from a selected commit.",
+        "pt-BR": "Listar branches cujos commits de ponta são alcançáveis a partir de commit selecionado.",
+        "es": "Listar ramas cuyos commits de punta son alcanzables desde un commit seleccionado."
+      },
+      "options": {
+        "en": "--merged defaults to HEAD; --no-merged selects the opposite set. Supply an explicit target such as main.",
+        "pt-BR": "--merged usa HEAD por padrão; --no-merged seleciona conjunto oposto. Informe destino explícito como main.",
+        "es": "--merged usa HEAD por defecto; --no-merged selecciona el conjunto opuesto. Proporciona destino explícito como main."
+      },
+      "when_to_use": {
+        "en": "When reviewing ancestry before local branch cleanup.",
+        "pt-BR": "Ao revisar ancestralidade antes de limpar branches locais.",
+        "es": "Al revisar ascendencia antes de limpiar ramas locales."
+      },
+      "when_to_avoid": {
+        "en": "Do not equate absence from the list with absence of equivalent changes after squash or cherry-pick.",
+        "pt-BR": "Não equipare ausência na lista à ausência de mudanças equivalentes após squash ou cherry-pick.",
+        "es": "No equipares ausencia en la lista con ausencia de cambios equivalentes tras squash o cherry-pick."
+      },
+      "expected_state": {
+        "en": "Shows selected branch tips that are ancestors of the target or equal to it.",
+        "pt-BR": "Exibe pontas de branches selecionadas ancestrais do destino ou iguais a ele.",
+        "es": "Muestra puntas de ramas seleccionadas ancestras del destino o iguales a él."
+      },
+      "effect_notes": {
+        "en": "No tracked content, staged snapshot, local refs or remote state is changed by this inspection.",
+        "pt-BR": "Nenhum conteúdo rastreado, snapshot preparado, referência local ou estado remoto é alterado por esta inspeção.",
+        "es": "Esta inspección no modifica contenido rastreado, instantánea preparada, referencias locales ni estado remoto."
+      },
+      "common_errors": {
+        "en": "Assuming the list proves a branch can be deleted regardless of worktrees or upstream configuration.",
+        "pt-BR": "Presumir que lista prova que branch pode ser excluída independentemente de worktrees ou configuração upstream.",
+        "es": "Suponer que la lista prueba que una rama se puede eliminar independientemente de worktrees o configuración upstream."
+      },
+      "alternatives": {
+        "en": "Use git merge-base --is-ancestor NAME main to test one verified branch against main.",
+        "pt-BR": "Use git merge-base --is-ancestor NAME main para testar branch verificada contra main.",
+        "es": "Usa git merge-base --is-ancestor NAME main para probar una rama verificada contra main."
+      },
+      "recovery": {
+        "en": "No recovery is needed for listing; inspect the selected reference or filter if output is unexpected.",
+        "pt-BR": "Listagem não exige recuperação; inspecione referência ou filtro selecionado se a saída for inesperada.",
+        "es": "El listado no requiere recuperación; inspecciona la referencia o filtro seleccionado si la salida es inesperada."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit. Inspect status and refs before operating.",
+        "pt-BR": "Use repositório próprio descartável com commit existente. Inspecione status e referências antes de operar.",
+        "es": "Usa un repositorio propio desechable con un commit existente. Inspecciona estado y referencias antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch --merged main",
+          "context": {
+            "en": "Inspect local tips contained in existing main.",
+            "pt-BR": "Inspecione pontas locais contidas na main existente.",
+            "es": "Inspecciona puntas locales contenidas en main existente."
+          }
+        },
+        "professional": {
+          "command": "git branch --no-merged main",
+          "context": {
+            "en": "Identify local tips not contained in main before reviewing cleanup candidates.",
+            "pt-BR": "Identifique pontas locais não contidas na main antes de revisar candidatos à limpeza.",
+            "es": "Identifica puntas locales no contenidas en main antes de revisar candidatos a limpieza."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only inspection; check branch names before sharing output.",
+          "pt-BR": "Inspeção somente leitura; confira nomes de branches antes de compartilhar saída.",
+          "es": "Inspección de solo lectura; comprueba los nombres de ramas antes de compartir la salida."
+        }
+      },
+      "related_chapters": [
+        "branches/04-safe-local-deletion"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    },
+    {
+      "id": "git-branch-upstream",
+      "command": "git branch --set-upstream-to",
+      "kind": "option-usage",
+      "category": "06-branch-management",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-branches",
+        "synchronize",
+        "configure-git"
+      ],
+      "syntax": "git branch --set-upstream-to=origin/main main",
+      "purpose": {
+        "en": "Configure which branch an existing local branch tracks as upstream.",
+        "pt-BR": "Configurar qual branch uma branch local existente rastreia como upstream.",
+        "es": "Configurar qué rama sigue como upstream una rama local existente."
+      },
+      "options": {
+        "en": "-u is short for --set-upstream-to; omit the local branch argument to configure the current branch. --unset-upstream removes tracking configuration.",
+        "pt-BR": "-u abrevia --set-upstream-to; omita argumento de branch local para configurar a atual. --unset-upstream remove configuração de rastreamento.",
+        "es": "-u abrevia --set-upstream-to; omite argumento de rama local para configurar la actual. --unset-upstream elimina configuración de seguimiento."
+      },
+      "when_to_use": {
+        "en": "When a branch needs an explicit verified tracking relationship for status and synchronization.",
+        "pt-BR": "Quando branch precisa de relação de rastreamento explícita verificada para status e sincronização.",
+        "es": "Cuando una rama necesita relación de seguimiento explícita verificada para estado y sincronización."
+      },
+      "when_to_avoid": {
+        "en": "Avoid selecting a different integration target accidentally or assuming it performs a fetch or push.",
+        "pt-BR": "Evite selecionar destino de integração diferente acidentalmente ou presumir que executa fetch ou push.",
+        "es": "Evita seleccionar un destino de integración distinto accidentalmente o suponer que realiza fetch o push."
+      },
+      "expected_state": {
+        "en": "Local tracking configuration identifies the chosen upstream; git branch -vv can display the relationship.",
+        "pt-BR": "Configuração local de rastreamento identifica upstream escolhido; git branch -vv pode exibir relação.",
+        "es": "Configuración local de seguimiento identifica upstream elegido; git branch -vv puede mostrar la relación."
+      },
+      "effect_notes": {
+        "en": "Changes local branch configuration; no ref movement, checkout or network transfer is required.",
+        "pt-BR": "Altera configuração local de branch; não exige movimento de referência, checkout ou transferência de rede.",
+        "es": "Modifica configuración local de rama; no requiere movimiento de referencia, checkout ni transferencia de red."
+      },
+      "common_errors": {
+        "en": "Confusing an upstream setting with remote publication or expecting tracking alone to keep refs current.",
+        "pt-BR": "Confundir configuração upstream com publicação remota ou esperar que rastreamento sozinho mantenha referências atualizadas.",
+        "es": "Confundir configuración upstream con publicación remota o esperar que seguimiento solo mantenga referencias actualizadas."
+      },
+      "alternatives": {
+        "en": "Use explicit remote and ref arguments for fetch or push when tracking defaults are not desired.",
+        "pt-BR": "Use argumentos explícitos de remoto e referência para fetch ou push quando padrões de rastreamento não forem desejados.",
+        "es": "Usa argumentos explícitos de remoto y referencia para fetch o push cuando no desees valores de seguimiento predeterminados."
+      },
+      "recovery": {
+        "en": "Record the previous upstream; restore it explicitly or use git branch --unset-upstream for the local branch if none existed.",
+        "pt-BR": "Registre upstream anterior; restaure explicitamente ou use git branch --unset-upstream para branch local se nenhum existia.",
+        "es": "Registra upstream anterior; restáuralo explícitamente o usa git branch --unset-upstream para rama local si no existía ninguno."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable clone or local remote lab. Verify local branch, existing remote-tracking ref and intended upstream relationship; do not contact a real service for practice.",
+        "pt-BR": "Use clone próprio descartável ou laboratório com remoto local. Verifique branch local, referência de rastreamento remoto existente e relação upstream pretendida; não contate serviço real para prática.",
+        "es": "Usa clon propio desechable o laboratorio con remoto local. Verifica rama local, referencia de seguimiento remoto existente y relación upstream prevista; no contactes un servicio real para práctica."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool is required.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.34; não exige ferramenta opcional.",
+        "es": "Sintaxis estándar documentada en Git 2.34; no requiere herramienta opcional."
+      },
+      "examples": {
+        "basic": {
+          "command": "git branch --set-upstream-to=origin/main main",
+          "context": {
+            "en": "In a local clone lab, connect existing main to its verified origin/main tracking ref.",
+            "pt-BR": "Em laboratório de clone local, associe main existente à referência origin/main verificada.",
+            "es": "En laboratorio de clon local, conecta main existente a su referencia origin/main verificada."
+          }
+        },
+        "professional": {
+          "command": "git branch -u origin/feat/notes feat/notes",
+          "context": {
+            "en": "After checking both existing refs, correct a private feature branch tracking setting in the local lab.",
+            "pt-BR": "Após conferir ambas referências existentes, corrija rastreamento de branch privada de feature no laboratório local.",
+            "es": "Tras comprobar ambas referencias existentes, corrige seguimiento de rama privada de feature en el laboratorio local."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Wrong tracking can affect later pull and push behavior depending on configuration; verify git branch -vv before synchronizing.",
+          "pt-BR": "Rastreamento errado pode afetar pull e push posteriores conforme configuração; verifique git branch -vv antes de sincronizar.",
+          "es": "Seguimiento incorrecto puede afectar pull y push posteriores según configuración; verifica git branch -vv antes de sincronizar."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/02-fetch-and-tracking",
+        "remote-repositories/03-pull-push-and-divergence"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-branch/2.34.0"
+      ]
+    }
+  ]
+}
