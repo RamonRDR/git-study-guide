@@ -6,12 +6,12 @@
 [Previous](../command-reference/README.md) · [Index](../docs/learning-path.md) · [Next](../exercises/README.md)
 <!-- /navigation -->
 
-**Status: planned.** This index reserves the stable module path and connects the learning sequence. Lessons, practice and sources will be added in the assigned sprint.
+Practice projects use disposable local repositories, explicit state checks and public reference solutions. Attempt each challenge before reading its solution. Hosted tasks are optional; no paid services or Python are required for manual practice.
 
 ## Chapters
 
 <!-- chapters -->
-No chapters published yet.
+- [My First Repository](01-my-first-repository/README.md)
 <!-- /chapters -->
 
 ---

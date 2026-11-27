@@ -211,7 +211,9 @@
     },
     {
       "slug": "practical-projects",
-      "chapters": []
+      "chapters": [
+        "01-my-first-repository"
+      ]
     },
     {
       "slug": "exercises",

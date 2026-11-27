@@ -6,12 +6,12 @@
 [Anterior](../command-reference/README.es.md) · [Índice](../docs/learning-path.es.md) · [Siguiente](../exercises/README.es.md)
 <!-- /navigation -->
 
-**Estado: previsto.** Este índice reserva la ruta estable del módulo y conecta la secuencia de aprendizaje. Lecciones, prácticas y fuentes se añadirán en el sprint correspondiente.
+Los proyectos prácticos usan repositorios locales desechables, comprobaciones explícitas de estado y soluciones públicas de referencia. Intenta cada desafío antes de leer su solución. Las actividades alojadas son opcionales; no se necesitan servicios de pago ni Python para práctica manual.
 
 ## Capítulos
 
 <!-- chapters -->
-Todavía no hay capítulos publicados.
+- [Mi primer repositorio](01-my-first-repository/README.es.md)
 <!-- /chapters -->
 
 ---
