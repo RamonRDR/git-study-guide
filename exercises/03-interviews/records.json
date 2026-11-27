@@ -1,0 +1,1398 @@
+{
+  "schema_version": 1,
+  "kind": "interview",
+  "records": [
+    {
+      "id": "interview-version-control",
+      "difficulty": "easy",
+      "prerequisites": [
+        "fundamentals/01-version-control"
+      ],
+      "title": {
+        "en": "Version control",
+        "pt-BR": "Controle de versão",
+        "es": "Control de versiones"
+      },
+      "prompt": {
+        "en": "Explain why Git is useful even when working alone.",
+        "pt-BR": "Explique por que Git é útil mesmo trabalhando sozinho.",
+        "es": "Explica por qué Git es útil incluso trabajando solo."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Name snapshots and comparison.",
+          "pt-BR": "Cite snapshots e comparação.",
+          "es": "Menciona instantáneas y comparación."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Git records intentional snapshots, permits comparison of revisions and supports isolated experimentation. It does not automatically save every edit or replace backups.",
+        "pt-BR": "Git registra snapshots intencionais, permite comparar revisões e experimentar isoladamente. Não salva toda edição automaticamente nem substitui backups.",
+        "es": "Git registra instantáneas intencionales, permite comparar revisiones y experimentar de forma aislada. No guarda toda edición automáticamente ni sustituye copias de seguridad."
+      },
+      "rubric": [
+        {
+          "en": "Name snapshots and comparison.",
+          "pt-BR": "Cite snapshots e comparação.",
+          "es": "Menciona instantáneas y comparación."
+        },
+        {
+          "en": "Explain the limit for uncommitted work.",
+          "pt-BR": "Explique limite de trabalho sem commit.",
+          "es": "Explica límite del trabajo sin commit."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "How would you inspect a previous revision?",
+          "pt-BR": "Como inspecionaria revisão anterior?",
+          "es": "¿Cómo inspeccionarías revisión anterior?"
+        }
+      ]
+    },
+    {
+      "id": "interview-three-states",
+      "difficulty": "easy",
+      "prerequisites": [
+        "git-architecture/01-three-locations"
+      ],
+      "title": {
+        "en": "Three Git locations",
+        "pt-BR": "Três locais do Git",
+        "es": "Tres ubicaciones Git"
+      },
+      "prompt": {
+        "en": "Explain working tree, index and HEAD using one edited file.",
+        "pt-BR": "Explique working tree, index e HEAD usando um arquivo editado.",
+        "es": "Explica working tree, index y HEAD usando un archivo editado."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Define all three locations accurately.",
+          "pt-BR": "Defina corretamente os três locais.",
+          "es": "Define correctamente tres ubicaciones."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Working tree is editable content, index prepares the next ordinary commit, HEAD resolves the current revision. Stage A, edit B, commit: A is recorded, B remains unstaged.",
+        "pt-BR": "Working tree é conteúdo editável, index prepara próximo commit comum, HEAD resolve revisão atual. Prepare A, edite B, commit: A registrado, B não preparado.",
+        "es": "Working tree es contenido editable, index prepara próximo commit ordinario, HEAD resuelve revisión actual. Prepara A, edita B, commit: A confirmado, B sin preparar."
+      },
+      "rubric": [
+        {
+          "en": "Define all three locations accurately.",
+          "pt-BR": "Defina corretamente os três locais.",
+          "es": "Define correctamente tres ubicaciones."
+        },
+        {
+          "en": "Trace A and B without conflating them.",
+          "pt-BR": "Rastreie A e B sem confundir.",
+          "es": "Rastrea A y B sin confundir."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Which diff shows A relative to HEAD?",
+          "pt-BR": "Qual diff mostra A relativo a HEAD?",
+          "es": "¿Qué diff muestra A respecto a HEAD?"
+        }
+      ]
+    },
+    {
+      "id": "interview-branch",
+      "difficulty": "easy",
+      "prerequisites": [
+        "branches/01-create-and-switch"
+      ],
+      "title": {
+        "en": "Branch as a ref",
+        "pt-BR": "Branch como ref",
+        "es": "Rama como ref"
+      },
+      "prompt": {
+        "en": "What is a branch and what happens when you commit on it?",
+        "pt-BR": "O que é branch e o que ocorre ao registrar commit nela?",
+        "es": "¿Qué es rama y qué ocurre al confirmar commit en ella?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Describe the ref, not a physical folder copy.",
+          "pt-BR": "Descreva ref, não cópia de pasta.",
+          "es": "Describe ref, no copia de carpeta."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "A local branch is a movable ref to a commit. When HEAD is attached, a normal commit updates the current branch while other refs normally stay unchanged.",
+        "pt-BR": "Branch local é ref móvel para commit. Com HEAD anexado, commit comum atualiza branch atual enquanto outras refs normalmente ficam iguais.",
+        "es": "Rama local es ref móvil a commit. Con HEAD adjunto, commit ordinario actualiza rama actual mientras otras refs normalmente quedan iguales."
+      },
+      "rubric": [
+        {
+          "en": "Describe the ref, not a physical folder copy.",
+          "pt-BR": "Descreva ref, não cópia de pasta.",
+          "es": "Describe ref, no copia de carpeta."
+        },
+        {
+          "en": "Distinguish branch creation from selection.",
+          "pt-BR": "Distinga criação de seleção de branch.",
+          "es": "Distingue creación de selección de rama."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What differs under detached HEAD?",
+          "pt-BR": "O que difere em detached HEAD?",
+          "es": "¿Qué difiere con HEAD separado?"
+        }
+      ]
+    },
+    {
+      "id": "interview-status-diff",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/03-diff-log-show"
+      ],
+      "title": {
+        "en": "Inspect before commit",
+        "pt-BR": "Inspecionar antes do commit",
+        "es": "Inspeccionar antes del commit"
+      },
+      "prompt": {
+        "en": "How do you review what will enter a normal commit?",
+        "pt-BR": "Como revisar o que entrará em commit comum?",
+        "es": "¿Cómo revisar qué entrará en commit ordinario?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Identify the staged comparison.",
+          "pt-BR": "Identifique comparação preparada.",
+          "es": "Identifica comparación preparada."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Use git status to identify state, git diff for unstaged tracked edits, and git diff --cached to inspect the index against HEAD. Stage only intended files and recheck.",
+        "pt-BR": "Use git status para estado, git diff para edições rastreadas não preparadas e git diff --cached para index contra HEAD. Prepare só arquivos desejados e confira.",
+        "es": "Usa git status para estado, git diff para ediciones rastreadas sin preparar y git diff --cached para index contra HEAD. Prepara solo archivos deseados y comprueba."
+      },
+      "rubric": [
+        {
+          "en": "Identify the staged comparison.",
+          "pt-BR": "Identifique comparação preparada.",
+          "es": "Identifica comparación preparada."
+        },
+        {
+          "en": "Mention untracked files and selective staging.",
+          "pt-BR": "Mencione não rastreados e staging seletivo.",
+          "es": "Menciona no rastreados y staging selectivo."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why might git diff be empty while staged changes exist?",
+          "pt-BR": "Por que git diff pode estar vazio com mudanças preparadas?",
+          "es": "¿Por qué git diff puede estar vacío con cambios preparados?"
+        }
+      ]
+    },
+    {
+      "id": "interview-ignore",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/05-ignore-and-review"
+      ],
+      "title": {
+        "en": "Ignore vs tracking",
+        "pt-BR": "Ignore e rastreamento",
+        "es": "Ignore y rastreo"
+      },
+      "prompt": {
+        "en": "Why can a tracked file still appear after adding an ignore rule?",
+        "pt-BR": "Por que arquivo rastreado ainda aparece após regra ignore?",
+        "es": "¿Por qué archivo rastreado aún aparece tras regla ignore?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Distinguish ignored from tracked.",
+          "pt-BR": "Distinga ignorado de rastreado.",
+          "es": "Distingue ignorado de rastreado."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Ignore rules normally filter untracked paths. Existing tracked files remain in the index until intentionally removed from tracking. Review effects before committing such removal.",
+        "pt-BR": "Ignore normalmente filtra caminhos não rastreados. Arquivos rastreados continuam no index até remoção intencional do rastreamento. Revise efeitos antes do commit.",
+        "es": "Ignore normalmente filtra rutas no rastreadas. Archivos rastreados siguen en index hasta retirada intencional del rastreo. Revisa efectos antes del commit."
+      },
+      "rubric": [
+        {
+          "en": "Distinguish ignored from tracked.",
+          "pt-BR": "Distinga ignorado de rastreado.",
+          "es": "Distingue ignorado de rastreado."
+        },
+        {
+          "en": "Explain that history is not erased.",
+          "pt-BR": "Explique que histórico não é apagado.",
+          "es": "Explica que historial no se borra."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What does git rm --cached change?",
+          "pt-BR": "O que git rm --cached altera?",
+          "es": "¿Qué cambia git rm --cached?"
+        }
+      ]
+    },
+    {
+      "id": "interview-clone-init",
+      "difficulty": "easy",
+      "prerequisites": [
+        "remote-repositories/01-remote-concepts"
+      ],
+      "title": {
+        "en": "Init and clone",
+        "pt-BR": "Init e clone",
+        "es": "Init y clone"
+      },
+      "prompt": {
+        "en": "When would you choose init instead of clone?",
+        "pt-BR": "Quando escolher init em vez de clone?",
+        "es": "¿Cuándo elegir init en vez de clone?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Explain new versus existing history.",
+          "pt-BR": "Explique histórico novo versus existente.",
+          "es": "Explica historial nuevo frente a existente."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Init starts Git metadata in a chosen repository; clone obtains an existing repository's history and normally configures an origin and a checkout. Avoid initializing or cloning into the wrong directory.",
+        "pt-BR": "Init inicia metadados Git em repo escolhido; clone obtém histórico de repo existente e normalmente configura origin e checkout. Evite diretório errado.",
+        "es": "Init inicia metadatos Git en repo elegido; clone obtiene historial existente y normalmente configura origin y checkout. Evita directorio equivocado."
+      },
+      "rubric": [
+        {
+          "en": "Explain new versus existing history.",
+          "pt-BR": "Explique histórico novo versus existente.",
+          "es": "Explica historial nuevo frente a existente."
+        },
+        {
+          "en": "Identify origin as a usual clone configuration.",
+          "pt-BR": "Identifique origin como configuração usual.",
+          "es": "Identifica origin como configuración habitual."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "How do you verify the repository root?",
+          "pt-BR": "Como verificar raiz do repo?",
+          "es": "¿Cómo verificar raíz del repo?"
+        }
+      ]
+    },
+    {
+      "id": "interview-commit-message",
+      "difficulty": "easy",
+      "prerequisites": [
+        "professional-workflows/06-conventional-commits"
+      ],
+      "title": {
+        "en": "Communicate a change",
+        "pt-BR": "Comunicar mudança",
+        "es": "Comunicar cambio"
+      },
+      "prompt": {
+        "en": "What makes a useful commit message?",
+        "pt-BR": "O que torna uma mensagem de commit útil?",
+        "es": "¿Qué hace útil un mensaje de commit?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Give a scoped example such as docs: clarify notes.",
+          "pt-BR": "Dê exemplo focado como docs: clarify notes.",
+          "es": "Da ejemplo acotado como docs: clarify notes."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Describe a focused intent and, where useful, why it matters. Conventional Commits are a team convention, not a native Git requirement. Do not include secrets or unrelated changes.",
+        "pt-BR": "Descreva intenção focada e, quando útil, motivo. Conventional Commits é convenção de equipe, não requisito Git. Não inclua segredos nem mudanças alheias.",
+        "es": "Describe intención acotada y, cuando convenga, motivo. Conventional Commits es convención de equipo, no requisito Git. No incluyas secretos ni cambios ajenos."
+      },
+      "rubric": [
+        {
+          "en": "Give a scoped example such as docs: clarify notes.",
+          "pt-BR": "Dê exemplo focado como docs: clarify notes.",
+          "es": "Da ejemplo acotado como docs: clarify notes."
+        },
+        {
+          "en": "Separate convention from Git requirements.",
+          "pt-BR": "Separe convenção de requisitos Git.",
+          "es": "Separa convención de requisitos Git."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "When should two changes be separate commits?",
+          "pt-BR": "Quando duas mudanças devem ser commits separados?",
+          "es": "¿Cuándo dos cambios deben ser commits separados?"
+        }
+      ]
+    },
+    {
+      "id": "interview-platform",
+      "difficulty": "easy",
+      "prerequisites": [
+        "fundamentals/03-distributed-and-platforms"
+      ],
+      "title": {
+        "en": "Git vs platform",
+        "pt-BR": "Git e plataforma",
+        "es": "Git y plataforma"
+      },
+      "prompt": {
+        "en": "Can Git work without GitHub or GitLab? Explain.",
+        "pt-BR": "Git funciona sem GitHub ou GitLab? Explique.",
+        "es": "¿Git funciona sin GitHub o GitLab? Explica."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Identify native local operations.",
+          "pt-BR": "Identifique operações locais nativas.",
+          "es": "Identifica operaciones locales nativas."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Yes. Git stores and manipulates repositories locally and can exchange objects with remotes. Hosting adds access control, PR/MR reviews and CI services; accounts are not required for local practice.",
+        "pt-BR": "Sim. Git armazena e manipula repos locais e troca objetos com remotos. Hospedagem adiciona acesso, revisões PR/MR e CI; contas não são necessárias localmente.",
+        "es": "Sí. Git almacena y manipula repos locales e intercambia objetos con remotos. Alojamiento añade acceso, revisiones PR/MR y CI; cuentas no son necesarias localmente."
+      },
+      "rubric": [
+        {
+          "en": "Identify native local operations.",
+          "pt-BR": "Identifique operações locais nativas.",
+          "es": "Identifica operaciones locales nativas."
+        },
+        {
+          "en": "Name platform-specific collaboration features.",
+          "pt-BR": "Cite recursos de colaboração da plataforma.",
+          "es": "Menciona funciones de colaboración de plataforma."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "How can two developers practice offline?",
+          "pt-BR": "Como dois desenvolvedores praticam offline?",
+          "es": "¿Cómo practican dos desarrolladores offline?"
+        }
+      ]
+    },
+    {
+      "id": "interview-fetch-pull",
+      "difficulty": "medium",
+      "prerequisites": [
+        "remote-repositories/02-fetch-and-tracking"
+      ],
+      "title": {
+        "en": "Fetch vs pull",
+        "pt-BR": "Fetch e pull",
+        "es": "Fetch y pull"
+      },
+      "prompt": {
+        "en": "Your tracking ref is stale. How would you update it before deciding integration?",
+        "pt-BR": "Ref tracking desatualizada. Como atualizar antes de decidir integração?",
+        "es": "Ref de seguimiento desactualizada. ¿Cómo actualizar antes de decidir integración?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Distinguish fetching from integrating.",
+          "pt-BR": "Distinga fetch de integração.",
+          "es": "Distingue fetch de integración."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Fetch origin, inspect divergence of local main and origin/main, then choose an integration policy. Pull combines fetching with integration according to options/config; ff-only refuses divergence.",
+        "pt-BR": "Faça fetch origin, inspecione divergência de main e origin/main, depois escolha política. Pull combina fetch e integração conforme opções/config; ff-only recusa divergência.",
+        "es": "Haz fetch origin, inspecciona divergencia main y origin/main, luego elige política. Pull combina fetch e integración según opciones/config; ff-only rechaza divergencia."
+      },
+      "rubric": [
+        {
+          "en": "Distinguish fetching from integrating.",
+          "pt-BR": "Distinga fetch de integração.",
+          "es": "Distingue fetch de integración."
+        },
+        {
+          "en": "Describe a safe decision on divergence.",
+          "pt-BR": "Descreva decisão segura em divergência.",
+          "es": "Describe decisión segura ante divergencia."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why might pull fail even after fetch succeeds?",
+          "pt-BR": "Por que pull pode falhar mesmo após fetch passar?",
+          "es": "¿Por qué pull puede fallar aunque fetch funcione?"
+        }
+      ]
+    },
+    {
+      "id": "interview-merge-rebase",
+      "difficulty": "medium",
+      "prerequisites": [
+        "merge-and-conflicts/06-rebase-and-conflicts"
+      ],
+      "title": {
+        "en": "Merge or rebase",
+        "pt-BR": "Merge ou rebase",
+        "es": "Merge o rebase"
+      },
+      "prompt": {
+        "en": "Contrast merge and rebase for a feature branch.",
+        "pt-BR": "Compare merge e rebase para branch feature.",
+        "es": "Compara merge y rebase para rama feature."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Explain topology and identity differences.",
+          "pt-BR": "Explique diferenças de topologia e identidade.",
+          "es": "Explica diferencias de topología e identidad."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Merge joins histories, sometimes via fast-forward or a merge commit. Rebase replays commits onto a new base and normally changes replayed IDs. Avoid rewriting shared history without coordination.",
+        "pt-BR": "Merge integra históricos, às vezes por fast-forward ou commit merge. Rebase reaplica commits em nova base e normalmente muda IDs reaplicados. Evite reescrever histórico compartilhado sem coordenação.",
+        "es": "Merge integra historiales, a veces por fast-forward o commit merge. Rebase reaplica commits en nueva base y normalmente cambia IDs reaplicados. Evita reescribir historial compartido sin coordinación."
+      },
+      "rubric": [
+        {
+          "en": "Explain topology and identity differences.",
+          "pt-BR": "Explique diferenças de topologia e identidade.",
+          "es": "Explica diferencias de topología e identidad."
+        },
+        {
+          "en": "Discuss team policy and shared history.",
+          "pt-BR": "Discuta política de equipe e histórico compartilhado.",
+          "es": "Discute política de equipo e historial compartido."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "When is fast-forward possible?",
+          "pt-BR": "Quando fast-forward é possível?",
+          "es": "¿Cuándo es posible fast-forward?"
+        }
+      ]
+    },
+    {
+      "id": "interview-resolve",
+      "difficulty": "medium",
+      "prerequisites": [
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "title": {
+        "en": "Conflict triage",
+        "pt-BR": "Triagem de conflito",
+        "es": "Triaje de conflicto"
+      },
+      "prompt": {
+        "en": "Describe a safe process for resolving a merge conflict.",
+        "pt-BR": "Descreva processo seguro para resolver conflito merge.",
+        "es": "Describe proceso seguro para resolver conflicto merge."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Explain inspection and intentional resolution.",
+          "pt-BR": "Explique inspeção e resolução intencional.",
+          "es": "Explica inspección y resolución intencional."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Inspect status and unmerged entries, understand base/ours/theirs, choose semantically correct content, stage the resolution, run tests and finish the operation. Preserve desired edits before aborting.",
+        "pt-BR": "Inspecione status e entradas não mescladas, entenda base/ours/theirs, escolha conteúdo correto, prepare resolução, rode testes e conclua. Preserve edições desejadas antes de abortar.",
+        "es": "Inspecciona estado y entradas no fusionadas, entiende base/ours/theirs, elige contenido correcto, prepara resolución, ejecuta pruebas y termina. Conserva ediciones deseadas antes de abortar."
+      },
+      "rubric": [
+        {
+          "en": "Explain inspection and intentional resolution.",
+          "pt-BR": "Explique inspeção e resolução intencional.",
+          "es": "Explica inspección y resolución intencional."
+        },
+        {
+          "en": "Mention testing and safe abort limits.",
+          "pt-BR": "Mencione testes e limites do abort seguro.",
+          "es": "Menciona pruebas y límites de abort seguro."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why is deleting conflict markers insufficient?",
+          "pt-BR": "Por que excluir marcadores não basta?",
+          "es": "¿Por qué quitar marcadores no basta?"
+        }
+      ]
+    },
+    {
+      "id": "interview-reset-revert",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/03-reset"
+      ],
+      "title": {
+        "en": "Reset vs revert",
+        "pt-BR": "Reset e revert",
+        "es": "Reset y revert"
+      },
+      "prompt": {
+        "en": "How would you undo a private commit versus a published commit?",
+        "pt-BR": "Como desfazer commit privado versus publicado?",
+        "es": "¿Cómo deshacer commit privado frente a publicado?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Contrast moving refs and creating a new commit.",
+          "pt-BR": "Compare mover refs e criar novo commit.",
+          "es": "Contrasta mover refs y crear nuevo commit."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "For private history, inspect state and choose reset mode only with a known target and preserved work. For published history, prefer a new revert/corrective commit under review. Hard reset can discard local edits.",
+        "pt-BR": "Em histórico privado, inspecione estado e escolha modo reset só com alvo conhecido e trabalho preservado. Em histórico publicado, prefira revert/commit corretivo revisado. Hard reset pode descartar edições.",
+        "es": "En historial privado, inspecciona estado y elige modo reset solo con destino conocido y trabajo conservado. En publicado, prefiere revert/commit correctivo revisado. Hard reset puede descartar ediciones."
+      },
+      "rubric": [
+        {
+          "en": "Contrast moving refs and creating a new commit.",
+          "pt-BR": "Compare mover refs e criar novo commit.",
+          "es": "Contrasta mover refs y crear nuevo commit."
+        },
+        {
+          "en": "State destructive risks and shared-history policy.",
+          "pt-BR": "Cite riscos destrutivos e política compartilhada.",
+          "es": "Indica riesgos destructivos y política compartida."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What does soft reset preserve?",
+          "pt-BR": "O que reset soft preserva?",
+          "es": "¿Qué conserva reset soft?"
+        }
+      ]
+    },
+    {
+      "id": "interview-stash",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/06-stash"
+      ],
+      "title": {
+        "en": "Stash limitations",
+        "pt-BR": "Limites do stash",
+        "es": "Límites de stash"
+      },
+      "prompt": {
+        "en": "What should you check before using stash to change tasks?",
+        "pt-BR": "O que conferir antes de usar stash para trocar tarefas?",
+        "es": "¿Qué comprobar antes de usar stash para cambiar tareas?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Mention untracked/ignored scope.",
+          "pt-BR": "Mencione escopo não rastreado/ignorado.",
+          "es": "Menciona ámbito no rastreado/ignorado."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Inspect staged, unstaged and untracked files; choose stash scope deliberately, record the entry, verify clean state, and inspect conflicts when applying. A stash is local and not a substitute for durable backups.",
+        "pt-BR": "Inspecione preparados, não preparados e não rastreados; escolha escopo, registre entrada, confira limpeza e inspecione conflitos ao aplicar. Stash é local e não substitui backup durável.",
+        "es": "Inspecciona preparados, sin preparar y no rastreados; elige ámbito, registra entrada, comprueba limpieza e inspecciona conflictos al aplicar. Stash es local y no sustituye respaldo duradero."
+      },
+      "rubric": [
+        {
+          "en": "Mention untracked/ignored scope.",
+          "pt-BR": "Mencione escopo não rastreado/ignorado.",
+          "es": "Menciona ámbito no rastreado/ignorado."
+        },
+        {
+          "en": "Distinguish apply and pop on success/conflict.",
+          "pt-BR": "Distinga apply e pop em sucesso/conflito.",
+          "es": "Distingue apply y pop en éxito/conflicto."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why might an apply conflict?",
+          "pt-BR": "Por que apply pode conflitar?",
+          "es": "¿Por qué apply puede generar conflicto?"
+        }
+      ]
+    },
+    {
+      "id": "interview-fork",
+      "difficulty": "medium",
+      "prerequisites": [
+        "github/05-forks-and-open-source"
+      ],
+      "title": {
+        "en": "Fork contribution",
+        "pt-BR": "Contribuição via fork",
+        "es": "Contribución mediante fork"
+      },
+      "prompt": {
+        "en": "Describe a contribution workflow when you cannot push upstream.",
+        "pt-BR": "Descreva fluxo de contribuição sem permissão push upstream.",
+        "es": "Describe flujo de contribución sin permiso push upstream."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Distinguish origin and upstream destinations.",
+          "pt-BR": "Distinga destinos origin e upstream.",
+          "es": "Distingue destinos origin y upstream."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Fork or use an authorized contributor repository, clone it, name upstream separately, base a feature branch on a known upstream revision, publish only to your fork and request review. Respect contribution policy and verify exact diff.",
+        "pt-BR": "Faça fork ou use repo contribuinte autorizado, clone, nomeie upstream separado, baseie feature em revisão upstream conhecida, publique só no fork e solicite revisão. Respeite política e confira diff exato.",
+        "es": "Crea fork o usa repo contribuyente autorizado, clona, nombra upstream aparte, basa feature en revisión upstream conocida, publica solo en fork y solicita revisión. Respeta política y comprueba diff exacto."
+      },
+      "rubric": [
+        {
+          "en": "Distinguish origin and upstream destinations.",
+          "pt-BR": "Distinga destinos origin e upstream.",
+          "es": "Distingue destinos origin y upstream."
+        },
+        {
+          "en": "Describe permission and review boundaries.",
+          "pt-BR": "Descreva limites de permissão e revisão.",
+          "es": "Describe límites de permisos y revisión."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "How would you synchronize your fork safely?",
+          "pt-BR": "Como sincronizar fork com segurança?",
+          "es": "¿Cómo sincronizar fork de forma segura?"
+        }
+      ]
+    },
+    {
+      "id": "interview-ci-gate",
+      "difficulty": "medium",
+      "prerequisites": [
+        "ci-cd/09-quality-gates-and-troubleshooting"
+      ],
+      "title": {
+        "en": "CI quality gate",
+        "pt-BR": "Gate de qualidade CI",
+        "es": "Gate de calidad CI"
+      },
+      "prompt": {
+        "en": "A CI job fails after a push. How do you diagnose it?",
+        "pt-BR": "Job CI falha após push. Como diagnosticar?",
+        "es": "Job CI falla tras push. ¿Cómo diagnosticar?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Use actual logs and exact revision.",
+          "pt-BR": "Use logs reais e revisão exata.",
+          "es": "Usa logs reales y revisión exacta."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Identify the exact SHA, failing job and step, inspect logs, reproduce in an isolated environment where possible, correct the cause and rerun checks on the new SHA. Do not disable gates to get green.",
+        "pt-BR": "Identifique SHA, job e step falho, inspecione logs, reproduza em ambiente isolado se possível, corrija causa e rode checks no novo SHA. Não desabilite gates para obter verde.",
+        "es": "Identifica SHA, job y paso fallido, inspecciona logs, reproduce en entorno aislado si posible, corrige causa y ejecuta checks en nuevo SHA. No desactives gates para obtener verde."
+      },
+      "rubric": [
+        {
+          "en": "Use actual logs and exact revision.",
+          "pt-BR": "Use logs reais e revisão exata.",
+          "es": "Usa logs reales y revisión exacta."
+        },
+        {
+          "en": "Require rerun after changes.",
+          "pt-BR": "Exija nova execução após mudanças.",
+          "es": "Exige nueva ejecución tras cambios."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Can a green test establish deployment success?",
+          "pt-BR": "Teste verde comprova deploy bem-sucedido?",
+          "es": "¿Prueba verde demuestra despliegue exitoso?"
+        }
+      ]
+    },
+    {
+      "id": "interview-release",
+      "difficulty": "medium",
+      "prerequisites": [
+        "professional-workflows/07-semantic-versioning"
+      ],
+      "title": {
+        "en": "Release versioning",
+        "pt-BR": "Versionamento de release",
+        "es": "Versionado de lanzamiento"
+      },
+      "prompt": {
+        "en": "How do you decide a SemVer version and identify the release revision?",
+        "pt-BR": "Como decidir versão SemVer e identificar revisão da release?",
+        "es": "¿Cómo decidir versión SemVer e identificar revisión de lanzamiento?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Ground version choice in the public contract.",
+          "pt-BR": "Baseie versão no contrato público.",
+          "es": "Basa versión en contrato público."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Given a defined public API/contract, choose major for incompatible changes, minor for backward-compatible functionality, patch for backward-compatible fixes. Review and test the exact revision, then create an annotated tag per policy. A hosted release is distinct.",
+        "pt-BR": "Com API/contrato público definido, escolha major para incompatibilidade, minor para funcionalidade retrocompatível, patch para correções compatíveis. Revise e teste revisão exata, depois tag anotada conforme política. Release hospedada é distinta.",
+        "es": "Con API/contrato público definido, elige major para incompatibilidad, minor para funcionalidad retrocompatible, patch para correcciones compatibles. Revisa y prueba revisión exacta, luego etiqueta anotada según política. Lanzamiento alojado es distinto."
+      },
+      "rubric": [
+        {
+          "en": "Ground version choice in the public contract.",
+          "pt-BR": "Baseie versão no contrato público.",
+          "es": "Basa versión en contrato público."
+        },
+        {
+          "en": "Distinguish tag from platform release.",
+          "pt-BR": "Distinga tag de release de plataforma.",
+          "es": "Distingue etiqueta de lanzamiento de plataforma."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What if a published tag is incorrect?",
+          "pt-BR": "E se tag publicada estiver errada?",
+          "es": "¿Y si etiqueta publicada es incorrecta?"
+        }
+      ]
+    },
+    {
+      "id": "interview-objects",
+      "difficulty": "hard",
+      "prerequisites": [
+        "git-internals/02-blobs-and-trees"
+      ],
+      "title": {
+        "en": "Object model",
+        "pt-BR": "Modelo de objetos",
+        "es": "Modelo de objetos"
+      },
+      "prompt": {
+        "en": "Trace a commit to its stored file contents.",
+        "pt-BR": "Rastreie commit até conteúdo armazenado dos arquivos.",
+        "es": "Rastrea commit hasta contenido almacenado de archivos."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Describe commit, tree and blob roles.",
+          "pt-BR": "Descreva papéis commit, tree e blob.",
+          "es": "Describe papeles commit, tree y blob."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "A commit references a root tree and parent commits. Trees record names, modes and object IDs, recursively referring to trees/blobs. Blobs hold file bytes, not names. Refs name commits independently of physical storage.",
+        "pt-BR": "Commit referencia tree raiz e pais. Trees registram nomes, modos e IDs, referenciando trees/blobs recursivamente. Blobs guardam bytes, não nomes. Refs nomeiam commits independentemente de armazenamento físico.",
+        "es": "Commit referencia tree raíz y padres. Trees registran nombres, modos e IDs, refiriendo trees/blobs recursivamente. Blobs guardan bytes, no nombres. Refs nombran commits independientemente de almacenamiento físico."
+      },
+      "rubric": [
+        {
+          "en": "Describe commit, tree and blob roles.",
+          "pt-BR": "Descreva papéis commit, tree e blob.",
+          "es": "Describe papeles commit, tree y blob."
+        },
+        {
+          "en": "Explain why identical content may share a blob.",
+          "pt-BR": "Explique por que conteúdo idêntico pode compartilhar blob.",
+          "es": "Explica por qué contenido idéntico puede compartir blob."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What does a commit hash depend on besides tree?",
+          "pt-BR": "De que hash de commit depende além da tree?",
+          "es": "¿De qué depende hash de commit además de tree?"
+        }
+      ]
+    },
+    {
+      "id": "interview-recovery",
+      "difficulty": "hard",
+      "prerequisites": [
+        "git-internals/09-reflogs-and-reachability"
+      ],
+      "title": {
+        "en": "Recoverability",
+        "pt-BR": "Recuperabilidade",
+        "es": "Recuperabilidad"
+      },
+      "prompt": {
+        "en": "A private branch tip disappeared after reset. Explain recovery and its limits.",
+        "pt-BR": "Ponta privada sumiu após reset. Explique recuperação e limites.",
+        "es": "Punta privada desapareció tras reset. Explica recuperación y límites."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Explain recovery via verified ref.",
+          "pt-BR": "Explique recuperação via ref verificada.",
+          "es": "Explica recuperación mediante ref verificada."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Stop destructive operations; inspect reflog and known IDs, confirm candidate content and ancestry, create a recovery ref and verify. Reflogs expire and unreachable objects may be pruned; uncommitted edits may never have been recorded.",
+        "pt-BR": "Pare operações destrutivas; inspecione reflog e IDs conhecidos, confira conteúdo e ancestralidade, crie ref de recuperação e verifique. Reflogs expiram e objetos inalcançáveis podem ser podados; edições sem commit talvez nunca registradas.",
+        "es": "Detén operaciones destructivas; inspecciona reflog e IDs conocidos, confirma contenido y ascendencia, crea ref de recuperación y verifica. Reflogs caducan y objetos inalcanzables pueden podarse; ediciones sin commit quizá nunca se registraron."
+      },
+      "rubric": [
+        {
+          "en": "Explain recovery via verified ref.",
+          "pt-BR": "Explique recuperação via ref verificada.",
+          "es": "Explica recuperación mediante ref verificada."
+        },
+        {
+          "en": "Explicitly reject guaranteed recovery.",
+          "pt-BR": "Rejeite explicitamente garantia de recuperação.",
+          "es": "Rechaza explícitamente recuperación garantizada."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why avoid gc during recovery?",
+          "pt-BR": "Por que evitar gc durante recuperação?",
+          "es": "¿Por qué evitar gc durante recuperación?"
+        }
+      ]
+    },
+    {
+      "id": "interview-lease",
+      "difficulty": "hard",
+      "prerequisites": [
+        "remote-repositories/03-pull-push-and-divergence"
+      ],
+      "title": {
+        "en": "Concurrent remote update",
+        "pt-BR": "Atualização remota concorrente",
+        "es": "Actualización remota concurrente"
+      },
+      "prompt": {
+        "en": "Explain why force-with-lease is safer than force, but not sufficient policy.",
+        "pt-BR": "Explique por que force-with-lease é mais seguro que force, mas não política suficiente.",
+        "es": "Explica por qué force-with-lease es más seguro que force, pero no política suficiente."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Describe conditional ref comparison.",
+          "pt-BR": "Descreva comparação condicional de ref.",
+          "es": "Describe comparación condicional de ref."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "A lease condition compares the remote ref with an expected value and refuses a mismatch. Explicit expectations avoid relying on tracking refs refreshed by background fetch. Even a successful lease can discard history, so require ownership, coordination and branch policy.",
+        "pt-BR": "Lease compara ref remota com valor esperado e recusa divergência. Expectativa explícita evita depender de refs tracking atualizadas por fetch de fundo. Mesmo lease aceito pode descartar histórico; exija propriedade, coordenação e política.",
+        "es": "Lease compara ref remota con valor esperado y rechaza divergencia. Expectativa explícita evita depender de refs tracking actualizadas por fetch de fondo. Incluso lease exitoso puede descartar historial; exige propiedad, coordinación y política."
+      },
+      "rubric": [
+        {
+          "en": "Describe conditional ref comparison.",
+          "pt-BR": "Descreva comparação condicional de ref.",
+          "es": "Describe comparación condicional de ref."
+        },
+        {
+          "en": "Explain why successful lease is not consent.",
+          "pt-BR": "Explique por que lease aceito não é consentimento.",
+          "es": "Explica por qué lease exitoso no es consentimiento."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What should happen when the lease fails?",
+          "pt-BR": "O que fazer se lease falhar?",
+          "es": "¿Qué hacer si lease falla?"
+        }
+      ]
+    },
+    {
+      "id": "interview-worktree",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/02-worktree"
+      ],
+      "title": {
+        "en": "Parallel checkout",
+        "pt-BR": "Checkout paralelo",
+        "es": "Checkout paralelo"
+      },
+      "prompt": {
+        "en": "How can you inspect a release while continuing feature development?",
+        "pt-BR": "Como inspecionar release enquanto desenvolve feature?",
+        "es": "¿Cómo inspeccionar lanzamiento mientras desarrollas feature?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Identify shared versus independent state.",
+          "pt-BR": "Identifique estado compartilhado e independente.",
+          "es": "Identifica estado compartido e independiente."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "A linked worktree provides separate files, HEAD and index while sharing objects and many refs. Create a suitable separate branch or detached worktree, verify its path and remove only a clean owned worktree when done.",
+        "pt-BR": "Worktree vinculada oferece arquivos, HEAD e index separados, compartilhando objetos e muitas refs. Crie branch separada adequada ou worktree detached, confira caminho e remova só worktree própria limpa.",
+        "es": "Worktree vinculada ofrece archivos, HEAD e index separados, compartiendo objetos y muchas refs. Crea rama separada adecuada o worktree detached, comprueba ruta y elimina solo worktree propia limpia."
+      },
+      "rubric": [
+        {
+          "en": "Identify shared versus independent state.",
+          "pt-BR": "Identifique estado compartilhado e independente.",
+          "es": "Identifica estado compartido e independiente."
+        },
+        {
+          "en": "Explain safe branch/path selection and cleanup.",
+          "pt-BR": "Explique seleção segura de branch/caminho e limpeza.",
+          "es": "Explica selección segura de rama/ruta y limpieza."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why not check out the same branch twice by default?",
+          "pt-BR": "Por que não selecionar mesma branch duas vezes por padrão?",
+          "es": "¿Por qué no seleccionar misma rama dos veces por defecto?"
+        }
+      ]
+    },
+    {
+      "id": "interview-submodules",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/03-submodules"
+      ],
+      "title": {
+        "en": "Pinned dependency",
+        "pt-BR": "Dependência fixada",
+        "es": "Dependencia fijada"
+      },
+      "prompt": {
+        "en": "Explain what a submodule update means for reproducibility.",
+        "pt-BR": "Explique o que atualização de submódulo significa para reprodutibilidade.",
+        "es": "Explica qué significa actualizar submódulo para reproducibilidad."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Explain gitlink and configuration roles.",
+          "pt-BR": "Explique papéis gitlink e configuração.",
+          "es": "Explica papeles gitlink y configuración."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "The superproject stores a gitlink to a specific submodule commit and .gitmodules describes configuration. A reproducible checkout needs that commit available and appropriate initialization/update. Updating a nested checkout alone is not a committed superproject dependency change.",
+        "pt-BR": "Superprojeto guarda gitlink para commit específico e .gitmodules descreve configuração. Checkout reproduzível exige commit disponível e inicialização/update adequados. Atualizar checkout aninhado sozinho não registra dependência no superprojeto.",
+        "es": "Superproyecto guarda gitlink a commit específico y .gitmodules describe configuración. Checkout reproducible exige commit disponible e inicialización/update adecuados. Actualizar checkout anidado solo no confirma dependencia en superproyecto."
+      },
+      "rubric": [
+        {
+          "en": "Explain gitlink and configuration roles.",
+          "pt-BR": "Explique papéis gitlink e configuração.",
+          "es": "Explica papeles gitlink y configuración."
+        },
+        {
+          "en": "Mention availability and committing the pin.",
+          "pt-BR": "Mencione disponibilidade e commit da fixação.",
+          "es": "Menciona disponibilidad y commit de fijación."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What happens if the referenced commit is unavailable?",
+          "pt-BR": "O que ocorre se commit referenciado indisponível?",
+          "es": "¿Qué ocurre si commit referenciado no está disponible?"
+        }
+      ]
+    },
+    {
+      "id": "interview-bisect",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/01-bisect"
+      ],
+      "title": {
+        "en": "Regression search",
+        "pt-BR": "Busca de regressão",
+        "es": "Búsqueda de regresión"
+      },
+      "prompt": {
+        "en": "How would you design a reliable git bisect experiment?",
+        "pt-BR": "Como projetar experimento confiável de git bisect?",
+        "es": "¿Cómo diseñar experimento fiable de git bisect?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Define good/bad and reliable test.",
+          "pt-BR": "Defina good/bad e teste confiável.",
+          "es": "Define good/bad y prueba fiable."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Establish a known good/bad boundary, use a stable deterministic classification of each revision, skip genuinely untestable commits, record environment and evidence, then verify the candidate and reset bisect state. Nonmonotonic behavior can complicate results.",
+        "pt-BR": "Estabeleça fronteira good/bad conhecida, use classificação determinística estável por revisão, pule commits realmente não testáveis, registre ambiente/evidência, confira candidato e encerre bisect. Comportamento não monotônico pode complicar resultados.",
+        "es": "Establece frontera good/bad conocida, usa clasificación determinista estable por revisión, omite commits realmente no comprobables, registra entorno/evidencia, verifica candidato y termina bisect. Comportamiento no monótono puede complicar resultados."
+      },
+      "rubric": [
+        {
+          "en": "Define good/bad and reliable test.",
+          "pt-BR": "Defina good/bad e teste confiável.",
+          "es": "Define good/bad y prueba fiable."
+        },
+        {
+          "en": "Discuss skip, verification and cleanup.",
+          "pt-BR": "Discuta skip, verificação e limpeza.",
+          "es": "Discute skip, verificación y limpieza."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "What if the test is flaky?",
+          "pt-BR": "E se teste for instável?",
+          "es": "¿Y si prueba es inestable?"
+        }
+      ]
+    },
+    {
+      "id": "interview-audit",
+      "difficulty": "hard",
+      "prerequisites": [
+        "security/12-governance-audit-and-traceability"
+      ],
+      "title": {
+        "en": "Evidence-based integration",
+        "pt-BR": "Integração baseada em evidência",
+        "es": "Integración basada en evidencia"
+      },
+      "prompt": {
+        "en": "How do you prove an integrated squash commit matches the reviewed change?",
+        "pt-BR": "Como provar commit squash integrado corresponde à mudança revisada?",
+        "es": "¿Cómo probar que commit squash integrado coincide con cambio revisado?"
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Tie review evidence to exact SHA and base.",
+          "pt-BR": "Associe evidência a SHA e base exatos.",
+          "es": "Asocia evidencia a SHA y base exactos."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Record reviewed head/tree and base, verify checks/review and authorization for that SHA, require expected head on merge. If base is unchanged and feature includes it, compare integrated tree to reviewed tree and sole parent to base; verify post-merge checks and metadata.",
+        "pt-BR": "Registre head/tree revisados e base, confira checks/revisão e autorização para SHA, exija head esperado no merge. Se base não mudou e feature a inclui, compare tree integrada à revisada e pai único à base; confira pós-merge e metadados.",
+        "es": "Registra head/tree revisados y base, comprueba checks/revisión y autorización de SHA, exige head esperado en merge. Si base no cambió y feature la incluye, compara tree integrado con revisado y padre único con base; verifica post-merge y metadatos."
+      },
+      "rubric": [
+        {
+          "en": "Tie review evidence to exact SHA and base.",
+          "pt-BR": "Associe evidência a SHA e base exatos.",
+          "es": "Asocia evidencia a SHA y base exactos."
+        },
+        {
+          "en": "Explain tree equality conditional on unchanged base.",
+          "pt-BR": "Explique igualdade de tree condicionada à base inalterada.",
+          "es": "Explica igualdad de tree condicionada a base intacta."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why can a different base require new review?",
+          "pt-BR": "Por que base diferente pode exigir nova revisão?",
+          "es": "¿Por qué base distinta puede exigir nueva revisión?"
+        }
+      ]
+    },
+    {
+      "id": "interview-secret-incident",
+      "difficulty": "hard",
+      "prerequisites": [
+        "security/11-credential-exposure-and-incident-response"
+      ],
+      "title": {
+        "en": "Credential incident",
+        "pt-BR": "Incidente de credencial",
+        "es": "Incidente de credencial"
+      },
+      "prompt": {
+        "en": "Respond to a credential accidentally committed and pushed publicly.",
+        "pt-BR": "Responda a credencial registrada e publicada por acidente.",
+        "es": "Responde a credencial confirmada y publicada por accidente."
+      },
+      "hints": [
+        {
+          "en": "Explain the relevant state or policy before naming commands.",
+          "pt-BR": "Explique estado ou política relevante antes de citar comandos.",
+          "es": "Explica estado o política pertinente antes de nombrar comandos."
+        },
+        {
+          "en": "Prioritize revocation before history cleanup.",
+          "pt-BR": "Priorize revogação antes de limpeza do histórico.",
+          "es": "Prioriza revocación antes de limpiar historial."
+        }
+      ],
+      "explanation": {
+        "en": "Compare your reasoning with the expected answer. The rubric measures explicit concepts, not exact wording; award one point per criterion met, zero otherwise.",
+        "pt-BR": "Compare seu raciocínio à resposta esperada. Rubrica mede conceitos explícitos, não palavras exatas; atribua um ponto por critério atendido, zero caso contrário.",
+        "es": "Compara tu razonamiento con respuesta esperada. Rúbrica mide conceptos explícitos, no palabras exactas; asigna un punto por criterio cumplido, cero en otro caso."
+      },
+      "expected_answer": {
+        "en": "Treat it as compromised: revoke/rotate, limit exposure and notify appropriate owners, investigate use, remove the secret from current files and coordinate any history cleanup. Copies may persist; prevention includes scanning and least privilege.",
+        "pt-BR": "Trate como comprometida: revogue/rotacione, limite exposição e notifique responsáveis, investigue uso, remova segredo de arquivos atuais e coordene limpeza de histórico. Cópias podem persistir; prevenção inclui scanning e menor privilégio.",
+        "es": "Trata como comprometida: revoca/rota, limita exposición y notifica responsables, investiga uso, quita secreto de archivos actuales y coordina limpieza de historial. Copias pueden persistir; prevención incluye escaneo y mínimo privilegio."
+      },
+      "rubric": [
+        {
+          "en": "Prioritize revocation before history cleanup.",
+          "pt-BR": "Priorize revogação antes de limpeza do histórico.",
+          "es": "Prioriza revocación antes de limpiar historial."
+        },
+        {
+          "en": "Recognize persistent copies and incident coordination.",
+          "pt-BR": "Reconheça cópias persistentes e coordenação do incidente.",
+          "es": "Reconoce copias persistentes y coordinación del incidente."
+        }
+      ],
+      "follow_ups": [
+        {
+          "en": "Why is deleting a file insufficient?",
+          "pt-BR": "Por que excluir arquivo não basta?",
+          "es": "¿Por qué eliminar archivo no basta?"
+        }
+      ]
+    }
+  ]
+}

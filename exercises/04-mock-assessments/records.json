@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "kind": "mock",
+  "records": [
+    {
+      "id": "mock-easy",
+      "difficulty": "easy",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository"
+      ],
+      "title": {
+        "en": "Foundation assessment",
+        "pt-BR": "Simulado de fundamentos",
+        "es": "Simulacro de fundamentos"
+      },
+      "prompt": {
+        "en": "Complete the referenced questions and one practical challenge without consulting solutions. Record choices, state evidence and interview answers before grading yourself.",
+        "pt-BR": "Conclua questões referenciadas e um desafio prático sem consultar soluções. Registre escolhas, evidências de estado e respostas de entrevista antes de se avaliar.",
+        "es": "Completa preguntas referenciadas y un desafío práctico sin consultar soluciones. Registra opciones, evidencia de estado y respuestas de entrevista antes de evaluarte."
+      },
+      "hints": [
+        {
+          "en": "Use the prerequisite only after a first attempt; inspect state before any destructive operation.",
+          "pt-BR": "Use pré-requisito só após primeira tentativa; inspecione estado antes de operação destrutiva.",
+          "es": "Usa prerrequisito solo tras primer intento; inspecciona estado antes de operación destructiva."
+        },
+        {
+          "en": "If stuck, use the individual record hints and record which hints were needed.",
+          "pt-BR": "Se travar, use dicas dos registros e anote quais foram necessárias.",
+          "es": "Si te atascas, usa pistas de registros y anota cuáles fueron necesarias."
+        }
+      ],
+      "explanation": {
+        "en": "The maximum is ten points: four quiz answers, two practical points and four interview rubric points. Report each part separately; this is a self-assessment, not certification or AI grading.",
+        "pt-BR": "Máximo dez pontos: quatro respostas de quiz, dois pontos práticos e quatro pontos de rubrica de entrevistas. Relate partes separadamente; é autoavaliação, não certificação nem correção IA.",
+        "es": "Máximo diez puntos: cuatro respuestas de cuestionario, dos puntos prácticos y cuatro puntos de rúbrica de entrevistas. Reporta partes por separado; es autoevaluación, no certificación ni corrección IA."
+      },
+      "duration_minutes": 35,
+      "quiz_ids": [
+        "quiz-snapshot",
+        "quiz-add",
+        "quiz-diff",
+        "quiz-config"
+      ],
+      "challenge_ids": [
+        "challenge-first-commit"
+      ],
+      "interview_ids": [
+        "interview-version-control",
+        "interview-three-states"
+      ],
+      "rubric": [
+        {
+          "en": "Quizzes: one point per correct choice, maximum four.",
+          "pt-BR": "Quizzes: um ponto por escolha correta, máximo quatro.",
+          "es": "Cuestionarios: un punto por opción correcta, máximo cuatro."
+        },
+        {
+          "en": "Challenge: one point if all final state checks pass; one point for safe execution and required intermediate evidence. No point for an unmet criterion.",
+          "pt-BR": "Desafio: um ponto se todos checks finais passam; um ponto por execução segura e evidência intermediária exigida. Zero por critério não atendido.",
+          "es": "Desafío: un punto si todos checks finales aprueban; un punto por ejecución segura y evidencia intermedia exigida. Cero por criterio incumplido."
+        },
+        {
+          "en": "Interviews: one point per met criterion, maximum four across two questions.",
+          "pt-BR": "Entrevistas: um ponto por critério atendido, máximo quatro em duas questões.",
+          "es": "Entrevistas: un punto por criterio cumplido, máximo cuatro en dos preguntas."
+        }
+      ]
+    },
+    {
+      "id": "mock-medium",
+      "difficulty": "medium",
+      "prerequisites": [
+        "practical-projects/03-merge-conflict-laboratory"
+      ],
+      "title": {
+        "en": "Collaboration assessment",
+        "pt-BR": "Simulado de colaboração",
+        "es": "Simulacro de colaboración"
+      },
+      "prompt": {
+        "en": "Complete the referenced questions and one practical challenge without consulting solutions. Record choices, state evidence and interview answers before grading yourself.",
+        "pt-BR": "Conclua questões referenciadas e um desafio prático sem consultar soluções. Registre escolhas, evidências de estado e respostas de entrevista antes de se avaliar.",
+        "es": "Completa preguntas referenciadas y un desafío práctico sin consultar soluciones. Registra opciones, evidencia de estado y respuestas de entrevista antes de evaluarte."
+      },
+      "hints": [
+        {
+          "en": "Use the prerequisite only after a first attempt; inspect state before any destructive operation.",
+          "pt-BR": "Use pré-requisito só após primeira tentativa; inspecione estado antes de operação destrutiva.",
+          "es": "Usa prerrequisito solo tras primer intento; inspecciona estado antes de operación destructiva."
+        },
+        {
+          "en": "If stuck, use the individual record hints and record which hints were needed.",
+          "pt-BR": "Se travar, use dicas dos registros e anote quais foram necessárias.",
+          "es": "Si te atascas, usa pistas de registros y anota cuáles fueron necesarias."
+        }
+      ],
+      "explanation": {
+        "en": "The maximum is ten points: four quiz answers, two practical points and four interview rubric points. Report each part separately; this is a self-assessment, not certification or AI grading.",
+        "pt-BR": "Máximo dez pontos: quatro respostas de quiz, dois pontos práticos e quatro pontos de rubrica de entrevistas. Relate partes separadamente; é autoavaliação, não certificação nem correção IA.",
+        "es": "Máximo diez puntos: cuatro respuestas de cuestionario, dos puntos prácticos y cuatro puntos de rúbrica de entrevistas. Reporta partes por separado; es autoevaluación, no certificación ni corrección IA."
+      },
+      "duration_minutes": 45,
+      "quiz_ids": [
+        "quiz-fetch",
+        "quiz-ff",
+        "quiz-parents",
+        "quiz-conflict"
+      ],
+      "challenge_ids": [
+        "challenge-fast-forward"
+      ],
+      "interview_ids": [
+        "interview-fetch-pull",
+        "interview-merge-rebase"
+      ],
+      "rubric": [
+        {
+          "en": "Quizzes: one point per correct choice, maximum four.",
+          "pt-BR": "Quizzes: um ponto por escolha correta, máximo quatro.",
+          "es": "Cuestionarios: un punto por opción correcta, máximo cuatro."
+        },
+        {
+          "en": "Challenge: one point if all final state checks pass; one point for safe execution and required intermediate evidence. No point for an unmet criterion.",
+          "pt-BR": "Desafio: um ponto se todos checks finais passam; um ponto por execução segura e evidência intermediária exigida. Zero por critério não atendido.",
+          "es": "Desafío: un punto si todos checks finales aprueban; un punto por ejecución segura y evidencia intermedia exigida. Cero por criterio incumplido."
+        },
+        {
+          "en": "Interviews: one point per met criterion, maximum four across two questions.",
+          "pt-BR": "Entrevistas: um ponto por critério atendido, máximo quatro em duas questões.",
+          "es": "Entrevistas: un punto por criterio cumplido, máximo cuatro en dos preguntas."
+        }
+      ]
+    },
+    {
+      "id": "mock-hard",
+      "difficulty": "hard",
+      "prerequisites": [
+        "practical-projects/08-professional-engineering-workflow"
+      ],
+      "title": {
+        "en": "Professional assessment",
+        "pt-BR": "Simulado profissional",
+        "es": "Simulacro profesional"
+      },
+      "prompt": {
+        "en": "Complete the referenced questions and one practical challenge without consulting solutions. Record choices, state evidence and interview answers before grading yourself.",
+        "pt-BR": "Conclua questões referenciadas e um desafio prático sem consultar soluções. Registre escolhas, evidências de estado e respostas de entrevista antes de se avaliar.",
+        "es": "Completa preguntas referenciadas y un desafío práctico sin consultar soluciones. Registra opciones, evidencia de estado y respuestas de entrevista antes de evaluarte."
+      },
+      "hints": [
+        {
+          "en": "Use the prerequisite only after a first attempt; inspect state before any destructive operation.",
+          "pt-BR": "Use pré-requisito só após primeira tentativa; inspecione estado antes de operação destrutiva.",
+          "es": "Usa prerrequisito solo tras primer intento; inspecciona estado antes de operación destructiva."
+        },
+        {
+          "en": "If stuck, use the individual record hints and record which hints were needed.",
+          "pt-BR": "Se travar, use dicas dos registros e anote quais foram necessárias.",
+          "es": "Si te atascas, usa pistas de registros y anota cuáles fueron necesarias."
+        }
+      ],
+      "explanation": {
+        "en": "The maximum is ten points: four quiz answers, two practical points and four interview rubric points. Report each part separately; this is a self-assessment, not certification or AI grading.",
+        "pt-BR": "Máximo dez pontos: quatro respostas de quiz, dois pontos práticos e quatro pontos de rubrica de entrevistas. Relate partes separadamente; é autoavaliação, não certificação nem correção IA.",
+        "es": "Máximo diez puntos: cuatro respuestas de cuestionario, dos puntos prácticos y cuatro puntos de rúbrica de entrevistas. Reporta partes por separado; es autoevaluación, no certificación ni corrección IA."
+      },
+      "duration_minutes": 60,
+      "quiz_ids": [
+        "quiz-rebase",
+        "quiz-squash",
+        "quiz-three-dot",
+        "quiz-lease"
+      ],
+      "challenge_ids": [
+        "challenge-recover-tip"
+      ],
+      "interview_ids": [
+        "interview-objects",
+        "interview-recovery"
+      ],
+      "rubric": [
+        {
+          "en": "Quizzes: one point per correct choice, maximum four.",
+          "pt-BR": "Quizzes: um ponto por escolha correta, máximo quatro.",
+          "es": "Cuestionarios: un punto por opción correcta, máximo cuatro."
+        },
+        {
+          "en": "Challenge: one point if all final state checks pass; one point for safe execution and required intermediate evidence. No point for an unmet criterion.",
+          "pt-BR": "Desafio: um ponto se todos checks finais passam; um ponto por execução segura e evidência intermediária exigida. Zero por critério não atendido.",
+          "es": "Desafío: un punto si todos checks finales aprueban; un punto por ejecución segura y evidencia intermedia exigida. Cero por criterio incumplido."
+        },
+        {
+          "en": "Interviews: one point per met criterion, maximum four across two questions.",
+          "pt-BR": "Entrevistas: um ponto por critério atendido, máximo quatro em duas questões.",
+          "es": "Entrevistas: un punto por criterio cumplido, máximo cuatro en dos preguntas."
+        }
+      ]
+    }
+  ]
+}
