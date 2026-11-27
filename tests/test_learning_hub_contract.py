@@ -98,6 +98,22 @@ class ManifestTests(unittest.TestCase):
         self.assertEqual(loaded["manifest"], self.baseline)
 
 
+    def test_consumer_rejects_unsupported_schema_contents(self):
+        with tempfile.TemporaryDirectory() as temp:
+            trusted = Path(temp)
+            (trusted / "schemas").mkdir()
+            for name in c.SCHEMAS:
+                path = "schemas/" + name + ".schema.json"
+                shutil.copyfile(v.ROOT / path, trusted / path)
+            target = trusted / "schemas/curriculum-manifest.schema.json"
+            data = c.strict_json(target.read_text(encoding="utf-8"))
+            data["title"] = "Unsupported schema"
+            target.write_text(json.dumps(data), encoding="utf-8")
+            revision = consumer.git(v.ROOT, "rev-parse", "HEAD").strip().decode("ascii")
+            with self.assertRaisesRegex(ValueError, "Unsupported schema contents"):
+                consumer.consume(v.ROOT, json.dumps({**consumer.LOCK, "revision": revision}), trusted)
+
+
 class SnapshotTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
@@ -158,6 +174,17 @@ class SnapshotTests(unittest.TestCase):
         (root / "extra.txt").write_bytes(b"extra\n")
         with self.assertRaises(ValueError):
             consumer.verify_stage(root, inv)
+
+    def test_extra_directory_and_unsafe_export(self):
+        root, inv = self.export(self.first, "stage")
+        (root / "unexpected").mkdir()
+        with self.assertRaises(ValueError):
+            consumer.verify_stage(root, inv)
+        empty = self.root / "empty"
+        empty.mkdir()
+        with self.assertRaises(ValueError):
+            consumer.export_snapshot(self.repo, {"../escape.txt": inv["notes.txt"]}, empty)
+        self.assertFalse((self.root / "escape.txt").exists())
 
     def test_invalid_revision_and_lock(self):
         for rev in ("main", self.first[:12], "0"*40):

@@ -43,7 +43,7 @@ def read_lock(text):
 def git(repo, *args, input_bytes=None):
     env = {k: value for k, value in os.environ.items() if not k.upper().startswith("GIT_")}
     env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_COUNT="0",
-               GIT_TERMINAL_PROMPT="0", GIT_NO_LAZY_FETCH="1")
+               GIT_TERMINAL_PROMPT="0", GIT_NO_LAZY_FETCH="1", GIT_ALLOW_PROTOCOL="")
     result = subprocess.run(["git", "--no-replace-objects", "-C", str(repo), *args],
                             input=input_bytes, env=env, capture_output=True, timeout=60)
     require(result.returncode == 0, "Unable to read trusted local Git object")
@@ -91,8 +91,10 @@ def tree_inventory(repo, revision):
 
 def export_snapshot(repo, inventory, root):
     require(root.is_dir() and not root.is_symlink() and not any(root.iterdir()), "Expected empty staging directory")
+    require(all(contract.safe_path(path) for path in inventory), "Unsafe export path")
     objects = {}
     for oid, size in inventory.values():
+        require(OID.fullmatch(oid) and type(size) is int and size >= 0, "Invalid export object")
         require(oid not in objects or objects[oid] == size, "Inconsistent blob size")
         objects[oid] = size
     data = git(repo, "cat-file", "--batch", input_bytes=b"".join(
@@ -120,11 +122,14 @@ def export_snapshot(repo, inventory, root):
 def verify_stage(root, inventory):
     require(root.is_dir() and not root.is_symlink(), "Invalid staging directory")
     seen = set()
+    expected_dirs = {"/".join(path.split("/")[:i]) for path in inventory
+                     for i in range(1, len(path.split("/")))}
     for directory, dirs, files in os.walk(root, followlinks=False):
         for name in dirs:
             p = Path(directory) / name
-            require(not p.is_symlink() and not getattr(p, "is_junction", lambda: False)(),
-                    "Symbolic staging directory")
+            require(p.relative_to(root).as_posix() in expected_dirs and not p.is_symlink()
+                    and not getattr(p, "is_junction", lambda: False)(),
+                    "Unexpected or symbolic staging directory")
         for name in files:
             p = Path(directory) / name
             path = p.relative_to(root).as_posix()
