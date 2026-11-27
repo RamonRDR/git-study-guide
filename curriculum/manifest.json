@@ -3749,6 +3749,405 @@
           "execution": "unverified"
         }
       ]
+    },
+    {
+      "id": "practical-projects",
+      "order": 16,
+      "slug": "practical-projects",
+      "title": {
+        "en": "Practical Projects",
+        "pt-BR": "Projetos práticos",
+        "es": "Proyectos prácticos"
+      },
+      "index": {
+        "en": "practical-projects/README.md",
+        "pt-BR": "practical-projects/README.pt-BR.md",
+        "es": "practical-projects/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "practical-projects.01-my-first-repository",
+          "order": 0,
+          "slug": "01-my-first-repository",
+          "kind": "project",
+          "title": {
+            "en": "My First Repository",
+            "pt-BR": "Meu primeiro repositório",
+            "es": "Mi primer repositorio"
+          },
+          "content": {
+            "en": "practical-projects/01-my-first-repository/README.md",
+            "pt-BR": "practical-projects/01-my-first-repository/README.pt-BR.md",
+            "es": "practical-projects/01-my-first-repository/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "command-reference.14-platforms-and-automation",
+          "next_id": "practical-projects.02-two-developers-one-project",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.02-two-developers-one-project",
+          "order": 1,
+          "slug": "02-two-developers-one-project",
+          "kind": "project",
+          "title": {
+            "en": "Two Developers, One Project",
+            "pt-BR": "Dois desenvolvedores, um projeto",
+            "es": "Dos desarrolladores, un proyecto"
+          },
+          "content": {
+            "en": "practical-projects/02-two-developers-one-project/README.md",
+            "pt-BR": "practical-projects/02-two-developers-one-project/README.pt-BR.md",
+            "es": "practical-projects/02-two-developers-one-project/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.01-my-first-repository",
+          "next_id": "practical-projects.03-merge-conflict-laboratory",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.03-merge-conflict-laboratory",
+          "order": 2,
+          "slug": "03-merge-conflict-laboratory",
+          "kind": "project",
+          "title": {
+            "en": "Merge Conflict Laboratory",
+            "pt-BR": "Laboratório de conflitos de merge",
+            "es": "Laboratorio de conflictos de merge"
+          },
+          "content": {
+            "en": "practical-projects/03-merge-conflict-laboratory/README.md",
+            "pt-BR": "practical-projects/03-merge-conflict-laboratory/README.pt-BR.md",
+            "es": "practical-projects/03-merge-conflict-laboratory/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.02-two-developers-one-project",
+          "next_id": "practical-projects.04-the-lost-commit",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.04-the-lost-commit",
+          "order": 3,
+          "slug": "04-the-lost-commit",
+          "kind": "project",
+          "title": {
+            "en": "The Lost Commit",
+            "pt-BR": "O commit perdido",
+            "es": "El commit perdido"
+          },
+          "content": {
+            "en": "practical-projects/04-the-lost-commit/README.md",
+            "pt-BR": "practical-projects/04-the-lost-commit/README.pt-BR.md",
+            "es": "practical-projects/04-the-lost-commit/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.03-merge-conflict-laboratory",
+          "next_id": "practical-projects.05-open-source-contribution",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.05-open-source-contribution",
+          "order": 4,
+          "slug": "05-open-source-contribution",
+          "kind": "project",
+          "title": {
+            "en": "Open Source Contribution",
+            "pt-BR": "Contribuição open source",
+            "es": "Contribución de código abierto"
+          },
+          "content": {
+            "en": "practical-projects/05-open-source-contribution/README.md",
+            "pt-BR": "practical-projects/05-open-source-contribution/README.pt-BR.md",
+            "es": "practical-projects/05-open-source-contribution/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.04-the-lost-commit",
+          "next_id": "practical-projects.06-automated-quality-pipeline",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.06-automated-quality-pipeline",
+          "order": 5,
+          "slug": "06-automated-quality-pipeline",
+          "kind": "project",
+          "title": {
+            "en": "Automated Quality Pipeline",
+            "pt-BR": "Pipeline automatizado de qualidade",
+            "es": "Pipeline automatizado de calidad"
+          },
+          "content": {
+            "en": "practical-projects/06-automated-quality-pipeline/README.md",
+            "pt-BR": "practical-projects/06-automated-quality-pipeline/README.pt-BR.md",
+            "es": "practical-projects/06-automated-quality-pipeline/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.05-open-source-contribution",
+          "next_id": "practical-projects.07-release-management",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.07-release-management",
+          "order": 6,
+          "slug": "07-release-management",
+          "kind": "project",
+          "title": {
+            "en": "Release Management",
+            "pt-BR": "Gestão de releases",
+            "es": "Gestión de lanzamientos"
+          },
+          "content": {
+            "en": "practical-projects/07-release-management/README.md",
+            "pt-BR": "practical-projects/07-release-management/README.pt-BR.md",
+            "es": "practical-projects/07-release-management/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.06-automated-quality-pipeline",
+          "next_id": "practical-projects.08-professional-engineering-workflow",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "practical-projects.08-professional-engineering-workflow",
+          "order": 7,
+          "slug": "08-professional-engineering-workflow",
+          "kind": "project",
+          "title": {
+            "en": "Professional Engineering Workflow",
+            "pt-BR": "Fluxo de engenharia profissional",
+            "es": "Flujo de ingeniería profesional"
+          },
+          "content": {
+            "en": "practical-projects/08-professional-engineering-workflow/README.md",
+            "pt-BR": "practical-projects/08-professional-engineering-workflow/README.pt-BR.md",
+            "es": "practical-projects/08-professional-engineering-workflow/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "practical-projects.07-release-management",
+          "next_id": "exercises.01-quizzes",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        }
+      ]
+    },
+    {
+      "id": "exercises",
+      "order": 17,
+      "slug": "exercises",
+      "title": {
+        "en": "Challenges & Interviews",
+        "pt-BR": "Desafios e entrevistas",
+        "es": "Desafíos y entrevistas"
+      },
+      "index": {
+        "en": "exercises/README.md",
+        "pt-BR": "exercises/README.pt-BR.md",
+        "es": "exercises/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "exercises.01-quizzes",
+          "order": 0,
+          "slug": "01-quizzes",
+          "kind": "assessment",
+          "title": {
+            "en": "Quizzes",
+            "pt-BR": "Quizzes",
+            "es": "Cuestionarios"
+          },
+          "content": {
+            "en": "exercises/01-quizzes/README.md",
+            "pt-BR": "exercises/01-quizzes/README.pt-BR.md",
+            "es": "exercises/01-quizzes/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "exercises/01-quizzes/records.json"
+          ],
+          "previous_id": "practical-projects.08-professional-engineering-workflow",
+          "next_id": "exercises.02-challenges",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "exercises.02-challenges",
+          "order": 1,
+          "slug": "02-challenges",
+          "kind": "assessment",
+          "title": {
+            "en": "Practical challenges",
+            "pt-BR": "Desafios práticos",
+            "es": "Desafíos prácticos"
+          },
+          "content": {
+            "en": "exercises/02-challenges/README.md",
+            "pt-BR": "exercises/02-challenges/README.pt-BR.md",
+            "es": "exercises/02-challenges/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "exercises/02-challenges/records.json"
+          ],
+          "previous_id": "exercises.01-quizzes",
+          "next_id": "exercises.03-interviews",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "local_only",
+          "execution_reason": {
+            "en": "Native Git practice requires an isolated local Git environment; browser execution is not verified.",
+            "pt-BR": "Prática Git nativa exige ambiente Git local isolado; execução no navegador não verificada.",
+            "es": "Práctica Git nativa requiere entorno Git local aislado; ejecución en navegador no verificada."
+          }
+        },
+        {
+          "id": "exercises.03-interviews",
+          "order": 2,
+          "slug": "03-interviews",
+          "kind": "assessment",
+          "title": {
+            "en": "Interview questions",
+            "pt-BR": "Perguntas de entrevista",
+            "es": "Preguntas de entrevista"
+          },
+          "content": {
+            "en": "exercises/03-interviews/README.md",
+            "pt-BR": "exercises/03-interviews/README.pt-BR.md",
+            "es": "exercises/03-interviews/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "exercises/03-interviews/records.json"
+          ],
+          "previous_id": "exercises.02-challenges",
+          "next_id": "exercises.04-mock-assessments",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "exercises.04-mock-assessments",
+          "order": 3,
+          "slug": "04-mock-assessments",
+          "kind": "assessment",
+          "title": {
+            "en": "Mock assessments",
+            "pt-BR": "Simulados",
+            "es": "Simulacros"
+          },
+          "content": {
+            "en": "exercises/04-mock-assessments/README.md",
+            "pt-BR": "exercises/04-mock-assessments/README.pt-BR.md",
+            "es": "exercises/04-mock-assessments/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "exercises/04-mock-assessments/records.json"
+          ],
+          "previous_id": "exercises.03-interviews",
+          "next_id": null,
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
     }
   ]
 }
