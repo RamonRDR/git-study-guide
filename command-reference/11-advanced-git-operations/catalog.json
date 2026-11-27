@@ -124,9 +124,9 @@
         "es": "Registrar repositorio separado como submódulo fijado por gitlink en proyecto padre."
       },
       "options": {
-        "en": "Specify repository and path; -b sets a branch preference for remote updates, not a replacement for the recorded gitlink.",
-        "pt-BR": "Informe repositório e caminho; -b define preferência de branch para atualizações remotas, não substitui gitlink registrado.",
-        "es": "Indica repositorio y ruta; -b configura preferencia de rama para actualizaciones remotas, no sustituye gitlink registrado."
+        "en": "Specify repository and path; -b sets a branch preference for remote updates, not a replacement for the recorded gitlink. Relative URLs resolve against the parent repository's default remote, or its local repository when no default remote is configured; arrange sibling bare origins for clone simulations.",
+        "pt-BR": "Informe repositório e caminho; -b define preferência de branch para atualizações remotas, não substitui gitlink registrado. URLs relativas são resolvidas em relação ao remoto padrão do repositório pai, ou ao repositório local quando não há remoto padrão configurado; organize origens bare vizinhas para simulações de clone.",
+        "es": "Indica repositorio y ruta; -b configura preferencia de rama para actualizaciones remotas, no sustituye gitlink registrado. Las URL relativas se resuelven respecto al remoto predeterminado del repositorio padre, o al repositorio local si no hay remoto predeterminado configurado; organiza orígenes bare vecinos para simular clones."
       },
       "when_to_use": {
         "en": "When a dependency should retain independent history and an explicit version pin.",
@@ -164,9 +164,9 @@
         "es": "Inspecciona .gitmodules, gitlink preparado y estado del submódulo; conserva commits del submódulo antes de flujo revisado de eliminación. No borres metadatos sin más."
       },
       "prerequisites": {
-        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
-        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
-        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources. For the shown relative URL, ensure the library is a sibling of the parent default remote (or of the local parent repository if no default remote exists).",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias. Para a URL relativa mostrada, garanta que a biblioteca seja vizinha do remoto padrão do pai (ou do repositório pai local se não houver remoto padrão).",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias. Para la URL relativa mostrada, asegúrate de que la biblioteca sea vecina del remoto predeterminado del padre (o del repositorio padre local si no hay remoto predeterminado)."
       },
       "requirements": {
         "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
@@ -270,9 +270,9 @@
         "es": "Inspecciona rutas fallidas y puntas guardadas de submódulos; conserva commits separados con rama nombrada antes de reintentar. No fuerces a ciegas."
       },
       "prerequisites": {
-        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
-        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
-        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources. Review the resolved relative URLs before initializing; in the lab, clone from a sibling bare parent origin so that the relative library URL resolves correctly.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias. Revise URLs relativas resolvidas antes de inicializar; no laboratório, clone de uma origem bare pai vizinha para que a URL relativa da biblioteca seja resolvida corretamente.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias. Revisa las URL relativas resueltas antes de inicializar; en laboratorio, clona desde un origen bare padre vecino para que se resuelva correctamente la URL relativa de la biblioteca."
       },
       "requirements": {
         "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
