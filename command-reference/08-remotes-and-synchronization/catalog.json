@@ -584,7 +584,7 @@
       },
       "alternatives": {
         "en": "Keep the remote branch when unsure; prune stale local tracking refs after authorized server cleanup.",
-        "pt-BR": "Mantenha branch remota em dúvida; pode referências locais obsoletas após limpeza autorizada do servidor.",
+        "pt-BR": "Mantenha a branch remota se houver dúvida; remova referências locais de rastreamento obsoletas após limpeza autorizada do servidor.",
         "es": "Conserva rama remota ante duda; poda referencias locales obsoletas tras limpieza autorizada del servidor."
       },
       "recovery": {
