@@ -1,0 +1,757 @@
+{
+  "schema_version": 1,
+  "category": "09-recovery-and-stash",
+  "entries": [
+    {
+      "id": "git-reset",
+      "command": "git reset",
+      "kind": "native-command",
+      "category": "09-recovery-and-stash",
+      "level": "advanced",
+      "intent_tags": [
+        "undo-changes",
+        "rewrite-local-history",
+        "unstage-changes"
+      ],
+      "syntax": "git reset --soft HEAD~1",
+      "purpose": {
+        "en": "Move the current branch or detached HEAD to a selected commit in the commit-level form; choose how the index and working tree are affected.",
+        "pt-BR": "Mover branch atual ou HEAD destacado para commit selecionado na forma por commit; escolher como index e working tree são afetados.",
+        "es": "Mover rama actual o HEAD separado a commit seleccionado en forma por commit; elegir cómo se afectan index y working tree."
+      },
+      "options": {
+        "en": "--soft leaves index and working tree intact; --mixed resets index and leaves working files; --hard resets both and may overwrite or remove obstructing untracked paths. Path-level reset is different and does not move HEAD.",
+        "pt-BR": "--soft mantém index e working tree; --mixed redefine index e mantém arquivos; --hard redefine ambos e pode sobrescrever ou remover caminhos não rastreados obstrutivos. Reset por caminho é diferente e não move HEAD.",
+        "es": "--soft deja index y working tree intactos; --mixed restablece index y deja archivos; --hard restablece ambos y puede sobrescribir o eliminar rutas no rastreadas obstructivas. Reset por ruta es distinto y no mueve HEAD."
+      },
+      "when_to_use": {
+        "en": "When intentionally reorganizing private commits with a saved tip and explicit choice of mode.",
+        "pt-BR": "Ao reorganizar intencionalmente commits privados com ponta salva e escolha explícita de modo.",
+        "es": "Al reorganizar intencionalmente commits privados con punta guardada y elección explícita de modo."
+      },
+      "when_to_avoid": {
+        "en": "Avoid resetting shared history or using --hard with any unpreserved work. Never practice in the guide repository.",
+        "pt-BR": "Evite redefinir histórico compartilhado ou usar --hard com trabalho não preservado. Nunca pratique no repositório do guia.",
+        "es": "Evita restablecer historial compartido o usar --hard con trabajo no preservado. Nunca practiques en repositorio del guía."
+      },
+      "expected_state": {
+        "en": "HEAD identifies the selected commit; soft retains staged content, mixed sets index to target, hard sets tracked working content and index to target.",
+        "pt-BR": "HEAD identifica commit selecionado; soft mantém conteúdo preparado, mixed ajusta index ao destino, hard ajusta conteúdo rastreado e index ao destino.",
+        "es": "HEAD identifica commit seleccionado; soft conserva contenido preparado, mixed ajusta index al destino, hard ajusta contenido rastreado e index al destino."
+      },
+      "effect_notes": {
+        "en": "May move refs and update ORIG_HEAD and reflogs; mode determines index and file changes. No remote update occurs.",
+        "pt-BR": "Pode mover referências e atualizar ORIG_HEAD e reflogs; modo determina mudanças de index e arquivos. Não ocorre atualização remota.",
+        "es": "Puede mover referencias y actualizar ORIG_HEAD y reflogs; modo determina cambios de index y archivos. No hay actualización remota."
+      },
+      "common_errors": {
+        "en": "Confusing reset of a path with moving a branch, or expecting reflog to recover discarded uncommitted edits.",
+        "pt-BR": "Confundir reset por caminho com movimento de branch ou esperar reflog recuperar edições não registradas descartadas.",
+        "es": "Confundir reset de ruta con mover rama o esperar que reflog recupere ediciones sin confirmar descartadas."
+      },
+      "alternatives": {
+        "en": "Use git restore --staged for path-level unstaging; use git revert to undo a shared commit without removing it from history.",
+        "pt-BR": "Use git restore --staged para retirar caminho do staging; use git revert para desfazer commit compartilhado sem removê-lo do histórico.",
+        "es": "Usa git restore --staged para retirar ruta de staging; usa git revert para deshacer commit compartido sin quitarlo del historial."
+      },
+      "recovery": {
+        "en": "Inspect saved refs and reflog; create a recovery branch at the verified old tip if it still exists. Discarded unstaged or untracked work may be unrecoverable.",
+        "pt-BR": "Inspecione referências salvas e reflog; crie branch de recuperação na ponta antiga verificada se ainda existir. Trabalho não preparado ou não rastreado descartado pode ser irrecuperável.",
+        "es": "Inspecciona referencias guardadas y reflog; crea rama de recuperación en punta anterior verificada si aún existe. Trabajo no preparado o no rastreado descartado puede ser irrecuperable."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect status, selected refs and fictional identity. Save the original tip and any valuable uncommitted work separately.",
+        "pt-BR": "Use repositório próprio descartável; inspecione status, referências selecionadas e identidade fictícia. Salve ponta original e trabalho não registrado valioso separadamente.",
+        "es": "Usa repositorio propio desechable; inspecciona estado, referencias seleccionadas e identidad ficticia. Guarda punta original y trabajo valioso sin confirmar por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git reset --soft HEAD~1",
+          "context": {
+            "en": "After saving the private tip, undo its last commit while retaining the index and working files; the tip must have a parent.",
+            "pt-BR": "Após salvar ponta privada, desfaça último commit mantendo index e arquivos; a ponta deve ter pai.",
+            "es": "Tras guardar punta privada, deshaz último commit conservando index y archivos; la punta debe tener padre."
+          }
+        },
+        "professional": {
+          "command": "git reset --mixed HEAD~1",
+          "context": {
+            "en": "In a disposable private branch with a saved tip and no valuable uncommitted work, move one commit back and review now-unstaged differences.",
+            "pt-BR": "Em branch privada descartável com ponta salva e sem trabalho não registrado valioso, volte um commit e revise diferenças agora não preparadas.",
+            "es": "En rama privada desechable con punta guardada y sin trabajo valioso sin confirmar, retrocede un commit y revisa diferencias ahora no preparadas."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Mode choice matters: hard can destroy local work, and all commit-level modes can rewrite branch history. Keep examples private and disposable.",
+          "pt-BR": "Escolha de modo importa: hard pode destruir trabalho local e todos modos por commit podem reescrever histórico. Mantenha exemplos privados e descartáveis.",
+          "es": "Elección de modo importa: hard puede destruir trabajo local y todos modos por commit pueden reescribir historial. Mantén ejemplos privados y desechables."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/03-reset"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-reset"
+      ]
+    },
+    {
+      "id": "git-revert",
+      "command": "git revert",
+      "kind": "native-command",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "undo-changes",
+        "protect-history"
+      ],
+      "syntax": "git revert HEAD",
+      "purpose": {
+        "en": "Create a new commit reversing the changes introduced by a selected commit.",
+        "pt-BR": "Criar novo commit revertendo mudanças introduzidas por commit selecionado.",
+        "es": "Crear nuevo commit que invierte cambios introducidos por commit seleccionado."
+      },
+      "options": {
+        "en": "--no-edit uses the generated message; --no-commit prepares changes without committing; reverting a merge requires a carefully chosen mainline parent with -m.",
+        "pt-BR": "--no-edit usa mensagem gerada; --no-commit prepara mudanças sem commit; reverter merge exige pai principal cuidadosamente escolhido com -m.",
+        "es": "--no-edit usa mensaje generado; --no-commit prepara cambios sin confirmar; revertir merge requiere padre principal elegido cuidadosamente con -m."
+      },
+      "when_to_use": {
+        "en": "When correcting a recorded change while preserving shared ancestry.",
+        "pt-BR": "Ao corrigir mudança registrada preservando ancestralidade compartilhada.",
+        "es": "Al corregir cambio confirmado conservando ascendencia compartida."
+      },
+      "when_to_avoid": {
+        "en": "Avoid reverting an unreviewed commit or merge without understanding dependencies and future integration effects.",
+        "pt-BR": "Evite reverter commit ou merge não revisado sem compreender dependências e efeitos em integrações futuras.",
+        "es": "Evita revertir commit o merge no revisado sin comprender dependencias y efectos en integraciones futuras."
+      },
+      "expected_state": {
+        "en": "On successful ordinary execution, a new inverse-change commit advances HEAD; the original commit remains in history. Conflicts may pause the operation.",
+        "pt-BR": "Em execução comum bem-sucedida, novo commit de mudança inversa avança HEAD; commit original permanece no histórico. Conflitos podem pausar operação.",
+        "es": "En ejecución ordinaria exitosa, nuevo commit de cambio inverso avanza HEAD; commit original permanece en historial. Conflictos pueden pausar operación."
+      },
+      "effect_notes": {
+        "en": "May change files, index, objects, refs and sequencer metadata; no automatic push occurs.",
+        "pt-BR": "Pode alterar arquivos, index, objetos, referências e metadados de sequência; não ocorre push automático.",
+        "es": "Puede cambiar archivos, index, objetos, referencias y metadatos de secuencia; no hay push automático."
+      },
+      "common_errors": {
+        "en": "Expecting the original commit to disappear or the entire repository to become identical to an earlier snapshot.",
+        "pt-BR": "Esperar desaparecimento do commit original ou repositório inteiro idêntico a snapshot anterior.",
+        "es": "Esperar que desaparezca commit original o repositorio entero sea idéntico a instantánea anterior."
+      },
+      "alternatives": {
+        "en": "Use a normal corrective commit for selective fixes; reset only for carefully reviewed private history.",
+        "pt-BR": "Use commit corretivo comum para correções seletivas; reset só para histórico privado cuidadosamente revisado.",
+        "es": "Usa commit correctivo ordinario para correcciones selectivas; reset solo para historial privado cuidadosamente revisado."
+      },
+      "recovery": {
+        "en": "If the operation pauses, inspect status and use its matching --continue after reviewed resolution, or --abort after preserving desired edits. For a completed operation, assess a new corrective commit rather than rewriting shared history.",
+        "pt-BR": "Se operação pausar, inspecione status e use --continue correspondente após resolução revisada, ou --abort após preservar edições desejadas. Para operação concluída, avalie novo commit corretivo em vez de reescrever histórico compartilhado.",
+        "es": "Si operación pausa, inspecciona estado y usa --continue correspondiente tras resolución revisada, o --abort tras conservar ediciones deseadas. Para operación finalizada, evalúa nuevo commit correctivo en vez de reescribir historial compartido."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect status, selected refs and fictional identity. Save the original tip and any valuable uncommitted work separately.",
+        "pt-BR": "Use repositório próprio descartável; inspecione status, referências selecionadas e identidade fictícia. Salve ponta original e trabalho não registrado valioso separadamente.",
+        "es": "Usa repositorio propio desechable; inspecciona estado, referencias seleccionadas e identidad ficticia. Guarda punta original y trabajo valioso sin confirmar por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git revert HEAD",
+          "context": {
+            "en": "In a clean practice branch, reverse the latest ordinary commit after verifying it.",
+            "pt-BR": "Em branch de prática limpa, reverta último commit comum após verificá-lo.",
+            "es": "En rama de práctica limpia, revierte último commit ordinario tras verificarlo."
+          }
+        },
+        "professional": {
+          "command": "git revert --no-edit HEAD",
+          "context": {
+            "en": "Record an inverse change on an approved local correction branch; inspect the generated message and result.",
+            "pt-BR": "Registre mudança inversa em branch local aprovada de correção; inspecione mensagem gerada e resultado.",
+            "es": "Registra cambio inverso en rama local aprobada de corrección; inspecciona mensaje generado y resultado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Inverse changes can conflict with later work; review the result and tests. Reverting a secret does not erase it from history.",
+          "pt-BR": "Mudanças inversas podem conflitar com trabalho posterior; revise resultado e testes. Reverter segredo não o apaga do histórico.",
+          "es": "Cambios inversos pueden entrar en conflicto con trabajo posterior; revisa resultado y pruebas. Revertir secreto no lo borra del historial."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/04-revert"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-revert"
+      ]
+    },
+    {
+      "id": "git-reflog",
+      "command": "git reflog",
+      "kind": "native-command",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "recover-work",
+        "inspect-refs",
+        "inspect-history"
+      ],
+      "syntax": "git reflog show HEAD",
+      "purpose": {
+        "en": "Inspect locally recorded movements of references to locate previous commit IDs.",
+        "pt-BR": "Inspecionar movimentos registrados localmente de referências para localizar IDs anteriores de commits.",
+        "es": "Inspeccionar movimientos registrados localmente de referencias para localizar IDs anteriores de commits."
+      },
+      "options": {
+        "en": "Default invocation shows HEAD reflog; show with a named ref selects that log. Expire and delete are separate modifying operations not used here.",
+        "pt-BR": "Invocação padrão mostra reflog de HEAD; show com referência nomeada seleciona esse log. Expire e delete são operações modificadoras separadas não usadas aqui.",
+        "es": "Invocación predeterminada muestra reflog de HEAD; show con referencia nombrada selecciona ese log. Expire y delete son operaciones modificadoras separadas no usadas aquí."
+      },
+      "when_to_use": {
+        "en": "When investigating a previous branch tip after an accidental local ref movement.",
+        "pt-BR": "Ao investigar ponta anterior de branch após movimento local acidental de referência.",
+        "es": "Al investigar punta anterior de rama tras movimiento local accidental de referencia."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume every ref has a reflog or entries persist forever; it is not a backup of unstaged edits.",
+        "pt-BR": "Não presuma que toda referência tem reflog ou entradas persistem para sempre; não é backup de edições não preparadas.",
+        "es": "No supongas que toda referencia tiene reflog o entradas persisten para siempre; no es copia de seguridad de ediciones no preparadas."
+      },
+      "expected_state": {
+        "en": "Displays recorded ref movements and associated commit IDs where logs exist; entries can expire.",
+        "pt-BR": "Exibe movimentos registrados e IDs de commits associados onde logs existem; entradas podem expirar.",
+        "es": "Muestra movimientos registrados e IDs de commits asociados donde existen logs; entradas pueden expirar."
+      },
+      "effect_notes": {
+        "en": "Shown inspection does not change files, index, refs, objects or remote; logs belong to the local repository.",
+        "pt-BR": "Inspeção mostrada não altera arquivos, index, referências, objetos ou remoto; logs pertencem ao repositório local.",
+        "es": "Inspección mostrada no cambia archivos, index, referencias, objetos ni remoto; logs pertenecen al repositorio local."
+      },
+      "common_errors": {
+        "en": "Assuming HEAD@{1} always identifies the desired commit or another clone has identical reflog entries.",
+        "pt-BR": "Presumir que HEAD@{1} sempre identifica commit desejado ou outro clone tem entradas idênticas.",
+        "es": "Suponer que HEAD@{1} siempre identifica commit deseado u otro clon tiene entradas idénticas."
+      },
+      "alternatives": {
+        "en": "Inspect saved branch names, tags or backups first when available.",
+        "pt-BR": "Inspecione nomes de branches, tags ou backups salvos primeiro quando disponíveis.",
+        "es": "Inspecciona nombres de ramas, etiquetas o copias guardadas primero cuando estén disponibles."
+      },
+      "recovery": {
+        "en": "Verify the candidate with git show and create a recovery branch at the exact ID if available. Do not reset directly to a guessed reflog position.",
+        "pt-BR": "Verifique candidato com git show e crie branch de recuperação no ID exato se disponível. Não redefina diretamente para posição presumida de reflog.",
+        "es": "Verifica candidato con git show y crea rama de recuperación en ID exacto si disponible. No restablezcas directamente a posición supuesta de reflog."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect status, selected refs and fictional identity. Save the original tip and any valuable uncommitted work separately.",
+        "pt-BR": "Use repositório próprio descartável; inspecione status, referências selecionadas e identidade fictícia. Salve ponta original e trabalho não registrado valioso separadamente.",
+        "es": "Usa repositorio propio desechable; inspecciona estado, referencias seleccionadas e identidad ficticia. Guarda punta original y trabajo valioso sin confirmar por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git reflog",
+          "context": {
+            "en": "Inspect recent local HEAD movements after a practice reset.",
+            "pt-BR": "Inspecione movimentos locais recentes de HEAD após reset de prática.",
+            "es": "Inspecciona movimientos locales recientes de HEAD tras reset de práctica."
+          }
+        },
+        "professional": {
+          "command": "git reflog show main",
+          "context": {
+            "en": "Investigate previous tips of the lab main before choosing a recovery branch.",
+            "pt-BR": "Investigue pontas anteriores da main do laboratório antes de escolher branch de recuperação.",
+            "es": "Investiga puntas anteriores de main del laboratorio antes de elegir rama de recuperación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only inspection only; reflog output may contain private messages and identities. Recovery is not guaranteed.",
+          "pt-BR": "Somente inspeção de leitura; saída de reflog pode conter mensagens e identidades privadas. Recuperação não é garantida.",
+          "es": "Solo inspección de lectura; salida de reflog puede contener mensajes e identidades privadas. Recuperación no garantizada."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/05-reflog"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-reflog"
+      ]
+    },
+    {
+      "id": "git-cherry-pick",
+      "command": "git cherry-pick",
+      "kind": "native-command",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "integrate-changes",
+        "recover-work"
+      ],
+      "syntax": "git cherry-pick FIX_ID",
+      "purpose": {
+        "en": "Apply the changes introduced by a selected commit to the current branch, ordinarily creating a new commit.",
+        "pt-BR": "Aplicar mudanças introduzidas por commit selecionado à branch atual, normalmente criando novo commit.",
+        "es": "Aplicar cambios introducidos por commit seleccionado a rama actual, normalmente creando nuevo commit."
+      },
+      "options": {
+        "en": "-x records the source commit ID in suitable successful commit messages; --no-commit prepares changes without recording a commit. Merge commits need a mainline parent choice.",
+        "pt-BR": "-x registra ID de origem em mensagens de commit bem-sucedidas adequadas; --no-commit prepara mudanças sem commit. Merges exigem escolha de pai principal.",
+        "es": "-x registra ID de origen en mensajes adecuados de commits exitosos; --no-commit prepara cambios sin confirmar. Merges requieren elegir padre principal."
+      },
+      "when_to_use": {
+        "en": "When transferring a reviewed independent correction without integrating the entire source branch.",
+        "pt-BR": "Ao transferir correção independente revisada sem integrar toda branch de origem.",
+        "es": "Al transferir corrección independiente revisada sin integrar toda rama de origen."
+      },
+      "when_to_avoid": {
+        "en": "Avoid selecting commits without checking prerequisites or duplicating changes already integrated.",
+        "pt-BR": "Evite selecionar commits sem conferir dependências ou duplicar mudanças já integradas.",
+        "es": "Evita seleccionar commits sin comprobar dependencias o duplicar cambios ya integrados."
+      },
+      "expected_state": {
+        "en": "Ordinary success creates a new commit based on current HEAD, typically with a different ID; conflicts or empty changes may pause or require a decision.",
+        "pt-BR": "Sucesso comum cria commit novo baseado em HEAD atual, tipicamente com ID diferente; conflitos ou mudanças vazias podem pausar ou exigir decisão.",
+        "es": "Éxito ordinario crea commit nuevo basado en HEAD actual, típicamente con ID distinto; conflictos o cambios vacíos pueden pausar o requerir decisión."
+      },
+      "effect_notes": {
+        "en": "May update working tree, index, objects, refs and sequencer state; source branch is not moved.",
+        "pt-BR": "Pode atualizar working tree, index, objetos, referências e estado de sequência; branch de origem não é movida.",
+        "es": "Puede actualizar working tree, index, objetos, referencias y estado de secuencia; rama de origen no se mueve."
+      },
+      "common_errors": {
+        "en": "Assuming cherry-pick retains source ancestry or automatically includes prerequisite commits.",
+        "pt-BR": "Presumir que cherry-pick mantém ancestralidade de origem ou inclui commits pré-requisitos automaticamente.",
+        "es": "Suponer que cherry-pick conserva ascendencia de origen o incluye commits previos necesarios automáticamente."
+      },
+      "alternatives": {
+        "en": "Use merge if all source ancestry should be integrated; use a manually reviewed correction if the change requires adaptation.",
+        "pt-BR": "Use merge se toda ancestralidade de origem deve ser integrada; use correção revisada manualmente se mudança exige adaptação.",
+        "es": "Usa merge si debe integrarse toda ascendencia de origen; usa corrección revisada manualmente si cambio requiere adaptación."
+      },
+      "recovery": {
+        "en": "If the operation pauses, inspect status and use its matching --continue after reviewed resolution, or --abort after preserving desired edits. For a completed operation, assess a new corrective commit rather than rewriting shared history.",
+        "pt-BR": "Se operação pausar, inspecione status e use --continue correspondente após resolução revisada, ou --abort após preservar edições desejadas. Para operação concluída, avalie novo commit corretivo em vez de reescrever histórico compartilhado.",
+        "es": "Si operación pausa, inspecciona estado y usa --continue correspondiente tras resolución revisada, o --abort tras conservar ediciones deseadas. Para operación finalizada, evalúa nuevo commit correctivo en vez de reescribir historial compartido."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect status, selected refs and fictional identity. Save the original tip and any valuable uncommitted work separately.",
+        "pt-BR": "Use repositório próprio descartável; inspecione status, referências selecionadas e identidade fictícia. Salve ponta original e trabalho não registrado valioso separadamente.",
+        "es": "Usa repositorio propio desechable; inspecciona estado, referencias seleccionadas e identidad ficticia. Guarda punta original y trabajo valioso sin confirmar por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git cherry-pick FIX_ID",
+          "context": {
+            "en": "Replace FIX_ID with the reviewed ID of an ordinary commit from another local practice branch.",
+            "pt-BR": "Substitua FIX_ID pelo ID revisado de commit comum de outra branch local de prática.",
+            "es": "Sustituye FIX_ID por ID revisado de commit ordinario de otra rama local de práctica."
+          }
+        },
+        "professional": {
+          "command": "git cherry-pick -x FIX_ID",
+          "context": {
+            "en": "In a local backport simulation, substitute a verified independent fix ID and test the result.",
+            "pt-BR": "Em simulação local de backport, substitua ID de correção independente verificada e teste resultado.",
+            "es": "En simulación local de backport, sustituye ID de corrección independiente verificada y prueba resultado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review source diff, target context and dependencies; replay can conflict or introduce duplicate behavior.",
+          "pt-BR": "Revise diff de origem, contexto de destino e dependências; reaplicação pode conflitar ou introduzir comportamento duplicado.",
+          "es": "Revisa diff de origen, contexto de destino y dependencias; reaplicación puede causar conflictos o introducir comportamiento duplicado."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/07-cherry-pick"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-cherry-pick"
+      ]
+    },
+    {
+      "id": "git-stash-push",
+      "command": "git stash push",
+      "kind": "subcommand",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "shelve-work",
+        "switch-context"
+      ],
+      "syntax": "git stash push -m \"draft notes\"",
+      "purpose": {
+        "en": "Save selected local modifications in a stash entry and roll the corresponding working and index changes back toward HEAD.",
+        "pt-BR": "Salvar modificações locais selecionadas em entrada de stash e reverter mudanças correspondentes de trabalho e index em direção a HEAD.",
+        "es": "Guardar modificaciones locales seleccionadas en entrada de stash y revertir cambios correspondientes de trabajo e index hacia HEAD."
+      },
+      "options": {
+        "en": "-m names the entry; -u includes untracked files but not ignored files; -a also includes ignored files and is not used here. --keep-index retains staged changes in the working state.",
+        "pt-BR": "-m nomeia entrada; -u inclui arquivos não rastreados mas não ignorados; -a inclui ignorados também e não é usado aqui. --keep-index mantém mudanças preparadas no estado de trabalho.",
+        "es": "-m nombra entrada; -u incluye archivos no rastreados pero no ignorados; -a incluye también ignorados y no se usa aquí. --keep-index conserva cambios preparados en estado de trabajo."
+      },
+      "when_to_use": {
+        "en": "When temporarily setting aside unfinished work in a controlled local context.",
+        "pt-BR": "Ao guardar temporariamente trabalho inacabado em contexto local controlado.",
+        "es": "Al guardar temporalmente trabajo inacabado en contexto local controlado."
+      },
+      "when_to_avoid": {
+        "en": "Avoid relying on stash as the only copy of important work or stashing sensitive files.",
+        "pt-BR": "Evite depender do stash como única cópia de trabalho importante ou guardar arquivos sensíveis.",
+        "es": "Evita depender de stash como única copia de trabajo importante o guardar archivos sensibles."
+      },
+      "expected_state": {
+        "en": "If matching changes exist, a stash entry is recorded; selected changes are removed from working state as options allow. Untracked files remain unless included.",
+        "pt-BR": "Se mudanças correspondentes existem, entrada de stash é registrada; mudanças selecionadas são removidas do estado de trabalho conforme opções. Arquivos não rastreados permanecem salvo inclusão.",
+        "es": "Si existen cambios correspondientes, se registra entrada de stash; cambios seleccionados se retiran del estado de trabajo según opciones. Archivos no rastreados permanecen salvo inclusión."
+      },
+      "effect_notes": {
+        "en": "May create local commit objects and update refs/stash and its reflog, index and working files; current branch tip and remote stay unchanged.",
+        "pt-BR": "Pode criar objetos de commit locais e atualizar refs/stash e reflog, index e arquivos; ponta atual e remoto ficam inalterados.",
+        "es": "Puede crear objetos de commit locales y actualizar refs/stash y reflog, index y archivos; punta actual y remoto permanecen sin cambios."
+      },
+      "common_errors": {
+        "en": "Assuming a default stash includes untracked and ignored files, or that a clean status proves every desired file was saved.",
+        "pt-BR": "Presumir stash padrão inclui arquivos não rastreados e ignorados ou status limpo prova que todo arquivo desejado foi salvo.",
+        "es": "Suponer que stash predeterminado incluye archivos no rastreados e ignorados o estado limpio prueba que todo archivo deseado se guardó."
+      },
+      "alternatives": {
+        "en": "Use a private temporary branch with a reviewed commit for work that needs a more durable named reference.",
+        "pt-BR": "Use branch temporária privada com commit revisado para trabalho que exige referência nomeada mais durável.",
+        "es": "Usa rama temporal privada con commit revisado para trabajo que requiere referencia nombrada más duradera."
+      },
+      "recovery": {
+        "en": "Inspect git stash list and git stash show; use apply on the verified entry before dropping it. Missing or expired objects may not be recoverable.",
+        "pt-BR": "Inspecione git stash list e git stash show; use apply na entrada verificada antes de removê-la. Objetos ausentes ou expirados podem não ser recuperáveis.",
+        "es": "Inspecciona git stash list y git stash show; usa apply en entrada verificada antes de quitarla. Objetos ausentes o expirados pueden no ser recuperables."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit; review status, stash list and the intended entry. Preserve valuable work separately.",
+        "pt-BR": "Use repositório próprio descartável com commit existente; revise status, lista de stash e entrada pretendida. Preserve trabalho valioso separadamente.",
+        "es": "Usa repositorio propio desechable con commit existente; revisa estado, lista de stash y entrada prevista. Conserva trabajo valioso por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git stash push -m \"draft notes\"",
+          "context": {
+            "en": "Save tracked practice edits temporarily.",
+            "pt-BR": "Guarde edições rastreadas de prática temporariamente.",
+            "es": "Guarda ediciones rastreadas de práctica temporalmente."
+          }
+        },
+        "professional": {
+          "command": "git stash push -u -m \"review draft\"",
+          "context": {
+            "en": "After checking for sensitive files, also include an intended untracked fictional draft.",
+            "pt-BR": "Após conferir arquivos sensíveis, inclua também rascunho fictício não rastreado pretendido.",
+            "es": "Tras comprobar archivos sensibles, incluye también borrador ficticio no rastreado previsto."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Stash is local temporary storage, not a backup. Applying can conflict; review status and preserve valuable work before changing state.",
+          "pt-BR": "Stash é armazenamento temporário local, não backup. Aplicar pode gerar conflitos; revise status e preserve trabalho valioso antes de alterar estado.",
+          "es": "Stash es almacenamiento temporal local, no copia de seguridad. Aplicar puede generar conflictos; revisa estado y conserva trabajo valioso antes de cambiar estado."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/06-stash"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-stash"
+      ]
+    },
+    {
+      "id": "git-stash-apply",
+      "command": "git stash apply",
+      "kind": "subcommand",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "shelve-work",
+        "recover-work"
+      ],
+      "syntax": "git stash apply \"stash@{0}\"",
+      "purpose": {
+        "en": "Reapply a selected stash entry without removing it from the stash list.",
+        "pt-BR": "Reaplicar entrada de stash selecionada sem removê-la da lista de stash.",
+        "es": "Reaplicar entrada de stash seleccionada sin quitarla de la lista de stash."
+      },
+      "options": {
+        "en": "--index also attempts to restore the staged state; specify the verified entry explicitly. Without --index, the original staging split is not guaranteed.",
+        "pt-BR": "--index também tenta restaurar estado preparado; informe entrada verificada explicitamente. Sem --index, divisão original de staging não é garantida.",
+        "es": "--index también intenta restaurar estado preparado; indica entrada verificada explícitamente. Sin --index, división original de staging no garantizada."
+      },
+      "when_to_use": {
+        "en": "When restoring shelved work while retaining a copy of its stash entry for verification.",
+        "pt-BR": "Ao restaurar trabalho guardado mantendo cópia da entrada de stash para verificação.",
+        "es": "Al restaurar trabajo guardado conservando copia de entrada de stash para verificación."
+      },
+      "when_to_avoid": {
+        "en": "Avoid applying over valuable uncommitted changes or selecting an entry by position without verifying it.",
+        "pt-BR": "Evite aplicar sobre mudanças não registradas valiosas ou selecionar entrada por posição sem verificar.",
+        "es": "Evita aplicar sobre cambios valiosos sin confirmar o seleccionar entrada por posición sin verificar."
+      },
+      "expected_state": {
+        "en": "Applies saved changes to working state when possible; may conflict. The stash entry remains available after ordinary apply.",
+        "pt-BR": "Aplica mudanças salvas ao estado de trabalho quando possível; pode conflitar. Entrada de stash permanece disponível após apply comum.",
+        "es": "Aplica cambios guardados al estado de trabajo cuando es posible; puede causar conflictos. Entrada de stash sigue disponible tras apply ordinario."
+      },
+      "effect_notes": {
+        "en": "May update working tree and index and conflict metadata; stash ref is not dropped and current branch tip is not advanced.",
+        "pt-BR": "Pode atualizar working tree, index e metadados de conflito; referência de stash não é removida e ponta da branch atual não avança.",
+        "es": "Puede actualizar working tree, index y metadatos de conflicto; referencia de stash no se elimina y punta de rama actual no avanza."
+      },
+      "common_errors": {
+        "en": "Assuming apply also drops the entry or that --index always restores the exact index despite conflicts.",
+        "pt-BR": "Presumir apply remove entrada ou --index sempre restaura index exato apesar de conflitos.",
+        "es": "Suponer que apply elimina entrada o que --index siempre restaura index exacto pese a conflictos."
+      },
+      "alternatives": {
+        "en": "Use pop only when successful application should also remove the stash entry; prefer apply while verifying recovered work.",
+        "pt-BR": "Use pop só quando aplicação bem-sucedida também deve remover entrada; prefira apply ao verificar trabalho recuperado.",
+        "es": "Usa pop solo cuando aplicación exitosa también debe quitar entrada; prefiere apply al verificar trabajo recuperado."
+      },
+      "recovery": {
+        "en": "If application conflicts, inspect unmerged paths and the retained stash; preserve resolution work before cleanup. There is no general stash abort; avoid blind reset or repeated application.",
+        "pt-BR": "Se aplicação conflitar, inspecione caminhos não mesclados e stash preservado; preserve resolução antes de limpar. Não há stash abort genérico; evite reset às cegas ou reaplicação repetida.",
+        "es": "Si aplicación entra en conflicto, inspecciona rutas no fusionadas y stash conservado; preserva resolución antes de limpiar. No existe stash abort general; evita reset a ciegas o aplicación repetida."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit; review status, stash list and the intended entry. Preserve valuable work separately.",
+        "pt-BR": "Use repositório próprio descartável com commit existente; revise status, lista de stash e entrada pretendida. Preserve trabalho valioso separadamente.",
+        "es": "Usa repositorio propio desechable con commit existente; revisa estado, lista de stash y entrada prevista. Conserva trabajo valioso por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git stash apply \"stash@{0}\"",
+          "context": {
+            "en": "Inspect list and show first, then apply the verified latest practice entry to a clean checkout.",
+            "pt-BR": "Inspecione list e show antes, depois aplique última entrada de prática verificada em checkout limpo.",
+            "es": "Inspecciona list y show primero, luego aplica última entrada de práctica verificada en checkout limpio."
+          }
+        },
+        "professional": {
+          "command": "git stash apply --index \"stash@{0}\"",
+          "context": {
+            "en": "On a clean compatible lab branch, attempt to restore both staged and unstaged work and inspect their differences.",
+            "pt-BR": "Em branch de laboratório limpa compatível, tente restaurar trabalho preparado e não preparado e inspecione diferenças.",
+            "es": "En rama de laboratorio limpia compatible, intenta restaurar trabajo preparado y no preparado e inspecciona diferencias."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Stash is local temporary storage, not a backup. Applying can conflict; review status and preserve valuable work before changing state.",
+          "pt-BR": "Stash é armazenamento temporário local, não backup. Aplicar pode gerar conflitos; revise status e preserve trabalho valioso antes de alterar estado.",
+          "es": "Stash es almacenamiento temporal local, no copia de seguridad. Aplicar puede generar conflictos; revisa estado y conserva trabajo valioso antes de cambiar estado."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/06-stash"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-stash"
+      ]
+    },
+    {
+      "id": "git-stash-pop",
+      "command": "git stash pop",
+      "kind": "subcommand",
+      "category": "09-recovery-and-stash",
+      "level": "intermediate",
+      "intent_tags": [
+        "shelve-work",
+        "recover-work"
+      ],
+      "syntax": "git stash pop \"stash@{0}\"",
+      "purpose": {
+        "en": "Reapply a stash entry and remove it from the stash list only when application succeeds.",
+        "pt-BR": "Reaplicar entrada de stash e removê-la da lista apenas quando aplicação tiver sucesso.",
+        "es": "Reaplicar entrada de stash y quitarla de la lista solo cuando aplicación tenga éxito."
+      },
+      "options": {
+        "en": "--index attempts to restore staged state too; specify the verified entry. git stash drop removes an entry without applying and requires separate review.",
+        "pt-BR": "--index tenta restaurar estado preparado também; informe entrada verificada. git stash drop remove entrada sem aplicar e exige revisão separada.",
+        "es": "--index intenta restaurar estado preparado también; indica entrada verificada. git stash drop elimina entrada sin aplicar y requiere revisión separada."
+      },
+      "when_to_use": {
+        "en": "When resuming a verified temporary change and the stash copy is no longer needed after success.",
+        "pt-BR": "Ao retomar mudança temporária verificada cuja cópia de stash não é mais necessária após sucesso.",
+        "es": "Al retomar cambio temporal verificado cuya copia de stash ya no se necesita tras éxito."
+      },
+      "when_to_avoid": {
+        "en": "Avoid when the stash is the only copy of important work or the target already has unpreserved changes.",
+        "pt-BR": "Evite quando stash é única cópia de trabalho importante ou destino já tem mudanças não preservadas.",
+        "es": "Evita cuando stash es única copia de trabajo importante o destino ya tiene cambios no preservados."
+      },
+      "expected_state": {
+        "en": "Successful application removes the selected entry; a conflict retains it for further review, with possible partial changes in the checkout.",
+        "pt-BR": "Aplicação bem-sucedida remove entrada selecionada; conflito a preserva para revisão, com possíveis mudanças parciais no checkout.",
+        "es": "Aplicación exitosa quita entrada seleccionada; conflicto la conserva para revisión, con posibles cambios parciales en checkout."
+      },
+      "effect_notes": {
+        "en": "May change working tree, index, refs/stash and reflog; branch tip and remote are unchanged by normal operation.",
+        "pt-BR": "Pode alterar working tree, index, refs/stash e reflog; ponta da branch e remoto não mudam na operação normal.",
+        "es": "Puede cambiar working tree, index, refs/stash y reflog; punta de rama y remoto no cambian en operación normal."
+      },
+      "common_errors": {
+        "en": "Assuming the stash is removed after a conflict or that successful pop leaves a reusable entry at the same position.",
+        "pt-BR": "Presumir stash removido após conflito ou pop bem-sucedido deixa entrada reutilizável na mesma posição.",
+        "es": "Suponer stash eliminado tras conflicto o pop exitoso deja entrada reutilizable en misma posición."
+      },
+      "alternatives": {
+        "en": "Prefer apply, inspect the restored changes and keep the entry until satisfied; only then consider a verified drop.",
+        "pt-BR": "Prefira apply, inspecione mudanças restauradas e mantenha entrada até estar satisfeito; só então considere drop verificado.",
+        "es": "Prefiere apply, inspecciona cambios restaurados y conserva entrada hasta estar satisfecho; solo entonces considera drop verificado."
+      },
+      "recovery": {
+        "en": "If conflict occurs, verify the entry remains and inspect unmerged paths. After success, preserve restored work promptly; recovery of a removed entry from remaining objects is not guaranteed.",
+        "pt-BR": "Se conflito ocorrer, confirme entrada preservada e inspecione caminhos não mesclados. Após sucesso, preserve trabalho restaurado prontamente; recuperação de entrada removida por objetos restantes não é garantida.",
+        "es": "Si ocurre conflicto, verifica entrada conservada e inspecciona rutas no fusionadas. Tras éxito, conserva trabajo restaurado pronto; recuperación de entrada eliminada desde objetos restantes no garantizada."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing commit; review status, stash list and the intended entry. Preserve valuable work separately.",
+        "pt-BR": "Use repositório próprio descartável com commit existente; revise status, lista de stash e entrada pretendida. Preserve trabalho valioso separadamente.",
+        "es": "Usa repositorio propio desechable con commit existente; revisa estado, lista de stash y entrada prevista. Conserva trabajo valioso por separado."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Trusted local configuration and hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Configuração local confiável e hooks podem afetar execução.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Configuración local confiable y hooks pueden afectar ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git stash pop \"stash@{0}\"",
+          "context": {
+            "en": "After verifying the disposable stash and clean target, resume work and inspect both status and stash list.",
+            "pt-BR": "Após verificar stash descartável e destino limpo, retome trabalho e inspecione status e lista de stash.",
+            "es": "Tras verificar stash desechable y destino limpio, reanuda trabajo e inspecciona estado y lista de stash."
+          }
+        },
+        "professional": {
+          "command": "git stash pop --index \"stash@{0}\"",
+          "context": {
+            "en": "Restore a reviewed temporary lab entry including its staging state, and confirm the result before continuing.",
+            "pt-BR": "Restaure entrada temporária revisada de laboratório incluindo estado de staging e confirme resultado antes de continuar.",
+            "es": "Restaura entrada temporal revisada de laboratorio incluyendo estado de staging y confirma resultado antes de continuar."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Pop can remove the named access to the saved work on success. Keep an independent copy or prefer apply if uncertain.",
+          "pt-BR": "Pop pode remover acesso nomeado ao trabalho salvo em sucesso. Mantenha cópia independente ou prefira apply em dúvida.",
+          "es": "Pop puede quitar acceso nombrado al trabajo guardado si tiene éxito. Conserva copia independiente o prefiere apply ante dudas."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety",
+        "history-and-recovery/06-stash"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-stash"
+      ]
+    }
+  ]
+}
