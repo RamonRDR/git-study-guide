@@ -212,7 +212,10 @@
     {
       "slug": "practical-projects",
       "chapters": [
-        "01-my-first-repository"
+        "01-my-first-repository",
+        "02-two-developers-one-project",
+        "03-merge-conflict-laboratory",
+        "04-the-lost-commit"
       ]
     },
     {

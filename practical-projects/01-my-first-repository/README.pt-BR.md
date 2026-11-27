@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Módulo anterior](../../command-reference/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../exercises/README.pt-BR.md)
+[Módulo anterior](../../command-reference/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-two-developers-one-project/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** iniciante · **Tempo estimado:** 30 min
@@ -118,5 +118,5 @@ Se estado divergir, pare e inspecione status, diff e diff preparado. Preserve co
 ---
 
 <!-- navigation-footer -->
-[Módulo anterior](../../command-reference/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../exercises/README.pt-BR.md)
+[Módulo anterior](../../command-reference/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../02-two-developers-one-project/README.pt-BR.md)
 <!-- /navigation-footer -->

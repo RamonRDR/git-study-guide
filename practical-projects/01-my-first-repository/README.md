@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous module](../../command-reference/README.md) · [Index](../README.md) · [Next module](../../exercises/README.md)
+[Previous module](../../command-reference/README.md) · [Index](../README.md) · [Next](../02-two-developers-one-project/README.md)
 <!-- /navigation -->
 
 **Level:** beginner · **Estimated time:** 30 min
@@ -118,5 +118,5 @@ If the state differs, stop and inspect status, diff and staged diff. Preserve an
 ---
 
 <!-- navigation-footer -->
-[Previous module](../../command-reference/README.md) · [Index](../README.md) · [Next module](../../exercises/README.md)
+[Previous module](../../command-reference/README.md) · [Index](../README.md) · [Next](../02-two-developers-one-project/README.md)
 <!-- /navigation-footer -->

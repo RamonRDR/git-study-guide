@@ -12,6 +12,9 @@ Los proyectos prácticos usan repositorios locales desechables, comprobaciones e
 
 <!-- chapters -->
 - [Mi primer repositorio](01-my-first-repository/README.es.md)
+- [Dos desarrolladores, un proyecto](02-two-developers-one-project/README.es.md)
+- [Laboratorio de conflictos de merge](03-merge-conflict-laboratory/README.es.md)
+- [El commit perdido](04-the-lost-commit/README.es.md)
 <!-- /chapters -->
 
 ---

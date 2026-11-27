@@ -12,6 +12,9 @@ Projetos práticos usam repositórios locais descartáveis, verificações expl�
 
 <!-- chapters -->
 - [Meu primeiro repositório](01-my-first-repository/README.pt-BR.md)
+- [Dois desenvolvedores, um projeto](02-two-developers-one-project/README.pt-BR.md)
+- [Laboratório de conflitos de merge](03-merge-conflict-laboratory/README.pt-BR.md)
+- [O commit perdido](04-the-lost-commit/README.pt-BR.md)
 <!-- /chapters -->
 
 ---

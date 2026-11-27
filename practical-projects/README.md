@@ -12,6 +12,9 @@ Practice projects use disposable local repositories, explicit state checks and p
 
 <!-- chapters -->
 - [My First Repository](01-my-first-repository/README.md)
+- [Two Developers, One Project](02-two-developers-one-project/README.md)
+- [Merge Conflict Laboratory](03-merge-conflict-laboratory/README.md)
+- [The Lost Commit](04-the-lost-commit/README.md)
 <!-- /chapters -->
 
 ---

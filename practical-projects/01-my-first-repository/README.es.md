@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Módulo anterior](../../command-reference/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../exercises/README.es.md)
+[Módulo anterior](../../command-reference/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-two-developers-one-project/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** principiante · **Tiempo estimado:** 30 min
@@ -118,5 +118,5 @@ Si el estado difiere, detente e inspecciona status, diff y diff preparado. Conse
 ---
 
 <!-- navigation-footer -->
-[Módulo anterior](../../command-reference/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../exercises/README.es.md)
+[Módulo anterior](../../command-reference/README.es.md) · [Índice](../README.es.md) · [Siguiente](../02-two-developers-one-project/README.es.md)
 <!-- /navigation-footer -->
