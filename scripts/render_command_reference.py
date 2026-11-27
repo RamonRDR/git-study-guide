@@ -8,8 +8,12 @@ from collections import Counter, defaultdict
 from pathlib import PurePosixPath
 from posixpath import relpath
 
-import command_catalog as cc
-from validate import ROOT, load_modules, navigation_entries, navigation_line, tracked_paths
+if __package__:
+    from . import command_catalog as cc
+    from .validate import ROOT, load_modules, navigation_entries, navigation_line, tracked_paths
+else:
+    import command_catalog as cc
+    from validate import ROOT, load_modules, navigation_entries, navigation_line, tracked_paths
 
 LABELS = {
     "en": {

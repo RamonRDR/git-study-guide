@@ -8,6 +8,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import command_catalog as cc
 import render_command_reference as render
+from scripts import validate as validator
 
 CATEGORY = "01-setup-and-configuration"
 CHAPTER = "basic-commands/01-init-config-help"
@@ -26,6 +27,12 @@ def entry():
     return value
 
 class CommandEntryTests(unittest.TestCase):
+    def test_catalog_check_registered(self):
+        self.assertIn("command-catalog", validator.CHECKS)
+        with tempfile.TemporaryDirectory() as directory:
+            errors = validator.check_command_catalog(Path(directory), set())
+            self.assertTrue(any(error.startswith("Invalid command catalog:") for error in errors))
+
     def validate(self, value):
         cc.validate_entry(value, CATEGORY, {CHAPTER})
 

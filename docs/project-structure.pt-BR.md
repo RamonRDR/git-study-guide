@@ -6,5 +6,7 @@ A raiz contém governança, licença MIT e 18 índices estáveis de módulos. do
 
 Capítulos usam NN-topic/README.md, README.pt-BR.md e README.es.md. Registrar slugs em scripts/curriculum.json em ordem numérica e vinculá-los no bloco chapters. Cada índice de módulo e capítulo tem navegação localizada idêntica nos blocos navigation e navigation-footer, o primeiro após título e seletor de idioma e o segundo no fim. Usar anterior/índice/próximo nessa ordem. Primeiro e último capítulos apontam aos índices dos módulos adjacentes (inclusive reservados), com rótulos Módulo anterior/Próximo módulo. Só direções ausentes nos extremos do roadmap usam travessão sem link. Índices dos módulos apontam a índices adjacentes e à trilha. As funções navigation_entries e navigation_line do validador definem destinos e rótulos canônicos. Manter caminhos estáveis e não criar diretórios vazios.
 
+O módulo 15 usa um catalog.json canônico por categoria, mais registros de categorias e intenções em scripts/. As páginas Markdown trilíngues são geradas desses registros com scripts/render_command_reference.py e o registro de navegação existente. Edite JSON em vez das páginas geradas; consulte [ADR 0005](adr/0005-command-catalog-architecture.pt-BR.md). É piloto interno, não contrato final de integração.
+
 - [Trilha](learning-path.pt-BR.md)
 - [Automação de qualidade](quality-automation.pt-BR.md)
