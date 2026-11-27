@@ -134,7 +134,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-version"
+          ],
           "execution": "unverified"
         },
         {
@@ -160,7 +162,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-version",
+            "git-help"
+          ],
           "execution": "unverified"
         },
         {
@@ -186,7 +191,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-init",
+            "git-config-local",
+            "git-config-global"
+          ],
           "execution": "unverified"
         },
         {
@@ -238,7 +247,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-commit",
+            "git-commit-all",
+            "git-commit-amend",
+            "git-commit-fixup"
+          ],
           "execution": "unverified"
         }
       ]
@@ -376,7 +390,20 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-init-bare",
+            "git-rev-parse-show-toplevel",
+            "git-log",
+            "git-log-graph",
+            "git-log-path",
+            "git-show",
+            "git-diff",
+            "git-diff-cached",
+            "git-diff-two-revisions",
+            "git-diff-stat",
+            "git-diff-three-dot",
+            "git-range-diff"
+          ],
           "execution": "unverified"
         },
         {
@@ -428,7 +455,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-status-porcelain",
+            "git-ls-files"
+          ],
           "execution": "unverified"
         }
       ]
@@ -471,7 +501,14 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-help",
+            "git-init",
+            "git-config-local",
+            "git-config-global",
+            "git-config-show-origin",
+            "git-config-get"
+          ],
           "execution": "unverified"
         },
         {
@@ -497,7 +534,17 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-status",
+            "git-add",
+            "git-add-all",
+            "git-add-update",
+            "git-add-patch",
+            "git-commit",
+            "git-commit-all",
+            "git-commit-amend",
+            "git-commit-fixup"
+          ],
           "execution": "unverified"
         },
         {
@@ -523,7 +570,21 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-log",
+            "git-log-graph",
+            "git-log-path",
+            "git-show",
+            "git-diff",
+            "git-diff-cached",
+            "git-diff-two-revisions",
+            "git-diff-stat",
+            "git-diff-three-dot",
+            "git-range-diff",
+            "git-log-pickaxe-string",
+            "git-log-pickaxe-regex",
+            "git-log-follow"
+          ],
           "execution": "unverified"
         },
         {
@@ -549,7 +610,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-rm",
+            "git-mv"
+          ],
           "execution": "unverified"
         },
         {
@@ -575,7 +639,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-check-ignore",
+            "git-rm-cached",
+            "git-diff-check"
+          ],
           "execution": "unverified"
         }
       ]
@@ -618,7 +686,13 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-list",
+            "git-branch-create",
+            "git-branch-show-current",
+            "git-switch",
+            "git-switch-create"
+          ],
           "execution": "unverified"
         },
         {
@@ -644,7 +718,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-log-graph",
+            "git-diff-two-revisions",
+            "git-diff-three-dot"
+          ],
           "execution": "unverified"
         },
         {
@@ -670,7 +748,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-switch",
+            "git-branch-rename"
+          ],
           "execution": "unverified"
         },
         {
@@ -696,7 +777,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-delete",
+            "git-branch-merged"
+          ],
           "execution": "unverified"
         },
         {
@@ -722,7 +806,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-show-current",
+            "git-switch-detach"
+          ],
           "execution": "unverified"
         }
       ]
@@ -765,7 +852,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge"
+          ],
           "execution": "unverified"
         },
         {
@@ -791,7 +880,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge-ff-only"
+          ],
           "execution": "unverified"
         },
         {
@@ -817,7 +908,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge",
+            "git-merge-no-ff"
+          ],
           "execution": "unverified"
         },
         {
@@ -843,7 +937,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge",
+            "git-merge-abort",
+            "git-merge-continue",
+            "git-ls-files-unmerged"
+          ],
           "execution": "unverified"
         },
         {
@@ -869,7 +968,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge-squash"
+          ],
           "execution": "unverified"
         },
         {
@@ -895,7 +996,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-rebase",
+            "git-rebase-continue",
+            "git-rebase-abort"
+          ],
           "execution": "unverified"
         },
         {
@@ -921,7 +1026,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-commit-fixup",
+            "git-range-diff",
+            "git-rebase-interactive",
+            "git-rebase-continue"
+          ],
           "execution": "unverified"
         }
       ]
@@ -964,7 +1074,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-init-bare",
+            "git-rev-parse-is-bare",
+            "git-clone",
+            "git-remote-add"
+          ],
           "execution": "unverified"
         },
         {
@@ -990,7 +1105,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-upstream",
+            "git-clone",
+            "git-fetch"
+          ],
           "execution": "unverified"
         },
         {
@@ -1016,7 +1135,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-upstream",
+            "git-pull-ff-only",
+            "git-push",
+            "git-push-force-with-lease"
+          ],
           "execution": "unverified"
         },
         {
@@ -1042,7 +1166,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-push",
+            "git-push-delete",
+            "git-push-force-with-lease"
+          ],
           "execution": "unverified"
         },
         {
@@ -1068,7 +1196,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-config-get"
+          ],
           "execution": "unverified"
         }
       ]
@@ -1111,7 +1241,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-clean-dry-run",
+            "git-reset",
+            "git-revert",
+            "git-reflog",
+            "git-cherry-pick",
+            "git-stash-push",
+            "git-stash-apply",
+            "git-stash-pop"
+          ],
           "execution": "unverified"
         },
         {
@@ -1137,7 +1276,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-restore",
+            "git-restore-staged"
+          ],
           "execution": "unverified"
         },
         {
@@ -1163,7 +1305,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-reset"
+          ],
           "execution": "unverified"
         },
         {
@@ -1189,7 +1333,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-revert"
+          ],
           "execution": "unverified"
         },
         {
@@ -1215,7 +1361,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-reflog"
+          ],
           "execution": "unverified"
         },
         {
@@ -1241,7 +1389,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-stash-push",
+            "git-stash-apply",
+            "git-stash-pop"
+          ],
           "execution": "unverified"
         },
         {
@@ -1267,7 +1419,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-cherry-pick"
+          ],
           "execution": "unverified"
         },
         {
@@ -1293,7 +1447,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-commit-amend"
+          ],
           "execution": "unverified"
         }
       ]
@@ -1414,7 +1570,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-pr-create",
+            "gh-pr-view",
+            "gh-pr-checks"
+          ],
           "execution": "unverified"
         },
         {
@@ -1492,7 +1652,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-release-create"
+          ],
           "execution": "unverified"
         },
         {
@@ -1518,7 +1680,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-pr-create",
+            "gh-pr-view"
+          ],
           "execution": "unverified"
         }
       ]
@@ -1639,7 +1804,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "glab-mr-create",
+            "glab-mr-view"
+          ],
           "execution": "unverified"
         },
         {
@@ -1691,7 +1859,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "glab-ci-status"
+          ],
           "execution": "unverified"
         },
         {
@@ -1743,7 +1913,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "glab-mr-create",
+            "glab-mr-view"
+          ],
           "execution": "unverified"
         }
       ]
@@ -1838,7 +2011,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-run-view"
+          ],
           "execution": "unverified"
         },
         {
@@ -1864,7 +2039,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "glab-ci-status"
+          ],
           "execution": "unverified"
         },
         {
@@ -1994,7 +2171,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-pr-checks",
+            "gh-run-view"
+          ],
           "execution": "unverified"
         },
         {
@@ -2245,7 +2425,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-range-diff"
+          ],
           "execution": "unverified"
         },
         {
@@ -2349,7 +2531,13 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-tag",
+            "git-tag-annotated",
+            "git-tag-delete",
+            "git-tag-list",
+            "gh-release-create"
+          ],
           "execution": "unverified"
         },
         {
@@ -2496,7 +2684,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-credential-reject"
+          ],
           "execution": "unverified"
         },
         {
@@ -2522,7 +2712,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-config-global",
+            "git-config-show-origin"
+          ],
           "execution": "unverified"
         },
         {
@@ -2626,7 +2819,13 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-config-local",
+            "git-commit-sign",
+            "git-tag-sign",
+            "git-verify-commit",
+            "git-verify-tag"
+          ],
           "execution": "unverified"
         },
         {
@@ -2678,7 +2877,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-credential-reject"
+          ],
           "execution": "unverified"
         },
         {
@@ -2773,7 +2974,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-bisect"
+          ],
           "execution": "unverified"
         },
         {
@@ -2799,7 +3002,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-worktree-add"
+          ],
           "execution": "unverified"
         },
         {
@@ -2825,7 +3030,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-submodule-add",
+            "git-submodule-update"
+          ],
           "execution": "unverified"
         },
         {
@@ -2851,7 +3059,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-subtree-add"
+          ],
           "execution": "unverified"
         },
         {
@@ -2903,7 +3113,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-rerere"
+          ],
           "execution": "unverified"
         },
         {
@@ -2929,7 +3141,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-sparse-checkout-set"
+          ],
           "execution": "unverified"
         },
         {
@@ -2955,7 +3169,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-clone-filter"
+          ],
           "execution": "unverified"
         },
         {
@@ -2981,7 +3197,13 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-grep",
+            "git-blame",
+            "git-log-pickaxe-string",
+            "git-log-pickaxe-regex",
+            "git-log-follow"
+          ],
           "execution": "unverified"
         },
         {
@@ -3007,7 +3229,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-archive",
+            "git-bundle-create"
+          ],
           "execution": "unverified"
         },
         {
@@ -3076,7 +3301,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-rev-parse-git-dir",
+            "git-cat-file-type"
+          ],
           "execution": "unverified"
         },
         {
@@ -3102,7 +3330,12 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-show",
+            "git-cat-file-pretty",
+            "git-hash-object",
+            "git-ls-tree"
+          ],
           "execution": "unverified"
         },
         {
@@ -3128,7 +3361,14 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-tag",
+            "git-tag-annotated",
+            "git-tag-delete",
+            "git-tag-list",
+            "git-cat-file-pretty",
+            "git-rev-list"
+          ],
           "execution": "unverified"
         },
         {
@@ -3154,7 +3394,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-hash-object"
+          ],
           "execution": "unverified"
         },
         {
@@ -3180,7 +3422,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-show-ref",
+            "git-symbolic-ref-read",
+            "git-for-each-ref"
+          ],
           "execution": "unverified"
         },
         {
@@ -3206,7 +3452,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-ls-files-unmerged",
+            "git-ls-files-stage"
+          ],
           "execution": "unverified"
         },
         {
@@ -3232,7 +3481,10 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-count-objects",
+            "git-fsck"
+          ],
           "execution": "unverified"
         },
         {
@@ -3258,7 +3510,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-fsck",
+            "git-gc",
+            "git-maintenance-run"
+          ],
           "execution": "unverified"
         },
         {
@@ -3284,7 +3540,9 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-rev-list"
+          ],
           "execution": "unverified"
         },
         {
@@ -3310,7 +3568,11 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-cat-file-type",
+            "git-cat-file-pretty",
+            "git-for-each-ref"
+          ],
           "execution": "unverified"
         },
         {
@@ -3381,7 +3643,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-version",
+            "git-help",
+            "git-init",
+            "git-init-bare",
+            "git-config-local",
+            "git-config-global",
+            "git-config-show-origin",
+            "git-config-get"
+          ],
           "execution": "unverified"
         },
         {
@@ -3409,7 +3680,17 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-status",
+            "git-status-porcelain",
+            "git-rev-parse-show-toplevel",
+            "git-rev-parse-git-dir",
+            "git-rev-parse-is-bare",
+            "git-ls-files",
+            "git-check-ignore",
+            "git-show-ref",
+            "git-count-objects"
+          ],
           "execution": "unverified"
         },
         {
@@ -3437,7 +3718,18 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-add",
+            "git-add-all",
+            "git-add-update",
+            "git-add-patch",
+            "git-restore",
+            "git-restore-staged",
+            "git-rm",
+            "git-rm-cached",
+            "git-mv",
+            "git-clean-dry-run"
+          ],
           "execution": "unverified"
         },
         {
@@ -3465,7 +3757,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-commit",
+            "git-commit-all",
+            "git-commit-amend",
+            "git-commit-fixup",
+            "git-tag",
+            "git-tag-annotated",
+            "git-tag-delete",
+            "git-tag-list"
+          ],
           "execution": "unverified"
         },
         {
@@ -3493,7 +3794,18 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-log",
+            "git-log-graph",
+            "git-log-path",
+            "git-show",
+            "git-diff",
+            "git-diff-cached",
+            "git-diff-two-revisions",
+            "git-diff-stat",
+            "git-diff-three-dot",
+            "git-range-diff"
+          ],
           "execution": "unverified"
         },
         {
@@ -3521,7 +3833,18 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-branch-list",
+            "git-branch-create",
+            "git-branch-show-current",
+            "git-switch",
+            "git-switch-create",
+            "git-switch-detach",
+            "git-branch-rename",
+            "git-branch-delete",
+            "git-branch-merged",
+            "git-branch-upstream"
+          ],
           "execution": "unverified"
         },
         {
@@ -3549,7 +3872,18 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-merge",
+            "git-merge-ff-only",
+            "git-merge-no-ff",
+            "git-merge-squash",
+            "git-merge-abort",
+            "git-merge-continue",
+            "git-rebase",
+            "git-rebase-interactive",
+            "git-rebase-continue",
+            "git-rebase-abort"
+          ],
           "execution": "unverified"
         },
         {
@@ -3577,7 +3911,15 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-clone",
+            "git-remote-add",
+            "git-fetch",
+            "git-pull-ff-only",
+            "git-push",
+            "git-push-delete",
+            "git-push-force-with-lease"
+          ],
           "execution": "unverified"
         },
         {
@@ -3605,7 +3947,15 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-reset",
+            "git-revert",
+            "git-reflog",
+            "git-cherry-pick",
+            "git-stash-push",
+            "git-stash-apply",
+            "git-stash-pop"
+          ],
           "execution": "unverified"
         },
         {
@@ -3633,7 +3983,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-grep",
+            "git-blame",
+            "git-log-pickaxe-string",
+            "git-log-pickaxe-regex",
+            "git-log-follow",
+            "git-diff-check",
+            "git-ls-files-unmerged",
+            "git-bisect"
+          ],
           "execution": "unverified"
         },
         {
@@ -3661,7 +4020,17 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-worktree-add",
+            "git-submodule-add",
+            "git-submodule-update",
+            "git-subtree-add",
+            "git-rerere",
+            "git-sparse-checkout-set",
+            "git-clone-filter",
+            "git-archive",
+            "git-bundle-create"
+          ],
           "execution": "unverified"
         },
         {
@@ -3689,7 +4058,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-cat-file-type",
+            "git-cat-file-pretty",
+            "git-hash-object",
+            "git-ls-tree",
+            "git-rev-list",
+            "git-symbolic-ref-read",
+            "git-for-each-ref",
+            "git-ls-files-stage"
+          ],
           "execution": "unverified"
         },
         {
@@ -3717,7 +4095,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "git-commit-sign",
+            "git-tag-sign",
+            "git-verify-commit",
+            "git-verify-tag",
+            "git-credential-reject",
+            "git-fsck",
+            "git-gc",
+            "git-maintenance-run"
+          ],
           "execution": "unverified"
         },
         {
@@ -3745,7 +4132,16 @@
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
-          "command_ids": [],
+          "command_ids": [
+            "gh-pr-create",
+            "gh-pr-view",
+            "gh-pr-checks",
+            "gh-run-view",
+            "gh-release-create",
+            "glab-mr-create",
+            "glab-mr-view",
+            "glab-ci-status"
+          ],
           "execution": "unverified"
         }
       ]
