@@ -24,3 +24,5 @@ Consumidores validam schema/revisão, rejeitam versões major não suportadas e 
 
 - [Índice ADR](README.pt-BR.md)
 - [Contrato de integração](../specs/project-foundation/integration-contract.pt-BR.md)
+
+Sprint 18 propõe manifesto versionado e fixture de consumidor no contrato de integração; adoção opcional navegador adiada pelo ADR 0006. [ADR 0006](0006-browser-playground.pt-BR.md).

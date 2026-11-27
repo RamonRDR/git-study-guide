@@ -24,3 +24,5 @@ Consumers validate schema/revision, reject unsupported major versions and unsafe
 
 - [ADR index](README.md)
 - [Integration contract](../specs/project-foundation/integration-contract.md)
+
+Sprint 18 proposes the versioned manifest and consumer fixture in the integration contract; optional browser adoption is deferred by ADR 0006. [ADR 0006](0006-browser-playground.md).

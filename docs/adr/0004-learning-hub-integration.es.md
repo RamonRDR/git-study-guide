@@ -24,3 +24,5 @@ Consumidores validan esquema/revisión, rechazan versiones major no soportadas y
 
 - [Índice ADR](README.es.md)
 - [Contrato de integración](../specs/project-foundation/integration-contract.es.md)
+
+Sprint 18 propone manifiesto versionado y fixture consumidor en contrato integración; adopción opcional navegador aplazada por ADR 0006. [ADR 0006](0006-browser-playground.es.md).
