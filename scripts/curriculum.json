@@ -192,7 +192,22 @@
     },
     {
       "slug": "command-reference",
-      "chapters": []
+      "chapters": [
+        "01-setup-and-configuration",
+        "02-repository-inspection",
+        "03-working-tree-and-staging",
+        "04-commits-and-tags",
+        "05-history-and-comparison",
+        "06-branch-management",
+        "07-merge-rebase-and-conflicts",
+        "08-remotes-and-synchronization",
+        "09-recovery-and-stash",
+        "10-search-and-troubleshooting",
+        "11-advanced-git-operations",
+        "12-internals-and-plumbing",
+        "13-security-and-maintenance",
+        "14-platforms-and-automation"
+      ]
     },
     {
       "slug": "practical-projects",
