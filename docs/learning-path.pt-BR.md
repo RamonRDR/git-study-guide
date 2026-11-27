@@ -2,7 +2,7 @@
 
 [English](learning-path.md) · [Português](learning-path.pt-BR.md) · [Español](learning-path.es.md)
 
-Comece no módulo 00 e siga a ordem. Módulos 00–14 contêm aulas; módulo 15 oferece referência pesquisável com 120 entradas em 14 categorias. Módulo 16 contém oito projetos práticos (7h30 estimadas); módulo 17 é índice planejado. Não exige programação ou conta IA.
+Comece no módulo 00 e siga a ordem. Módulos 00–14 contêm aulas; módulo 15 oferece referência pesquisável com 120 entradas em 14 categorias. Módulo 16 contém oito projetos práticos (7h30 estimadas); módulo 17 contém 36 quizzes, 12 desafios, 24 perguntas de entrevista e três simulados. Não exige programação ou conta IA.
 
 - 00 [Primeiros passos](../getting-started/README.pt-BR.md)
 - 01 [História e fundamentos](../fundamentals/README.pt-BR.md)

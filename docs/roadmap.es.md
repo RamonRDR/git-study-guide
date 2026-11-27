@@ -27,7 +27,7 @@ Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriore
 | 16 | `practical-projects/` | Proyectos prácticos | Ocho proyectos integrados: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
 | 17 | `exercises/` | Desafíos y entrevistas | Ejercicios, quizzes, troubleshooting, desafíos, entrevistas, simulaciones profesionales y rúbricas de autoevaluación; mapear requisitos primero. |
 
-Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el primer commit; 01–03 profundizan. Módulo 04 enseña ramas locales; práctica de tracking/eliminación remota espera a 06. Explicar recuperación/abort seguros antes de merge o rebase riesgoso en 05, profundizar en 07. Enseñar manejo seguro de credenciales antes de 06 y mínimo privilegio antes de 10; módulo 12 consolida seguridad. Introducir conceptos de objetos/refs antes de tareas avanzadas. Referenciar enseñanza anterior antes de evaluar; los módulos 00–14 tienen lecciones; módulo 15 contiene referencia de comandos; módulo 16 contiene proyectos prácticos; módulo 17 está previsto.
+Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el primer commit; 01–03 profundizan. Módulo 04 enseña ramas locales; práctica de tracking/eliminación remota espera a 06. Explicar recuperación/abort seguros antes de merge o rebase riesgoso en 05, profundizar en 07. Enseñar manejo seguro de credenciales antes de 06 y mínimo privilegio antes de 10; módulo 12 consolida seguridad. Introducir conceptos de objetos/refs antes de tareas avanzadas. Referenciar enseñanza anterior antes de evaluar; los módulos 00–14 tienen lecciones; módulo 15 contiene referencia de comandos; módulo 16 contiene proyectos prácticos; módulo 17 contiene el piloto interno de evaluaciones.
 
 ## Ingeniería (20 sprints)
 
@@ -55,7 +55,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 18 | VI | Finalizar contrato, manifiestos, esquemas, fixtures del consumidor; evaluar playground opcional por separado |
 | 19 | VI | Identidad aportada por el mantenedor, README final, QA, entrega |
 
-Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–15 y Sprint complementaria 13.1 integradas mediante PR #1–17 (80%); Sprint 16 en curso; Sprints 17–19 previstas. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
+Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–16 y Sprint complementaria 13.1 integradas mediante PR #1–18 (85%); Sprint 17 en curso; Sprints 18–19 previstas. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
 
 ## Documentos relacionados
 

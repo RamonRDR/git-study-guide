@@ -12,3 +12,5 @@ O módulo 16 oferece oito projetos trilíngues de execução manual em practical
 
 - [Trilha](learning-path.pt-BR.md)
 - [Automação de qualidade](quality-automation.pt-BR.md)
+
+- [Schema do piloto de avaliações](assessment-pilot.pt-BR.md)

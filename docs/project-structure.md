@@ -12,3 +12,5 @@ Module 16 provides eight manually executed trilingual projects under practical-p
 
 - [Learning path](learning-path.md)
 - [Quality automation](quality-automation.md)
+
+- [Assessment pilot schema](assessment-pilot.md)

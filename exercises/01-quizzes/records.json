@@ -1,0 +1,2238 @@
+{
+  "schema_version": 1,
+  "kind": "quiz",
+  "records": [
+    {
+      "id": "quiz-snapshot",
+      "difficulty": "easy",
+      "prerequisites": [
+        "git-architecture/01-three-locations"
+      ],
+      "title": {
+        "en": "Commit snapshot",
+        "pt-BR": "Snapshot do commit",
+        "es": "Instantánea del commit"
+      },
+      "prompt": {
+        "en": "Stage A, edit to B without staging, then commit normally. Which version is recorded?",
+        "pt-BR": "Prepare A, edite para B sem preparar e faça commit comum. Qual versão é registrada?",
+        "es": "Prepara A, edita a B sin preparar y confirma normalmente. ¿Qué versión se registra?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Compare index and working file.",
+          "pt-BR": "Compare index e arquivo de trabalho.",
+          "es": "Compara index y archivo de trabajo."
+        }
+      ],
+      "explanation": {
+        "en": "The index contains A; B stays unstaged.",
+        "pt-BR": "O index contém A; B fica não preparado.",
+        "es": "El index contiene A; B queda sin preparar."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "A",
+            "pt-BR": "A",
+            "es": "A"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "B",
+            "pt-BR": "B",
+            "es": "B"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Both",
+            "pt-BR": "Ambas",
+            "es": "Ambas"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-add",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "title": {
+        "en": "Stage a file",
+        "pt-BR": "Preparar arquivo",
+        "es": "Preparar archivo"
+      },
+      "prompt": {
+        "en": "Which command stages notes.txt?",
+        "pt-BR": "Qual comando prepara notes.txt?",
+        "es": "¿Qué comando prepara notes.txt?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "The destination is the index.",
+          "pt-BR": "O destino é o index.",
+          "es": "El destino es el index."
+        }
+      ],
+      "explanation": {
+        "en": "Add copies the current content to the index.",
+        "pt-BR": "Add copia conteúdo atual para o index.",
+        "es": "Add copia contenido actual al index."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git add notes.txt",
+            "pt-BR": "git add notes.txt",
+            "es": "git add notes.txt"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git log",
+            "pt-BR": "git log",
+            "es": "git log"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git branch",
+            "pt-BR": "git branch",
+            "es": "git branch"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-diff",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/03-diff-log-show"
+      ],
+      "title": {
+        "en": "Staged diff",
+        "pt-BR": "Diff preparado",
+        "es": "Diff preparado"
+      },
+      "prompt": {
+        "en": "Which compares index to HEAD?",
+        "pt-BR": "Qual compara index com HEAD?",
+        "es": "¿Cuál compara index con HEAD?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Look for the staged comparison.",
+          "pt-BR": "Procure a comparação preparada.",
+          "es": "Busca comparación preparada."
+        }
+      ],
+      "explanation": {
+        "en": "Cached diff shows staged changes relative to HEAD.",
+        "pt-BR": "Diff cached mostra mudanças preparadas relativas a HEAD.",
+        "es": "Diff cached muestra cambios preparados relativos a HEAD."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git diff",
+            "pt-BR": "git diff",
+            "es": "git diff"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git diff --cached",
+            "pt-BR": "git diff --cached",
+            "es": "git diff --cached"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git log",
+            "pt-BR": "git log",
+            "es": "git log"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-config",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/01-init-config-help"
+      ],
+      "title": {
+        "en": "Identity scope",
+        "pt-BR": "Escopo de identidade",
+        "es": "Ámbito de identidad"
+      },
+      "prompt": {
+        "en": "Which config scope affects only the current repository?",
+        "pt-BR": "Qual escopo afeta só o repositório atual?",
+        "es": "¿Qué ámbito afecta solo al repositorio actual?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Avoid changing identity in other repositories.",
+          "pt-BR": "Evite alterar identidade de outros repos.",
+          "es": "Evita cambiar identidad de otros repos."
+        }
+      ],
+      "explanation": {
+        "en": "Local settings are repository-specific.",
+        "pt-BR": "Configurações locais são específicas do repo.",
+        "es": "Configuración local es específica del repo."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "--global",
+            "pt-BR": "--global",
+            "es": "--global"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "--system",
+            "pt-BR": "--system",
+            "es": "--system"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "--local",
+            "pt-BR": "--local",
+            "es": "--local"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-switch",
+      "difficulty": "easy",
+      "prerequisites": [
+        "branches/01-create-and-switch"
+      ],
+      "title": {
+        "en": "Create and switch",
+        "pt-BR": "Criar e trocar",
+        "es": "Crear y cambiar"
+      },
+      "prompt": {
+        "en": "Which creates and selects feat/notes?",
+        "pt-BR": "Qual cria e seleciona feat/notes?",
+        "es": "¿Cuál crea y selecciona feat/notes?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Look for both operations.",
+          "pt-BR": "Procure ambas operações.",
+          "es": "Busca ambas operaciones."
+        }
+      ],
+      "explanation": {
+        "en": "Branch creation alone does not select it.",
+        "pt-BR": "Só criar branch não a seleciona.",
+        "es": "Crear rama por sí solo no la selecciona."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git branch feat/notes",
+            "pt-BR": "git branch feat/notes",
+            "es": "git branch feat/notes"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git switch -c feat/notes",
+            "pt-BR": "git switch -c feat/notes",
+            "es": "git switch -c feat/notes"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git switch main",
+            "pt-BR": "git switch main",
+            "es": "git switch main"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-head",
+      "difficulty": "easy",
+      "prerequisites": [
+        "git-architecture/02-snapshots-head-and-refs"
+      ],
+      "title": {
+        "en": "HEAD",
+        "pt-BR": "HEAD",
+        "es": "HEAD"
+      },
+      "prompt": {
+        "en": "When attached to main, what does HEAD reference?",
+        "pt-BR": "Quando anexado à main, o que HEAD referencia?",
+        "es": "Cuando está adjunto a main, ¿qué referencia HEAD?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Consider the symbolic reference.",
+          "pt-BR": "Considere a referência simbólica.",
+          "es": "Considera referencia simbólica."
+        }
+      ],
+      "explanation": {
+        "en": "Attached HEAD is symbolic to the checked-out branch.",
+        "pt-BR": "HEAD anexado é simbólico para branch selecionada.",
+        "es": "HEAD adjunto es simbólico a rama seleccionada."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Current branch ref",
+            "pt-BR": "Ref da branch atual",
+            "es": "Ref de rama actual"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Remote server",
+            "pt-BR": "Servidor remoto",
+            "es": "Servidor remoto"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "All files",
+            "pt-BR": "Todos arquivos",
+            "es": "Todos archivos"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-ignore",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/05-ignore-and-review"
+      ],
+      "title": {
+        "en": "Ignore rules",
+        "pt-BR": "Regras de ignore",
+        "es": "Reglas de ignore"
+      },
+      "prompt": {
+        "en": "Does .gitignore stop tracking an already tracked file?",
+        "pt-BR": ".gitignore deixa de rastrear arquivo já rastreado?",
+        "es": "¿.gitignore deja de rastrear archivo ya rastreado?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Tracking is determined by the index.",
+          "pt-BR": "Rastreamento depende do index.",
+          "es": "Rastreo depende del index."
+        }
+      ],
+      "explanation": {
+        "en": "Ignore rules do not remove existing index entries.",
+        "pt-BR": "Ignore não remove entradas existentes do index.",
+        "es": "Ignore no elimina entradas existentes del index."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Always",
+            "pt-BR": "Sempre",
+            "es": "Siempre"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "After fetch",
+            "pt-BR": "Após fetch",
+            "es": "Tras fetch"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "No",
+            "pt-BR": "Não",
+            "es": "No"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-clone",
+      "difficulty": "easy",
+      "prerequisites": [
+        "remote-repositories/01-remote-concepts"
+      ],
+      "title": {
+        "en": "Clone",
+        "pt-BR": "Clonar",
+        "es": "Clonar"
+      },
+      "prompt": {
+        "en": "Which creates a normal local copy of a remote repository?",
+        "pt-BR": "Qual cria cópia local normal de repo remoto?",
+        "es": "¿Cuál crea copia local normal de repo remoto?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Look for copying existing history.",
+          "pt-BR": "Procure cópia de histórico existente.",
+          "es": "Busca copia de historial existente."
+        }
+      ],
+      "explanation": {
+        "en": "Clone obtains history and usually configures origin.",
+        "pt-BR": "Clone obtém histórico e normalmente configura origin.",
+        "es": "Clone obtiene historial y normalmente configura origin."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git init",
+            "pt-BR": "git init",
+            "es": "git init"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git clone",
+            "pt-BR": "git clone",
+            "es": "git clone"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git status",
+            "pt-BR": "git status",
+            "es": "git status"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-status",
+      "difficulty": "easy",
+      "prerequisites": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "title": {
+        "en": "Status",
+        "pt-BR": "Status",
+        "es": "Status"
+      },
+      "prompt": {
+        "en": "Which inspects working tree and index changes?",
+        "pt-BR": "Qual inspeciona mudanças de working tree e index?",
+        "es": "¿Cuál inspecciona cambios de working tree e index?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Inspect without discarding edits.",
+          "pt-BR": "Inspecione sem descartar edições.",
+          "es": "Inspecciona sin descartar ediciones."
+        }
+      ],
+      "explanation": {
+        "en": "Status reports staged, unstaged and untracked changes.",
+        "pt-BR": "Status relata mudanças preparadas, não preparadas e não rastreadas.",
+        "es": "Status informa cambios preparados, sin preparar y no rastreados."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git status",
+            "pt-BR": "git status",
+            "es": "git status"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git push",
+            "pt-BR": "git push",
+            "es": "git push"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git reset --hard",
+            "pt-BR": "git reset --hard",
+            "es": "git reset --hard"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-tag",
+      "difficulty": "easy",
+      "prerequisites": [
+        "git-internals/03-commits-and-tags"
+      ],
+      "title": {
+        "en": "Tag movement",
+        "pt-BR": "Movimento da tag",
+        "es": "Movimiento de etiqueta"
+      },
+      "prompt": {
+        "en": "What happens to a tag when main advances?",
+        "pt-BR": "O que ocorre com tag quando main avança?",
+        "es": "¿Qué ocurre con etiqueta cuando main avanza?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "A tag names a revision.",
+          "pt-BR": "Tag nomeia revisão.",
+          "es": "Etiqueta nombra revisión."
+        }
+      ],
+      "explanation": {
+        "en": "Tags do not automatically advance with branches.",
+        "pt-BR": "Tags não avançam automaticamente com branches.",
+        "es": "Etiquetas no avanzan automáticamente con ramas."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Advances",
+            "pt-BR": "Avança",
+            "es": "Avanza"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Disappears",
+            "pt-BR": "Desaparece",
+            "es": "Desaparece"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Keeps its target",
+            "pt-BR": "Mantém alvo",
+            "es": "Mantiene destino"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-hosting",
+      "difficulty": "easy",
+      "prerequisites": [
+        "fundamentals/03-distributed-and-platforms"
+      ],
+      "title": {
+        "en": "Hosting feature",
+        "pt-BR": "Recurso de hospedagem",
+        "es": "Función de alojamiento"
+      },
+      "prompt": {
+        "en": "Which is a platform feature rather than a Git object?",
+        "pt-BR": "Qual é recurso de plataforma e não objeto Git?",
+        "es": "¿Cuál es función de plataforma y no objeto Git?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Distinguish hosting from native storage.",
+          "pt-BR": "Distinga hospedagem de armazenamento nativo.",
+          "es": "Distingue alojamiento de almacenamiento nativo."
+        }
+      ],
+      "explanation": {
+        "en": "A pull request is a collaboration record on a platform.",
+        "pt-BR": "PR é registro de colaboração na plataforma.",
+        "es": "PR es registro de colaboración en plataforma."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Commit",
+            "pt-BR": "Commit",
+            "es": "Commit"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Pull request",
+            "pt-BR": "Pull request",
+            "es": "Pull request"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Blob",
+            "pt-BR": "Blob",
+            "es": "Blob"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-remote",
+      "difficulty": "easy",
+      "prerequisites": [
+        "remote-repositories/01-remote-concepts"
+      ],
+      "title": {
+        "en": "Remote inspection",
+        "pt-BR": "Inspeção remota",
+        "es": "Inspección remota"
+      },
+      "prompt": {
+        "en": "Which lists configured fetch and push URLs?",
+        "pt-BR": "Qual lista URLs fetch e push configuradas?",
+        "es": "¿Cuál lista URLs fetch y push configuradas?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Read configuration rather than transmit commits.",
+          "pt-BR": "Leia configuração sem transmitir commits.",
+          "es": "Lee configuración sin transmitir commits."
+        }
+      ],
+      "explanation": {
+        "en": "Remote -v lists configured URLs without publishing.",
+        "pt-BR": "Remote -v lista URLs sem publicar.",
+        "es": "Remote -v lista URLs sin publicar."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git remote -v",
+            "pt-BR": "git remote -v",
+            "es": "git remote -v"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git branch -d main",
+            "pt-BR": "git branch -d main",
+            "es": "git branch -d main"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git push",
+            "pt-BR": "git push",
+            "es": "git push"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-fetch",
+      "difficulty": "medium",
+      "prerequisites": [
+        "remote-repositories/02-fetch-and-tracking"
+      ],
+      "title": {
+        "en": "Fetch",
+        "pt-BR": "Fetch",
+        "es": "Fetch"
+      },
+      "prompt": {
+        "en": "With the usual fetch refspec, what happens when a new remote main is fetched?",
+        "pt-BR": "Com refspec usual, o que ocorre ao buscar nova main remota?",
+        "es": "Con refspec habitual, ¿qué ocurre al obtener nueva main remota?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Distinguish tracking ref from local branch.",
+          "pt-BR": "Distinga ref tracking da branch local.",
+          "es": "Distingue ref seguimiento de rama local."
+        }
+      ],
+      "explanation": {
+        "en": "Fetch updates configured refs; integration is separate.",
+        "pt-BR": "Fetch atualiza refs configuradas; integração é separada.",
+        "es": "Fetch actualiza refs configuradas; integración es separada."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Local main always advances",
+            "pt-BR": "Main local sempre avança",
+            "es": "Main local siempre avanza"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Tracking ref updates; checked-out main stays put",
+            "pt-BR": "Tracking atualiza; main selecionada não muda",
+            "es": "Seguimiento actualiza; main seleccionada no cambia"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Local commits vanish",
+            "pt-BR": "Commits locais somem",
+            "es": "Commits locales desaparecen"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-ff",
+      "difficulty": "medium",
+      "prerequisites": [
+        "merge-and-conflicts/02-fast-forward"
+      ],
+      "title": {
+        "en": "Fast-forward only",
+        "pt-BR": "Só fast-forward",
+        "es": "Solo fast-forward"
+      },
+      "prompt": {
+        "en": "Tips diverged. What does merge --ff-only do?",
+        "pt-BR": "Pontas divergiram. O que merge --ff-only faz?",
+        "es": "Puntas divergieron. ¿Qué hace merge --ff-only?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Check ancestry first.",
+          "pt-BR": "Confira ancestralidade.",
+          "es": "Comprueba ascendencia."
+        }
+      ],
+      "explanation": {
+        "en": "A fast-forward cannot join divergent histories.",
+        "pt-BR": "Fast-forward não une históricos divergentes.",
+        "es": "Fast-forward no une historiales divergentes."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Refuses",
+            "pt-BR": "Recusa",
+            "es": "Rechaza"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Creates merge commit",
+            "pt-BR": "Cria commit merge",
+            "es": "Crea commit merge"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Rebases",
+            "pt-BR": "Faz rebase",
+            "es": "Rebasa"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-parents",
+      "difficulty": "medium",
+      "prerequisites": [
+        "merge-and-conflicts/03-merge-commit"
+      ],
+      "title": {
+        "en": "Merge parents",
+        "pt-BR": "Pais do merge",
+        "es": "Padres del merge"
+      },
+      "prompt": {
+        "en": "How many parents does an ordinary non-fast-forward two-branch merge commit have?",
+        "pt-BR": "Quantos pais tem commit de merge comum de duas branches sem fast-forward?",
+        "es": "¿Cuántos padres tiene commit merge ordinario de dos ramas sin fast-forward?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Both histories remain connected.",
+          "pt-BR": "Ambos históricos permanecem conectados.",
+          "es": "Ambos historiales quedan conectados."
+        }
+      ],
+      "explanation": {
+        "en": "The parents are the prior current tip and merged tip.",
+        "pt-BR": "Pais são ponta atual anterior e ponta integrada.",
+        "es": "Padres son punta actual anterior y punta integrada."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "1",
+            "pt-BR": "1",
+            "es": "1"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "3",
+            "pt-BR": "3",
+            "es": "3"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "2",
+            "pt-BR": "2",
+            "es": "2"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-conflict",
+      "difficulty": "medium",
+      "prerequisites": [
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "title": {
+        "en": "Conflict stages",
+        "pt-BR": "Estágios de conflito",
+        "es": "Etapas de conflicto"
+      },
+      "prompt": {
+        "en": "Which lists unmerged index entries?",
+        "pt-BR": "Qual lista entradas não mescladas do index?",
+        "es": "¿Cuál lista entradas no fusionadas del index?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Inspect the index, not the commit log.",
+          "pt-BR": "Inspecione index, não log de commits.",
+          "es": "Inspecciona index, no log de commits."
+        }
+      ],
+      "explanation": {
+        "en": "The index may contain base, ours and theirs stages.",
+        "pt-BR": "Index pode conter estágios base, ours e theirs.",
+        "es": "Index puede contener etapas base, ours y theirs."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git commit",
+            "pt-BR": "git commit",
+            "es": "git commit"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git ls-files -u",
+            "pt-BR": "git ls-files -u",
+            "es": "git ls-files -u"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git clean -n",
+            "pt-BR": "git clean -n",
+            "es": "git clean -n"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-unstage",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/02-restore"
+      ],
+      "title": {
+        "en": "Unstage",
+        "pt-BR": "Retirar do staging",
+        "es": "Quitar del staging"
+      },
+      "prompt": {
+        "en": "With existing HEAD, which unstages notes.txt without discarding working edits?",
+        "pt-BR": "Com HEAD existente, qual retira notes.txt do staging sem descartar edições?",
+        "es": "Con HEAD existente, ¿cuál retira notes.txt de staging sin descartar ediciones?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "The working file must survive.",
+          "pt-BR": "Arquivo de trabalho deve permanecer.",
+          "es": "Archivo de trabajo debe permanecer."
+        }
+      ],
+      "explanation": {
+        "en": "Restore --staged uses HEAD by default and changes index only.",
+        "pt-BR": "Restore --staged usa HEAD por padrão e altera só index.",
+        "es": "Restore --staged usa HEAD por defecto y cambia solo index."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git restore --staged -- notes.txt",
+            "pt-BR": "git restore --staged -- notes.txt",
+            "es": "git restore --staged -- notes.txt"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git restore --worktree -- notes.txt",
+            "pt-BR": "git restore --worktree -- notes.txt",
+            "es": "git restore --worktree -- notes.txt"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git reset --hard HEAD",
+            "pt-BR": "git reset --hard HEAD",
+            "es": "git reset --hard HEAD"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-soft",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/03-reset"
+      ],
+      "title": {
+        "en": "Reset soft",
+        "pt-BR": "Reset soft",
+        "es": "Reset soft"
+      },
+      "prompt": {
+        "en": "What does reset --soft preserve when moving a private branch?",
+        "pt-BR": "O que reset --soft preserva ao mover branch privada?",
+        "es": "¿Qué conserva reset --soft al mover rama privada?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Different modes affect different locations.",
+          "pt-BR": "Modos afetam locais diferentes.",
+          "es": "Modos afectan ubicaciones distintas."
+        }
+      ],
+      "explanation": {
+        "en": "Soft reset moves HEAD/branch and leaves index and files intact.",
+        "pt-BR": "Reset soft move HEAD/branch e mantém index e arquivos.",
+        "es": "Reset soft mueve HEAD/rama y conserva index y archivos."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Only remote state",
+            "pt-BR": "Só estado remoto",
+            "es": "Solo estado remoto"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Nothing",
+            "pt-BR": "Nada",
+            "es": "Nada"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Index and working tree",
+            "pt-BR": "Index e working tree",
+            "es": "Index y working tree"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-revert",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/04-revert"
+      ],
+      "title": {
+        "en": "Shared undo",
+        "pt-BR": "Desfazer compartilhado",
+        "es": "Deshacer compartido"
+      },
+      "prompt": {
+        "en": "Which normally undoes a shared ordinary commit without rewriting published history?",
+        "pt-BR": "Qual desfaz commit comum compartilhado sem reescrever histórico publicado?",
+        "es": "¿Cuál deshace commit ordinario compartido sin reescribir historial publicado?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Preserve existing ancestry.",
+          "pt-BR": "Preserve ancestralidade existente.",
+          "es": "Conserva ascendencia existente."
+        }
+      ],
+      "explanation": {
+        "en": "Revert records an inverse change in a new commit.",
+        "pt-BR": "Revert registra mudança inversa em novo commit.",
+        "es": "Revert registra cambio inverso en nuevo commit."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "git reset --hard",
+            "pt-BR": "git reset --hard",
+            "es": "git reset --hard"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "git revert",
+            "pt-BR": "git revert",
+            "es": "git revert"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "git push --force",
+            "pt-BR": "git push --force",
+            "es": "git push --force"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-stash",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/06-stash"
+      ],
+      "title": {
+        "en": "Stash scope",
+        "pt-BR": "Escopo stash",
+        "es": "Ámbito stash"
+      },
+      "prompt": {
+        "en": "Which stash push option includes untracked but not ignored files?",
+        "pt-BR": "Qual opção stash push inclui não rastreados mas não ignorados?",
+        "es": "¿Qué opción stash push incluye no rastreados pero no ignorados?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Untracked is not the same as ignored.",
+          "pt-BR": "Não rastreado não é igual a ignorado.",
+          "es": "No rastreado no equivale a ignorado."
+        }
+      ],
+      "explanation": {
+        "en": "-u includes untracked; --all also includes ignored.",
+        "pt-BR": "-u inclui não rastreados; --all inclui também ignorados.",
+        "es": "-u incluye no rastreados; --all incluye también ignorados."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "-u",
+            "pt-BR": "-u",
+            "es": "-u"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "--keep-index",
+            "pt-BR": "--keep-index",
+            "es": "--keep-index"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "--all",
+            "pt-BR": "--all",
+            "es": "--all"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-pick",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/07-cherry-pick"
+      ],
+      "title": {
+        "en": "Cherry-pick",
+        "pt-BR": "Cherry-pick",
+        "es": "Cherry-pick"
+      },
+      "prompt": {
+        "en": "Ordinary successful cherry-pick of a nonempty commit onto another tip usually creates what?",
+        "pt-BR": "Cherry-pick comum bem-sucedido de commit não vazio sobre outra ponta costuma criar o quê?",
+        "es": "Cherry-pick ordinario exitoso de commit no vacío sobre otra punta suele crear ¿qué?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Consider applying a change rather than merging history.",
+          "pt-BR": "Considere aplicar mudança em vez de unir histórico.",
+          "es": "Considera aplicar cambio en vez de fusionar historial."
+        }
+      ],
+      "explanation": {
+        "en": "The patch is applied in a new parent context.",
+        "pt-BR": "Patch aplicado em novo contexto de pai.",
+        "es": "Parche aplicado en nuevo contexto de padre."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "New commit with applied changes",
+            "pt-BR": "Novo commit com mudanças aplicadas",
+            "es": "Nuevo commit con cambios aplicados"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Remote branch",
+            "pt-BR": "Branch remota",
+            "es": "Rama remota"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Two-parent merge",
+            "pt-BR": "Merge com dois pais",
+            "es": "Merge de dos padres"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-reflog",
+      "difficulty": "medium",
+      "prerequisites": [
+        "history-and-recovery/05-reflog"
+      ],
+      "title": {
+        "en": "Reflog",
+        "pt-BR": "Reflog",
+        "es": "Reflog"
+      },
+      "prompt": {
+        "en": "Does normal push transfer your local reflog?",
+        "pt-BR": "Push normal transfere seu reflog local?",
+        "es": "¿Push normal transfiere tu reflog local?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Distinguish object transfer from local metadata.",
+          "pt-BR": "Distinga transferência de objetos de metadados locais.",
+          "es": "Distingue transferencia de objetos de metadatos locales."
+        }
+      ],
+      "explanation": {
+        "en": "Reflogs are local metadata and can expire.",
+        "pt-BR": "Reflogs são metadados locais e podem expirar.",
+        "es": "Reflogs son metadatos locales y pueden caducar."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Yes",
+            "pt-BR": "Sim",
+            "es": "Sí"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "No",
+            "pt-BR": "Não",
+            "es": "No"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Only with tags",
+            "pt-BR": "Só com tags",
+            "es": "Solo con etiquetas"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-review",
+      "difficulty": "medium",
+      "prerequisites": [
+        "github/04-pull-requests-and-review"
+      ],
+      "title": {
+        "en": "Review revision",
+        "pt-BR": "Revisão da revisão",
+        "es": "Revisión de revisión"
+      },
+      "prompt": {
+        "en": "A new PR commit arrives after green checks. Which revision needs verification?",
+        "pt-BR": "Novo commit chega ao PR após checks verdes. Qual revisão precisa verificação?",
+        "es": "Nuevo commit llega al PR tras checks verdes. ¿Qué revisión necesita verificación?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Evidence must identify the tested SHA.",
+          "pt-BR": "Evidência deve identificar SHA testado.",
+          "es": "Evidencia debe identificar SHA probado."
+        }
+      ],
+      "explanation": {
+        "en": "Checks on old revisions do not cover new changes.",
+        "pt-BR": "Checks de revisões antigas não cobrem mudanças novas.",
+        "es": "Checks de revisiones antiguas no cubren cambios nuevos."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "First commit",
+            "pt-BR": "Primeiro commit",
+            "es": "Primer commit"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Any green revision",
+            "pt-BR": "Qualquer revisão verde",
+            "es": "Cualquier revisión verde"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Latest intended head",
+            "pt-BR": "Head pretendido mais recente",
+            "es": "Head previsto más reciente"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-secret",
+      "difficulty": "medium",
+      "prerequisites": [
+        "security/05-secrets-and-disclosure-prevention"
+      ],
+      "title": {
+        "en": "Exposed credential",
+        "pt-BR": "Credencial exposta",
+        "es": "Credencial expuesta"
+      },
+      "prompt": {
+        "en": "A real token entered public history. What essential action comes first?",
+        "pt-BR": "Token real entrou em histórico público. Qual ação essencial vem primeiro?",
+        "es": "Token real entró en historial público. ¿Qué acción esencial viene primero?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Copies outside your repository may persist.",
+          "pt-BR": "Cópias fora do repo podem persistir.",
+          "es": "Copias fuera del repo pueden persistir."
+        }
+      ],
+      "explanation": {
+        "en": "Assume compromise; history cleanup is separate from invalidation.",
+        "pt-BR": "Presuma comprometimento; limpeza de histórico é separada de invalidação.",
+        "es": "Supón compromiso; limpieza de historial es distinta de invalidación."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Revoke or rotate",
+            "pt-BR": "Revogar ou rotacionar",
+            "es": "Revocar o rotar"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Delete file only",
+            "pt-BR": "Só excluir arquivo",
+            "es": "Solo eliminar archivo"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Rename branch",
+            "pt-BR": "Renomear branch",
+            "es": "Renombrar rama"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-rebase",
+      "difficulty": "hard",
+      "prerequisites": [
+        "merge-and-conflicts/06-rebase-and-conflicts"
+      ],
+      "title": {
+        "en": "Rebase identity",
+        "pt-BR": "Identidade no rebase",
+        "es": "Identidad en rebase"
+      },
+      "prompt": {
+        "en": "Rebasing commits onto a different parent normally changes what?",
+        "pt-BR": "Rebase de commits sobre pai diferente normalmente muda o quê?",
+        "es": "Rebase de commits sobre padre diferente normalmente cambia ¿qué?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Think about the stored parent.",
+          "pt-BR": "Pense no pai armazenado.",
+          "es": "Piensa en padre almacenado."
+        }
+      ],
+      "explanation": {
+        "en": "Commit objects include parent IDs; replay creates new objects as needed.",
+        "pt-BR": "Objetos commit incluem IDs de pais; reaplicação cria novos objetos conforme necessário.",
+        "es": "Objetos commit incluyen IDs de padres; reaplicación crea nuevos objetos cuando hace falta."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Only permissions",
+            "pt-BR": "Só permissões",
+            "es": "Solo permisos"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Replayed commit IDs",
+            "pt-BR": "IDs de commits reaplicados",
+            "es": "IDs de commits reaplicados"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Remote automatically",
+            "pt-BR": "Remoto automaticamente",
+            "es": "Remoto automáticamente"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-squash",
+      "difficulty": "hard",
+      "prerequisites": [
+        "merge-and-conflicts/05-squash-merge"
+      ],
+      "title": {
+        "en": "Squash",
+        "pt-BR": "Squash",
+        "es": "Squash"
+      },
+      "prompt": {
+        "en": "After successful merge --squash, before commit, what is true?",
+        "pt-BR": "Após merge --squash bem-sucedido, antes de commit, o que é verdade?",
+        "es": "Tras merge --squash exitoso, antes de commit, ¿qué es cierto?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Commit is a separate step.",
+          "pt-BR": "Commit é etapa separada.",
+          "es": "Commit es paso separado."
+        }
+      ],
+      "explanation": {
+        "en": "Squash prepares changes without creating MERGE_HEAD or moving HEAD.",
+        "pt-BR": "Squash prepara mudanças sem criar MERGE_HEAD nem mover HEAD.",
+        "es": "Squash prepara cambios sin crear MERGE_HEAD ni mover HEAD."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "HEAD moved",
+            "pt-BR": "HEAD moveu",
+            "es": "HEAD se movió"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "MERGE_HEAD holds second parent",
+            "pt-BR": "MERGE_HEAD guarda segundo pai",
+            "es": "MERGE_HEAD guarda segundo padre"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Changes prepared; HEAD unchanged",
+            "pt-BR": "Mudanças preparadas; HEAD inalterado",
+            "es": "Cambios preparados; HEAD intacto"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-three-dot",
+      "difficulty": "hard",
+      "prerequisites": [
+        "basic-commands/03-diff-log-show"
+      ],
+      "title": {
+        "en": "Three-dot diff",
+        "pt-BR": "Diff de três pontos",
+        "es": "Diff de tres puntos"
+      },
+      "prompt": {
+        "en": "With one merge base, what does git diff main...feature compare?",
+        "pt-BR": "Com uma merge base, o que git diff main...feature compara?",
+        "es": "Con una merge base, ¿qué compara git diff main...feature?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "The first endpoint is derived from ancestry.",
+          "pt-BR": "Primeiro ponto deriva da ancestralidade.",
+          "es": "Primer punto deriva de ascendencia."
+        }
+      ],
+      "explanation": {
+        "en": "Three-dot diff compares merge base to the second tip; log differs.",
+        "pt-BR": "Diff três pontos compara merge base à segunda ponta; log difere.",
+        "es": "Diff tres puntos compara merge base a segunda punta; log difiere."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Merge base to feature tip",
+            "pt-BR": "Merge base à ponta feature",
+            "es": "Merge base a punta feature"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Feature tip to main tip",
+            "pt-BR": "Ponta feature à main",
+            "es": "Punta feature a main"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Index to HEAD",
+            "pt-BR": "Index a HEAD",
+            "es": "Index a HEAD"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-lease",
+      "difficulty": "hard",
+      "prerequisites": [
+        "remote-repositories/03-pull-push-and-divergence"
+      ],
+      "title": {
+        "en": "Force-with-lease",
+        "pt-BR": "Force-with-lease",
+        "es": "Force-with-lease"
+      },
+      "prompt": {
+        "en": "What does an explicit expected-OID lease guard against?",
+        "pt-BR": "Contra o que lease de OID esperado explícito protege?",
+        "es": "¿Contra qué protege lease de OID esperado explícito?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Compare current ref with the expectation.",
+          "pt-BR": "Compare ref atual com expectativa.",
+          "es": "Compara ref actual con expectativa."
+        }
+      ],
+      "explanation": {
+        "en": "A lease is conditional, not a guarantee against harmful rewrites.",
+        "pt-BR": "Lease é condicional, não garantia contra reescritas prejudiciais.",
+        "es": "Lease es condicional, no garantía contra reescrituras dañinas."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "All data loss",
+            "pt-BR": "Toda perda de dados",
+            "es": "Toda pérdida de datos"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Remote ref differing from expected value",
+            "pt-BR": "Ref remota diferente do esperado",
+            "es": "Ref remota distinta de lo esperado"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "All merge conflicts",
+            "pt-BR": "Todos conflitos merge",
+            "es": "Todos conflictos merge"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-bisect",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/01-bisect"
+      ],
+      "title": {
+        "en": "Bisect",
+        "pt-BR": "Bisect",
+        "es": "Bisect"
+      },
+      "prompt": {
+        "en": "What must a useful bisect test classify?",
+        "pt-BR": "O que teste útil de bisect precisa classificar?",
+        "es": "¿Qué debe clasificar prueba útil de bisect?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Test the revision rather than unrelated metadata.",
+          "pt-BR": "Teste a revisão, não metadados alheios.",
+          "es": "Prueba la revisión, no metadatos ajenos."
+        }
+      ],
+      "explanation": {
+        "en": "Consistent good/bad classification narrows a known boundary; skip uncertainty.",
+        "pt-BR": "Classificação good/bad consistente reduz fronteira conhecida; pule incerteza.",
+        "es": "Clasificación good/bad consistente reduce frontera conocida; salta incertidumbre."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Author popularity",
+            "pt-BR": "Popularidade do autor",
+            "es": "Popularidad del autor"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "File size",
+            "pt-BR": "Tamanho de arquivo",
+            "es": "Tamaño de archivo"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Target property of selected revision",
+            "pt-BR": "Propriedade alvo da revisão selecionada",
+            "es": "Propiedad objetivo de revisión seleccionada"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-blob",
+      "difficulty": "hard",
+      "prerequisites": [
+        "git-internals/02-blobs-and-trees"
+      ],
+      "title": {
+        "en": "Blob identity",
+        "pt-BR": "Identidade do blob",
+        "es": "Identidad del blob"
+      },
+      "prompt": {
+        "en": "Two files have identical stored blob bytes in the same object format. What may differ?",
+        "pt-BR": "Dois arquivos têm bytes blob armazenados iguais no mesmo formato. O que pode diferir?",
+        "es": "Dos archivos tienen bytes blob almacenados iguales en mismo formato. ¿Qué puede diferir?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Which object stores filenames?",
+          "pt-BR": "Qual objeto guarda nomes?",
+          "es": "¿Qué objeto guarda nombres?"
+        }
+      ],
+      "explanation": {
+        "en": "Blob stores content; tree entries store names and modes.",
+        "pt-BR": "Blob guarda conteúdo; tree guarda nomes e modos.",
+        "es": "Blob guarda contenido; tree guarda nombres y modos."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Path and tree entry mode",
+            "pt-BR": "Caminho e modo tree",
+            "es": "Ruta y modo tree"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Stored bytes",
+            "pt-BR": "Bytes armazenados",
+            "es": "Bytes almacenados"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Blob object type",
+            "pt-BR": "Tipo objeto blob",
+            "es": "Tipo objeto blob"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-peel",
+      "difficulty": "hard",
+      "prerequisites": [
+        "git-internals/03-commits-and-tags"
+      ],
+      "title": {
+        "en": "Tag peeling",
+        "pt-BR": "Peeling de tag",
+        "es": "Peeling de etiqueta"
+      },
+      "prompt": {
+        "en": "What does git rev-parse 'v1.0.0^{commit}' request from a tag pointing at a commit?",
+        "pt-BR": "O que git rev-parse 'v1.0.0^{commit}' solicita de tag apontando a commit?",
+        "es": "¿Qué solicita git rev-parse 'v1.0.0^{commit}' de etiqueta apuntando a commit?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Distinguish tag object from target.",
+          "pt-BR": "Distinga objeto tag de seu alvo.",
+          "es": "Distingue objeto etiqueta de su destino."
+        }
+      ],
+      "explanation": {
+        "en": "Peeling resolves to a commit or fails.",
+        "pt-BR": "Peeling resolve a commit ou falha.",
+        "es": "Peeling resuelve a commit o falla."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Tag message",
+            "pt-BR": "Mensagem da tag",
+            "es": "Mensaje de etiqueta"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Underlying commit ID",
+            "pt-BR": "ID do commit subjacente",
+            "es": "ID del commit subyacente"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Working path",
+            "pt-BR": "Caminho de trabalho",
+            "es": "Ruta de trabajo"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-reachable",
+      "difficulty": "hard",
+      "prerequisites": [
+        "git-internals/09-reflogs-and-reachability"
+      ],
+      "title": {
+        "en": "Reachability",
+        "pt-BR": "Alcançabilidade",
+        "es": "Alcanzabilidad"
+      },
+      "prompt": {
+        "en": "Why name a displaced commit found in reflog with a recovery branch?",
+        "pt-BR": "Por que nomear commit deslocado encontrado no reflog com branch de recuperação?",
+        "es": "¿Por qué nombrar commit desplazado hallado en reflog con rama de recuperación?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Think of a persistent reference.",
+          "pt-BR": "Pense em referência persistente.",
+          "es": "Piensa en referencia persistente."
+        }
+      ],
+      "explanation": {
+        "en": "A branch makes the commit reachable independently of temporary reflog entries.",
+        "pt-BR": "Branch torna commit alcançável independente de entradas temporárias de reflog.",
+        "es": "Rama hace commit alcanzable independientemente de entradas temporales reflog."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Disable all GC",
+            "pt-BR": "Desabilitar todo GC",
+            "es": "Desactivar todo GC"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Copy uncommitted files",
+            "pt-BR": "Copiar arquivos não registrados",
+            "es": "Copiar archivos sin confirmar"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Make commit reachable via a ref",
+            "pt-BR": "Tornar commit alcançável via ref",
+            "es": "Hacer commit alcanzable mediante ref"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-worktree",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/02-worktree"
+      ],
+      "title": {
+        "en": "Worktree",
+        "pt-BR": "Worktree",
+        "es": "Worktree"
+      },
+      "prompt": {
+        "en": "What is normally separate for linked worktrees?",
+        "pt-BR": "O que normalmente é separado em worktrees vinculadas?",
+        "es": "¿Qué suele estar separado en worktrees vinculados?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Distinguish shared storage from checkout state.",
+          "pt-BR": "Distinga armazenamento compartilhado de checkout.",
+          "es": "Distingue almacenamiento compartido de checkout."
+        }
+      ],
+      "explanation": {
+        "en": "Linked worktrees share objects and most refs but have per-worktree HEAD/index/files.",
+        "pt-BR": "Worktrees compartilham objetos e maioria das refs, mas têm HEAD/index/arquivos próprios.",
+        "es": "Worktrees comparten objetos y mayoría de refs, pero tienen HEAD/index/archivos propios."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Working files, HEAD and index",
+            "pt-BR": "Arquivos de trabalho, HEAD e index",
+            "es": "Archivos de trabajo, HEAD e index"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Every Git object",
+            "pt-BR": "Todo objeto Git",
+            "es": "Cada objeto Git"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "All branch refs",
+            "pt-BR": "Todas refs de branch",
+            "es": "Todas refs de rama"
+          }
+        }
+      ],
+      "answer": "a"
+    },
+    {
+      "id": "quiz-gitlink",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/03-submodules"
+      ],
+      "title": {
+        "en": "Gitlink",
+        "pt-BR": "Gitlink",
+        "es": "Gitlink"
+      },
+      "prompt": {
+        "en": "What does a superproject gitlink record?",
+        "pt-BR": "O que gitlink de superprojeto registra?",
+        "es": "¿Qué registra gitlink del superproyecto?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "A dependency is pinned to a revision.",
+          "pt-BR": "Dependência é fixada a uma revisão.",
+          "es": "Dependencia se fija a una revisión."
+        }
+      ],
+      "explanation": {
+        "en": "A gitlink stores the referenced commit, not the nested tree.",
+        "pt-BR": "Gitlink guarda commit referenciado, não tree aninhada.",
+        "es": "Gitlink guarda commit referenciado, no tree anidado."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "All nested files",
+            "pt-BR": "Todos arquivos aninhados",
+            "es": "Todos archivos anidados"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "Submodule commit ID",
+            "pt-BR": "ID de commit do submódulo",
+            "es": "ID de commit del submódulo"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "Branch name only",
+            "pt-BR": "Só nome de branch",
+            "es": "Solo nombre de rama"
+          }
+        }
+      ],
+      "answer": "b"
+    },
+    {
+      "id": "quiz-signature",
+      "difficulty": "hard",
+      "prerequisites": [
+        "security/09-commit-and-tag-signing"
+      ],
+      "title": {
+        "en": "Signature limits",
+        "pt-BR": "Limites de assinatura",
+        "es": "Límites de firma"
+      },
+      "prompt": {
+        "en": "Does a valid cryptographic signature alone prove code safety and authorization?",
+        "pt-BR": "Assinatura criptográfica válida sozinha prova segurança e autorização?",
+        "es": "¿Firma criptográfica válida sola prueba seguridad y autorización?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Identify what a signature attests.",
+          "pt-BR": "Identifique o que assinatura atesta.",
+          "es": "Identifica qué atestigua una firma."
+        }
+      ],
+      "explanation": {
+        "en": "Cryptographic verification differs from trust policy and code review.",
+        "pt-BR": "Verificação criptográfica difere de política de confiança e revisão.",
+        "es": "Verificación criptográfica difiere de política de confianza y revisión."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Always",
+            "pt-BR": "Sempre",
+            "es": "Siempre"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "If main",
+            "pt-BR": "Se main",
+            "es": "Si main"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "No",
+            "pt-BR": "Não",
+            "es": "No"
+          }
+        }
+      ],
+      "answer": "c"
+    },
+    {
+      "id": "quiz-partial",
+      "difficulty": "hard",
+      "prerequisites": [
+        "advanced-git/08-partial-and-shallow-clone"
+      ],
+      "title": {
+        "en": "Partial clone",
+        "pt-BR": "Clone parcial",
+        "es": "Clon parcial"
+      },
+      "prompt": {
+        "en": "Why may later file access in a blob:none partial clone require network?",
+        "pt-BR": "Por que acesso posterior a arquivo em clone parcial blob:none pode exigir rede?",
+        "es": "¿Por qué acceso posterior a archivo en clon parcial blob:none puede exigir red?"
+      },
+      "hints": [
+        {
+          "en": "Consult the prerequisite before deciding.",
+          "pt-BR": "Consulte o pré-requisito antes de decidir.",
+          "es": "Consulta el prerrequisito antes de decidir."
+        },
+        {
+          "en": "Initial object transfer may be incomplete by design.",
+          "pt-BR": "Transferência inicial pode ser incompleta por projeto.",
+          "es": "Transferencia inicial puede ser incompleta por diseño."
+        }
+      ],
+      "explanation": {
+        "en": "Missing promised objects can be fetched on demand.",
+        "pt-BR": "Objetos prometidos ausentes podem ser buscados sob demanda.",
+        "es": "Objetos prometidos ausentes pueden obtenerse bajo demanda."
+      },
+      "type": "single-choice",
+      "choices": [
+        {
+          "id": "a",
+          "text": {
+            "en": "Promised blobs may need lazy fetch",
+            "pt-BR": "Blobs prometidos podem exigir fetch sob demanda",
+            "es": "Blobs prometidos pueden requerir fetch bajo demanda"
+          }
+        },
+        {
+          "id": "b",
+          "text": {
+            "en": "All commits were deleted",
+            "pt-BR": "Todos commits foram excluídos",
+            "es": "Todos commits fueron eliminados"
+          }
+        },
+        {
+          "id": "c",
+          "text": {
+            "en": "All commands are remote API calls",
+            "pt-BR": "Todos comandos são chamadas API remota",
+            "es": "Todos comandos son llamadas API remota"
+          }
+        }
+      ],
+      "answer": "a"
+    }
+  ]
+}

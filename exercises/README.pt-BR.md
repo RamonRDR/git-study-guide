@@ -6,12 +6,15 @@
 [Anterior](../practical-projects/README.pt-BR.md) · [Índice](../docs/learning-path.pt-BR.md) · —
 <!-- /navigation -->
 
-**Status: planejado.** Este índice reserva o caminho estável do módulo e conecta a sequência de aprendizagem. Aulas, práticas e fontes serão adicionadas na sprint correspondente.
+Tente primeiro, consulte as soluções públicas depois. Quizzes usam escolhas exatas; entrevistas e simulados exigem autoavaliação honesta. Desafios usam somente repositórios locais descartáveis novos e checks fixos de estado, sem executar automaticamente comandos de alunos. Registros são piloto interno, não contrato final do Learning Hub.
 
 ## Capítulos
 
 <!-- chapters -->
-Nenhum capítulo publicado ainda.
+- [Quizzes](01-quizzes/README.pt-BR.md)
+- [Desafios práticos](02-challenges/README.pt-BR.md)
+- [Perguntas de entrevista](03-interviews/README.pt-BR.md)
+- [Simulados](04-mock-assessments/README.pt-BR.md)
 <!-- /chapters -->
 
 ---

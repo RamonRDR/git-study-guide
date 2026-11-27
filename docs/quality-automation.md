@@ -9,7 +9,7 @@ python scripts/validate.py
 python -m unittest discover -s tests -v
 ```
 
-Use --check with structure, locales, links, navigation, examples, secrets or command-catalog to isolate a check. Validators inspect portable tracked paths, three-language presence, inline Markdown relative file links and images, module/chapter order and navigation, executable example policy and common secret patterns. They do not prove semantic translation, external links, heading anchors, all Markdown syntaxes, absence of all secrets or GitHub template UI behavior. The secret check reports file and line, not detected values; it is heuristic, not comprehensive. Review diffs and rotate exposed credentials independently.
+Use --check with structure, locales, links, navigation, examples, secrets command-catalog or assessment-pilot to isolate a check. Validators inspect portable tracked paths, three-language presence, inline Markdown relative file links and images, module/chapter order and navigation, executable example policy and common secret patterns. They do not prove semantic translation, external links, heading anchors, all Markdown syntaxes, absence of all secrets or GitHub template UI behavior. The secret check reports file and line, not detected values; it is heuristic, not comprehensive. Review diffs and rotate exposed credentials independently.
 
 Navigation validation enforces canonical localized header and footer blocks for every module index and chapter, exact labels and paths, chapter and module boundary transitions, placement and duplicate detection. Tests include negative fixtures for missing, divergent, reordered, wrong-language, reversed, hidden or misplaced navigation. Planned module indexes remain navigable; their lessons are not yet published.
 
@@ -29,3 +29,7 @@ CI uses standard GitHub-hosted Linux and Windows runners on pull_request and pus
 
 - [Project structure](project-structure.md)
 - [GitHub Actions security](https://docs.github.com/en/actions/reference/security/secure-use)
+
+The assessment-pilot check verifies the four versioned banks, exact difficulty counts, globally unique IDs, valid prerequisites and mock references, localized fields, choices, answers, allowed state predicates and equality with generated Markdown. Edit records.json, stage the JSON and curriculum changes, then run python scripts/render_assessments.py --write; stage generated pages and run python scripts/validate.py --check assessment-pilot and all checks/tests. The 12 fixed QA scenarios exercise valid and representative incorrect Git states. No evaluator runs learner submissions or reads arbitrary repositories; only trusted disposable fixtures are supported. Structural validation does not establish semantic translation or educational accuracy.
+
+- [Assessment pilot schema](assessment-pilot.md)

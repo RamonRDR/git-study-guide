@@ -1,0 +1,1430 @@
+{
+  "schema_version": 1,
+  "kind": "challenge",
+  "records": [
+    {
+      "id": "challenge-first-commit",
+      "difficulty": "easy",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "getting-started/05-first-commit"
+      ],
+      "title": {
+        "en": "First committed snapshot",
+        "pt-BR": "Primeiro snapshot registrado",
+        "es": "Primera instantánea confirmada"
+      },
+      "prompt": {
+        "en": "Commit notes.txt containing status: ready; finish clean on main with one commit.",
+        "pt-BR": "Registre notes.txt contendo status: ready; termine limpo na main com um commit.",
+        "es": "Confirma notes.txt con status: ready; termina limpio en main con un commit."
+      },
+      "hints": [
+        {
+          "en": "The file must enter the index first.",
+          "pt-BR": "Arquivo precisa entrar no index primeiro.",
+          "es": "Archivo debe entrar al index primero."
+        },
+        {
+          "en": "Inspect staged content before committing.",
+          "pt-BR": "Inspecione conteúdo preparado antes do commit.",
+          "es": "Inspecciona contenido preparado antes de confirmar."
+        }
+      ],
+      "explanation": {
+        "en": "A clean status alone is not sufficient: the committed content and count must match.",
+        "pt-BR": "Status limpo sozinho não basta: conteúdo registrado e contagem devem corresponder.",
+        "es": "Estado limpio solo no basta: contenido confirmado y conteo deben coincidir."
+      },
+      "estimated_minutes": 10,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Use the fresh empty repo.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Use repo novo vazio.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Usa repo nuevo vacío."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git diff --cached",
+          "pt-BR": "git diff --cached",
+          "es": "git diff --cached"
+        },
+        {
+          "en": "git commit -m 'docs: add notes'",
+          "pt-BR": "git commit -m 'docs: add notes'",
+          "es": "git commit -m 'docs: add notes'"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "tracked",
+          "file": "notes.txt"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-staged-snapshot",
+      "difficulty": "easy",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "git-architecture/01-three-locations"
+      ],
+      "title": {
+        "en": "Separate staged and working states",
+        "pt-BR": "Separar staging e trabalho",
+        "es": "Separar staging y trabajo"
+      },
+      "prompt": {
+        "en": "Leave HEAD at draft, stage ready, then change working file to experiment without staging it again.",
+        "pt-BR": "Deixe HEAD em draft, prepare ready, depois altere arquivo para experiment sem preparar novamente.",
+        "es": "Deja HEAD en draft, prepara ready y cambia archivo a experiment sin preparar otra vez."
+      },
+      "hints": [
+        {
+          "en": "The three locations can differ.",
+          "pt-BR": "Os três locais podem diferir.",
+          "es": "Las tres ubicaciones pueden diferir."
+        },
+        {
+          "en": "Inspect HEAD:notes.txt and :notes.txt.",
+          "pt-BR": "Inspecione HEAD:notes.txt e :notes.txt.",
+          "es": "Inspecciona HEAD:notes.txt y :notes.txt."
+        }
+      ],
+      "explanation": {
+        "en": "Do not commit or restore; a dirty tree is the required result here.",
+        "pt-BR": "Não faça commit nem restore; tree suja é resultado exigido aqui.",
+        "es": "No confirmes ni restaures; tree sucio es resultado requerido aquí."
+      },
+      "estimated_minutes": 10,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "Write exactly status: experiment plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: experiment mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: experiment más LF final en notes.txt."
+        },
+        {
+          "en": "git show HEAD:notes.txt",
+          "pt-BR": "git show HEAD:notes.txt",
+          "es": "git show HEAD:notes.txt"
+        },
+        {
+          "en": "git show :notes.txt",
+          "pt-BR": "git show :notes.txt",
+          "es": "git show :notes.txt"
+        },
+        {
+          "en": "git status --short",
+          "pt-BR": "git status --short",
+          "es": "git status --short"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "index-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "work-content",
+          "file": "notes.txt",
+          "value": "status: experiment"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-unstage",
+      "difficulty": "easy",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "history-and-recovery/02-restore"
+      ],
+      "title": {
+        "en": "Preserve a working edit",
+        "pt-BR": "Preservar edição de trabalho",
+        "es": "Conservar edición de trabajo"
+      },
+      "prompt": {
+        "en": "Unstage ready without losing it from the working file; HEAD and index must still contain draft.",
+        "pt-BR": "Retire ready do staging sem perdê-lo do arquivo de trabalho; HEAD e index ainda devem conter draft.",
+        "es": "Quita ready del staging sin perderlo del archivo de trabajo; HEAD e index aún deben contener draft."
+      },
+      "hints": [
+        {
+          "en": "Only the index should change.",
+          "pt-BR": "Só index deve mudar.",
+          "es": "Solo index debe cambiar."
+        },
+        {
+          "en": "Use restore --staged after preparing the new content.",
+          "pt-BR": "Use restore --staged após preparar conteúdo novo.",
+          "es": "Usa restore --staged tras preparar contenido nuevo."
+        }
+      ],
+      "explanation": {
+        "en": "Restore --staged does not discard the working edit when HEAD exists.",
+        "pt-BR": "Restore --staged não descarta edição de trabalho com HEAD existente.",
+        "es": "Restore --staged no descarta edición de trabajo con HEAD existente."
+      },
+      "estimated_minutes": 10,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git restore --staged -- notes.txt",
+          "pt-BR": "git restore --staged -- notes.txt",
+          "es": "git restore --staged -- notes.txt"
+        },
+        {
+          "en": "git diff",
+          "pt-BR": "git diff",
+          "es": "git diff"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "index-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "work-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-feature-branch",
+      "difficulty": "easy",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "branches/01-create-and-switch"
+      ],
+      "title": {
+        "en": "Isolate a feature",
+        "pt-BR": "Isolar feature",
+        "es": "Aislar feature"
+      },
+      "prompt": {
+        "en": "Create feat/notes from draft and commit ready there, leaving main at the first commit.",
+        "pt-BR": "Crie feat/notes a partir de draft e registre ready nela, deixando main no primeiro commit.",
+        "es": "Crea feat/notes desde draft y confirma ready allí, dejando main en primer commit."
+      },
+      "hints": [
+        {
+          "en": "Branch creation and selection are separate concepts.",
+          "pt-BR": "Criar e selecionar branch são conceitos separados.",
+          "es": "Crear y seleccionar rama son conceptos distintos."
+        },
+        {
+          "en": "Use switch -c before editing.",
+          "pt-BR": "Use switch -c antes de editar.",
+          "es": "Usa switch -c antes de editar."
+        }
+      ],
+      "explanation": {
+        "en": "The main reference must remain on the parent of the feature commit.",
+        "pt-BR": "Ref main deve permanecer no pai do commit feature.",
+        "es": "Ref main debe permanecer en padre de commit feature."
+      },
+      "estimated_minutes": 15,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "git switch -c feat/notes",
+          "pt-BR": "git switch -c feat/notes",
+          "es": "git switch -c feat/notes"
+        },
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git log --oneline --all",
+          "pt-BR": "git log --oneline --all",
+          "es": "git log --oneline --all"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "feat/notes"
+        },
+        {
+          "kind": "commit-count",
+          "value": 2
+        },
+        {
+          "kind": "same-ref",
+          "left": "main",
+          "right": "HEAD^1"
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-fast-forward",
+      "difficulty": "medium",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "merge-and-conflicts/02-fast-forward"
+      ],
+      "title": {
+        "en": "Integrate by fast-forward",
+        "pt-BR": "Integrar por fast-forward",
+        "es": "Integrar por fast-forward"
+      },
+      "prompt": {
+        "en": "Integrate feat/notes into main with no extra merge commit; both refs must match.",
+        "pt-BR": "Integre feat/notes na main sem commit merge extra; ambas refs devem coincidir.",
+        "es": "Integra feat/notes en main sin commit merge adicional; ambas refs deben coincidir."
+      },
+      "hints": [
+        {
+          "en": "Keep main from diverging.",
+          "pt-BR": "Evite divergência da main.",
+          "es": "Evita divergencia de main."
+        },
+        {
+          "en": "Verify the feature is a descendant and use --ff-only.",
+          "pt-BR": "Confira feature descendente e use --ff-only.",
+          "es": "Comprueba feature descendiente y usa --ff-only."
+        }
+      ],
+      "explanation": {
+        "en": "Fast-forward moves the current ref rather than creating a new merge commit.",
+        "pt-BR": "Fast-forward move ref atual em vez de criar merge novo.",
+        "es": "Fast-forward mueve ref actual en vez de crear merge nuevo."
+      },
+      "estimated_minutes": 15,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "git switch -c feat/notes",
+          "pt-BR": "git switch -c feat/notes",
+          "es": "git switch -c feat/notes"
+        },
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git switch main",
+          "pt-BR": "git switch main",
+          "es": "git switch main"
+        },
+        {
+          "en": "git merge --ff-only feat/notes",
+          "pt-BR": "git merge --ff-only feat/notes",
+          "es": "git merge --ff-only feat/notes"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 2
+        },
+        {
+          "kind": "same-ref",
+          "left": "main",
+          "right": "feat/notes"
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-merge-resolution",
+      "difficulty": "medium",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "title": {
+        "en": "Resolve a conflict",
+        "pt-BR": "Resolver conflito",
+        "es": "Resolver conflicto"
+      },
+      "prompt": {
+        "en": "Diverge main and feat/notes from draft, resolve the same-line conflict to reviewed and retain both parents.",
+        "pt-BR": "Diverja main e feat/notes de draft, resolva conflito da mesma linha para reviewed e mantenha dois pais.",
+        "es": "Diverge main y feat/notes desde draft, resuelve conflicto de misma línea a reviewed y conserva dos padres."
+      },
+      "hints": [
+        {
+          "en": "Make different changes to the same line.",
+          "pt-BR": "Faça mudanças diferentes na mesma linha.",
+          "es": "Haz cambios distintos en misma línea."
+        },
+        {
+          "en": "Inspect git ls-files -u before staging the chosen resolution.",
+          "pt-BR": "Inspecione git ls-files -u antes de preparar resolução.",
+          "es": "Inspecciona git ls-files -u antes de preparar resolución."
+        }
+      ],
+      "explanation": {
+        "en": "If aborting an active ordinary merge, preserve wanted edits first. A successful merge has two parents and no unmerged entries.",
+        "pt-BR": "Se abortar merge comum ativo, preserve edições desejadas antes. Merge bem-sucedido tem dois pais e sem entradas não mescladas.",
+        "es": "Si abortas merge ordinario activo, conserva ediciones deseadas antes. Merge exitoso tiene dos padres y sin entradas no fusionadas."
+      },
+      "estimated_minutes": 20,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "git switch -c feat/notes",
+          "pt-BR": "git switch -c feat/notes",
+          "es": "git switch -c feat/notes"
+        },
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git switch main",
+          "pt-BR": "git switch main",
+          "es": "git switch main"
+        },
+        {
+          "en": "Write exactly status: experiment plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: experiment mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: experiment más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "Run git merge feat/notes; expect a conflict, verify MERGE_HEAD and inspect git ls-files -u. Stop on any other failure.",
+          "pt-BR": "Rode git merge feat/notes; espere conflito, confira MERGE_HEAD e inspecione git ls-files -u. Pare em outra falha.",
+          "es": "Ejecuta git merge feat/notes; espera conflicto, comprueba MERGE_HEAD e inspecciona git ls-files -u. Detente ante otro fallo."
+        },
+        {
+          "en": "Write exactly status: reviewed plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: reviewed mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: reviewed más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git diff --cached --check",
+          "pt-BR": "git diff --cached --check",
+          "es": "git diff --cached --check"
+        },
+        {
+          "en": "git commit -m 'merge: resolve notes'",
+          "pt-BR": "git commit -m 'merge: resolve notes'",
+          "es": "git commit -m 'merge: resolve notes'"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 4
+        },
+        {
+          "kind": "parent-count",
+          "value": 2
+        },
+        {
+          "kind": "same-ref",
+          "left": "HEAD^2",
+          "right": "feat/notes"
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: reviewed"
+        },
+        {
+          "kind": "no-unmerged"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-revert",
+      "difficulty": "medium",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "history-and-recovery/04-revert"
+      ],
+      "title": {
+        "en": "Undo without rewriting",
+        "pt-BR": "Desfazer sem reescrever",
+        "es": "Deshacer sin reescribir"
+      },
+      "prompt": {
+        "en": "Commit ready then undo its content with a new commit. Preserve the two original commits.",
+        "pt-BR": "Registre ready e desfaça conteúdo com novo commit. Preserve dois commits originais.",
+        "es": "Confirma ready y deshaz contenido con nuevo commit. Conserva dos commits originales."
+      },
+      "hints": [
+        {
+          "en": "The history must grow, not shrink.",
+          "pt-BR": "Histórico deve crescer, não reduzir.",
+          "es": "Historial debe crecer, no reducir."
+        },
+        {
+          "en": "Use revert on the last ordinary commit.",
+          "pt-BR": "Use revert no último commit comum.",
+          "es": "Usa revert en último commit ordinario."
+        }
+      ],
+      "explanation": {
+        "en": "Revert creates a new inverse change. This is not a reset.",
+        "pt-BR": "Revert cria mudança inversa nova. Não é reset.",
+        "es": "Revert crea cambio inverso nuevo. No es reset."
+      },
+      "estimated_minutes": 15,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git revert --no-edit HEAD",
+          "pt-BR": "git revert --no-edit HEAD",
+          "es": "git revert --no-edit HEAD"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 3
+        },
+        {
+          "kind": "parent-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "HEAD^1",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "HEAD~2",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "same-tree",
+          "left": "HEAD",
+          "right": "HEAD~2"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-stash",
+      "difficulty": "medium",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "history-and-recovery/06-stash"
+      ],
+      "title": {
+        "en": "Preserve unfinished work",
+        "pt-BR": "Preservar trabalho incompleto",
+        "es": "Conservar trabajo incompleto"
+      },
+      "prompt": {
+        "en": "Stash a ready working edit and an untracked review.txt, verify clean state, then apply the stash. Leave both edits restored and HEAD at draft.",
+        "pt-BR": "Guarde edição ready e review.txt não rastreado no stash, confira estado limpo e aplique stash. Deixe ambos restaurados e HEAD draft.",
+        "es": "Guarda edición ready y review.txt no rastreado en stash, comprueba estado limpio y aplica stash. Deja ambos restaurados y HEAD draft."
+      },
+      "hints": [
+        {
+          "en": "Include untracked files explicitly.",
+          "pt-BR": "Inclua não rastreados explicitamente.",
+          "es": "Incluye no rastreados explícitamente."
+        },
+        {
+          "en": "Use apply rather than pop so the stash remains for inspection.",
+          "pt-BR": "Use apply em vez de pop para manter stash para inspeção.",
+          "es": "Usa apply en vez de pop para conservar stash para inspección."
+        }
+      ],
+      "explanation": {
+        "en": "The final-state check cannot prove the temporary stash operation; record intermediate clean status and stash list as manual evidence.",
+        "pt-BR": "Check final não prova operação temporária; registre status limpo intermediário e stash list como evidência manual.",
+        "es": "Check final no prueba operación temporal; registra estado limpio intermedio y stash list como evidencia manual."
+      },
+      "estimated_minutes": 15,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "Create review.txt with exactly review: done plus LF.",
+          "pt-BR": "Crie review.txt com exatamente review: done mais LF.",
+          "es": "Crea review.txt con exactamente review: done más LF."
+        },
+        {
+          "en": "git stash push -u -m 'practice notes'",
+          "pt-BR": "git stash push -u -m 'practice notes'",
+          "es": "git stash push -u -m 'practice notes'"
+        },
+        {
+          "en": "git status --porcelain",
+          "pt-BR": "git status --porcelain",
+          "es": "git status --porcelain"
+        },
+        {
+          "en": "git stash apply",
+          "pt-BR": "git stash apply",
+          "es": "git stash apply"
+        },
+        {
+          "en": "git stash list",
+          "pt-BR": "git stash list",
+          "es": "git stash list"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "index-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "work-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "work-content",
+          "file": "review.txt",
+          "value": "review: done"
+        },
+        {
+          "kind": "untracked",
+          "file": "review.txt"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-recover-tip",
+      "difficulty": "hard",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "history-and-recovery/05-reflog"
+      ],
+      "title": {
+        "en": "Recover a displaced tip",
+        "pt-BR": "Recuperar ponta deslocada",
+        "es": "Recuperar punta desplazada"
+      },
+      "prompt": {
+        "en": "Simulate loss of a committed tip in a disposable repo. Recover it with recovery/notes while main stays at draft.",
+        "pt-BR": "Simule perda de ponta registrada em repo descartável. Recupere com recovery/notes mantendo main draft.",
+        "es": "Simula pérdida de punta confirmada en repo desechable. Recupera con recovery/notes manteniendo main draft."
+      },
+      "hints": [
+        {
+          "en": "Save the tip ID before the demonstration.",
+          "pt-BR": "Salve ID da ponta antes da demonstração.",
+          "es": "Guarda ID de punta antes de demostración."
+        },
+        {
+          "en": "Verify the reflog candidate and create a new ref, not another reset.",
+          "pt-BR": "Confira candidato reflog e crie ref nova, não outro reset.",
+          "es": "Comprueba candidato reflog y crea ref nueva, no otro reset."
+        }
+      ],
+      "explanation": {
+        "en": "Never assume reflog positions or guaranteed recovery; verify IDs and avoid destructive commands on valuable work.",
+        "pt-BR": "Nunca presuma posições reflog ou recuperação garantida; confira IDs e evite comandos destrutivos em trabalho valioso.",
+        "es": "Nunca supongas posiciones reflog ni recuperación garantizada; comprueba IDs y evita comandos destructivos en trabajo valioso."
+      },
+      "estimated_minutes": 20,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: recovered plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: recovered mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: recovered más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git rev-parse HEAD; record the ID outside the repo.",
+          "pt-BR": "git rev-parse HEAD; anote ID fora do repo.",
+          "es": "git rev-parse HEAD; registra ID fuera del repo."
+        },
+        {
+          "en": "Verify git status --porcelain is empty, then only in this disposable repository run git reset --hard HEAD~1.",
+          "pt-BR": "Confira git status --porcelain vazio, depois só neste repo descartável rode git reset --hard HEAD~1.",
+          "es": "Comprueba git status --porcelain vacío, después solo en repo desechable ejecuta git reset --hard HEAD~1."
+        },
+        {
+          "en": "git reflog show HEAD",
+          "pt-BR": "git reflog show HEAD",
+          "es": "git reflog show HEAD"
+        },
+        {
+          "en": "Inspect git show HEAD@{1}; verify its ID matches the recorded tip, then git branch recovery/notes 'HEAD@{1}'.",
+          "pt-BR": "Inspecione git show HEAD@{1}; confira ID salvo e então git branch recovery/notes 'HEAD@{1}'.",
+          "es": "Inspecciona git show HEAD@{1}; comprueba ID guardado y luego git branch recovery/notes 'HEAD@{1}'."
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "ancestor",
+          "older": "main",
+          "newer": "recovery/notes"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "recovery/notes",
+          "file": "notes.txt",
+          "value": "status: recovered"
+        },
+        {
+          "kind": "different-ref",
+          "left": "main",
+          "right": "recovery/notes"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-squash",
+      "difficulty": "hard",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "merge-and-conflicts/05-squash-merge"
+      ],
+      "title": {
+        "en": "Integrate a reviewed tree",
+        "pt-BR": "Integrar tree revisada",
+        "es": "Integrar tree revisado"
+      },
+      "prompt": {
+        "en": "Create two feature commits and squash onto unchanged main. Main must have exactly two commits and the same tree as the feature tip.",
+        "pt-BR": "Crie dois commits feature e faça squash na main inalterada. Main deve ter exatamente dois commits e mesma tree da ponta feature.",
+        "es": "Crea dos commits feature y haz squash en main intacta. Main debe tener exactamente dos commits y mismo tree de punta feature."
+      },
+      "hints": [
+        {
+          "en": "A squash commit has one parent.",
+          "pt-BR": "Commit squash tem um pai.",
+          "es": "Commit squash tiene un padre."
+        },
+        {
+          "en": "Compare tree IDs, not commit IDs, after integration.",
+          "pt-BR": "Compare IDs de tree, não commits, após integração.",
+          "es": "Compara IDs de tree, no commits, tras integrar."
+        }
+      ],
+      "explanation": {
+        "en": "Do not assume merge --abort handles a conflicting squash. Stop, preserve edits and inspect; recreate this disposable fixture if needed.",
+        "pt-BR": "Não presuma merge --abort para squash com conflito. Pare, preserve edições e inspecione; recrie fixture descartável se preciso.",
+        "es": "No supongas merge --abort para squash con conflicto. Detente, conserva ediciones e inspecciona; recrea fixture desechable si hace falta."
+      },
+      "estimated_minutes": 20,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "git switch -c feat/notes",
+          "pt-BR": "git switch -c feat/notes",
+          "es": "git switch -c feat/notes"
+        },
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "Create review.txt with exactly review: done plus LF; git add review.txt; git commit -m 'docs: record review'.",
+          "pt-BR": "Crie review.txt com exatamente review: done mais LF; git add review.txt; git commit -m 'docs: record review'.",
+          "es": "Crea review.txt con exactamente review: done más LF; git add review.txt; git commit -m 'docs: record review'."
+        },
+        {
+          "en": "git diff main...HEAD",
+          "pt-BR": "git diff main...HEAD",
+          "es": "git diff main...HEAD"
+        },
+        {
+          "en": "git switch main",
+          "pt-BR": "git switch main",
+          "es": "git switch main"
+        },
+        {
+          "en": "git merge --squash feat/notes",
+          "pt-BR": "git merge --squash feat/notes",
+          "es": "git merge --squash feat/notes"
+        },
+        {
+          "en": "git diff --cached --check",
+          "pt-BR": "git diff --cached --check",
+          "es": "git diff --cached --check"
+        },
+        {
+          "en": "git commit -m 'feat: deliver reviewed notes'",
+          "pt-BR": "git commit -m 'feat: deliver reviewed notes'",
+          "es": "git commit -m 'feat: deliver reviewed notes'"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 2
+        },
+        {
+          "kind": "parent-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "head-content",
+          "file": "review.txt",
+          "value": "review: done"
+        },
+        {
+          "kind": "same-tree",
+          "left": "main",
+          "right": "feat/notes"
+        },
+        {
+          "kind": "different-ref",
+          "left": "main",
+          "right": "feat/notes"
+        },
+        {
+          "kind": "ref-commit-count",
+          "ref": "feat/notes",
+          "value": 3
+        },
+        {
+          "kind": "same-ref",
+          "left": "HEAD^1",
+          "right": "feat/notes~2"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "HEAD^1",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "feat/notes^1",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-release-tag",
+      "difficulty": "hard",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "professional-workflows/12-release-management"
+      ],
+      "title": {
+        "en": "Pin a release",
+        "pt-BR": "Fixar release",
+        "es": "Fijar lanzamiento"
+      },
+      "prompt": {
+        "en": "Tag a ready revision with annotated v1.0.0, then advance main with future.txt. Tag must still resolve to the previous commit.",
+        "pt-BR": "Marque revisão ready com v1.0.0 anotada, depois avance main com future.txt. Tag deve resolver ao commit anterior.",
+        "es": "Etiqueta revisión ready con v1.0.0 anotada, luego avanza main con future.txt. Etiqueta debe resolver a commit anterior."
+      },
+      "hints": [
+        {
+          "en": "A tag should identify an exact revision.",
+          "pt-BR": "Tag deve identificar revisão exata.",
+          "es": "Etiqueta debe identificar revisión exacta."
+        },
+        {
+          "en": "Use tag -a and peel to a commit.",
+          "pt-BR": "Use tag -a e resolva a commit.",
+          "es": "Usa tag -a y resuelve a commit."
+        }
+      ],
+      "explanation": {
+        "en": "An annotated Git tag is not a hosted release; never replace published tags casually.",
+        "pt-BR": "Tag Git anotada não é release hospedada; não substitua tags publicadas casualmente.",
+        "es": "Etiqueta Git anotada no es lanzamiento alojado; no reemplaces etiquetas publicadas a la ligera."
+      },
+      "estimated_minutes": 15,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git tag -a v1.0.0 -m 'Ready notes release'",
+          "pt-BR": "git tag -a v1.0.0 -m 'Ready notes release'",
+          "es": "git tag -a v1.0.0 -m 'Ready notes release'"
+        },
+        {
+          "en": "Create future.txt with exactly future work plus LF; git add future.txt; git commit -m 'docs: future work'.",
+          "pt-BR": "Crie future.txt com exatamente future work mais LF; git add future.txt; git commit -m 'docs: future work'.",
+          "es": "Crea future.txt con exactamente future work más LF; git add future.txt; git commit -m 'docs: future work'."
+        },
+        {
+          "en": "git rev-parse 'v1.0.0^{commit}'",
+          "pt-BR": "git rev-parse 'v1.0.0^{commit}'",
+          "es": "git rev-parse 'v1.0.0^{commit}'"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 3
+        },
+        {
+          "kind": "tag-type",
+          "tag": "v1.0.0",
+          "value": "tag"
+        },
+        {
+          "kind": "same-ref",
+          "left": "v1.0.0",
+          "right": "HEAD^1"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "v1.0.0",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "head-content",
+          "file": "future.txt",
+          "value": "future work"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    },
+    {
+      "id": "challenge-cherry-pick",
+      "difficulty": "hard",
+      "prerequisites": [
+        "practical-projects/01-my-first-repository",
+        "history-and-recovery/07-cherry-pick"
+      ],
+      "title": {
+        "en": "Transfer one change",
+        "pt-BR": "Transferir uma mudança",
+        "es": "Transferir un cambio"
+      },
+      "prompt": {
+        "en": "Commit review.txt on feat/notes, advance main independently to ready, and cherry-pick only the review commit onto main. Keep feature distinct.",
+        "pt-BR": "Registre review.txt em feat/notes, avance main independentemente para ready e faça cherry-pick só do commit review na main. Mantenha feature distinta.",
+        "es": "Confirma review.txt en feat/notes, avanza main independientemente a ready y aplica cherry-pick solo del commit review en main. Conserva feature distinta."
+      },
+      "hints": [
+        {
+          "en": "Use a separate file to avoid a manufactured conflict.",
+          "pt-BR": "Use arquivo separado para evitar conflito fabricado.",
+          "es": "Usa archivo separado para evitar conflicto fabricado."
+        },
+        {
+          "en": "Check parent count and final content; commit IDs need not match.",
+          "pt-BR": "Confira contagem de pais e conteúdo final; IDs não precisam coincidir.",
+          "es": "Comprueba conteo de padres y contenido final; IDs no deben coincidir necesariamente."
+        }
+      ],
+      "explanation": {
+        "en": "If an unexpected cherry-pick conflict occurs, inspect and preserve wanted work before aborting. Applied content is not proof of identical history.",
+        "pt-BR": "Em conflito inesperado cherry-pick, inspecione e preserve trabalho antes de abortar. Conteúdo aplicado não prova histórico idêntico.",
+        "es": "Ante conflicto inesperado cherry-pick, inspecciona y conserva trabajo antes de abortar. Contenido aplicado no prueba historial idéntico."
+      },
+      "estimated_minutes": 20,
+      "setup": {
+        "en": "Start a fresh local repository using only the Disposable setup of project 01 (linked prerequisites); verify main, fictional identity and no remote. Git 2.40+ and Bash/Git Bash. Run commands individually, stop on unexpected failure, and use LF line endings. Create notes.txt with exactly status: draft and a final LF; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "pt-BR": "Inicie repo local novo usando só Preparação descartável do projeto 01 (pré-requisitos vinculados); confira main, identidade fictícia e nenhum remoto. Git 2.40+ e Bash/Git Bash. Execute comandos individualmente, pare em falha inesperada e use finais LF. Crie notes.txt com exatamente status: draft e LF final; git add notes.txt; git commit -m 'docs: initialize notes'.",
+        "es": "Inicia repo local nuevo usando solo Preparación desechable del proyecto 01 (prerrequisitos vinculados); comprueba main, identidad ficticia y sin remoto. Git 2.40+ y Bash/Git Bash. Ejecuta comandos individualmente, detente ante fallo inesperado y usa finales LF. Crea notes.txt con exactamente status: draft y LF final; git add notes.txt; git commit -m 'docs: initialize notes'."
+      },
+      "solution": [
+        {
+          "en": "git switch -c feat/notes",
+          "pt-BR": "git switch -c feat/notes",
+          "es": "git switch -c feat/notes"
+        },
+        {
+          "en": "Create review.txt with exactly review: done plus LF; git add review.txt; git commit -m 'docs: record review'.",
+          "pt-BR": "Crie review.txt com exatamente review: done mais LF; git add review.txt; git commit -m 'docs: record review'.",
+          "es": "Crea review.txt con exactamente review: done más LF; git add review.txt; git commit -m 'docs: record review'."
+        },
+        {
+          "en": "git switch main",
+          "pt-BR": "git switch main",
+          "es": "git switch main"
+        },
+        {
+          "en": "Write exactly status: ready plus a final LF to notes.txt.",
+          "pt-BR": "Escreva exatamente status: ready mais LF final em notes.txt.",
+          "es": "Escribe exactamente status: ready más LF final en notes.txt."
+        },
+        {
+          "en": "git add notes.txt",
+          "pt-BR": "git add notes.txt",
+          "es": "git add notes.txt"
+        },
+        {
+          "en": "git commit -m 'docs: update notes'",
+          "pt-BR": "git commit -m 'docs: update notes'",
+          "es": "git commit -m 'docs: update notes'"
+        },
+        {
+          "en": "git cherry-pick feat/notes",
+          "pt-BR": "git cherry-pick feat/notes",
+          "es": "git cherry-pick feat/notes"
+        },
+        {
+          "en": "After checking results, close the dedicated shell and remove only the verified temporary directory with a file manager. Never use the guide repository.",
+          "pt-BR": "Após conferir resultados, feche shell dedicado e remova só diretório temporário verificado pelo gerenciador de arquivos. Nunca use repo do guia.",
+          "es": "Tras comprobar resultados, cierra shell dedicada y elimina solo directorio temporal verificado mediante gestor de archivos. Nunca uses repo del guía."
+        }
+      ],
+      "checks": [
+        {
+          "kind": "branch",
+          "value": "main"
+        },
+        {
+          "kind": "commit-count",
+          "value": 3
+        },
+        {
+          "kind": "parent-count",
+          "value": 1
+        },
+        {
+          "kind": "head-content",
+          "file": "notes.txt",
+          "value": "status: ready"
+        },
+        {
+          "kind": "head-content",
+          "file": "review.txt",
+          "value": "review: done"
+        },
+        {
+          "kind": "ref-content",
+          "ref": "feat/notes",
+          "file": "notes.txt",
+          "value": "status: draft"
+        },
+        {
+          "kind": "different-ref",
+          "left": "main",
+          "right": "feat/notes"
+        },
+        {
+          "kind": "clean"
+        }
+      ],
+      "execution": "local_only",
+      "execution_reason": {
+        "en": "Requires real Git in a fresh disposable repository; no browser/runtime claim.",
+        "pt-BR": "Exige Git real em repo descartável novo; sem alegação de runtime navegador.",
+        "es": "Requiere Git real en repo desechable nuevo; sin afirmación de runtime navegador."
+      }
+    }
+  ]
+}
