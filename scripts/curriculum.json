@@ -224,7 +224,12 @@
     },
     {
       "slug": "exercises",
-      "chapters": []
+      "chapters": [
+        "01-quizzes",
+        "02-challenges",
+        "03-interviews",
+        "04-mock-assessments"
+      ]
     }
   ]
 }

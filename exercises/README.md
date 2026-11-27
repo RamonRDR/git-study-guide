@@ -6,12 +6,15 @@
 [Previous](../practical-projects/README.md) · [Index](../docs/learning-path.md) · —
 <!-- /navigation -->
 
-**Status: planned.** This index reserves the stable module path and connects the learning sequence. Lessons, practice and sources will be added in the assigned sprint.
+Try first, consult the public solutions afterward. Quizzes use exact choices; interviews and mocks require honest self-assessment. Challenges use only fresh disposable local repositories and fixed state checks, not automatic execution of learner commands. All records form an internal pilot, not the final Learning Hub contract.
 
 ## Chapters
 
 <!-- chapters -->
-No chapters published yet.
+- [Quizzes](01-quizzes/README.md)
+- [Practical challenges](02-challenges/README.md)
+- [Interview questions](03-interviews/README.md)
+- [Mock assessments](04-mock-assessments/README.md)
 <!-- /chapters -->
 
 ---
