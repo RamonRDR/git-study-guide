@@ -8,5 +8,7 @@ Capítulos usam NN-topic/README.md, README.pt-BR.md e README.es.md. Registrar sl
 
 O módulo 15 usa um catalog.json canônico por categoria, mais registros de categorias e intenções em scripts/. As páginas Markdown trilíngues são geradas desses registros com scripts/render_command_reference.py e o registro de navegação existente. Edite JSON em vez das páginas geradas; consulte [ADR 0005](adr/0005-command-catalog-architecture.pt-BR.md). É piloto interno, não contrato final de integração.
 
+O módulo 16 oferece oito projetos trilíngues de execução manual em practical-projects/. Cada um usa ambiente descartável novo, estados explícitos de aceite e solução pública de referência. Preparação compartilhada vem do projeto 01; sem artefatos executáveis de aluno ou novas dependências. Testes fixos em tests/test_git_practical_projects.py reproduzem independentemente os estados pretendidos. Bash/Git Bash para alunos; biblioteca padrão Python para QA do repositório.
+
 - [Trilha](learning-path.pt-BR.md)
 - [Automação de qualidade](quality-automation.pt-BR.md)

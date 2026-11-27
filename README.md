@@ -6,10 +6,11 @@
 
 A multilingual, practical guide to Git, GitHub, GitLab, version control, and collaborative software engineering, from fundamentals to advanced workflows. Free, public and independent; no programming experience required.
 
-Status: foundation, governance and quality automation integrated. Modules 00–14 contain lessons; module 15 contains the trilingual command reference (120 operations across 14 categories). Modules 16–17, visual identity and Learning Hub integration remain planned.
+Status: foundation, governance and quality automation integrated. Modules 00–14 contain lessons; module 15 contains the trilingual command reference (120 operations across 14 categories). Module 16 contains eight practical projects; module 17, visual identity and Learning Hub integration remain planned.
 
 - [Learning path](docs/learning-path.md)
 - [Command reference](command-reference/README.md)
+- [Practical projects](practical-projects/README.md)
 - [Project structure](docs/project-structure.md)
 - [Quality automation](docs/quality-automation.md)
 - [Roadmap](docs/roadmap.md)

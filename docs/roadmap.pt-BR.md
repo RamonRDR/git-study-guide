@@ -27,7 +27,7 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 | 16 | `practical-projects/` | Projetos práticos | Oito projetos integrados: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
 | 17 | `exercises/` | Desafios e entrevistas | Exercícios, quizzes, troubleshooting, desafios, entrevistas, simulações profissionais e rubricas de autoavaliação; mapear pré-requisitos primeiro. |
 
-Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo para o primeiro commit; 01–03 aprofundam. Módulo 04 ensina branches locais; prática de tracking/exclusão remota aguarda 06. Explicar recuperação/abort seguros antes de merge ou rebase de risco em 05, aprofundar em 07. Ensinar tratamento seguro de credenciais antes de 06 e menor privilégio antes de 10; módulo 12 consolida segurança. Introduzir conceitos de objetos/refs antes de tarefas avançadas. Referenciar ensino anterior antes da avaliação; módulos 00–14 têm aulas; módulo 15 possui referência de comandos; módulos 16–17 são planejados.
+Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo para o primeiro commit; 01–03 aprofundam. Módulo 04 ensina branches locais; prática de tracking/exclusão remota aguarda 06. Explicar recuperação/abort seguros antes de merge ou rebase de risco em 05, aprofundar em 07. Ensinar tratamento seguro de credenciais antes de 06 e menor privilégio antes de 10; módulo 12 consolida segurança. Introduzir conceitos de objetos/refs antes de tarefas avançadas. Referenciar ensino anterior antes da avaliação; módulos 00–14 têm aulas; módulo 15 possui referência de comandos; módulo 16 possui projetos práticos; módulo 17 é planejado.
 
 ## Engenharia (20 sprints)
 
@@ -55,7 +55,7 @@ Política de pré-requisitos: módulo 00 apresenta apenas vocabulário mínimo p
 | 18 | VI | Finalizar contrato, manifestos, schemas, fixtures do consumidor; avaliar playground opcional separadamente |
 | 19 | VI | Identidade fornecida pelo mantenedor, README final, QA, handoff |
 
-Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprints 00–14 e Sprint complementar 13.1 integradas pelos PRs #1–16; implementação da Sprint 15 preparada para validação e revisão; Sprints 16–19 planejadas. As 20 sprints principais permanecem inalteradas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
+Fases: I Fundação; II Essenciais; III Colaboração e recuperação; IV Plataformas e engenharia; V Avançado e prática; VI Learning Hub e release. Sprints 00–15 e Sprint complementar 13.1 integradas pelos PRs #1–17 (80%); Sprint 16 em andamento; Sprints 17–19 planejadas. As 20 sprints principais permanecem inalteradas. Dividir sprints grandes em PRs focados sem alterar escopo. Não confundir numeração de sprints com módulos.
 
 ## Documentos relacionados
 

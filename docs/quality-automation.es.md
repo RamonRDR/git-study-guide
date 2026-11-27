@@ -23,6 +23,8 @@ Prepara las páginas generadas, ejecuta `python scripts/validate.py --check comm
 
 Aún no hay ejemplos didácticos ejecutables aprobados. El manifiesto vacío bloquea por defecto: todos los archivos en examples/ (incluidos archivos inertes y variantes de mayúsculas/minúsculas) se rechazan, independientemente de extensión o modo, y manifiestos no vacíos fallan hasta contar con protocolo de ejecución revisado. No ejecutar código arbitrario de estudiantes. Prueba inicial Git usa repo temporal aislado y comprueba staging, rama, contenido del commit y estado limpio. Sprints posteriores amplían escenarios deterministas. Ejecutar pruebas locales solo desde revisiones confiables y revisadas.
 
+Sprint 16 añade ocho pruebas fijas de integración para resultados de proyectos, incluidos estados intermedios, conflicto esperado e instantáneas confirmadas inválidas. Ejecutan en repositorios temporales aislados y orígenes bare locales; las pruebas no extraen ni ejecutan Markdown ni entregas de estudiantes. Flujos alojados permanecen simulaciones no ejecutadas. Ejecuta suite completa e inspecciona logs reales Ubuntu/Windows del SHA más reciente.
+
 CI usa runners estándar hospedados por GitHub Linux y Windows en pull_request y pushes a main, con permisos contents de solo lectura, actions oficiales fijadas por SHA, sin credenciales persistidas de checkout, sin secretos, sin runners propios y sin servicio de pago. Cada job limitado a diez minutos. Código de PR sigue siendo no confiable; runners desechables no son entornos privilegiados de despliegue. Comprobar runs reales en última revisión; checks obligatorios requieren aprobación separada tras observar nombres.
 
 - [Estructura del proyecto](project-structure.es.md)
