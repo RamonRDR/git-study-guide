@@ -14,3 +14,7 @@ El módulo 16 ofrece ocho proyectos trilingües de ejecución manual en practica
 - [Automatización de calidad](quality-automation.es.md)
 
 - [Esquema del piloto de evaluaciones](assessment-pilot.es.md)
+
+curriculum/ contiene manifesto público versionado generado; schemas/ contiene cuatro esquemas de intercambio Draft 2020-12. Registro curricular interno sigue fuente de autoría. Consumidor confiable de referencia importa tree Git fijado sin ejecutar su código. Véase contrato integración para mapeo específico y límites.
+
+- [Contrato de integración Learning Hub](specs/project-foundation/integration-contract.es.md)

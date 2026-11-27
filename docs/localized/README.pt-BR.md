@@ -6,7 +6,7 @@
 
 Guia prático e multilíngue de Git, GitHub, GitLab, controle de versão e engenharia de software colaborativa, dos fundamentos aos fluxos avançados. Gratuito, público e independente; sem experiência prévia em programação.
 
-Status: fundação, governança e automação de qualidade integradas. Módulos 00–14 contêm aulas; módulo 15 contém a referência trilíngue de comandos (120 operações em 14 categorias). Módulo 16 contém oito projetos práticos; módulo 17 contém 75 registros de avaliação em quatro bancos. Identidade visual e integração Learning Hub permanecem planejadas.
+Status: fundação, governança e automação de qualidade integradas. Módulos 00–14 contêm aulas; módulo 15 contém a referência trilíngue de comandos (120 operações em 14 categorias). Módulo 16 contém oito projetos práticos; módulo 17 contém 75 registros de avaliação em quatro bancos. O contrato versionado de conteúdo Learning Hub está preparado; integração do site e identidade visual final permanecem planejadas.
 
 - [Trilha de aprendizagem](../learning-path.pt-BR.md)
 - [Referência de comandos](../../command-reference/README.pt-BR.md)

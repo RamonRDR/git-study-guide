@@ -14,3 +14,7 @@ Module 16 provides eight manually executed trilingual projects under practical-p
 - [Quality automation](quality-automation.md)
 
 - [Assessment pilot schema](assessment-pilot.md)
+
+curriculum/ contains the generated versioned public manifest; schemas/ contains four Draft 2020-12 interchange schemas. The internal curriculum registry remains the authoring source. The trusted reference consumer imports the pinned Git tree without executing its code. See the integration contract for the guide-specific mapping and limitations.
+
+- [Learning Hub integration contract](specs/project-foundation/integration-contract.md)
