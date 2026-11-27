@@ -1,35 +1,40 @@
-# Contrato preliminar de integración Learning Hub
+# Contrato de integración Learning Hub
 
 [English](integration-contract.md) · [Português](integration-contract.pt-BR.md) · [Español](integration-contract.es.md)
 
-Dirección normativa preliminar para pilotos; sin esquema publicado ni consumidor implementado. Finalizar en Sprint 18 tras pilotos del Sprint 17 y revisión coordinada con Python Study Guide.
+Contrato 1.0.0 propuesto para revisión de Sprint 18. Alcance: solo Git Study Guide. Repositorio público autoritativo; usa JSON/Markdown UTF-8 en build time, nunca scraping HTML o API GitHub por visitante. Consumidor mantiene lock externo aprobado con revision SHA-1 completo de 40 caracteres, guide_id=git-study-guide, manifest_version=1.0.0, assessment_version=1 y command_catalog_version=1. Solo versiones exactas; rechaza revisiones ausentes, no admitidas o mezcladas. Sin SHA autoembebido; selecciona commit aprobado tras merge y CI main. No se crea etiqueta release ni pin activo del sitio aquí.
 
 ## Versión y transporte
 
-Importar Markdown/JSON UTF-8 en build time desde un SHA Git inmutable aprobado. Registrar revision y schema_version; rechazar versiones major desconocidas, registros inválidos y revisiones mezcladas. Sin scraping HTML ni API GitHub por visitante. Default en, soportados en/pt-BR/es; campos visibles requieren mapas de idiomas. IDs ASCII minúsculos con puntos/guiones, estables independientemente del orden; únicos por tipo de entidad. Tupla propuesta en consumidor (guide_id, entity_type, id), guide_id=git-study-guide; no cambia unilateralmente contrato Python. Órdenes explícitas no negativas únicas entre hermanos. Solo rutas POSIX relativas al repositorio: rechazar traversal, rutas absolutas, barras invertidas, esquemas y escapes por symlink; verificar existencia, resolver en misma revisión, sanitizar Markdown/HTML. Anterior/siguiente sigue orden curricular, null en extremos.
+curriculum/manifest.json es inventario generado de 18 módulos y 141 capítulos (423 rutas localizadas). Títulos de módulos proceden de H1 de índices localizados; títulos de capítulos de rótulos existentes de índices localizados. IDs congelados son slug del módulo o module.slug (incluido slug numerado existente); nunca renumeres rutas ni reutilices IDs cuando cambie orden. Órdenes contiguos base cero entre hermanos. previous_id/next_id globales recorren capítulos con null en extremos; navegación Markdown conserva índices de módulos adyacentes. Títulos y rutas tienen exactamente en (predeterminado), pt-BR y es. Kinds: lesson, reference, project y assessment. Assets y resources referencian archivos rastreados; resources no es allowlist de ejecución.
 
-## Campos propuestos
+## Fuentes canónicas y relaciones
 
-| Entity | Fields |
-| --- | --- |
-| Curriculum | schema_version, default_locale, supported_locales, modules |
-| Module | id, order, slug, title, index, chapters |
-| Chapter | id, order, slug, title, content, assets, previous_id, next_id, exercise_ids, quiz_ids, interview_ids, execution |
-| Quiz | id, chapter_id, difficulty, type, prompt, choices, answer, explanation, hints, xp |
-| Exercise | id, chapter_id, difficulty, estimated_minutes, title, prompt, concepts, constraints, examples, starter_path or starter text, hints, solution_path, explanation, tests, execution, allowed_dependencies |
-| Interview question | id, topic, level, prompt, expected_answer, explanation, intent, common_errors, follow_ups, examples, rubric |
-| Mock | id, level, duration_minutes, question_ids, exercise_ids, scoring rubric |
-| Command entry | id, category, command, intent_tags, purpose, syntax, prerequisites, options, examples, expected_state, risk, recovery, references |
+Cuatro bancos referencian records.json existentes (schema_version entero 1); catálogo tiene 14 categorías, registros de categorías e intenciones y envolturas catalog.json (schema_version entero 1). Sin duplicar cuerpos. Validadores assessment-pilot y command-catalog siguen autoritativos para semántica completa. quiz_ids, exercise_ids e interview_ids identifican capítulo del banco y relaciones documentadas de prerrequisitos, no propiedad inferida de capítulo; mock_ids identifica solo capítulo de simulacros. command_ids identifica categoría propietaria y capítulos relacionados documentados. Orden canónico de bancos. Reconstrucción exacta valida relaciones; simulacros resuelven IDs de cuestionario/desafío/entrevista y dificultad igual. Conteos de revisión: 36 cuestionarios, 12 desafíos, 24 entrevistas, tres simulacros, 120 operaciones. Todos públicos, soluciones y rúbricas visibles.
 
-Campos candidatos, no un esquema. Preservar nombres comunes compatibles de Python; prosa localizada incluye títulos, prompts, opciones, pistas, explicaciones y rúbricas. Dificultad easy/medium/hard. Tipos de quiz objetivo y valores aceptados explícitos; XP solo orientativo. Registros de comandos complementan campos FR-04. Pruebas Git describen preparación, operaciones permitidas, estado esperado y límites; comparar refs, ascendencia, index, archivos rastreados/no rastreados y contenidos según corresponda, no hashes incidentales, horas, defaults de rama o salida localizada. Probar estados incorrectos representativos. Preguntas abiertas usan respuestas de referencia y autoevaluación; soluciones públicas son inspeccionables.
+## Compatibilidad y migración
 
-## Ejecución y responsabilidades
+Comparado en modo solo lectura con commit Python Study Guide a8a264f9f36ec276f0ad8e35f10f2d76f82fe211. Convenciones comunes: mapas de idiomas, orden explícito, revisión inmutable, relaciones tipadas, rutas seguras, rechazo de versiones desconocidas, espacio de nombres, autoevaluación orientativa. Manifesto Git añade guide_id, command_catalog, kinds reference/assessment y command_ids; descriptores apuntan registros agregados en vez de índices Python. Tipo quiz Git single-choice y answer cadena mapean explícitamente a multiple_choice y answer.choice_id si se adaptan a UI estilo Python; listas ordenadas de mapas de idiomas pueden transponerse a arrays por idioma. Prerrequisitos Git son muchos-a-muchos; no inventes propiedad chapter_id, XP o campos de prueba Python. Conserva IDs y versiones existentes. No importes registros Git como válidos por esquema Python; usa adaptador específico. Sin cambios en Python o Learning Hub.
 
-Mantener valores de ejecución compatibles con Python: browser_compatible (solo tras validar runtime fijado), local_only (motivo obligatorio), unverified (default, sin ejecución automática en navegador). Proponer metadatos opcionales Git para simulación frente a Git real y actividades con cuenta; finalizar tras piloto, nunca inferir soporte. Labs Git nativos siguen locales; sin sitio/runtime aquí. Evaluación de playground debe abordar fidelidad, operaciones soportadas, seguridad, aislamiento, persistencia, accesibilidad, compatibilidad, cancelación/límites de tiempo/salida y costo adicional cero. Worker solo no es frontera de seguridad. Nunca ejecutar comandos arbitrarios privilegiados ni evaluación semántica por IA. Guía se ocupa de contenido, metadatos, soluciones, pruebas y validación; sitio de renderizado seguro, UI, aislamiento de runtime, progreso, accesibilidad y despliegue. Progreso local del navegador es específico del dispositivo y puede borrarse. Sin sincronización obligatoria vía backend.
+## Procedimiento y seguridad del consumidor
 
-Referencia (snapshot consultado): [Python contract](https://github.com/RamonRDR/python-study-guide/blob/9102bbbf8f8dd846f2fb9682dd3f55bcacc10c95/docs/specs/learning-hub-foundation/integration-contract.md).
+Cuatro esquemas estructurales Draft 2020-12 documentan manifiesto, bancos, catálogo y lock externo. Validador Python sin dependencias aplica JSON estricto (claves duplicadas, números no finitos y tokens fraccionarios rechazados), manifiesto regenerado exacto, inventario idiomas/rutas, semántica bancos, relaciones tipadas, conteos y versiones. Validación estructural JSON Schema sola no demuestra existencia, unicidad por ID, semántica o integridad referencial; usa checks estructurales y semánticos en integraciones. Autoría: prepara cambios fuente, ejecuta python scripts/learning_hub_contract.py --write, prepara manifiesto, luego python scripts/validate.py --check learning-hub-contract y suite completa. Sin red ni nueva dependencia.
+
+Consumidor de referencia confiable scripts/learning_hub_consumer.py recibe lock externo y base de objetos Git SHA-1 local confiable y completa para instantánea. Verifica commit solicitado, desactiva objetos de reemplazo y protocolos de red, lee blobs regulares 100644 por ID sin filtros checkout, comprueba tamaños y hashes Git, exporta a staging nuevo aislado, rechaza traversal, symlinks, entradas ejecutables/submódulos, colisiones, archivos ausentes/extra/modificados y compara igualdad JSON de esquemas soportados confiables fuera de instantánea. Usa validadores confiables, nunca importa código de instantánea. Límites: 3000 archivos, 32 MiB total, 60 s por llamada Git. Valida candidato antes de adoptar pin; ante fallo conserva pin anterior aprobado; rollback es reseleccionar SHA completo. Pruebas usan commit real seleccionado y datos sintéticos de dos revisiones, no sitio real ni lanzamiento firmado independientemente. Confía base de objetos, binario Git y staging privado; sin verificación de firma ni sandbox de filesystem concurrente hostil. Renderizador debe sanear Markdown/HTML, enlaces, assets y URLs; sin ejecución de contenido arbitrario.
+
+## Responsabilidad y ejecución
+
+Guía posee contenido, metadatos, soluciones públicas, QA de referencia y validación de esquema. Sitio posee UI/renderizado seguro, accesibilidad, progreso, aislamiento y despliegue. Proyectos/desafíos Git nativos son local_only con razones localizadas; otros capítulos unverified. Browser_compatible no se admite en contrato v1; ningún runtime validado o introducido. Cuestionarios comparan IDs exactos; entrevistas/simulacros usan rúbrica manual explícita, nunca corrección IA. Predicados de desafío son fixtures QA locales confiables, no ejecutor arbitrario de estudiantes; estado final no demuestra seguridad de acciones intermedias. Progreso navegador específico del dispositivo y puede borrarse. Véase decisión playground opcional.
 
 ## Documentos relacionados
 
-- [Especificación](specification.es.md)
-- [Decisiones arquitectónicas](../../adr/README.es.md)
+- [Manifest](../../../curriculum/manifest.json)
+- [Manifest schema](../../../schemas/curriculum-manifest.schema.json)
+- [Assessment schema](../../../schemas/assessment-bank.schema.json)
+- [Command catalog schema](../../../schemas/command-catalog.schema.json)
+- [Revision lock schema](../../../schemas/revision-lock.schema.json)
+- [Reference consumer](../../../scripts/learning_hub_consumer.py)
+- [Specification](specification.es.md)
+- [ADR 0004](../../adr/0004-learning-hub-integration.es.md)
+- [ADR 0006](../../adr/0006-browser-playground.es.md)
+- [Python reference snapshot](https://github.com/RamonRDR/python-study-guide/blob/a8a264f9f36ec276f0ad8e35f10f2d76f82fe211/docs/specs/learning-hub-foundation/integration-contract.md)
