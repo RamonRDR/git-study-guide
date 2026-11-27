@@ -1297,6 +1297,1088 @@
           "execution": "unverified"
         }
       ]
+    },
+    {
+      "id": "github",
+      "order": 8,
+      "slug": "github",
+      "title": {
+        "en": "GitHub",
+        "pt-BR": "GitHub",
+        "es": "GitHub"
+      },
+      "index": {
+        "en": "github/README.md",
+        "pt-BR": "github/README.pt-BR.md",
+        "es": "github/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "github.01-platform-and-repositories",
+          "order": 0,
+          "slug": "01-platform-and-repositories",
+          "kind": "lesson",
+          "title": {
+            "en": "GitHub, repositories and visibility",
+            "pt-BR": "GitHub, repositórios e visibilidade",
+            "es": "GitHub, repositorios y visibilidad"
+          },
+          "content": {
+            "en": "github/01-platform-and-repositories/README.md",
+            "pt-BR": "github/01-platform-and-repositories/README.pt-BR.md",
+            "es": "github/01-platform-and-repositories/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "history-and-recovery.08-amend",
+          "next_id": "github.02-permissions-and-authentication",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.02-permissions-and-authentication",
+          "order": 1,
+          "slug": "02-permissions-and-authentication",
+          "kind": "lesson",
+          "title": {
+            "en": "Permissions and authentication",
+            "pt-BR": "Permissões e autenticação",
+            "es": "Permisos y autenticación"
+          },
+          "content": {
+            "en": "github/02-permissions-and-authentication/README.md",
+            "pt-BR": "github/02-permissions-and-authentication/README.pt-BR.md",
+            "es": "github/02-permissions-and-authentication/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.01-platform-and-repositories",
+          "next_id": "github.03-issues-and-planning",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.03-issues-and-planning",
+          "order": 2,
+          "slug": "03-issues-and-planning",
+          "kind": "lesson",
+          "title": {
+            "en": "Issues, labels, milestones and projects",
+            "pt-BR": "Issues, labels, milestones e projects",
+            "es": "Issues, labels, milestones y projects"
+          },
+          "content": {
+            "en": "github/03-issues-and-planning/README.md",
+            "pt-BR": "github/03-issues-and-planning/README.pt-BR.md",
+            "es": "github/03-issues-and-planning/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.02-permissions-and-authentication",
+          "next_id": "github.04-pull-requests-and-review",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.04-pull-requests-and-review",
+          "order": 3,
+          "slug": "04-pull-requests-and-review",
+          "kind": "lesson",
+          "title": {
+            "en": "Pull requests and code review",
+            "pt-BR": "Pull requests e code review",
+            "es": "Pull requests y revisión de código"
+          },
+          "content": {
+            "en": "github/04-pull-requests-and-review/README.md",
+            "pt-BR": "github/04-pull-requests-and-review/README.pt-BR.md",
+            "es": "github/04-pull-requests-and-review/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.03-issues-and-planning",
+          "next_id": "github.05-forks-and-open-source",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.05-forks-and-open-source",
+          "order": 4,
+          "slug": "05-forks-and-open-source",
+          "kind": "lesson",
+          "title": {
+            "en": "Forks and open-source contributions",
+            "pt-BR": "Forks e contribuições open source",
+            "es": "Forks y contribuciones open source"
+          },
+          "content": {
+            "en": "github/05-forks-and-open-source/README.md",
+            "pt-BR": "github/05-forks-and-open-source/README.pt-BR.md",
+            "es": "github/05-forks-and-open-source/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.04-pull-requests-and-review",
+          "next_id": "github.06-protection-and-rulesets",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.06-protection-and-rulesets",
+          "order": 5,
+          "slug": "06-protection-and-rulesets",
+          "kind": "lesson",
+          "title": {
+            "en": "Branch protection, rulesets and quality gates",
+            "pt-BR": "Branch protection, rulesets e quality gates",
+            "es": "Protección de ramas, rulesets y quality gates"
+          },
+          "content": {
+            "en": "github/06-protection-and-rulesets/README.md",
+            "pt-BR": "github/06-protection-and-rulesets/README.pt-BR.md",
+            "es": "github/06-protection-and-rulesets/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.05-forks-and-open-source",
+          "next_id": "github.07-tags-and-releases",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.07-tags-and-releases",
+          "order": 6,
+          "slug": "07-tags-and-releases",
+          "kind": "lesson",
+          "title": {
+            "en": "Tags and GitHub Releases",
+            "pt-BR": "Tags e GitHub Releases",
+            "es": "Tags y GitHub Releases"
+          },
+          "content": {
+            "en": "github/07-tags-and-releases/README.md",
+            "pt-BR": "github/07-tags-and-releases/README.pt-BR.md",
+            "es": "github/07-tags-and-releases/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.06-protection-and-rulesets",
+          "next_id": "github.08-github-cli",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "github.08-github-cli",
+          "order": 7,
+          "slug": "08-github-cli",
+          "kind": "lesson",
+          "title": {
+            "en": "Optional GitHub CLI and read-only inspection",
+            "pt-BR": "GitHub CLI opcional e inspeção somente leitura",
+            "es": "GitHub CLI opcional e consulta de solo lectura"
+          },
+          "content": {
+            "en": "github/08-github-cli/README.md",
+            "pt-BR": "github/08-github-cli/README.pt-BR.md",
+            "es": "github/08-github-cli/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.07-tags-and-releases",
+          "next_id": "gitlab.01-projects-groups-and-offerings",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "gitlab",
+      "order": 9,
+      "slug": "gitlab",
+      "title": {
+        "en": "GitLab",
+        "pt-BR": "GitLab",
+        "es": "GitLab"
+      },
+      "index": {
+        "en": "gitlab/README.md",
+        "pt-BR": "gitlab/README.pt-BR.md",
+        "es": "gitlab/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "gitlab.01-projects-groups-and-offerings",
+          "order": 0,
+          "slug": "01-projects-groups-and-offerings",
+          "kind": "lesson",
+          "title": {
+            "en": "Projects, groups and GitLab offerings",
+            "pt-BR": "Projetos, grupos e modalidades do GitLab",
+            "es": "Proyectos, grupos y modalidades de GitLab"
+          },
+          "content": {
+            "en": "gitlab/01-projects-groups-and-offerings/README.md",
+            "pt-BR": "gitlab/01-projects-groups-and-offerings/README.pt-BR.md",
+            "es": "gitlab/01-projects-groups-and-offerings/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "github.08-github-cli",
+          "next_id": "gitlab.02-visibility-permissions-and-authentication",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.02-visibility-permissions-and-authentication",
+          "order": 1,
+          "slug": "02-visibility-permissions-and-authentication",
+          "kind": "lesson",
+          "title": {
+            "en": "Visibility, permissions and authentication",
+            "pt-BR": "Visibilidade, permissões e autenticação",
+            "es": "Visibilidad, permisos y autenticación"
+          },
+          "content": {
+            "en": "gitlab/02-visibility-permissions-and-authentication/README.md",
+            "pt-BR": "gitlab/02-visibility-permissions-and-authentication/README.pt-BR.md",
+            "es": "gitlab/02-visibility-permissions-and-authentication/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.01-projects-groups-and-offerings",
+          "next_id": "gitlab.03-issues-labels-milestones-and-boards",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.03-issues-labels-milestones-and-boards",
+          "order": 2,
+          "slug": "03-issues-labels-milestones-and-boards",
+          "kind": "lesson",
+          "title": {
+            "en": "Issues, labels, milestones and boards",
+            "pt-BR": "Issues, labels, milestones e boards",
+            "es": "Issues, labels, milestones y tableros"
+          },
+          "content": {
+            "en": "gitlab/03-issues-labels-milestones-and-boards/README.md",
+            "pt-BR": "gitlab/03-issues-labels-milestones-and-boards/README.pt-BR.md",
+            "es": "gitlab/03-issues-labels-milestones-and-boards/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.02-visibility-permissions-and-authentication",
+          "next_id": "gitlab.04-merge-requests-review-and-forks",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.04-merge-requests-review-and-forks",
+          "order": 3,
+          "slug": "04-merge-requests-review-and-forks",
+          "kind": "lesson",
+          "title": {
+            "en": "Merge requests, code review and forks",
+            "pt-BR": "Merge requests, code review e forks",
+            "es": "Merge requests, revisión de código y forks"
+          },
+          "content": {
+            "en": "gitlab/04-merge-requests-review-and-forks/README.md",
+            "pt-BR": "gitlab/04-merge-requests-review-and-forks/README.pt-BR.md",
+            "es": "gitlab/04-merge-requests-review-and-forks/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.03-issues-labels-milestones-and-boards",
+          "next_id": "gitlab.05-protected-branches-and-merge-checks",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.05-protected-branches-and-merge-checks",
+          "order": 4,
+          "slug": "05-protected-branches-and-merge-checks",
+          "kind": "lesson",
+          "title": {
+            "en": "Protected branches, approvals and merge checks",
+            "pt-BR": "Branches protegidas, aprovações e verificações de merge",
+            "es": "Ramas protegidas, aprobaciones y controles de merge"
+          },
+          "content": {
+            "en": "gitlab/05-protected-branches-and-merge-checks/README.md",
+            "pt-BR": "gitlab/05-protected-branches-and-merge-checks/README.pt-BR.md",
+            "es": "gitlab/05-protected-branches-and-merge-checks/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.04-merge-requests-review-and-forks",
+          "next_id": "gitlab.06-pipelines-and-runners",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.06-pipelines-and-runners",
+          "order": 5,
+          "slug": "06-pipelines-and-runners",
+          "kind": "lesson",
+          "title": {
+            "en": "Introduction to pipelines and runners",
+            "pt-BR": "Introdução a pipelines e runners",
+            "es": "Introducción a pipelines y runners"
+          },
+          "content": {
+            "en": "gitlab/06-pipelines-and-runners/README.md",
+            "pt-BR": "gitlab/06-pipelines-and-runners/README.pt-BR.md",
+            "es": "gitlab/06-pipelines-and-runners/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.05-protected-branches-and-merge-checks",
+          "next_id": "gitlab.07-tags-and-releases",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.07-tags-and-releases",
+          "order": 6,
+          "slug": "07-tags-and-releases",
+          "kind": "lesson",
+          "title": {
+            "en": "Git tags and GitLab releases",
+            "pt-BR": "Tags Git e releases do GitLab",
+            "es": "Tags Git y releases de GitLab"
+          },
+          "content": {
+            "en": "gitlab/07-tags-and-releases/README.md",
+            "pt-BR": "gitlab/07-tags-and-releases/README.pt-BR.md",
+            "es": "gitlab/07-tags-and-releases/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.06-pipelines-and-runners",
+          "next_id": "gitlab.08-gitlab-cli-and-platform-comparison",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "gitlab.08-gitlab-cli-and-platform-comparison",
+          "order": 7,
+          "slug": "08-gitlab-cli-and-platform-comparison",
+          "kind": "lesson",
+          "title": {
+            "en": "Optional GitLab CLI and platform comparison",
+            "pt-BR": "CLI GitLab opcional e comparação de plataformas",
+            "es": "CLI GitLab opcional y comparación de plataformas"
+          },
+          "content": {
+            "en": "gitlab/08-gitlab-cli-and-platform-comparison/README.md",
+            "pt-BR": "gitlab/08-gitlab-cli-and-platform-comparison/README.pt-BR.md",
+            "es": "gitlab/08-gitlab-cli-and-platform-comparison/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.07-tags-and-releases",
+          "next_id": "ci-cd.01-ci-delivery-and-deployment",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "ci-cd",
+      "order": 10,
+      "slug": "ci-cd",
+      "title": {
+        "en": "CI/CD & Automation",
+        "pt-BR": "CI/CD & Automation",
+        "es": "CI/CD & Automation"
+      },
+      "index": {
+        "en": "ci-cd/README.md",
+        "pt-BR": "ci-cd/README.pt-BR.md",
+        "es": "ci-cd/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "ci-cd.01-ci-delivery-and-deployment",
+          "order": 0,
+          "slug": "01-ci-delivery-and-deployment",
+          "kind": "lesson",
+          "title": {
+            "en": "Integration, delivery and deployment",
+            "pt-BR": "Integração, entrega e implantação contínuas",
+            "es": "Integración, entrega y despliegue continuos"
+          },
+          "content": {
+            "en": "ci-cd/01-ci-delivery-and-deployment/README.md",
+            "pt-BR": "ci-cd/01-ci-delivery-and-deployment/README.pt-BR.md",
+            "es": "ci-cd/01-ci-delivery-and-deployment/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "gitlab.08-gitlab-cli-and-platform-comparison",
+          "next_id": "ci-cd.02-yaml-fundamentals",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.02-yaml-fundamentals",
+          "order": 1,
+          "slug": "02-yaml-fundamentals",
+          "kind": "lesson",
+          "title": {
+            "en": "YAML and configuration reading",
+            "pt-BR": "YAML e leitura de configuração",
+            "es": "YAML y lectura de configuración"
+          },
+          "content": {
+            "en": "ci-cd/02-yaml-fundamentals/README.md",
+            "pt-BR": "ci-cd/02-yaml-fundamentals/README.pt-BR.md",
+            "es": "ci-cd/02-yaml-fundamentals/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.01-ci-delivery-and-deployment",
+          "next_id": "ci-cd.03-github-actions",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.03-github-actions",
+          "order": 2,
+          "slug": "03-github-actions",
+          "kind": "lesson",
+          "title": {
+            "en": "GitHub Actions workflows",
+            "pt-BR": "Workflows do GitHub Actions",
+            "es": "Workflows de GitHub Actions"
+          },
+          "content": {
+            "en": "ci-cd/03-github-actions/README.md",
+            "pt-BR": "ci-cd/03-github-actions/README.pt-BR.md",
+            "es": "ci-cd/03-github-actions/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.02-yaml-fundamentals",
+          "next_id": "ci-cd.04-gitlab-ci-cd",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.04-gitlab-ci-cd",
+          "order": 3,
+          "slug": "04-gitlab-ci-cd",
+          "kind": "lesson",
+          "title": {
+            "en": "GitLab CI/CD pipelines",
+            "pt-BR": "Pipelines do GitLab CI/CD",
+            "es": "Pipelines de GitLab CI/CD"
+          },
+          "content": {
+            "en": "ci-cd/04-gitlab-ci-cd/README.md",
+            "pt-BR": "ci-cd/04-gitlab-ci-cd/README.pt-BR.md",
+            "es": "ci-cd/04-gitlab-ci-cd/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.03-github-actions",
+          "next_id": "ci-cd.05-runners-and-execution-environments",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.05-runners-and-execution-environments",
+          "order": 4,
+          "slug": "05-runners-and-execution-environments",
+          "kind": "lesson",
+          "title": {
+            "en": "Runners and execution environments",
+            "pt-BR": "Runners e ambientes de execução",
+            "es": "Runners y entornos de ejecución"
+          },
+          "content": {
+            "en": "ci-cd/05-runners-and-execution-environments/README.md",
+            "pt-BR": "ci-cd/05-runners-and-execution-environments/README.pt-BR.md",
+            "es": "ci-cd/05-runners-and-execution-environments/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.04-gitlab-ci-cd",
+          "next_id": "ci-cd.06-jobs-steps-stages-and-dependencies",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.06-jobs-steps-stages-and-dependencies",
+          "order": 5,
+          "slug": "06-jobs-steps-stages-and-dependencies",
+          "kind": "lesson",
+          "title": {
+            "en": "Jobs, steps, stages and dependencies",
+            "pt-BR": "Jobs, steps, stages e dependências",
+            "es": "Jobs, steps, stages y dependencias"
+          },
+          "content": {
+            "en": "ci-cd/06-jobs-steps-stages-and-dependencies/README.md",
+            "pt-BR": "ci-cd/06-jobs-steps-stages-and-dependencies/README.pt-BR.md",
+            "es": "ci-cd/06-jobs-steps-stages-and-dependencies/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.05-runners-and-execution-environments",
+          "next_id": "ci-cd.07-artifacts-and-cache",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.07-artifacts-and-cache",
+          "order": 6,
+          "slug": "07-artifacts-and-cache",
+          "kind": "lesson",
+          "title": {
+            "en": "Artifacts and cache",
+            "pt-BR": "Artifacts e cache",
+            "es": "Artefactos y caché"
+          },
+          "content": {
+            "en": "ci-cd/07-artifacts-and-cache/README.md",
+            "pt-BR": "ci-cd/07-artifacts-and-cache/README.pt-BR.md",
+            "es": "ci-cd/07-artifacts-and-cache/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.06-jobs-steps-stages-and-dependencies",
+          "next_id": "ci-cd.08-environments-variables-and-secrets",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.08-environments-variables-and-secrets",
+          "order": 7,
+          "slug": "08-environments-variables-and-secrets",
+          "kind": "lesson",
+          "title": {
+            "en": "Environments, variables and secrets",
+            "pt-BR": "Ambientes, variáveis e segredos",
+            "es": "Entornos, variables y secretos"
+          },
+          "content": {
+            "en": "ci-cd/08-environments-variables-and-secrets/README.md",
+            "pt-BR": "ci-cd/08-environments-variables-and-secrets/README.pt-BR.md",
+            "es": "ci-cd/08-environments-variables-and-secrets/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.07-artifacts-and-cache",
+          "next_id": "ci-cd.09-quality-gates-and-troubleshooting",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.09-quality-gates-and-troubleshooting",
+          "order": 8,
+          "slug": "09-quality-gates-and-troubleshooting",
+          "kind": "lesson",
+          "title": {
+            "en": "Quality gates and troubleshooting",
+            "pt-BR": "Quality gates e diagnóstico",
+            "es": "Controles de calidad y diagnóstico"
+          },
+          "content": {
+            "en": "ci-cd/09-quality-gates-and-troubleshooting/README.md",
+            "pt-BR": "ci-cd/09-quality-gates-and-troubleshooting/README.pt-BR.md",
+            "es": "ci-cd/09-quality-gates-and-troubleshooting/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.08-environments-variables-and-secrets",
+          "next_id": "ci-cd.10-integrated-quality-pipeline-lab",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "ci-cd.10-integrated-quality-pipeline-lab",
+          "order": 9,
+          "slug": "10-integrated-quality-pipeline-lab",
+          "kind": "lesson",
+          "title": {
+            "en": "Integrated quality pipeline lab",
+            "pt-BR": "Laboratório de pipeline de qualidade integrado",
+            "es": "Laboratorio de pipeline de calidad integrado"
+          },
+          "content": {
+            "en": "ci-cd/10-integrated-quality-pipeline-lab/README.md",
+            "pt-BR": "ci-cd/10-integrated-quality-pipeline-lab/README.pt-BR.md",
+            "es": "ci-cd/10-integrated-quality-pipeline-lab/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.09-quality-gates-and-troubleshooting",
+          "next_id": "professional-workflows.01-feature-branch-workflow",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "professional-workflows",
+      "order": 11,
+      "slug": "professional-workflows",
+      "title": {
+        "en": "Professional Workflows",
+        "pt-BR": "Professional Workflows",
+        "es": "Professional Workflows"
+      },
+      "index": {
+        "en": "professional-workflows/README.md",
+        "pt-BR": "professional-workflows/README.pt-BR.md",
+        "es": "professional-workflows/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "professional-workflows.01-feature-branch-workflow",
+          "order": 0,
+          "slug": "01-feature-branch-workflow",
+          "kind": "lesson",
+          "title": {
+            "en": "Feature Branch Workflow",
+            "pt-BR": "Fluxo com feature branches",
+            "es": "Flujo con ramas de funcionalidad"
+          },
+          "content": {
+            "en": "professional-workflows/01-feature-branch-workflow/README.md",
+            "pt-BR": "professional-workflows/01-feature-branch-workflow/README.pt-BR.md",
+            "es": "professional-workflows/01-feature-branch-workflow/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "ci-cd.10-integrated-quality-pipeline-lab",
+          "next_id": "professional-workflows.02-git-flow",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.02-git-flow",
+          "order": 1,
+          "slug": "02-git-flow",
+          "kind": "lesson",
+          "title": {
+            "en": "Git Flow",
+            "pt-BR": "Git Flow",
+            "es": "Git Flow"
+          },
+          "content": {
+            "en": "professional-workflows/02-git-flow/README.md",
+            "pt-BR": "professional-workflows/02-git-flow/README.pt-BR.md",
+            "es": "professional-workflows/02-git-flow/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.01-feature-branch-workflow",
+          "next_id": "professional-workflows.03-github-flow",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.03-github-flow",
+          "order": 2,
+          "slug": "03-github-flow",
+          "kind": "lesson",
+          "title": {
+            "en": "GitHub Flow",
+            "pt-BR": "GitHub Flow",
+            "es": "GitHub Flow"
+          },
+          "content": {
+            "en": "professional-workflows/03-github-flow/README.md",
+            "pt-BR": "professional-workflows/03-github-flow/README.pt-BR.md",
+            "es": "professional-workflows/03-github-flow/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.02-git-flow",
+          "next_id": "professional-workflows.04-trunk-based-development",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.04-trunk-based-development",
+          "order": 3,
+          "slug": "04-trunk-based-development",
+          "kind": "lesson",
+          "title": {
+            "en": "Trunk-Based Development",
+            "pt-BR": "Desenvolvimento trunk-based",
+            "es": "Desarrollo basado en trunk"
+          },
+          "content": {
+            "en": "professional-workflows/04-trunk-based-development/README.md",
+            "pt-BR": "professional-workflows/04-trunk-based-development/README.pt-BR.md",
+            "es": "professional-workflows/04-trunk-based-development/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.03-github-flow",
+          "next_id": "professional-workflows.05-workflow-trade-offs",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.05-workflow-trade-offs",
+          "order": 4,
+          "slug": "05-workflow-trade-offs",
+          "kind": "lesson",
+          "title": {
+            "en": "Choosing a workflow",
+            "pt-BR": "Escolha de estratégia de fluxo",
+            "es": "Elección de estrategia de flujo"
+          },
+          "content": {
+            "en": "professional-workflows/05-workflow-trade-offs/README.md",
+            "pt-BR": "professional-workflows/05-workflow-trade-offs/README.pt-BR.md",
+            "es": "professional-workflows/05-workflow-trade-offs/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.04-trunk-based-development",
+          "next_id": "professional-workflows.06-conventional-commits",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.06-conventional-commits",
+          "order": 5,
+          "slug": "06-conventional-commits",
+          "kind": "lesson",
+          "title": {
+            "en": "Conventional Commits",
+            "pt-BR": "Conventional Commits",
+            "es": "Conventional Commits"
+          },
+          "content": {
+            "en": "professional-workflows/06-conventional-commits/README.md",
+            "pt-BR": "professional-workflows/06-conventional-commits/README.pt-BR.md",
+            "es": "professional-workflows/06-conventional-commits/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.05-workflow-trade-offs",
+          "next_id": "professional-workflows.07-semantic-versioning",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.07-semantic-versioning",
+          "order": 6,
+          "slug": "07-semantic-versioning",
+          "kind": "lesson",
+          "title": {
+            "en": "Semantic Versioning",
+            "pt-BR": "Versionamento semântico",
+            "es": "Versionado semántico"
+          },
+          "content": {
+            "en": "professional-workflows/07-semantic-versioning/README.md",
+            "pt-BR": "professional-workflows/07-semantic-versioning/README.pt-BR.md",
+            "es": "professional-workflows/07-semantic-versioning/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.06-conventional-commits",
+          "next_id": "professional-workflows.08-code-review",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.08-code-review",
+          "order": 7,
+          "slug": "08-code-review",
+          "kind": "lesson",
+          "title": {
+            "en": "Code review and merge readiness",
+            "pt-BR": "Code review e prontidão para merge",
+            "es": "Code review y preparación para merge"
+          },
+          "content": {
+            "en": "professional-workflows/08-code-review/README.md",
+            "pt-BR": "professional-workflows/08-code-review/README.pt-BR.md",
+            "es": "professional-workflows/08-code-review/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.07-semantic-versioning",
+          "next_id": "professional-workflows.09-spec-driven-development",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.09-spec-driven-development",
+          "order": 8,
+          "slug": "09-spec-driven-development",
+          "kind": "lesson",
+          "title": {
+            "en": "Spec-Driven Development (SDD)",
+            "pt-BR": "Desenvolvimento guiado por especificação (SDD)",
+            "es": "Desarrollo guiado por especificación (SDD)"
+          },
+          "content": {
+            "en": "professional-workflows/09-spec-driven-development/README.md",
+            "pt-BR": "professional-workflows/09-spec-driven-development/README.pt-BR.md",
+            "es": "professional-workflows/09-spec-driven-development/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.08-code-review",
+          "next_id": "professional-workflows.10-test-driven-development",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.10-test-driven-development",
+          "order": 9,
+          "slug": "10-test-driven-development",
+          "kind": "lesson",
+          "title": {
+            "en": "Test-Driven Development (TDD)",
+            "pt-BR": "Desenvolvimento guiado por testes (TDD)",
+            "es": "Desarrollo guiado por pruebas (TDD)"
+          },
+          "content": {
+            "en": "professional-workflows/10-test-driven-development/README.md",
+            "pt-BR": "professional-workflows/10-test-driven-development/README.pt-BR.md",
+            "es": "professional-workflows/10-test-driven-development/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.09-spec-driven-development",
+          "next_id": "professional-workflows.11-ai-assisted-development",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.11-ai-assisted-development",
+          "order": 10,
+          "slug": "11-ai-assisted-development",
+          "kind": "lesson",
+          "title": {
+            "en": "AI-assisted professional work",
+            "pt-BR": "Trabalho profissional assistido por IA",
+            "es": "Trabajo profesional asistido por IA"
+          },
+          "content": {
+            "en": "professional-workflows/11-ai-assisted-development/README.md",
+            "pt-BR": "professional-workflows/11-ai-assisted-development/README.pt-BR.md",
+            "es": "professional-workflows/11-ai-assisted-development/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.10-test-driven-development",
+          "next_id": "professional-workflows.12-release-management",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.12-release-management",
+          "order": 11,
+          "slug": "12-release-management",
+          "kind": "lesson",
+          "title": {
+            "en": "Release management",
+            "pt-BR": "Gestão de releases",
+            "es": "Gestión de releases"
+          },
+          "content": {
+            "en": "professional-workflows/12-release-management/README.md",
+            "pt-BR": "professional-workflows/12-release-management/README.pt-BR.md",
+            "es": "professional-workflows/12-release-management/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.11-ai-assisted-development",
+          "next_id": "professional-workflows.13-integrated-professional-workflow-lab",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "professional-workflows.13-integrated-professional-workflow-lab",
+          "order": 12,
+          "slug": "13-integrated-professional-workflow-lab",
+          "kind": "lesson",
+          "title": {
+            "en": "Integrated professional workflow lab",
+            "pt-BR": "Laboratório de fluxo profissional integrado",
+            "es": "Laboratorio de flujo profesional integrado"
+          },
+          "content": {
+            "en": "professional-workflows/13-integrated-professional-workflow-lab/README.md",
+            "pt-BR": "professional-workflows/13-integrated-professional-workflow-lab/README.pt-BR.md",
+            "es": "professional-workflows/13-integrated-professional-workflow-lab/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.12-release-management",
+          "next_id": "security.01-security-foundations",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
     }
   ]
 }
