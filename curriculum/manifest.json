@@ -7,7 +7,7 @@
     "pt-BR",
     "es"
   ],
-  "association_status": "pending",
+  "association_status": "complete",
   "assets": [],
   "banks": {
     "quizzes": {
@@ -243,7 +243,9 @@
           "resources": [],
           "previous_id": "getting-started.04-editor-and-gui",
           "next_id": "fundamentals.01-version-control",
-          "exercise_ids": [],
+          "exercise_ids": [
+            "challenge-first-commit"
+          ],
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
@@ -293,7 +295,9 @@
           "next_id": "fundamentals.02-history-of-git",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-version-control"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -344,8 +348,12 @@
           "previous_id": "fundamentals.02-history-of-git",
           "next_id": "git-architecture.01-three-locations",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-hosting"
+          ],
+          "interview_ids": [
+            "interview-platform"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -386,9 +394,15 @@
           "resources": [],
           "previous_id": "fundamentals.03-distributed-and-platforms",
           "next_id": "git-architecture.02-snapshots-head-and-refs",
-          "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "exercise_ids": [
+            "challenge-staged-snapshot"
+          ],
+          "quiz_ids": [
+            "quiz-snapshot"
+          ],
+          "interview_ids": [
+            "interview-three-states"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-init-bare",
@@ -426,7 +440,9 @@
           "previous_id": "git-architecture.01-three-locations",
           "next_id": "git-architecture.03-file-states",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-head"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [],
@@ -498,7 +514,9 @@
           "previous_id": "git-architecture.03-file-states",
           "next_id": "basic-commands.02-status-add-commit",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-config"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -531,7 +549,10 @@
           "previous_id": "basic-commands.01-init-config-help",
           "next_id": "basic-commands.03-diff-log-show",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-add",
+            "quiz-status"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -567,8 +588,13 @@
           "previous_id": "basic-commands.02-status-add-commit",
           "next_id": "basic-commands.04-move-and-remove",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-diff",
+            "quiz-three-dot"
+          ],
+          "interview_ids": [
+            "interview-status-diff"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-log",
@@ -636,8 +662,12 @@
           "previous_id": "basic-commands.04-move-and-remove",
           "next_id": "branches.01-create-and-switch",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-ignore"
+          ],
+          "interview_ids": [
+            "interview-ignore"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-check-ignore",
@@ -682,9 +712,15 @@
           "resources": [],
           "previous_id": "basic-commands.05-ignore-and-review",
           "next_id": "branches.02-start-points-and-comparison",
-          "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "exercise_ids": [
+            "challenge-feature-branch"
+          ],
+          "quiz_ids": [
+            "quiz-switch"
+          ],
+          "interview_ids": [
+            "interview-branch"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-branch-list",
@@ -876,8 +912,12 @@
           "resources": [],
           "previous_id": "merge-and-conflicts.01-integration-safety",
           "next_id": "merge-and-conflicts.03-merge-commit",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-fast-forward"
+          ],
+          "quiz_ids": [
+            "quiz-ff"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -905,7 +945,9 @@
           "previous_id": "merge-and-conflicts.02-fast-forward",
           "next_id": "merge-and-conflicts.04-conflict-resolution",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-parents"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -933,9 +975,15 @@
           "resources": [],
           "previous_id": "merge-and-conflicts.03-merge-commit",
           "next_id": "merge-and-conflicts.05-squash-merge",
-          "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "exercise_ids": [
+            "challenge-merge-resolution"
+          ],
+          "quiz_ids": [
+            "quiz-conflict"
+          ],
+          "interview_ids": [
+            "interview-resolve"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-merge",
@@ -964,8 +1012,12 @@
           "resources": [],
           "previous_id": "merge-and-conflicts.04-conflict-resolution",
           "next_id": "merge-and-conflicts.06-rebase-and-conflicts",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-squash"
+          ],
+          "quiz_ids": [
+            "quiz-squash"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -993,8 +1045,12 @@
           "previous_id": "merge-and-conflicts.05-squash-merge",
           "next_id": "merge-and-conflicts.07-interactive-rebase",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-rebase"
+          ],
+          "interview_ids": [
+            "interview-merge-rebase"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-rebase",
@@ -1071,8 +1127,13 @@
           "previous_id": "merge-and-conflicts.07-interactive-rebase",
           "next_id": "remote-repositories.02-fetch-and-tracking",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-clone",
+            "quiz-remote"
+          ],
+          "interview_ids": [
+            "interview-clone-init"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-init-bare",
@@ -1102,8 +1163,12 @@
           "previous_id": "remote-repositories.01-remote-concepts",
           "next_id": "remote-repositories.03-pull-push-and-divergence",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-fetch"
+          ],
+          "interview_ids": [
+            "interview-fetch-pull"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-branch-upstream",
@@ -1132,8 +1197,12 @@
           "previous_id": "remote-repositories.02-fetch-and-tracking",
           "next_id": "remote-repositories.04-remote-branch-lifecycle",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-lease"
+          ],
+          "interview_ids": [
+            "interview-lease"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-branch-upstream",
@@ -1272,8 +1341,12 @@
           "resources": [],
           "previous_id": "history-and-recovery.01-recovery-safety",
           "next_id": "history-and-recovery.03-reset",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-unstage"
+          ],
+          "quiz_ids": [
+            "quiz-unstage"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -1302,8 +1375,12 @@
           "previous_id": "history-and-recovery.02-restore",
           "next_id": "history-and-recovery.04-revert",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-soft"
+          ],
+          "interview_ids": [
+            "interview-reset-revert"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-reset"
@@ -1329,8 +1406,12 @@
           "resources": [],
           "previous_id": "history-and-recovery.03-reset",
           "next_id": "history-and-recovery.05-reflog",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-revert"
+          ],
+          "quiz_ids": [
+            "quiz-revert"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -1357,8 +1438,12 @@
           "resources": [],
           "previous_id": "history-and-recovery.04-revert",
           "next_id": "history-and-recovery.06-stash",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-recover-tip"
+          ],
+          "quiz_ids": [
+            "quiz-reflog"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -1385,9 +1470,15 @@
           "resources": [],
           "previous_id": "history-and-recovery.05-reflog",
           "next_id": "history-and-recovery.07-cherry-pick",
-          "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "exercise_ids": [
+            "challenge-stash"
+          ],
+          "quiz_ids": [
+            "quiz-stash"
+          ],
+          "interview_ids": [
+            "interview-stash"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-stash-push",
@@ -1415,8 +1506,12 @@
           "resources": [],
           "previous_id": "history-and-recovery.06-stash",
           "next_id": "history-and-recovery.08-amend",
-          "exercise_ids": [],
-          "quiz_ids": [],
+          "exercise_ids": [
+            "challenge-cherry-pick"
+          ],
+          "quiz_ids": [
+            "quiz-pick"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -1567,7 +1662,9 @@
           "previous_id": "github.03-issues-and-planning",
           "next_id": "github.05-forks-and-open-source",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-review"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -1598,7 +1695,9 @@
           "next_id": "github.06-protection-and-rulesets",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-fork"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -2169,7 +2268,9 @@
           "next_id": "ci-cd.10-integrated-quality-pipeline-lab",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-ci-gate"
+          ],
           "mock_ids": [],
           "command_ids": [
             "gh-pr-checks",
@@ -2371,7 +2472,9 @@
           "next_id": "professional-workflows.07-semantic-versioning",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-commit-message"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -2397,7 +2500,9 @@
           "next_id": "professional-workflows.08-code-review",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-release"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -2527,7 +2632,9 @@
           "resources": [],
           "previous_id": "professional-workflows.11-ai-assisted-development",
           "next_id": "professional-workflows.13-integrated-professional-workflow-lab",
-          "exercise_ids": [],
+          "exercise_ids": [
+            "challenge-release-tag"
+          ],
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
@@ -2709,7 +2816,9 @@
           "previous_id": "security.04-credential-managers",
           "next_id": "security.06-permissions-and-least-privilege",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-secret"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -2816,7 +2925,9 @@
           "previous_id": "security.08-codeowners-and-responsibilities",
           "next_id": "security.10-software-supply-chain",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-signature"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -2875,7 +2986,9 @@
           "next_id": "security.12-governance-audit-and-traceability",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-secret-incident"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-credential-reject"
@@ -2903,7 +3016,9 @@
           "next_id": "security.13-integrated-security-lab",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-audit"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -2971,8 +3086,12 @@
           "previous_id": "security.13-integrated-security-lab",
           "next_id": "advanced-git.02-worktree",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-bisect"
+          ],
+          "interview_ids": [
+            "interview-bisect"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-bisect"
@@ -2999,8 +3118,12 @@
           "previous_id": "advanced-git.01-bisect",
           "next_id": "advanced-git.03-submodules",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-worktree"
+          ],
+          "interview_ids": [
+            "interview-worktree"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-worktree-add"
@@ -3027,8 +3150,12 @@
           "previous_id": "advanced-git.02-worktree",
           "next_id": "advanced-git.04-subtree",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-gitlink"
+          ],
+          "interview_ids": [
+            "interview-submodules"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-submodule-add",
@@ -3166,7 +3293,9 @@
           "previous_id": "advanced-git.07-sparse-checkout",
           "next_id": "advanced-git.09-blame-and-grep",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-partial"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -3327,8 +3456,12 @@
           "previous_id": "git-internals.01-object-database",
           "next_id": "git-internals.03-commits-and-tags",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-blob"
+          ],
+          "interview_ids": [
+            "interview-objects"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-show",
@@ -3358,7 +3491,10 @@
           "previous_id": "git-internals.02-blobs-and-trees",
           "next_id": "git-internals.04-object-hashes",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-tag",
+            "quiz-peel"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [
@@ -3537,8 +3673,12 @@
           "previous_id": "git-internals.08-gc-and-maintenance",
           "next_id": "git-internals.10-porcelain-and-plumbing",
           "exercise_ids": [],
-          "quiz_ids": [],
-          "interview_ids": [],
+          "quiz_ids": [
+            "quiz-reachable"
+          ],
+          "interview_ids": [
+            "interview-recovery"
+          ],
           "mock_ids": [],
           "command_ids": [
             "git-rev-list"
@@ -4180,7 +4320,20 @@
           "resources": [],
           "previous_id": "command-reference.14-platforms-and-automation",
           "next_id": "practical-projects.02-two-developers-one-project",
-          "exercise_ids": [],
+          "exercise_ids": [
+            "challenge-first-commit",
+            "challenge-staged-snapshot",
+            "challenge-unstage",
+            "challenge-feature-branch",
+            "challenge-fast-forward",
+            "challenge-merge-resolution",
+            "challenge-revert",
+            "challenge-stash",
+            "challenge-recover-tip",
+            "challenge-squash",
+            "challenge-release-tag",
+            "challenge-cherry-pick"
+          ],
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
@@ -4448,7 +4601,44 @@
           "previous_id": "practical-projects.08-professional-engineering-workflow",
           "next_id": "exercises.02-challenges",
           "exercise_ids": [],
-          "quiz_ids": [],
+          "quiz_ids": [
+            "quiz-snapshot",
+            "quiz-add",
+            "quiz-diff",
+            "quiz-config",
+            "quiz-switch",
+            "quiz-head",
+            "quiz-ignore",
+            "quiz-clone",
+            "quiz-status",
+            "quiz-tag",
+            "quiz-hosting",
+            "quiz-remote",
+            "quiz-fetch",
+            "quiz-ff",
+            "quiz-parents",
+            "quiz-conflict",
+            "quiz-unstage",
+            "quiz-soft",
+            "quiz-revert",
+            "quiz-stash",
+            "quiz-pick",
+            "quiz-reflog",
+            "quiz-review",
+            "quiz-secret",
+            "quiz-rebase",
+            "quiz-squash",
+            "quiz-three-dot",
+            "quiz-lease",
+            "quiz-bisect",
+            "quiz-blob",
+            "quiz-peel",
+            "quiz-reachable",
+            "quiz-worktree",
+            "quiz-gitlink",
+            "quiz-signature",
+            "quiz-partial"
+          ],
           "interview_ids": [],
           "mock_ids": [],
           "command_ids": [],
@@ -4475,7 +4665,20 @@
           ],
           "previous_id": "exercises.01-quizzes",
           "next_id": "exercises.03-interviews",
-          "exercise_ids": [],
+          "exercise_ids": [
+            "challenge-first-commit",
+            "challenge-staged-snapshot",
+            "challenge-unstage",
+            "challenge-feature-branch",
+            "challenge-fast-forward",
+            "challenge-merge-resolution",
+            "challenge-revert",
+            "challenge-stash",
+            "challenge-recover-tip",
+            "challenge-squash",
+            "challenge-release-tag",
+            "challenge-cherry-pick"
+          ],
           "quiz_ids": [],
           "interview_ids": [],
           "mock_ids": [],
@@ -4510,7 +4713,32 @@
           "next_id": "exercises.04-mock-assessments",
           "exercise_ids": [],
           "quiz_ids": [],
-          "interview_ids": [],
+          "interview_ids": [
+            "interview-version-control",
+            "interview-three-states",
+            "interview-branch",
+            "interview-status-diff",
+            "interview-ignore",
+            "interview-clone-init",
+            "interview-commit-message",
+            "interview-platform",
+            "interview-fetch-pull",
+            "interview-merge-rebase",
+            "interview-resolve",
+            "interview-reset-revert",
+            "interview-stash",
+            "interview-fork",
+            "interview-ci-gate",
+            "interview-release",
+            "interview-objects",
+            "interview-recovery",
+            "interview-lease",
+            "interview-worktree",
+            "interview-submodules",
+            "interview-bisect",
+            "interview-audit",
+            "interview-secret-incident"
+          ],
           "mock_ids": [],
           "command_ids": [],
           "execution": "unverified"
@@ -4539,7 +4767,11 @@
           "exercise_ids": [],
           "quiz_ids": [],
           "interview_ids": [],
-          "mock_ids": [],
+          "mock_ids": [
+            "mock-easy",
+            "mock-medium",
+            "mock-hard"
+          ],
           "command_ids": [],
           "execution": "unverified"
         }
