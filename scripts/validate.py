@@ -56,14 +56,18 @@ def read_text(root, path):
 def check_structure(root, paths):
     errors = []
     folded = {}
-    allowed_roots = set(SLUGS) | {"docs", "scripts", "tests", "assets", ".github"}
+    allowed_roots = set(SLUGS) | {"docs", "scripts", "tests", "assets", ".github", "curriculum", "schemas"}
     required = {"LICENSE", ".gitignore", "scripts/curriculum.json", "scripts/example_manifest.json",
                 "scripts/validate.py", "tests/test_validate.py", ".github/workflows/quality.yml",
                 "scripts/command_catalog.py", "scripts/render_command_reference.py",
                 "scripts/command_catalog_categories.json", "scripts/command_catalog_intents.json",
                 "tests/test_command_catalog.py", "scripts/assessment_pilot.py",
                 "scripts/render_assessments.py", "scripts/assessment_state.py",
-                "tests/test_assessment_pilot.py", "tests/test_assessment_state.py"}
+                "tests/test_assessment_pilot.py", "tests/test_assessment_state.py",
+                "curriculum/manifest.json", "scripts/learning_hub_contract.py",
+                "scripts/learning_hub_consumer.py", "tests/test_learning_hub_contract.py",
+                "schemas/curriculum-manifest.schema.json", "schemas/assessment-bank.schema.json",
+                "schemas/command-catalog.schema.json", "schemas/revision-lock.schema.json"}
     required.update(n + ".md" for n in ROOT_DOCS)
     for missing in sorted(required - paths):
         errors.append("Missing required path: " + missing)
@@ -314,7 +318,14 @@ def check_assessment_pilot(root, paths):
         from render_assessments import check_assessments
     return check_assessments(root, paths)
 
-CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets", "command-catalog", "assessment-pilot")
+def check_learning_hub(root, paths):
+    if __package__:
+        from .learning_hub_contract import check_manifest
+    else:
+        from learning_hub_contract import check_manifest
+    return check_manifest(root, paths)
+
+CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets", "command-catalog", "assessment-pilot", "learning-hub-contract")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -326,6 +337,7 @@ def main():
                   examples=lambda: check_examples(ROOT, paths), secrets=lambda: check_secrets(ROOT, paths))
     checks["command-catalog"] = lambda: check_command_catalog(ROOT, paths)
     checks["assessment-pilot"] = lambda: check_assessment_pilot(ROOT, paths)
+    checks["learning-hub-contract"] = lambda: check_learning_hub(ROOT, paths)
     failed = False
     for name in CHECKS if args.check == "all" else (args.check,):
         try:

@@ -55,7 +55,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 18 | VI | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately |
 | 19 | VI | Maintainer-supplied identity, final README, QA, release handoff |
 
-Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–16 and complementary Sprint 13.1 integrated via PRs #1–18 (85%); Sprint 17 in progress; Sprints 18–19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
+Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–17 and complementary Sprint 13.1 integrated via PRs #1–19 (90%); Sprint 18 in progress; Sprint 19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
 
 ## Related documents
 

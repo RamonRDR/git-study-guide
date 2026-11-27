@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External immutable Git Study Guide revision lock",
+  "type": "object",
+  "properties": {
+    "guide_id": {
+      "const": "git-study-guide"
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}(?![\\s\\S])"
+    },
+    "manifest_version": {
+      "const": "1.0.0"
+    },
+    "assessment_version": {
+      "const": 1
+    },
+    "command_catalog_version": {
+      "const": 1
+    }
+  },
+  "required": [
+    "guide_id",
+    "revision",
+    "manifest_version",
+    "assessment_version",
+    "command_catalog_version"
+  ],
+  "additionalProperties": false
+}

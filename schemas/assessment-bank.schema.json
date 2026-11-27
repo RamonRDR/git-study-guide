@@ -1,0 +1,1320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Study Guide assessment banks schema version 1",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "quiz"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^quiz-[a-z0-9]+(?:-[a-z0-9]+)*(?![\\s\\S])"
+              },
+              "difficulty": {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ]
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "title": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "prompt": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "hints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "explanation": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "const": "single-choice"
+              },
+              "choices": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                    },
+                    "text": {
+                      "type": "object",
+                      "properties": {
+                        "en": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "pt-BR": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "es": {
+                          "type": "string",
+                          "minLength": 1
+                        }
+                      },
+                      "required": [
+                        "en",
+                        "pt-BR",
+                        "es"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "text"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3,
+                "uniqueItems": true,
+                "maxItems": 3
+              },
+              "answer": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+              }
+            },
+            "required": [
+              "id",
+              "difficulty",
+              "prerequisites",
+              "title",
+              "prompt",
+              "hints",
+              "explanation",
+              "type",
+              "choices",
+              "answer"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "records"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "challenge"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^challenge-[a-z0-9]+(?:-[a-z0-9]+)*(?![\\s\\S])"
+              },
+              "difficulty": {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ]
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "title": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "prompt": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "hints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "explanation": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "estimated_minutes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "setup": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "solution": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "checks": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "clean"
+                        }
+                      },
+                      "required": [
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "branch"
+                        },
+                        "value": {
+                          "type": "string",
+                          "pattern": "^(?:main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+)(?![\\s\\S])"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "head-content"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        },
+                        "value": {
+                          "enum": [
+                            "status: draft",
+                            "status: ready",
+                            "status: reviewed",
+                            "status: recovered",
+                            "review: done",
+                            "status: experiment",
+                            "future work",
+                            "ignored.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "file",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "index-content"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        },
+                        "value": {
+                          "enum": [
+                            "status: draft",
+                            "status: ready",
+                            "status: reviewed",
+                            "status: recovered",
+                            "review: done",
+                            "status: experiment",
+                            "future work",
+                            "ignored.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "file",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "work-content"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        },
+                        "value": {
+                          "enum": [
+                            "status: draft",
+                            "status: ready",
+                            "status: reviewed",
+                            "status: recovered",
+                            "review: done",
+                            "status: experiment",
+                            "future work",
+                            "ignored.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "file",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "ref-content"
+                        },
+                        "ref": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        },
+                        "value": {
+                          "enum": [
+                            "status: draft",
+                            "status: ready",
+                            "status: reviewed",
+                            "status: recovered",
+                            "review: done",
+                            "status: experiment",
+                            "future work",
+                            "ignored.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "ref",
+                        "file",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "tracked"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "file"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "untracked"
+                        },
+                        "file": {
+                          "enum": [
+                            "notes.txt",
+                            "review.txt",
+                            "catalog.txt",
+                            "ignored.txt",
+                            ".gitignore",
+                            "future.txt"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "file"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "ancestor"
+                        },
+                        "older": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "newer": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "older",
+                        "newer"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "same-ref"
+                        },
+                        "left": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "right": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "left",
+                        "right"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "different-ref"
+                        },
+                        "left": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "right": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "left",
+                        "right"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "same-tree"
+                        },
+                        "left": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "right": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "left",
+                        "right"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "commit-count"
+                        },
+                        "value": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 20
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "ref-commit-count"
+                        },
+                        "ref": {
+                          "type": "string",
+                          "pattern": "^(?:HEAD|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\\.[0-9]+\\.[0-9]+)(?:\\^[12]|~[12])?(?![\\s\\S])"
+                        },
+                        "value": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 20
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "ref",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "parent-count"
+                        },
+                        "value": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 20
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "tag-type"
+                        },
+                        "tag": {
+                          "type": "string",
+                          "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+(?![\\s\\S])"
+                        },
+                        "value": {
+                          "enum": [
+                            "tag",
+                            "commit"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "tag",
+                        "value"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "no-unmerged"
+                        }
+                      },
+                      "required": [
+                        "kind"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "minItems": 1
+              },
+              "execution": {
+                "const": "local_only"
+              },
+              "execution_reason": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "id",
+              "difficulty",
+              "prerequisites",
+              "title",
+              "prompt",
+              "hints",
+              "explanation",
+              "estimated_minutes",
+              "setup",
+              "solution",
+              "checks",
+              "execution",
+              "execution_reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "records"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "interview"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^interview-[a-z0-9]+(?:-[a-z0-9]+)*(?![\\s\\S])"
+              },
+              "difficulty": {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ]
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "title": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "prompt": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "hints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "explanation": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "expected_answer": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "rubric": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "follow_ups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "id",
+              "difficulty",
+              "prerequisites",
+              "title",
+              "prompt",
+              "hints",
+              "explanation",
+              "expected_answer",
+              "rubric",
+              "follow_ups"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "records"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "kind": {
+          "const": "mock"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^mock-[a-z0-9]+(?:-[a-z0-9]+)*(?![\\s\\S])"
+              },
+              "difficulty": {
+                "enum": [
+                  "easy",
+                  "medium",
+                  "hard"
+                ]
+              },
+              "prerequisites": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "title": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "prompt": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "hints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              },
+              "explanation": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              },
+              "duration_minutes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "quiz_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                },
+                "minItems": 4,
+                "uniqueItems": true,
+                "maxItems": 4
+              },
+              "challenge_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                },
+                "minItems": 1,
+                "uniqueItems": true,
+                "maxItems": 1
+              },
+              "interview_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                },
+                "minItems": 2,
+                "uniqueItems": true,
+                "maxItems": 2
+              },
+              "rubric": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 3,
+                "maxItems": 3
+              }
+            },
+            "required": [
+              "id",
+              "difficulty",
+              "prerequisites",
+              "title",
+              "prompt",
+              "hints",
+              "explanation",
+              "duration_minutes",
+              "quiz_ids",
+              "challenge_ids",
+              "interview_ids",
+              "rubric"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "kind",
+        "records"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

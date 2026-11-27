@@ -11,3 +11,4 @@ Fundação aprovada e integrada pelo PR #1 em 25/11/2026. Mudanças seguintes ex
 - [Ambientes de prática](0003-practice-environments.pt-BR.md)
 - [Integração Learning Hub](0004-learning-hub-integration.pt-BR.md)
 - [Arquitetura do catálogo de comandos](0005-command-catalog-architecture.pt-BR.md)
+- [Playground Git opcional no navegador](0006-browser-playground.pt-BR.md)

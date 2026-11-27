@@ -6,7 +6,7 @@
 
 Guía práctica y multilingüe de Git, GitHub, GitLab, control de versiones e ingeniería de software colaborativa, desde fundamentos hasta flujos avanzados. Gratuita, pública e independiente; sin experiencia previa de programación.
 
-Estado: fundación, gobernanza y automatización de calidad integradas. Módulos 00–14 contienen lecciones; módulo 15 contiene la referencia trilingüe de comandos (120 operaciones en 14 categorías). Módulo 16 contiene ocho proyectos prácticos; módulo 17 contiene 75 registros de evaluación en cuatro bancos. Identidad visual e integración Learning Hub siguen previstas.
+Estado: fundación, gobernanza y automatización de calidad integradas. Módulos 00–14 contienen lecciones; módulo 15 contiene la referencia trilingüe de comandos (120 operaciones en 14 categorías). Módulo 16 contiene ocho proyectos prácticos; módulo 17 contiene 75 registros de evaluación en cuatro bancos. El contrato versionado de contenido Learning Hub está preparado; integración del sitio e identidad visual final siguen previstas.
 
 - [Ruta de aprendizaje](../learning-path.es.md)
 - [Referencia de comandos](../../command-reference/README.es.md)

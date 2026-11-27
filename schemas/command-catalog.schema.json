@@ -1,0 +1,549 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Study Guide command catalog schema version 1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "category": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "native-command",
+              "subcommand",
+              "option-usage",
+              "workflow",
+              "external-tool",
+              "platform-operation"
+            ]
+          },
+          "category": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+          },
+          "level": {
+            "enum": [
+              "beginner",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "intent_tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "syntax": {
+            "type": "string",
+            "minLength": 1
+          },
+          "examples": {
+            "type": "object",
+            "properties": {
+              "basic": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "context": {
+                    "type": "object",
+                    "properties": {
+                      "en": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "pt-BR": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "es": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "en",
+                      "pt-BR",
+                      "es"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "command",
+                  "context"
+                ],
+                "additionalProperties": false
+              },
+              "professional": {
+                "type": "object",
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "context": {
+                    "type": "object",
+                    "properties": {
+                      "en": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "pt-BR": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "es": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "required": [
+                      "en",
+                      "pt-BR",
+                      "es"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "command",
+                  "context"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "basic",
+              "professional"
+            ],
+            "additionalProperties": false
+          },
+          "effects": {
+            "type": "object",
+            "properties": {
+              "working_tree": {
+                "enum": [
+                  "unchanged",
+                  "changes",
+                  "conditional",
+                  "not-applicable"
+                ]
+              },
+              "index": {
+                "enum": [
+                  "unchanged",
+                  "changes",
+                  "conditional",
+                  "not-applicable"
+                ]
+              },
+              "history": {
+                "enum": [
+                  "unchanged",
+                  "changes",
+                  "conditional",
+                  "not-applicable"
+                ]
+              },
+              "remote": {
+                "enum": [
+                  "unchanged",
+                  "changes",
+                  "conditional",
+                  "not-applicable"
+                ]
+              },
+              "other": {
+                "enum": [
+                  "unchanged",
+                  "changes",
+                  "conditional",
+                  "not-applicable"
+                ]
+              }
+            },
+            "required": [
+              "working_tree",
+              "index",
+              "history",
+              "remote",
+              "other"
+            ],
+            "additionalProperties": false
+          },
+          "risk": {
+            "type": "object",
+            "properties": {
+              "class": {
+                "enum": [
+                  "read-only",
+                  "state-change",
+                  "destructive",
+                  "history-rewrite",
+                  "remote-change",
+                  "sensitive"
+                ]
+              },
+              "notes": {
+                "type": "object",
+                "properties": {
+                  "en": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "pt-BR": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "es": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "en",
+                  "pt-BR",
+                  "es"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "class",
+              "notes"
+            ],
+            "additionalProperties": false
+          },
+          "related_chapters": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "purpose": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "prerequisites": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "options": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "when_to_use": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "when_to_avoid": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "expected_state": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "effect_notes": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "common_errors": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "alternatives": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "recovery": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "requirements": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "command",
+          "kind",
+          "category",
+          "level",
+          "intent_tags",
+          "syntax",
+          "examples",
+          "effects",
+          "risk",
+          "related_chapters",
+          "references",
+          "purpose",
+          "prerequisites",
+          "options",
+          "when_to_use",
+          "when_to_avoid",
+          "expected_state",
+          "effect_notes",
+          "common_errors",
+          "alternatives",
+          "recovery",
+          "requirements"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "category",
+    "entries"
+  ],
+  "additionalProperties": false
+}
