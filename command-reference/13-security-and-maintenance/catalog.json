@@ -1,0 +1,854 @@
+{
+  "schema_version": 1,
+  "category": "13-security-and-maintenance",
+  "entries": [
+    {
+      "id": "git-commit-sign",
+      "command": "git commit -S",
+      "kind": "option-usage",
+      "category": "13-security-and-maintenance",
+      "level": "intermediate",
+      "intent_tags": [
+        "commit-changes",
+        "verify-signatures"
+      ],
+      "syntax": "git commit -S -m \"Signed notes\"",
+      "purpose": {
+        "en": "Create a cryptographically signed commit.",
+        "pt-BR": "Criar commit assinado criptograficamente.",
+        "es": "Crear commit firmado criptográficamente."
+      },
+      "options": {
+        "en": "-S requests signing; an optional key ID attaches to the short option. Lowercase -s adds a sign-off trailer instead.",
+        "pt-BR": "-S solicita assinatura; ID de chave opcional fica unido à opção curta. -s minúsculo adiciona trailer sign-off.",
+        "es": "-S solicita firma; ID de clave opcional se une a opción corta. -s minúscula añade trailer sign-off."
+      },
+      "when_to_use": {
+        "en": "When signed commits are required by policy.",
+        "pt-BR": "Quando commits assinados são exigidos por política.",
+        "es": "Cuando commits firmados son exigidos por política."
+      },
+      "when_to_avoid": {
+        "en": "Avoid signing unreviewed changes or using unauthorized keys.",
+        "pt-BR": "Evite assinar mudanças não revisadas ou usar chaves não autorizadas.",
+        "es": "Evita firmar cambios sin revisar o usar claves no autorizadas."
+      },
+      "expected_state": {
+        "en": "Successful commit embeds a signature and advances the selected ref; signing failure can prevent creation.",
+        "pt-BR": "Commit bem-sucedido inclui assinatura e avança referência; falha de assinatura pode impedir criação.",
+        "es": "Commit exitoso incluye firma y avanza referencia; fallo de firma puede impedir creación."
+      },
+      "effect_notes": {
+        "en": "Creates signed commit object and updates ref; signing tools and hooks may change local state. No push occurs.",
+        "pt-BR": "Cria objeto assinado e atualiza referência; ferramentas de assinatura e hooks podem alterar estado local. Não há push.",
+        "es": "Crea objeto firmado y actualiza referencia; herramientas de firma y hooks pueden cambiar estado local. No hay push."
+      },
+      "common_errors": {
+        "en": "Confusing -S with sign-off or assuming signatures prove code quality.",
+        "pt-BR": "Confundir -S com sign-off ou presumir assinatura prova qualidade.",
+        "es": "Confundir -S con sign-off o suponer firma prueba calidad."
+      },
+      "alternatives": {
+        "en": "Use ordinary commit only if policy permits; check signed commits with git verify-commit.",
+        "pt-BR": "Use commit comum só se política permitir; confira commits assinados com git verify-commit.",
+        "es": "Usa commit ordinario solo si política permite; comprueba commits firmados con git verify-commit."
+      },
+      "recovery": {
+        "en": "Check signing configuration and key availability before retrying; verify resulting commit before sharing.",
+        "pt-BR": "Confira configuração de assinatura e disponibilidade de chave antes de tentar novamente; verifique commit resultante antes de compartilhar.",
+        "es": "Comprueba configuración de firma y disponibilidad de clave antes de reintentar; verifica commit resultante antes de compartir."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Requires a configured signing or verification backend, such as GnuPG or OpenSSH with SSH signing support, appropriate keys and trust configuration. Use disposable lab keys.",
+        "pt-BR": "Exige backend de assinatura ou verificação configurado, como GnuPG ou OpenSSH com suporte a assinatura SSH, chaves e configuração de confiança adequadas. Use chaves descartáveis de laboratório.",
+        "es": "Requiere backend de firma o verificación configurado, como GnuPG u OpenSSH con soporte de firma SSH, claves y configuración de confianza apropiadas. Usa claves desechables de laboratorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git commit -S -m \"Signed notes\"",
+          "context": {
+            "en": "Record reviewed staged lab content with the configured disposable key.",
+            "pt-BR": "Registre conteúdo preparado revisado com chave descartável configurada.",
+            "es": "Confirma contenido preparado revisado con clave desechable configurada."
+          }
+        },
+        "professional": {
+          "command": "git commit -S -m \"docs: review notes\"",
+          "context": {
+            "en": "Record a signed private documentation commit.",
+            "pt-BR": "Registre commit privado assinado de documentação.",
+            "es": "Registra commit privado firmado de documentación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Protect signing keys; never place private key material in tracked files.",
+          "pt-BR": "Proteja chaves de assinatura; nunca coloque material privado em arquivos rastreados.",
+          "es": "Protege claves de firma; nunca pongas material privado en archivos rastreados."
+        }
+      },
+      "related_chapters": [
+        "security/09-commit-and-tag-signing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-commit"
+      ]
+    },
+    {
+      "id": "git-tag-sign",
+      "command": "git tag -s",
+      "kind": "option-usage",
+      "category": "13-security-and-maintenance",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-tags",
+        "verify-signatures"
+      ],
+      "syntax": "git tag -s v1.0.0 -m \"Practice release\"",
+      "purpose": {
+        "en": "Create a signed annotated tag and its local ref.",
+        "pt-BR": "Criar tag anotada assinada e referência local.",
+        "es": "Crear etiqueta anotada firmada y referencia local."
+      },
+      "options": {
+        "en": "-s requests signing; -m supplies message; an optional final object names the target.",
+        "pt-BR": "-s solicita assinatura; -m fornece mensagem; objeto final opcional nomeia destino.",
+        "es": "-s solicita firma; -m proporciona mensaje; objeto final opcional nombra destino."
+      },
+      "when_to_use": {
+        "en": "When marking a reviewed revision under a release signing policy.",
+        "pt-BR": "Ao marcar revisão revisada sob política de assinatura de release.",
+        "es": "Al marcar revisión revisada bajo política de firma de lanzamiento."
+      },
+      "when_to_avoid": {
+        "en": "Avoid guessed targets or moving published version tags.",
+        "pt-BR": "Evite destinos presumidos ou mover tags de versão publicadas.",
+        "es": "Evita destinos supuestos o mover etiquetas de versión publicadas."
+      },
+      "expected_state": {
+        "en": "Creates signed tag object and local ref; does not publish a release or sign its target commit.",
+        "pt-BR": "Cria objeto tag assinado e referência local; não publica release nem assina commit alvo.",
+        "es": "Crea objeto tag firmado y referencia local; no publica lanzamiento ni firma commit objetivo."
+      },
+      "effect_notes": {
+        "en": "Adds tag object and ref; backend may change local metadata; branch tip stays unchanged.",
+        "pt-BR": "Adiciona objeto tag e referência; backend pode mudar metadados locais; ponta da branch não muda.",
+        "es": "Añade objeto tag y referencia; backend puede cambiar metadatos locales; punta de rama no cambia."
+      },
+      "common_errors": {
+        "en": "Assuming signed tag also verifies every artifact or commit.",
+        "pt-BR": "Presumir tag assinada verifica todo artefato ou commit.",
+        "es": "Suponer etiqueta firmada verifica cada artefacto o commit."
+      },
+      "alternatives": {
+        "en": "Use annotated unsigned tag only when policy allows; verify with git verify-tag.",
+        "pt-BR": "Use tag anotada não assinada só quando política permitir; verifique com git verify-tag.",
+        "es": "Usa etiqueta anotada sin firma solo cuando política permite; verifica con git verify-tag."
+      },
+      "recovery": {
+        "en": "If a private tag is incorrect, record its ID and review deletion before replacement; follow release correction policy for published tags.",
+        "pt-BR": "Se tag privada incorreta, registre ID e revise exclusão antes de substituir; siga política de correção para tags publicadas.",
+        "es": "Si etiqueta privada incorrecta, registra ID y revisa eliminación antes de reemplazar; sigue política de corrección para etiquetas publicadas."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Requires a configured signing or verification backend, such as GnuPG or OpenSSH with SSH signing support, appropriate keys and trust configuration. Use disposable lab keys.",
+        "pt-BR": "Exige backend de assinatura ou verificação configurado, como GnuPG ou OpenSSH com suporte a assinatura SSH, chaves e configuração de confiança adequadas. Use chaves descartáveis de laboratório.",
+        "es": "Requiere backend de firma o verificación configurado, como GnuPG u OpenSSH con soporte de firma SSH, claves y configuración de confianza apropiadas. Usa claves desechables de laboratorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git tag -s v1.0.0 -m \"Practice release\"",
+          "context": {
+            "en": "Sign an unused version tag at verified HEAD.",
+            "pt-BR": "Assine tag de versão livre em HEAD verificado.",
+            "es": "Firma etiqueta de versión libre en HEAD verificado."
+          }
+        },
+        "professional": {
+          "command": "git tag -s v1.1.0 -m \"Reviewed release\" main",
+          "context": {
+            "en": "Sign an unused version tag at reviewed local main.",
+            "pt-BR": "Assine tag de versão livre na main local revisada.",
+            "es": "Firma etiqueta de versión libre en main local revisada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Verify target and signer; never overwrite published version tags to conceal a mistake.",
+          "pt-BR": "Verifique destino e assinante; nunca sobrescreva tags publicadas para ocultar erro.",
+          "es": "Verifica destino y firmante; nunca sobrescribas etiquetas publicadas para ocultar error."
+        }
+      },
+      "related_chapters": [
+        "security/09-commit-and-tag-signing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-tag"
+      ]
+    },
+    {
+      "id": "git-verify-commit",
+      "command": "git verify-commit",
+      "kind": "native-command",
+      "category": "13-security-and-maintenance",
+      "level": "intermediate",
+      "intent_tags": [
+        "verify-signatures"
+      ],
+      "syntax": "git verify-commit HEAD",
+      "purpose": {
+        "en": "Verify the cryptographic signature of a selected commit using the configured backend.",
+        "pt-BR": "Verificar assinatura criptográfica de commit selecionado usando backend configurado.",
+        "es": "Verificar firma criptográfica de commit seleccionado usando backend configurado."
+      },
+      "options": {
+        "en": "Supply commit refs or IDs; --verbose displays commit content before verification output.",
+        "pt-BR": "Informe referências ou IDs de commits; --verbose exibe conteúdo antes da verificação.",
+        "es": "Indica referencias o IDs de commits; --verbose muestra contenido antes de verificación."
+      },
+      "when_to_use": {
+        "en": "When checking a signed commit against trusted identity policy.",
+        "pt-BR": "Ao conferir commit assinado conforme política de identidade confiável.",
+        "es": "Al comprobar commit firmado según política de identidad confiable."
+      },
+      "when_to_avoid": {
+        "en": "Do not accept a signature as proof of safe code or review approval.",
+        "pt-BR": "Não aceite assinatura como prova de código seguro ou aprovação de revisão.",
+        "es": "No aceptes firma como prueba de código seguro o aprobación de revisión."
+      },
+      "expected_state": {
+        "en": "Reports verification result; failure returns nonzero and trust configuration affects acceptance.",
+        "pt-BR": "Relata resultado; falha retorna não zero e configuração de confiança afeta aceitação.",
+        "es": "Informa resultado; fallo devuelve no cero y configuración de confianza afecta aceptación."
+      },
+      "effect_notes": {
+        "en": "Does not change Git refs or files; an external verification backend may update its own metadata.",
+        "pt-BR": "Não altera referências ou arquivos Git; backend externo pode atualizar metadados próprios.",
+        "es": "No cambia referencias ni archivos Git; backend externo puede actualizar metadatos propios."
+      },
+      "common_errors": {
+        "en": "Checking a cryptographic result while ignoring trusted signer policy.",
+        "pt-BR": "Conferir resultado criptográfico ignorando política de assinante confiável.",
+        "es": "Comprobar resultado criptográfico ignorando política de firmante confiable."
+      },
+      "alternatives": {
+        "en": "Use git log --show-signature for context; still enforce exact ID and verification status.",
+        "pt-BR": "Use git log --show-signature para contexto; mantenha exigência de ID exato e resultado de verificação.",
+        "es": "Usa git log --show-signature para contexto; exige ID exacto y resultado de verificación."
+      },
+      "recovery": {
+        "en": "On failure, inspect status, selected object, backend and key or trust configuration; do not bypass required signing or verification.",
+        "pt-BR": "Em falha, inspecione status, objeto selecionado, backend e configuração de chave ou confiança; não contorne assinatura ou verificação obrigatória.",
+        "es": "Si falla, inspecciona estado, objeto seleccionado, backend y configuración de clave o confianza; no eludas firma o verificación obligatoria."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Requires a configured signing or verification backend, such as GnuPG or OpenSSH with SSH signing support, appropriate keys and trust configuration. Use disposable lab keys.",
+        "pt-BR": "Exige backend de assinatura ou verificação configurado, como GnuPG ou OpenSSH com suporte a assinatura SSH, chaves e configuração de confiança adequadas. Use chaves descartáveis de laboratório.",
+        "es": "Requiere backend de firma o verificación configurado, como GnuPG u OpenSSH con soporte de firma SSH, claves y configuración de confianza apropiadas. Usa claves desechables de laboratorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git verify-commit HEAD",
+          "context": {
+            "en": "Verify an existing signed practice commit.",
+            "pt-BR": "Verifique commit de prática assinado existente.",
+            "es": "Verifica commit de práctica firmado existente."
+          }
+        },
+        "professional": {
+          "command": "git verify-commit main",
+          "context": {
+            "en": "Verify signed lab main against configured trust policy.",
+            "pt-BR": "Verifique main assinada do laboratório conforme política de confiança.",
+            "es": "Verifica main firmada de laboratorio según política de confianza."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "A signature does not establish code safety or review approval. Protect private keys; verify exact object and signer trust independently.",
+          "pt-BR": "Assinatura não estabelece segurança do código nem aprovação de revisão. Proteja chaves privadas; verifique objeto exato e confiança no assinante independentemente.",
+          "es": "Una firma no establece seguridad del código ni aprobación de revisión. Protege claves privadas; verifica objeto exacto y confianza en firmante independientemente."
+        }
+      },
+      "related_chapters": [
+        "security/09-commit-and-tag-signing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-verify-commit"
+      ]
+    },
+    {
+      "id": "git-verify-tag",
+      "command": "git verify-tag",
+      "kind": "native-command",
+      "category": "13-security-and-maintenance",
+      "level": "intermediate",
+      "intent_tags": [
+        "verify-signatures",
+        "manage-tags"
+      ],
+      "syntax": "git verify-tag v1.0.0",
+      "purpose": {
+        "en": "Verify the signature of a signed tag object.",
+        "pt-BR": "Verificar assinatura de objeto tag assinado.",
+        "es": "Verificar firma de objeto tag firmado."
+      },
+      "options": {
+        "en": "Supply signed tag names or tag object IDs; --verbose displays tag content.",
+        "pt-BR": "Informe nomes de tags assinadas ou IDs de objetos tag; --verbose exibe conteúdo.",
+        "es": "Indica nombres de etiquetas firmadas o IDs de objetos tag; --verbose muestra contenido."
+      },
+      "when_to_use": {
+        "en": "When checking signed release markers under a trust policy.",
+        "pt-BR": "Ao conferir marcadores de release assinados sob política de confiança.",
+        "es": "Al comprobar marcadores de lanzamiento firmados bajo política de confianza."
+      },
+      "when_to_avoid": {
+        "en": "Do not expect lightweight tags to contain signatures or trust unrelated artifacts automatically.",
+        "pt-BR": "Não espere assinatura em tags leves nem confie automaticamente em artefatos alheios.",
+        "es": "No esperes firma en etiquetas ligeras ni confíes automáticamente en artefactos ajenos."
+      },
+      "expected_state": {
+        "en": "Reports verification result; trust configuration affects acceptance.",
+        "pt-BR": "Relata resultado; configuração de confiança afeta aceitação.",
+        "es": "Informa resultado; configuración de confianza afecta aceptación."
+      },
+      "effect_notes": {
+        "en": "Does not move refs or edit tracked files; verification backend may modify its own metadata.",
+        "pt-BR": "Não move referências nem edita arquivos rastreados; backend pode modificar metadados próprios.",
+        "es": "No mueve referencias ni edita archivos rastreados; backend puede modificar metadatos propios."
+      },
+      "common_errors": {
+        "en": "Verifying a tag name without checking exact target or treating it as verification of the target commit signature.",
+        "pt-BR": "Verificar nome da tag sem conferir destino exato ou tratar como verificação de assinatura do commit alvo.",
+        "es": "Verificar nombre de etiqueta sin comprobar destino exacto o tratarlo como verificación de firma del commit objetivo."
+      },
+      "alternatives": {
+        "en": "Use git verify-commit separately when needed and review artifact provenance independently.",
+        "pt-BR": "Use git verify-commit separadamente quando necessário e revise proveniência de artefatos independentemente.",
+        "es": "Usa git verify-commit por separado cuando sea necesario y revisa procedencia de artefactos independientemente."
+      },
+      "recovery": {
+        "en": "On failure, inspect status, selected object, backend and key or trust configuration; do not bypass required signing or verification.",
+        "pt-BR": "Em falha, inspecione status, objeto selecionado, backend e configuração de chave ou confiança; não contorne assinatura ou verificação obrigatória.",
+        "es": "Si falla, inspecciona estado, objeto seleccionado, backend y configuración de clave o confianza; no eludas firma o verificación obligatoria."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Requires a configured signing or verification backend, such as GnuPG or OpenSSH with SSH signing support, appropriate keys and trust configuration. Use disposable lab keys.",
+        "pt-BR": "Exige backend de assinatura ou verificação configurado, como GnuPG ou OpenSSH com suporte a assinatura SSH, chaves e configuração de confiança adequadas. Use chaves descartáveis de laboratório.",
+        "es": "Requiere backend de firma o verificación configurado, como GnuPG u OpenSSH con soporte de firma SSH, claves y configuración de confianza apropiadas. Usa claves desechables de laboratorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git verify-tag v1.0.0",
+          "context": {
+            "en": "Verify an existing signed annotated lab tag.",
+            "pt-BR": "Verifique tag anotada assinada existente de laboratório.",
+            "es": "Verifica etiqueta anotada firmada existente de laboratorio."
+          }
+        },
+        "professional": {
+          "command": "git verify-tag v1.1.0",
+          "context": {
+            "en": "Verify a version marker before reviewing its target and artifacts.",
+            "pt-BR": "Verifique marcador de versão antes de revisar destino e artefatos.",
+            "es": "Verifica marcador de versión antes de revisar destino y artefactos."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "A signature does not establish code safety or review approval. Protect private keys; verify exact object and signer trust independently.",
+          "pt-BR": "Assinatura não estabelece segurança do código nem aprovação de revisão. Proteja chaves privadas; verifique objeto exato e confiança no assinante independentemente.",
+          "es": "Una firma no establece seguridad del código ni aprobación de revisión. Protege claves privadas; verifica objeto exacto y confianza en firmante independientemente."
+        }
+      },
+      "related_chapters": [
+        "security/09-commit-and-tag-signing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-verify-tag"
+      ]
+    },
+    {
+      "id": "git-credential-reject",
+      "command": "git credential reject",
+      "kind": "subcommand",
+      "category": "13-security-and-maintenance",
+      "level": "advanced",
+      "intent_tags": [
+        "authenticate",
+        "troubleshoot-config"
+      ],
+      "syntax": "git credential reject",
+      "purpose": {
+        "en": "Request that configured credential helpers erase matching stored credentials.",
+        "pt-BR": "Solicitar que helpers configurados apaguem credenciais armazenadas correspondentes.",
+        "es": "Solicitar que helpers configurados borren credenciales almacenadas coincidentes."
+      },
+      "options": {
+        "en": "Reads key=value lines terminated by a blank line; matching depends on helper and supplied fields.",
+        "pt-BR": "Lê linhas chave=valor terminadas por linha vazia; correspondência depende de helper e campos.",
+        "es": "Lee líneas clave=valor terminadas por línea vacía; coincidencia depende de helper y campos."
+      },
+      "when_to_use": {
+        "en": "When rehearsing removal of a stale local authentication entry.",
+        "pt-BR": "Ao ensaiar remoção de entrada local de autenticação obsoleta.",
+        "es": "Al ensayar eliminación de entrada local de autenticación obsoleta."
+      },
+      "when_to_avoid": {
+        "en": "Avoid broad matching, unknown helpers and real credentials in practice.",
+        "pt-BR": "Evite correspondência ampla, helpers desconhecidos e credenciais reais na prática.",
+        "es": "Evita coincidencia amplia, helpers desconocidos y credenciales reales en práctica."
+      },
+      "expected_state": {
+        "en": "Configured helpers receive an erase request; removal depends on helper behavior. Server token validity is unchanged.",
+        "pt-BR": "Helpers configurados recebem solicitação erase; remoção depende de comportamento. Validade de token no servidor não muda.",
+        "es": "Helpers configurados reciben solicitud erase; eliminación depende de comportamiento. Validez de token del servidor no cambia."
+      },
+      "effect_notes": {
+        "en": "May remove local credential records; does not revoke provider tokens or change Git history.",
+        "pt-BR": "Pode remover registros locais; não revoga tokens do provedor nem muda histórico Git.",
+        "es": "Puede eliminar registros locales; no revoca tokens del proveedor ni cambia historial Git."
+      },
+      "common_errors": {
+        "en": "Confusing local erasure with server-side token revocation.",
+        "pt-BR": "Confundir exclusão local com revogação de token no servidor.",
+        "es": "Confundir borrado local con revocación de token en servidor."
+      },
+      "alternatives": {
+        "en": "Use provider's official revocation and rotation process for actual exposure.",
+        "pt-BR": "Use processo oficial de revogação e rotação do provedor em exposição real.",
+        "es": "Usa proceso oficial de revocación y rotación del proveedor ante exposición real."
+      },
+      "recovery": {
+        "en": "If a needed local record was removed, reauthenticate through approved workflow. Never restore an exposed token.",
+        "pt-BR": "Se registro local necessário removido, reautentique por fluxo aprovado. Nunca restaure token exposto.",
+        "es": "Si registro local necesario eliminado, reautentícate por flujo aprobado. Nunca restaures token expuesto."
+      },
+      "prerequisites": {
+        "en": "Isolate Git configuration, disable inherited helpers and use only a mock helper recording erase events without real credentials.",
+        "pt-BR": "Isole configuração Git, desative helpers herdados e use só helper simulado registrando eventos erase sem credenciais reais.",
+        "es": "Aísla configuración Git, desactiva helpers heredados y usa solo helper simulado que registra eventos erase sin credenciales reales."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for guide labs; check local configuration and command availability.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios; confira configuração e disponibilidade locais.",
+        "es": "Usa Git 2.40 o superior en laboratorios; comprueba configuración y disponibilidad locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git credential reject",
+          "context": {
+            "en": "With only a mock helper, enter protocol=https, host=example.invalid, username=student on separate lines, then a blank line.",
+            "pt-BR": "Com só helper simulado, digite protocol=https, host=example.invalid, username=student em linhas separadas, depois linha vazia.",
+            "es": "Con solo helper simulado, introduce protocol=https, host=example.invalid, username=student en líneas separadas, luego línea vacía."
+          }
+        },
+        "professional": {
+          "command": "git credential reject",
+          "context": {
+            "en": "Repeat with fictional identifiers in the mock lab and inspect the erase event.",
+            "pt-BR": "Repita com identificadores fictícios no laboratório simulado e inspecione evento erase.",
+            "es": "Repite con identificadores ficticios en laboratorio simulado e inspecciona evento erase."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "sensitive",
+        "notes": {
+          "en": "May erase multiple matching accounts; use only a mock helper and fictional identifiers in labs.",
+          "pt-BR": "Pode apagar várias contas correspondentes; use só helper simulado e identificadores fictícios em laboratórios.",
+          "es": "Puede borrar varias cuentas coincidentes; usa solo helper simulado e identificadores ficticios en laboratorio."
+        }
+      },
+      "related_chapters": [
+        "security/04-credential-managers",
+        "security/11-credential-exposure-and-incident-response"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-credential"
+      ]
+    },
+    {
+      "id": "git-fsck",
+      "command": "git fsck",
+      "kind": "native-command",
+      "category": "13-security-and-maintenance",
+      "level": "advanced",
+      "intent_tags": [
+        "verify-integrity",
+        "inspect-objects"
+      ],
+      "syntax": "git fsck --full",
+      "purpose": {
+        "en": "Check object validity and connectivity.",
+        "pt-BR": "Verificar validade e conectividade de objetos.",
+        "es": "Comprobar validez y conectividad de objetos."
+      },
+      "options": {
+        "en": "--full includes packed objects and alternates; --strict applies stricter checks; --lost-found writes files and is not used here.",
+        "pt-BR": "--full inclui objetos empacotados e alternates; --strict aplica checagens mais estritas; --lost-found grava arquivos e não é usado aqui.",
+        "es": "--full incluye objetos empaquetados y alternates; --strict aplica comprobaciones más estrictas; --lost-found escribe archivos y no se usa aquí."
+      },
+      "when_to_use": {
+        "en": "When investigating integrity or reviewing a complete copy before maintenance.",
+        "pt-BR": "Ao investigar integridade ou revisar cópia completa antes de manutenção.",
+        "es": "Al investigar integridad o revisar copia completa antes de mantenimiento."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat dangling objects alone as corruption or rely on fsck as backup.",
+        "pt-BR": "Não trate objetos dangling isoladamente como corrupção nem dependa de fsck como backup.",
+        "es": "No trates objetos dangling por sí solos como corrupción ni dependas de fsck como copia."
+      },
+      "expected_state": {
+        "en": "Reports detected integrity findings and may list dangling objects.",
+        "pt-BR": "Relata achados de integridade detectados e pode listar objetos dangling.",
+        "es": "Informa hallazgos de integridad detectados y puede listar objetos dangling."
+      },
+      "effect_notes": {
+        "en": "Shown forms inspect a complete local repository without intentionally changing objects, refs or files.",
+        "pt-BR": "Formas mostradas inspecionam repositório local completo sem alterar intencionalmente objetos, referências ou arquivos.",
+        "es": "Formas mostradas inspeccionan repositorio local completo sin cambiar intencionalmente objetos, referencias o archivos."
+      },
+      "common_errors": {
+        "en": "Running cleanup after corruption and losing potentially recoverable data.",
+        "pt-BR": "Executar limpeza após corrupção e perder dados potencialmente recuperáveis.",
+        "es": "Ejecutar limpieza tras corrupción y perder datos potencialmente recuperables."
+      },
+      "alternatives": {
+        "en": "Use git count-objects for storage statistics; repair from verified backups or healthy copies.",
+        "pt-BR": "Use git count-objects para estatísticas; repare a partir de backups verificados ou cópias saudáveis.",
+        "es": "Usa git count-objects para estadísticas; repara desde copias verificadas o sanas."
+      },
+      "recovery": {
+        "en": "Stop writes on serious errors, preserve a copy and investigate before repair.",
+        "pt-BR": "Pare gravações em erros graves, preserve cópia e investigue antes de reparo.",
+        "es": "Detén escrituras ante errores graves, conserva copia e investiga antes de reparar."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for guide labs; check local configuration and command availability.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios; confira configuração e disponibilidade locais.",
+        "es": "Usa Git 2.40 o superior en laboratorios; comprueba configuración y disponibilidad locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git fsck --full",
+          "context": {
+            "en": "Inspect connectivity and validity in a complete local practice repository.",
+            "pt-BR": "Inspecione conectividade e validade em repositório local completo de prática.",
+            "es": "Inspecciona conectividad y validez en repositorio local completo de práctica."
+          }
+        },
+        "professional": {
+          "command": "git fsck --full --strict",
+          "context": {
+            "en": "Run stricter integrity inspection before maintenance.",
+            "pt-BR": "Execute inspeção de integridade mais estrita antes de manutenção.",
+            "es": "Ejecuta inspección de integridad más estricta antes de mantenimiento."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for shown forms; integrity success is not evidence of application correctness.",
+          "pt-BR": "Somente leitura nas formas mostradas; sucesso de integridade não prova correção da aplicação.",
+          "es": "Solo lectura en formas mostradas; éxito de integridad no prueba corrección de aplicación."
+        }
+      },
+      "related_chapters": [
+        "git-internals/07-loose-objects-and-packfiles",
+        "git-internals/08-gc-and-maintenance"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-fsck"
+      ]
+    },
+    {
+      "id": "git-gc",
+      "command": "git gc",
+      "kind": "native-command",
+      "category": "13-security-and-maintenance",
+      "level": "advanced",
+      "intent_tags": [
+        "maintain-repository",
+        "protect-history"
+      ],
+      "syntax": "git gc",
+      "purpose": {
+        "en": "Perform housekeeping such as packing and configured expiration of repository data.",
+        "pt-BR": "Executar manutenção como empacotamento e expiração configurada de dados.",
+        "es": "Ejecutar mantenimiento como empaquetado y expiración configurada de datos."
+      },
+      "options": {
+        "en": "--auto checks whether needed; --no-prune avoids ordinary prune step; do not use --prune=now in labs.",
+        "pt-BR": "--auto verifica necessidade; --no-prune evita poda comum; não use --prune=now em laboratórios.",
+        "es": "--auto comprueba necesidad; --no-prune evita poda ordinaria; no uses --prune=now en laboratorios."
+      },
+      "when_to_use": {
+        "en": "When healthy local repository requires maintenance under reviewed retention settings.",
+        "pt-BR": "Quando repositório local saudável exige manutenção sob retenção revisada.",
+        "es": "Cuando repositorio local sano requiere mantenimiento bajo retención revisada."
+      },
+      "when_to_avoid": {
+        "en": "Avoid concurrent writes, recovery investigations or unpreserved unreachable work.",
+        "pt-BR": "Evite gravações concorrentes, investigações de recuperação ou trabalho inalcançável não preservado.",
+        "es": "Evita escrituras concurrentes, investigaciones de recuperación o trabajo inalcanzable no preservado."
+      },
+      "expected_state": {
+        "en": "May consolidate objects and refs, expire reflogs and remove eligible unreachable data.",
+        "pt-BR": "Pode consolidar objetos e referências, expirar reflogs e remover dados inalcançáveis elegíveis.",
+        "es": "Puede consolidar objetos y referencias, expirar reflogs y eliminar datos inalcanzables elegibles."
+      },
+      "effect_notes": {
+        "en": "Changes object storage and maintenance metadata; does not intentionally rewrite branch tips or publish changes.",
+        "pt-BR": "Altera armazenamento e metadados de manutenção; não reescreve intencionalmente pontas nem publica mudanças.",
+        "es": "Cambia almacenamiento y metadatos de mantenimiento; no reescribe intencionalmente puntas ni publica cambios."
+      },
+      "common_errors": {
+        "en": "Assuming --no-prune preserves all recovery data or gc repairs corrupted objects.",
+        "pt-BR": "Presumir --no-prune preserva todos dados de recuperação ou gc repara objetos corrompidos.",
+        "es": "Suponer --no-prune conserva todos datos de recuperación o gc repara objetos corruptos."
+      },
+      "alternatives": {
+        "en": "Use a narrowly scoped git maintenance run task when appropriate.",
+        "pt-BR": "Use tarefa restrita de git maintenance run quando apropriado.",
+        "es": "Usa tarea limitada de git maintenance run cuando proceda."
+      },
+      "recovery": {
+        "en": "Verify refs and integrity after maintenance; recover missing required objects from verified backups if possible.",
+        "pt-BR": "Confira referências e integridade após manutenção; recupere objetos necessários ausentes de backups verificados se possível.",
+        "es": "Comprueba referencias e integridad tras mantenimiento; recupera objetos necesarios ausentes de copias verificadas si posible."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for guide labs; check local configuration and command availability.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios; confira configuração e disponibilidade locais.",
+        "es": "Usa Git 2.40 o superior en laboratorios; comprueba configuración y disponibilidad locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git gc",
+          "context": {
+            "en": "In an idle disposable repository with saved recovery refs, run ordinary housekeeping.",
+            "pt-BR": "Em repositório descartável ocioso com referências de recuperação salvas, execute manutenção comum.",
+            "es": "En repositorio desechable inactivo con referencias de recuperación guardadas, ejecuta mantenimiento ordinario."
+          }
+        },
+        "professional": {
+          "command": "git gc --no-prune",
+          "context": {
+            "en": "Skip ordinary prune step; review other expiration settings too.",
+            "pt-BR": "Pule etapa comum de poda; revise também outras configurações de expiração.",
+            "es": "Omite etapa ordinaria de poda; revisa también otros ajustes de expiración."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Cleanup may permanently remove unreachable work. Preserve recovery refs and backups before running.",
+          "pt-BR": "Limpeza pode remover trabalho inalcançável permanentemente. Preserve referências de recuperação e backups antes de executar.",
+          "es": "Limpieza puede eliminar trabajo inalcanzable permanentemente. Conserva referencias de recuperación y copias antes de ejecutar."
+        }
+      },
+      "related_chapters": [
+        "git-internals/08-gc-and-maintenance"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-gc"
+      ]
+    },
+    {
+      "id": "git-maintenance-run",
+      "command": "git maintenance run",
+      "kind": "subcommand",
+      "category": "13-security-and-maintenance",
+      "level": "advanced",
+      "intent_tags": [
+        "maintain-repository"
+      ],
+      "syntax": "git maintenance run --task=commit-graph",
+      "purpose": {
+        "en": "Run explicitly selected repository maintenance tasks.",
+        "pt-BR": "Executar tarefas de manutenção explicitamente selecionadas.",
+        "es": "Ejecutar tareas de mantenimiento explícitamente seleccionadas."
+      },
+      "options": {
+        "en": "--task=commit-graph selects graph maintenance; --auto may run configured needed tasks. Other tasks have different effects.",
+        "pt-BR": "--task=commit-graph seleciona manutenção de grafo; --auto pode executar tarefas configuradas necessárias. Outras tarefas têm efeitos diferentes.",
+        "es": "--task=commit-graph selecciona mantenimiento de grafo; --auto puede ejecutar tareas configuradas necesarias. Otras tareas tienen efectos distintos."
+      },
+      "when_to_use": {
+        "en": "When updating local acceleration metadata with a targeted task.",
+        "pt-BR": "Ao atualizar metadados locais de aceleração com tarefa direcionada.",
+        "es": "Al actualizar metadatos locales de aceleración con tarea dirigida."
+      },
+      "when_to_avoid": {
+        "en": "Avoid unreviewed broad tasks or global scheduling in shared environments.",
+        "pt-BR": "Evite tarefas amplas não revisadas ou agendamento global em ambiente compartilhado.",
+        "es": "Evita tareas amplias sin revisar o programación global en entorno compartido."
+      },
+      "expected_state": {
+        "en": "Selected task updates commit-graph metadata as needed without changing branch tips.",
+        "pt-BR": "Tarefa selecionada atualiza metadados commit-graph conforme necessário sem mudar pontas.",
+        "es": "Tarea seleccionada actualiza metadatos commit-graph según necesidad sin cambiar puntas."
+      },
+      "effect_notes": {
+        "en": "Shown task writes graph metadata; other tasks may change storage or contact remotes.",
+        "pt-BR": "Tarefa mostrada grava metadados de grafo; outras podem alterar armazenamento ou contatar remotos.",
+        "es": "Tarea mostrada escribe metadatos de grafo; otras pueden cambiar almacenamiento o contactar remotos."
+      },
+      "common_errors": {
+        "en": "Assuming run establishes a persistent schedule or every maintenance task is read-only.",
+        "pt-BR": "Presumir run estabelece agendamento persistente ou toda tarefa é somente leitura.",
+        "es": "Suponer run establece programación persistente o toda tarea es solo lectura."
+      },
+      "alternatives": {
+        "en": "Use git commit-graph verify to inspect graph validity.",
+        "pt-BR": "Use git commit-graph verify para inspecionar validade de grafo.",
+        "es": "Usa git commit-graph verify para inspeccionar validez de grafo."
+      },
+      "recovery": {
+        "en": "Inspect failure and repository integrity; retry only scoped task after addressing cause.",
+        "pt-BR": "Inspecione falha e integridade; repita só tarefa restrita após tratar causa.",
+        "es": "Inspecciona fallo e integridad; repite solo tarea limitada tras tratar causa."
+      },
+      "prerequisites": {
+        "en": "Use an owned complete disposable repository, verified refs, saved work and trusted configuration. Never use real credentials or personal keys in labs.",
+        "pt-BR": "Use repositório completo próprio descartável, referências verificadas, trabalho salvo e configuração confiável. Nunca use credenciais reais ou chaves pessoais em laboratórios.",
+        "es": "Usa repositorio completo propio desechable, referencias verificadas, trabajo guardado y configuración confiable. Nunca uses credenciales reales ni claves personales en laboratorios."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for guide labs; check local configuration and command availability.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios; confira configuração e disponibilidade locais.",
+        "es": "Usa Git 2.40 o superior en laboratorios; comprueba configuración y disponibilidad locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git maintenance run --task=commit-graph",
+          "context": {
+            "en": "Run only commit-graph maintenance in an idle practice repository.",
+            "pt-BR": "Execute só manutenção commit-graph em repositório de prática ocioso.",
+            "es": "Ejecuta solo mantenimiento commit-graph en repositorio de práctica inactivo."
+          }
+        },
+        "professional": {
+          "command": "git maintenance run --task=commit-graph",
+          "context": {
+            "en": "Update graph metadata and inspect it afterward.",
+            "pt-BR": "Atualize metadados de grafo e inspecione depois.",
+            "es": "Actualiza metadatos de grafo e inspecciona después."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Select tasks deliberately; do not assume arbitrary maintenance is free of destructive or network effects.",
+          "pt-BR": "Selecione tarefas deliberadamente; não presuma manutenção arbitrária sem efeitos destrutivos ou de rede.",
+          "es": "Selecciona tareas deliberadamente; no supongas mantenimiento arbitrario sin efectos destructivos o de red."
+        }
+      },
+      "related_chapters": [
+        "git-internals/08-gc-and-maintenance"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-maintenance"
+      ]
+    }
+  ]
+}
