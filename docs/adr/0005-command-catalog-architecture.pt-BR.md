@@ -2,7 +2,7 @@
 
 [English](0005-command-catalog-architecture.md) · [Português](0005-command-catalog-architecture.pt-BR.md) · [Español](0005-command-catalog-architecture.es.md)
 
-Status: implementação da Sprint 15 aprovada pelo mantenedor; integração pendente de revisão.
+Status: integrado via [PR #17](https://github.com/RamonRDR/git-study-guide/pull/17); validação pós-merge concluída.
 
 ## Decisão
 
