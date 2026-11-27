@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 import subprocess
 import tempfile
+import tarfile
 import unittest
 
 
@@ -173,6 +174,123 @@ class PracticalProjectsTest(unittest.TestCase):
         self.assertEqual(self.git("show", "recovery/notes:notes.txt"), "status: recovered\n")
         self.assertEqual(self.git("rev-parse", "main").strip(), base)
         self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_contribution_offline(self):
+        base = self.seed()
+        origin = self.local_origin()
+        fork = self.root / "fork.git"
+        self.git("clone", "--bare", str(origin), str(fork))
+        contributor = self.clone(fork, "contributor")
+        self.at(contributor, "remote", "add", "upstream", str(origin))
+        self.at(contributor, "fetch", "upstream")
+        self.at(contributor, "switch", "-c", "feat/clarify-notes")
+        (contributor / "notes.txt").write_bytes(b"status: ready\n")
+        self.at(contributor, "add", "notes.txt")
+        self.at(contributor, "commit", "-m", "docs: clarify notes")
+        self.at(contributor, "diff", "--check", "upstream/main...HEAD")
+        self.at(contributor, "push", "-u", "origin", "feat/clarify-notes")
+        reviewed = self.at(contributor, "rev-parse", "HEAD").strip()
+        for bare in (origin, fork):
+            self.assertEqual(self.at(bare, "rev-parse", "main").strip(), base)
+        self.git("remote", "add", "contribution", str(fork))
+        self.git("fetch", "contribution")
+        self.git("diff", "--check", "main...contribution/feat/clarify-notes")
+        self.git("merge", "--ff-only", "contribution/feat/clarify-notes")
+        self.git("push", "origin", "main")
+        self.assertEqual(self.at(origin, "rev-parse", "main").strip(), reviewed)
+        self.assertEqual(self.at(fork, "rev-parse", "main").strip(), base)
+        self.assertEqual(self.git("show", "HEAD:notes.txt"), "status: ready\n")
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def gate(self, revision, path):
+        result = subprocess.run(["git", "show", f"{revision}:{path}"],
+                                cwd=self.repo, env=self.env, capture_output=True,
+                                timeout=30)
+        return result.returncode == 0 and result.stdout == b"status: ready\n"
+
+    def catalog_commit(self, data, message):
+        (self.repo / "catalog.txt").write_bytes(data)
+        self.git("add", "catalog.txt")
+        self.commit(message)
+
+    def test_quality_pipeline(self):
+        self.catalog_commit(b"status: draft\n", "docs: initialize catalog")
+        self.git("switch", "-c", "feat/ready-catalog")
+        self.assertFalse(self.gate("HEAD", "catalog.txt"))
+        (self.repo / "catalog.txt").write_bytes(b"status: ready\n")
+        self.assertFalse(self.gate("HEAD", "catalog.txt"))
+        self.catalog_commit(b"status: ready\n", "feat: mark catalog ready")
+        self.assertTrue(self.gate("HEAD", "catalog.txt"))
+        good = self.git("rev-parse", "HEAD").strip()
+        self.git("switch", "-c", "test/invalid-catalog")
+        self.catalog_commit(b"", "test: empty catalog")
+        self.assertFalse(self.gate("HEAD", "catalog.txt"))
+        self.catalog_commit(b"status: ready\nextra: invalid\n", "test: extra catalog line")
+        self.assertFalse(self.gate("HEAD", "catalog.txt"))
+        self.assertFalse(self.gate("HEAD", "absent.txt"))
+        self.git("switch", "main")
+        self.git("diff", "--check", "main...feat/ready-catalog")
+        self.assertTrue(self.gate("feat/ready-catalog", "catalog.txt"))
+        self.git("merge", "--ff-only", "feat/ready-catalog")
+        self.assertEqual(self.git("rev-parse", "HEAD").strip(), good)
+        self.assertTrue(self.gate("HEAD", "catalog.txt"))
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_release_management(self):
+        self.catalog_commit(b"status: draft\n", "docs: initialize catalog")
+        self.git("tag", "-a", "v1.0.0", "-m", "Initial draft contract")
+        self.catalog_commit(b"status: draft\nstatus: ready\n", "feat: add ready status")
+        self.git("tag", "-a", "v1.1.0", "-m", "Add backward-compatible ready status")
+        released = self.git("rev-parse", "v1.1.0^{commit}").strip()
+        for tag in ("v1.0.0", "v1.1.0"):
+            self.assertEqual(self.git("cat-file", "-t", tag).strip(), "tag")
+        archive = self.root / "catalog-v1.1.0.tar"
+        self.git("archive", "--format=tar", "--output=" + str(archive), "v1.1.0")
+        (self.repo / "future.txt").write_bytes(b"future work\n")
+        self.git("add", "future.txt")
+        self.commit("docs: begin future work")
+        self.assertEqual(self.git("rev-parse", "v1.1.0^{commit}").strip(), released)
+        self.assertNotEqual(self.git("rev-parse", "HEAD").strip(), released)
+        self.assertEqual(self.git("show", "v1.0.0:catalog.txt"), "status: draft\n")
+        self.assertEqual(self.git("show", "v1.1.0:catalog.txt"), "status: draft\nstatus: ready\n")
+        with tarfile.open(archive) as artifact:
+            self.assertEqual(artifact.getnames(), ["catalog.txt"])
+            with artifact.extractfile("catalog.txt") as content:
+                self.assertEqual(content.read(), b"status: draft\nstatus: ready\n")
+        self.assertEqual(self.git("status", "--porcelain"), "")
+
+    def test_professional_workflow(self):
+        base = self.seed()
+        self.git("switch", "-c", "feat/ready-notes")
+        self.assertFalse(self.gate("HEAD", "notes.txt"))
+        self.write("status: ready")
+        self.git("add", "notes.txt")
+        self.commit("feat: mark notes ready")
+        (self.repo / "review.txt").write_bytes(b"R1: notes are ready\n")
+        self.git("add", "review.txt")
+        self.commit("docs: record readiness requirement")
+        self.assertTrue(self.gate("HEAD", "notes.txt"))
+        self.git("diff", "--check", "main...HEAD")
+        reviewed = self.git("rev-parse", "HEAD").strip()
+        tree = self.git("rev-parse", "HEAD^{tree}").strip()
+        self.assertEqual(self.git("rev-list", "--count", "main..HEAD").strip(), "2")
+        self.git("switch", "main")
+        self.assertEqual(self.git("rev-parse", "HEAD").strip(), base)
+        self.assertEqual(self.git("rev-parse", "feat/ready-notes").strip(), reviewed)
+        self.git("merge", "--squash", "feat/ready-notes")
+        self.assertEqual(self.git("rev-parse", "HEAD").strip(), base)
+        self.assertFalse((self.repo / ".git" / "MERGE_HEAD").exists())
+        self.git("diff", "--cached", "--check")
+        self.commit("feat: deliver reviewed notes")
+        self.assertEqual(self.git("rev-list", "--parents", "-1", "HEAD").split()[1:], [base])
+        self.assertEqual(self.git("rev-parse", "HEAD^{tree}").strip(), tree)
+        self.assertEqual(self.git("rev-list", "--count", "HEAD").strip(), "2")
+        self.assertTrue(self.gate("HEAD", "notes.txt"))
+        self.git("tag", "-a", "v1.0.0", "-m", "First reviewed notes release")
+        self.assertEqual(self.git("rev-parse", "v1.0.0^{commit}"),
+                         self.git("rev-parse", "HEAD"))
+        self.assertEqual(self.git("status", "--porcelain"), "")
+        self.assertEqual(self.git("remote"), "")
 
 
 if __name__ == "__main__":

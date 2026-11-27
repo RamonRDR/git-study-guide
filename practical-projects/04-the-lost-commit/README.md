@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Previous](../03-merge-conflict-laboratory/README.md) · [Index](../README.md) · [Next module](../../exercises/README.md)
+[Previous](../03-merge-conflict-laboratory/README.md) · [Index](../README.md) · [Next](../05-open-source-contribution/README.md)
 <!-- /navigation -->
 
 **Level:** intermediate · **Estimated time:** 45 min
@@ -78,5 +78,5 @@ Do not perform reset --hard outside this fresh lab. If the candidate differs, st
 ---
 
 <!-- navigation-footer -->
-[Previous](../03-merge-conflict-laboratory/README.md) · [Index](../README.md) · [Next module](../../exercises/README.md)
+[Previous](../03-merge-conflict-laboratory/README.md) · [Index](../README.md) · [Next](../05-open-source-contribution/README.md)
 <!-- /navigation-footer -->

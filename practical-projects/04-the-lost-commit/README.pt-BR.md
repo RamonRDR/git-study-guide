@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../03-merge-conflict-laboratory/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../exercises/README.pt-BR.md)
+[Anterior](../03-merge-conflict-laboratory/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-open-source-contribution/README.pt-BR.md)
 <!-- /navigation -->
 
 **Nível:** intermediário · **Tempo estimado:** 45 min
@@ -78,5 +78,5 @@ Não execute reset --hard fora deste laboratório novo. Se candidato divergir, p
 ---
 
 <!-- navigation-footer -->
-[Anterior](../03-merge-conflict-laboratory/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo módulo](../../exercises/README.pt-BR.md)
+[Anterior](../03-merge-conflict-laboratory/README.pt-BR.md) · [Índice](../README.pt-BR.md) · [Próximo](../05-open-source-contribution/README.pt-BR.md)
 <!-- /navigation-footer -->

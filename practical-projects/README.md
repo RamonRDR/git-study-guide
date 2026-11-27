@@ -15,6 +15,10 @@ Practice projects use disposable local repositories, explicit state checks and p
 - [Two Developers, One Project](02-two-developers-one-project/README.md)
 - [Merge Conflict Laboratory](03-merge-conflict-laboratory/README.md)
 - [The Lost Commit](04-the-lost-commit/README.md)
+- [Open Source Contribution](05-open-source-contribution/README.md)
+- [Automated Quality Pipeline](06-automated-quality-pipeline/README.md)
+- [Release Management](07-release-management/README.md)
+- [Professional Engineering Workflow](08-professional-engineering-workflow/README.md)
 <!-- /chapters -->
 
 ---

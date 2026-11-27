@@ -3,7 +3,7 @@
 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md)
 
 <!-- navigation -->
-[Anterior](../03-merge-conflict-laboratory/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../exercises/README.es.md)
+[Anterior](../03-merge-conflict-laboratory/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-open-source-contribution/README.es.md)
 <!-- /navigation -->
 
 **Nivel:** intermedio · **Tiempo estimado:** 45 min
@@ -78,5 +78,5 @@ No ejecutes reset --hard fuera de este laboratorio nuevo. Si candidato difiere, 
 ---
 
 <!-- navigation-footer -->
-[Anterior](../03-merge-conflict-laboratory/README.es.md) · [Índice](../README.es.md) · [Siguiente módulo](../../exercises/README.es.md)
+[Anterior](../03-merge-conflict-laboratory/README.es.md) · [Índice](../README.es.md) · [Siguiente](../05-open-source-contribution/README.es.md)
 <!-- /navigation-footer -->

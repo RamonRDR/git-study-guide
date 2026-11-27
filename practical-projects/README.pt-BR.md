@@ -15,6 +15,10 @@ Projetos práticos usam repositórios locais descartáveis, verificações expl�
 - [Dois desenvolvedores, um projeto](02-two-developers-one-project/README.pt-BR.md)
 - [Laboratório de conflitos de merge](03-merge-conflict-laboratory/README.pt-BR.md)
 - [O commit perdido](04-the-lost-commit/README.pt-BR.md)
+- [Contribuição open source](05-open-source-contribution/README.pt-BR.md)
+- [Pipeline automatizado de qualidade](06-automated-quality-pipeline/README.pt-BR.md)
+- [Gestão de releases](07-release-management/README.pt-BR.md)
+- [Fluxo de engenharia profissional](08-professional-engineering-workflow/README.pt-BR.md)
 <!-- /chapters -->
 
 ---

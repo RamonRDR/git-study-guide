@@ -215,7 +215,11 @@
         "01-my-first-repository",
         "02-two-developers-one-project",
         "03-merge-conflict-laboratory",
-        "04-the-lost-commit"
+        "04-the-lost-commit",
+        "05-open-source-contribution",
+        "06-automated-quality-pipeline",
+        "07-release-management",
+        "08-professional-engineering-workflow"
       ]
     },
     {
