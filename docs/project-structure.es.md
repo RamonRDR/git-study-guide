@@ -12,3 +12,5 @@ El módulo 16 ofrece ocho proyectos trilingües de ejecución manual en practica
 
 - [Ruta](learning-path.es.md)
 - [Automatización de calidad](quality-automation.es.md)
+
+- [Esquema del piloto de evaluaciones](assessment-pilot.es.md)

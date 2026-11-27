@@ -9,7 +9,7 @@ python scripts/validate.py
 python -m unittest discover -s tests -v
 ```
 
-Usar --check con structure, locales, links, navigation, examples, secrets o command-catalog para aislar un check. Validadores inspeccionan rutas rastreadas portables, presencia de tres idiomas, enlaces relativos e imágenes Markdown inline, orden/navegación de módulos y capítulos, política de ejemplos ejecutables y patrones comunes de secretos. No prueban traducción semántica, enlaces externos, anclas, todas las sintaxis Markdown, ausencia de todos los secretos ni comportamiento de UI de plantillas. Detector informa archivo y línea, no valores; es heurístico, no exhaustivo. Revisar diffs y rotar credenciales expuestas por separado.
+Usar --check con structure, locales, links, navigation, examples, secrets command-catalog o assessment-pilot para aislar un check. Validadores inspeccionan rutas rastreadas portables, presencia de tres idiomas, enlaces relativos e imágenes Markdown inline, orden/navegación de módulos y capítulos, política de ejemplos ejecutables y patrones comunes de secretos. No prueban traducción semántica, enlaces externos, anclas, todas las sintaxis Markdown, ausencia de todos los secretos ni comportamiento de UI de plantillas. Detector informa archivo y línea, no valores; es heurístico, no exhaustivo. Revisar diffs y rotar credenciales expuestas por separado.
 
 La validación de navegación exige bloques canónicos localizados de encabezado y pie para cada índice de módulo y capítulo, etiquetas y rutas exactas, transiciones entre capítulos y módulos, ubicación y detección de duplicados. Pruebas incluyen casos negativos de navegación ausente, divergente, reordenada, en idioma incorrecto, invertida, oculta o mal ubicada. Índices previstos siguen navegables; sus lecciones aún no se publicaron.
 
@@ -29,3 +29,7 @@ CI usa runners estándar hospedados por GitHub Linux y Windows en pull_request y
 
 - [Estructura del proyecto](project-structure.es.md)
 - [GitHub Actions security](https://docs.github.com/en/actions/reference/security/secure-use)
+
+El check assessment-pilot verifica cuatro bancos versionados, conteos exactos por dificultad, IDs globalmente únicos, prerrequisitos y referencias de simulacros válidos, campos localizados, opciones, respuestas, predicados de estado permitidos e igualdad con Markdown generado. Edita records.json, prepara JSON y currículo, ejecuta python scripts/render_assessments.py --write; prepara páginas generadas y ejecuta python scripts/validate.py --check assessment-pilot y todos checks/pruebas. Los 12 escenarios fijos QA ejercitan estados Git válidos e incorrectos representativos. Ningún evaluador ejecuta entregas de estudiantes ni lee repos arbitrarios; solo fixtures desechables confiables. Validación estructural no demuestra traducción semántica ni precisión educativa.
+
+- [Esquema del piloto de evaluaciones](assessment-pilot.es.md)
