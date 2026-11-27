@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "slug": "01-setup-and-configuration",
+      "title": {
+        "en": "Setup & Configuration",
+        "pt-BR": "Inicialização e configuração",
+        "es": "Inicio y configuración"
+      },
+      "target": 8
+    },
+    {
+      "slug": "02-repository-inspection",
+      "title": {
+        "en": "Repository Inspection",
+        "pt-BR": "Inspeção do repositório",
+        "es": "Inspección del repositorio"
+      },
+      "target": 9
+    },
+    {
+      "slug": "03-working-tree-and-staging",
+      "title": {
+        "en": "Working Tree & Staging",
+        "pt-BR": "Working tree e staging",
+        "es": "Working tree y staging"
+      },
+      "target": 10
+    },
+    {
+      "slug": "04-commits-and-tags",
+      "title": {
+        "en": "Commits & Tags",
+        "pt-BR": "Commits e tags",
+        "es": "Commits y etiquetas"
+      },
+      "target": 8
+    },
+    {
+      "slug": "05-history-and-comparison",
+      "title": {
+        "en": "History & Comparison",
+        "pt-BR": "Histórico e comparação",
+        "es": "Historial y comparación"
+      },
+      "target": 10
+    },
+    {
+      "slug": "06-branch-management",
+      "title": {
+        "en": "Branch Management",
+        "pt-BR": "Gerenciamento de branches",
+        "es": "Gestión de ramas"
+      },
+      "target": 10
+    },
+    {
+      "slug": "07-merge-rebase-and-conflicts",
+      "title": {
+        "en": "Merge, Rebase & Conflicts",
+        "pt-BR": "Merge, rebase e conflitos",
+        "es": "Merge, rebase y conflictos"
+      },
+      "target": 10
+    },
+    {
+      "slug": "08-remotes-and-synchronization",
+      "title": {
+        "en": "Remotes & Synchronization",
+        "pt-BR": "Remotos e sincronização",
+        "es": "Remotos y sincronización"
+      },
+      "target": 7
+    },
+    {
+      "slug": "09-recovery-and-stash",
+      "title": {
+        "en": "Recovery & Stash",
+        "pt-BR": "Recuperação e stash",
+        "es": "Recuperación y stash"
+      },
+      "target": 7
+    },
+    {
+      "slug": "10-search-and-troubleshooting",
+      "title": {
+        "en": "Search & Troubleshooting",
+        "pt-BR": "Pesquisa e diagnóstico",
+        "es": "Búsqueda y diagnóstico"
+      },
+      "target": 8
+    },
+    {
+      "slug": "11-advanced-git-operations",
+      "title": {
+        "en": "Advanced Git Operations",
+        "pt-BR": "Operações avançadas",
+        "es": "Operaciones avanzadas"
+      },
+      "target": 9
+    },
+    {
+      "slug": "12-internals-and-plumbing",
+      "title": {
+        "en": "Internals & Plumbing",
+        "pt-BR": "Internals e plumbing",
+        "es": "Internals y plumbing"
+      },
+      "target": 8
+    },
+    {
+      "slug": "13-security-and-maintenance",
+      "title": {
+        "en": "Security & Maintenance",
+        "pt-BR": "Segurança e manutenção",
+        "es": "Seguridad y mantenimiento"
+      },
+      "target": 8
+    },
+    {
+      "slug": "14-platforms-and-automation",
+      "title": {
+        "en": "Platforms & Automation",
+        "pt-BR": "Plataformas e automação",
+        "es": "Plataformas y automatización"
+      },
+      "target": 8
+    }
+  ]
+}

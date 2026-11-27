@@ -9,9 +9,17 @@ python scripts/validate.py
 python -m unittest discover -s tests -v
 ```
 
-Usar --check com structure, locales, links, navigation, examples ou secrets para isolar um check. Validadores inspecionam caminhos rastreados portáveis, presença dos três idiomas, links relativos e imagens Markdown inline, ordem/navegação de módulos e capítulos, política de exemplos executáveis e padrões comuns de segredos. Não provam tradução semântica, links externos, âncoras, todas as sintaxes Markdown, ausência de todos os segredos ou comportamento da UI de templates. Detector informa arquivo e linha, não valores; é heurístico, não completo. Revisar diffs e rotacionar credenciais expostas separadamente.
+Usar --check com structure, locales, links, navigation, examples, secrets ou command-catalog para isolar um check. Validadores inspecionam caminhos rastreados portáveis, presença dos três idiomas, links relativos e imagens Markdown inline, ordem/navegação de módulos e capítulos, política de exemplos executáveis e padrões comuns de segredos. Não provam tradução semântica, links externos, âncoras, todas as sintaxes Markdown, ausência de todos os segredos ou comportamento da UI de templates. Detector informa arquivo e linha, não valores; é heurístico, não completo. Revisar diffs e rotacionar credenciais expostas separadamente.
 
 A validação de navegação exige blocos canônicos localizados de cabeçalho e rodapé para cada índice de módulo e capítulo, rótulos e caminhos exatos, transições entre capítulos e módulos, posicionamento e detecção de duplicidade. Testes incluem casos negativos de navegação ausente, divergente, reordenada, em idioma errado, invertida, oculta ou mal posicionada. Índices planejados permanecem navegáveis; suas aulas ainda não foram publicadas.
+
+O check command-catalog valida as 14 categorias JSON registradas, no mínimo 101 operações distintas (meta aprovada de 120), mapas de idiomas, riscos, política de URLs de fontes oficiais, capítulos relacionados, intenções e igualdade exata com o renderizador canônico. Não executa comandos do catálogo nem comprova tradução semântica, disponibilidade de URLs externas ou correção de todo exemplo. Para alterar o catálogo, edite o JSON canônico, prepare novas entradas e regenere o Markdown registrado a partir da raiz:
+
+```text
+python scripts/render_command_reference.py --write
+```
+
+Prepare as páginas geradas, execute `python scripts/validate.py --check command-catalog`, depois todos os validadores e testes. A invocação padrão do renderizador confere conteúdo gerado sem gravar.
 
 Ainda não há exemplos didáticos executáveis aprovados. O manifesto vazio é um gate que bloqueia por padrão: todos os arquivos em examples/ (incluindo arquivos inertes e variações de maiúsculas/minúsculas) são rejeitados, independentemente de extensão ou modo, e manifestos não vazios falham até existir protocolo de execução revisado. Não executar código arbitrário de estudantes. Teste inicial Git usa repo temporário isolado e verifica staging, branch, conteúdo commitado e status limpo. Sprints futuras ampliam cenários determinísticos. Rodar testes locais somente de revisões confiáveis e revisadas.
 

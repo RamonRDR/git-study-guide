@@ -1,0 +1,868 @@
+{
+  "schema_version": 1,
+  "category": "01-setup-and-configuration",
+  "entries": [
+    {
+      "id": "git-version",
+      "command": "git --version",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-version",
+        "configure-git"
+      ],
+      "syntax": "git --version",
+      "purpose": {
+        "en": "Identify the installed Git executable and its reported version.",
+        "pt-BR": "Identificar o executável Git instalado e a versão informada.",
+        "es": "Identificar el ejecutable de Git instalado y la versión indicada."
+      },
+      "prerequisites": {
+        "en": "Git must be installed and discoverable in the current shell.",
+        "pt-BR": "Git instalado e acessível no shell atual.",
+        "es": "Git instalado y accesible en el shell actual."
+      },
+      "options": {
+        "en": "--version reports the version; it does not update Git.",
+        "pt-BR": "--version informa a versão; não atualiza o Git.",
+        "es": "--version indica la versión; no actualiza Git."
+      },
+      "when_to_use": {
+        "en": "Check compatibility before following instructions or reporting a bug.",
+        "pt-BR": "Verificar compatibilidade antes de seguir instruções ou relatar um erro.",
+        "es": "Comprobar compatibilidad antes de seguir instrucciones o informar de un error."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat a version string as proof that a particular optional extension is installed.",
+        "pt-BR": "Não considerar a versão como prova de instalação de uma extensão opcional.",
+        "es": "No considerar la versión una prueba de que una extensión opcional está instalada."
+      },
+      "expected_state": {
+        "en": "A version string is printed; no repository is required.",
+        "pt-BR": "Exibe uma versão; não exige repositório.",
+        "es": "Muestra una versión; no requiere repositorio."
+      },
+      "effect_notes": {
+        "en": "Reads executable information without changing Git state.",
+        "pt-BR": "Lê informações do executável sem alterar o estado do Git.",
+        "es": "Lee información del ejecutable sin cambiar el estado de Git."
+      },
+      "common_errors": {
+        "en": "A missing executable or incorrect PATH prevents invocation; multiple installations may resolve differently.",
+        "pt-BR": "Executável ausente ou PATH incorreto impede a execução; instalações múltiplas podem resolver de modo diferente.",
+        "es": "Un ejecutable ausente o un PATH incorrecto impiden la ejecución; varias instalaciones pueden resolverse de forma diferente."
+      },
+      "alternatives": {
+        "en": "Use the operating system's executable lookup to identify which Git binary is selected.",
+        "pt-BR": "Use o mecanismo do sistema operacional para identificar o binário Git selecionado.",
+        "es": "Usa el mecanismo del sistema operativo para identificar el binario de Git seleccionado."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed; repair installation or PATH if necessary.",
+        "pt-BR": "Não há recuperação de repositório; corrija a instalação ou o PATH se necessário.",
+        "es": "No hay recuperación del repositorio; corrige la instalación o PATH si es necesario."
+      },
+      "requirements": {
+        "en": "No optional dependency; compare the reported version with the feature's documented minimum.",
+        "pt-BR": "Sem dependência opcional; compare a versão informada com o mínimo documentado da funcionalidade.",
+        "es": "Sin dependencia opcional; compara la versión indicada con el mínimo documentado de la función."
+      },
+      "examples": {
+        "basic": {
+          "command": "git --version",
+          "context": {
+            "en": "Run in a fresh terminal and note the version.",
+            "pt-BR": "Execute em um terminal novo e anote a versão.",
+            "es": "Ejecuta en un terminal nuevo y anota la versión."
+          }
+        },
+        "professional": {
+          "command": "git --version",
+          "context": {
+            "en": "Record the runner's Git version in a CI troubleshooting report without assuming all runners match.",
+            "pt-BR": "Registre a versão do Git do runner em um relatório de diagnóstico de CI sem presumir que todos sejam iguais.",
+            "es": "Registra la versión de Git del runner en un informe de diagnóstico de CI sin asumir que todos son iguales."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "not-applicable",
+        "index": "not-applicable",
+        "history": "not-applicable",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "No repository change; version alone does not guarantee behavior.",
+          "pt-BR": "Não altera o repositório; a versão sozinha não garante comportamento.",
+          "es": "No cambia el repositorio; la versión por sí sola no garantiza el comportamiento."
+        }
+      },
+      "related_chapters": [
+        "getting-started/01-install-git",
+        "getting-started/02-terminal-and-help"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git"
+      ]
+    },
+    {
+      "id": "git-help",
+      "command": "git help",
+      "kind": "native-command",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "find-help",
+        "inspect-version"
+      ],
+      "syntax": "git help [command]",
+      "purpose": {
+        "en": "Open the help for a Git command or enumerate available commands.",
+        "pt-BR": "Abrir a ajuda de um comando Git ou listar comandos disponíveis.",
+        "es": "Abrir la ayuda de un comando Git o enumerar comandos disponibles."
+      },
+      "prerequisites": {
+        "en": "Git installed; detailed help requires an available documentation viewer.",
+        "pt-BR": "Git instalado; a ajuda detalhada exige um visualizador de documentação disponível.",
+        "es": "Git instalado; la ayuda detallada requiere un visor de documentación disponible."
+      },
+      "options": {
+        "en": "-a lists available commands; -w requests web-format help.",
+        "pt-BR": "-a lista comandos disponíveis; -w solicita ajuda em formato web.",
+        "es": "-a enumera comandos disponibles; -w solicita ayuda en formato web."
+      },
+      "when_to_use": {
+        "en": "Check syntax and documented behavior for an unfamiliar operation.",
+        "pt-BR": "Conferir sintaxe e comportamento documentado de uma operação desconhecida.",
+        "es": "Comprobar sintaxis y comportamiento documentado de una operación desconocida."
+      },
+      "when_to_avoid": {
+        "en": "Do not confuse locally installed help with documentation for a different Git release.",
+        "pt-BR": "Não confundir a ajuda instalada localmente com a documentação de outra versão do Git.",
+        "es": "No confundir la ayuda instalada localmente con la documentación de otra versión de Git."
+      },
+      "expected_state": {
+        "en": "Displays command documentation or an inventory of commands.",
+        "pt-BR": "Exibe documentação ou uma lista de comandos.",
+        "es": "Muestra documentación o una lista de comandos."
+      },
+      "effect_notes": {
+        "en": "No repository mutation; the selected viewer or browser may start a process.",
+        "pt-BR": "Não altera o repositório; o visualizador ou navegador selecionado pode iniciar um processo.",
+        "es": "No modifica el repositorio; el visor o navegador seleccionado puede iniciar un proceso."
+      },
+      "common_errors": {
+        "en": "A missing manual viewer or documentation files can prevent the full page from opening.",
+        "pt-BR": "A falta de visualizador de manuais ou arquivos de documentação pode impedir a abertura da página completa.",
+        "es": "La falta de visor de manuales o archivos de documentación puede impedir abrir la página completa."
+      },
+      "alternatives": {
+        "en": "Use git COMMAND -h for short usage or the official versioned online manual.",
+        "pt-BR": "Use git COMMAND -h para sintaxe resumida ou o manual oficial versionado online.",
+        "es": "Usa git COMMAND -h para sintaxis breve o el manual oficial versionado en línea."
+      },
+      "recovery": {
+        "en": "Close the viewer; use the short usage or official manual if help is unavailable.",
+        "pt-BR": "Feche o visualizador; use a ajuda resumida ou o manual oficial se indisponível.",
+        "es": "Cierra el visor; usa la ayuda breve o el manual oficial si no está disponible."
+      },
+      "requirements": {
+        "en": "Viewer availability depends on installation and operating system.",
+        "pt-BR": "A disponibilidade do visualizador depende da instalação e do sistema operacional.",
+        "es": "La disponibilidad del visor depende de la instalación y del sistema operativo."
+      },
+      "examples": {
+        "basic": {
+          "command": "git help status",
+          "context": {
+            "en": "Read the status manual before interpreting its output.",
+            "pt-BR": "Leia o manual de status antes de interpretar sua saída.",
+            "es": "Lee el manual de status antes de interpretar su salida."
+          }
+        },
+        "professional": {
+          "command": "git help -a",
+          "context": {
+            "en": "List commands on a new development workstation to discover installed extensions.",
+            "pt-BR": "Liste comandos em uma nova estação de desenvolvimento para descobrir extensões instaladas.",
+            "es": "Enumera comandos en una nueva estación de desarrollo para descubrir extensiones instaladas."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "The viewer may start a process or open a browser; Git data is not modified.",
+          "pt-BR": "O visualizador pode iniciar um processo ou abrir um navegador; os dados do Git não são alterados.",
+          "es": "El visor puede iniciar un proceso o abrir un navegador; los datos de Git no se modifican."
+        }
+      },
+      "related_chapters": [
+        "getting-started/02-terminal-and-help",
+        "basic-commands/01-init-config-help"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-help"
+      ]
+    },
+    {
+      "id": "git-init",
+      "command": "git init",
+      "kind": "native-command",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "create-repository",
+        "configure-git"
+      ],
+      "syntax": "git init [-b branch] [directory]",
+      "purpose": {
+        "en": "Create a local Git repository, or reinitialize an existing one.",
+        "pt-BR": "Criar um repositório Git local ou reinicializar um existente.",
+        "es": "Crear un repositorio Git local o reinicializar uno existente."
+      },
+      "prerequisites": {
+        "en": "Writable, owned directory or a writable parent for a new directory.",
+        "pt-BR": "Diretório próprio com permissão de escrita ou diretório pai gravável para um novo.",
+        "es": "Directorio propio con permiso de escritura o padre escribible para uno nuevo."
+      },
+      "options": {
+        "en": "-b selects the initial branch name; an optional directory selects the target.",
+        "pt-BR": "-b seleciona o nome da branch inicial; o diretório opcional seleciona o destino.",
+        "es": "-b selecciona el nombre de la rama inicial; el directorio opcional selecciona el destino."
+      },
+      "when_to_use": {
+        "en": "Start tracking a new local project without a remote.",
+        "pt-BR": "Começar a versionar um projeto local novo sem remoto.",
+        "es": "Empezar a versionar un proyecto local nuevo sin remoto."
+      },
+      "when_to_avoid": {
+        "en": "Do not initialize the wrong directory or create an unintended nested repository.",
+        "pt-BR": "Não inicialize o diretório errado nem crie um repositório aninhado involuntariamente.",
+        "es": "No inicialices el directorio equivocado ni crees un repositorio anidado involuntariamente."
+      },
+      "expected_state": {
+        "en": "In a new repository, metadata exists and HEAD names an unborn branch; no commit is created.",
+        "pt-BR": "Em um repositório novo, os metadados existem e HEAD aponta simbolicamente para uma branch ainda sem commit; nenhum commit é criado.",
+        "es": "En un repositorio nuevo existen metadatos y HEAD nombra una rama aún sin commit; no se crea ningún commit."
+      },
+      "effect_notes": {
+        "en": "May create the directory and metadata; files are not staged automatically.",
+        "pt-BR": "Pode criar diretório e metadados; arquivos não entram no staging automaticamente.",
+        "es": "Puede crear el directorio y los metadatos; los archivos no se añaden al staging automáticamente."
+      },
+      "common_errors": {
+        "en": "Initializing a parent or nested directory unintentionally makes repository boundaries confusing.",
+        "pt-BR": "Inicializar um diretório pai ou aninhado por engano confunde os limites do repositório.",
+        "es": "Inicializar un directorio padre o anidado por error confunde los límites del repositorio."
+      },
+      "alternatives": {
+        "en": "Use git clone when you need an existing repository and its history.",
+        "pt-BR": "Use git clone quando precisar de um repositório existente e seu histórico.",
+        "es": "Usa git clone cuando necesites un repositorio existente y su historial."
+      },
+      "recovery": {
+        "en": "Inspect the path and back up data; do not remove metadata unless you have verified the repository is disposable and its history is unnecessary.",
+        "pt-BR": "Inspecione o caminho e faça backup; não remova metadados sem verificar que o repositório é descartável e o histórico é desnecessário.",
+        "es": "Inspecciona la ruta y haz una copia; no elimines metadatos sin verificar que el repositorio es desechable y su historial innecesario."
+      },
+      "requirements": {
+        "en": "-b / --initial-branch requires Git 2.28 or later.",
+        "pt-BR": "-b / --initial-branch requer Git 2.28 ou posterior.",
+        "es": "-b / --initial-branch requiere Git 2.28 o posterior."
+      },
+      "examples": {
+        "basic": {
+          "command": "git init -b main notes-lab",
+          "context": {
+            "en": "From an owned disposable parent, create a notes repository on main.",
+            "pt-BR": "Em um diretório pai próprio e descartável, crie um repositório de notas na main.",
+            "es": "En un directorio padre propio y desechable, crea un repositorio de notas en main."
+          }
+        },
+        "professional": {
+          "command": "git init -b main prototype-lab",
+          "context": {
+            "en": "Create a separate prototype repository instead of initializing an existing application directory by accident.",
+            "pt-BR": "Crie um repositório separado para um protótipo em vez de inicializar por engano o diretório de uma aplicação existente.",
+            "es": "Crea un repositorio separado para un prototipo en lugar de inicializar por error el directorio de una aplicación existente."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Creates repository metadata; verify the target path first.",
+          "pt-BR": "Cria metadados do repositório; confira o destino primeiro.",
+          "es": "Crea metadatos del repositorio; comprueba el destino primero."
+        }
+      },
+      "related_chapters": [
+        "getting-started/03-first-repository",
+        "basic-commands/01-init-config-help"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-init",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
+      ]
+    },
+    {
+      "id": "git-init-bare",
+      "command": "git init --bare",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "intermediate",
+      "intent_tags": [
+        "create-repository",
+        "simulate-collaboration"
+      ],
+      "syntax": "git init --bare [-b branch] [directory]",
+      "purpose": {
+        "en": "Initialize a repository without a checked-out working tree, suitable as a local shared origin.",
+        "pt-BR": "Inicializar um repositório sem working tree de checkout, adequado como origin compartilhado local.",
+        "es": "Inicializar un repositorio sin working tree extraído, adecuado como origin compartido local."
+      },
+      "prerequisites": {
+        "en": "Writable disposable target directory; choose an initial branch name deliberately.",
+        "pt-BR": "Destino descartável e gravável; escolha deliberadamente a branch inicial.",
+        "es": "Destino desechable y escribible; elige deliberadamente la rama inicial."
+      },
+      "options": {
+        "en": "--bare creates bare metadata layout; -b chooses the initial branch.",
+        "pt-BR": "--bare cria o layout de metadados bare; -b escolhe a branch inicial.",
+        "es": "--bare crea la disposición bare de metadatos; -b elige la rama inicial."
+      },
+      "when_to_use": {
+        "en": "Create a local origin for a two-clone collaboration exercise.",
+        "pt-BR": "Criar um origin local para um exercício de colaboração com dois clones.",
+        "es": "Crear un origin local para un ejercicio de colaboración con dos clones."
+      },
+      "when_to_avoid": {
+        "en": "Do not use it as the normal repository where you intend to edit and stage files.",
+        "pt-BR": "Não use como repositório normal onde pretende editar e colocar arquivos no staging.",
+        "es": "No lo uses como repositorio normal donde pretendes editar y preparar archivos."
+      },
+      "expected_state": {
+        "en": "The bare repository exists; HEAD is symbolic and initially has no commit.",
+        "pt-BR": "O repositório bare existe; HEAD é simbólico e inicialmente não há commit.",
+        "es": "Existe el repositorio bare; HEAD es simbólico y al inicio no hay commit."
+      },
+      "effect_notes": {
+        "en": "No working tree or ordinary staging workflow is created; refs and objects live in the repository directory.",
+        "pt-BR": "Não cria working tree nem fluxo comum de staging; refs e objetos ficam no diretório do repositório.",
+        "es": "No crea working tree ni flujo normal de staging; refs y objetos residen en el directorio del repositorio."
+      },
+      "common_errors": {
+        "en": "Running working-tree commands in a bare repository fails or does not make sense.",
+        "pt-BR": "Comandos de working tree em repositório bare falham ou não fazem sentido.",
+        "es": "Los comandos de working tree en un repositorio bare fallan o no tienen sentido."
+      },
+      "alternatives": {
+        "en": "Use ordinary git init for an editing repository; clone the bare origin to work on files.",
+        "pt-BR": "Use git init comum para editar; clone o origin bare para trabalhar nos arquivos.",
+        "es": "Usa git init normal para editar; clona el origin bare para trabajar con archivos."
+      },
+      "recovery": {
+        "en": "Keep existing refs and objects safe; remove only a verified disposable origin after all participants finish.",
+        "pt-BR": "Proteja refs e objetos existentes; remova apenas um origin descartável verificado após todos terminarem.",
+        "es": "Protege refs y objetos existentes; elimina solo un origin desechable verificado cuando todos terminen."
+      },
+      "requirements": {
+        "en": "-b requires Git 2.28 or later; no hosted service needed.",
+        "pt-BR": "-b requer Git 2.28 ou posterior; sem serviço hospedado.",
+        "es": "-b requiere Git 2.28 o posterior; sin servicio alojado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git init --bare -b main origin.git",
+          "context": {
+            "en": "Create a local bare origin in a disposable parent directory.",
+            "pt-BR": "Crie um origin bare local em um diretório pai descartável.",
+            "es": "Crea un origin bare local en un directorio padre desechable."
+          }
+        },
+        "professional": {
+          "command": "git init --bare -b main collaboration.git",
+          "context": {
+            "en": "Use a local bare origin to rehearse push and fetch with two separate clones without a hosting account.",
+            "pt-BR": "Use um origin bare local para ensaiar push e fetch com dois clones separados sem conta de hospedagem.",
+            "es": "Usa un origin bare local para ensayar push y fetch con dos clones separados sin cuenta de alojamiento."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "not-applicable",
+        "index": "not-applicable",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "A bare origin can hold valuable history; never delete it simply because no files are checked out.",
+          "pt-BR": "Um origin bare pode conter histórico valioso; nunca o exclua apenas porque não há arquivos em checkout.",
+          "es": "Un origin bare puede contener historial valioso; nunca lo elimines solo porque no hay archivos extraídos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/01-remote-concepts",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-init",
+        "https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup"
+      ]
+    },
+    {
+      "id": "git-config-local",
+      "command": "git config --local",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "configure-git",
+        "configure-identity"
+      ],
+      "syntax": "git config --local name value",
+      "purpose": {
+        "en": "Set a repository-local configuration value, such as commit identity.",
+        "pt-BR": "Definir um valor de configuração local do repositório, como identidade de commit.",
+        "es": "Definir un valor de configuración local del repositorio, como la identidad de commit."
+      },
+      "prerequisites": {
+        "en": "An owned repository and a clear reason for the setting; inspect existing values first.",
+        "pt-BR": "Repositório próprio e motivo claro para a configuração; inspecione valores existentes primeiro.",
+        "es": "Repositorio propio y motivo claro para el ajuste; inspecciona primero los valores existentes."
+      },
+      "options": {
+        "en": "--local targets repository configuration; --get reads a value; --unset removes a single-valued key.",
+        "pt-BR": "--local seleciona a configuração do repositório; --get lê um valor; --unset remove uma chave de valor único.",
+        "es": "--local selecciona la configuración del repositorio; --get lee un valor; --unset elimina una clave de valor único."
+      },
+      "when_to_use": {
+        "en": "Choose a project-specific identity or behavior without changing other repositories.",
+        "pt-BR": "Definir identidade ou comportamento específico do projeto sem alterar outros repositórios.",
+        "es": "Definir identidad o comportamiento específico del proyecto sin cambiar otros repositorios."
+      },
+      "when_to_avoid": {
+        "en": "Do not store access tokens or private keys in ordinary configuration values.",
+        "pt-BR": "Não armazene tokens de acesso ou chaves privadas em valores comuns de configuração.",
+        "es": "No almacenes tokens de acceso o claves privadas en valores ordinarios de configuración."
+      },
+      "expected_state": {
+        "en": "The specified key has the requested local value; future operations may use it.",
+        "pt-BR": "A chave especificada tem o valor local solicitado; operações futuras podem utilizá-lo.",
+        "es": "La clave especificada tiene el valor local solicitado; las operaciones futuras pueden usarlo."
+      },
+      "effect_notes": {
+        "en": "Changes configuration, not existing commits or staged files; identity applies to future commits.",
+        "pt-BR": "Altera configuração, não commits existentes nem arquivos no staging; identidade vale para commits futuros.",
+        "es": "Cambia configuración, no commits existentes ni archivos preparados; la identidad se aplica a commits futuros."
+      },
+      "common_errors": {
+        "en": "Using --global by accident affects other repositories; a missing repository prevents --local.",
+        "pt-BR": "Usar --global por engano afeta outros repositórios; sem repositório, --local não funciona.",
+        "es": "Usar --global por error afecta otros repositorios; sin repositorio, --local no funciona."
+      },
+      "alternatives": {
+        "en": "Use command-scoped git -c for a one-off override or --global for an intentional user default.",
+        "pt-BR": "Use git -c para sobrescrita pontual ou --global para um padrão intencional do usuário.",
+        "es": "Usa git -c para una sustitución puntual o --global para un valor predeterminado intencional del usuario."
+      },
+      "recovery": {
+        "en": "Restore the prior local value or unset the key only if it was previously absent; inspect effective configuration afterward.",
+        "pt-BR": "Restaure o valor local anterior ou remova a chave apenas se antes estava ausente; confira a configuração efetiva depois.",
+        "es": "Restaura el valor local anterior o elimina la clave solo si antes no existía; comprueba después la configuración efectiva."
+      },
+      "requirements": {
+        "en": "No optional dependency; examples use the long-standing name/value form.",
+        "pt-BR": "Sem dependência opcional; exemplos usam a forma tradicional nome/valor.",
+        "es": "Sin dependencia opcional; los ejemplos usan la forma tradicional nombre/valor."
+      },
+      "examples": {
+        "basic": {
+          "command": "git config --local user.name \"Alice Example\"",
+          "context": {
+            "en": "In a disposable repository, set a fictional local author name.",
+            "pt-BR": "Em um repositório descartável, defina um nome de autor fictício.",
+            "es": "En un repositorio desechable, define un nombre de autor ficticio."
+          }
+        },
+        "professional": {
+          "command": "git config --local user.email alice@example.invalid",
+          "context": {
+            "en": "Set a fictional email in a disposable project to separate its commit identity from the normal workstation identity.",
+            "pt-BR": "Defina um e-mail fictício em um projeto descartável para separar sua identidade de commit da identidade normal da estação.",
+            "es": "Define un correo ficticio en un proyecto desechable para separar su identidad de commit de la identidad normal de la estación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Configuration can affect future commits or execution behavior; use fictitious identity only in labs.",
+          "pt-BR": "Configuração pode afetar commits futuros ou comportamento de execução; use identidade fictícia apenas nos labs.",
+          "es": "La configuración puede afectar commits futuros o comportamiento de ejecución; usa identidad ficticia solo en laboratorios."
+        }
+      },
+      "related_chapters": [
+        "getting-started/03-first-repository",
+        "basic-commands/01-init-config-help",
+        "security/09-commit-and-tag-signing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-config"
+      ]
+    },
+    {
+      "id": "git-config-global",
+      "command": "git config --global",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "configure-git",
+        "configure-identity"
+      ],
+      "syntax": "git config --global name value",
+      "purpose": {
+        "en": "Read or set user-level Git configuration shared across repositories.",
+        "pt-BR": "Ler ou definir configuração Git do usuário compartilhada entre repositórios.",
+        "es": "Leer o definir configuración de Git del usuario compartida entre repositorios."
+      },
+      "prerequisites": {
+        "en": "A user account under your control; for write practice isolate the home/config path first.",
+        "pt-BR": "Conta sob seu controle; para praticar escrita, isole primeiro o home/caminho de configuração.",
+        "es": "Cuenta bajo tu control; para practicar escritura aísla primero el home/ruta de configuración."
+      },
+      "options": {
+        "en": "--global selects the user scope; --get reads rather than writes; --unset removes a single-valued key.",
+        "pt-BR": "--global seleciona o escopo do usuário; --get lê em vez de escrever; --unset remove chave de valor único.",
+        "es": "--global selecciona el ámbito del usuario; --get lee en lugar de escribir; --unset elimina clave de valor único."
+      },
+      "when_to_use": {
+        "en": "Inspect user defaults or intentionally establish a user-wide preference.",
+        "pt-BR": "Inspecionar padrões do usuário ou definir intencionalmente uma preferência geral.",
+        "es": "Inspeccionar valores del usuario o establecer intencionalmente una preferencia general."
+      },
+      "when_to_avoid": {
+        "en": "Avoid writing fictional lab identity to your normal global configuration or changing a managed/shared machine.",
+        "pt-BR": "Evite gravar identidade fictícia do lab na configuração global normal ou alterar uma máquina gerenciada/compartilhada.",
+        "es": "Evita escribir identidad ficticia del laboratorio en la configuración global normal o cambiar una máquina gestionada/compartida."
+      },
+      "expected_state": {
+        "en": "A read reports the configured value if present; a write updates user configuration, subject to higher-precedence overrides.",
+        "pt-BR": "A leitura informa o valor se presente; a escrita atualiza a configuração do usuário, sujeita a sobrescritas de maior precedência.",
+        "es": "La lectura indica el valor si existe; la escritura actualiza la configuración del usuario, sujeta a sustituciones de mayor precedencia."
+      },
+      "effect_notes": {
+        "en": "May affect future operations across repositories; existing commit objects are unchanged.",
+        "pt-BR": "Pode afetar operações futuras em vários repositórios; objetos de commits existentes não mudam.",
+        "es": "Puede afectar operaciones futuras en varios repositorios; los objetos de commits existentes no cambian."
+      },
+      "common_errors": {
+        "en": "Confusing global scope with a repository-specific override can create surprising identity or behavior.",
+        "pt-BR": "Confundir escopo global com sobrescrita específica de repositório pode gerar identidade ou comportamento inesperado.",
+        "es": "Confundir ámbito global con sustitución específica del repositorio puede provocar identidad o comportamiento inesperados."
+      },
+      "alternatives": {
+        "en": "Use git config --local for project-specific settings or git -c for one invocation.",
+        "pt-BR": "Use git config --local para configurações do projeto ou git -c para uma execução.",
+        "es": "Usa git config --local para ajustes del proyecto o git -c para una ejecución."
+      },
+      "recovery": {
+        "en": "Record the previous value before changing it; restore it or remove only a newly introduced key. Verify scope and effective value.",
+        "pt-BR": "Registre o valor anterior antes de alterar; restaure-o ou remova apenas chave recém-criada. Confira escopo e valor efetivo.",
+        "es": "Registra el valor anterior antes de cambiarlo; restáuralo o elimina solo una clave recién creada. Comprueba ámbito y valor efectivo."
+      },
+      "requirements": {
+        "en": "No optional dependency; global file location depends on Git and environment configuration.",
+        "pt-BR": "Sem dependência opcional; a localização do arquivo global depende do Git e da configuração do ambiente.",
+        "es": "Sin dependencia opcional; la ubicación del archivo global depende de Git y de la configuración del entorno."
+      },
+      "examples": {
+        "basic": {
+          "command": "git config --global --get user.name",
+          "context": {
+            "en": "Inspect the global author name without changing it; an absent value may return a nonzero status.",
+            "pt-BR": "Inspecione o nome de autor global sem alterar; ausência pode retornar código não zero.",
+            "es": "Inspecciona el nombre de autor global sin cambiarlo; la ausencia puede devolver un código distinto de cero."
+          }
+        },
+        "professional": {
+          "command": "git config --global user.name \"Alice Example\"",
+          "context": {
+            "en": "Only in a separately isolated lab home/config, set a fictional user-wide identity to compare with a local override.",
+            "pt-BR": "Somente em home/config de lab isolado separadamente, defina identidade fictícia geral para comparar com uma sobrescrita local.",
+            "es": "Solo en home/config de laboratorio aislado por separado, define identidad ficticia general para compararla con una sustitución local."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "User-wide change; the write example is for an isolated disposable home only.",
+          "pt-BR": "Alteração ampla do usuário; o exemplo de escrita é apenas para home descartável isolado.",
+          "es": "Cambio general del usuario; el ejemplo de escritura solo es para un home desechable aislado."
+        }
+      },
+      "related_chapters": [
+        "getting-started/03-first-repository",
+        "basic-commands/01-init-config-help",
+        "security/05-secrets-and-disclosure-prevention"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-config"
+      ]
+    },
+    {
+      "id": "git-config-show-origin",
+      "command": "git config --list --show-origin",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-config",
+        "troubleshoot-config"
+      ],
+      "syntax": "git config --list --show-origin [--show-scope]",
+      "purpose": {
+        "en": "Inspect configuration entries together with where they came from.",
+        "pt-BR": "Inspecionar entradas de configuração junto com sua origem.",
+        "es": "Inspeccionar entradas de configuración junto con su origen."
+      },
+      "prerequisites": {
+        "en": "Git installed; run inside a repository to include its relevant local settings.",
+        "pt-BR": "Git instalado; execute dentro de um repositório para incluir configurações locais relevantes.",
+        "es": "Git instalado; ejecuta dentro de un repositorio para incluir ajustes locales relevantes."
+      },
+      "options": {
+        "en": "--list enumerates entries; --show-origin reports origin; --show-scope adds scope information.",
+        "pt-BR": "--list enumera entradas; --show-origin informa a origem; --show-scope acrescenta o escopo.",
+        "es": "--list enumera entradas; --show-origin indica origen; --show-scope añade el ámbito."
+      },
+      "when_to_use": {
+        "en": "Diagnose conflicting user and repository settings before changing anything.",
+        "pt-BR": "Diagnosticar conflitos entre configurações do usuário e repositório antes de alterar algo.",
+        "es": "Diagnosticar conflictos entre ajustes del usuario y repositorio antes de cambiar nada."
+      },
+      "when_to_avoid": {
+        "en": "Do not paste the raw listing into public issues or logs; values and paths may be sensitive.",
+        "pt-BR": "Não cole a listagem bruta em issues ou logs públicos; valores e caminhos podem ser sensíveis.",
+        "es": "No pegues la lista sin revisar en issues o logs públicos; valores y rutas pueden ser sensibles."
+      },
+      "expected_state": {
+        "en": "Prints configuration entries with their origin and optionally scope; repeated keys may appear.",
+        "pt-BR": "Imprime entradas com origem e, opcionalmente, escopo; chaves repetidas podem aparecer.",
+        "es": "Imprime entradas con origen y opcionalmente ámbito; pueden aparecer claves repetidas."
+      },
+      "effect_notes": {
+        "en": "No Git data changes, but output can expose personal paths, identity or sensitive configuration.",
+        "pt-BR": "Não altera dados Git, mas a saída pode expor caminhos pessoais, identidade ou configuração sensível.",
+        "es": "No cambia datos Git, pero la salida puede exponer rutas personales, identidad o configuración sensible."
+      },
+      "common_errors": {
+        "en": "Assuming the first printed value always wins ignores precedence and multi-valued settings.",
+        "pt-BR": "Presumir que o primeiro valor impresso sempre prevalece ignora precedência e configurações multivaloradas.",
+        "es": "Suponer que siempre prevalece el primer valor impreso ignora precedencia y ajustes multivalor."
+      },
+      "alternatives": {
+        "en": "Use git config --get for a single key or restrict inspection with --local or --global.",
+        "pt-BR": "Use git config --get para uma chave ou restrinja com --local ou --global.",
+        "es": "Usa git config --get para una clave o restringe con --local o --global."
+      },
+      "recovery": {
+        "en": "No Git recovery needed; if secrets were disclosed, follow the credential incident procedure.",
+        "pt-BR": "Não exige recuperação Git; se segredos foram divulgados, siga o procedimento de incidente de credenciais.",
+        "es": "No requiere recuperación Git; si se divulgaron secretos, sigue el procedimiento de incidente de credenciales."
+      },
+      "requirements": {
+        "en": "--show-origin available since Git 2.8; --show-scope since Git 2.26.",
+        "pt-BR": "--show-origin disponível desde Git 2.8; --show-scope desde Git 2.26.",
+        "es": "--show-origin disponible desde Git 2.8; --show-scope desde Git 2.26."
+      },
+      "examples": {
+        "basic": {
+          "command": "git config --list --show-origin",
+          "context": {
+            "en": "Inspect configuration origins privately in a disposable repository.",
+            "pt-BR": "Inspecione origens das configurações em privado num repositório descartável.",
+            "es": "Inspecciona orígenes de configuración en privado en un repositorio desechable."
+          }
+        },
+        "professional": {
+          "command": "git config --list --show-origin --show-scope",
+          "context": {
+            "en": "Diagnose which scope supplies an unexpected identity without exposing the full listing in a ticket.",
+            "pt-BR": "Diagnostique qual escopo fornece uma identidade inesperada sem expor a listagem completa em um chamado.",
+            "es": "Diagnostica qué ámbito proporciona una identidad inesperada sin exponer la lista completa en un ticket."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "sensitive",
+        "notes": {
+          "en": "Sensitive output; review and redact before sharing.",
+          "pt-BR": "Saída sensível; revise e remova dados sensíveis antes de compartilhar.",
+          "es": "Salida sensible; revisa y oculta datos sensibles antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/01-init-config-help",
+        "security/05-secrets-and-disclosure-prevention"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-config",
+        "https://git-scm.com/docs/git-config/2.8.6",
+        "https://git-scm.com/docs/git-config/2.26.0"
+      ]
+    },
+    {
+      "id": "git-config-get",
+      "command": "git config --get",
+      "kind": "option-usage",
+      "category": "01-setup-and-configuration",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-config",
+        "configure-identity"
+      ],
+      "syntax": "git config [--local|--global] --get name",
+      "purpose": {
+        "en": "Query a particular Git configuration key without modifying it.",
+        "pt-BR": "Consultar uma chave de configuração Git específica sem modificá-la.",
+        "es": "Consultar una clave específica de configuración Git sin modificarla."
+      },
+      "prerequisites": {
+        "en": "Git installed; a repository is required for --local.",
+        "pt-BR": "Git instalado; --local exige repositório.",
+        "es": "Git instalado; --local exige repositorio."
+      },
+      "options": {
+        "en": "--get reads a value; --get-all retrieves multiple values; scope options restrict the query.",
+        "pt-BR": "--get lê um valor; --get-all obtém múltiplos valores; opções de escopo restringem a consulta.",
+        "es": "--get lee un valor; --get-all obtiene múltiples valores; las opciones de ámbito restringen la consulta."
+      },
+      "when_to_use": {
+        "en": "Check the effective identity or inspect a specific key before changing it.",
+        "pt-BR": "Conferir identidade efetiva ou inspecionar uma chave antes de alterá-la.",
+        "es": "Comprobar identidad efectiva o inspeccionar una clave antes de cambiarla."
+      },
+      "when_to_avoid": {
+        "en": "Do not query or share sensitive configuration values unnecessarily.",
+        "pt-BR": "Não consulte nem compartilhe valores de configuração sensíveis sem necessidade.",
+        "es": "No consultes ni compartas valores de configuración sensibles sin necesidad."
+      },
+      "expected_state": {
+        "en": "Prints a value if found; a missing key produces a nonzero exit status.",
+        "pt-BR": "Imprime um valor se encontrado; chave ausente produz código de saída não zero.",
+        "es": "Imprime un valor si se encuentra; una clave ausente produce código de salida distinto de cero."
+      },
+      "effect_notes": {
+        "en": "No repository mutation; queried values can contain personal or sensitive information.",
+        "pt-BR": "Não altera o repositório; valores consultados podem conter dados pessoais ou sensíveis.",
+        "es": "No modifica el repositorio; los valores consultados pueden contener datos personales o sensibles."
+      },
+      "common_errors": {
+        "en": "Assuming a missing key is an empty configured value or treating nonzero status as an unrelated failure.",
+        "pt-BR": "Presumir que chave ausente é um valor vazio configurado ou tratar código não zero como falha sem relação.",
+        "es": "Suponer que una clave ausente es un valor vacío configurado o tratar el código no cero como fallo no relacionado."
+      },
+      "alternatives": {
+        "en": "Use --get-all for multivalued keys or --list --show-origin to investigate origin.",
+        "pt-BR": "Use --get-all para chaves multivaloradas ou --list --show-origin para investigar a origem.",
+        "es": "Usa --get-all para claves multivalor o --list --show-origin para investigar el origen."
+      },
+      "recovery": {
+        "en": "No repository recovery; check the key spelling and selected scope if not found.",
+        "pt-BR": "Não há recuperação do repositório; confira a grafia da chave e o escopo se não encontrada.",
+        "es": "No hay recuperación del repositorio; comprueba la escritura de la clave y ámbito si no se encuentra."
+      },
+      "requirements": {
+        "en": "No optional dependency; use the legacy --get syntax for broad Git compatibility.",
+        "pt-BR": "Sem dependência opcional; use a sintaxe tradicional --get para ampla compatibilidade Git.",
+        "es": "Sin dependencia opcional; usa la sintaxis tradicional --get para amplia compatibilidad Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git config --get user.name",
+          "context": {
+            "en": "Read the effective author name in a disposable repository.",
+            "pt-BR": "Leia o nome de autor efetivo num repositório descartável.",
+            "es": "Lee el nombre de autor efectivo en un repositorio desechable."
+          }
+        },
+        "professional": {
+          "command": "git config --local --get user.email",
+          "context": {
+            "en": "Verify whether a project has a local author email before a first commit; do not publish the real address.",
+            "pt-BR": "Confira se um projeto tem e-mail de autor local antes do primeiro commit; não publique o endereço real.",
+            "es": "Comprueba si un proyecto tiene correo de autor local antes del primer commit; no publiques la dirección real."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "sensitive",
+        "notes": {
+          "en": "A specific query limits disclosure relative to a full list, but still review output.",
+          "pt-BR": "Consulta específica reduz divulgação em relação à lista completa, mas ainda revise a saída.",
+          "es": "Una consulta específica reduce divulgación frente a una lista completa, pero revisa la salida."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/01-init-config-help",
+        "remote-repositories/05-secure-authentication"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-config"
+      ]
+    }
+  ]
+}

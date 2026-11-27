@@ -1,0 +1,957 @@
+{
+  "schema_version": 1,
+  "category": "11-advanced-git-operations",
+  "entries": [
+    {
+      "id": "git-worktree-add",
+      "command": "git worktree add",
+      "kind": "subcommand",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "parallel-work",
+        "manage-branches"
+      ],
+      "syntax": "git worktree add -b feat/notes ../notes-lab main",
+      "purpose": {
+        "en": "Create an additional linked checkout sharing a repository's objects and most refs.",
+        "pt-BR": "Criar checkout vinculado adicional compartilhando objetos e maioria das referências.",
+        "es": "Crear checkout vinculado adicional compartiendo objetos y mayoría de referencias."
+      },
+      "options": {
+        "en": "-b creates a branch; --detach uses a detached checkout; git worktree list shows registered worktrees.",
+        "pt-BR": "-b cria branch; --detach usa checkout destacado; git worktree list exibe worktrees registradas.",
+        "es": "-b crea rama; --detach usa checkout separado; git worktree list muestra worktrees registradas."
+      },
+      "when_to_use": {
+        "en": "When working on independent tasks without repeatedly switching the original checkout.",
+        "pt-BR": "Ao trabalhar em tarefas independentes sem alternar repetidamente checkout original.",
+        "es": "Al trabajar en tareas independientes sin alternar repetidamente checkout original."
+      },
+      "when_to_avoid": {
+        "en": "Avoid reusing an occupied path or forcing the same branch into multiple worktrees.",
+        "pt-BR": "Evite reutilizar caminho ocupado ou forçar mesma branch em múltiplas worktrees.",
+        "es": "Evita reutilizar ruta ocupada o forzar misma rama en múltiples worktrees."
+      },
+      "expected_state": {
+        "en": "Creates a linked checkout with its own HEAD and index; optional new branch is shared across worktrees.",
+        "pt-BR": "Cria checkout vinculado com HEAD e index próprios; branch nova opcional é compartilhada entre worktrees.",
+        "es": "Crea checkout vinculado con HEAD e index propios; rama nueva opcional se comparte entre worktrees."
+      },
+      "effect_notes": {
+        "en": "Creates files and worktree metadata, possibly a new ref; original checkout content is unchanged in the shown form.",
+        "pt-BR": "Cria arquivos e metadados de worktree, possivelmente referência nova; conteúdo do checkout original não muda na forma mostrada.",
+        "es": "Crea archivos y metadatos de worktree, posiblemente referencia nueva; contenido de checkout original no cambia en forma mostrada."
+      },
+      "common_errors": {
+        "en": "Treating linked worktrees as independent clones or deleting their directories manually.",
+        "pt-BR": "Tratar worktrees vinculadas como clones independentes ou excluir diretórios manualmente.",
+        "es": "Tratar worktrees vinculadas como clones independientes o borrar directorios manualmente."
+      },
+      "alternatives": {
+        "en": "Use a separate clone when independent refs and object storage are required.",
+        "pt-BR": "Use clone separado quando referências e armazenamento de objetos independentes forem necessários.",
+        "es": "Usa clon separado cuando se requieran referencias y almacenamiento de objetos independientes."
+      },
+      "recovery": {
+        "en": "Preserve any linked worktree edits, verify clean status there, then use git worktree remove with its exact path; inspect worktree list afterward.",
+        "pt-BR": "Preserve edições da worktree vinculada, confira status limpo nela, depois use git worktree remove com caminho exato; inspecione worktree list depois.",
+        "es": "Conserva ediciones de worktree vinculada, comprueba estado limpio allí, luego usa git worktree remove con ruta exacta; inspecciona worktree list después."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git worktree add -b feat/notes ../notes-lab main",
+          "context": {
+            "en": "Create a linked worktree at an unused sibling path and new branch.",
+            "pt-BR": "Crie worktree vinculada em caminho vizinho livre e branch nova.",
+            "es": "Crea worktree vinculada en ruta vecina libre y rama nueva."
+          }
+        },
+        "professional": {
+          "command": "git worktree add --detach ../review-lab main",
+          "context": {
+            "en": "Inspect verified main in a separate detached checkout.",
+            "pt-BR": "Inspecione main verificada em checkout destacado separado.",
+            "es": "Inspecciona main verificada en checkout separado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/02-worktree"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-worktree"
+      ]
+    },
+    {
+      "id": "git-submodule-add",
+      "command": "git submodule add",
+      "kind": "subcommand",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "manage-dependencies"
+      ],
+      "syntax": "git submodule add ../library.git vendor/library",
+      "purpose": {
+        "en": "Register a separate repository as a submodule pinned by a gitlink in the parent project.",
+        "pt-BR": "Registrar repositório separado como submódulo fixado por gitlink no projeto pai.",
+        "es": "Registrar repositorio separado como submódulo fijado por gitlink en proyecto padre."
+      },
+      "options": {
+        "en": "Specify repository and path; -b sets a branch preference for remote updates, not a replacement for the recorded gitlink. Relative URLs resolve against the parent repository's default remote, or its local repository when no default remote is configured; arrange sibling bare origins for clone simulations.",
+        "pt-BR": "Informe repositório e caminho; -b define preferência de branch para atualizações remotas, não substitui gitlink registrado. URLs relativas são resolvidas em relação ao remoto padrão do repositório pai, ou ao repositório local quando não há remoto padrão configurado; organize origens bare vizinhas para simulações de clone.",
+        "es": "Indica repositorio y ruta; -b configura preferencia de rama para actualizaciones remotas, no sustituye gitlink registrado. Las URL relativas se resuelven respecto al remoto predeterminado del repositorio padre, o al repositorio local si no hay remoto predeterminado configurado; organiza orígenes bare vecinos para simular clones."
+      },
+      "when_to_use": {
+        "en": "When a dependency should retain independent history and an explicit version pin.",
+        "pt-BR": "Quando dependência deve manter histórico independente e versão explicitamente fixada.",
+        "es": "Cuando dependencia debe conservar historial independiente y versión fijada explícitamente."
+      },
+      "when_to_avoid": {
+        "en": "Avoid untrusted submodule URLs, existing valuable destination files or broad protocol overrides.",
+        "pt-BR": "Evite URLs de submódulos não confiáveis, arquivos valiosos no destino ou liberações amplas de protocolo.",
+        "es": "Evita URLs de submódulos no confiables, archivos valiosos en destino o permisos amplios de protocolo."
+      },
+      "expected_state": {
+        "en": "Normally creates a submodule checkout, stages .gitmodules and a gitlink; parent commit still requires review and commit.",
+        "pt-BR": "Normalmente cria checkout de submódulo, prepara .gitmodules e gitlink; commit pai ainda exige revisão e registro.",
+        "es": "Normalmente crea checkout de submódulo, prepara .gitmodules y gitlink; commit padre aún requiere revisión y confirmación."
+      },
+      "effect_notes": {
+        "en": "Changes working files, index and local submodule configuration or objects; does not publish the parent.",
+        "pt-BR": "Altera arquivos, index e configuração ou objetos locais de submódulo; não publica projeto pai.",
+        "es": "Cambia archivos, index y configuración u objetos locales de submódulo; no publica proyecto padre."
+      },
+      "common_errors": {
+        "en": "Assuming a submodule is copied ordinary source files or that its uncommitted changes are included in the parent commit.",
+        "pt-BR": "Presumir submódulo como arquivos comuns copiados ou mudanças não registradas incluídas no commit pai.",
+        "es": "Suponer submódulo como archivos ordinarios copiados o cambios sin confirmar incluidos en commit padre."
+      },
+      "alternatives": {
+        "en": "Use subtree integration or a package manager when a separate checkout is undesirable.",
+        "pt-BR": "Use integração subtree ou gerenciador de pacotes quando checkout separado for indesejado.",
+        "es": "Usa integración subtree o gestor de paquetes cuando checkout separado no sea deseado."
+      },
+      "recovery": {
+        "en": "Inspect .gitmodules, staged gitlink and submodule status; preserve submodule commits before following a reviewed removal workflow. Do not simply delete its metadata.",
+        "pt-BR": "Inspecione .gitmodules, gitlink preparado e status do submódulo; preserve commits do submódulo antes de fluxo revisado de remoção. Não exclua metadados simplesmente.",
+        "es": "Inspecciona .gitmodules, gitlink preparado y estado del submódulo; conserva commits del submódulo antes de flujo revisado de eliminación. No borres metadatos sin más."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources. For the shown relative URL, ensure the library is a sibling of the parent default remote (or of the local parent repository if no default remote exists).",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias. Para a URL relativa mostrada, garanta que a biblioteca seja vizinha do remoto padrão do pai (ou do repositório pai local se não houver remoto padrão).",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias. Para la URL relativa mostrada, asegúrate de que la biblioteca sea vecina del remoto predeterminado del padre (o del repositorio padre local si no hay remoto predeterminado)."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git submodule add ../library.git vendor/library",
+          "context": {
+            "en": "Add an owned populated local library repository at an unused path; local file transport may need explicit lab permission.",
+            "pt-BR": "Adicione repositório de biblioteca local próprio populado em caminho livre; transporte file local pode exigir permissão explícita no laboratório.",
+            "es": "Añade repositorio local propio poblado de biblioteca en ruta libre; transporte file local puede requerir permiso explícito de laboratorio."
+          }
+        },
+        "professional": {
+          "command": "git -c protocol.file.allow=always submodule add ../library.git vendor/library",
+          "context": {
+            "en": "Only in the trusted isolated lab, allow the owned local source for this invocation.",
+            "pt-BR": "Só no laboratório isolado confiável, permita origem local própria nesta invocação.",
+            "es": "Solo en laboratorio aislado confiable, permite fuente local propia en esta invocación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/03-submodules"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-submodule"
+      ]
+    },
+    {
+      "id": "git-submodule-update",
+      "command": "git submodule update --init --recursive",
+      "kind": "option-usage",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "manage-dependencies",
+        "synchronize"
+      ],
+      "syntax": "git submodule update --init --recursive",
+      "purpose": {
+        "en": "Populate registered submodules and update their checkouts, normally to the commits recorded by the parent.",
+        "pt-BR": "Popular submódulos registrados e atualizar checkouts, normalmente para commits registrados pelo pai.",
+        "es": "Poblar submódulos registrados y actualizar checkouts, normalmente a commits registrados por padre."
+      },
+      "options": {
+        "en": "--init initializes uninitialized submodules; --recursive descends into nested ones; default checkout procedure usually detaches submodule HEAD.",
+        "pt-BR": "--init inicializa submódulos não inicializados; --recursive desce aos aninhados; procedimento padrão de checkout normalmente destaca HEAD do submódulo.",
+        "es": "--init inicializa submódulos no inicializados; --recursive desciende a anidados; procedimiento predeterminado de checkout normalmente separa HEAD del submódulo."
+      },
+      "when_to_use": {
+        "en": "When preparing a consistent checkout of a project with pinned dependencies.",
+        "pt-BR": "Ao preparar checkout consistente de projeto com dependências fixadas.",
+        "es": "Al preparar checkout consistente de proyecto con dependencias fijadas."
+      },
+      "when_to_avoid": {
+        "en": "Avoid unreviewed nested URLs, unpreserved submodule changes or using --force to bypass a refusal.",
+        "pt-BR": "Evite URLs aninhadas não revisadas, mudanças de submódulos não preservadas ou --force para contornar recusa.",
+        "es": "Evita URLs anidadas no revisadas, cambios de submódulos no preservados o --force para evitar rechazo."
+      },
+      "expected_state": {
+        "en": "May clone missing submodules, fetch objects and check out recorded commits; configured update strategies can differ.",
+        "pt-BR": "Pode clonar submódulos ausentes, buscar objetos e selecionar commits registrados; estratégias configuradas podem diferir.",
+        "es": "Puede clonar submódulos ausentes, obtener objetos y seleccionar commits registrados; estrategias configuradas pueden diferir."
+      },
+      "effect_notes": {
+        "en": "Changes submodule files, index, refs and configuration; normally does not move the parent branch tip.",
+        "pt-BR": "Altera arquivos, index, referências e configuração de submódulo; normalmente não move ponta da branch pai.",
+        "es": "Cambia archivos, index, referencias y configuración de submódulo; normalmente no mueve punta de rama padre."
+      },
+      "common_errors": {
+        "en": "Expecting latest remote branch versions instead of recorded commits or assuming parent status proves every nested checkout is clean.",
+        "pt-BR": "Esperar versões mais novas de branches remotas em vez de commits registrados ou presumir status pai prova checkouts aninhados limpos.",
+        "es": "Esperar últimas versiones de ramas remotas en vez de commits registrados o suponer estado padre prueba checkouts anidados limpios."
+      },
+      "alternatives": {
+        "en": "Use git submodule status --recursive to inspect without updating.",
+        "pt-BR": "Use git submodule status --recursive para inspecionar sem atualizar.",
+        "es": "Usa git submodule status --recursive para inspeccionar sin actualizar."
+      },
+      "recovery": {
+        "en": "Inspect failed paths and saved submodule tips; preserve any detached commits with a named branch before retrying. Do not force blindly.",
+        "pt-BR": "Inspecione caminhos com falha e pontas salvas de submódulos; preserve commits destacados com branch nomeada antes de tentar novamente. Não force às cegas.",
+        "es": "Inspecciona rutas fallidas y puntas guardadas de submódulos; conserva commits separados con rama nombrada antes de reintentar. No fuerces a ciegas."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources. Review the resolved relative URLs before initializing; in the lab, clone from a sibling bare parent origin so that the relative library URL resolves correctly.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias. Revise URLs relativas resolvidas antes de inicializar; no laboratório, clone de uma origem bare pai vizinha para que a URL relativa da biblioteca seja resolvida corretamente.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias. Revisa las URL relativas resueltas antes de inicializar; en laboratorio, clona desde un origen bare padre vecino para que se resuelva correctamente la URL relativa de la biblioteca."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git submodule update --init --recursive",
+          "context": {
+            "en": "Initialize and update registered trusted submodules to recorded commits in the lab.",
+            "pt-BR": "Inicialize e atualize submódulos confiáveis registrados para commits registrados no laboratório.",
+            "es": "Inicializa y actualiza submódulos confiables registrados a commits registrados en laboratorio."
+          }
+        },
+        "professional": {
+          "command": "git -c protocol.file.allow=always submodule update --init --recursive",
+          "context": {
+            "en": "Only for reviewed owned local submodule URLs, permit local file transport for this lab invocation.",
+            "pt-BR": "Só para URLs de submódulos locais próprios revisados, permita transporte file local nesta invocação.",
+            "es": "Solo para URLs de submódulos locales propios revisados, permite transporte file local en esta invocación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/03-submodules"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-submodule"
+      ]
+    },
+    {
+      "id": "git-subtree-add",
+      "command": "git subtree add",
+      "kind": "external-tool",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "manage-dependencies",
+        "integrate-changes"
+      ],
+      "syntax": "git subtree add --prefix=vendor/library ../library.git main --squash",
+      "purpose": {
+        "en": "Import another repository's content into a directory of the current project using the optional subtree helper.",
+        "pt-BR": "Importar conteúdo de outro repositório em diretório do projeto atual com helper subtree opcional.",
+        "es": "Importar contenido de otro repositorio en directorio del proyecto actual con helper subtree opcional."
+      },
+      "options": {
+        "en": "--prefix selects destination; --squash combines imported history rather than retaining every source commit in target ancestry.",
+        "pt-BR": "--prefix seleciona destino; --squash combina histórico importado em vez de manter todo commit de origem na ancestralidade do destino.",
+        "es": "--prefix selecciona destino; --squash combina historial importado en vez de conservar cada commit fuente en ascendencia destino."
+      },
+      "when_to_use": {
+        "en": "When versioning dependency content directly within the parent checkout while retaining a synchronization workflow.",
+        "pt-BR": "Ao versionar conteúdo de dependência diretamente no checkout pai mantendo fluxo de sincronização.",
+        "es": "Al versionar contenido de dependencia directamente en checkout padre conservando flujo de sincronización."
+      },
+      "when_to_avoid": {
+        "en": "Avoid an occupied prefix, dirty state or import without reviewing licensing and source content.",
+        "pt-BR": "Evite prefixo ocupado, estado sujo ou importação sem revisar licença e conteúdo.",
+        "es": "Evita prefijo ocupado, estado sucio o importación sin revisar licencia y contenido."
+      },
+      "expected_state": {
+        "en": "On success creates integration history and imports source content under the selected prefix.",
+        "pt-BR": "Em sucesso cria histórico de integração e importa conteúdo de origem sob prefixo selecionado.",
+        "es": "Con éxito crea historial de integración e importa contenido fuente bajo prefijo seleccionado."
+      },
+      "effect_notes": {
+        "en": "May fetch objects, create commits, advance current branch and update index and working tree.",
+        "pt-BR": "Pode buscar objetos, criar commits, avançar branch atual e atualizar index e working tree.",
+        "es": "Puede obtener objetos, crear commits, avanzar rama actual y actualizar index y working tree."
+      },
+      "common_errors": {
+        "en": "Confusing subtree with submodule or assuming --squash produces no integration commit.",
+        "pt-BR": "Confundir subtree com submódulo ou presumir --squash não produz commit de integração.",
+        "es": "Confundir subtree con submódulo o suponer --squash no produce commit de integración."
+      },
+      "alternatives": {
+        "en": "Use submodule for separate pinned checkout or a package manager for published dependencies.",
+        "pt-BR": "Use submódulo para checkout fixado separado ou gerenciador de pacotes para dependências publicadas.",
+        "es": "Usa submódulo para checkout fijado separado o gestor de paquetes para dependencias publicadas."
+      },
+      "recovery": {
+        "en": "Inspect saved original tip and resulting ancestry; if unsuitable, preserve work and choose a reviewed private recovery or shared correction.",
+        "pt-BR": "Inspecione ponta original salva e ancestralidade resultante; se inadequada, preserve trabalho e escolha recuperação privada revisada ou correção compartilhada.",
+        "es": "Inspecciona punta original guardada y ascendencia resultante; si inadecuada, conserva trabajo y elige recuperación privada revisada o corrección compartida."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Git subtree is an optional distributed helper; verify git subtree availability before use. Use Git 2.40 or newer for labs.",
+        "pt-BR": "Git subtree é helper distribuído opcional; verifique disponibilidade de git subtree antes de usar. Use Git 2.40 ou superior em laboratórios.",
+        "es": "Git subtree es helper distribuido opcional; verifica disponibilidad de git subtree antes de usar. Usa Git 2.40 o superior en laboratorios."
+      },
+      "examples": {
+        "basic": {
+          "command": "git subtree add --prefix=vendor/library ../library.git main --squash",
+          "context": {
+            "en": "Import an owned local source branch at an unused prefix.",
+            "pt-BR": "Importe branch de origem local própria em prefixo livre.",
+            "es": "Importa rama fuente local propia en prefijo libre."
+          }
+        },
+        "professional": {
+          "command": "git subtree add --prefix=vendor/tools ../tools.git main --squash",
+          "context": {
+            "en": "Integrate a reviewed local tools snapshot under a new directory.",
+            "pt-BR": "Integre snapshot local de ferramentas revisado sob diretório novo.",
+            "es": "Integra instantánea local de herramientas revisada bajo directorio nuevo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/04-subtree"
+      ],
+      "references": [
+        "https://github.com/git/git/tree/master/contrib/subtree"
+      ]
+    },
+    {
+      "id": "git-rerere",
+      "command": "git rerere",
+      "kind": "native-command",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "resolve-conflicts"
+      ],
+      "syntax": "git rerere",
+      "purpose": {
+        "en": "Record and reuse conflict resolutions for matching conflict patterns.",
+        "pt-BR": "Registrar e reutilizar resoluções para padrões de conflito correspondentes.",
+        "es": "Registrar y reutilizar resoluciones para patrones de conflicto coincidentes."
+      },
+      "options": {
+        "en": "Enable rerere.enabled locally in the lab; git rerere status and diff inspect current records; autoupdate may stage reused results.",
+        "pt-BR": "Habilite rerere.enabled localmente no laboratório; git rerere status e diff inspecionam registros atuais; autoupdate pode preparar resultados reutilizados.",
+        "es": "Habilita rerere.enabled localmente en laboratorio; git rerere status y diff inspeccionan registros actuales; autoupdate puede preparar resultados reutilizados."
+      },
+      "when_to_use": {
+        "en": "When repeatedly resolving similar conflicts in private integration workflows.",
+        "pt-BR": "Ao resolver repetidamente conflitos semelhantes em fluxos privados de integração.",
+        "es": "Al resolver repetidamente conflictos similares en flujos privados de integración."
+      },
+      "when_to_avoid": {
+        "en": "Avoid blindly accepting reused resolutions or sharing a resolution cache containing sensitive material.",
+        "pt-BR": "Evite aceitar resoluções reutilizadas às cegas ou compartilhar cache com material sensível.",
+        "es": "Evita aceptar resoluciones reutilizadas a ciegas o compartir caché con material sensible."
+      },
+      "expected_state": {
+        "en": "May record conflict preimages and resolutions or apply a previously recorded match; index may update depending on configuration.",
+        "pt-BR": "Pode registrar conflitos e resoluções ou aplicar correspondência registrada; index pode atualizar conforme configuração.",
+        "es": "Puede registrar conflictos y resoluciones o aplicar coincidencia registrada; index puede actualizarse según configuración."
+      },
+      "effect_notes": {
+        "en": "May change resolution cache and working files, and possibly index; ordinary rerere does not create a new branch commit.",
+        "pt-BR": "Pode alterar cache de resolução e arquivos, e possivelmente index; rerere comum não cria commit novo na branch.",
+        "es": "Puede cambiar caché de resolución y archivos, y posiblemente index; rerere ordinario no crea commit nuevo en rama."
+      },
+      "common_errors": {
+        "en": "Assuming matching conflict text guarantees semantic correctness.",
+        "pt-BR": "Presumir texto de conflito correspondente garante correção semântica.",
+        "es": "Suponer texto de conflicto coincidente garantiza corrección semántica."
+      },
+      "alternatives": {
+        "en": "Resolve manually and review diff and tests when reuse is unsafe.",
+        "pt-BR": "Resolva manualmente e revise diff e testes quando reutilização for insegura.",
+        "es": "Resuelve manualmente y revisa diff y pruebas cuando reutilización sea insegura."
+      },
+      "recovery": {
+        "en": "Inspect rerere diff and status; correct and stage reviewed content. Use rerere forget only for the verified affected path when replacing a bad recorded resolution.",
+        "pt-BR": "Inspecione rerere diff e status; corrija e prepare conteúdo revisado. Use rerere forget só para caminho afetado verificado ao substituir resolução registrada ruim.",
+        "es": "Inspecciona rerere diff y estado; corrige y prepara contenido revisado. Usa rerere forget solo para ruta afectada verificada al reemplazar resolución registrada incorrecta."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rerere",
+          "context": {
+            "en": "In a disposable repeated-conflict lab, inspect and record or reuse resolution as appropriate.",
+            "pt-BR": "Em laboratório descartável de conflitos repetidos, inspecione e registre ou reutilize resolução conforme apropriado.",
+            "es": "En laboratorio desechable de conflictos repetidos, inspecciona y registra o reutiliza resolución según corresponda."
+          }
+        },
+        "professional": {
+          "command": "git rerere",
+          "context": {
+            "en": "After reviewing a repeated conflict, let enabled rerere reuse a recorded resolution and inspect it.",
+            "pt-BR": "Após revisar conflito repetido, permita rerere habilitado reutilizar resolução registrada e inspecione-a.",
+            "es": "Tras revisar conflicto repetido, permite rerere habilitado reutilizar resolución registrada e inspecciónala."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/06-rerere"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rerere"
+      ]
+    },
+    {
+      "id": "git-sparse-checkout-set",
+      "command": "git sparse-checkout set",
+      "kind": "subcommand",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "limit-checkout",
+        "inspect-files"
+      ],
+      "syntax": "git sparse-checkout set --cone docs",
+      "purpose": {
+        "en": "Configure a sparse working tree containing selected paths instead of every tracked path.",
+        "pt-BR": "Configurar working tree esparsa contendo caminhos selecionados em vez de todo caminho rastreado.",
+        "es": "Configurar working tree dispersa con rutas seleccionadas en vez de toda ruta rastreada."
+      },
+      "options": {
+        "en": "--cone selects directory-based rules; list displays selections; disable returns to a full checkout.",
+        "pt-BR": "--cone seleciona regras por diretório; list exibe seleções; disable retorna a checkout completo.",
+        "es": "--cone selecciona reglas por directorio; list muestra selecciones; disable vuelve a checkout completo."
+      },
+      "when_to_use": {
+        "en": "When only part of a large repository is needed for current work.",
+        "pt-BR": "Quando apenas parte de repositório grande é necessária ao trabalho atual.",
+        "es": "Cuando solo parte de repositorio grande se necesita para trabajo actual."
+      },
+      "when_to_avoid": {
+        "en": "Avoid changing sparse patterns with unsaved valuable edits or assuming omitted paths were deleted from history.",
+        "pt-BR": "Evite alterar padrões esparsos com edições valiosas não salvas ou presumir caminhos omitidos excluídos do histórico.",
+        "es": "Evita cambiar patrones dispersos con ediciones valiosas sin guardar o suponer rutas omitidas eliminadas del historial."
+      },
+      "expected_state": {
+        "en": "Working tree materializes selected paths according to cone rules, including some ancestor-level files; other tracked paths may be absent.",
+        "pt-BR": "Working tree materializa caminhos selecionados conforme regras cone, incluindo alguns arquivos de níveis ancestrais; outros caminhos rastreados podem faltar.",
+        "es": "Working tree materializa rutas seleccionadas según reglas cone, incluidos algunos archivos de niveles ancestros; otras rutas rastreadas pueden faltar."
+      },
+      "effect_notes": {
+        "en": "Updates sparse configuration, index and working tree; does not rewrite committed history in ordinary complete local repository.",
+        "pt-BR": "Atualiza configuração esparsa, index e working tree; não reescreve histórico registrado em repositório local completo comum.",
+        "es": "Actualiza configuración dispersa, index y working tree; no reescribe historial confirmado en repositorio local completo ordinario."
+      },
+      "common_errors": {
+        "en": "Confusing sparse checkout with shallow or partial clone and assuming only the named directories will be visible.",
+        "pt-BR": "Confundir checkout esparso com clone raso ou parcial e presumir só diretórios nomeados visíveis.",
+        "es": "Confundir checkout disperso con clon superficial o parcial y suponer solo directorios nombrados visibles."
+      },
+      "alternatives": {
+        "en": "Use a full checkout if tools need all tracked files; partial clone controls object transfer separately.",
+        "pt-BR": "Use checkout completo se ferramentas exigirem todos arquivos rastreados; clone parcial controla transferência de objetos separadamente.",
+        "es": "Usa checkout completo si herramientas necesitan todos archivos rastreados; clon parcial controla transferencia de objetos por separado."
+      },
+      "recovery": {
+        "en": "Preserve edits, inspect sparse-checkout list and use sparse-checkout disable to restore full materialization when safe.",
+        "pt-BR": "Preserve edições, inspecione sparse-checkout list e use sparse-checkout disable para restaurar materialização completa quando seguro.",
+        "es": "Conserva ediciones, inspecciona sparse-checkout list y usa sparse-checkout disable para restaurar materialización completa cuando sea seguro."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git sparse-checkout set --cone docs",
+          "context": {
+            "en": "Select an existing docs directory in a clean disposable checkout.",
+            "pt-BR": "Selecione diretório docs existente em checkout descartável limpo.",
+            "es": "Selecciona directorio docs existente en checkout desechable limpio."
+          }
+        },
+        "professional": {
+          "command": "git sparse-checkout set --cone src tests",
+          "context": {
+            "en": "Limit materialized directory content to selected existing source and test trees, plus cone rules.",
+            "pt-BR": "Limite conteúdo materializado aos diretórios de código e testes existentes selecionados, mais regras cone.",
+            "es": "Limita contenido materializado a directorios existentes seleccionados de código y pruebas, más reglas cone."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/07-sparse-checkout"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-sparse-checkout"
+      ]
+    },
+    {
+      "id": "git-clone-filter",
+      "command": "git clone --filter",
+      "kind": "option-usage",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "limit-checkout",
+        "create-repository"
+      ],
+      "syntax": "git clone --no-local --filter=blob:none --no-checkout origin.git partial-lab",
+      "purpose": {
+        "en": "Request a partial clone that omits selected object types initially when the source supports filtering.",
+        "pt-BR": "Solicitar clone parcial que omite inicialmente tipos de objeto selecionados quando origem suporta filtro.",
+        "es": "Solicitar clon parcial que omite inicialmente tipos de objeto seleccionados cuando fuente admite filtrado."
+      },
+      "options": {
+        "en": "--filter=blob:none requests omission of blobs until needed; --no-checkout avoids initial checkout; --no-local uses transport rather than local copy optimization.",
+        "pt-BR": "--filter=blob:none solicita omissão de blobs até necessários; --no-checkout evita checkout inicial; --no-local usa transporte em vez de otimização de cópia local.",
+        "es": "--filter=blob:none solicita omisión de blobs hasta necesitarlos; --no-checkout evita checkout inicial; --no-local usa transporte en vez de optimización de copia local."
+      },
+      "when_to_use": {
+        "en": "When reducing initial object transfer from a supported large source.",
+        "pt-BR": "Ao reduzir transferência inicial de objetos de origem grande compatível.",
+        "es": "Al reducir transferencia inicial de objetos desde fuente grande compatible."
+      },
+      "when_to_avoid": {
+        "en": "Avoid relying on missing objects being available offline or assuming every server honors filters.",
+        "pt-BR": "Evite depender de objetos ausentes disponíveis offline ou presumir todo servidor respeita filtros.",
+        "es": "Evita depender de objetos ausentes disponibles offline o suponer todo servidor respeta filtros."
+      },
+      "expected_state": {
+        "en": "Creates a local partial clone with promisor configuration when supported; required missing objects may be fetched later.",
+        "pt-BR": "Cria clone parcial local com configuração promisor quando suportado; objetos ausentes necessários podem ser buscados depois.",
+        "es": "Crea clon parcial local con configuración promisor cuando se admite; objetos ausentes necesarios pueden obtenerse después."
+      },
+      "effect_notes": {
+        "en": "Creates local repository and may materialize files and fetch blobs; does not change source refs.",
+        "pt-BR": "Cria repositório local e pode materializar arquivos e buscar blobs; não altera referências de origem.",
+        "es": "Crea repositorio local y puede materializar archivos y obtener blobs; no cambia referencias fuente."
+      },
+      "common_errors": {
+        "en": "Confusing --filter with --depth, or treating successful clone as proof the server applied the filter.",
+        "pt-BR": "Confundir --filter com --depth ou tratar sucesso do clone como prova de aplicação do filtro.",
+        "es": "Confundir --filter con --depth o tratar éxito de clon como prueba de aplicación del filtro."
+      },
+      "alternatives": {
+        "en": "Use full clone for reliable offline object access; use sparse-checkout for working tree selection.",
+        "pt-BR": "Use clone completo para acesso offline confiável a objetos; use sparse-checkout para seleção de working tree.",
+        "es": "Usa clon completo para acceso offline confiable a objetos; usa sparse-checkout para selección de working tree."
+      },
+      "recovery": {
+        "en": "Inspect clone warnings and promisor configuration; if filtering is unsupported, use a new clean destination with a full clone or verified capable source.",
+        "pt-BR": "Inspecione avisos de clone e configuração promisor; se filtro não for suportado, use destino novo limpo com clone completo ou origem compatível verificada.",
+        "es": "Inspecciona avisos de clon y configuración promisor; si filtro no se admite, usa destino nuevo limpio con clon completo o fuente compatible verificada."
+      },
+      "prerequisites": {
+        "en": "Use a disposable parent, unused destination and owned bare source configured locally with uploadpack.allowFilter=true; verify source path and capability.",
+        "pt-BR": "Use diretório pai descartável, destino livre e origem bare própria configurada localmente com uploadpack.allowFilter=true; verifique caminho e capacidade.",
+        "es": "Usa directorio padre desechable, destino libre y fuente bare propia configurada localmente con uploadpack.allowFilter=true; verifica ruta y capacidad."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git clone --no-local --filter=blob:none --no-checkout origin.git partial-lab",
+          "context": {
+            "en": "From a disposable parent, clone an owned local bare source configured to permit filtering.",
+            "pt-BR": "De diretório pai descartável, clone origem bare local própria configurada para permitir filtro.",
+            "es": "Desde directorio padre desechable, clona fuente bare local propia configurada para permitir filtrado."
+          }
+        },
+        "professional": {
+          "command": "git clone --no-local --filter=blob:none origin.git review-lab",
+          "context": {
+            "en": "Clone an owned filter-capable source; checkout may fetch needed blobs immediately.",
+            "pt-BR": "Clone origem própria capaz de filtro; checkout pode buscar blobs necessários imediatamente.",
+            "es": "Clona fuente propia capaz de filtrar; checkout puede obtener blobs necesarios inmediatamente."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/08-partial-and-shallow-clone"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-clone"
+      ]
+    },
+    {
+      "id": "git-archive",
+      "command": "git archive",
+      "kind": "native-command",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "package-history"
+      ],
+      "syntax": "git archive --format=tar --output=../snapshot.tar HEAD",
+      "purpose": {
+        "en": "Export selected committed tree content as a file archive without Git history.",
+        "pt-BR": "Exportar conteúdo de árvore registrada selecionada como arquivo sem histórico Git.",
+        "es": "Exportar contenido de árbol confirmado seleccionado como archivo sin historial Git."
+      },
+      "options": {
+        "en": "--format selects archive format; --output names output file; --prefix prepends paths; export-ignore attributes can omit paths.",
+        "pt-BR": "--format seleciona formato; --output nomeia saída; --prefix adiciona prefixo aos caminhos; atributos export-ignore podem omitir caminhos.",
+        "es": "--format selecciona formato; --output nombra salida; --prefix antepone rutas; atributos export-ignore pueden omitir rutas."
+      },
+      "when_to_use": {
+        "en": "When preparing a reviewed source snapshot for distribution or inspection.",
+        "pt-BR": "Ao preparar snapshot de código revisado para distribuição ou inspeção.",
+        "es": "Al preparar instantánea de código revisada para distribución o inspección."
+      },
+      "when_to_avoid": {
+        "en": "Avoid overwriting existing artifacts, exporting secrets or assuming submodule content is included recursively.",
+        "pt-BR": "Evite sobrescrever artefatos existentes, exportar segredos ou presumir conteúdo de submódulo incluído recursivamente.",
+        "es": "Evita sobrescribir artefactos existentes, exportar secretos o suponer contenido de submódulo incluido recursivamente."
+      },
+      "expected_state": {
+        "en": "Creates archive of selected tree with applicable export attributes; uncommitted edits and Git metadata are not included.",
+        "pt-BR": "Cria arquivo da árvore selecionada com atributos de exportação aplicáveis; edições não registradas e metadados Git não são incluídos.",
+        "es": "Crea archivo de árbol seleccionado con atributos de exportación aplicables; ediciones sin confirmar y metadatos Git no se incluyen."
+      },
+      "effect_notes": {
+        "en": "Writes the named external output file; shown operation does not change refs, index or tracked working files.",
+        "pt-BR": "Grava arquivo externo nomeado; operação mostrada não altera referências, index ou arquivos rastreados.",
+        "es": "Escribe archivo externo nombrado; operación mostrada no cambia referencias, index o archivos rastreados."
+      },
+      "common_errors": {
+        "en": "Treating an archive as repository backup or assuming it includes working tree edits.",
+        "pt-BR": "Tratar arquivo como backup de repositório ou presumir inclusão de edições do working tree.",
+        "es": "Tratar archivo como copia de repositorio o suponer inclusión de ediciones del working tree."
+      },
+      "alternatives": {
+        "en": "Use git bundle to transfer selected refs and commit history.",
+        "pt-BR": "Use git bundle para transferir referências selecionadas e histórico de commits.",
+        "es": "Usa git bundle para transferir referencias seleccionadas e historial de commits."
+      },
+      "recovery": {
+        "en": "Verify archive contents and destination; recreate under a new filename if needed. Do not delete unrelated files.",
+        "pt-BR": "Verifique conteúdo do arquivo e destino; recrie com nome novo se necessário. Não exclua arquivos alheios.",
+        "es": "Verifica contenido del archivo y destino; recrea con nombre nuevo si necesario. No borres archivos ajenos."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git archive --format=tar --output=../snapshot.tar HEAD",
+          "context": {
+            "en": "Write an archive of the verified committed tree to an unused sibling file.",
+            "pt-BR": "Grave arquivo da árvore registrada verificada em arquivo vizinho livre.",
+            "es": "Escribe archivo de árbol confirmado verificado en archivo vecino libre."
+          }
+        },
+        "professional": {
+          "command": "git archive --format=zip --prefix=release/ --output=../release.zip v1.0.0",
+          "context": {
+            "en": "Package an existing verified version tag in a new local ZIP.",
+            "pt-BR": "Empacote tag de versão existente verificada em ZIP local novo.",
+            "es": "Empaqueta etiqueta de versión existente verificada en ZIP local nuevo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/10-archive-and-bundle"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-archive"
+      ]
+    },
+    {
+      "id": "git-bundle-create",
+      "command": "git bundle create",
+      "kind": "subcommand",
+      "category": "11-advanced-git-operations",
+      "level": "advanced",
+      "intent_tags": [
+        "package-history",
+        "recover-work"
+      ],
+      "syntax": "git bundle create ../main.bundle main",
+      "purpose": {
+        "en": "Package selected Git refs and reachable objects for offline transport.",
+        "pt-BR": "Empacotar referências Git selecionadas e objetos alcançáveis para transporte offline.",
+        "es": "Empaquetar referencias Git seleccionadas y objetos alcanzables para transporte offline."
+      },
+      "options": {
+        "en": "--all selects refs broadly; revision ranges can create incremental bundles requiring prerequisite objects; git bundle verify checks applicability.",
+        "pt-BR": "--all seleciona referências amplamente; intervalos podem criar bundles incrementais exigindo objetos pré-requisitos; git bundle verify confere aplicabilidade.",
+        "es": "--all selecciona referencias ampliamente; rangos pueden crear bundles incrementales que requieren objetos previos; git bundle verify comprueba aplicabilidad."
+      },
+      "when_to_use": {
+        "en": "When transferring selected committed history without a live remote connection.",
+        "pt-BR": "Ao transferir histórico registrado selecionado sem conexão remota ativa.",
+        "es": "Al transferir historial confirmado seleccionado sin conexión remota activa."
+      },
+      "when_to_avoid": {
+        "en": "Avoid bundling unreviewed private history or treating it as a full backup of repository configuration and uncommitted work.",
+        "pt-BR": "Evite empacotar histórico privado não revisado ou tratar como backup completo de configuração e trabalho não registrado.",
+        "es": "Evita empaquetar historial privado sin revisar o tratarlo como copia completa de configuración y trabajo sin confirmar."
+      },
+      "expected_state": {
+        "en": "Creates a bundle containing selected advertised refs and necessary object data; incremental forms may require existing base objects.",
+        "pt-BR": "Cria bundle com referências anunciadas selecionadas e dados de objetos necessários; formas incrementais podem exigir objetos base existentes.",
+        "es": "Crea bundle con referencias anunciadas seleccionadas y datos de objetos necesarios; formas incrementales pueden requerir objetos base existentes."
+      },
+      "effect_notes": {
+        "en": "Writes output artifact outside the checkout; shown creation does not update current refs or remote.",
+        "pt-BR": "Grava artefato de saída fora do checkout; criação mostrada não atualiza referências atuais ou remoto.",
+        "es": "Escribe artefacto de salida fuera del checkout; creación mostrada no actualiza referencias actuales ni remoto."
+      },
+      "common_errors": {
+        "en": "Assuming --all captures untracked files, reflogs, hooks and platform metadata.",
+        "pt-BR": "Presumir --all captura arquivos não rastreados, reflogs, hooks e metadados da plataforma.",
+        "es": "Suponer --all captura archivos no rastreados, reflogs, hooks y metadatos de plataforma."
+      },
+      "alternatives": {
+        "en": "Use archive for a source snapshot; use a separate verified backup for all repository and working data.",
+        "pt-BR": "Use archive para snapshot de código; use backup separado verificado para todos dados de repositório e trabalho.",
+        "es": "Usa archive para instantánea de código; usa copia separada verificada para todos datos de repositorio y trabajo."
+      },
+      "recovery": {
+        "en": "Run git bundle verify and inspect advertised refs; test clone or fetch in a disposable destination before relying on the artifact.",
+        "pt-BR": "Execute git bundle verify e inspecione referências anunciadas; teste clone ou fetch em destino descartável antes de depender do artefato.",
+        "es": "Ejecuta git bundle verify e inspecciona referencias anunciadas; prueba clon o fetch en destino desechable antes de depender del artefacto."
+      },
+      "prerequisites": {
+        "en": "Use a clean owned disposable repository with saved work, verified local paths and refs, and trusted configuration. Use only owned local sources.",
+        "pt-BR": "Use repositório próprio descartável limpo com trabalho salvo, caminhos locais e referências verificados e configuração confiável. Use só origens locais próprias.",
+        "es": "Usa repositorio propio desechable limpio con trabajo guardado, rutas locales y referencias verificadas y configuración confiable. Usa solo fuentes locales propias."
+      },
+      "requirements": {
+        "en": "Use Git 2.40 or newer for the guide's labs; verify availability with local Git help.",
+        "pt-BR": "Use Git 2.40 ou superior nos laboratórios do guia; verifique disponibilidade na ajuda local Git.",
+        "es": "Usa Git 2.40 o superior en laboratorios del guía; verifica disponibilidad en ayuda local Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git bundle create ../main.bundle main",
+          "context": {
+            "en": "Create a bundle of the verified local main ref at an unused path.",
+            "pt-BR": "Crie bundle da referência main local verificada em caminho livre.",
+            "es": "Crea bundle de referencia main local verificada en ruta libre."
+          }
+        },
+        "professional": {
+          "command": "git bundle create ../transfer.bundle --all",
+          "context": {
+            "en": "After reviewing every selected ref and its history for sensitive content, create a local transfer bundle.",
+            "pt-BR": "Após revisar toda referência selecionada e histórico quanto a conteúdo sensível, crie bundle local de transferência.",
+            "es": "Tras revisar cada referencia seleccionada e historial por contenido sensible, crea bundle local de transferencia."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review paths, refs and local configuration first. Preserve valuable work; never test against the guide or a shared service.",
+          "pt-BR": "Revise caminhos, referências e configuração local antes. Preserve trabalho valioso; nunca teste contra o guia ou serviço compartilhado.",
+          "es": "Revisa rutas, referencias y configuración local primero. Conserva trabajo valioso; nunca pruebes contra el guía o servicio compartido."
+        }
+      },
+      "related_chapters": [
+        "advanced-git/10-archive-and-bundle"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-bundle"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,860 @@
+{
+  "schema_version": 1,
+  "category": "14-platforms-and-automation",
+  "entries": [
+    {
+      "id": "gh-pr-create",
+      "command": "gh pr create",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "review-changes",
+        "automate-workflow"
+      ],
+      "syntax": "gh pr create -R example-org/example-repo --base main --head feat/notes --title \"Review notes\" --body \"Fictional review\" --draft",
+      "purpose": {
+        "en": "Create a GitHub pull request for a proposed branch integration.",
+        "pt-BR": "Criar pull request GitHub para integração proposta de branch.",
+        "es": "Crear pull request GitHub para integración propuesta de rama."
+      },
+      "options": {
+        "en": "--base and --head identify refs; --draft opens a draft; explicit --head avoids implicit forking or pushing behavior. --dry-run can still push Git changes.",
+        "pt-BR": "--base e --head identificam referências; --draft abre draft; --head explícito evita fork ou push implícito. --dry-run ainda pode fazer push.",
+        "es": "--base y --head identifican referencias; --draft abre borrador; --head explícito evita fork o push implícito. --dry-run aún puede hacer push."
+      },
+      "when_to_use": {
+        "en": "When an authorized published feature branch is ready for review or draft feedback.",
+        "pt-BR": "Quando branch de feature autorizada publicada está pronta para revisão ou feedback preliminar.",
+        "es": "Cuando rama de feature autorizada publicada está lista para revisión o comentarios preliminares."
+      },
+      "when_to_avoid": {
+        "en": "Avoid wrong repository, unreviewed sensitive content or bypassing required review gates.",
+        "pt-BR": "Evite repositório errado, conteúdo sensível não revisado ou contornar controles de revisão.",
+        "es": "Evita repositorio incorrecto, contenido sensible sin revisar o eludir controles de revisión."
+      },
+      "expected_state": {
+        "en": "Returns the created PR URL on success; creation alone does not merge the branch.",
+        "pt-BR": "Retorna URL do PR criado em sucesso; criação isolada não integra branch.",
+        "es": "Devuelve URL del PR creado con éxito; creación sola no integra rama."
+      },
+      "common_errors": {
+        "en": "Confusing PR creation with merge approval or expecting a dry run to guarantee no network writes.",
+        "pt-BR": "Confundir criação de PR com aprovação de merge ou esperar dry run garantir ausência de gravações na rede.",
+        "es": "Confundir creación de PR con aprobación de merge o esperar dry run garantice ausencia de escrituras en red."
+      },
+      "alternatives": {
+        "en": "Use the platform web interface to inspect and create the authorized review request manually.",
+        "pt-BR": "Use interface web da plataforma para inspecionar e criar solicitação autorizada manualmente.",
+        "es": "Usa interfaz web de plataforma para inspeccionar y crear solicitud autorizada manualmente."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitHub CLI (gh), authorized authentication, network access and relevant repository permissions. Check gh help for installed flags.",
+        "pt-BR": "Exige GitHub CLI (gh) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira gh help para flags instaladas.",
+        "es": "Requiere GitHub CLI (gh) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba gh help para opciones instaladas."
+      },
+      "examples": {
+        "basic": {
+          "command": "gh pr create -R example-org/example-repo --base main --head feat/notes --title \"Review notes\" --body \"Fictional review\" --draft",
+          "context": {
+            "en": "Illustrate opening a draft from an already published authorized branch; substitute the sandbox repository only.",
+            "pt-BR": "Ilustre abertura de draft de branch autorizada já publicada; substitua só pelo repositório sandbox.",
+            "es": "Ilustra apertura de borrador desde rama autorizada ya publicada; sustituye solo repositorio sandbox."
+          }
+        },
+        "professional": {
+          "command": "gh pr create -R example-org/example-repo --base main --head feat/docs --title \"Review documentation\" --body \"Describe changes and test evidence\"",
+          "context": {
+            "en": "Illustrate a review request for reviewed committed changes with explicit head and base.",
+            "pt-BR": "Ilustre solicitação de revisão de mudanças registradas revisadas com head e base explícitos.",
+            "es": "Ilustra solicitud de revisión de cambios confirmados revisados con head y base explícitos."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "effect_notes": {
+        "en": "Creates remote PR metadata and may trigger CI or notifications. Shown explicit head requires an already published branch; implicit forms can push or fork.",
+        "pt-BR": "Cria metadados remotos de PR e pode acionar CI ou notificações. Head explícito mostrado exige branch já publicada; formas implícitas podem fazer push ou fork.",
+        "es": "Crea metadatos remotos de PR y puede activar CI o notificaciones. Head explícito mostrado exige rama ya publicada; formas implícitas pueden hacer push o fork."
+      },
+      "recovery": {
+        "en": "Inspect the created URL and exact refs; if incorrect, coordinate correction or close the mistaken PR with authorization. Closing does not erase its history.",
+        "pt-BR": "Inspecione URL criada e referências exatas; se incorreto, coordene correção ou fechamento autorizado do PR errado. Fechar não apaga histórico.",
+        "es": "Inspecciona URL creada y referencias exactas; si incorrecto, coordina corrección o cierre autorizado del PR equivocado. Cerrar no borra historial."
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "Creates platform state and may notify people or trigger automation. Do not execute fictional examples against real repositories; require authorization and verify the destination.",
+          "pt-BR": "Cria estado na plataforma e pode notificar pessoas ou acionar automação. Não execute exemplos fictícios contra repositórios reais; exija autorização e verifique destino.",
+          "es": "Crea estado en plataforma y puede notificar personas o activar automatización. No ejecutes ejemplos ficticios contra repositorios reales; exige autorización y verifica destino."
+        }
+      },
+      "related_chapters": [
+        "github/04-pull-requests-and-review",
+        "github/08-github-cli"
+      ],
+      "references": [
+        "https://cli.github.com/manual/gh_pr_create"
+      ]
+    },
+    {
+      "id": "gh-pr-view",
+      "command": "gh pr view",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "review-changes",
+        "inspect-state"
+      ],
+      "syntax": "gh pr view 42 -R example-org/example-repo",
+      "purpose": {
+        "en": "Inspect a GitHub pull request and its review or merge metadata.",
+        "pt-BR": "Inspecionar pull request GitHub e metadados de revisão ou merge.",
+        "es": "Inspeccionar pull request GitHub y metadatos de revisión o merge."
+      },
+      "options": {
+        "en": "--json selects fields; --comments displays comments and reviews; --web opens the page.",
+        "pt-BR": "--json seleciona campos; --comments exibe comentários e revisões; --web abre página.",
+        "es": "--json selecciona campos; --comments muestra comentarios y revisiones; --web abre página."
+      },
+      "when_to_use": {
+        "en": "When checking the exact PR and head under review.",
+        "pt-BR": "Ao conferir PR exato e head em revisão.",
+        "es": "Al comprobar PR exacto y head en revisión."
+      },
+      "when_to_avoid": {
+        "en": "Do not infer that a merge is authorized from a mergeability field alone.",
+        "pt-BR": "Não deduza autorização de merge apenas de campo de mergeabilidade.",
+        "es": "No deduzcas autorización de merge solo de campo de posibilidad de merge."
+      },
+      "expected_state": {
+        "en": "Displays a snapshot of the selected PR metadata; platform calculation and review status may change.",
+        "pt-BR": "Exibe snapshot dos metadados do PR; cálculo e estado de revisão podem mudar.",
+        "es": "Muestra instantánea de metadatos del PR; cálculo y estado de revisión pueden cambiar."
+      },
+      "common_errors": {
+        "en": "Reading a prior head's approval as approval of newly pushed changes.",
+        "pt-BR": "Ler aprovação de head anterior como aprovação de mudanças novas.",
+        "es": "Leer aprobación de head anterior como aprobación de cambios nuevos."
+      },
+      "alternatives": {
+        "en": "Use the web interface and gh pr checks to inspect checks and review discussion.",
+        "pt-BR": "Use interface web e gh pr checks para inspecionar checks e discussão.",
+        "es": "Usa interfaz web y gh pr checks para inspeccionar checks y discusión."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitHub CLI (gh), authorized authentication, network access and relevant repository permissions. Check gh help for installed flags.",
+        "pt-BR": "Exige GitHub CLI (gh) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira gh help para flags instaladas.",
+        "es": "Requiere GitHub CLI (gh) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba gh help para opciones instaladas."
+      },
+      "examples": {
+        "basic": {
+          "command": "gh pr view 42 -R example-org/example-repo",
+          "context": {
+            "en": "Inspect fictional PR number 42 in an authorized sandbox template.",
+            "pt-BR": "Inspecione PR fictício número 42 em modelo de sandbox autorizado.",
+            "es": "Inspecciona PR ficticio número 42 en modelo de sandbox autorizado."
+          }
+        },
+        "professional": {
+          "command": "gh pr view 42 -R example-org/example-repo --json headRefOid,reviewDecision,mergeStateStatus",
+          "context": {
+            "en": "Inspect the exact head and review state, then verify required checks independently.",
+            "pt-BR": "Inspecione head exato e estado de revisão, depois confira checks obrigatórios independentemente.",
+            "es": "Inspecciona head exacto y estado de revisión, luego comprueba checks obligatorios independientemente."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Reads platform metadata over the network; does not intentionally alter Git refs, index, checkout or platform resources in the shown form.",
+        "pt-BR": "Lê metadados da plataforma pela rede; não altera intencionalmente referências Git, index, checkout ou recursos da plataforma na forma mostrada.",
+        "es": "Lee metadatos de plataforma por red; no altera intencionalmente referencias Git, index, checkout ni recursos de plataforma en forma mostrada."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection. Verify repository, ID, permissions and exact commit association; refresh status if incomplete or stale.",
+        "pt-BR": "Inspeção não exige desfazer. Verifique repositório, ID, permissões e associação ao commit exato; atualize status se incompleto ou obsoleto.",
+        "es": "Inspección no requiere deshacer. Verifica repositorio, ID, permisos y asociación con commit exacto; actualiza estado si incompleto u obsoleto."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspection is not approval to merge. Protect private metadata and logs; do not expose credentials.",
+          "pt-BR": "Inspeção não é autorização de merge. Proteja metadados privados e logs; não exponha credenciais.",
+          "es": "Inspección no autoriza merge. Protege metadatos privados y logs; no expongas credenciales."
+        }
+      },
+      "related_chapters": [
+        "github/04-pull-requests-and-review",
+        "github/08-github-cli"
+      ],
+      "references": [
+        "https://cli.github.com/manual/gh_pr_view"
+      ]
+    },
+    {
+      "id": "gh-pr-checks",
+      "command": "gh pr checks",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-ci",
+        "review-changes"
+      ],
+      "syntax": "gh pr checks 42 -R example-org/example-repo",
+      "purpose": {
+        "en": "Inspect CI check results associated with a GitHub pull request.",
+        "pt-BR": "Inspecionar resultados de checks CI associados ao pull request GitHub.",
+        "es": "Inspeccionar resultados de checks CI asociados al pull request GitHub."
+      },
+      "options": {
+        "en": "--required restricts output to required checks; --watch waits for updates; pending checks have a distinct exit status in current CLI.",
+        "pt-BR": "--required restringe a checks obrigatórios; --watch aguarda atualizações; checks pendentes têm código de saída distinto na CLI atual.",
+        "es": "--required limita a checks obligatorios; --watch espera actualizaciones; checks pendientes tienen código de salida distinto en CLI actual."
+      },
+      "when_to_use": {
+        "en": "When determining whether required checks have completed for the reviewed change.",
+        "pt-BR": "Ao determinar se checks obrigatórios terminaram para mudança revisada.",
+        "es": "Al determinar si checks obligatorios terminaron para cambio revisado."
+      },
+      "when_to_avoid": {
+        "en": "Avoid declaring success from incomplete, missing or stale check results.",
+        "pt-BR": "Evite declarar sucesso com resultados incompletos, ausentes ou obsoletos.",
+        "es": "Evita declarar éxito con resultados incompletos, ausentes u obsoletos."
+      },
+      "expected_state": {
+        "en": "Displays reported check statuses; nonzero may indicate pending or failed checks, depending on exit status.",
+        "pt-BR": "Exibe estados relatados dos checks; código não zero pode indicar pendência ou falha, conforme código.",
+        "es": "Muestra estados reportados de checks; código no cero puede indicar pendiente o fallo según código."
+      },
+      "common_errors": {
+        "en": "Treating no reported checks or old successful checks as a current green gate.",
+        "pt-BR": "Tratar ausência de checks relatados ou checks antigos aprovados como sinal verde atual.",
+        "es": "Tratar ausencia de checks reportados o checks antiguos aprobados como señal verde actual."
+      },
+      "alternatives": {
+        "en": "Inspect the PR head and individual workflow runs, including required checks and logs.",
+        "pt-BR": "Inspecione head do PR e execuções individuais de workflow, incluindo checks obrigatórios e logs.",
+        "es": "Inspecciona head del PR y ejecuciones individuales de workflow, incluidos checks obligatorios y logs."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitHub CLI (gh), authorized authentication, network access and relevant repository permissions. Check gh help for installed flags.",
+        "pt-BR": "Exige GitHub CLI (gh) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira gh help para flags instaladas.",
+        "es": "Requiere GitHub CLI (gh) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba gh help para opciones instaladas."
+      },
+      "examples": {
+        "basic": {
+          "command": "gh pr checks 42 -R example-org/example-repo",
+          "context": {
+            "en": "Inspect checks of a fictional authorized sandbox PR.",
+            "pt-BR": "Inspecione checks de PR fictício de sandbox autorizado.",
+            "es": "Inspecciona checks de PR ficticio de sandbox autorizado."
+          }
+        },
+        "professional": {
+          "command": "gh pr checks 42 -R example-org/example-repo --required",
+          "context": {
+            "en": "Inspect required checks and confirm they correspond to the latest reviewed head.",
+            "pt-BR": "Inspecione checks obrigatórios e confirme correspondência ao head revisado mais recente.",
+            "es": "Inspecciona checks obligatorios y confirma correspondencia al head revisado más reciente."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Reads platform metadata over the network; does not intentionally alter Git refs, index, checkout or platform resources in the shown form.",
+        "pt-BR": "Lê metadados da plataforma pela rede; não altera intencionalmente referências Git, index, checkout ou recursos da plataforma na forma mostrada.",
+        "es": "Lee metadatos de plataforma por red; no altera intencionalmente referencias Git, index, checkout ni recursos de plataforma en forma mostrada."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection. Verify repository, ID, permissions and exact commit association; refresh status if incomplete or stale.",
+        "pt-BR": "Inspeção não exige desfazer. Verifique repositório, ID, permissões e associação ao commit exato; atualize status se incompleto ou obsoleto.",
+        "es": "Inspección no requiere deshacer. Verifica repositorio, ID, permisos y asociación con commit exacto; actualiza estado si incompleto u obsoleto."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspection is not approval to merge. Protect private metadata and logs; do not expose credentials.",
+          "pt-BR": "Inspeção não é autorização de merge. Proteja metadados privados e logs; não exponha credenciais.",
+          "es": "Inspección no autoriza merge. Protege metadatos privados y logs; no expongas credenciales."
+        }
+      },
+      "related_chapters": [
+        "github/04-pull-requests-and-review",
+        "ci-cd/09-quality-gates-and-troubleshooting"
+      ],
+      "references": [
+        "https://cli.github.com/manual/gh_pr_checks"
+      ]
+    },
+    {
+      "id": "gh-run-view",
+      "command": "gh run view",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-ci"
+      ],
+      "syntax": "gh run view 123456 -R example-org/example-repo",
+      "purpose": {
+        "en": "Inspect a particular GitHub Actions workflow run and its available job information.",
+        "pt-BR": "Inspecionar execução específica de workflow GitHub Actions e informações disponíveis de jobs.",
+        "es": "Inspeccionar ejecución específica de workflow GitHub Actions e información disponible de jobs."
+      },
+      "options": {
+        "en": "--log-failed requests failed-step logs; --exit-status returns nonzero for failed run; run ID is not a PR number.",
+        "pt-BR": "--log-failed solicita logs de etapas com falha; --exit-status retorna não zero para execução falha; ID de execução não é número de PR.",
+        "es": "--log-failed solicita logs de pasos fallidos; --exit-status devuelve no cero para ejecución fallida; ID de ejecución no es número de PR."
+      },
+      "when_to_use": {
+        "en": "When troubleshooting an identified workflow attempt for a specific commit.",
+        "pt-BR": "Ao diagnosticar tentativa identificada de workflow para commit específico.",
+        "es": "Al diagnosticar intento identificado de workflow para commit específico."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume a successful unrelated run proves required checks passed.",
+        "pt-BR": "Não presuma execução alheia aprovada prova aprovação de checks obrigatórios.",
+        "es": "No supongas ejecución ajena exitosa prueba aprobación de checks obligatorios."
+      },
+      "expected_state": {
+        "en": "Returns available run details or logs; incomplete runs and expired logs may not provide final evidence.",
+        "pt-BR": "Retorna detalhes ou logs disponíveis; execuções incompletas e logs expirados podem não fornecer evidência final.",
+        "es": "Devuelve detalles o logs disponibles; ejecuciones incompletas y logs expirados pueden no dar evidencia final."
+      },
+      "common_errors": {
+        "en": "Confusing run ID, job ID and PR number or ignoring run attempt and head SHA.",
+        "pt-BR": "Confundir ID de execução, ID de job e número de PR ou ignorar tentativa e SHA do head.",
+        "es": "Confundir ID de ejecución, ID de job y número de PR o ignorar intento y SHA del head."
+      },
+      "alternatives": {
+        "en": "Use gh pr checks for PR-level checks and the Actions web interface for full attempt context.",
+        "pt-BR": "Use gh pr checks para checks do PR e interface Actions para contexto completo da tentativa.",
+        "es": "Usa gh pr checks para checks del PR e interfaz Actions para contexto completo del intento."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitHub CLI (gh), authorized authentication, network access and relevant repository permissions. Check gh help for installed flags.",
+        "pt-BR": "Exige GitHub CLI (gh) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira gh help para flags instaladas.",
+        "es": "Requiere GitHub CLI (gh) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba gh help para opciones instaladas."
+      },
+      "examples": {
+        "basic": {
+          "command": "gh run view 123456 -R example-org/example-repo",
+          "context": {
+            "en": "Inspect a fictional workflow run ID in a sandbox template.",
+            "pt-BR": "Inspecione ID fictício de execução de workflow em modelo sandbox.",
+            "es": "Inspecciona ID ficticio de ejecución de workflow en modelo sandbox."
+          }
+        },
+        "professional": {
+          "command": "gh run view 123456 -R example-org/example-repo --log-failed",
+          "context": {
+            "en": "Inspect failed-step logs without publishing sensitive output.",
+            "pt-BR": "Inspecione logs de etapas com falha sem publicar saída sensível.",
+            "es": "Inspecciona logs de pasos fallidos sin publicar salida sensible."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Reads platform metadata over the network; does not intentionally alter Git refs, index, checkout or platform resources in the shown form.",
+        "pt-BR": "Lê metadados da plataforma pela rede; não altera intencionalmente referências Git, index, checkout ou recursos da plataforma na forma mostrada.",
+        "es": "Lee metadatos de plataforma por red; no altera intencionalmente referencias Git, index, checkout ni recursos de plataforma en forma mostrada."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection. Verify repository, ID, permissions and exact commit association; refresh status if incomplete or stale.",
+        "pt-BR": "Inspeção não exige desfazer. Verifique repositório, ID, permissões e associação ao commit exato; atualize status se incompleto ou obsoleto.",
+        "es": "Inspección no requiere deshacer. Verifica repositorio, ID, permisos y asociación con commit exacto; actualiza estado si incompleto u obsoleto."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspection is not approval to merge. Protect private metadata and logs; do not expose credentials.",
+          "pt-BR": "Inspeção não é autorização de merge. Proteja metadados privados e logs; não exponha credenciais.",
+          "es": "Inspección no autoriza merge. Protege metadatos privados y logs; no expongas credenciales."
+        }
+      },
+      "related_chapters": [
+        "ci-cd/03-github-actions",
+        "ci-cd/09-quality-gates-and-troubleshooting"
+      ],
+      "references": [
+        "https://cli.github.com/manual/gh_run_view"
+      ]
+    },
+    {
+      "id": "gh-release-create",
+      "command": "gh release create",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "advanced",
+      "intent_tags": [
+        "manage-releases",
+        "manage-tags"
+      ],
+      "syntax": "gh release create v1.0.0 -R example-org/example-repo --verify-tag --draft --title \"Practice release\" --notes \"Fictional release notes\"",
+      "purpose": {
+        "en": "Create release metadata associated with a GitHub tag, optionally as a draft.",
+        "pt-BR": "Criar metadados de release associados a tag GitHub, opcionalmente como draft.",
+        "es": "Crear metadatos de lanzamiento asociados a etiqueta GitHub, opcionalmente como borrador."
+      },
+      "options": {
+        "en": "--verify-tag requires an existing remote tag; without it the CLI can create a missing tag. --draft delays publication; --notes-file supplies release notes.",
+        "pt-BR": "--verify-tag exige tag remota existente; sem ele a CLI pode criar tag ausente. --draft adia publicação; --notes-file fornece notas.",
+        "es": "--verify-tag exige etiqueta remota existente; sin él la CLI puede crear etiqueta ausente. --draft aplaza publicación; --notes-file proporciona notas."
+      },
+      "when_to_use": {
+        "en": "When preparing an authorized reviewed release after verifying its version tag.",
+        "pt-BR": "Ao preparar release autorizada revisada após verificar tag de versão.",
+        "es": "Al preparar lanzamiento autorizado revisado tras verificar etiqueta de versión."
+      },
+      "when_to_avoid": {
+        "en": "Avoid unverified targets, missing approval, sensitive assets or implicit tag creation.",
+        "pt-BR": "Evite destinos não verificados, aprovação ausente, artefatos sensíveis ou criação implícita de tag.",
+        "es": "Evita destinos no verificados, aprobación ausente, activos sensibles o creación implícita de etiqueta."
+      },
+      "expected_state": {
+        "en": "Creates a draft release for the existing remote tag in the shown forms; publication requires a separate action.",
+        "pt-BR": "Cria draft de release para tag remota existente nas formas mostradas; publicação exige ação separada.",
+        "es": "Crea borrador de lanzamiento para etiqueta remota existente en formas mostradas; publicación requiere acción separada."
+      },
+      "common_errors": {
+        "en": "Confusing tag verification of existence with cryptographic signature verification or publishing before approvals.",
+        "pt-BR": "Confundir verificação de existência de tag com verificação de assinatura ou publicar antes de aprovações.",
+        "es": "Confundir verificación de existencia de etiqueta con verificación de firma o publicar antes de aprobaciones."
+      },
+      "alternatives": {
+        "en": "Use the Releases web interface for manual draft preparation and review; verify signatures and artifacts separately.",
+        "pt-BR": "Use interface Releases para preparar draft e revisar manualmente; verifique assinaturas e artefatos separadamente.",
+        "es": "Usa interfaz Releases para preparar borrador y revisar manualmente; verifica firmas y artefactos por separado."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitHub CLI (gh), authorized authentication, network access and relevant repository permissions. Check gh help for installed flags.",
+        "pt-BR": "Exige GitHub CLI (gh) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira gh help para flags instaladas.",
+        "es": "Requiere GitHub CLI (gh) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba gh help para opciones instaladas."
+      },
+      "examples": {
+        "basic": {
+          "command": "gh release create v1.0.0 -R example-org/example-repo --verify-tag --draft --title \"Practice release\" --notes \"Fictional release notes\"",
+          "context": {
+            "en": "Illustrate a draft using an existing authorized remote tag in a sandbox.",
+            "pt-BR": "Ilustre draft usando tag remota autorizada existente em sandbox.",
+            "es": "Ilustra borrador usando etiqueta remota autorizada existente en sandbox."
+          }
+        },
+        "professional": {
+          "command": "gh release create v1.1.0 -R example-org/example-repo --verify-tag --draft --notes-file release-notes.md",
+          "context": {
+            "en": "Prepare a draft only after reviewing the existing tag, notes file and release policy.",
+            "pt-BR": "Prepare draft só após revisar tag existente, arquivo de notas e política de release.",
+            "es": "Prepara borrador solo tras revisar etiqueta existente, archivo de notas y política de lanzamiento."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "effect_notes": {
+        "en": "Writes remote draft release metadata; the shown --verify-tag form requires an existing tag and does not create it. Other forms can create tags or publish assets.",
+        "pt-BR": "Grava metadados remotos de draft; forma --verify-tag mostrada exige tag existente e não a cria. Outras formas podem criar tags ou publicar artefatos.",
+        "es": "Escribe metadatos remotos de borrador; forma --verify-tag mostrada exige etiqueta existente y no la crea. Otras formas pueden crear etiquetas o publicar activos."
+      },
+      "recovery": {
+        "en": "Inspect the created draft and associated tag. Coordinate authorized edits or removal of the draft if incorrect; do not rewrite a published tag.",
+        "pt-BR": "Inspecione draft criado e tag associada. Coordene edições autorizadas ou remoção do draft se incorreto; não reescreva tag publicada.",
+        "es": "Inspecciona borrador creado y etiqueta asociada. Coordina ediciones autorizadas o eliminación del borrador si incorrecto; no reescribas etiqueta publicada."
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "Creates platform state and may notify people or trigger automation. Do not execute fictional examples against real repositories; require authorization and verify the destination.",
+          "pt-BR": "Cria estado na plataforma e pode notificar pessoas ou acionar automação. Não execute exemplos fictícios contra repositórios reais; exija autorização e verifique destino.",
+          "es": "Crea estado en plataforma y puede notificar personas o activar automatización. No ejecutes ejemplos ficticios contra repositorios reales; exige autorización y verifica destino."
+        }
+      },
+      "related_chapters": [
+        "github/07-tags-and-releases",
+        "professional-workflows/12-release-management"
+      ],
+      "references": [
+        "https://cli.github.com/manual/gh_release_create"
+      ]
+    },
+    {
+      "id": "glab-mr-create",
+      "command": "glab mr create",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "review-changes",
+        "automate-workflow"
+      ],
+      "syntax": "glab mr create -R example-group/example-project --source-branch feat/notes --target-branch main --title \"Review notes\" --description \"Fictional review\" --draft",
+      "purpose": {
+        "en": "Open a GitLab merge request for a proposed integration.",
+        "pt-BR": "Abrir merge request GitLab para integração proposta.",
+        "es": "Abrir merge request GitLab para integración propuesta."
+      },
+      "options": {
+        "en": "--source-branch and --target-branch select branches; --draft creates a draft; --push can publish local commits and is omitted here.",
+        "pt-BR": "--source-branch e --target-branch selecionam branches; --draft cria draft; --push pode publicar commits locais e é omitido aqui.",
+        "es": "--source-branch y --target-branch seleccionan ramas; --draft crea borrador; --push puede publicar commits locales y se omite aquí."
+      },
+      "when_to_use": {
+        "en": "When an authorized published source branch is ready for review.",
+        "pt-BR": "Quando branch de origem autorizada publicada está pronta para revisão.",
+        "es": "Cuando rama fuente autorizada publicada está lista para revisión."
+      },
+      "when_to_avoid": {
+        "en": "Avoid unreviewed changes, incorrect target project or bypassing protected branch policy.",
+        "pt-BR": "Evite mudanças não revisadas, projeto alvo errado ou contornar política de branches protegidas.",
+        "es": "Evita cambios sin revisar, proyecto objetivo incorrecto o eludir política de ramas protegidas."
+      },
+      "expected_state": {
+        "en": "Creates an MR and returns information about it; it does not merge the source branch.",
+        "pt-BR": "Cria MR e retorna informações; não integra branch de origem.",
+        "es": "Crea MR y devuelve información; no integra rama fuente."
+      },
+      "common_errors": {
+        "en": "Treating MR creation as approval or assuming no automation is triggered.",
+        "pt-BR": "Tratar criação de MR como aprovação ou presumir que nenhuma automação é acionada.",
+        "es": "Tratar creación de MR como aprobación o suponer que ninguna automatización se activa."
+      },
+      "alternatives": {
+        "en": "Use the GitLab web interface for authorized MR creation and review.",
+        "pt-BR": "Use interface web GitLab para criação e revisão autorizadas de MR.",
+        "es": "Usa interfaz web GitLab para creación y revisión autorizadas de MR."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitLab CLI (glab), authorized authentication, network access and relevant project permissions. Check glab help and server compatibility.",
+        "pt-BR": "Exige GitLab CLI (glab) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira glab help e compatibilidade do servidor.",
+        "es": "Requiere GitLab CLI (glab) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba glab help y compatibilidad del servidor."
+      },
+      "examples": {
+        "basic": {
+          "command": "glab mr create -R example-group/example-project --source-branch feat/notes --target-branch main --title \"Review notes\" --description \"Fictional review\" --draft",
+          "context": {
+            "en": "Illustrate opening a draft from a published sandbox source branch.",
+            "pt-BR": "Ilustre abertura de draft de branch de origem sandbox publicada.",
+            "es": "Ilustra apertura de borrador desde rama fuente sandbox publicada."
+          }
+        },
+        "professional": {
+          "command": "glab mr create -R example-group/example-project --source-branch feat/docs --target-branch main --title \"Review documentation\" --description \"Describe changes and test evidence\"",
+          "context": {
+            "en": "Illustrate an authorized review request with explicit source and target branches.",
+            "pt-BR": "Ilustre solicitação autorizada de revisão com branches de origem e destino explícitas.",
+            "es": "Ilustra solicitud autorizada de revisión con ramas fuente y destino explícitas."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "effect_notes": {
+        "en": "Writes MR metadata; may trigger pipelines or notifications. Shown forms use existing published refs without --push.",
+        "pt-BR": "Grava metadados de MR; pode acionar pipelines ou notificações. Formas mostradas usam referências publicadas existentes sem --push.",
+        "es": "Escribe metadatos de MR; puede activar pipelines o notificaciones. Formas mostradas usan referencias publicadas existentes sin --push."
+      },
+      "recovery": {
+        "en": "Verify the MR link and source and target. If incorrect, coordinate authorized edit or closure; closing does not erase the MR history.",
+        "pt-BR": "Verifique link do MR e origem e destino. Se incorreto, coordene edição ou fechamento autorizado; fechar não apaga histórico do MR.",
+        "es": "Verifica enlace del MR y origen y destino. Si incorrecto, coordina edición o cierre autorizado; cerrar no borra historial del MR."
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "Creates platform state and may notify people or trigger automation. Do not execute fictional examples against real repositories; require authorization and verify the destination.",
+          "pt-BR": "Cria estado na plataforma e pode notificar pessoas ou acionar automação. Não execute exemplos fictícios contra repositórios reais; exija autorização e verifique destino.",
+          "es": "Crea estado en plataforma y puede notificar personas o activar automatización. No ejecutes ejemplos ficticios contra repositorios reales; exige autorización y verifica destino."
+        }
+      },
+      "related_chapters": [
+        "gitlab/04-merge-requests-review-and-forks",
+        "gitlab/08-gitlab-cli-and-platform-comparison"
+      ],
+      "references": [
+        "https://docs.gitlab.com/cli/mr/create/"
+      ]
+    },
+    {
+      "id": "glab-mr-view",
+      "command": "glab mr view",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "review-changes",
+        "inspect-state"
+      ],
+      "syntax": "glab mr view 42 -R example-group/example-project",
+      "purpose": {
+        "en": "Inspect GitLab merge request details and reported status.",
+        "pt-BR": "Inspecionar detalhes e estado relatado de merge request GitLab.",
+        "es": "Inspeccionar detalles y estado reportado de merge request GitLab."
+      },
+      "options": {
+        "en": "--output json selects structured output; --comments includes discussions; --web opens the platform page.",
+        "pt-BR": "--output json seleciona saída estruturada; --comments inclui discussões; --web abre página da plataforma.",
+        "es": "--output json selecciona salida estructurada; --comments incluye discusiones; --web abre página de plataforma."
+      },
+      "when_to_use": {
+        "en": "When verifying the reviewed MR and current integration status.",
+        "pt-BR": "Ao verificar MR revisado e estado atual de integração.",
+        "es": "Al verificar MR revisado y estado actual de integración."
+      },
+      "when_to_avoid": {
+        "en": "Do not rely on a conflict flag while the server is still calculating mergeability.",
+        "pt-BR": "Não dependa de flag de conflito enquanto servidor ainda calcula mergeabilidade.",
+        "es": "No dependas de indicador de conflicto mientras servidor calcula posibilidad de merge."
+      },
+      "expected_state": {
+        "en": "Displays requested MR information; mergeability and approvals may change or be temporarily unknown.",
+        "pt-BR": "Exibe informações solicitadas; mergeabilidade e aprovações podem mudar ou estar temporariamente desconhecidas.",
+        "es": "Muestra información solicitada; posibilidad de merge y aprobaciones pueden cambiar o ser temporalmente desconocidas."
+      },
+      "common_errors": {
+        "en": "Treating a conflict-free MR or old approval as proof all gates passed.",
+        "pt-BR": "Tratar MR sem conflitos ou aprovação antiga como prova de todos controles aprovados.",
+        "es": "Tratar MR sin conflictos o aprobación antigua como prueba de todos controles aprobados."
+      },
+      "alternatives": {
+        "en": "Inspect the web MR details and associated pipeline for the exact reviewed revision.",
+        "pt-BR": "Inspecione detalhes web do MR e pipeline associado à revisão exata revisada.",
+        "es": "Inspecciona detalles web del MR y pipeline asociado a revisión exacta revisada."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitLab CLI (glab), authorized authentication, network access and relevant project permissions. Check glab help and server compatibility.",
+        "pt-BR": "Exige GitLab CLI (glab) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira glab help e compatibilidade do servidor.",
+        "es": "Requiere GitLab CLI (glab) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba glab help y compatibilidad del servidor."
+      },
+      "examples": {
+        "basic": {
+          "command": "glab mr view 42 -R example-group/example-project",
+          "context": {
+            "en": "Inspect fictional sandbox MR 42.",
+            "pt-BR": "Inspecione MR fictício 42 do sandbox.",
+            "es": "Inspecciona MR ficticio 42 de sandbox."
+          }
+        },
+        "professional": {
+          "command": "glab mr view 42 -R example-group/example-project --output json",
+          "context": {
+            "en": "Inspect structured MR metadata; verify current SHA and merge status before deciding.",
+            "pt-BR": "Inspecione metadados estruturados do MR; verifique SHA atual e estado de merge antes de decidir.",
+            "es": "Inspecciona metadatos estructurados del MR; verifica SHA actual y estado de merge antes de decidir."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Reads platform metadata over the network; does not intentionally alter Git refs, index, checkout or platform resources in the shown form.",
+        "pt-BR": "Lê metadados da plataforma pela rede; não altera intencionalmente referências Git, index, checkout ou recursos da plataforma na forma mostrada.",
+        "es": "Lee metadatos de plataforma por red; no altera intencionalmente referencias Git, index, checkout ni recursos de plataforma en forma mostrada."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection. Verify repository, ID, permissions and exact commit association; refresh status if incomplete or stale.",
+        "pt-BR": "Inspeção não exige desfazer. Verifique repositório, ID, permissões e associação ao commit exato; atualize status se incompleto ou obsoleto.",
+        "es": "Inspección no requiere deshacer. Verifica repositorio, ID, permisos y asociación con commit exacto; actualiza estado si incompleto u obsoleto."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspection is not approval to merge. Protect private metadata and logs; do not expose credentials.",
+          "pt-BR": "Inspeção não é autorização de merge. Proteja metadados privados e logs; não exponha credenciais.",
+          "es": "Inspección no autoriza merge. Protege metadatos privados y logs; no expongas credenciales."
+        }
+      },
+      "related_chapters": [
+        "gitlab/04-merge-requests-review-and-forks",
+        "gitlab/08-gitlab-cli-and-platform-comparison"
+      ],
+      "references": [
+        "https://docs.gitlab.com/cli/mr/view/"
+      ]
+    },
+    {
+      "id": "glab-ci-status",
+      "command": "glab ci status",
+      "kind": "external-tool",
+      "category": "14-platforms-and-automation",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-ci"
+      ],
+      "syntax": "glab ci status -R example-group/example-project --branch=main",
+      "purpose": {
+        "en": "Inspect GitLab CI/CD pipeline status for a branch.",
+        "pt-BR": "Inspecionar status de pipeline CI/CD GitLab para branch.",
+        "es": "Inspeccionar estado de pipeline CI/CD GitLab para rama."
+      },
+      "options": {
+        "en": "--branch selects the branch; --compact condenses output; --live or --wait waits for updates or completion.",
+        "pt-BR": "--branch seleciona branch; --compact condensa saída; --live ou --wait aguarda atualizações ou conclusão.",
+        "es": "--branch selecciona rama; --compact condensa salida; --live o --wait espera actualizaciones o finalización."
+      },
+      "when_to_use": {
+        "en": "When reviewing the reported branch pipeline and investigating CI progress.",
+        "pt-BR": "Ao revisar pipeline relatado da branch e investigar progresso CI.",
+        "es": "Al revisar pipeline reportado de rama e investigar progreso CI."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume the latest branch pipeline is the MR's exact head pipeline, especially across forks.",
+        "pt-BR": "Não presuma pipeline mais recente da branch seja pipeline exato do head do MR, especialmente entre forks.",
+        "es": "No supongas pipeline más reciente de rama sea pipeline exacto del head del MR, especialmente entre forks."
+      },
+      "expected_state": {
+        "en": "Displays reported pipeline status; completion and commit association must be checked separately before merge.",
+        "pt-BR": "Exibe estado relatado do pipeline; conclusão e associação ao commit devem ser conferidas separadamente antes de merge.",
+        "es": "Muestra estado reportado del pipeline; finalización y asociación a commit deben comprobarse por separado antes de merge."
+      },
+      "common_errors": {
+        "en": "Confusing a pending or unrelated branch pipeline with a successful required MR check.",
+        "pt-BR": "Confundir pipeline pendente ou alheio da branch com check obrigatório do MR aprovado.",
+        "es": "Confundir pipeline pendiente o ajeno de rama con check obligatorio del MR aprobado."
+      },
+      "alternatives": {
+        "en": "Use the MR web page and its linked pipeline to inspect exact job results and logs.",
+        "pt-BR": "Use página web do MR e pipeline vinculado para inspecionar resultados e logs exatos de jobs.",
+        "es": "Usa página web del MR y pipeline vinculado para inspeccionar resultados y logs exactos de jobs."
+      },
+      "prerequisites": {
+        "en": "Examples are fictional templates, not live exercises. Substitute only an explicitly authorized sandbox repository, verified account, refs and IDs. Inspect the CLI version and authentication first.",
+        "pt-BR": "Exemplos são modelos fictícios, não exercícios em serviço real. Substitua apenas por repositório sandbox explicitamente autorizado, conta, referências e IDs verificados. Confira versão e autenticação da CLI antes.",
+        "es": "Ejemplos son modelos ficticios, no ejercicios en servicio real. Sustituye solo por repositorio sandbox explícitamente autorizado, cuenta, referencias e IDs verificados. Comprueba versión y autenticación CLI primero."
+      },
+      "requirements": {
+        "en": "Requires a current compatible GitLab CLI (glab), authorized authentication, network access and relevant project permissions. Check glab help and server compatibility.",
+        "pt-BR": "Exige GitLab CLI (glab) compatível atual, autenticação autorizada, rede e permissões relevantes. Confira glab help e compatibilidade do servidor.",
+        "es": "Requiere GitLab CLI (glab) compatible actual, autenticación autorizada, red y permisos relevantes. Comprueba glab help y compatibilidad del servidor."
+      },
+      "examples": {
+        "basic": {
+          "command": "glab ci status -R example-group/example-project --branch=main",
+          "context": {
+            "en": "Inspect reported pipeline status for a fictional sandbox branch.",
+            "pt-BR": "Inspecione status relatado de pipeline de branch fictícia sandbox.",
+            "es": "Inspecciona estado reportado de pipeline de rama ficticia sandbox."
+          }
+        },
+        "professional": {
+          "command": "glab ci status -R example-group/example-project --branch=feat/docs --compact",
+          "context": {
+            "en": "Inspect condensed branch pipeline status and verify its commit and association to the MR.",
+            "pt-BR": "Inspecione status condensado de pipeline da branch e verifique commit e associação ao MR.",
+            "es": "Inspecciona estado condensado de pipeline de rama y verifica commit y asociación al MR."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "Reads platform metadata over the network; does not intentionally alter Git refs, index, checkout or platform resources in the shown form.",
+        "pt-BR": "Lê metadados da plataforma pela rede; não altera intencionalmente referências Git, index, checkout ou recursos da plataforma na forma mostrada.",
+        "es": "Lee metadatos de plataforma por red; no altera intencionalmente referencias Git, index, checkout ni recursos de plataforma en forma mostrada."
+      },
+      "recovery": {
+        "en": "No undo is needed for inspection. Verify repository, ID, permissions and exact commit association; refresh status if incomplete or stale.",
+        "pt-BR": "Inspeção não exige desfazer. Verifique repositório, ID, permissões e associação ao commit exato; atualize status se incompleto ou obsoleto.",
+        "es": "Inspección no requiere deshacer. Verifica repositorio, ID, permisos y asociación con commit exacto; actualiza estado si incompleto u obsoleto."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspection is not approval to merge. Protect private metadata and logs; do not expose credentials.",
+          "pt-BR": "Inspeção não é autorização de merge. Proteja metadados privados e logs; não exponha credenciais.",
+          "es": "Inspección no autoriza merge. Protege metadatos privados y logs; no expongas credenciales."
+        }
+      },
+      "related_chapters": [
+        "gitlab/06-pipelines-and-runners",
+        "ci-cd/04-gitlab-ci-cd"
+      ],
+      "references": [
+        "https://docs.gitlab.com/cli/ci/status/"
+      ]
+    }
+  ]
+}

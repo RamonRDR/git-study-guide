@@ -1,0 +1,863 @@
+{
+  "schema_version": 1,
+  "category": "04-commits-and-tags",
+  "entries": [
+    {
+      "id": "git-commit",
+      "command": "git commit",
+      "kind": "native-command",
+      "category": "04-commits-and-tags",
+      "level": "beginner",
+      "intent_tags": [
+        "commit-changes"
+      ],
+      "syntax": "git commit -m \"message\"",
+      "purpose": {
+        "en": "Record the reviewed staged snapshot as a new commit.",
+        "pt-BR": "Registrar o snapshot preparado e revisado como novo commit.",
+        "es": "Registrar la instantánea preparada y revisada como un nuevo commit."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with a configured fictional identity and reviewed staged changes.",
+        "pt-BR": "Use repositório próprio descartável com identidade fictícia configurada e mudanças preparadas revisadas.",
+        "es": "Usa un repositorio propio desechable con identidad ficticia configurada y cambios preparados revisados."
+      },
+      "options": {
+        "en": "-m supplies the message instead of opening an editor; -v shows a diff in the editor.",
+        "pt-BR": "-m fornece a mensagem sem abrir editor; -v mostra um diff no editor.",
+        "es": "-m proporciona el mensaje sin abrir el editor; -v muestra un diff en el editor."
+      },
+      "when_to_use": {
+        "en": "When staged changes form a coherent unit of work.",
+        "pt-BR": "Quando as mudanças preparadas formam uma unidade coerente de trabalho.",
+        "es": "Cuando los cambios preparados forman una unidad coherente de trabajo."
+      },
+      "when_to_avoid": {
+        "en": "Do not commit secrets, unrelated changes or unresolved conflicts.",
+        "pt-BR": "Não registre segredos, mudanças alheias ou conflitos não resolvidos.",
+        "es": "No confirmes secretos, cambios ajenos ni conflictos sin resolver."
+      },
+      "expected_state": {
+        "en": "A successful ordinary commit records the index and advances the current branch or detached HEAD.",
+        "pt-BR": "Um commit comum bem-sucedido registra o index e avança a branch atual ou HEAD destacado.",
+        "es": "Un commit ordinario exitoso registra el index y avanza la rama actual o HEAD separado."
+      },
+      "effect_notes": {
+        "en": "Normally no working-file content changes; index metadata and local hooks may change state. No push occurs.",
+        "pt-BR": "Normalmente não muda conteúdo dos arquivos; metadados do index e hooks locais podem alterar estado. Não há push.",
+        "es": "Normalmente no cambia el contenido de los archivos; los metadatos del index y hooks locales pueden alterar el estado. No hay push."
+      },
+      "common_errors": {
+        "en": "Assuming unstaged edits are included or that a commit publishes changes.",
+        "pt-BR": "Presumir que edições não preparadas entram ou que o commit publica mudanças.",
+        "es": "Suponer que incluye ediciones no preparadas o que un commit publica cambios."
+      },
+      "alternatives": {
+        "en": "Use git add -p before committing to select individual hunks.",
+        "pt-BR": "Use git add -p antes do commit para selecionar trechos individuais.",
+        "es": "Usa git add -p antes del commit para seleccionar fragmentos individuales."
+      },
+      "recovery": {
+        "en": "Inspect git show HEAD; amend an unpublished mistake or consider git revert for a shared commit after review.",
+        "pt-BR": "Inspecione git show HEAD; corrija erro não publicado com amend ou considere git revert para commit compartilhado após revisão.",
+        "es": "Inspecciona git show HEAD; corrige un error no publicado con amend o considera git revert para un commit compartido tras revisarlo."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
+        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
+        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git commit -m \"Add notes\"",
+          "context": {
+            "en": "After staging a fictional notes file.",
+            "pt-BR": "Após preparar um arquivo fictício de notas.",
+            "es": "Tras preparar un archivo ficticio de notas."
+          }
+        },
+        "professional": {
+          "command": "git commit -m \"docs: explain setup\"",
+          "context": {
+            "en": "Record a reviewed documentation change.",
+            "pt-BR": "Registre uma mudança de documentação revisada.",
+            "es": "Registra un cambio de documentación revisado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review git diff --cached, identity and hooks; the commit can retain sensitive content locally.",
+          "pt-BR": "Revise git diff --cached, identidade e hooks; o commit pode reter conteúdo sensível localmente.",
+          "es": "Revisa git diff --cached, identidad y hooks; el commit puede conservar contenido sensible localmente."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit",
+        "getting-started/05-first-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-commit/2.34.0"
+      ]
+    },
+    {
+      "id": "git-commit-all",
+      "command": "git commit -a",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "intermediate",
+      "intent_tags": [
+        "commit-changes",
+        "stage-changes"
+      ],
+      "syntax": "git commit -a -m \"message\"",
+      "purpose": {
+        "en": "Stage modified and deleted tracked files and create a commit in one operation.",
+        "pt-BR": "Preparar arquivos rastreados modificados e excluídos e criar um commit em uma operação.",
+        "es": "Preparar archivos rastreados modificados y eliminados y crear un commit en una operación."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect status first and preserve valuable work.",
+        "pt-BR": "Use um repositório próprio descartável; inspecione o status e preserve trabalho valioso.",
+        "es": "Usa un repositorio propio desechable; inspecciona el estado y preserva el trabajo valioso."
+      },
+      "options": {
+        "en": "-a includes tracked modifications and deletions; -m sets the message.",
+        "pt-BR": "-a inclui modificações e exclusões rastreadas; -m define a mensagem.",
+        "es": "-a incluye modificaciones y eliminaciones rastreadas; -m define el mensaje."
+      },
+      "when_to_use": {
+        "en": "When every tracked change and already staged addition belongs in one commit.",
+        "pt-BR": "Quando toda mudança rastreada e adição já preparada pertence a um commit.",
+        "es": "Cuando cada cambio rastreado y adición ya preparada pertenece a un commit."
+      },
+      "when_to_avoid": {
+        "en": "Avoid when unrelated tracked edits or deletions are present.",
+        "pt-BR": "Evite quando houver edições ou exclusões rastreadas alheias.",
+        "es": "Evita cuando existan ediciones o eliminaciones rastreadas ajenas."
+      },
+      "expected_state": {
+        "en": "The new commit includes tracked updates and existing staged content; new unstaged files remain untracked.",
+        "pt-BR": "O novo commit inclui atualizações rastreadas e conteúdo já preparado; arquivos novos não preparados continuam não rastreados.",
+        "es": "El nuevo commit incluye actualizaciones rastreadas y contenido ya preparado; los archivos nuevos no preparados siguen sin rastrear."
+      },
+      "effect_notes": {
+        "en": "Updates the index and history; working-file contents normally stay unchanged, subject to hooks.",
+        "pt-BR": "Atualiza index e histórico; conteúdo dos arquivos normalmente não muda, sujeito a hooks.",
+        "es": "Actualiza index e historial; el contenido de los archivos normalmente no cambia, sujeto a hooks."
+      },
+      "common_errors": {
+        "en": "Expecting untracked files to be included or overlooking tracked deletions.",
+        "pt-BR": "Esperar inclusão de arquivos não rastreados ou ignorar exclusões rastreadas.",
+        "es": "Esperar que incluya archivos no rastreados o pasar por alto eliminaciones rastreadas."
+      },
+      "alternatives": {
+        "en": "Use explicit git add paths and git commit for precise scope.",
+        "pt-BR": "Use caminhos explícitos com git add e git commit para delimitar o escopo.",
+        "es": "Usa rutas explícitas con git add y git commit para delimitar el alcance."
+      },
+      "recovery": {
+        "en": "Inspect the resulting commit; correct unpublished history carefully or revert a shared commit.",
+        "pt-BR": "Inspecione o commit resultante; corrija histórico não publicado com cuidado ou reverta commit compartilhado.",
+        "es": "Inspecciona el commit resultante; corrige con cuidado el historial no publicado o revierte un commit compartido."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
+        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
+        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git commit -a -m \"Update notes\"",
+          "context": {
+            "en": "Edit an already tracked notes file first.",
+            "pt-BR": "Edite antes um arquivo de notas já rastreado.",
+            "es": "Edita primero un archivo de notas ya rastreado."
+          }
+        },
+        "professional": {
+          "command": "git commit -a -m \"docs: fix typos\"",
+          "context": {
+            "en": "Only after reviewing all tracked changes and the index.",
+            "pt-BR": "Somente após revisar todas as mudanças rastreadas e o index.",
+            "es": "Solo tras revisar todos los cambios rastreados y el index."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "changes",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "May capture more than intended; inspect staged and unstaged differences and configure fictional identity first.",
+          "pt-BR": "Pode capturar mais que o desejado; inspecione diferenças preparadas e não preparadas e configure identidade fictícia antes.",
+          "es": "Puede capturar más de lo previsto; inspecciona diferencias preparadas y no preparadas y configura identidad ficticia primero."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit",
+        "getting-started/05-first-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-commit/2.34.0"
+      ]
+    },
+    {
+      "id": "git-commit-amend",
+      "command": "git commit --amend",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "intermediate",
+      "intent_tags": [
+        "rewrite-local-history",
+        "commit-changes"
+      ],
+      "syntax": "git commit --amend -m \"message\"",
+      "purpose": {
+        "en": "Replace the current tip commit with a newly created commit.",
+        "pt-BR": "Substituir o commit atual da ponta por um commit recém-criado.",
+        "es": "Sustituir el commit actual de la punta por un commit recién creado."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing unpublished HEAD, reviewed index and a saved reference to the old commit.",
+        "pt-BR": "Use repositório próprio descartável com HEAD existente não publicado, index revisado e referência salva ao commit antigo.",
+        "es": "Usa un repositorio propio desechable con HEAD existente no publicado, index revisado y referencia guardada al commit anterior."
+      },
+      "options": {
+        "en": "--no-edit keeps the message; -m supplies a replacement; both use the staged snapshot.",
+        "pt-BR": "--no-edit mantém a mensagem; -m fornece substituição; ambos usam o snapshot preparado.",
+        "es": "--no-edit mantiene el mensaje; -m proporciona un reemplazo; ambos usan la instantánea preparada."
+      },
+      "when_to_use": {
+        "en": "Correct a private tip commit before sharing it.",
+        "pt-BR": "Corrigir um commit privado da ponta antes de compartilhá-lo.",
+        "es": "Corregir un commit privado de la punta antes de compartirlo."
+      },
+      "when_to_avoid": {
+        "en": "Do not rewrite shared history casually or amend with unrelated staged changes.",
+        "pt-BR": "Não reescreva histórico compartilhado sem cuidado nem use amend com mudanças preparadas alheias.",
+        "es": "No reescribas historial compartido sin cuidado ni uses amend con cambios preparados ajenos."
+      },
+      "expected_state": {
+        "en": "The replacement normally has a different ID and the same parents as the previous tip.",
+        "pt-BR": "A substituição normalmente tem ID diferente e os mesmos pais da ponta anterior.",
+        "es": "El reemplazo normalmente tiene un ID distinto y los mismos padres que la punta anterior."
+      },
+      "effect_notes": {
+        "en": "Moves the local branch or detached HEAD; the old commit may remain reachable through another ref or reflog. Hooks can change local state.",
+        "pt-BR": "Move a branch local ou HEAD destacado; o commit antigo pode continuar alcançável por outra referência ou reflog. Hooks podem alterar estado local.",
+        "es": "Mueve la rama local o HEAD separado; el commit anterior puede seguir alcanzable por otra referencia o reflog. Los hooks pueden alterar el estado local."
+      },
+      "common_errors": {
+        "en": "Treating --no-edit as message-only or assuming the old ID stays valid for the new tip.",
+        "pt-BR": "Tratar --no-edit como alteração só da mensagem ou presumir que o ID antigo continua válido para a nova ponta.",
+        "es": "Tratar --no-edit como cambio solo del mensaje o suponer que el ID anterior sigue válido para la nueva punta."
+      },
+      "alternatives": {
+        "en": "Create a follow-up commit instead when preserving existing history matters.",
+        "pt-BR": "Crie um commit complementar quando preservar histórico existente for importante.",
+        "es": "Crea un commit adicional cuando sea importante preservar el historial existente."
+      },
+      "recovery": {
+        "en": "Inspect git reflog and the saved ref; create a recovery branch at the verified old ID if still available. Do not reset blindly.",
+        "pt-BR": "Inspecione git reflog e a referência salva; crie branch de recuperação no ID antigo verificado se ainda disponível. Não use reset às cegas.",
+        "es": "Inspecciona git reflog y la referencia guardada; crea una rama de recuperación en el ID anterior verificado si sigue disponible. No uses reset a ciegas."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
+        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
+        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git commit --amend -m \"Clarify notes\"",
+          "context": {
+            "en": "Use a private tip and verify an empty staged diff for a message-only correction.",
+            "pt-BR": "Use ponta privada e confirme diff preparado vazio para corrigir só a mensagem.",
+            "es": "Usa una punta privada y verifica un diff preparado vacío para corregir solo el mensaje."
+          }
+        },
+        "professional": {
+          "command": "git commit --amend --no-edit",
+          "context": {
+            "en": "After staging a missed documentation change for an unpublished tip.",
+            "pt-BR": "Após preparar mudança de documentação esquecida para uma ponta não publicada.",
+            "es": "Tras preparar un cambio de documentación olvidado para una punta no publicada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "history-rewrite",
+        "notes": {
+          "en": "History rewriting can disrupt collaborators; keep this example local and unpublished.",
+          "pt-BR": "Reescrever histórico pode prejudicar colaboradores; mantenha o exemplo local e não publicado.",
+          "es": "Reescribir historial puede perjudicar a colaboradores; mantén el ejemplo local y no publicado."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/08-amend",
+        "basic-commands/02-status-add-commit",
+        "getting-started/05-first-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-commit/2.34.0"
+      ]
+    },
+    {
+      "id": "git-commit-fixup",
+      "command": "git commit --fixup",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "advanced",
+      "intent_tags": [
+        "commit-changes",
+        "rewrite-local-history"
+      ],
+      "syntax": "git commit --fixup HEAD",
+      "purpose": {
+        "en": "Create a separate correction commit marked for a later autosquash rebase.",
+        "pt-BR": "Criar um commit de correção separado marcado para futuro rebase com autosquash.",
+        "es": "Crear un commit de corrección separado marcado para un rebase posterior con autosquash."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with a reviewed staged correction and an existing target commit in unpublished history.",
+        "pt-BR": "Use repositório próprio descartável com correção preparada revisada e commit de destino existente em histórico não publicado.",
+        "es": "Usa un repositorio propio desechable con una corrección preparada revisada y un commit de destino existente en historial no publicado."
+      },
+      "options": {
+        "en": "--fixup HEAD targets the current tip; a verified earlier commit ID can also be supplied.",
+        "pt-BR": "--fixup HEAD aponta para a ponta atual; também pode receber ID de commit anterior verificado.",
+        "es": "--fixup HEAD apunta a la punta actual; también puede recibir el ID verificado de un commit anterior."
+      },
+      "when_to_use": {
+        "en": "When preparing review corrections to fold into private commits later.",
+        "pt-BR": "Ao preparar correções de revisão para incorporar depois em commits privados.",
+        "es": "Al preparar correcciones de revisión para incorporarlas después en commits privados."
+      },
+      "when_to_avoid": {
+        "en": "Avoid targeting the wrong commit or planning autosquash on shared history without coordination.",
+        "pt-BR": "Evite apontar para commit errado ou planejar autosquash em histórico compartilhado sem coordenação.",
+        "es": "Evita apuntar al commit incorrecto o planear autosquash en historial compartido sin coordinación."
+      },
+      "expected_state": {
+        "en": "A new ordinary commit with a fixup! subject is created; the target is not replaced yet.",
+        "pt-BR": "Um novo commit comum com assunto fixup! é criado; o destino ainda não é substituído.",
+        "es": "Se crea un nuevo commit ordinario con asunto fixup!; el destino aún no se sustituye."
+      },
+      "effect_notes": {
+        "en": "The index snapshot is committed and HEAD advances; only a later rebase rewrites history. Hooks may affect local state.",
+        "pt-BR": "O snapshot do index é registrado e HEAD avança; só um rebase posterior reescreve histórico. Hooks podem afetar estado local.",
+        "es": "Se registra la instantánea del index y HEAD avanza; solo un rebase posterior reescribe historial. Los hooks pueden afectar el estado local."
+      },
+      "common_errors": {
+        "en": "Assuming --fixup itself squashes the correction into the target.",
+        "pt-BR": "Presumir que --fixup já incorpora a correção ao destino.",
+        "es": "Suponer que --fixup ya incorpora la corrección al destino."
+      },
+      "alternatives": {
+        "en": "Use a normal follow-up commit when preserving every public correction is desired.",
+        "pt-BR": "Use commit complementar normal quando for desejável preservar cada correção pública.",
+        "es": "Usa un commit adicional normal cuando se desee preservar cada corrección pública."
+      },
+      "recovery": {
+        "en": "Inspect git log; if the target was wrong, review and correct the unpublished fixup before attempting autosquash.",
+        "pt-BR": "Inspecione git log; se o destino estava errado, revise e corrija o fixup não publicado antes de tentar autosquash.",
+        "es": "Inspecciona git log; si el destino era incorrecto, revisa y corrige el fixup no publicado antes de intentar autosquash."
+      },
+      "requirements": {
+        "en": "Standard Git syntax documented for Git 2.34; no optional tool needed for the shown command. Local hooks or signing configuration may affect execution.",
+        "pt-BR": "Sintaxe padrão documentada para Git 2.34; sem ferramenta opcional para o comando mostrado. Hooks locais ou configuração de assinatura podem afetar a execução.",
+        "es": "Sintaxis estándar documentada para Git 2.34; sin herramienta opcional para el comando mostrado. Los hooks locales o la configuración de firma pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git commit --fixup HEAD",
+          "context": {
+            "en": "Stage a small correction for the current private commit.",
+            "pt-BR": "Prepare pequena correção para o commit privado atual.",
+            "es": "Prepara una pequeña corrección para el commit privado actual."
+          }
+        },
+        "professional": {
+          "command": "git commit --fixup HEAD~1",
+          "context": {
+            "en": "After verifying that the previous parent is the reviewed correction target.",
+            "pt-BR": "Após confirmar que o pai anterior é o destino revisado da correção.",
+            "es": "Tras verificar que el padre anterior es el destino revisado de la corrección."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Creating the fixup does not rewrite history, but the later autosquash can; save a ref before rebasing.",
+          "pt-BR": "Criar fixup não reescreve histórico, mas autosquash posterior pode; salve uma referência antes do rebase.",
+          "es": "Crear el fixup no reescribe historial, pero el autosquash posterior puede hacerlo; guarda una referencia antes del rebase."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/07-interactive-rebase",
+        "basic-commands/02-status-add-commit",
+        "getting-started/05-first-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-commit/2.34.0"
+      ]
+    },
+    {
+      "id": "git-tag",
+      "command": "git tag",
+      "kind": "native-command",
+      "category": "04-commits-and-tags",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-tags",
+        "manage-releases"
+      ],
+      "syntax": "git tag v0.1.0",
+      "purpose": {
+        "en": "Create a lightweight local tag pointing directly to a Git object, normally a commit.",
+        "pt-BR": "Criar tag local leve apontando diretamente para objeto Git, normalmente commit.",
+        "es": "Crear una etiqueta local ligera que apunta directamente a un objeto Git, normalmente un commit."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing target commit; inspect existing tags and the target first.",
+        "pt-BR": "Use repositório próprio descartável com commit de destino existente; inspecione as tags e o destino antes.",
+        "es": "Usa un repositorio propio desechable con un commit de destino existente; inspecciona primero las etiquetas y el destino."
+      },
+      "options": {
+        "en": "Provide a name and optionally a target revision; without a target Git uses HEAD.",
+        "pt-BR": "Forneça nome e opcionalmente revisão de destino; sem destino Git usa HEAD.",
+        "es": "Proporciona un nombre y opcionalmente una revisión de destino; sin destino Git usa HEAD."
+      },
+      "when_to_use": {
+        "en": "Mark a local milestone without a separate annotated tag object.",
+        "pt-BR": "Marcar marco local sem objeto de tag anotada separado.",
+        "es": "Marcar un hito local sin un objeto de etiqueta anotada separado."
+      },
+      "when_to_avoid": {
+        "en": "Avoid lightweight tags when the release policy requires annotations or signatures.",
+        "pt-BR": "Evite tags leves quando a política de release exige anotações ou assinaturas.",
+        "es": "Evita etiquetas ligeras cuando la política de publicación exige anotaciones o firmas."
+      },
+      "expected_state": {
+        "en": "A new refs/tags reference points at the target; commit ancestry stays unchanged.",
+        "pt-BR": "Uma nova referência refs/tags aponta para o destino; a ancestralidade dos commits não muda.",
+        "es": "Una nueva referencia refs/tags apunta al destino; la ascendencia de commits no cambia."
+      },
+      "effect_notes": {
+        "en": "Changes a local ref only; neither checkout nor push occurs under ordinary unsigned configuration.",
+        "pt-BR": "Altera apenas referência local; não ocorre checkout nem push em configuração comum sem assinatura.",
+        "es": "Cambia solo una referencia local; no hay checkout ni push con configuración ordinaria sin firma."
+      },
+      "common_errors": {
+        "en": "Assuming the tag moves with a branch or automatically creates a hosted release.",
+        "pt-BR": "Presumir que a tag acompanha a branch ou cria release hospedado automaticamente.",
+        "es": "Suponer que la etiqueta se mueve con la rama o crea una publicación alojada automáticamente."
+      },
+      "alternatives": {
+        "en": "Use git tag -a for a tag object with metadata and message.",
+        "pt-BR": "Use git tag -a para objeto de tag com metadados e mensagem.",
+        "es": "Usa git tag -a para un objeto de etiqueta con metadatos y mensaje."
+      },
+      "recovery": {
+        "en": "If an unpublished tag is wrong, record its current target, delete it locally and recreate at the verified target.",
+        "pt-BR": "Se tag não publicada estiver errada, registre destino atual, exclua localmente e recrie no destino verificado.",
+        "es": "Si una etiqueta no publicada es incorrecta, registra su destino actual, elimínala localmente y recréala en el destino verificado."
+      },
+      "requirements": {
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
+      },
+      "examples": {
+        "basic": {
+          "command": "git tag v0.1.0",
+          "context": {
+            "en": "Mark the current fictional practice commit.",
+            "pt-BR": "Marque o commit fictício atual de prática.",
+            "es": "Marca el commit ficticio actual de práctica."
+          }
+        },
+        "professional": {
+          "command": "git tag review-ready HEAD",
+          "context": {
+            "en": "Mark a locally reviewed milestone, not a published release.",
+            "pt-BR": "Marque marco revisado localmente, não release publicado.",
+            "es": "Marca un hito revisado localmente, no una publicación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Verify the target and existing names; examples assume tag.gpgSign is disabled to create a lightweight tag.",
+          "pt-BR": "Verifique destino e nomes existentes; exemplos pressupõem tag.gpgSign desativado para criar tag leve.",
+          "es": "Verifica el destino y los nombres existentes; los ejemplos suponen tag.gpgSign desactivado para crear una etiqueta ligera."
+        }
+      },
+      "related_chapters": [
+        "git-internals/03-commits-and-tags",
+        "professional-workflows/12-release-management"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-tag/2.31.0"
+      ]
+    },
+    {
+      "id": "git-tag-annotated",
+      "command": "git tag -a",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-tags",
+        "manage-releases"
+      ],
+      "syntax": "git tag -a v1.0.0 -m \"Release 1.0.0\"",
+      "purpose": {
+        "en": "Create a local annotated tag object and a reference to it.",
+        "pt-BR": "Criar objeto de tag anotada local e referência a ele.",
+        "es": "Crear un objeto de etiqueta anotada local y una referencia a él."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with an existing target commit; inspect existing tags and the target first.",
+        "pt-BR": "Use repositório próprio descartável com commit de destino existente; inspecione as tags e o destino antes.",
+        "es": "Usa un repositorio propio desechable con un commit de destino existente; inspecciona primero las etiquetas y el destino."
+      },
+      "options": {
+        "en": "-a requests annotation; -m supplies the annotation message; -s requests a signature separately.",
+        "pt-BR": "-a solicita anotação; -m fornece mensagem; -s solicita assinatura separadamente.",
+        "es": "-a solicita anotación; -m proporciona el mensaje; -s solicita una firma por separado."
+      },
+      "when_to_use": {
+        "en": "When marking a release with tagger metadata and a message.",
+        "pt-BR": "Ao marcar release com metadados de autoria da tag e mensagem.",
+        "es": "Al marcar una publicación con metadatos del etiquetador y un mensaje."
+      },
+      "when_to_avoid": {
+        "en": "Avoid replacing an already published version tag or using annotation as proof of signature.",
+        "pt-BR": "Evite substituir tag de versão já publicada ou tratar anotação como prova de assinatura.",
+        "es": "Evita sustituir una etiqueta de versión ya publicada o tratar la anotación como prueba de firma."
+      },
+      "expected_state": {
+        "en": "A refs/tags reference points to a tag object that identifies its target and carries annotation metadata.",
+        "pt-BR": "Uma referência refs/tags aponta para objeto de tag que identifica destino e contém metadados da anotação.",
+        "es": "Una referencia refs/tags apunta a un objeto de etiqueta que identifica el destino y contiene metadatos de anotación."
+      },
+      "effect_notes": {
+        "en": "Creates an object and local ref; commit ancestry, working files, index and remote are not modified.",
+        "pt-BR": "Cria objeto e referência local; ancestralidade dos commits, arquivos, index e remoto não são alterados.",
+        "es": "Crea un objeto y referencia local; la ascendencia de commits, archivos, index y remoto no se modifican."
+      },
+      "common_errors": {
+        "en": "Confusing an annotated tag with a signed tag or a hosted release.",
+        "pt-BR": "Confundir tag anotada com tag assinada ou release hospedado.",
+        "es": "Confundir etiqueta anotada con etiqueta firmada o publicación alojada."
+      },
+      "alternatives": {
+        "en": "Use a lightweight git tag for a temporary local marker where policy permits it.",
+        "pt-BR": "Use git tag leve para marcador local temporário quando a política permitir.",
+        "es": "Usa una etiqueta ligera git tag para un marcador local temporal cuando la política lo permita."
+      },
+      "recovery": {
+        "en": "Inspect git show on the tag; if unpublished, preserve the old object ID before correcting the tag. For published tags coordinate a new version.",
+        "pt-BR": "Inspecione git show na tag; se não publicada, preserve ID antigo do objeto antes de corrigir. Para tags publicadas coordene nova versão.",
+        "es": "Inspecciona git show en la etiqueta; si no está publicada, conserva el ID anterior del objeto antes de corregirla. Para etiquetas publicadas coordina una nueva versión."
+      },
+      "requirements": {
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
+      },
+      "examples": {
+        "basic": {
+          "command": "git tag -a v1.0.0 -m \"Release 1.0.0\"",
+          "context": {
+            "en": "Mark the current reviewed practice commit.",
+            "pt-BR": "Marque o commit de prática atual revisado.",
+            "es": "Marca el commit de práctica actual revisado."
+          }
+        },
+        "professional": {
+          "command": "git tag -a v1.2.0 -m \"Stable release\" HEAD",
+          "context": {
+            "en": "After checking the target and local release checklist.",
+            "pt-BR": "Após verificar o destino e checklist local de release.",
+            "es": "Tras verificar el destino y la lista local de publicación."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Configure fictional tagger identity; check target, message and signing policy. Annotation may expose identity when shared.",
+          "pt-BR": "Configure identidade fictícia do autor da tag; verifique destino, mensagem e política de assinatura. Anotação pode expor identidade quando compartilhada.",
+          "es": "Configura identidad ficticia del etiquetador; verifica destino, mensaje y política de firma. La anotación puede exponer identidad al compartirla."
+        }
+      },
+      "related_chapters": [
+        "git-internals/03-commits-and-tags",
+        "professional-workflows/12-release-management"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-tag/2.31.0"
+      ]
+    },
+    {
+      "id": "git-tag-delete",
+      "command": "git tag -d",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-tags",
+        "undo-changes"
+      ],
+      "syntax": "git tag -d v0.1.0",
+      "purpose": {
+        "en": "Remove a named local tag reference.",
+        "pt-BR": "Remover referência de tag local nomeada.",
+        "es": "Eliminar una referencia de etiqueta local por nombre."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; verify an existing unpublished tag and save its exact ref object ID first.",
+        "pt-BR": "Use repositório próprio descartável; verifique tag existente não publicada e salve antes o ID exato do objeto da referência.",
+        "es": "Usa un repositorio propio desechable; verifica una etiqueta existente no publicada y guarda primero el ID exacto del objeto de la referencia."
+      },
+      "options": {
+        "en": "-d deletes one or more named local tags; it is not a remote deletion.",
+        "pt-BR": "-d exclui uma ou mais tags locais nomeadas; não é exclusão remota.",
+        "es": "-d elimina una o más etiquetas locales por nombre; no es una eliminación remota."
+      },
+      "when_to_use": {
+        "en": "When removing an obsolete private practice marker.",
+        "pt-BR": "Ao remover marcador privado de prática obsoleto.",
+        "es": "Al eliminar un marcador privado de práctica obsoleto."
+      },
+      "when_to_avoid": {
+        "en": "Avoid removing published version tags or the only reference to important objects without a recovery plan.",
+        "pt-BR": "Evite remover tags de versão publicadas ou única referência de objetos importantes sem plano de recuperação.",
+        "es": "Evita eliminar etiquetas de versión publicadas o la única referencia a objetos importantes sin plan de recuperación."
+      },
+      "expected_state": {
+        "en": "The named local ref no longer exists; remote tags are unchanged.",
+        "pt-BR": "A referência local nomeada deixa de existir; tags remotas não mudam.",
+        "es": "La referencia local nombrada deja de existir; las etiquetas remotas no cambian."
+      },
+      "effect_notes": {
+        "en": "May leave a tag object or target unreachable if no other references retain it; objects are not immediately erased by this command.",
+        "pt-BR": "Pode deixar objeto de tag ou destino inalcançável se nenhuma outra referência o mantiver; o comando não apaga objetos imediatamente.",
+        "es": "Puede dejar un objeto de etiqueta o destino inalcanzable si ninguna otra referencia lo conserva; el comando no borra objetos inmediatamente."
+      },
+      "common_errors": {
+        "en": "Assuming a local deletion also deletes the remote tag or that the exact annotated object is easy to reconstruct.",
+        "pt-BR": "Presumir que exclusão local remove tag remota ou que o objeto anotado exato é fácil de reconstruir.",
+        "es": "Suponer que eliminar localmente borra la etiqueta remota o que el objeto anotado exacto es fácil de reconstruir."
+      },
+      "alternatives": {
+        "en": "Leave the tag intact and create a new version marker when it has been shared.",
+        "pt-BR": "Mantenha a tag intacta e crie novo marcador de versão quando ela foi compartilhada.",
+        "es": "Conserva la etiqueta y crea un nuevo marcador de versión cuando se haya compartido."
+      },
+      "recovery": {
+        "en": "If the exact object is still available, recreate the verified ref using git update-ref; an annotated tag cannot be faithfully restored merely by tagging its commit again.",
+        "pt-BR": "Se o objeto exato ainda estiver disponível, recrie a referência verificada com git update-ref; tag anotada não é restaurada fielmente apenas marcando o commit novamente.",
+        "es": "Si el objeto exacto sigue disponible, recrea la referencia verificada con git update-ref; una etiqueta anotada no se restaura fielmente solo etiquetando de nuevo su commit."
+      },
+      "requirements": {
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
+      },
+      "examples": {
+        "basic": {
+          "command": "git tag -d v0.1.0",
+          "context": {
+            "en": "Remove a verified disposable local tag.",
+            "pt-BR": "Remova tag local descartável verificada.",
+            "es": "Elimina una etiqueta local desechable verificada."
+          }
+        },
+        "professional": {
+          "command": "git tag -d review-ready",
+          "context": {
+            "en": "Remove a private review marker after preserving its target ID.",
+            "pt-BR": "Remova marcador privado de revisão após preservar ID do destino.",
+            "es": "Elimina un marcador privado de revisión tras preservar el ID de destino."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Deletion loses a reference; record git rev-parse refs/tags/name before deletion. Recovery is not guaranteed.",
+          "pt-BR": "Exclusão perde referência; registre git rev-parse refs/tags/name antes de excluir. Recuperação não é garantida.",
+          "es": "La eliminación pierde una referencia; registra git rev-parse refs/tags/name antes de eliminar. La recuperación no está garantizada."
+        }
+      },
+      "related_chapters": [
+        "git-internals/03-commits-and-tags",
+        "professional-workflows/12-release-management"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-tag/2.31.0"
+      ]
+    },
+    {
+      "id": "git-tag-list",
+      "command": "git tag -l",
+      "kind": "option-usage",
+      "category": "04-commits-and-tags",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-tags",
+        "inspect-refs"
+      ],
+      "syntax": "git tag -l \"v1.*\"",
+      "purpose": {
+        "en": "List local tag names, optionally matching a pattern.",
+        "pt-BR": "Listar nomes de tags locais, opcionalmente correspondentes a padrão.",
+        "es": "Listar nombres de etiquetas locales, opcionalmente coincidentes con un patrón."
+      },
+      "prerequisites": {
+        "en": "Use an owned repository; a matching tag is optional.",
+        "pt-BR": "Use repositório próprio; tag correspondente é opcional.",
+        "es": "Usa un repositorio propio; una etiqueta coincidente es opcional."
+      },
+      "options": {
+        "en": "-l enables listing; quote glob patterns so the shell passes them to Git; --sort can select a sort key.",
+        "pt-BR": "-l ativa listagem; coloque padrões glob entre aspas para o shell passá-los ao Git; --sort permite selecionar chave de ordenação.",
+        "es": "-l activa el listado; entrecomilla patrones glob para que el shell los pase a Git; --sort permite seleccionar clave de ordenación."
+      },
+      "when_to_use": {
+        "en": "When checking existing local release names or selecting a comparison point.",
+        "pt-BR": "Ao verificar nomes de releases locais existentes ou selecionar ponto de comparação.",
+        "es": "Al comprobar nombres de publicaciones locales existentes o seleccionar un punto de comparación."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat the local list as an authoritative list of remote tags.",
+        "pt-BR": "Não trate lista local como lista oficial de tags remotas.",
+        "es": "No trates la lista local como lista oficial de etiquetas remotas."
+      },
+      "expected_state": {
+        "en": "Matching tag names are displayed; an unmatched pattern produces no names.",
+        "pt-BR": "Nomes de tags correspondentes são exibidos; padrão sem correspondência não produz nomes.",
+        "es": "Se muestran nombres de etiquetas coincidentes; un patrón sin coincidencias no produce nombres."
+      },
+      "effect_notes": {
+        "en": "No local refs, objects or remote state are modified.",
+        "pt-BR": "Nenhuma referência, objeto local ou estado remoto é modificado.",
+        "es": "No se modifican referencias, objetos locales ni estado remoto."
+      },
+      "common_errors": {
+        "en": "Leaving a wildcard unquoted or assuming lexical order equals version order.",
+        "pt-BR": "Deixar curinga sem aspas ou presumir que ordem lexical equivale à ordem de versões.",
+        "es": "Dejar un comodín sin comillas o suponer que el orden léxico equivale al orden de versiones."
+      },
+      "alternatives": {
+        "en": "Use git show-ref --tags to inspect tag refs and object IDs.",
+        "pt-BR": "Use git show-ref --tags para inspecionar referências de tags e IDs dos objetos.",
+        "es": "Usa git show-ref --tags para inspeccionar referencias de etiquetas e IDs de objetos."
+      },
+      "recovery": {
+        "en": "No recovery is needed for listing; inspect the pattern and local refs if results are unexpected.",
+        "pt-BR": "Listagem não exige recuperação; inspecione padrão e referências locais se resultado for inesperado.",
+        "es": "El listado no requiere recuperación; inspecciona patrón y referencias locales si el resultado es inesperado."
+      },
+      "requirements": {
+        "en": "Standard syntax documented in Git 2.31; the official manual records no changes through Git 2.34.8. No optional tool needed for the shown unsigned operation.",
+        "pt-BR": "Sintaxe padrão documentada no Git 2.31; o manual oficial registra ausência de mudanças até Git 2.34.8. Sem ferramenta opcional para a operação sem assinatura mostrada.",
+        "es": "Sintaxis estándar documentada en Git 2.31; el manual oficial registra ausencia de cambios hasta Git 2.34.8. Sin herramienta opcional para la operación sin firma mostrada."
+      },
+      "examples": {
+        "basic": {
+          "command": "git tag -l",
+          "context": {
+            "en": "Inspect all local tag names.",
+            "pt-BR": "Inspecione todos os nomes de tags locais.",
+            "es": "Inspecciona todos los nombres de etiquetas locales."
+          }
+        },
+        "professional": {
+          "command": "git tag -l \"v1.*\" --sort=version:refname",
+          "context": {
+            "en": "List matching fictional version tags in version order.",
+            "pt-BR": "Liste tags fictícias de versões correspondentes em ordem de versão.",
+            "es": "Lista etiquetas ficticias de versiones coincidentes en orden de versión."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only listing; it does not fetch tags or verify release contents.",
+          "pt-BR": "Listagem somente leitura; não busca tags nem verifica conteúdo de releases.",
+          "es": "Listado de solo lectura; no obtiene etiquetas ni verifica contenido de publicaciones."
+        }
+      },
+      "related_chapters": [
+        "git-internals/03-commits-and-tags",
+        "professional-workflows/12-release-management"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-tag/2.31.0"
+      ]
+    }
+  ]
+}

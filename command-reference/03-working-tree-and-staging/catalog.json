@@ -1,0 +1,1056 @@
+{
+  "schema_version": 1,
+  "category": "03-working-tree-and-staging",
+  "entries": [
+    {
+      "id": "git-add",
+      "command": "git add",
+      "kind": "native-command",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "stage-changes"
+      ],
+      "syntax": "git add -- path",
+      "purpose": {
+        "en": "Stage selected paths for the next commit.",
+        "pt-BR": "Preparar caminhos selecionados para o próximo commit.",
+        "es": "Preparar rutas seleccionadas para el próximo commit."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-- ends option parsing; specify one or more paths.",
+        "pt-BR": "-- encerra opções; especifique um ou mais caminhos.",
+        "es": "-- termina opciones; especifica una o más rutas."
+      },
+      "when_to_use": {
+        "en": "After inspecting changes you want to commit.",
+        "pt-BR": "Após inspecionar mudanças que deseja commitar.",
+        "es": "Tras inspeccionar cambios que quieres confirmar."
+      },
+      "when_to_avoid": {
+        "en": "Do not stage credentials or unrelated changes.",
+        "pt-BR": "Não prepare credenciais ou mudanças alheias.",
+        "es": "No prepares credenciales ni cambios ajenos."
+      },
+      "expected_state": {
+        "en": "Index entries reflect selected working-tree content or deletions.",
+        "pt-BR": "Entradas do index refletem conteúdo ou exclusões selecionadas.",
+        "es": "Entradas del index reflejan contenido o eliminaciones seleccionadas."
+      },
+      "effect_notes": {
+        "en": "Updates the index and may store blob objects; no commit or remote update.",
+        "pt-BR": "Atualiza index e pode armazenar blobs; sem commit ou atualização remota.",
+        "es": "Actualiza index y puede almacenar blobs; sin commit ni actualización remota."
+      },
+      "common_errors": {
+        "en": "Assuming later edits are staged automatically.",
+        "pt-BR": "Presumir que edições posteriores entram automaticamente no staging.",
+        "es": "Suponer que ediciones posteriores se preparan automáticamente."
+      },
+      "alternatives": {
+        "en": "Use git add -p to select hunks.",
+        "pt-BR": "Use git add -p para selecionar trechos.",
+        "es": "Usa git add -p para seleccionar fragmentos."
+      },
+      "recovery": {
+        "en": "Inspect git diff --cached afterward. Unstage unwanted changes with git restore --staged on Git 2.23+ when HEAD exists; keep working files.",
+        "pt-BR": "Inspecione git diff --cached depois. Retire mudanças indesejadas do staging com git restore --staged no Git 2.23+ quando HEAD existir; preserve arquivos de trabalho.",
+        "es": "Inspecciona git diff --cached después. Retira cambios no deseados del staging con git restore --staged en Git 2.23+ si existe HEAD; conserva archivos de trabajo."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git add -- notes.txt",
+          "context": {
+            "en": "Review a fictional notes file before staging it.",
+            "pt-BR": "Revise arquivo fictício de notas antes de prepará-lo.",
+            "es": "Revisa archivo ficticio de notas antes de prepararlo."
+          }
+        },
+        "professional": {
+          "command": "git add -- src/main.py",
+          "context": {
+            "en": "Stage only the reviewed source file for a focused commit.",
+            "pt-BR": "Prepare apenas o arquivo fonte revisado para commit focado.",
+            "es": "Prepara solo el archivo fuente revisado para un commit enfocado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-add"
+      ]
+    },
+    {
+      "id": "git-add-all",
+      "command": "git add -A",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "stage-changes"
+      ],
+      "syntax": "git add -A [-- pathspec]",
+      "purpose": {
+        "en": "Stage additions, modifications and removals within the selected scope.",
+        "pt-BR": "Preparar adições, modificações e remoções no escopo selecionado.",
+        "es": "Preparar adiciones, modificaciones y eliminaciones en el ámbito seleccionado."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-A updates all matching index entries; a pathspec narrows the scope.",
+        "pt-BR": "-A atualiza todas as entradas correspondentes; pathspec restringe escopo.",
+        "es": "-A actualiza todas las entradas coincidentes; pathspec restringe ámbito."
+      },
+      "when_to_use": {
+        "en": "When all changes in a deliberate scope belong together.",
+        "pt-BR": "Quando todas as mudanças de um escopo deliberado pertencem juntas.",
+        "es": "Cuando todos los cambios de un ámbito deliberado van juntos."
+      },
+      "when_to_avoid": {
+        "en": "Avoid broad staging when unrelated or sensitive files may exist.",
+        "pt-BR": "Evite staging amplo quando houver arquivos alheios ou sensíveis.",
+        "es": "Evita staging amplio si hay archivos ajenos o sensibles."
+      },
+      "expected_state": {
+        "en": "New, modified and deleted paths in scope are staged, subject to ignore rules.",
+        "pt-BR": "Caminhos novos, modificados e excluídos no escopo são preparados, sujeitos a ignore.",
+        "es": "Rutas nuevas, modificadas y eliminadas en ámbito se preparan, sujetas a ignore."
+      },
+      "effect_notes": {
+        "en": "Updates index and may write objects; leaves working files in place.",
+        "pt-BR": "Atualiza index e pode gravar objetos; mantém arquivos de trabalho.",
+        "es": "Actualiza index y puede escribir objetos; mantiene archivos de trabajo."
+      },
+      "common_errors": {
+        "en": "Forgetting that deletions and new files can be included.",
+        "pt-BR": "Esquecer que exclusões e arquivos novos podem ser incluídos.",
+        "es": "Olvidar que eliminaciones y archivos nuevos pueden incluirse."
+      },
+      "alternatives": {
+        "en": "Use explicit git add paths or git add -p for finer scope.",
+        "pt-BR": "Use caminhos explícitos ou git add -p para escopo fino.",
+        "es": "Usa rutas explícitas o git add -p para ámbito fino."
+      },
+      "recovery": {
+        "en": "Inspect git diff --cached afterward. Unstage unwanted changes with git restore --staged on Git 2.23+ when HEAD exists; keep working files.",
+        "pt-BR": "Inspecione git diff --cached depois. Retire mudanças indesejadas do staging com git restore --staged no Git 2.23+ quando HEAD existir; preserve arquivos de trabalho.",
+        "es": "Inspecciona git diff --cached después. Retira cambios no deseados del staging con git restore --staged en Git 2.23+ si existe HEAD; conserva archivos de trabajo."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git add -A",
+          "context": {
+            "en": "In a cleanly scoped lab, inspect all changes before staging them together.",
+            "pt-BR": "Em lab de escopo claro, inspecione mudanças antes de prepará-las juntas.",
+            "es": "En laboratorio de ámbito claro, inspecciona cambios antes de prepararlos juntos."
+          }
+        },
+        "professional": {
+          "command": "git add -A -- src",
+          "context": {
+            "en": "Limit broad staging to a reviewed src directory.",
+            "pt-BR": "Limite staging amplo ao diretório src revisado.",
+            "es": "Limita staging amplio al directorio src revisado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-add"
+      ]
+    },
+    {
+      "id": "git-add-update",
+      "command": "git add -u",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "intermediate",
+      "intent_tags": [
+        "stage-changes"
+      ],
+      "syntax": "git add -u [-- pathspec]",
+      "purpose": {
+        "en": "Stage modifications and deletions of already indexed paths without adding new untracked paths.",
+        "pt-BR": "Preparar modificações e exclusões de caminhos já indexados sem adicionar novos não rastreados.",
+        "es": "Preparar modificaciones y eliminaciones de rutas ya indexadas sin añadir nuevas no rastreadas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-u updates tracked index entries; pathspec optionally limits scope.",
+        "pt-BR": "-u atualiza entradas rastreadas; pathspec limita escopo opcionalmente.",
+        "es": "-u actualiza entradas rastreadas; pathspec limita ámbito opcionalmente."
+      },
+      "when_to_use": {
+        "en": "When updating existing tracked files only.",
+        "pt-BR": "Ao atualizar apenas arquivos rastreados existentes.",
+        "es": "Al actualizar solo archivos rastreados existentes."
+      },
+      "when_to_avoid": {
+        "en": "Do not use when required new files must be included automatically.",
+        "pt-BR": "Não use quando arquivos novos necessários precisarem entrar automaticamente.",
+        "es": "No uses si deben incluirse automáticamente archivos nuevos necesarios."
+      },
+      "expected_state": {
+        "en": "Tracked modifications and removals are staged; new untracked paths remain untracked.",
+        "pt-BR": "Modificações e remoções rastreadas são preparadas; novos caminhos não rastreados permanecem assim.",
+        "es": "Modificaciones y eliminaciones rastreadas se preparan; nuevas rutas no rastreadas permanecen así."
+      },
+      "effect_notes": {
+        "en": "Changes index and may write blobs, not commits.",
+        "pt-BR": "Altera index e pode gravar blobs, não commits.",
+        "es": "Cambia index y puede escribir blobs, no commits."
+      },
+      "common_errors": {
+        "en": "Omitting a new dependency file or accidentally staging tracked deletions.",
+        "pt-BR": "Omitir arquivo de dependência novo ou preparar exclusões rastreadas por engano.",
+        "es": "Omitir archivo nuevo de dependencia o preparar eliminaciones rastreadas por error."
+      },
+      "alternatives": {
+        "en": "Use git add -A if deliberately including new paths too.",
+        "pt-BR": "Use git add -A se também incluir caminhos novos deliberadamente.",
+        "es": "Usa git add -A si también incluyes rutas nuevas deliberadamente."
+      },
+      "recovery": {
+        "en": "Inspect git diff --cached afterward. Unstage unwanted changes with git restore --staged on Git 2.23+ when HEAD exists; keep working files.",
+        "pt-BR": "Inspecione git diff --cached depois. Retire mudanças indesejadas do staging com git restore --staged no Git 2.23+ quando HEAD existir; preserve arquivos de trabalho.",
+        "es": "Inspecciona git diff --cached después. Retira cambios no deseados del staging con git restore --staged en Git 2.23+ si existe HEAD; conserva archivos de trabajo."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git add -u",
+          "context": {
+            "en": "Modify a tracked file and create an untracked file; stage tracked changes only.",
+            "pt-BR": "Modifique arquivo rastreado e crie outro não rastreado; prepare só mudanças rastreadas.",
+            "es": "Modifica archivo rastreado y crea otro no rastreado; prepara solo cambios rastreados."
+          }
+        },
+        "professional": {
+          "command": "git add -u -- src",
+          "context": {
+            "en": "Prepare tracked changes under src without adding generated untracked files.",
+            "pt-BR": "Prepare mudanças rastreadas em src sem adicionar gerados não rastreados.",
+            "es": "Prepara cambios rastreados en src sin añadir archivos generados no rastreados."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-add"
+      ]
+    },
+    {
+      "id": "git-add-patch",
+      "command": "git add -p",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "intermediate",
+      "intent_tags": [
+        "stage-changes"
+      ],
+      "syntax": "git add -p [-- pathspec]",
+      "purpose": {
+        "en": "Interactively select diff hunks to stage.",
+        "pt-BR": "Selecionar interativamente trechos do diff para staging.",
+        "es": "Seleccionar interactivamente fragmentos del diff para staging."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-p opens interactive hunk selection; available actions are shown in the prompt.",
+        "pt-BR": "-p abre seleção interativa; ações disponíveis aparecem no prompt.",
+        "es": "-p abre selección interactiva; las acciones disponibles aparecen en el prompt."
+      },
+      "when_to_use": {
+        "en": "When a file contains changes belonging to separate commits.",
+        "pt-BR": "Quando um arquivo contém mudanças de commits distintos.",
+        "es": "Cuando un archivo contiene cambios de commits distintos."
+      },
+      "when_to_avoid": {
+        "en": "Avoid blind confirmation; related hunks may depend on one another.",
+        "pt-BR": "Evite confirmação cega; trechos relacionados podem depender uns dos outros.",
+        "es": "Evita confirmación ciega; fragmentos relacionados pueden depender entre sí."
+      },
+      "expected_state": {
+        "en": "Only accepted changes enter the index; remaining edits stay unstaged.",
+        "pt-BR": "Somente mudanças aceitas entram no index; restantes ficam fora do staging.",
+        "es": "Solo cambios aceptados entran al index; los demás quedan sin preparar."
+      },
+      "effect_notes": {
+        "en": "Updates selected index content; working file stays unchanged.",
+        "pt-BR": "Atualiza conteúdo selecionado do index; arquivo de trabalho permanece.",
+        "es": "Actualiza contenido seleccionado del index; archivo de trabajo permanece."
+      },
+      "common_errors": {
+        "en": "Staging half of a dependent change or assuming a selected hunk equals a tested commit.",
+        "pt-BR": "Preparar metade de mudança dependente ou presumir que trecho selecionado é commit testado.",
+        "es": "Preparar mitad de cambio dependiente o suponer que fragmento seleccionado es commit probado."
+      },
+      "alternatives": {
+        "en": "Use explicit paths for whole-file staging or split work into separate files.",
+        "pt-BR": "Use caminhos explícitos para arquivos inteiros ou separe trabalho em arquivos.",
+        "es": "Usa rutas explícitas para archivos completos o separa trabajo en archivos."
+      },
+      "recovery": {
+        "en": "Inspect git diff --cached afterward. Unstage unwanted changes with git restore --staged on Git 2.23+ when HEAD exists; keep working files.",
+        "pt-BR": "Inspecione git diff --cached depois. Retire mudanças indesejadas do staging com git restore --staged no Git 2.23+ quando HEAD existir; preserve arquivos de trabalho.",
+        "es": "Inspecciona git diff --cached después. Retira cambios no deseados del staging con git restore --staged en Git 2.23+ si existe HEAD; conserva archivos de trabajo."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git add -p -- notes.txt",
+          "context": {
+            "en": "Edit two independent lines and choose one hunk where Git separates them.",
+            "pt-BR": "Edite duas linhas independentes e escolha um trecho quando Git os separar.",
+            "es": "Edita dos líneas independientes y elige un fragmento si Git los separa."
+          }
+        },
+        "professional": {
+          "command": "git add -p -- src/main.py",
+          "context": {
+            "en": "Separate a bug fix from unrelated refactoring in a reviewed source file.",
+            "pt-BR": "Separe correção de bug de refatoração alheia em arquivo revisado.",
+            "es": "Separa corrección de fallo de refactorización ajena en archivo revisado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-add"
+      ]
+    },
+    {
+      "id": "git-restore",
+      "command": "git restore",
+      "kind": "native-command",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "undo-changes"
+      ],
+      "syntax": "git restore [--source=tree] -- path",
+      "purpose": {
+        "en": "Restore a working-tree path from the index by default, discarding unstaged differences.",
+        "pt-BR": "Restaurar caminho da working tree a partir do index por padrão, descartando diferenças fora do staging.",
+        "es": "Restaurar ruta del working tree desde el index por defecto, descartando diferencias no preparadas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "--source selects an explicit tree; -- limits option parsing.",
+        "pt-BR": "--source seleciona árvore explícita; -- encerra opções.",
+        "es": "--source selecciona árbol explícito; -- termina opciones."
+      },
+      "when_to_use": {
+        "en": "Only when inspected unstaged edits are intentionally unwanted.",
+        "pt-BR": "Somente quando edições não preparadas inspecionadas forem indesejadas.",
+        "es": "Solo cuando ediciones no preparadas inspeccionadas sean indeseadas."
+      },
+      "when_to_avoid": {
+        "en": "Do not discard uncommitted work you may need; save it independently first.",
+        "pt-BR": "Não descarte trabalho sem commit que possa precisar; salve antes separadamente.",
+        "es": "No descartes trabajo sin commit que puedas necesitar; guárdalo antes aparte."
+      },
+      "expected_state": {
+        "en": "Selected working path matches source; default leaves staged content intact.",
+        "pt-BR": "Caminho selecionado corresponde à fonte; padrão preserva conteúdo preparado.",
+        "es": "Ruta seleccionada coincide con origen; por defecto conserva contenido preparado."
+      },
+      "effect_notes": {
+        "en": "May overwrite or remove working files; does not move HEAD or alter the index in this usage.",
+        "pt-BR": "Pode sobrescrever ou remover arquivos; não move HEAD nem altera index neste uso.",
+        "es": "Puede sobrescribir o eliminar archivos; no mueve HEAD ni cambia index en este uso."
+      },
+      "common_errors": {
+        "en": "Confusing the default source with HEAD when staged content differs.",
+        "pt-BR": "Confundir fonte padrão com HEAD quando staging difere.",
+        "es": "Confundir origen predeterminado con HEAD cuando staging difiere."
+      },
+      "alternatives": {
+        "en": "Save a patch or backup before discard; use git restore --staged to unstage instead.",
+        "pt-BR": "Salve patch ou backup antes de descartar; use git restore --staged para retirar do staging.",
+        "es": "Guarda parche o copia antes de descartar; usa git restore --staged para retirar del staging."
+      },
+      "recovery": {
+        "en": "Unstaged edits may never have entered Git; use an independent backup or editor history if available. Recovery is not guaranteed.",
+        "pt-BR": "Edições fora do staging podem nunca ter entrado no Git; use backup ou histórico do editor se disponível. Recuperação não é garantida.",
+        "es": "Ediciones no preparadas quizá nunca entraron en Git; usa copia o historial del editor si existe. Recuperación no garantizada."
+      },
+      "requirements": {
+        "en": "git restore requires Git 2.23 or newer.",
+        "pt-BR": "git restore requer Git 2.23 ou posterior.",
+        "es": "git restore requiere Git 2.23 o posterior."
+      },
+      "examples": {
+        "basic": {
+          "command": "git restore -- notes.txt",
+          "context": {
+            "en": "In a disposable lab, discard an intentionally unwanted edit to a tracked notes file.",
+            "pt-BR": "Em lab descartável, descarte edição intencionalmente indesejada de notas rastreadas.",
+            "es": "En laboratorio desechable, descarta edición intencionalmente indeseada de notas rastreadas."
+          }
+        },
+        "professional": {
+          "command": "git restore -- src/main.py",
+          "context": {
+            "en": "After reviewing and backing up changes, restore only the unwanted source-file edit in a disposable clone.",
+            "pt-BR": "Após revisar e salvar mudanças, restaure só edição indesejada do fonte em clone descartável.",
+            "es": "Tras revisar y guardar cambios, restaura solo edición indeseada del fuente en clon desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "changes",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "May remove or overwrite working files. Use only disposable practice data and back up anything valuable first.",
+          "pt-BR": "Pode remover ou sobrescrever arquivos. Use apenas dados descartáveis e faça backup prévio do que for valioso.",
+          "es": "Puede eliminar o sobrescribir archivos. Usa solo datos desechables y guarda antes lo valioso."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/02-restore"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-restore"
+      ]
+    },
+    {
+      "id": "git-restore-staged",
+      "command": "git restore --staged",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "unstage-changes"
+      ],
+      "syntax": "git restore --staged -- path",
+      "purpose": {
+        "en": "Restore the selected index entry from HEAD by default while preserving working files.",
+        "pt-BR": "Restaurar entrada selecionada do index a partir de HEAD por padrão preservando arquivos de trabalho.",
+        "es": "Restaurar entrada seleccionada del index desde HEAD por defecto conservando archivos de trabajo."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "--staged targets the index; default source is HEAD; use -- to mark paths.",
+        "pt-BR": "--staged seleciona index; fonte padrão HEAD; use -- para caminhos.",
+        "es": "--staged selecciona index; origen por defecto HEAD; usa -- para rutas."
+      },
+      "when_to_use": {
+        "en": "When an existing commit is present and a path was staged prematurely.",
+        "pt-BR": "Quando existe commit e caminho foi preparado prematuramente.",
+        "es": "Cuando existe commit y ruta se preparó prematuramente."
+      },
+      "when_to_avoid": {
+        "en": "Do not combine with --worktree unless you intend to overwrite working files too.",
+        "pt-BR": "Não combine com --worktree sem intenção de sobrescrever arquivos também.",
+        "es": "No combines con --worktree sin intención de sobrescribir también archivos."
+      },
+      "expected_state": {
+        "en": "Selected index entries match HEAD; working edits remain available.",
+        "pt-BR": "Entradas selecionadas correspondem a HEAD; edições de trabalho permanecem.",
+        "es": "Entradas seleccionadas coinciden con HEAD; ediciones de trabajo permanecen."
+      },
+      "effect_notes": {
+        "en": "Changes index only in this usage; does not move refs.",
+        "pt-BR": "Altera apenas index neste uso; não move refs.",
+        "es": "Cambia solo index en este uso; no mueve refs."
+      },
+      "common_errors": {
+        "en": "Using default HEAD source before the first commit; assuming prior partial staging can always be reconstructed.",
+        "pt-BR": "Usar fonte HEAD antes do primeiro commit; presumir reconstrução garantida do staging parcial.",
+        "es": "Usar origen HEAD antes del primer commit; suponer reconstrucción garantizada de staging parcial."
+      },
+      "alternatives": {
+        "en": "Use git reset HEAD -- path for an existing HEAD on older Git.",
+        "pt-BR": "Use git reset HEAD -- path com HEAD existente em Git antigo.",
+        "es": "Usa git reset HEAD -- path con HEAD existente en Git antiguo."
+      },
+      "recovery": {
+        "en": "Review the working diff and stage desired changes again; earlier staged-only content may need a backup.",
+        "pt-BR": "Revise diff de trabalho e prepare mudanças novamente; conteúdo anterior só no staging pode exigir backup.",
+        "es": "Revisa diff de trabajo y prepara cambios otra vez; contenido anterior solo en staging puede requerir copia."
+      },
+      "requirements": {
+        "en": "git restore requires Git 2.23 or newer.",
+        "pt-BR": "git restore requer Git 2.23 ou posterior.",
+        "es": "git restore requiere Git 2.23 o posterior."
+      },
+      "examples": {
+        "basic": {
+          "command": "git restore --staged -- notes.txt",
+          "context": {
+            "en": "Unstage a tracked file after making a first commit.",
+            "pt-BR": "Retire arquivo rastreado do staging após primeiro commit.",
+            "es": "Retira archivo rastreado del staging después del primer commit."
+          }
+        },
+        "professional": {
+          "command": "git restore --staged -- src/main.py",
+          "context": {
+            "en": "Remove an unrelated source-file change from the pending commit without discarding the edit.",
+            "pt-BR": "Retire mudança alheia do fonte do commit pendente sem descartar edição.",
+            "es": "Retira cambio ajeno del fuente del commit pendiente sin descartar edición."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/02-restore"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-restore"
+      ]
+    },
+    {
+      "id": "git-rm",
+      "command": "git rm",
+      "kind": "native-command",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-files"
+      ],
+      "syntax": "git rm -- path",
+      "purpose": {
+        "en": "Remove a tracked path from the working tree and stage its deletion.",
+        "pt-BR": "Remover caminho rastreado da working tree e preparar sua exclusão.",
+        "es": "Eliminar ruta rastreada del working tree y preparar su eliminación."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-r permits recursive removal; --cached removes only index entries; do not force bypass safety checks.",
+        "pt-BR": "-r permite remoção recursiva; --cached remove só index; não force ignorando proteções.",
+        "es": "-r permite eliminación recursiva; --cached elimina solo index; no fuerces omitiendo protecciones."
+      },
+      "when_to_use": {
+        "en": "When a reviewed tracked file should be removed in the next commit.",
+        "pt-BR": "Quando arquivo rastreado revisado deve ser removido no próximo commit.",
+        "es": "Cuando archivo rastreado revisado debe eliminarse en el próximo commit."
+      },
+      "when_to_avoid": {
+        "en": "Do not remove valuable local changes; avoid -f in routine practice.",
+        "pt-BR": "Não remova mudanças locais valiosas; evite -f na prática comum.",
+        "es": "No elimines cambios locales valiosos; evita -f en práctica habitual."
+      },
+      "expected_state": {
+        "en": "The tracked file is absent and its deletion is staged if the operation succeeds.",
+        "pt-BR": "Arquivo rastreado ausente e exclusão preparada se operação for bem-sucedida.",
+        "es": "Archivo rastreado ausente y eliminación preparada si operación tiene éxito."
+      },
+      "effect_notes": {
+        "en": "Changes working tree and index; prior commits stay unchanged.",
+        "pt-BR": "Altera working tree e index; commits anteriores permanecem.",
+        "es": "Cambia working tree e index; commits anteriores permanecen."
+      },
+      "common_errors": {
+        "en": "Assuming git rm erases earlier committed copies from history.",
+        "pt-BR": "Presumir que git rm apaga cópias commitadas anteriores do histórico.",
+        "es": "Suponer que git rm borra copias confirmadas anteriores del historial."
+      },
+      "alternatives": {
+        "en": "Use git rm --cached to keep the working file while removing tracking.",
+        "pt-BR": "Use git rm --cached para manter arquivo e remover rastreamento.",
+        "es": "Usa git rm --cached para conservar archivo y eliminar seguimiento."
+      },
+      "recovery": {
+        "en": "If deletion is uncommitted and HEAD contains the desired file, restore index and working copy explicitly from HEAD after inspection; other lost edits may be unrecoverable.",
+        "pt-BR": "Se exclusão não foi commitada e HEAD contém arquivo desejado, restaure index e cópia de trabalho explicitamente de HEAD após inspeção; outras edições perdidas podem ser irrecuperáveis.",
+        "es": "Si eliminación no está confirmada y HEAD contiene archivo deseado, restaura index y copia de trabajo explícitamente desde HEAD tras inspección; otras ediciones perdidas pueden ser irrecuperables."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rm -- old.txt",
+          "context": {
+            "en": "Remove a committed obsolete text file in a disposable repository.",
+            "pt-BR": "Remova texto obsoleto commitado em repositório descartável.",
+            "es": "Elimina texto obsoleto confirmado en repositorio desechable."
+          }
+        },
+        "professional": {
+          "command": "git rm -- src/obsolete.py",
+          "context": {
+            "en": "Stage deletion of a reviewed obsolete module in a disposable clone.",
+            "pt-BR": "Prepare exclusão de módulo obsoleto revisado em clone descartável.",
+            "es": "Prepara eliminación de módulo obsoleto revisado en clon desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "changes",
+        "index": "changes",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "May remove or overwrite working files. Use only disposable practice data and back up anything valuable first.",
+          "pt-BR": "Pode remover ou sobrescrever arquivos. Use apenas dados descartáveis e faça backup prévio do que for valioso.",
+          "es": "Puede eliminar o sobrescribir archivos. Usa solo datos desechables y guarda antes lo valioso."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/04-move-and-remove"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rm"
+      ]
+    },
+    {
+      "id": "git-rm-cached",
+      "command": "git rm --cached",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "intermediate",
+      "intent_tags": [
+        "ignore-files"
+      ],
+      "syntax": "git rm --cached -- path",
+      "purpose": {
+        "en": "Remove an indexed path from tracking while keeping the working copy.",
+        "pt-BR": "Remover caminho do rastreamento mantendo cópia de trabalho.",
+        "es": "Eliminar ruta del seguimiento conservando copia de trabajo."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "--cached targets only index entries; -r is needed for recursive directory removal.",
+        "pt-BR": "--cached seleciona só index; -r necessário para remover diretório recursivamente.",
+        "es": "--cached selecciona solo index; -r necesario para eliminar directorio recursivamente."
+      },
+      "when_to_use": {
+        "en": "When a previously tracked non-sensitive generated file should no longer be tracked.",
+        "pt-BR": "Quando arquivo gerado não sensível já rastreado deve deixar de ser rastreado.",
+        "es": "Cuando archivo generado no sensible ya rastreado debe dejar de seguirse."
+      },
+      "when_to_avoid": {
+        "en": "Do not use as a secret-removal procedure; earlier commits still contain the file.",
+        "pt-BR": "Não use como procedimento de remoção de segredo; commits anteriores ainda contêm arquivo.",
+        "es": "No uses como procedimiento de eliminación de secretos; commits anteriores aún contienen archivo."
+      },
+      "expected_state": {
+        "en": "Working file stays; tracked removal is staged when HEAD contains the path.",
+        "pt-BR": "Arquivo permanece; remoção rastreada entra no staging quando HEAD contém caminho.",
+        "es": "Archivo permanece; eliminación rastreada se prepara cuando HEAD contiene ruta."
+      },
+      "effect_notes": {
+        "en": "Changes index; no immediate remote or committed-history change.",
+        "pt-BR": "Altera index; sem mudança imediata remota ou de histórico commitado.",
+        "es": "Cambia index; sin cambio inmediato remoto ni de historial confirmado."
+      },
+      "common_errors": {
+        "en": "Adding an ignore rule alone and expecting an already tracked file to stop being tracked.",
+        "pt-BR": "Adicionar só regra de ignore esperando arquivo já rastreado parar de ser rastreado.",
+        "es": "Añadir solo regla de ignore esperando que archivo ya rastreado deje de seguirse."
+      },
+      "alternatives": {
+        "en": "Use a suitable ignore rule for future untracked copies; use ordinary git rm if deleting the working file is intended.",
+        "pt-BR": "Use regra de ignore adequada para futuras cópias não rastreadas; use git rm comum se pretende excluir arquivo.",
+        "es": "Usa regla de ignore adecuada para copias no rastreadas futuras; usa git rm normal si quieres eliminar archivo."
+      },
+      "recovery": {
+        "en": "Before committing, inspect the staged removal and re-add the intended file if appropriate; original staged-only content may require backup.",
+        "pt-BR": "Antes de commitar, inspecione remoção preparada e adicione arquivo novamente se apropriado; conteúdo anterior só no staging pode exigir backup.",
+        "es": "Antes de confirmar, inspecciona eliminación preparada y vuelve a añadir archivo si procede; contenido anterior solo en staging puede requerir copia."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rm --cached -- notes.tmp",
+          "context": {
+            "en": "Stop tracking a harmless committed temporary file, then inspect status.",
+            "pt-BR": "Pare de rastrear arquivo temporário inofensivo commitado e inspecione status.",
+            "es": "Deja de seguir archivo temporal inocuo confirmado e inspecciona estado."
+          }
+        },
+        "professional": {
+          "command": "git rm --cached -- local-settings.txt",
+          "context": {
+            "en": "Keep a harmless local settings fixture on disk while preparing its removal from tracking.",
+            "pt-BR": "Mantenha fixture inofensiva de configuração local em disco enquanto prepara remoção do rastreamento.",
+            "es": "Conserva fixture inocuo de configuración local en disco mientras preparas su eliminación del seguimiento."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "changes",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/05-ignore-and-review"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rm"
+      ]
+    },
+    {
+      "id": "git-mv",
+      "command": "git mv",
+      "kind": "native-command",
+      "category": "03-working-tree-and-staging",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-files"
+      ],
+      "syntax": "git mv -- source destination",
+      "purpose": {
+        "en": "Move or rename a path and update the index accordingly.",
+        "pt-BR": "Mover ou renomear caminho e atualizar index correspondentemente.",
+        "es": "Mover o renombrar ruta y actualizar index en consecuencia."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-- ends option parsing; -n previews; avoid -f overwriting a destination.",
+        "pt-BR": "-- encerra opções; -n simula; evite -f sobrescrevendo destino.",
+        "es": "-- termina opciones; -n previsualiza; evita -f sobrescribiendo destino."
+      },
+      "when_to_use": {
+        "en": "When renaming a tracked file as part of a focused change.",
+        "pt-BR": "Ao renomear arquivo rastreado em mudança focada.",
+        "es": "Al renombrar archivo rastreado en cambio enfocado."
+      },
+      "when_to_avoid": {
+        "en": "Do not overwrite an existing destination or ignore dependent references.",
+        "pt-BR": "Não sobrescreva destino existente nem ignore referências dependentes.",
+        "es": "No sobrescribas destino existente ni ignores referencias dependientes."
+      },
+      "expected_state": {
+        "en": "Old path is removed and new path exists; index is updated; rename display depends on detection.",
+        "pt-BR": "Caminho antigo removido e novo existente; index atualizado; exibição de rename depende de detecção.",
+        "es": "Ruta antigua eliminada y nueva existente; index actualizado; visualización de rename depende de detección."
+      },
+      "effect_notes": {
+        "en": "Updates working paths and index; Git commits snapshots, not explicit rename records.",
+        "pt-BR": "Atualiza caminhos de trabalho e index; Git commita snapshots, não registros explícitos de rename.",
+        "es": "Actualiza rutas de trabajo e index; Git confirma snapshots, no registros explícitos de rename."
+      },
+      "common_errors": {
+        "en": "Assuming imports or documentation links are automatically updated.",
+        "pt-BR": "Presumir atualização automática de imports ou links de documentação.",
+        "es": "Suponer actualización automática de imports o enlaces de documentación."
+      },
+      "alternatives": {
+        "en": "Move with OS tools and stage old/new paths explicitly.",
+        "pt-BR": "Mova com ferramentas do sistema e prepare caminhos antigo e novo explicitamente.",
+        "es": "Mueve con herramientas del sistema y prepara rutas antigua y nueva explícitamente."
+      },
+      "recovery": {
+        "en": "Inspect status; reverse an uncommitted rename with an explicit inverse move if safe and destination is free.",
+        "pt-BR": "Inspecione status; reverta rename não commitado com movimento inverso explícito se seguro e destino livre.",
+        "es": "Inspecciona estado; revierte rename no confirmado con movimiento inverso explícito si es seguro y destino libre."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git mv -- old.txt new.txt",
+          "context": {
+            "en": "Rename a committed notes file to a new unused name.",
+            "pt-BR": "Renomeie notas commitadas para nome novo não utilizado.",
+            "es": "Renombra notas confirmadas a nombre nuevo no utilizado."
+          }
+        },
+        "professional": {
+          "command": "git mv -- src/old.py src/new.py",
+          "context": {
+            "en": "Rename an illustrative module and separately review dependent imports and tests.",
+            "pt-BR": "Renomeie módulo ilustrativo e revise separadamente imports e testes dependentes.",
+            "es": "Renombra módulo ilustrativo y revisa por separado imports y pruebas dependientes."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "changes",
+        "index": "changes",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the exact paths and staged changes; do not operate on the guide repository.",
+          "pt-BR": "Revise caminhos exatos e mudanças preparadas; não opere no repositório do guia.",
+          "es": "Revisa rutas exactas y cambios preparados; no operes en el repositorio del guía."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/04-move-and-remove"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-mv"
+      ]
+    },
+    {
+      "id": "git-clean-dry-run",
+      "command": "git clean -n",
+      "kind": "option-usage",
+      "category": "03-working-tree-and-staging",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-files"
+      ],
+      "syntax": "git clean -n [-d]",
+      "purpose": {
+        "en": "Preview untracked paths that a matching clean operation would remove.",
+        "pt-BR": "Pré-visualizar caminhos não rastreados que operação clean correspondente removeria.",
+        "es": "Previsualizar rutas no rastreadas que una operación clean correspondiente eliminaría."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; inspect git status first and protect valuable work.",
+        "pt-BR": "Use repositório próprio descartável; inspecione git status primeiro e proteja trabalho valioso.",
+        "es": "Usa repositorio propio desechable; inspecciona git status primero y protege trabajo valioso."
+      },
+      "options": {
+        "en": "-n is dry run; -d includes untracked directories; ignored paths are normally excluded.",
+        "pt-BR": "-n simula; -d inclui diretórios não rastreados; ignorados normalmente excluídos.",
+        "es": "-n simula; -d incluye directorios no rastreados; ignorados normalmente excluidos."
+      },
+      "when_to_use": {
+        "en": "Before considering cleanup of disposable untracked artifacts.",
+        "pt-BR": "Antes de considerar limpeza de artefatos descartáveis não rastreados.",
+        "es": "Antes de considerar limpieza de artefactos desechables no rastreados."
+      },
+      "when_to_avoid": {
+        "en": "Do not replace -n with a destructive flag without separate backup and scope review.",
+        "pt-BR": "Não substitua -n por flag destrutiva sem backup e revisão de escopo separados.",
+        "es": "No sustituyas -n por opción destructiva sin copia y revisión de ámbito separadas."
+      },
+      "expected_state": {
+        "en": "Lists candidate removals without deleting them.",
+        "pt-BR": "Lista candidatos à remoção sem excluí-los.",
+        "es": "Enumera candidatos a eliminación sin borrarlos."
+      },
+      "effect_notes": {
+        "en": "No file removal in dry-run mode; no index or ref mutation.",
+        "pt-BR": "Sem remoção no modo de simulação; sem mutação de index ou refs.",
+        "es": "Sin eliminación en modo simulación; sin mutación de index ni refs."
+      },
+      "common_errors": {
+        "en": "Assuming preview remains valid after files or ignore rules change.",
+        "pt-BR": "Presumir que simulação permanece válida após mudanças em arquivos ou ignore.",
+        "es": "Suponer que simulación sigue válida tras cambios en archivos o ignore."
+      },
+      "alternatives": {
+        "en": "Use git ls-files --others --exclude-standard to inspect untracked files.",
+        "pt-BR": "Use git ls-files --others --exclude-standard para inspecionar não rastreados.",
+        "es": "Usa git ls-files --others --exclude-standard para inspeccionar no rastreados."
+      },
+      "recovery": {
+        "en": "No recovery needed for preview itself; actual deletion of untracked files may be unrecoverable without backup.",
+        "pt-BR": "Simulação não exige recuperação; exclusão real de não rastreados pode ser irrecuperável sem backup.",
+        "es": "Simulación no requiere recuperación; eliminación real de no rastreados puede ser irrecuperable sin copia."
+      },
+      "requirements": {
+        "en": "No optional tool required; the example uses standard Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; o exemplo usa sintaxe padrão Git.",
+        "es": "Sin herramienta opcional; el ejemplo usa sintaxis estándar Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git clean -n",
+          "context": {
+            "en": "Preview cleanup with a harmless untracked file in a disposable lab.",
+            "pt-BR": "Simule limpeza com arquivo não rastreado inofensivo em lab descartável.",
+            "es": "Simula limpieza con archivo no rastreado inocuo en laboratorio desechable."
+          }
+        },
+        "professional": {
+          "command": "git clean -nd",
+          "context": {
+            "en": "Preview untracked directories in a disposable clone before deciding whether cleanup is appropriate.",
+            "pt-BR": "Simule diretórios não rastreados em clone descartável antes de decidir sobre limpeza.",
+            "es": "Simula directorios no rastreados en clon desechable antes de decidir sobre limpieza."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Preview only; never execute a destructive variant automatically.",
+          "pt-BR": "Somente simulação; nunca execute variante destrutiva automaticamente.",
+          "es": "Solo simulación; nunca ejecutes variante destructiva automáticamente."
+        }
+      },
+      "related_chapters": [
+        "history-and-recovery/01-recovery-safety"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-clean"
+      ]
+    }
+  ]
+}

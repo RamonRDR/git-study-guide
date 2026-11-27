@@ -58,7 +58,10 @@ def check_structure(root, paths):
     folded = {}
     allowed_roots = set(SLUGS) | {"docs", "scripts", "tests", "assets", ".github"}
     required = {"LICENSE", ".gitignore", "scripts/curriculum.json", "scripts/example_manifest.json",
-                "scripts/validate.py", "tests/test_validate.py", ".github/workflows/quality.yml"}
+                "scripts/validate.py", "tests/test_validate.py", ".github/workflows/quality.yml",
+                "scripts/command_catalog.py", "scripts/render_command_reference.py",
+                "scripts/command_catalog_categories.json", "scripts/command_catalog_intents.json",
+                "tests/test_command_catalog.py"}
     required.update(n + ".md" for n in ROOT_DOCS)
     for missing in sorted(required - paths):
         errors.append("Missing required path: " + missing)
@@ -294,7 +297,15 @@ def check_secrets(root, paths):
                 errors.append("Potential secret: " + path + ":" + str(number))
     return errors
 
-CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets")
+def check_command_catalog(root, paths):
+    # Keep the renderer import lazy: its navigation helpers come from this module.
+    if __package__:
+        from .render_command_reference import check_catalog
+    else:
+        from render_command_reference import check_catalog
+    return check_catalog(root, paths)
+
+CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets", "command-catalog")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -304,6 +315,7 @@ def main():
     checks = dict(structure=lambda: check_structure(ROOT, paths), locales=lambda: check_locales(paths),
                   links=lambda: check_links(ROOT, paths), navigation=lambda: check_navigation(ROOT, paths),
                   examples=lambda: check_examples(ROOT, paths), secrets=lambda: check_secrets(ROOT, paths))
+    checks["command-catalog"] = lambda: check_command_catalog(ROOT, paths)
     failed = False
     for name in CHECKS if args.check == "all" else (args.check,):
         try:

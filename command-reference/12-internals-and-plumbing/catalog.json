@@ -1,0 +1,858 @@
+{
+  "schema_version": 1,
+  "category": "12-internals-and-plumbing",
+  "entries": [
+    {
+      "id": "git-cat-file-type",
+      "command": "git cat-file -t",
+      "kind": "option-usage",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-objects"
+      ],
+      "syntax": "git cat-file -t HEAD",
+      "purpose": {
+        "en": "Identify the type of an existing Git object.",
+        "pt-BR": "Identificar tipo de objeto Git existente.",
+        "es": "Identificar tipo de objeto Git existente."
+      },
+      "options": {
+        "en": "-t prints the object type; -s reports its size; use a resolvable object name.",
+        "pt-BR": "-t exibe tipo do objeto; -s relata tamanho; use nome de objeto resolvível.",
+        "es": "-t muestra tipo de objeto; -s informa tamaño; usa nombre de objeto resoluble."
+      },
+      "when_to_use": {
+        "en": "When distinguishing blobs, trees, commits and annotated tag objects before inspection.",
+        "pt-BR": "Ao distinguir blobs, trees, commits e objetos de tags anotadas antes de inspecionar.",
+        "es": "Al distinguir blobs, trees, commits y objetos de etiquetas anotadas antes de inspeccionar."
+      },
+      "when_to_avoid": {
+        "en": "Do not use an ambiguous or guessed object ID, or expect the type to prove content integrity.",
+        "pt-BR": "Não use ID de objeto ambíguo ou presumido, nem espere que tipo prove integridade do conteúdo.",
+        "es": "No uses ID de objeto ambiguo o supuesto, ni esperes que tipo pruebe integridad del contenido."
+      },
+      "expected_state": {
+        "en": "Prints the object's type, such as commit, tree, blob or tag, or reports resolution failure.",
+        "pt-BR": "Exibe tipo do objeto, como commit, tree, blob ou tag, ou relata falha de resolução.",
+        "es": "Muestra tipo de objeto, como commit, tree, blob o tag, o informa fallo de resolución."
+      },
+      "common_errors": {
+        "en": "Assuming every tag name points to a tag object; lightweight tags name other objects directly.",
+        "pt-BR": "Presumir que todo nome de tag aponta para objeto tag; tags leves nomeiam outros objetos diretamente.",
+        "es": "Suponer que toda etiqueta apunta a objeto tag; etiquetas ligeras nombran otros objetos directamente."
+      },
+      "alternatives": {
+        "en": "Use git cat-file -p to inspect the resolved object's contents, or git fsck for integrity checks.",
+        "pt-BR": "Use git cat-file -p para inspecionar conteúdo do objeto resolvido, ou git fsck para checagem de integridade.",
+        "es": "Usa git cat-file -p para inspeccionar contenido del objeto resuelto, o git fsck para comprobar integridad."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git cat-file -t HEAD",
+          "context": {
+            "en": "Identify the type of the object named by HEAD.",
+            "pt-BR": "Identifique tipo do objeto nomeado por HEAD.",
+            "es": "Identifica tipo del objeto nombrado por HEAD."
+          }
+        },
+        "professional": {
+          "command": "git cat-file -t HEAD:notes.txt",
+          "context": {
+            "en": "Identify an existing ordinary file blob in the commit.",
+            "pt-BR": "Identifique blob de arquivo comum existente no commit.",
+            "es": "Identifica blob de archivo ordinario existente en commit."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/01-object-database",
+        "git-internals/10-porcelain-and-plumbing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-cat-file"
+      ]
+    },
+    {
+      "id": "git-cat-file-pretty",
+      "command": "git cat-file -p",
+      "kind": "option-usage",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-objects",
+        "inspect-history"
+      ],
+      "syntax": "git cat-file -p HEAD",
+      "purpose": {
+        "en": "Display an object's content in a form suitable for its type.",
+        "pt-BR": "Exibir conteúdo de objeto em forma adequada ao seu tipo.",
+        "es": "Mostrar contenido de objeto en forma adecuada a su tipo."
+      },
+      "options": {
+        "en": "-p pretty-prints according to object type; use -t first if type is uncertain.",
+        "pt-BR": "-p exibe conforme tipo de objeto; use -t antes se tipo incerto.",
+        "es": "-p muestra según tipo de objeto; usa -t antes si tipo incierto."
+      },
+      "when_to_use": {
+        "en": "When examining stored object structure rather than a formatted change summary.",
+        "pt-BR": "Ao examinar estrutura armazenada de objeto em vez de resumo formatado de mudanças.",
+        "es": "Al examinar estructura almacenada de objeto en vez de resumen formateado de cambios."
+      },
+      "when_to_avoid": {
+        "en": "Avoid dumping unknown binary blobs to a terminal or publishing sensitive historical content.",
+        "pt-BR": "Evite despejar blobs binários desconhecidos no terminal ou publicar conteúdo histórico sensível.",
+        "es": "Evita volcar blobs binarios desconocidos a terminal o publicar contenido histórico sensible."
+      },
+      "expected_state": {
+        "en": "Displays commit headers and message, formatted tree entries, blob bytes or tag object content as applicable.",
+        "pt-BR": "Exibe cabeçalhos e mensagem de commit, entradas de tree formatadas, bytes de blob ou conteúdo de tag conforme aplicável.",
+        "es": "Muestra cabeceras y mensaje de commit, entradas de tree formateadas, bytes de blob o contenido de tag según corresponda."
+      },
+      "common_errors": {
+        "en": "Confusing the stored commit's parent IDs with a diff or assuming blob output includes filenames.",
+        "pt-BR": "Confundir IDs de pais do commit armazenado com diff ou presumir saída de blob inclui nomes de arquivos.",
+        "es": "Confundir IDs de padres de commit almacenado con diff o suponer salida de blob incluye nombres de archivos."
+      },
+      "alternatives": {
+        "en": "Use git show for human-oriented commit review or git ls-tree for structured tree listings.",
+        "pt-BR": "Use git show para revisão de commit orientada a pessoas ou git ls-tree para listagens estruturadas de tree.",
+        "es": "Usa git show para revisión humana de commit o git ls-tree para listados estructurados de tree."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git cat-file -p HEAD",
+          "context": {
+            "en": "Inspect commit metadata and its tree and parent IDs.",
+            "pt-BR": "Inspecione metadados do commit e IDs de tree e pais.",
+            "es": "Inspecciona metadatos del commit e IDs de tree y padres."
+          }
+        },
+        "professional": {
+          "command": "git cat-file -p HEAD:notes.txt",
+          "context": {
+            "en": "Read the committed text blob after verifying path and type.",
+            "pt-BR": "Leia blob de texto registrado após conferir caminho e tipo.",
+            "es": "Lee blob de texto confirmado tras comprobar ruta y tipo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/02-blobs-and-trees",
+        "git-internals/03-commits-and-tags",
+        "git-internals/10-porcelain-and-plumbing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-cat-file"
+      ]
+    },
+    {
+      "id": "git-hash-object",
+      "command": "git hash-object",
+      "kind": "native-command",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-objects"
+      ],
+      "syntax": "git hash-object --no-filters notes.txt",
+      "purpose": {
+        "en": "Calculate the object ID for supplied content without storing it by default.",
+        "pt-BR": "Calcular ID de objeto para conteúdo fornecido sem armazená-lo por padrão.",
+        "es": "Calcular ID de objeto para contenido suministrado sin almacenarlo por defecto."
+      },
+      "options": {
+        "en": "--no-filters hashes raw input without path filters; -w writes an object and is not used in these examples; -t selects object type.",
+        "pt-BR": "--no-filters calcula hash de entrada bruta sem filtros de caminho; -w grava objeto e não é usado nos exemplos; -t seleciona tipo de objeto.",
+        "es": "--no-filters calcula hash de entrada bruta sin filtros de ruta; -w escribe objeto y no se usa en ejemplos; -t selecciona tipo de objeto."
+      },
+      "when_to_use": {
+        "en": "When studying content addressing or comparing raw file content with a stored blob ID.",
+        "pt-BR": "Ao estudar endereçamento por conteúdo ou comparar arquivo bruto com ID de blob armazenado.",
+        "es": "Al estudiar direccionamiento por contenido o comparar archivo bruto con ID de blob almacenado."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume the ID is a plain file checksum or that the default operation stages a file.",
+        "pt-BR": "Não presuma ID como checksum simples do arquivo ou operação padrão preparando arquivo.",
+        "es": "No supongas ID como checksum simple del archivo u operación predeterminada preparando archivo."
+      },
+      "expected_state": {
+        "en": "Prints an object ID computed using Git object framing and the repository hash format; no object is written in the shown forms.",
+        "pt-BR": "Exibe ID calculado usando estrutura de objeto Git e formato de hash do repositório; nenhum objeto é gravado nas formas mostradas.",
+        "es": "Muestra ID calculado usando estructura de objeto Git y formato de hash del repositorio; no se escribe objeto en formas mostradas."
+      },
+      "common_errors": {
+        "en": "Comparing with an ordinary SHA checksum without accounting for Git's object header, filters or hash algorithm.",
+        "pt-BR": "Comparar com checksum SHA comum sem considerar cabeçalho de objeto Git, filtros ou algoritmo de hash.",
+        "es": "Comparar con checksum SHA ordinario sin considerar cabecera de objeto Git, filtros o algoritmo de hash."
+      },
+      "alternatives": {
+        "en": "Use git rev-parse HEAD:path to locate an existing committed blob, or git add for intentional staging.",
+        "pt-BR": "Use git rev-parse HEAD:path para localizar blob registrado existente, ou git add para staging intencional.",
+        "es": "Usa git rev-parse HEAD:path para localizar blob confirmado existente, o git add para staging intencional."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git hash-object --no-filters notes.txt",
+          "context": {
+            "en": "Calculate a raw file blob ID without writing it.",
+            "pt-BR": "Calcule ID de blob de arquivo bruto sem gravá-lo.",
+            "es": "Calcula ID de blob de archivo bruto sin escribirlo."
+          }
+        },
+        "professional": {
+          "command": "git hash-object --no-filters docs/notes.txt",
+          "context": {
+            "en": "Compare the calculated raw blob ID with the expected stored blob, accounting for filters.",
+            "pt-BR": "Compare ID calculado de blob bruto com blob armazenado esperado, considerando filtros.",
+            "es": "Compara ID calculado de blob bruto con blob almacenado esperado, teniendo en cuenta filtros."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "The shown forms read input and calculate an ID without writing an object; -w is a separate state-changing choice.",
+        "pt-BR": "Formas mostradas leem entrada e calculam ID sem gravar objeto; -w é escolha separada que altera estado.",
+        "es": "Formas mostradas leen entrada y calculan ID sin escribir objeto; -w es elección separada que cambia estado."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/04-object-hashes",
+        "git-internals/02-blobs-and-trees"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-hash-object"
+      ]
+    },
+    {
+      "id": "git-ls-tree",
+      "command": "git ls-tree",
+      "kind": "native-command",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-objects",
+        "inspect-files"
+      ],
+      "syntax": "git ls-tree HEAD",
+      "purpose": {
+        "en": "List entries of a selected committed tree with modes, types, IDs and paths.",
+        "pt-BR": "Listar entradas de tree registrada selecionada com modos, tipos, IDs e caminhos.",
+        "es": "Listar entradas de tree confirmada seleccionada con modos, tipos, IDs y rutas."
+      },
+      "options": {
+        "en": "-r recurses into subtrees; -z uses NUL-terminated output for parsing; --name-only selects paths.",
+        "pt-BR": "-r percorre subtrees; -z usa saída terminada em NUL para parsing; --name-only seleciona caminhos.",
+        "es": "-r recorre subtrees; -z usa salida terminada en NUL para análisis; --name-only selecciona rutas."
+      },
+      "when_to_use": {
+        "en": "When inspecting a historical snapshot independently of current checkout files.",
+        "pt-BR": "Ao inspecionar snapshot histórico independentemente de arquivos atuais.",
+        "es": "Al inspeccionar instantánea histórica independientemente de archivos actuales."
+      },
+      "when_to_avoid": {
+        "en": "Do not use as proof that the working tree matches a commit or includes untracked files.",
+        "pt-BR": "Não use como prova de que working tree corresponde ao commit ou inclui arquivos não rastreados.",
+        "es": "No uses como prueba de que working tree coincide con commit o incluye archivos no rastreados."
+      },
+      "expected_state": {
+        "en": "Displays selected tree entries and object references; no checkout occurs.",
+        "pt-BR": "Exibe entradas da tree selecionada e referências de objetos; não ocorre checkout.",
+        "es": "Muestra entradas de tree seleccionada y referencias de objetos; no hay checkout."
+      },
+      "common_errors": {
+        "en": "Confusing stored executable and gitlink modes with complete operating system permissions.",
+        "pt-BR": "Confundir modos executável e gitlink armazenados com permissões completas do sistema operacional.",
+        "es": "Confundir modos ejecutable y gitlink almacenados con permisos completos del sistema operativo."
+      },
+      "alternatives": {
+        "en": "Use git ls-files --stage for index contents or git status for working state.",
+        "pt-BR": "Use git ls-files --stage para conteúdo do index ou git status para estado de trabalho.",
+        "es": "Usa git ls-files --stage para contenido de index o git status para estado de trabajo."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git ls-tree HEAD",
+          "context": {
+            "en": "List entries of the root tree of the current commit.",
+            "pt-BR": "Liste entradas da tree raiz do commit atual.",
+            "es": "Lista entradas de tree raíz del commit actual."
+          }
+        },
+        "professional": {
+          "command": "git ls-tree -r HEAD -- docs/",
+          "context": {
+            "en": "Inspect committed entries recursively under the named directory.",
+            "pt-BR": "Inspecione entradas registradas recursivamente sob diretório nomeado.",
+            "es": "Inspecciona entradas confirmadas recursivamente bajo directorio nombrado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/02-blobs-and-trees"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-ls-tree"
+      ]
+    },
+    {
+      "id": "git-rev-list",
+      "command": "git rev-list",
+      "kind": "native-command",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-history",
+        "inspect-objects"
+      ],
+      "syntax": "git rev-list --count HEAD",
+      "purpose": {
+        "en": "Enumerate commit reachability or counts for specified revision sets.",
+        "pt-BR": "Enumerar alcance de commits ou contagens para conjuntos de revisões especificados.",
+        "es": "Enumerar alcanzabilidad de commits o recuentos para conjuntos de revisiones especificados."
+      },
+      "options": {
+        "en": "--count reports a count; --left-right distinguishes sides of a symmetric difference; --objects includes object traversal.",
+        "pt-BR": "--count relata contagem; --left-right distingue lados da diferença simétrica; --objects inclui travessia de objetos.",
+        "es": "--count informa recuento; --left-right distingue lados de diferencia simétrica; --objects incluye recorrido de objetos."
+      },
+      "when_to_use": {
+        "en": "When scripting ancestry counts or inspecting divergence of known refs.",
+        "pt-BR": "Ao automatizar contagens de ancestralidade ou inspecionar divergência de referências conhecidas.",
+        "es": "Al automatizar recuentos de ascendencia o inspeccionar divergencia de referencias conocidas."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat equal counts as equivalent file content, or assume shallow history is complete.",
+        "pt-BR": "Não trate contagens iguais como conteúdo de arquivos equivalente, nem presuma histórico raso completo.",
+        "es": "No trates recuentos iguales como contenido de archivos equivalente ni supongas historial superficial completo."
+      },
+      "expected_state": {
+        "en": "Returns IDs or counts for the requested reachability set; in the two-sided example the counts represent left-only and right-only commits.",
+        "pt-BR": "Retorna IDs ou contagens para conjunto de alcance solicitado; no exemplo bilateral as contagens representam commits exclusivos de cada lado.",
+        "es": "Devuelve IDs o recuentos para conjunto de alcanzabilidad solicitado; en ejemplo bilateral los recuentos representan commits exclusivos de cada lado."
+      },
+      "common_errors": {
+        "en": "Confusing A..B with A...B, or comparing commit counts instead of snapshots.",
+        "pt-BR": "Confundir A..B com A...B ou comparar contagem de commits em vez de snapshots.",
+        "es": "Confundir A..B con A...B o comparar recuentos de commits en vez de instantáneas."
+      },
+      "alternatives": {
+        "en": "Use git log for human-oriented history or git diff to compare snapshot content.",
+        "pt-BR": "Use git log para histórico orientado a pessoas ou git diff para comparar conteúdo de snapshots.",
+        "es": "Usa git log para historial humano o git diff para comparar contenido de instantáneas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rev-list --count HEAD",
+          "context": {
+            "en": "Count commits reachable from current HEAD.",
+            "pt-BR": "Conte commits alcançáveis a partir de HEAD atual.",
+            "es": "Cuenta commits alcanzables desde HEAD actual."
+          }
+        },
+        "professional": {
+          "command": "git rev-list --left-right --count main...feature",
+          "context": {
+            "en": "Compare reachable commits unique to each verified local branch.",
+            "pt-BR": "Compare commits alcançáveis exclusivos de cada branch local verificada.",
+            "es": "Compara commits alcanzables exclusivos de cada rama local verificada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/03-commits-and-tags",
+        "git-internals/09-reflogs-and-reachability"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rev-list"
+      ]
+    },
+    {
+      "id": "git-symbolic-ref-read",
+      "command": "git symbolic-ref HEAD",
+      "kind": "option-usage",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-refs",
+        "inspect-state"
+      ],
+      "syntax": "git symbolic-ref HEAD",
+      "purpose": {
+        "en": "Read the target of a symbolic reference, here HEAD.",
+        "pt-BR": "Ler destino de referência simbólica, aqui HEAD.",
+        "es": "Leer destino de referencia simbólica, aquí HEAD."
+      },
+      "options": {
+        "en": "--short abbreviates the ref name; --quiet suppresses the error for a non-symbolic ref while returning status 1; supplying a new target is a separate write form.",
+        "pt-BR": "--short abrevia nome da referência; --quiet suprime erro para referência não simbólica mantendo status 1; fornecer novo destino é forma separada de gravação.",
+        "es": "--short abrevia nombre de referencia; --quiet suprime error para referencia no simbólica manteniendo estado 1; suministrar nuevo destino es forma separada de escritura."
+      },
+      "when_to_use": {
+        "en": "When determining whether HEAD is attached to a named branch.",
+        "pt-BR": "Ao determinar se HEAD está associado a branch nomeada.",
+        "es": "Al determinar si HEAD está asociado a rama nombrada."
+      },
+      "when_to_avoid": {
+        "en": "Avoid the write form for ordinary switching; it does not perform a normal checkout.",
+        "pt-BR": "Evite forma de gravação para alternância comum; ela não faz checkout normal.",
+        "es": "Evita forma de escritura para cambio ordinario; no realiza checkout normal."
+      },
+      "expected_state": {
+        "en": "Prints symbolic target when attached; detached HEAD causes a nonzero result.",
+        "pt-BR": "Exibe destino simbólico quando associado; HEAD destacado causa resultado não zero.",
+        "es": "Muestra destino simbólico cuando asociado; HEAD separado causa resultado no cero."
+      },
+      "common_errors": {
+        "en": "Assuming symbolic-ref returns a commit ID or that changing HEAD manually updates files.",
+        "pt-BR": "Presumir que symbolic-ref retorna ID de commit ou que mudar HEAD manualmente atualiza arquivos.",
+        "es": "Suponer que symbolic-ref devuelve ID de commit o que cambiar HEAD manualmente actualiza archivos."
+      },
+      "alternatives": {
+        "en": "Use git branch --show-current for a branch name or git rev-parse HEAD for a commit ID.",
+        "pt-BR": "Use git branch --show-current para nome de branch ou git rev-parse HEAD para ID de commit.",
+        "es": "Usa git branch --show-current para nombre de rama o git rev-parse HEAD para ID de commit."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git symbolic-ref HEAD",
+          "context": {
+            "en": "Inspect the ref selected by attached HEAD.",
+            "pt-BR": "Inspecione referência selecionada por HEAD associado.",
+            "es": "Inspecciona referencia seleccionada por HEAD asociado."
+          }
+        },
+        "professional": {
+          "command": "git symbolic-ref --quiet --short HEAD",
+          "context": {
+            "en": "Check branch attachment in a script; handle detached HEAD exit status.",
+            "pt-BR": "Confira associação de branch em script; trate código de saída de HEAD destacado.",
+            "es": "Comprueba asociación de rama en script; gestiona código de salida de HEAD separado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/05-refs-and-head"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-symbolic-ref"
+      ]
+    },
+    {
+      "id": "git-for-each-ref",
+      "command": "git for-each-ref",
+      "kind": "native-command",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-refs",
+        "automate-workflow"
+      ],
+      "syntax": "git for-each-ref --format='%(refname) %(objectname)' refs/heads/",
+      "purpose": {
+        "en": "Enumerate refs with configurable formatting and sorting.",
+        "pt-BR": "Enumerar referências com formatação e ordenação configuráveis.",
+        "es": "Enumerar referencias con formato y orden configurables."
+      },
+      "options": {
+        "en": "--format selects fields; --sort orders results; ref patterns restrict the namespace.",
+        "pt-BR": "--format seleciona campos; --sort ordena resultados; padrões de referência restringem namespace.",
+        "es": "--format selecciona campos; --sort ordena resultados; patrones de referencia limitan espacio de nombres."
+      },
+      "when_to_use": {
+        "en": "When producing structured local reference inventories for review or automation.",
+        "pt-BR": "Ao produzir inventários estruturados de referências locais para revisão ou automação.",
+        "es": "Al producir inventarios estructurados de referencias locales para revisión o automatización."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume local remote-tracking refs reflect live server state or use unvalidated output as shell code.",
+        "pt-BR": "Não presuma referências locais de rastreamento refletem estado atual do servidor nem use saída não validada como código shell.",
+        "es": "No supongas referencias locales de seguimiento reflejan estado actual del servidor ni uses salida no validada como código shell."
+      },
+      "expected_state": {
+        "en": "Prints formatted records for matching local refs; no ref modification occurs.",
+        "pt-BR": "Exibe registros formatados de referências locais correspondentes; não ocorre alteração de referência.",
+        "es": "Muestra registros formateados de referencias locales coincidentes; no hay modificación de referencia."
+      },
+      "common_errors": {
+        "en": "Confusing refnames with checked-out branches or interpreting committer date as branch creation date.",
+        "pt-BR": "Confundir nomes de referências com branches selecionadas ou interpretar data de committer como criação da branch.",
+        "es": "Confundir nombres de referencias con ramas seleccionadas o interpretar fecha de committer como creación de rama."
+      },
+      "alternatives": {
+        "en": "Use git show-ref for simple name and ID listings or git branch for branch-oriented inspection.",
+        "pt-BR": "Use git show-ref para listagem simples de nome e ID ou git branch para inspeção orientada a branches.",
+        "es": "Usa git show-ref para listado simple de nombre e ID o git branch para inspección orientada a ramas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git for-each-ref --format='%(refname) %(objectname)' refs/heads/",
+          "context": {
+            "en": "List names and IDs of local branch refs.",
+            "pt-BR": "Liste nomes e IDs de referências de branches locais.",
+            "es": "Lista nombres e IDs de referencias de ramas locales."
+          }
+        },
+        "professional": {
+          "command": "git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/",
+          "context": {
+            "en": "Inspect local branch names ordered by tip committer date.",
+            "pt-BR": "Inspecione nomes de branches locais ordenados por data do committer da ponta.",
+            "es": "Inspecciona nombres de ramas locales ordenados por fecha del committer de punta."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/05-refs-and-head",
+        "git-internals/10-porcelain-and-plumbing"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-for-each-ref"
+      ]
+    },
+    {
+      "id": "git-ls-files-stage",
+      "command": "git ls-files --stage",
+      "kind": "option-usage",
+      "category": "12-internals-and-plumbing",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-index",
+        "inspect-objects"
+      ],
+      "syntax": "git ls-files --stage -- notes.txt",
+      "purpose": {
+        "en": "Inspect index entries with mode, object ID, stage and path.",
+        "pt-BR": "Inspecionar entradas do index com modo, ID de objeto, estágio e caminho.",
+        "es": "Inspeccionar entradas de index con modo, ID de objeto, etapa y ruta."
+      },
+      "options": {
+        "en": "--stage or -s displays entry metadata; -z is useful for robust parsing of paths.",
+        "pt-BR": "--stage ou -s exibe metadados da entrada; -z é útil para parsing robusto de caminhos.",
+        "es": "--stage o -s muestra metadatos de entrada; -z es útil para análisis robusto de rutas."
+      },
+      "when_to_use": {
+        "en": "When studying the staged snapshot, gitlinks or conflict stages.",
+        "pt-BR": "Ao estudar snapshot preparado, gitlinks ou estágios de conflito.",
+        "es": "Al estudiar instantánea preparada, gitlinks o etapas de conflicto."
+      },
+      "when_to_avoid": {
+        "en": "Do not interpret the index as the latest committed snapshot or as all working directory files.",
+        "pt-BR": "Não interprete index como último snapshot registrado ou como todos arquivos do diretório de trabalho.",
+        "es": "No interpretes index como última instantánea confirmada o como todos archivos de directorio de trabajo."
+      },
+      "expected_state": {
+        "en": "Displays entries including stage 0 for ordinary merged paths and higher stages for unresolved conflicts when present.",
+        "pt-BR": "Exibe entradas incluindo estágio 0 para caminhos comuns mesclados e estágios maiores para conflitos não resolvidos quando presentes.",
+        "es": "Muestra entradas incluyendo etapa 0 para rutas ordinarias fusionadas y etapas mayores para conflictos no resueltos cuando existen."
+      },
+      "common_errors": {
+        "en": "Assuming stage 0 means that a file has no unstaged changes or a gitlink is a normal file blob.",
+        "pt-BR": "Presumir estágio 0 significa ausência de mudanças não preparadas ou gitlink é blob de arquivo comum.",
+        "es": "Suponer etapa 0 significa ausencia de cambios no preparados o gitlink es blob de archivo ordinario."
+      },
+      "alternatives": {
+        "en": "Use git ls-tree HEAD to compare committed tree entries, or git ls-files --unmerged to isolate conflict entries.",
+        "pt-BR": "Use git ls-tree HEAD para comparar entradas registradas da tree, ou git ls-files --unmerged para isolar conflitos.",
+        "es": "Usa git ls-tree HEAD para comparar entradas confirmadas de tree, o git ls-files --unmerged para aislar conflictos."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with existing named objects and trusted local configuration. Inspect the repository before running commands.",
+        "pt-BR": "Use repositório próprio descartável com objetos indicados existentes e configuração local confiável. Confira repositório antes dos comandos.",
+        "es": "Usa repositorio propio desechable con objetos indicados existentes y configuración local confiable. Comprueba repositorio antes de los comandos."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for guide labs. Object IDs depend on repository object format.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios. IDs de objetos dependem do formato de objetos do repositório.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios. IDs de objetos dependen del formato de objetos del repositorio."
+      },
+      "examples": {
+        "basic": {
+          "command": "git ls-files --stage -- notes.txt",
+          "context": {
+            "en": "Inspect the index entry for an existing practice file.",
+            "pt-BR": "Inspecione entrada do index para arquivo de prática existente.",
+            "es": "Inspecciona entrada de index para archivo de práctica existente."
+          }
+        },
+        "professional": {
+          "command": "git ls-files --stage",
+          "context": {
+            "en": "Inspect staged modes, object IDs and conflict stages across the disposable repository.",
+            "pt-BR": "Inspecione modos preparados, IDs de objetos e estágios de conflito no repositório descartável.",
+            "es": "Inspecciona modos preparados, IDs de objetos y etapas de conflicto en repositorio desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "effect_notes": {
+        "en": "In the complete local lab, the shown inspection does not write objects, change refs, edit files or update index. Partial clones may fetch missing objects.",
+        "pt-BR": "No laboratório local completo, inspeção mostrada não grava objetos, altera referências, edita arquivos nem atualiza index. Clones parciais podem buscar objetos ausentes.",
+        "es": "En laboratorio local completo, inspección mostrada no escribe objetos, cambia referencias, edita archivos ni actualiza index. Clones parciales pueden obtener objetos ausentes."
+      },
+      "recovery": {
+        "en": "No undo is required for the shown inspection. If output is unexpected, verify the object, ref, revision range or path and inspect errors before proceeding.",
+        "pt-BR": "Não é necessário desfazer inspeção mostrada. Se saída inesperada, verifique objeto, referência, intervalo de revisões ou caminho e inspecione erros antes de prosseguir.",
+        "es": "No es necesario deshacer inspección mostrada. Si salida inesperada, verifica objeto, referencia, rango de revisiones o ruta e inspecciona errores antes de continuar."
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only for the shown forms in a complete local repository; do not disclose sensitive paths, object contents or metadata.",
+          "pt-BR": "Somente leitura nas formas mostradas em repositório local completo; não divulgue caminhos, conteúdo de objetos ou metadados sensíveis.",
+          "es": "Solo lectura en formas mostradas en repositorio local completo; no divulgues rutas, contenido de objetos o metadatos sensibles."
+        }
+      },
+      "related_chapters": [
+        "git-internals/06-index-internals"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-ls-files"
+      ]
+    }
+  ]
+}

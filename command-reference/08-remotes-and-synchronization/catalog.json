@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "category": "08-remotes-and-synchronization",
+  "entries": [
+    {
+      "id": "git-clone",
+      "command": "git clone",
+      "kind": "native-command",
+      "category": "08-remotes-and-synchronization",
+      "level": "beginner",
+      "intent_tags": [
+        "create-repository",
+        "synchronize"
+      ],
+      "syntax": "git clone origin.git learner",
+      "purpose": {
+        "en": "Create a local repository from an existing repository and normally check out its initial branch.",
+        "pt-BR": "Criar repositório local de repositório existente e normalmente selecionar sua branch inicial.",
+        "es": "Crear repositorio local desde repositorio existente y normalmente seleccionar su rama inicial."
+      },
+      "options": {
+        "en": "Supply source and optional destination; --no-checkout skips initial checkout; --branch selects an initial branch or tag.",
+        "pt-BR": "Informe origem e destino opcional; --no-checkout pula checkout inicial; --branch seleciona branch ou tag inicial.",
+        "es": "Indica origen y destino opcional; --no-checkout omite checkout inicial; --branch selecciona rama o etiqueta inicial."
+      },
+      "when_to_use": {
+        "en": "When obtaining an independent working copy of an existing project.",
+        "pt-BR": "Ao obter cópia de trabalho independente de projeto existente.",
+        "es": "Al obtener copia de trabajo independiente de proyecto existente."
+      },
+      "when_to_avoid": {
+        "en": "Avoid cloning untrusted repositories into important directories or treating a clone as a complete copy of all server data.",
+        "pt-BR": "Evite clonar repositórios não confiáveis em diretórios importantes ou tratar clone como cópia integral de todos dados do servidor.",
+        "es": "Evita clonar repositorios no confiables en directorios importantes o tratar clon como copia íntegra de todos datos del servidor."
+      },
+      "expected_state": {
+        "en": "Normally creates a destination with Git objects, origin configuration, remote-tracking refs and a checked-out branch; empty repositories and options may differ.",
+        "pt-BR": "Normalmente cria destino com objetos Git, configuração origin, referências de rastreamento remoto e branch selecionada; repositórios vazios e opções podem diferir.",
+        "es": "Normalmente crea destino con objetos Git, configuración origin, referencias de seguimiento remoto y rama seleccionada; repositorios vacíos y opciones pueden diferir."
+      },
+      "effect_notes": {
+        "en": "Creates a new repository and working files locally; does not publish changes to the source.",
+        "pt-BR": "Cria novo repositório e arquivos locais; não publica mudanças na origem.",
+        "es": "Crea nuevo repositorio y archivos locales; no publica cambios al origen."
+      },
+      "common_errors": {
+        "en": "Assuming clone copies issues, permissions, CI settings or every remote ref.",
+        "pt-BR": "Presumir que clone copia issues, permissões, configuração CI ou todas referências remotas.",
+        "es": "Suponer que clon copia issues, permisos, configuración CI o todas referencias remotas."
+      },
+      "alternatives": {
+        "en": "Use git init with an explicit remote when starting a new project instead of copying an existing one.",
+        "pt-BR": "Use git init com remoto explícito ao iniciar projeto novo em vez de copiar existente.",
+        "es": "Usa git init con remoto explícito al iniciar proyecto nuevo en vez de copiar existente."
+      },
+      "recovery": {
+        "en": "If a clone fails, inspect the error and destination; retry into a new empty directory without deleting unrelated files.",
+        "pt-BR": "Se clone falhar, inspecione erro e destino; tente em novo diretório vazio sem excluir arquivos alheios.",
+        "es": "Si clon falla, inspecciona error y destino; reintenta en nuevo directorio vacío sin eliminar archivos ajenos."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable parent directory, an existing trusted local source and an unused destination name.",
+        "pt-BR": "Use diretório pai próprio descartável, origem local confiável existente e nome de destino livre.",
+        "es": "Usa directorio padre propio desechable, origen local confiable existente y nombre de destino libre."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git clone origin.git learner",
+          "context": {
+            "en": "From a disposable parent directory, clone an existing populated local bare repository.",
+            "pt-BR": "De diretório pai descartável, clone repositório bare local existente e populado.",
+            "es": "Desde directorio padre desechable, clona repositorio bare local existente y poblado."
+          }
+        },
+        "professional": {
+          "command": "git clone --branch main origin.git reviewer",
+          "context": {
+            "en": "Create a second local clone for a review simulation; main must exist.",
+            "pt-BR": "Crie segundo clone local para simulação de revisão; main deve existir.",
+            "es": "Crea segundo clon local para simulación de revisión; main debe existir."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "changes",
+        "index": "changes",
+        "history": "changes",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Verify the source and destination; treat checked-out code and local configuration as untrusted until reviewed.",
+          "pt-BR": "Verifique origem e destino; trate código selecionado e configuração local como não confiáveis até revisão.",
+          "es": "Verifica origen y destino; trata código seleccionado y configuración local como no confiables hasta revisión."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/01-remote-concepts",
+        "remote-repositories/02-fetch-and-tracking"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-clone"
+      ]
+    },
+    {
+      "id": "git-remote-add",
+      "command": "git remote add",
+      "kind": "subcommand",
+      "category": "08-remotes-and-synchronization",
+      "level": "beginner",
+      "intent_tags": [
+        "manage-remotes",
+        "configure-git"
+      ],
+      "syntax": "git remote add origin ../origin.git",
+      "purpose": {
+        "en": "Register a named remote and its default fetch mapping in local configuration.",
+        "pt-BR": "Registrar remoto nomeado e mapeamento padrão de fetch na configuração local.",
+        "es": "Registrar remoto con nombre y mapeo predeterminado de fetch en configuración local."
+      },
+      "options": {
+        "en": "Supply an unused remote name and URL or path; git remote -v displays configured URLs; -f would also fetch.",
+        "pt-BR": "Informe nome remoto livre e URL ou caminho; git remote -v exibe URLs configuradas; -f também faria fetch.",
+        "es": "Indica nombre remoto libre y URL o ruta; git remote -v muestra URLs configuradas; -f también haría fetch."
+      },
+      "when_to_use": {
+        "en": "When connecting an existing local repository to an owned remote.",
+        "pt-BR": "Ao conectar repositório local existente a remoto próprio.",
+        "es": "Al conectar repositorio local existente a remoto propio."
+      },
+      "when_to_avoid": {
+        "en": "Avoid embedding credentials in URLs or adding an unverified destination.",
+        "pt-BR": "Evite inserir credenciais em URLs ou adicionar destino não verificado.",
+        "es": "Evita insertar credenciales en URLs o añadir destino no verificado."
+      },
+      "expected_state": {
+        "en": "Local configuration contains the remote name, URL and fetch mapping; ordinary add does not contact it.",
+        "pt-BR": "Configuração local contém nome, URL e mapeamento de fetch; add comum não o contata.",
+        "es": "Configuración local contiene nombre, URL y mapeo de fetch; add ordinario no lo contacta."
+      },
+      "effect_notes": {
+        "en": "Changes local configuration only for the shown form; no objects are transferred or remote refs changed.",
+        "pt-BR": "Altera só configuração local na forma mostrada; não transfere objetos nem altera referências remotas.",
+        "es": "Cambia solo configuración local en la forma mostrada; no transfiere objetos ni cambia referencias remotas."
+      },
+      "common_errors": {
+        "en": "Trying to add an existing origin or assuming adding automatically uploads commits.",
+        "pt-BR": "Tentar adicionar origin existente ou presumir que adicionar envia commits automaticamente.",
+        "es": "Intentar añadir origin existente o suponer que añadir sube commits automáticamente."
+      },
+      "alternatives": {
+        "en": "Use git remote set-url to correct a verified existing remote; inspect git remote get-url first.",
+        "pt-BR": "Use git remote set-url para corrigir remoto existente verificado; inspecione git remote get-url antes.",
+        "es": "Usa git remote set-url para corregir remoto existente verificado; inspecciona git remote get-url primero."
+      },
+      "recovery": {
+        "en": "If incorrectly added and unused, verify the name and remove it with git remote remove; removal can also delete associated tracking refs and configuration.",
+        "pt-BR": "Se adicionado errado e sem uso, verifique nome e remova com git remote remove; remoção também pode excluir referências de rastreamento e configuração associadas.",
+        "es": "Si se añadió mal y sin uso, verifica nombre y elimina con git remote remove; eliminación también puede borrar referencias de seguimiento y configuración asociadas."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git remote add origin ../origin.git",
+          "context": {
+            "en": "Connect the current practice repository to a sibling bare repository.",
+            "pt-BR": "Conecte repositório de prática atual a bare vizinho.",
+            "es": "Conecta repositorio de práctica actual a bare vecino."
+          }
+        },
+        "professional": {
+          "command": "git remote add review ../review.git",
+          "context": {
+            "en": "Register a second owned lab remote without fetching or publishing.",
+            "pt-BR": "Registre segundo remoto próprio de laboratório sem buscar ou publicar.",
+            "es": "Registra segundo remoto propio de laboratorio sin obtener ni publicar."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "changes"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Confirm the remote and exact destination ref. Never practice against the guide or a real shared service; do not publish secrets.",
+          "pt-BR": "Confirme remoto e referência de destino exata. Nunca pratique contra o guia ou serviço compartilhado real; não publique segredos.",
+          "es": "Confirma remoto y referencia de destino exacta. Nunca practiques contra el guía o servicio compartido real; no publiques secretos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/01-remote-concepts"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-remote"
+      ]
+    },
+    {
+      "id": "git-fetch",
+      "command": "git fetch",
+      "kind": "native-command",
+      "category": "08-remotes-and-synchronization",
+      "level": "beginner",
+      "intent_tags": [
+        "synchronize",
+        "inspect-refs"
+      ],
+      "syntax": "git fetch origin",
+      "purpose": {
+        "en": "Obtain remote objects and update local references according to the fetch mapping.",
+        "pt-BR": "Obter objetos remotos e atualizar referências locais conforme mapeamento de fetch.",
+        "es": "Obtener objetos remotos y actualizar referencias locales según mapeo de fetch."
+      },
+      "options": {
+        "en": "Specify the remote; --prune removes stale destination refs according to refspecs, normally remote-tracking branches; inspect custom mappings first.",
+        "pt-BR": "Informe remoto; --prune remove referências de destino obsoletas conforme refspecs, normalmente branches de rastreamento remoto; inspecione mapeamentos personalizados antes.",
+        "es": "Indica remoto; --prune elimina referencias de destino obsoletas según refspecs, normalmente ramas de seguimiento remoto; inspecciona mapeos personalizados primero."
+      },
+      "when_to_use": {
+        "en": "When inspecting remote progress before deciding how to integrate it.",
+        "pt-BR": "Ao inspecionar progresso remoto antes de decidir como integrá-lo.",
+        "es": "Al inspeccionar progreso remoto antes de decidir cómo integrarlo."
+      },
+      "when_to_avoid": {
+        "en": "Avoid unreviewed custom refspecs or assuming fetched code is trustworthy.",
+        "pt-BR": "Evite refspecs personalizados não revisados ou presumir que código buscado é confiável.",
+        "es": "Evita refspecs personalizados sin revisar o suponer que código obtenido es confiable."
+      },
+      "expected_state": {
+        "en": "Ordinary fetch updates configured remote-tracking refs and FETCH_HEAD as applicable; current local branch and working files normally remain unchanged.",
+        "pt-BR": "Fetch comum atualiza referências de rastreamento e FETCH_HEAD conforme aplicável; branch local atual e arquivos normalmente ficam inalterados.",
+        "es": "Fetch ordinario actualiza referencias de seguimiento y FETCH_HEAD según corresponda; rama local actual y archivos normalmente permanecen sin cambios."
+      },
+      "effect_notes": {
+        "en": "Can add objects, update refs and run maintenance; the shown ordinary fetch does not integrate into the checked-out branch or update source refs.",
+        "pt-BR": "Pode adicionar objetos, atualizar referências e executar manutenção; fetch comum mostrado não integra branch selecionada nem atualiza referências de origem.",
+        "es": "Puede añadir objetos, actualizar referencias y ejecutar mantenimiento; fetch ordinario mostrado no integra rama seleccionada ni actualiza referencias de origen."
+      },
+      "common_errors": {
+        "en": "Confusing origin/main with live remote state or assuming fetch updates main itself.",
+        "pt-BR": "Confundir origin/main com estado remoto em tempo real ou presumir que fetch atualiza main diretamente.",
+        "es": "Confundir origin/main con estado remoto en tiempo real o suponer que fetch actualiza main directamente."
+      },
+      "alternatives": {
+        "en": "Use git pull --ff-only when a verified fast-forward integration is also intended.",
+        "pt-BR": "Use git pull --ff-only quando integração fast-forward verificada também for desejada.",
+        "es": "Usa git pull --ff-only cuando también se pretenda integración fast-forward verificada."
+      },
+      "recovery": {
+        "en": "If a fetch updates an unexpected ref, inspect mapping and saved IDs; do not blindly reset. Pruned refs can be fetched again only if available at the source or recovered from retained objects.",
+        "pt-BR": "Se fetch atualizar referência inesperada, inspecione mapeamento e IDs salvos; não redefina às cegas. Referências podadas só podem ser buscadas novamente se disponíveis na origem ou recuperadas de objetos preservados.",
+        "es": "Si fetch actualiza referencia inesperada, inspecciona mapeo e IDs guardados; no restablezcas a ciegas. Referencias podadas solo pueden obtenerse de nuevo si disponibles en origen o recuperadas de objetos conservados."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git fetch origin",
+          "context": {
+            "en": "Update tracking refs from the owned local bare remote.",
+            "pt-BR": "Atualize referências de rastreamento do bare local próprio.",
+            "es": "Actualiza referencias de seguimiento desde bare local propio."
+          }
+        },
+        "professional": {
+          "command": "git fetch --prune origin",
+          "context": {
+            "en": "With standard branch mapping verified, remove stale tracking refs after approved remote cleanup.",
+            "pt-BR": "Com mapeamento padrão de branches verificado, remova referências obsoletas após limpeza remota aprovada.",
+            "es": "Con mapeo estándar de ramas verificado, elimina referencias obsoletas tras limpieza remota aprobada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Confirm the remote and exact destination ref. Never practice against the guide or a real shared service; do not publish secrets.",
+          "pt-BR": "Confirme remoto e referência de destino exata. Nunca pratique contra o guia ou serviço compartilhado real; não publique segredos.",
+          "es": "Confirma remoto y referencia de destino exacta. Nunca practiques contra el guía o servicio compartido real; no publiques secretos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/02-fetch-and-tracking"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-fetch"
+      ]
+    },
+    {
+      "id": "git-pull-ff-only",
+      "command": "git pull --ff-only",
+      "kind": "option-usage",
+      "category": "08-remotes-and-synchronization",
+      "level": "intermediate",
+      "intent_tags": [
+        "synchronize",
+        "integrate-changes",
+        "protect-history"
+      ],
+      "syntax": "git pull --ff-only origin main",
+      "purpose": {
+        "en": "Fetch remote changes and integrate only when a fast-forward or already-contained result is possible.",
+        "pt-BR": "Buscar mudanças remotas e integrar apenas quando resultado fast-forward ou já contido for possível.",
+        "es": "Obtener cambios remotos e integrar solo cuando resultado fast-forward o ya contenido sea posible."
+      },
+      "options": {
+        "en": "--ff-only rejects divergent integration; explicit remote and branch avoid relying on upstream defaults.",
+        "pt-BR": "--ff-only recusa integração divergente; remoto e branch explícitos evitam depender de padrões upstream.",
+        "es": "--ff-only rechaza integración divergente; remoto y rama explícitos evitan depender de valores upstream."
+      },
+      "when_to_use": {
+        "en": "When a clean local branch should advance linearly to its reviewed upstream.",
+        "pt-BR": "Quando branch local limpa deve avançar linearmente ao upstream revisado.",
+        "es": "Cuando rama local limpia debe avanzar linealmente a su upstream revisado."
+      },
+      "when_to_avoid": {
+        "en": "Avoid pulling into the wrong branch, with unpreserved edits or when divergence needs a separate decision.",
+        "pt-BR": "Evite pull na branch errada, com edições não preservadas ou quando divergência exige decisão separada.",
+        "es": "Evita pull en rama incorrecta, con ediciones no preservadas o cuando divergencia requiere decisión separada."
+      },
+      "expected_state": {
+        "en": "Fetch may update tracking refs even if integration refuses; current branch advances only when allowed.",
+        "pt-BR": "Fetch pode atualizar referências de rastreamento mesmo se integração recusar; branch atual só avança quando permitido.",
+        "es": "Fetch puede actualizar referencias de seguimiento aunque integración rechace; rama actual solo avanza cuando se permite."
+      },
+      "effect_notes": {
+        "en": "Can update objects, tracking refs, working tree and index; no remote branch update is inherent.",
+        "pt-BR": "Pode atualizar objetos, referências de rastreamento, working tree e index; não implica atualização de branch remota.",
+        "es": "Puede actualizar objetos, referencias de seguimiento, working tree e index; no implica actualizar rama remota."
+      },
+      "common_errors": {
+        "en": "Assuming failure means no local state changed, or treating pull as fetch only.",
+        "pt-BR": "Presumir que falha significa nenhum estado local alterado ou tratar pull como apenas fetch.",
+        "es": "Suponer que fallo significa ningún cambio local o tratar pull como solo fetch."
+      },
+      "alternatives": {
+        "en": "Separate git fetch and git merge --ff-only to inspect the incoming commits before integrating.",
+        "pt-BR": "Separe git fetch e git merge --ff-only para inspecionar commits recebidos antes de integrar.",
+        "es": "Separa git fetch y git merge --ff-only para inspeccionar commits entrantes antes de integrar."
+      },
+      "recovery": {
+        "en": "If integration refuses, inspect status, tracking refs and divergence; do not force or discard local commits. If an unwanted advance occurred, consult the saved tip and shared-history policy.",
+        "pt-BR": "Se integração recusar, inspecione status, referências de rastreamento e divergência; não force nem descarte commits locais. Se avanço indesejado ocorreu, consulte ponta salva e política de histórico compartilhado.",
+        "es": "Si integración rechaza, inspecciona estado, referencias de seguimiento y divergencia; no fuerces ni descartes commits locales. Si hubo avance no deseado, consulta punta guardada y política de historial compartido."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git pull --ff-only origin main",
+          "context": {
+            "en": "From clean local main in the lab, integrate a known linear remote update.",
+            "pt-BR": "Da main local limpa no laboratório, integre atualização remota linear conhecida.",
+            "es": "Desde main local limpia en laboratorio, integra actualización remota lineal conocida."
+          }
+        },
+        "professional": {
+          "command": "git pull --ff-only origin main",
+          "context": {
+            "en": "After inspecting remote progress, enforce linear synchronization of the local lab main.",
+            "pt-BR": "Após inspecionar progresso remoto, exija sincronização linear da main local do laboratório.",
+            "es": "Tras inspeccionar progreso remoto, exige sincronización lineal de main local del laboratorio."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Confirm the remote and exact destination ref. Never practice against the guide or a real shared service; do not publish secrets.",
+          "pt-BR": "Confirme remoto e referência de destino exata. Nunca pratique contra o guia ou serviço compartilhado real; não publique segredos.",
+          "es": "Confirma remoto y referencia de destino exacta. Nunca practiques contra el guía o servicio compartido real; no publiques secretos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/03-pull-push-and-divergence"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-pull"
+      ]
+    },
+    {
+      "id": "git-push",
+      "command": "git push",
+      "kind": "native-command",
+      "category": "08-remotes-and-synchronization",
+      "level": "intermediate",
+      "intent_tags": [
+        "synchronize",
+        "manage-remotes"
+      ],
+      "syntax": "git push origin feat/notes",
+      "purpose": {
+        "en": "Send necessary objects and request updates of specified remote refs.",
+        "pt-BR": "Enviar objetos necessários e solicitar atualização de referências remotas especificadas.",
+        "es": "Enviar objetos necesarios y solicitar actualización de referencias remotas especificadas."
+      },
+      "options": {
+        "en": "Specify remote and branch; -u sets upstream for successfully pushed or up-to-date branches; --dry-run previews without updating remote refs.",
+        "pt-BR": "Informe remoto e branch; -u define upstream para branches enviadas com sucesso ou atualizadas; --dry-run simula sem atualizar referências remotas.",
+        "es": "Indica remoto y rama; -u configura upstream para ramas enviadas con éxito o actualizadas; --dry-run simula sin actualizar referencias remotas."
+      },
+      "when_to_use": {
+        "en": "When publishing reviewed commits to an authorized target branch.",
+        "pt-BR": "Ao publicar commits revisados em branch de destino autorizada.",
+        "es": "Al publicar commits revisados en rama destino autorizada."
+      },
+      "when_to_avoid": {
+        "en": "Avoid publishing unreviewed commits, secrets or direct changes to protected branches.",
+        "pt-BR": "Evite publicar commits não revisados, segredos ou mudanças diretas em branches protegidas.",
+        "es": "Evita publicar commits sin revisar, secretos o cambios directos en ramas protegidas."
+      },
+      "expected_state": {
+        "en": "On acceptance, remote refs reflect the requested updates; ordinary pushes of branches reject non-fast-forward updates unless configured or explicitly overridden.",
+        "pt-BR": "Em aceitação, referências remotas refletem atualizações solicitadas; pushes comuns de branches recusam atualizações não fast-forward salvo configuração ou substituição explícita.",
+        "es": "Si se acepta, referencias remotas reflejan actualizaciones solicitadas; pushes ordinarios de ramas rechazan actualizaciones no fast-forward salvo configuración o sustitución explícita."
+      },
+      "effect_notes": {
+        "en": "May update remote objects and refs, local tracking refs and upstream configuration with -u; trusted hooks may run.",
+        "pt-BR": "Pode atualizar objetos e referências remotas, referências de rastreamento locais e configuração upstream com -u; hooks confiáveis podem executar.",
+        "es": "Puede actualizar objetos y referencias remotas, referencias de seguimiento locales y configuración upstream con -u; hooks confiables pueden ejecutarse."
+      },
+      "common_errors": {
+        "en": "Expecting push to upload unstaged files, or assuming success proves code quality or grants review approval.",
+        "pt-BR": "Esperar que push envie arquivos não preparados ou presumir sucesso como prova de qualidade ou aprovação de revisão.",
+        "es": "Esperar que push suba archivos no preparados o suponer éxito como prueba de calidad o aprobación de revisión."
+      },
+      "alternatives": {
+        "en": "Use git push --dry-run with explicit destination for a preview; use a pull request for protected integration.",
+        "pt-BR": "Use git push --dry-run com destino explícito para simulação; use pull request para integração protegida.",
+        "es": "Usa git push --dry-run con destino explícito para simulación; usa pull request para integración protegida."
+      },
+      "recovery": {
+        "en": "If rejected, inspect remote changes and policy. For a mistaken accepted push, coordinate correction; deleting a ref does not guarantee removal of exposed data.",
+        "pt-BR": "Se recusado, inspecione mudanças remotas e política. Para push errado aceito, coordene correção; excluir referência não garante remoção de dados expostos.",
+        "es": "Si se rechaza, inspecciona cambios remotos y política. Para push erróneo aceptado, coordina corrección; borrar referencia no garantiza retirar datos expuestos."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git push -u origin feat/notes",
+          "context": {
+            "en": "Publish an existing private feature branch to the disposable local remote and configure tracking.",
+            "pt-BR": "Publique branch privada existente de feature no remoto local descartável e configure rastreamento.",
+            "es": "Publica rama privada existente de feature en remoto local desechable y configura seguimiento."
+          }
+        },
+        "professional": {
+          "command": "git push origin feat/review",
+          "context": {
+            "en": "After reviewing committed content, publish only the named feature branch in the lab.",
+            "pt-BR": "Após revisar conteúdo registrado, publique apenas branch de feature nomeada no laboratório.",
+            "es": "Tras revisar contenido confirmado, publica solo rama de feature nombrada en laboratorio."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "conditional",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "Confirm the remote and exact destination ref. Never practice against the guide or a real shared service; do not publish secrets.",
+          "pt-BR": "Confirme remoto e referência de destino exata. Nunca pratique contra o guia ou serviço compartilhado real; não publique segredos.",
+          "es": "Confirma remoto y referencia de destino exacta. Nunca practiques contra el guía o servicio compartido real; no publiques secretos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/03-pull-push-and-divergence",
+        "remote-repositories/04-remote-branch-lifecycle"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-push"
+      ]
+    },
+    {
+      "id": "git-push-delete",
+      "command": "git push --delete",
+      "kind": "option-usage",
+      "category": "08-remotes-and-synchronization",
+      "level": "intermediate",
+      "intent_tags": [
+        "manage-remotes",
+        "manage-branches",
+        "protect-history"
+      ],
+      "syntax": "git push origin --delete feat/notes",
+      "purpose": {
+        "en": "Request deletion of a named remote ref, here a remote branch.",
+        "pt-BR": "Solicitar exclusão de referência remota nomeada, aqui uma branch remota.",
+        "es": "Solicitar eliminación de referencia remota nombrada, aquí una rama remota."
+      },
+      "options": {
+        "en": "--delete marks the named destination ref for deletion; local branch deletion is a separate operation.",
+        "pt-BR": "--delete marca referência de destino nomeada para exclusão; exclusão de branch local é separada.",
+        "es": "--delete marca referencia destino nombrada para eliminación; eliminar rama local es operación separada."
+      },
+      "when_to_use": {
+        "en": "When an authorized obsolete remote feature branch has verified retained work and no remaining dependents.",
+        "pt-BR": "Quando branch remota de feature obsoleta autorizada tem trabalho preservado verificado e sem dependentes restantes.",
+        "es": "Cuando rama remota de feature obsoleta autorizada tiene trabajo conservado verificado y sin dependientes restantes."
+      },
+      "when_to_avoid": {
+        "en": "Avoid deleting protected, active or unverified refs, or branches with open reviews that still need them.",
+        "pt-BR": "Evite excluir referências protegidas, ativas ou não verificadas, ou branches com revisões abertas que ainda dependem delas.",
+        "es": "Evita eliminar referencias protegidas, activas o no verificadas, o ramas con revisiones abiertas que aún dependen de ellas."
+      },
+      "expected_state": {
+        "en": "If accepted, named remote ref disappears; local branch remains and tracking refs may need pruning in other clones.",
+        "pt-BR": "Se aceito, referência remota nomeada desaparece; branch local permanece e referências de rastreamento podem exigir poda em outros clones.",
+        "es": "Si se acepta, referencia remota nombrada desaparece; rama local permanece y referencias de seguimiento pueden requerir poda en otros clones."
+      },
+      "effect_notes": {
+        "en": "Changes remote refs and possibly local tracking metadata; objects are not immediately guaranteed to be erased.",
+        "pt-BR": "Altera referências remotas e possivelmente metadados locais de rastreamento; objetos não têm apagamento imediato garantido.",
+        "es": "Cambia referencias remotas y posiblemente metadatos locales de seguimiento; no se garantiza borrado inmediato de objetos."
+      },
+      "common_errors": {
+        "en": "Assuming local branch deletion and remote branch deletion are interchangeable, or deleting before reviewing ancestry and dependencies.",
+        "pt-BR": "Presumir que excluir branch local e remota são equivalentes ou excluir antes de revisar ancestralidade e dependências.",
+        "es": "Suponer que eliminar rama local y remota son equivalentes o eliminar antes de revisar ascendencia y dependencias."
+      },
+      "alternatives": {
+        "en": "Keep the remote branch when unsure; prune stale local tracking refs after authorized server cleanup.",
+        "pt-BR": "Mantenha a branch remota se houver dúvida; remova referências locais de rastreamento obsoletas após limpeza autorizada do servidor.",
+        "es": "Conserva rama remota ante duda; poda referencias locales obsoletas tras limpieza autorizada del servidor."
+      },
+      "recovery": {
+        "en": "Record the exact remote tip beforehand. If the object is retained and policy permits, coordinate recreation at the verified ID; recovery is not guaranteed.",
+        "pt-BR": "Registre ponta remota exata antes. Se objeto estiver preservado e política permitir, coordene recriação no ID verificado; recuperação não é garantida.",
+        "es": "Registra punta remota exacta antes. Si objeto se conserva y política permite, coordina recreación en ID verificado; recuperación no garantizada."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git push origin --delete feat/notes",
+          "context": {
+            "en": "Remove only an obsolete verified feature ref from the local bare lab remote.",
+            "pt-BR": "Remova apenas referência de feature obsoleta verificada do bare local de laboratório.",
+            "es": "Elimina solo referencia de feature obsoleta verificada del bare local de laboratorio."
+          }
+        },
+        "professional": {
+          "command": "git push origin --delete feat/review",
+          "context": {
+            "en": "After confirming integration, saved tip and no consumers, clean up the disposable remote branch.",
+            "pt-BR": "Após confirmar integração, ponta salva e ausência de consumidores, limpe branch remota descartável.",
+            "es": "Tras confirmar integración, punta guardada y ausencia de consumidores, limpia rama remota desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "conditional",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "Confirm the remote and exact destination ref. Never practice against the guide or a real shared service; do not publish secrets.",
+          "pt-BR": "Confirme remoto e referência de destino exata. Nunca pratique contra o guia ou serviço compartilhado real; não publique segredos.",
+          "es": "Confirma remoto y referencia de destino exacta. Nunca practiques contra el guía o servicio compartido real; no publiques secretos."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/04-remote-branch-lifecycle"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-push"
+      ]
+    },
+    {
+      "id": "git-push-force-with-lease",
+      "command": "git push --force-with-lease",
+      "kind": "option-usage",
+      "category": "08-remotes-and-synchronization",
+      "level": "advanced",
+      "intent_tags": [
+        "rewrite-local-history",
+        "protect-history",
+        "synchronize"
+      ],
+      "syntax": "git push --force-with-lease=refs/heads/feat/notes:EXPECTED origin feat/notes",
+      "purpose": {
+        "en": "Request a non-fast-forward remote update only if the remote ref still matches an explicitly expected value.",
+        "pt-BR": "Solicitar atualização remota não fast-forward apenas se referência remota ainda corresponder a valor explicitamente esperado.",
+        "es": "Solicitar actualización remota no fast-forward solo si referencia remota todavía coincide con valor explícitamente esperado."
+      },
+      "options": {
+        "en": "Use --force-with-lease=ref:expected with an exact reviewed object ID; the shorthand without an explicit expectation may be affected by background fetches.",
+        "pt-BR": "Use --force-with-lease=ref:expected com ID de objeto exato revisado; forma abreviada sem expectativa explícita pode ser afetada por fetch em segundo plano.",
+        "es": "Usa --force-with-lease=ref:expected con ID de objeto exacto revisado; forma abreviada sin expectativa explícita puede verse afectada por fetch en segundo plano."
+      },
+      "when_to_use": {
+        "en": "Only in an authorized disposable simulation of replacing a private branch after rewriting and reviewing its history.",
+        "pt-BR": "Apenas em simulação descartável autorizada de substituição de branch privada após reescrever e revisar seu histórico.",
+        "es": "Solo en simulación desechable autorizada de reemplazo de rama privada tras reescribir y revisar historial."
+      },
+      "when_to_avoid": {
+        "en": "Never use on the guide, protected branches or shared work without explicit agreement; do not retry with a new lease just to defeat a refusal.",
+        "pt-BR": "Nunca use no guia, branches protegidas ou trabalho compartilhado sem acordo explícito; não tente novamente com nova lease só para vencer recusa.",
+        "es": "Nunca uses en el guía, ramas protegidas o trabajo compartido sin acuerdo explícito; no reintentes con nueva lease solo para vencer rechazo."
+      },
+      "expected_state": {
+        "en": "Accepts the requested ref update only if expected old value matches and server policy permits; stale expectation causes refusal.",
+        "pt-BR": "Aceita atualização solicitada apenas se valor antigo esperado corresponder e política do servidor permitir; expectativa obsoleta causa recusa.",
+        "es": "Acepta actualización solicitada solo si valor anterior esperado coincide y política del servidor permite; expectativa obsoleta causa rechazo."
+      },
+      "effect_notes": {
+        "en": "Can replace a remote branch tip, transfer objects and update local tracking refs; remote-only commits may become unreachable.",
+        "pt-BR": "Pode substituir ponta de branch remota, transferir objetos e atualizar referências de rastreamento locais; commits só remotos podem ficar inalcançáveis.",
+        "es": "Puede reemplazar punta de rama remota, transferir objetos y actualizar referencias de seguimiento locales; commits solo remotos pueden quedar inalcanzables."
+      },
+      "common_errors": {
+        "en": "Treating a matching lease as proof of content safety or assuming it protects every other ref and collaborator.",
+        "pt-BR": "Tratar lease correspondente como prova de segurança de conteúdo ou presumir proteção de todas outras referências e colaboradores.",
+        "es": "Tratar lease coincidente como prueba de seguridad de contenido o suponer protección de todas otras referencias y colaboradores."
+      },
+      "alternatives": {
+        "en": "Prefer an ordinary push or follow-up commit preserving history; if a lease fails, fetch and review the remote-only work before any decision.",
+        "pt-BR": "Prefira push comum ou commit complementar preservando histórico; se lease falhar, busque e revise trabalho só remoto antes de decidir.",
+        "es": "Prefiere push ordinario o commit adicional preservando historial; si lease falla, obtén y revisa trabajo solo remoto antes de decidir."
+      },
+      "recovery": {
+        "en": "Keep a durable ref to the previous remote tip before the simulation. If an incorrect replacement is accepted, coordinate recovery from retained objects and protect new work; restoration is not guaranteed.",
+        "pt-BR": "Mantenha referência durável à ponta remota anterior antes da simulação. Se substituição errada for aceita, coordene recuperação de objetos preservados e proteja trabalho novo; restauração não é garantida.",
+        "es": "Mantén referencia duradera a punta remota anterior antes de simular. Si reemplazo incorrecto se acepta, coordina recuperación de objetos conservados y protege trabajo nuevo; restauración no garantizada."
+      },
+      "prerequisites": {
+        "en": "Use only an owned disposable local remote lab. Verify repository, remote path, refs, status and fictional identity before operating.",
+        "pt-BR": "Use apenas laboratório próprio descartável com remoto local. Verifique repositório, caminho remoto, referências, status e identidade fictícia antes de operar.",
+        "es": "Usa solo laboratorio propio desechable con remoto local. Verifica repositorio, ruta remota, referencias, estado e identidad ficticia antes de operar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use Git 2.40 or newer for this guide's labs. Hosted services may require authentication and permissions; these examples use only local paths.",
+        "pt-BR": "Sintaxe padrão Git; use Git 2.40 ou superior nos laboratórios do guia. Serviços hospedados podem exigir autenticação e permissões; exemplos usam apenas caminhos locais.",
+        "es": "Sintaxis estándar Git; usa Git 2.40 o superior en laboratorios del guía. Servicios alojados pueden requerir autenticación y permisos; ejemplos usan solo rutas locales."
+      },
+      "examples": {
+        "basic": {
+          "command": "git push --force-with-lease=refs/heads/feat/notes:EXPECTED origin feat/notes",
+          "context": {
+            "en": "In the disposable local lab only, replace EXPECTED with the full previously reviewed remote tip ID after saving it and checking all remote-only commits.",
+            "pt-BR": "Somente no laboratório local descartável, substitua EXPECTED pelo ID completo da ponta remota previamente revisada após salvá-la e conferir todos commits só remotos.",
+            "es": "Solo en laboratorio local desechable, sustituye EXPECTED por ID completo de punta remota previamente revisada tras guardarla y comprobar todos commits solo remotos."
+          }
+        },
+        "professional": {
+          "command": "git push --force-with-lease=refs/heads/feat/review:EXPECTED origin feat/review",
+          "context": {
+            "en": "Simulate a coordinated private rewrite; substitute the saved verified ID, and stop if the lease rejects the update.",
+            "pt-BR": "Simule reescrita privada coordenada; substitua pelo ID verificado salvo e pare se lease recusar atualização.",
+            "es": "Simula reescritura privada coordinada; sustituye por ID verificado guardado y detente si lease rechaza actualización."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "conditional",
+        "remote": "conditional",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "remote-change",
+        "notes": {
+          "en": "This is a remote history replacement, not a safe default. A matching lease does not prevent losing changes already present at the expected tip; never bypass project protections.",
+          "pt-BR": "Isto é substituição de histórico remoto, não padrão seguro. Lease correspondente não impede perder mudanças já presentes na ponta esperada; nunca contorne proteções do projeto.",
+          "es": "Esto es reemplazo de historial remoto, no valor seguro por defecto. Lease coincidente no impide perder cambios ya presentes en punta esperada; nunca eludas protecciones del proyecto."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/03-pull-push-and-divergence",
+        "remote-repositories/04-remote-branch-lifecycle"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-push"
+      ]
+    }
+  ]
+}

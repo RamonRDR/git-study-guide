@@ -23,11 +23,11 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | 12 | `security/` | Security & Governance | SSH, HTTPS, tokens, credential managers, secrets, permissions, branch protection, rulesets, CODEOWNERS, signing, supply chain, accidental disclosure, least privilege. |
 | 13 | `advanced-git/` | Advanced Git | bisect, worktree, submodules, subtree, hooks, rerere, sparse-checkout, partial/shallow clone, blame, grep, archive, bundle and trade-offs. |
 | 14 | `git-internals/` | Git Internals | Blobs, trees, commits, tags, hashes, refs, object database, packfiles, garbage collection, reflogs, porcelain/plumbing. |
-| 15 | `command-reference/` | Command Reference | Searchable catalog by operation and intent, 100+ meaningful entries; distinguish subcommands, flags, usages, combinations and hosting operations. |
+| 15 | `command-reference/` | Command Reference | Searchable catalog by category and intent: 120 distinct operations across 14 categories, generated from canonical trilingual JSON; distinguishes native commands, subcommands, option usages, workflows and external tools. |
 | 16 | `practical-projects/` | Practical Projects | Eight integrated projects: My First Repository; Two Developers, One Project; Merge Conflict Laboratory; The Lost Commit; Open Source Contribution; Automated Quality Pipeline; Release Management; Professional Engineering Workflow. |
 | 17 | `exercises/` | Challenges & Interviews | Exercises, quizzes, troubleshooting, challenges, interview questions, professional simulations and self-assessment rubrics; map prerequisites first. |
 
-Prerequisite policy: module 00 introduces only the minimum vocabulary needed for a first commit; modules 01–03 deepen it. Module 04 teaches local branches; remote tracking/deletion practice waits for 06. Explain safe recovery/abort before any risky merge or rebase in 05, then deepen in 07. Teach safe credential handling before 06 and least privilege before 10; module 12 consolidates security. Introduce relevant object/ref concepts before advanced tasks. Link earlier instruction before assessment; modules 00–14 have lessons; later module indexes are planned.
+Prerequisite policy: module 00 introduces only the minimum vocabulary needed for a first commit; modules 01–03 deepen it. Module 04 teaches local branches; remote tracking/deletion practice waits for 06. Explain safe recovery/abort before any risky merge or rebase in 05, then deepen in 07. Teach safe credential handling before 06 and least privilege before 10; module 12 consolidates security. Introduce relevant object/ref concepts before advanced tasks. Link earlier instruction before assessment; modules 00–14 have lessons; module 15 has the command reference; modules 16–17 are planned.
 
 ## Engineering (20 sprints)
 
@@ -55,7 +55,7 @@ Prerequisite policy: module 00 introduces only the minimum vocabulary needed for
 | 18 | VI | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately |
 | 19 | VI | Maintainer-supplied identity, final README, QA, release handoff |
 
-Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–13 and complementary Sprint 13.1 integrated via PRs #1–15; Sprint 14 submitted for review; Sprints 15–19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
+Phases: I Foundation; II Essentials; III Collaboration and recovery; IV Platforms and engineering; V Advanced and practice; VI Learning Hub and release. Sprints 00–14 and complementary Sprint 13.1 integrated via PRs #1–16; Sprint 15 implementation prepared for validation and review; Sprints 16–19 planned. The 20 main sprints remain unchanged. Split large sprints into focused PRs without changing scope. Do not confuse engineering sprint numbers with educational modules.
 
 ## Related documents
 

@@ -1,0 +1,1087 @@
+{
+  "schema_version": 1,
+  "category": "05-history-and-comparison",
+  "entries": [
+    {
+      "id": "git-log",
+      "command": "git log",
+      "kind": "native-command",
+      "category": "05-history-and-comparison",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-history"
+      ],
+      "syntax": "git log -5",
+      "purpose": {
+        "en": "Inspect commits reachable from a starting revision, normally HEAD.",
+        "pt-BR": "Inspecionar commits alcançáveis a partir de uma revisão inicial, normalmente HEAD.",
+        "es": "Inspeccionar commits alcanzables desde una revisión inicial, normalmente HEAD."
+      },
+      "options": {
+        "en": "-5 limits the number of displayed commits; --oneline gives abbreviated IDs and subjects.",
+        "pt-BR": "-5 limita a quantidade de commits exibidos; --oneline mostra IDs abreviados e assuntos.",
+        "es": "-5 limita la cantidad de commits mostrados; --oneline muestra IDs abreviados y asuntos."
+      },
+      "when_to_use": {
+        "en": "When investigating what has been recorded and by whom.",
+        "pt-BR": "Ao investigar o que foi registrado e por quem.",
+        "es": "Al investigar qué se registró y por quién."
+      },
+      "when_to_avoid": {
+        "en": "Do not use the default log to infer every branch or uncommitted edit.",
+        "pt-BR": "Não use o log padrão para inferir todas as branches ou edições não registradas.",
+        "es": "No uses el log predeterminado para inferir todas las ramas o ediciones sin confirmar."
+      },
+      "expected_state": {
+        "en": "Commit metadata is displayed for the selected reachable history; a pager may open.",
+        "pt-BR": "Metadados dos commits são exibidos para o histórico alcançável selecionado; um paginador pode abrir.",
+        "es": "Se muestran metadatos de commits del historial alcanzable seleccionado; puede abrirse un paginador."
+      },
+      "common_errors": {
+        "en": "Assuming default log includes unreachable commits or every remote branch.",
+        "pt-BR": "Presumir que log padrão inclui commits inalcançáveis ou todas as branches remotas.",
+        "es": "Suponer que el log predeterminado incluye commits inalcanzables o todas las ramas remotas."
+      },
+      "alternatives": {
+        "en": "Use git show for one commit or git reflog to investigate local ref movements.",
+        "pt-BR": "Use git show para um commit ou git reflog para investigar movimentos de referências locais.",
+        "es": "Usa git show para un commit o git reflog para investigar movimientos de referencias locales."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with the referenced commits available locally.",
+        "pt-BR": "Use repositório de prática confiável com os commits referenciados disponíveis localmente.",
+        "es": "Usa un repositorio de práctica confiable con los commits referenciados disponibles localmente."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log -3",
+          "context": {
+            "en": "Inspect three recent commits in a practice history.",
+            "pt-BR": "Inspecione três commits recentes em histórico de prática.",
+            "es": "Inspecciona tres commits recientes en un historial de práctica."
+          }
+        },
+        "professional": {
+          "command": "git log --oneline main..feature",
+          "context": {
+            "en": "Inspect commits reachable from a local feature branch but not main; both refs must exist.",
+            "pt-BR": "Inspecione commits alcançáveis pela branch local feature mas não pela main; ambas devem existir.",
+            "es": "Inspecciona commits alcanzables desde la rama local feature pero no desde main; ambas deben existir."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown configuration; output may contain private paths, messages or file contents. Use a trusted local repository and review before sharing.",
+          "pt-BR": "Somente leitura na configuração mostrada; a saída pode conter caminhos, mensagens ou conteúdo privados. Use repositório local confiável e revise antes de compartilhar.",
+          "es": "Solo lectura con la configuración mostrada; la salida puede contener rutas, mensajes o contenido privados. Usa un repositorio local confiable y revisa antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-log-graph",
+      "command": "git log --graph",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-history",
+        "manage-branches"
+      ],
+      "syntax": "git log --oneline --graph --all",
+      "purpose": {
+        "en": "Visualize parent relationships and divergence in commit history.",
+        "pt-BR": "Visualizar relações de pais e divergências no histórico de commits.",
+        "es": "Visualizar relaciones de padres y divergencias en el historial de commits."
+      },
+      "options": {
+        "en": "--graph draws ancestry lines; --oneline condenses each commit; --all starts from local refs and HEAD.",
+        "pt-BR": "--graph desenha linhas de ancestralidade; --oneline resume cada commit; --all parte de referências locais e HEAD.",
+        "es": "--graph dibuja líneas de ascendencia; --oneline condensa cada commit; --all parte de referencias locales y HEAD."
+      },
+      "when_to_use": {
+        "en": "When reviewing branch topology and merge history.",
+        "pt-BR": "Ao revisar topologia de branches e histórico de merges.",
+        "es": "Al revisar topología de ramas e historial de merges."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat graph column position or vertical spacing as an exact timeline.",
+        "pt-BR": "Não trate posição das colunas ou espaçamento vertical como cronologia exata.",
+        "es": "No trates la posición de columnas o separación vertical como cronología exacta."
+      },
+      "expected_state": {
+        "en": "A textual graph displays selected commits and parent connections.",
+        "pt-BR": "Um grafo textual exibe commits selecionados e conexões de pais.",
+        "es": "Un grafo textual muestra commits seleccionados y conexiones de padres."
+      },
+      "common_errors": {
+        "en": "Assuming --all fetches remote state or includes unreachable objects.",
+        "pt-BR": "Presumir que --all busca estado remoto ou inclui objetos inalcançáveis.",
+        "es": "Suponer que --all obtiene estado remoto o incluye objetos inalcanzables."
+      },
+      "alternatives": {
+        "en": "Use git merge-base for a shared ancestor or git log without graph for detailed messages.",
+        "pt-BR": "Use git merge-base para ancestral comum ou git log sem grafo para mensagens detalhadas.",
+        "es": "Usa git merge-base para un ancestro común o git log sin grafo para mensajes detallados."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with the referenced commits available locally.",
+        "pt-BR": "Use repositório de prática confiável com os commits referenciados disponíveis localmente.",
+        "es": "Usa un repositorio de práctica confiable con los commits referenciados disponibles localmente."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log --oneline --graph",
+          "context": {
+            "en": "View the current branch ancestry.",
+            "pt-BR": "Veja a ancestralidade da branch atual.",
+            "es": "Visualiza la ascendencia de la rama actual."
+          }
+        },
+        "professional": {
+          "command": "git log --oneline --graph --all --decorate",
+          "context": {
+            "en": "Review local branch and tag topology before integrating work.",
+            "pt-BR": "Revise topologia local de branches e tags antes de integrar trabalho.",
+            "es": "Revisa la topología local de ramas y etiquetas antes de integrar trabajo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown configuration; output may contain private paths, messages or file contents. Use a trusted local repository and review before sharing.",
+          "pt-BR": "Somente leitura na configuração mostrada; a saída pode conter caminhos, mensagens ou conteúdo privados. Use repositório local confiável e revise antes de compartilhar.",
+          "es": "Solo lectura con la configuración mostrada; la salida puede contener rutas, mensajes o contenido privados. Usa un repositorio local confiable y revisa antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations",
+        "branches/02-start-points-and-comparison"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-log-path",
+      "command": "git log -- path",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-history",
+        "inspect-files"
+      ],
+      "syntax": "git log -- notes.txt",
+      "purpose": {
+        "en": "Inspect history selected by changes to a given path.",
+        "pt-BR": "Inspecionar histórico selecionado por mudanças em determinado caminho.",
+        "es": "Inspeccionar historial seleccionado por cambios en una ruta concreta."
+      },
+      "options": {
+        "en": "-- separates revisions from paths; --follow tracks history beyond renames for a single file with limitations.",
+        "pt-BR": "-- separa revisões de caminhos; --follow acompanha histórico além de renomeações para um único arquivo com limitações.",
+        "es": "-- separa revisiones de rutas; --follow sigue el historial más allá de renombrados para un solo archivo con limitaciones."
+      },
+      "when_to_use": {
+        "en": "When investigating the evolution of a particular file or directory.",
+        "pt-BR": "Ao investigar a evolução de arquivo ou diretório específico.",
+        "es": "Al investigar la evolución de un archivo o directorio concreto."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume default history simplification lists every relevant merge or follows every rename.",
+        "pt-BR": "Não suponha que simplificação padrão lista todo merge relevante ou acompanha toda renomeação.",
+        "es": "No supongas que la simplificación predeterminada lista cada merge relevante o sigue cada renombrado."
+      },
+      "expected_state": {
+        "en": "Shows commits selected by path history and simplification rules, not current uncommitted edits.",
+        "pt-BR": "Exibe commits selecionados por regras de histórico de caminho e simplificação, não edições atuais não registradas.",
+        "es": "Muestra commits seleccionados por reglas de historial de ruta y simplificación, no ediciones actuales sin confirmar."
+      },
+      "common_errors": {
+        "en": "Omitting -- when a path name can also name a revision.",
+        "pt-BR": "Omitir -- quando nome de caminho também pode nomear revisão.",
+        "es": "Omitir -- cuando un nombre de ruta también puede nombrar una revisión."
+      },
+      "alternatives": {
+        "en": "Use git blame for line attribution or git log --full-history with a path when investigating merges.",
+        "pt-BR": "Use git blame para atribuição por linha ou git log --full-history com caminho ao investigar merges.",
+        "es": "Usa git blame para atribución por línea o git log --full-history con una ruta al investigar merges."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with the referenced commits available locally.",
+        "pt-BR": "Use repositório de prática confiável com os commits referenciados disponíveis localmente.",
+        "es": "Usa un repositorio de práctica confiable con los commits referenciados disponibles localmente."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git log -- notes.txt",
+          "context": {
+            "en": "Inspect changes in a fictional tracked notes file.",
+            "pt-BR": "Inspecione mudanças em arquivo fictício de notas rastreado.",
+            "es": "Inspecciona cambios en un archivo ficticio de notas rastreado."
+          }
+        },
+        "professional": {
+          "command": "git log --follow -- docs/setup.md",
+          "context": {
+            "en": "Investigate a single documentation file across detected renames.",
+            "pt-BR": "Investigue arquivo único de documentação através de renomeações detectadas.",
+            "es": "Investiga un solo archivo de documentación a través de renombrados detectados."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only in the shown configuration; output may contain private paths, messages or file contents. Use a trusted local repository and review before sharing.",
+          "pt-BR": "Somente leitura na configuração mostrada; a saída pode conter caminhos, mensagens ou conteúdo privados. Use repositório local confiável e revise antes de compartilhar.",
+          "es": "Solo lectura con la configuración mostrada; la salida puede contener rutas, mensajes o contenido privados. Usa un repositorio local confiable y revisa antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-log"
+      ]
+    },
+    {
+      "id": "git-show",
+      "command": "git show",
+      "kind": "native-command",
+      "category": "05-history-and-comparison",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-history",
+        "review-changes",
+        "inspect-objects"
+      ],
+      "syntax": "git show HEAD",
+      "purpose": {
+        "en": "Display a Git object; for a normal commit this includes its metadata and patch by default.",
+        "pt-BR": "Exibir objeto Git; para commit comum inclui metadados e patch por padrão.",
+        "es": "Mostrar un objeto Git; para un commit ordinario incluye metadatos y parche de forma predeterminada."
+      },
+      "options": {
+        "en": "--stat summarizes changes; revision:path selects a blob at a historical path.",
+        "pt-BR": "--stat resume mudanças; revision:path seleciona blob em caminho histórico.",
+        "es": "--stat resume cambios; revision:path selecciona un blob en una ruta histórica."
+      },
+      "when_to_use": {
+        "en": "When reviewing a specific commit, tag or historical file snapshot.",
+        "pt-BR": "Ao revisar commit, tag ou snapshot histórico de arquivo específico.",
+        "es": "Al revisar un commit, etiqueta o instantánea histórica de archivo concreto."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume a merge commit display shows every parent difference by default.",
+        "pt-BR": "Não presuma que exibição de merge mostra diferenças de todos os pais por padrão.",
+        "es": "No supongas que mostrar un merge presenta diferencias de todos los padres por defecto."
+      },
+      "expected_state": {
+        "en": "Displays the requested object in a representation appropriate to its type; HEAD is the default.",
+        "pt-BR": "Exibe objeto solicitado em representação adequada ao tipo; HEAD é o padrão.",
+        "es": "Muestra el objeto solicitado en una representación adecuada a su tipo; HEAD es el valor predeterminado."
+      },
+      "common_errors": {
+        "en": "Confusing git show HEAD:path with the current working file.",
+        "pt-BR": "Confundir git show HEAD:path com arquivo de trabalho atual.",
+        "es": "Confundir git show HEAD:path con el archivo de trabajo actual."
+      },
+      "alternatives": {
+        "en": "Use git diff for two snapshots or git cat-file for lower-level object inspection.",
+        "pt-BR": "Use git diff para dois snapshots ou git cat-file para inspeção de objetos de baixo nível.",
+        "es": "Usa git diff para dos instantáneas o git cat-file para inspección de objetos de bajo nivel."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with the referenced commits available locally.",
+        "pt-BR": "Use repositório de prática confiável com os commits referenciados disponíveis localmente.",
+        "es": "Usa un repositorio de práctica confiable con los commits referenciados disponibles localmente."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git show HEAD",
+          "context": {
+            "en": "Review the latest committed change.",
+            "pt-BR": "Revise a última mudança registrada.",
+            "es": "Revisa el último cambio confirmado."
+          }
+        },
+        "professional": {
+          "command": "git show HEAD:notes.txt",
+          "context": {
+            "en": "Inspect the committed content of a fictional file without checking it out.",
+            "pt-BR": "Inspecione conteúdo registrado de arquivo fictício sem checkout.",
+            "es": "Inspecciona el contenido confirmado de un archivo ficticio sin hacer checkout."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
+          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
+          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations",
+        "git-internals/02-blobs-and-trees"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-show"
+      ]
+    },
+    {
+      "id": "git-diff",
+      "command": "git diff",
+      "kind": "native-command",
+      "category": "05-history-and-comparison",
+      "level": "beginner",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes"
+      ],
+      "syntax": "git diff -- notes.txt",
+      "purpose": {
+        "en": "Compare tracked working-tree content with the index.",
+        "pt-BR": "Comparar conteúdo rastreado da working tree com o index.",
+        "es": "Comparar contenido rastreado del working tree con el index."
+      },
+      "options": {
+        "en": "-- separates options and revisions from paths; --stat summarizes changes.",
+        "pt-BR": "-- separa opções e revisões de caminhos; --stat resume mudanças.",
+        "es": "-- separa opciones y revisiones de rutas; --stat resume cambios."
+      },
+      "when_to_use": {
+        "en": "Before staging changes, to review unstaged differences.",
+        "pt-BR": "Antes de preparar alterações, para revisar diferenças não preparadas.",
+        "es": "Antes de preparar cambios, para revisar diferencias no preparadas."
+      },
+      "when_to_avoid": {
+        "en": "Do not rely on this form alone to review staged changes or untracked files.",
+        "pt-BR": "Não dependa apenas desta forma para revisar mudanças preparadas ou arquivos não rastreados.",
+        "es": "No dependas solo de esta forma para revisar cambios preparados o archivos no rastreados."
+      },
+      "expected_state": {
+        "en": "Displays unstaged differences for tracked paths; empty output may mean no such differences.",
+        "pt-BR": "Exibe diferenças não preparadas de caminhos rastreados; saída vazia pode indicar ausência dessas diferenças.",
+        "es": "Muestra diferencias no preparadas de rutas rastreadas; una salida vacía puede indicar ausencia de esas diferencias."
+      },
+      "common_errors": {
+        "en": "Assuming an empty diff means the entire repository is clean.",
+        "pt-BR": "Presumir que diff vazio significa repositório inteiramente limpo.",
+        "es": "Suponer que un diff vacío significa que todo el repositorio está limpio."
+      },
+      "alternatives": {
+        "en": "Use git diff --cached for staged changes and git status for untracked files.",
+        "pt-BR": "Use git diff --cached para mudanças preparadas e git status para arquivos não rastreados.",
+        "es": "Usa git diff --cached para cambios preparados y git status para archivos no rastreados."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with a working tree and index; review git status first.",
+        "pt-BR": "Use repositório de prática confiável com working tree e index; revise git status antes.",
+        "es": "Usa un repositorio de práctica confiable con working tree e index; revisa git status primero."
+      },
+      "effect_notes": {
+        "en": "Working files, staged blob IDs, commit refs and remote stay unchanged under built-in behavior; diff.autoRefreshIndex can refresh cached file stat metadata in the index.",
+        "pt-BR": "Arquivos de trabalho, IDs dos blobs preparados, referências de commits e remoto permanecem inalterados no comportamento interno; diff.autoRefreshIndex pode atualizar metadados stat de arquivos no index.",
+        "es": "Archivos de trabajo, IDs de blobs preparados, referencias de commits y remoto permanecen sin cambios con el comportamiento interno; diff.autoRefreshIndex puede actualizar metadatos stat de archivos en el index."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff",
+          "context": {
+            "en": "Review an unstaged tracked edit.",
+            "pt-BR": "Revise edição rastreada não preparada.",
+            "es": "Revisa una edición rastreada no preparada."
+          }
+        },
+        "professional": {
+          "command": "git diff -- notes.txt",
+          "context": {
+            "en": "Review a single tracked file before staging.",
+            "pt-BR": "Revise um arquivo rastreado antes do staging.",
+            "es": "Revisa un archivo rastreado antes de prepararlo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "An inspection operation with possible index metadata writes, not a staging operation; avoid untrusted external diff drivers and review sensitive output before sharing.",
+          "pt-BR": "Operação de inspeção com possíveis escritas em metadados do index, não operação de staging; evite drivers externos de diff não confiáveis e revise saída sensível antes de compartilhar.",
+          "es": "Operación de inspección con posibles escrituras en metadatos del index, no una operación de preparación; evita controladores externos de diff no confiables y revisa la salida sensible antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff",
+        "https://git-scm.com/docs/git-config/2.36.3.html"
+      ]
+    },
+    {
+      "id": "git-diff-cached",
+      "command": "git diff --cached",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "beginner",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes",
+        "stage-changes"
+      ],
+      "syntax": "git diff --cached",
+      "purpose": {
+        "en": "Compare the index with HEAD to review staged changes.",
+        "pt-BR": "Comparar index com HEAD para revisar mudanças preparadas.",
+        "es": "Comparar index con HEAD para revisar cambios preparados."
+      },
+      "options": {
+        "en": "--staged is a synonym for --cached; -- followed by a path limits output.",
+        "pt-BR": "--staged é sinônimo de --cached; -- seguido de caminho limita saída.",
+        "es": "--staged es sinónimo de --cached; -- seguido de una ruta limita la salida."
+      },
+      "when_to_use": {
+        "en": "Immediately before committing the staged snapshot.",
+        "pt-BR": "Imediatamente antes de registrar o snapshot preparado.",
+        "es": "Inmediatamente antes de confirmar la instantánea preparada."
+      },
+      "when_to_avoid": {
+        "en": "Do not use this form to inspect changes made after staging unless staged again.",
+        "pt-BR": "Não use esta forma para inspecionar mudanças posteriores ao staging sem prepará-las novamente.",
+        "es": "No uses esta forma para inspeccionar cambios posteriores a la preparación sin prepararlos de nuevo."
+      },
+      "expected_state": {
+        "en": "Shows the staged difference from HEAD; on an unborn branch it shows all staged changes when no commit is supplied.",
+        "pt-BR": "Mostra diferença preparada em relação a HEAD; em branch sem primeiro commit mostra todas as mudanças preparadas se nenhum commit for informado.",
+        "es": "Muestra la diferencia preparada respecto a HEAD; en una rama sin primer commit muestra todos los cambios preparados si no se proporciona un commit."
+      },
+      "common_errors": {
+        "en": "Confusing cached differences with working-tree differences.",
+        "pt-BR": "Confundir diferenças do cache com diferenças da working tree.",
+        "es": "Confundir diferencias del caché con diferencias del working tree."
+      },
+      "alternatives": {
+        "en": "Use git diff to see what is not yet staged or git status to inspect both states.",
+        "pt-BR": "Use git diff para ver o que ainda não está preparado ou git status para inspecionar ambos estados.",
+        "es": "Usa git diff para ver lo que aún no está preparado o git status para inspeccionar ambos estados."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with a working tree and index; review git status first.",
+        "pt-BR": "Use repositório de prática confiável com working tree e index; revise git status antes.",
+        "es": "Usa un repositorio de práctica confiable con working tree e index; revisa git status primero."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff --cached",
+          "context": {
+            "en": "Inspect changes already selected for commit.",
+            "pt-BR": "Inspecione mudanças já selecionadas para commit.",
+            "es": "Inspecciona cambios ya seleccionados para commit."
+          }
+        },
+        "professional": {
+          "command": "git diff --cached -- notes.txt",
+          "context": {
+            "en": "Confirm only the intended portion of a partially staged file is in the index.",
+            "pt-BR": "Confirme que apenas parte desejada de arquivo parcialmente preparado está no index.",
+            "es": "Confirma que solo la parte deseada de un archivo parcialmente preparado está en el index."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
+          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
+          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff"
+      ]
+    },
+    {
+      "id": "git-diff-two-revisions",
+      "command": "git diff A B",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "intermediate",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes"
+      ],
+      "syntax": "git diff main feature",
+      "purpose": {
+        "en": "Compare two committed snapshots directly, regardless of their ancestry.",
+        "pt-BR": "Comparar diretamente dois snapshots registrados, independentemente da ancestralidade.",
+        "es": "Comparar directamente dos instantáneas confirmadas, independientemente de su ascendencia."
+      },
+      "options": {
+        "en": "Supply two revisions; A..B is equivalent for git diff, unlike a git log commit range.",
+        "pt-BR": "Informe duas revisões; A..B é equivalente em git diff, diferente de intervalo de commits em git log.",
+        "es": "Proporciona dos revisiones; A..B es equivalente en git diff, a diferencia de un rango de commits en git log."
+      },
+      "when_to_use": {
+        "en": "When checking end-state differences between branches, tags or commits.",
+        "pt-BR": "Ao conferir diferenças de estado final entre branches, tags ou commits.",
+        "es": "Al comprobar diferencias de estado final entre ramas, etiquetas o commits."
+      },
+      "when_to_avoid": {
+        "en": "Avoid interpreting this as a list of individual commits or as only changes introduced by feature.",
+        "pt-BR": "Evite interpretar como lista de commits individuais ou somente mudanças introduzidas por feature.",
+        "es": "Evita interpretar esto como lista de commits individuales o solo cambios introducidos por feature."
+      },
+      "expected_state": {
+        "en": "Displays the patch from the first snapshot to the second; reversing inputs reverses the comparison.",
+        "pt-BR": "Exibe patch do primeiro snapshot ao segundo; inverter entradas inverte a comparação.",
+        "es": "Muestra el parche de la primera instantánea a la segunda; invertir entradas invierte la comparación."
+      },
+      "common_errors": {
+        "en": "Treating two-dot diff syntax as a revision set like git log A..B.",
+        "pt-BR": "Tratar sintaxe de dois pontos no diff como conjunto de revisões igual a git log A..B.",
+        "es": "Tratar la sintaxis de dos puntos en diff como conjunto de revisiones igual a git log A..B."
+      },
+      "alternatives": {
+        "en": "Use git diff A...B to compare from a merge base to B or git log A..B to list commits.",
+        "pt-BR": "Use git diff A...B para comparar desde base de merge até B ou git log A..B para listar commits.",
+        "es": "Usa git diff A...B para comparar desde una base de merge hasta B o git log A..B para listar commits."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with the referenced commits available locally.",
+        "pt-BR": "Use repositório de prática confiável com os commits referenciados disponíveis localmente.",
+        "es": "Usa un repositorio de práctica confiable con los commits referenciados disponibles localmente."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff HEAD~1 HEAD",
+          "context": {
+            "en": "Compare a non-root commit to its first parent.",
+            "pt-BR": "Compare commit não inicial ao primeiro pai.",
+            "es": "Compara un commit no inicial con su primer padre."
+          }
+        },
+        "professional": {
+          "command": "git diff main feature",
+          "context": {
+            "en": "Compare tips of existing local main and feature branches.",
+            "pt-BR": "Compare pontas das branches locais main e feature existentes.",
+            "es": "Compara las puntas de ramas locales main y feature existentes."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
+          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
+          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations",
+        "branches/02-start-points-and-comparison"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff"
+      ]
+    },
+    {
+      "id": "git-diff-stat",
+      "command": "git diff --stat",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "beginner",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes"
+      ],
+      "syntax": "git diff --stat",
+      "purpose": {
+        "en": "Summarize the scope of a diff by affected files and change counts.",
+        "pt-BR": "Resumir escopo de um diff por arquivos afetados e contagens de mudanças.",
+        "es": "Resumir el alcance de un diff por archivos afectados y cantidades de cambios."
+      },
+      "options": {
+        "en": "--stat requests a summary; combine with --cached or two revisions to choose another comparison.",
+        "pt-BR": "--stat solicita resumo; combine com --cached ou duas revisões para escolher outra comparação.",
+        "es": "--stat solicita un resumen; combina con --cached o dos revisiones para elegir otra comparación."
+      },
+      "when_to_use": {
+        "en": "When estimating the review scope before reading a full patch.",
+        "pt-BR": "Ao estimar escopo de revisão antes de ler patch completo.",
+        "es": "Al estimar el alcance de revisión antes de leer un parche completo."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat line counts as a measure of correctness, complexity or developer productivity.",
+        "pt-BR": "Não trate contagens de linhas como medida de correção, complexidade ou produtividade.",
+        "es": "No trates cantidades de líneas como medida de corrección, complejidad o productividad."
+      },
+      "expected_state": {
+        "en": "Displays per-file summaries and totals for the selected comparison; binary files have different summaries.",
+        "pt-BR": "Exibe resumos por arquivo e totais da comparação selecionada; binários têm resumos diferentes.",
+        "es": "Muestra resúmenes por archivo y totales de la comparación seleccionada; binarios tienen resúmenes diferentes."
+      },
+      "common_errors": {
+        "en": "Assuming --stat changes the comparison endpoints or replaces reading the patch.",
+        "pt-BR": "Presumir que --stat altera pontos da comparação ou substitui leitura do patch.",
+        "es": "Suponer que --stat altera los extremos de comparación o sustituye leer el parche."
+      },
+      "alternatives": {
+        "en": "Use git diff --name-status for file status codes or a full git diff for content review.",
+        "pt-BR": "Use git diff --name-status para códigos de estado ou git diff completo para revisar conteúdo.",
+        "es": "Usa git diff --name-status para códigos de estado o git diff completo para revisar contenido."
+      },
+      "prerequisites": {
+        "en": "Use a trusted practice repository with a working tree and index; review git status first.",
+        "pt-BR": "Use repositório de prática confiável com working tree e index; revise git status antes.",
+        "es": "Usa un repositorio de práctica confiable con working tree e index; revisa git status primero."
+      },
+      "effect_notes": {
+        "en": "Working files, staged blob IDs, commit refs and remote stay unchanged under built-in behavior; diff.autoRefreshIndex can refresh cached file stat metadata in the index.",
+        "pt-BR": "Arquivos de trabalho, IDs dos blobs preparados, referências de commits e remoto permanecem inalterados no comportamento interno; diff.autoRefreshIndex pode atualizar metadados stat de arquivos no index.",
+        "es": "Archivos de trabajo, IDs de blobs preparados, referencias de commits y remoto permanecen sin cambios con el comportamiento interno; diff.autoRefreshIndex puede actualizar metadatos stat de archivos en el index."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff --stat",
+          "context": {
+            "en": "Summarize unstaged changes.",
+            "pt-BR": "Resuma alterações não preparadas.",
+            "es": "Resume cambios no preparados."
+          }
+        },
+        "professional": {
+          "command": "git diff --cached --stat",
+          "context": {
+            "en": "Estimate staged review scope before reading the patch.",
+            "pt-BR": "Estime escopo preparado antes de ler o patch.",
+            "es": "Estima el alcance preparado antes de leer el parche."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "An inspection operation with possible index metadata writes, not a staging operation; avoid untrusted external diff drivers and review sensitive output before sharing.",
+          "pt-BR": "Operação de inspeção com possíveis escritas em metadados do index, não operação de staging; evite drivers externos de diff não confiáveis e revise saída sensível antes de compartilhar.",
+          "es": "Operación de inspección con posibles escrituras en metadatos del index, no una operación de preparación; evita controladores externos de diff no confiables y revisa la salida sensible antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff",
+        "https://git-scm.com/docs/git-config/2.36.3.html"
+      ]
+    },
+    {
+      "id": "git-diff-three-dot",
+      "command": "git diff A...B",
+      "kind": "option-usage",
+      "category": "05-history-and-comparison",
+      "level": "intermediate",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes",
+        "inspect-history"
+      ],
+      "syntax": "git diff main...feature",
+      "purpose": {
+        "en": "Compare the snapshot at a merge base of A and B with the snapshot at B.",
+        "pt-BR": "Comparar snapshot em uma base de merge de A e B com snapshot em B.",
+        "es": "Comparar la instantánea de una base de merge de A y B con la instantánea de B."
+      },
+      "options": {
+        "en": "Three dots select a merge base as the first endpoint; the right-hand revision is the second endpoint.",
+        "pt-BR": "Três pontos selecionam base de merge como primeiro extremo; revisão à direita é segundo extremo.",
+        "es": "Tres puntos seleccionan una base de merge como primer extremo; la revisión derecha es el segundo extremo."
+      },
+      "when_to_use": {
+        "en": "When reviewing branch changes relative to a common ancestor, especially after divergence.",
+        "pt-BR": "Ao revisar mudanças de branch relativas a ancestral comum, especialmente após divergência.",
+        "es": "Al revisar cambios de rama respecto a un ancestro común, especialmente tras divergencia."
+      },
+      "when_to_avoid": {
+        "en": "Avoid assuming this is symmetric or always identical to a hosted pull request diff; inspect ambiguous merge bases.",
+        "pt-BR": "Evite presumir simetria ou identidade com diff de PR hospedado; inspecione bases de merge ambíguas.",
+        "es": "Evita suponer simetría o identidad con diff de PR alojado; inspecciona bases de merge ambiguas."
+      },
+      "expected_state": {
+        "en": "Shows the net difference from the selected common base to the right-hand snapshot, not changes exclusive to the left branch.",
+        "pt-BR": "Mostra diferença líquida da base comum selecionada ao snapshot da direita, não mudanças exclusivas da branch esquerda.",
+        "es": "Muestra la diferencia neta de la base común seleccionada a la instantánea derecha, no cambios exclusivos de la rama izquierda."
+      },
+      "common_errors": {
+        "en": "Confusing git diff A...B with symmetric difference of commit sets in git log A...B.",
+        "pt-BR": "Confundir git diff A...B com diferença simétrica de conjuntos de commits em git log A...B.",
+        "es": "Confundir git diff A...B con diferencia simétrica de conjuntos de commits en git log A...B."
+      },
+      "alternatives": {
+        "en": "Use git diff A B for tip-to-tip comparison or inspect git merge-base --all A B before selecting an explicit base.",
+        "pt-BR": "Use git diff A B para comparar pontas ou inspecione git merge-base --all A B antes de selecionar base explícita.",
+        "es": "Usa git diff A B para comparar puntas o inspecciona git merge-base --all A B antes de seleccionar base explícita."
+      },
+      "prerequisites": {
+        "en": "Use a trusted local repository with both refs and a suitable common ancestor; verify the merge base first.",
+        "pt-BR": "Use repositório local confiável com ambas referências e ancestral comum adequado; verifique a base de merge antes.",
+        "es": "Usa un repositorio local confiable con ambas referencias y ancestro común adecuado; verifica primero la base de merge."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Use standard Git in a trusted local repository; no optional viewer is required. A configured pager may open.",
+        "pt-BR": "Use Git padrão em repositório local confiável; não exige visualizador opcional. Um paginador configurado pode abrir.",
+        "es": "Usa Git estándar en un repositorio local confiable; no requiere visor opcional. Puede abrirse un paginador configurado."
+      },
+      "examples": {
+        "basic": {
+          "command": "git diff main...feature",
+          "context": {
+            "en": "Review an existing local feature branch relative to its common base with main.",
+            "pt-BR": "Revise branch feature local existente relativa à base comum com main.",
+            "es": "Revisa una rama feature local existente respecto a su base común con main."
+          }
+        },
+        "professional": {
+          "command": "git diff main...feature -- notes.txt",
+          "context": {
+            "en": "Review branch changes for one fictional file after checking the merge base.",
+            "pt-BR": "Revise mudanças da branch em arquivo fictício após conferir base de merge.",
+            "es": "Revisa cambios de rama en un archivo ficticio tras comprobar la base de merge."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
+          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
+          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations",
+        "branches/02-start-points-and-comparison"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-diff"
+      ]
+    },
+    {
+      "id": "git-range-diff",
+      "command": "git range-diff",
+      "kind": "native-command",
+      "category": "05-history-and-comparison",
+      "level": "advanced",
+      "intent_tags": [
+        "compare-changes",
+        "review-changes",
+        "rewrite-local-history"
+      ],
+      "syntax": "git range-diff main..old-series main..feature",
+      "purpose": {
+        "en": "Compare the patches and messages of two versions of a commit series.",
+        "pt-BR": "Comparar patches e mensagens de duas versões de uma série de commits.",
+        "es": "Comparar parches y mensajes de dos versiones de una serie de commits."
+      },
+      "options": {
+        "en": "Pass two explicit revision ranges; --no-color disables coloring for reading plain output.",
+        "pt-BR": "Informe dois intervalos explícitos de revisões; --no-color desativa cores para leitura de saída simples.",
+        "es": "Proporciona dos rangos explícitos de revisiones; --no-color desactiva colores para leer salida simple."
+      },
+      "when_to_use": {
+        "en": "When reviewing changes to a private patch series after corrections or rebase.",
+        "pt-BR": "Ao revisar mudanças em série privada de patches após correções ou rebase.",
+        "es": "Al revisar cambios en una serie privada de parches tras correcciones o rebase."
+      },
+      "when_to_avoid": {
+        "en": "Do not use it as a proof of semantic equivalence or a stable machine-readable API; merge commits are ignored by default.",
+        "pt-BR": "Não use como prova de equivalência semântica ou API estável para máquinas; merges são ignorados por padrão.",
+        "es": "No lo uses como prueba de equivalencia semántica o API estable para máquinas; los merges se ignoran por defecto."
+      },
+      "expected_state": {
+        "en": "Displays approximate correspondence between commits and changes in their patches and metadata; unmatched commits are identified.",
+        "pt-BR": "Exibe correspondência aproximada entre commits e mudanças em patches e metadados; commits sem correspondência são identificados.",
+        "es": "Muestra correspondencia aproximada entre commits y cambios en parches y metadatos; identifica commits sin correspondencia."
+      },
+      "common_errors": {
+        "en": "Comparing only final snapshots and missing changes to individual commits, or trusting matching as a proof of correctness.",
+        "pt-BR": "Comparar apenas snapshots finais e perder mudanças individuais, ou confiar em correspondência como prova de correção.",
+        "es": "Comparar solo instantáneas finales y perder cambios individuales, o confiar en correspondencia como prueba de corrección."
+      },
+      "alternatives": {
+        "en": "Use git diff between the two tips to compare final content and run relevant tests.",
+        "pt-BR": "Use git diff entre as pontas para comparar conteúdo final e execute testes relevantes.",
+        "es": "Usa git diff entre ambas puntas para comparar contenido final y ejecuta pruebas pertinentes."
+      },
+      "prerequisites": {
+        "en": "Use a trusted local repository with both nonempty commit ranges; retain the old tip before rewriting history.",
+        "pt-BR": "Use repositório local confiável com ambos intervalos de commits não vazios; preserve ponta antiga antes de reescrever histórico.",
+        "es": "Usa un repositorio local confiable con ambos rangos de commits no vacíos; conserva la punta anterior antes de reescribir historial."
+      },
+      "effect_notes": {
+        "en": "Under normal built-in display behavior, no working files, index, commit refs or remote are changed.",
+        "pt-BR": "Na exibição interna normal, nenhum arquivo de trabalho, index, referência de commit ou remoto é alterado.",
+        "es": "Con la visualización interna normal, no se modifican archivos de trabajo, index, referencias de commits ni remoto."
+      },
+      "recovery": {
+        "en": "No repository recovery is needed after inspection; check the selected revisions or paths and repeat the comparison if necessary.",
+        "pt-BR": "Não é preciso recuperar o repositório após inspeção; confira revisões ou caminhos selecionados e repita a comparação se necessário.",
+        "es": "No hace falta recuperar el repositorio tras la inspección; comprueba revisiones o rutas seleccionadas y repite la comparación si es necesario."
+      },
+      "requirements": {
+        "en": "Requires Git 2.19 or newer; use a trusted local configuration. Output is intended for humans, not a stable parser.",
+        "pt-BR": "Exige Git 2.19 ou superior; use configuração local confiável. Saída destinada a humanos, não parser estável.",
+        "es": "Requiere Git 2.19 o superior; usa configuración local confiable. La salida se destina a humanos, no a un parser estable."
+      },
+      "examples": {
+        "basic": {
+          "command": "git range-diff main..old-series main..feature",
+          "context": {
+            "en": "Compare two existing local series based on main.",
+            "pt-BR": "Compare duas séries locais existentes baseadas em main.",
+            "es": "Compara dos series locales existentes basadas en main."
+          }
+        },
+        "professional": {
+          "command": "git range-diff --no-color main..old-series main..feature",
+          "context": {
+            "en": "Review a saved pre-rebase series against its revised version; confirm actual changes separately.",
+            "pt-BR": "Revise série salva pré-rebase contra versão revisada; confirme mudanças reais separadamente.",
+            "es": "Revisa una serie guardada antes de rebase contra su versión revisada; confirma cambios reales por separado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Read-only with built-in diff behavior; inspect sensitive output and avoid untrusted external diff drivers, text conversion filters or pagers.",
+          "pt-BR": "Somente leitura com diff interno; revise saída sensível e evite drivers externos de diff, filtros de conversão de texto ou paginadores não confiáveis.",
+          "es": "Solo lectura con el diff interno; revisa la salida sensible y evita controladores externos de diff, filtros de conversión de texto o paginadores no confiables."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/03-diff-log-show",
+        "git-architecture/01-three-locations",
+        "merge-and-conflicts/07-interactive-rebase",
+        "professional-workflows/08-code-review"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-range-diff"
+      ]
+    }
+  ]
+}

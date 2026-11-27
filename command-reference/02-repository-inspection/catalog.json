@@ -1,0 +1,951 @@
+{
+  "schema_version": 1,
+  "category": "02-repository-inspection",
+  "entries": [
+    {
+      "id": "git-status",
+      "command": "git status",
+      "kind": "native-command",
+      "category": "02-repository-inspection",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-state"
+      ],
+      "syntax": "git status [--short]",
+      "purpose": {
+        "en": "Summarize staged, unstaged and untracked changes.",
+        "pt-BR": "Resumir alterações no staging, fora dele e arquivos não rastreados.",
+        "es": "Resumir cambios preparados, no preparados y archivos no rastreados."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--short gives compact status; --branch adds branch information.",
+        "pt-BR": "--short dá status compacto; --branch inclui informações da branch.",
+        "es": "--short da estado compacto; --branch añade información de rama."
+      },
+      "when_to_use": {
+        "en": "Before staging, committing or switching branches.",
+        "pt-BR": "Antes de preparar, commitar ou trocar de branch.",
+        "es": "Antes de preparar, confirmar o cambiar de rama."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat a clean status as proof of passing tests or remote synchronization.",
+        "pt-BR": "Não trate status limpo como prova de testes aprovados ou sincronização remota.",
+        "es": "No tomes un estado limpio como prueba de pruebas aprobadas o sincronización remota."
+      },
+      "expected_state": {
+        "en": "Reports paths by state; a clean tree has no pending visible changes.",
+        "pt-BR": "Informa caminhos por estado; uma árvore limpa não tem alterações visíveis pendentes.",
+        "es": "Informa rutas por estado; un árbol limpio no tiene cambios visibles pendientes."
+      },
+      "effect_notes": {
+        "en": "May refresh index stat metadata without changing staged content; does not change commits.",
+        "pt-BR": "Pode atualizar metadados stat do index sem mudar conteúdo preparado; não altera commits.",
+        "es": "Puede refrescar metadatos stat del index sin cambiar contenido preparado; no modifica commits."
+      },
+      "common_errors": {
+        "en": "Misreading the two short-status columns; ignored files are usually hidden.",
+        "pt-BR": "Interpretar mal as duas colunas do status curto; ignorados geralmente ficam ocultos.",
+        "es": "Interpretar mal las dos columnas del estado corto; los ignorados suelen ocultarse."
+      },
+      "alternatives": {
+        "en": "Use git diff and git diff --cached to inspect actual changes.",
+        "pt-BR": "Use git diff e git diff --cached para inspecionar alterações reais.",
+        "es": "Usa git diff y git diff --cached para inspeccionar cambios reales."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git status",
+          "context": {
+            "en": "Inspect the full report before staging a changed file.",
+            "pt-BR": "Inspecione o relatório completo antes de preparar um arquivo alterado.",
+            "es": "Inspecciona el informe completo antes de preparar un archivo modificado."
+          }
+        },
+        "professional": {
+          "command": "git status --short",
+          "context": {
+            "en": "Review a compact report before a code review handoff.",
+            "pt-BR": "Revise um relatório compacto antes de entregar para code review.",
+            "es": "Revisa un informe compacto antes de entregar a revisión de código."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/02-status-add-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-status"
+      ]
+    },
+    {
+      "id": "git-status-porcelain",
+      "command": "git status --porcelain",
+      "kind": "option-usage",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "automate-workflow"
+      ],
+      "syntax": "git status --porcelain[=v1] [-z]",
+      "purpose": {
+        "en": "Inspect machine-oriented working-tree and index status.",
+        "pt-BR": "Inspecionar status da working tree e index em formato para máquinas.",
+        "es": "Inspeccionar estado del working tree e index en formato para máquinas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--porcelain=v1 selects stable v1 format; -z uses NUL terminators.",
+        "pt-BR": "--porcelain=v1 seleciona formato v1 estável; -z usa terminadores NUL.",
+        "es": "--porcelain=v1 selecciona formato v1 estable; -z usa terminadores NUL."
+      },
+      "when_to_use": {
+        "en": "When scripts need reproducible status output.",
+        "pt-BR": "Quando scripts precisam de saída de status reproduzível.",
+        "es": "Cuando scripts necesitan salida de estado reproducible."
+      },
+      "when_to_avoid": {
+        "en": "Do not parse human-oriented output or split NUL records by whitespace.",
+        "pt-BR": "Não analise saída humana nem divida registros NUL por espaços.",
+        "es": "No analices salida humana ni separes registros NUL por espacios."
+      },
+      "expected_state": {
+        "en": "Outputs compact machine-readable status; an empty report indicates no reported changes.",
+        "pt-BR": "Emite status compacto legível por máquina; relatório vazio indica ausência de alterações relatadas.",
+        "es": "Emite estado compacto legible por máquina; informe vacío indica ausencia de cambios informados."
+      },
+      "effect_notes": {
+        "en": "Can refresh index stat metadata; does not stage content or move refs.",
+        "pt-BR": "Pode atualizar metadados stat do index; não prepara conteúdo nem move refs.",
+        "es": "Puede refrescar metadatos stat del index; no prepara contenido ni mueve refs."
+      },
+      "common_errors": {
+        "en": "Expecting a nonzero exit status for a dirty tree; ignoring rename record format.",
+        "pt-BR": "Esperar código não zero para árvore suja; ignorar formato de renomeação.",
+        "es": "Esperar código distinto de cero para árbol sucio; ignorar formato de renombrado."
+      },
+      "alternatives": {
+        "en": "Use git diff --quiet for a specific tracked-change comparison; it does not cover untracked files.",
+        "pt-BR": "Use git diff --quiet para comparação específica rastreada; não inclui não rastreados.",
+        "es": "Usa git diff --quiet para comparación específica rastreada; no incluye no rastreados."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git status --porcelain=v1",
+          "context": {
+            "en": "Compare the v1 report with normal git status.",
+            "pt-BR": "Compare o relatório v1 com git status normal.",
+            "es": "Compara el informe v1 con git status normal."
+          }
+        },
+        "professional": {
+          "command": "git status --porcelain=v1 -z",
+          "context": {
+            "en": "Capture NUL-delimited records as bytes for a preflight check; do not print them as text.",
+            "pt-BR": "Capture registros NUL como bytes para verificação prévia; não os imprima como texto.",
+            "es": "Captura registros NUL como bytes para comprobación previa; no los imprimas como texto."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "conditional",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-architecture/03-file-states"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-status"
+      ]
+    },
+    {
+      "id": "git-rev-parse-show-toplevel",
+      "command": "git rev-parse --show-toplevel",
+      "kind": "option-usage",
+      "category": "02-repository-inspection",
+      "level": "beginner",
+      "intent_tags": [
+        "inspect-state"
+      ],
+      "syntax": "git rev-parse --show-toplevel",
+      "purpose": {
+        "en": "Find the root of the current working tree.",
+        "pt-BR": "Encontrar a raiz da working tree atual.",
+        "es": "Encontrar la raíz del working tree actual."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--show-toplevel reports the top-level path; -C changes the command's starting directory.",
+        "pt-BR": "--show-toplevel informa o caminho raiz; -C muda o diretório inicial do comando.",
+        "es": "--show-toplevel informa la ruta raíz; -C cambia el directorio inicial del comando."
+      },
+      "when_to_use": {
+        "en": "Before operating on a repository from a nested directory.",
+        "pt-BR": "Antes de operar em repositório a partir de subdiretório.",
+        "es": "Antes de operar en repositorio desde un subdirectorio."
+      },
+      "when_to_avoid": {
+        "en": "Do not use it to locate a working tree in a bare repository.",
+        "pt-BR": "Não use para localizar working tree em repositório bare.",
+        "es": "No lo uses para localizar working tree en repositorio bare."
+      },
+      "expected_state": {
+        "en": "Prints the top-level working-tree path or fails when unavailable.",
+        "pt-BR": "Imprime o caminho raiz ou falha quando indisponível.",
+        "es": "Imprime la ruta raíz o falla si no está disponible."
+      },
+      "effect_notes": {
+        "en": "Reads repository discovery information without modifying refs or files.",
+        "pt-BR": "Lê informações de descoberta sem alterar refs ou arquivos.",
+        "es": "Lee información de descubrimiento sin modificar refs ni archivos."
+      },
+      "common_errors": {
+        "en": "Assuming the shell's current directory is always the repository root.",
+        "pt-BR": "Presumir que o diretório atual do shell é sempre a raiz.",
+        "es": "Suponer que el directorio actual del shell siempre es la raíz."
+      },
+      "alternatives": {
+        "en": "Use git rev-parse --git-dir to locate Git metadata instead.",
+        "pt-BR": "Use git rev-parse --git-dir para localizar metadados Git.",
+        "es": "Usa git rev-parse --git-dir para localizar metadatos Git."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rev-parse --show-toplevel",
+          "context": {
+            "en": "Confirm the root before inspecting files.",
+            "pt-BR": "Confirme a raiz antes de inspecionar arquivos.",
+            "es": "Confirma la raíz antes de inspeccionar archivos."
+          }
+        },
+        "professional": {
+          "command": "git -C src rev-parse --show-toplevel",
+          "context": {
+            "en": "If src exists, confirm which repository a tool running there would address.",
+            "pt-BR": "Se src existir, confirme qual repositório uma ferramenta ali acessaria.",
+            "es": "Si src existe, confirma qué repositorio usaría una herramienta allí."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-architecture/01-three-locations"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rev-parse"
+      ]
+    },
+    {
+      "id": "git-rev-parse-git-dir",
+      "command": "git rev-parse --git-dir",
+      "kind": "option-usage",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-state"
+      ],
+      "syntax": "git rev-parse --git-dir",
+      "purpose": {
+        "en": "Locate repository metadata without assuming .git is a directory.",
+        "pt-BR": "Localizar metadados sem presumir que .git é diretório.",
+        "es": "Localizar metadatos sin suponer que .git es un directorio."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--git-dir may report a relative path; --absolute-git-dir requests an absolute path.",
+        "pt-BR": "--git-dir pode informar caminho relativo; --absolute-git-dir solicita caminho absoluto.",
+        "es": "--git-dir puede informar ruta relativa; --absolute-git-dir solicita ruta absoluta."
+      },
+      "when_to_use": {
+        "en": "Diagnose worktrees, submodules or bare repositories.",
+        "pt-BR": "Diagnosticar worktrees, submódulos ou repositórios bare.",
+        "es": "Diagnosticar worktrees, submódulos o repositorios bare."
+      },
+      "when_to_avoid": {
+        "en": "Do not edit metadata directly based on this result.",
+        "pt-BR": "Não edite metadados diretamente com base nesse resultado.",
+        "es": "No edites metadatos directamente a partir de ese resultado."
+      },
+      "expected_state": {
+        "en": "Reports the Git directory for this repository context.",
+        "pt-BR": "Informa o diretório Git deste contexto.",
+        "es": "Informa el directorio Git de este contexto."
+      },
+      "effect_notes": {
+        "en": "Reads metadata location; no repository state changes.",
+        "pt-BR": "Lê localização dos metadados; sem alteração de estado.",
+        "es": "Lee ubicación de metadatos; sin cambios de estado."
+      },
+      "common_errors": {
+        "en": "Confusing per-worktree Git directory with the shared common directory.",
+        "pt-BR": "Confundir diretório Git por worktree com o diretório comum compartilhado.",
+        "es": "Confundir directorio Git por worktree con el directorio común compartido."
+      },
+      "alternatives": {
+        "en": "Use git rev-parse --git-common-dir to inspect shared metadata location.",
+        "pt-BR": "Use git rev-parse --git-common-dir para inspecionar localização compartilhada.",
+        "es": "Usa git rev-parse --git-common-dir para inspeccionar ubicación compartida."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rev-parse --git-dir",
+          "context": {
+            "en": "Inspect the metadata path in a normal clone.",
+            "pt-BR": "Inspecione o caminho de metadados em clone normal.",
+            "es": "Inspecciona la ruta de metadatos en un clon normal."
+          }
+        },
+        "professional": {
+          "command": "git rev-parse --absolute-git-dir",
+          "context": {
+            "en": "Check an absolute metadata path while diagnosing a linked worktree.",
+            "pt-BR": "Confira caminho absoluto dos metadados ao diagnosticar worktree vinculado.",
+            "es": "Comprueba ruta absoluta de metadatos al diagnosticar un worktree vinculado."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-internals/01-object-database"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rev-parse"
+      ]
+    },
+    {
+      "id": "git-rev-parse-is-bare",
+      "command": "git rev-parse --is-bare-repository",
+      "kind": "option-usage",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-state"
+      ],
+      "syntax": "git rev-parse --is-bare-repository",
+      "purpose": {
+        "en": "Determine whether Git considers the repository bare.",
+        "pt-BR": "Determinar se Git considera o repositório bare.",
+        "es": "Determinar si Git considera el repositorio bare."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--is-bare-repository prints a boolean; -C selects a directory.",
+        "pt-BR": "--is-bare-repository imprime booleano; -C seleciona diretório.",
+        "es": "--is-bare-repository imprime booleano; -C selecciona directorio."
+      },
+      "when_to_use": {
+        "en": "Before attempting working-tree commands in a local origin.",
+        "pt-BR": "Antes de tentar comandos de working tree em origin local.",
+        "es": "Antes de intentar comandos de working tree en origin local."
+      },
+      "when_to_avoid": {
+        "en": "Do not infer write permission or remote access from a bare result.",
+        "pt-BR": "Não deduza permissão de escrita ou acesso remoto a partir do resultado bare.",
+        "es": "No deduzcas permiso de escritura ni acceso remoto del resultado bare."
+      },
+      "expected_state": {
+        "en": "Prints true or false for a valid repository context.",
+        "pt-BR": "Imprime true ou false para contexto válido.",
+        "es": "Imprime true o false para contexto válido."
+      },
+      "effect_notes": {
+        "en": "Does not change repository configuration or contents.",
+        "pt-BR": "Não altera configuração nem conteúdo do repositório.",
+        "es": "No cambia configuración ni contenido del repositorio."
+      },
+      "common_errors": {
+        "en": "Treating false as proof that the current directory is the tree root.",
+        "pt-BR": "Tratar false como prova de que o diretório atual é a raiz.",
+        "es": "Tomar false como prueba de que el directorio actual es la raíz."
+      },
+      "alternatives": {
+        "en": "Use git rev-parse --is-inside-work-tree to test working-tree context.",
+        "pt-BR": "Use git rev-parse --is-inside-work-tree para testar contexto de working tree.",
+        "es": "Usa git rev-parse --is-inside-work-tree para probar contexto de working tree."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rev-parse --is-bare-repository",
+          "context": {
+            "en": "Check a normal repository; expect false.",
+            "pt-BR": "Confira repositório normal; espere false.",
+            "es": "Comprueba repositorio normal; espera false."
+          }
+        },
+        "professional": {
+          "command": "git -C origin.git rev-parse --is-bare-repository",
+          "context": {
+            "en": "From a disposable parent containing origin.git, verify the origin is bare.",
+            "pt-BR": "Em pai descartável com origin.git, confirme que o origin é bare.",
+            "es": "Desde padre desechable con origin.git, confirma que origin es bare."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "remote-repositories/01-remote-concepts"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rev-parse"
+      ]
+    },
+    {
+      "id": "git-ls-files",
+      "command": "git ls-files",
+      "kind": "native-command",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-files"
+      ],
+      "syntax": "git ls-files [--stage] [--others --exclude-standard]",
+      "purpose": {
+        "en": "List indexed paths or selected other working-tree paths.",
+        "pt-BR": "Listar caminhos indexados ou outros caminhos selecionados da working tree.",
+        "es": "Listar rutas indexadas u otras rutas seleccionadas del working tree."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--stage shows index entries; --others lists untracked paths; --exclude-standard applies common ignore rules.",
+        "pt-BR": "--stage mostra entradas do index; --others lista não rastreados; --exclude-standard aplica regras comuns de ignore.",
+        "es": "--stage muestra entradas del index; --others enumera no rastreados; --exclude-standard aplica reglas comunes de ignore."
+      },
+      "when_to_use": {
+        "en": "Audit tracked paths or identify untracked candidates without staging.",
+        "pt-BR": "Auditar caminhos rastreados ou identificar candidatos não rastreados sem preparar.",
+        "es": "Auditar rutas rastreadas o identificar candidatos no rastreados sin preparar."
+      },
+      "when_to_avoid": {
+        "en": "Do not interpret index paths as proof that their working files currently exist.",
+        "pt-BR": "Não interprete caminhos do index como prova de que arquivos de trabalho existem.",
+        "es": "No interpretes rutas del index como prueba de que existen los archivos de trabajo."
+      },
+      "expected_state": {
+        "en": "Lists paths matching the selected mode; default lists tracked index paths.",
+        "pt-BR": "Lista caminhos do modo selecionado; padrão lista caminhos rastreados do index.",
+        "es": "Lista rutas del modo seleccionado; por defecto lista rutas rastreadas del index."
+      },
+      "effect_notes": {
+        "en": "Reads index and possibly working-tree information without staging changes.",
+        "pt-BR": "Lê index e possivelmente working tree sem preparar alterações.",
+        "es": "Lee index y posiblemente working tree sin preparar cambios."
+      },
+      "common_errors": {
+        "en": "Expecting ignored untracked files in a list using --exclude-standard.",
+        "pt-BR": "Esperar arquivos ignorados numa lista com --exclude-standard.",
+        "es": "Esperar archivos ignorados en una lista con --exclude-standard."
+      },
+      "alternatives": {
+        "en": "Use git status for an overview of changes and git ls-tree for a committed tree.",
+        "pt-BR": "Use git status para visão geral e git ls-tree para árvore commitada.",
+        "es": "Usa git status para vista general y git ls-tree para árbol confirmado."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git ls-files",
+          "context": {
+            "en": "List indexed paths after staging a file.",
+            "pt-BR": "Liste caminhos indexados após preparar um arquivo.",
+            "es": "Enumera rutas indexadas después de preparar un archivo."
+          }
+        },
+        "professional": {
+          "command": "git ls-files --others --exclude-standard",
+          "context": {
+            "en": "Inspect nonignored untracked paths before packaging project files.",
+            "pt-BR": "Inspecione caminhos não rastreados e não ignorados antes de empacotar arquivos.",
+            "es": "Inspecciona rutas no rastreadas ni ignoradas antes de empaquetar archivos."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-architecture/03-file-states"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-ls-files"
+      ]
+    },
+    {
+      "id": "git-check-ignore",
+      "command": "git check-ignore",
+      "kind": "native-command",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "ignore-files"
+      ],
+      "syntax": "git check-ignore [-v] [--no-index] pathname",
+      "purpose": {
+        "en": "Explain whether a path matches ignore rules and which rule applies.",
+        "pt-BR": "Explicar se caminho corresponde a regras de ignore e qual regra se aplica.",
+        "es": "Explicar si una ruta coincide con reglas de ignore y cuál se aplica."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "-v reports rule source and pattern; --no-index bypasses the usual tracked-path check.",
+        "pt-BR": "-v informa origem e padrão; --no-index ignora a verificação usual de caminho rastreado.",
+        "es": "-v informa origen y patrón; --no-index omite la comprobación usual de ruta rastreada."
+      },
+      "when_to_use": {
+        "en": "Troubleshoot a path unexpectedly missing from untracked status.",
+        "pt-BR": "Diagnosticar caminho inesperadamente ausente do status de não rastreados.",
+        "es": "Diagnosticar ruta inesperadamente ausente del estado de no rastreados."
+      },
+      "when_to_avoid": {
+        "en": "Do not assume an ignored path is protected from access or already removed from history.",
+        "pt-BR": "Não presuma que caminho ignorado está protegido contra acesso ou removido do histórico.",
+        "es": "No supongas que ruta ignorada está protegida contra acceso o eliminada del historial."
+      },
+      "expected_state": {
+        "en": "Reports matching ignored paths; exit status distinguishes matches, no match and errors.",
+        "pt-BR": "Informa caminhos ignorados correspondentes; código de saída distingue correspondência, ausência e erros.",
+        "es": "Informa rutas ignoradas coincidentes; código de salida distingue coincidencia, ausencia y errores."
+      },
+      "effect_notes": {
+        "en": "Reads ignore rules and index information without changing tracked content.",
+        "pt-BR": "Lê regras de ignore e index sem alterar conteúdo rastreado.",
+        "es": "Lee reglas de ignore e index sin cambiar contenido rastreado."
+      },
+      "common_errors": {
+        "en": "Expecting ordinary check-ignore to report already tracked paths.",
+        "pt-BR": "Esperar que check-ignore comum informe caminhos já rastreados.",
+        "es": "Esperar que check-ignore normal informe rutas ya rastreadas."
+      },
+      "alternatives": {
+        "en": "Use git status --ignored to inspect ignored paths more broadly.",
+        "pt-BR": "Use git status --ignored para inspecionar caminhos ignorados em geral.",
+        "es": "Usa git status --ignored para inspeccionar rutas ignoradas en general."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git check-ignore notes.tmp",
+          "context": {
+            "en": "Create a disposable ignore rule for notes.tmp and check the match.",
+            "pt-BR": "Crie regra descartável para notes.tmp e confira correspondência.",
+            "es": "Crea regla desechable para notes.tmp y comprueba coincidencia."
+          }
+        },
+        "professional": {
+          "command": "git check-ignore -v build/output.log",
+          "context": {
+            "en": "Explain which ignore pattern excludes an illustrative build log.",
+            "pt-BR": "Explique qual padrão de ignore exclui um log de build ilustrativo.",
+            "es": "Explica qué patrón de ignore excluye un log de build ilustrativo."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "basic-commands/05-ignore-and-review"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-check-ignore"
+      ]
+    },
+    {
+      "id": "git-show-ref",
+      "command": "git show-ref",
+      "kind": "native-command",
+      "category": "02-repository-inspection",
+      "level": "intermediate",
+      "intent_tags": [
+        "inspect-refs"
+      ],
+      "syntax": "git show-ref [--heads] [--tags]",
+      "purpose": {
+        "en": "Inspect local references and their object IDs.",
+        "pt-BR": "Inspecionar referências locais e IDs de objetos.",
+        "es": "Inspeccionar referencias locales e IDs de objetos."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "--heads limits output to branch refs; --tags limits tags; --verify requires an exact ref path.",
+        "pt-BR": "--heads limita a refs de branches; --tags limita tags; --verify exige caminho exato.",
+        "es": "--heads limita a refs de ramas; --tags limita etiquetas; --verify exige ruta exacta."
+      },
+      "when_to_use": {
+        "en": "Verify a reference before an operation depending on it.",
+        "pt-BR": "Verificar referência antes de operação dependente dela.",
+        "es": "Verificar referencia antes de operación que depende de ella."
+      },
+      "when_to_avoid": {
+        "en": "Do not interpret local remote-tracking refs as live remote state.",
+        "pt-BR": "Não interprete refs de rastreamento remoto locais como estado remoto ao vivo.",
+        "es": "No interpretes refs locales de seguimiento remoto como estado remoto en vivo."
+      },
+      "expected_state": {
+        "en": "Prints matching object IDs and ref names; verification fails for a missing exact ref.",
+        "pt-BR": "Imprime IDs e nomes correspondentes; verificação falha se ref exata não existe.",
+        "es": "Imprime IDs y nombres coincidentes; verificación falla si falta ref exacta."
+      },
+      "effect_notes": {
+        "en": "Reads refs without creating or moving them.",
+        "pt-BR": "Lê refs sem criá-las ou movê-las.",
+        "es": "Lee refs sin crearlas ni moverlas."
+      },
+      "common_errors": {
+        "en": "Using a short branch name with --verify or checking an unborn branch.",
+        "pt-BR": "Usar nome curto com --verify ou verificar branch sem commit.",
+        "es": "Usar nombre corto con --verify o comprobar rama sin commit."
+      },
+      "alternatives": {
+        "en": "Use git for-each-ref for custom formatting or git ls-remote for remote refs.",
+        "pt-BR": "Use git for-each-ref para formato personalizado ou git ls-remote para refs remotas.",
+        "es": "Usa git for-each-ref para formato personalizado o git ls-remote para refs remotas."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git show-ref --heads",
+          "context": {
+            "en": "List local branch refs after the first commit.",
+            "pt-BR": "Liste refs locais após o primeiro commit.",
+            "es": "Enumera refs locales después del primer commit."
+          }
+        },
+        "professional": {
+          "command": "git show-ref --verify refs/heads/main",
+          "context": {
+            "en": "Verify the exact main branch ref in a disposable integration repository.",
+            "pt-BR": "Verifique ref exata main em repositório de integração descartável.",
+            "es": "Verifica ref exacta main en repositorio de integración desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-internals/05-refs-and-head"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-show-ref"
+      ]
+    },
+    {
+      "id": "git-count-objects",
+      "command": "git count-objects",
+      "kind": "native-command",
+      "category": "02-repository-inspection",
+      "level": "advanced",
+      "intent_tags": [
+        "inspect-objects"
+      ],
+      "syntax": "git count-objects [-v] [-H]",
+      "purpose": {
+        "en": "Measure loose object counts and object storage statistics.",
+        "pt-BR": "Medir quantidade de objetos soltos e estatísticas de armazenamento.",
+        "es": "Medir cantidad de objetos sueltos y estadísticas de almacenamiento."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository; run from its working directory.",
+        "pt-BR": "Use um repositório próprio descartável; execute no diretório de trabalho.",
+        "es": "Usa un repositorio propio desechable; ejecuta desde su directorio de trabajo."
+      },
+      "options": {
+        "en": "-v includes pack and garbage statistics; -H displays human-readable sizes.",
+        "pt-BR": "-v inclui estatísticas de packs e lixo; -H mostra tamanhos legíveis.",
+        "es": "-v incluye estadísticas de packs y basura; -H muestra tamaños legibles."
+      },
+      "when_to_use": {
+        "en": "Diagnose object database growth before considering maintenance.",
+        "pt-BR": "Diagnosticar crescimento do banco de objetos antes de considerar manutenção.",
+        "es": "Diagnosticar crecimiento de la base de objetos antes de considerar mantenimiento."
+      },
+      "when_to_avoid": {
+        "en": "Do not treat counts as proof of corruption or exact disk usage of the entire repository.",
+        "pt-BR": "Não trate contagens como prova de corrupção ou uso exato de disco do repositório inteiro.",
+        "es": "No tomes conteos como prueba de corrupción o uso exacto de disco del repositorio entero."
+      },
+      "expected_state": {
+        "en": "Reports loose objects and sizes; verbose output includes pack statistics.",
+        "pt-BR": "Informa objetos soltos e tamanhos; saída detalhada inclui estatísticas de packs.",
+        "es": "Informa objetos sueltos y tamaños; salida detallada incluye estadísticas de packs."
+      },
+      "effect_notes": {
+        "en": "Reads object storage information without pruning or repacking.",
+        "pt-BR": "Lê armazenamento de objetos sem podar nem reempacotar.",
+        "es": "Lee almacenamiento de objetos sin podar ni reempaquetar."
+      },
+      "common_errors": {
+        "en": "Confusing loose object count with total commit count.",
+        "pt-BR": "Confundir quantidade de objetos soltos com total de commits.",
+        "es": "Confundir cantidad de objetos sueltos con total de commits."
+      },
+      "alternatives": {
+        "en": "Use git fsck for integrity diagnosis and operating-system tools for overall disk use.",
+        "pt-BR": "Use git fsck para diagnóstico de integridade e ferramentas do sistema para uso total de disco.",
+        "es": "Usa git fsck para diagnóstico de integridad y herramientas del sistema para uso total de disco."
+      },
+      "recovery": {
+        "en": "No history recovery is necessary; correct the context and repeat the inspection.",
+        "pt-BR": "Não é necessário recuperar histórico; corrija o contexto e repita a inspeção.",
+        "es": "No hace falta recuperar historial; corrige el contexto y repite la inspección."
+      },
+      "requirements": {
+        "en": "No optional tool required; examples use longstanding Git syntax.",
+        "pt-BR": "Sem ferramenta opcional; os exemplos usam sintaxe tradicional do Git.",
+        "es": "Sin herramienta opcional; los ejemplos usan sintaxis tradicional de Git."
+      },
+      "examples": {
+        "basic": {
+          "command": "git count-objects",
+          "context": {
+            "en": "Inspect counts after a few local commits.",
+            "pt-BR": "Inspecione contagens após alguns commits locais.",
+            "es": "Inspecciona conteos tras unos commits locales."
+          }
+        },
+        "professional": {
+          "command": "git count-objects -vH",
+          "context": {
+            "en": "Record verbose storage statistics before proposing maintenance on a disposable clone.",
+            "pt-BR": "Registre estatísticas detalhadas antes de propor manutenção em clone descartável.",
+            "es": "Registra estadísticas detalladas antes de proponer mantenimiento en clon desechable."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "unchanged",
+        "index": "unchanged",
+        "history": "unchanged",
+        "remote": "unchanged",
+        "other": "unchanged"
+      },
+      "risk": {
+        "class": "read-only",
+        "notes": {
+          "en": "Inspect the result privately; file names, paths or history may reveal project information.",
+          "pt-BR": "Inspecione o resultado em privado; nomes de arquivos, caminhos ou histórico podem revelar informações do projeto.",
+          "es": "Inspecciona el resultado en privado; nombres de archivos, rutas o historial pueden revelar información del proyecto."
+        }
+      },
+      "related_chapters": [
+        "git-internals/07-loose-objects-and-packfiles"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-count-objects"
+      ]
+    }
+  ]
+}

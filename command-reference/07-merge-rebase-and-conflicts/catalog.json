@@ -1,0 +1,1067 @@
+{
+  "schema_version": 1,
+  "category": "07-merge-rebase-and-conflicts",
+  "entries": [
+    {
+      "id": "git-merge",
+      "command": "git merge",
+      "kind": "native-command",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "intermediate",
+      "intent_tags": [
+        "integrate-changes"
+      ],
+      "syntax": "git merge feature",
+      "purpose": {
+        "en": "Integrate changes from another revision into the current branch.",
+        "pt-BR": "Integrar mudanças de outra revisão à branch atual.",
+        "es": "Integrar cambios de otra revisión en la rama actual."
+      },
+      "options": {
+        "en": "--ff-only refuses non-fast-forward integration; --no-ff requests a merge commit when integration is needed.",
+        "pt-BR": "--ff-only recusa integração não fast-forward; --no-ff solicita commit de merge quando integração é necessária.",
+        "es": "--ff-only rechaza integración no fast-forward; --no-ff solicita commit de merge cuando se necesita integrar."
+      },
+      "when_to_use": {
+        "en": "When bringing reviewed branch work into the selected local target.",
+        "pt-BR": "Ao incorporar trabalho revisado de branch ao destino local selecionado.",
+        "es": "Al incorporar trabajo revisado de una rama al destino local seleccionado."
+      },
+      "when_to_avoid": {
+        "en": "Avoid integrating with valuable uncommitted edits, unknown target refs or unfinished operations.",
+        "pt-BR": "Evite integrar com edições não registradas valiosas, referências desconhecidas ou operações inacabadas.",
+        "es": "Evita integrar con ediciones valiosas sin confirmar, referencias desconocidas u operaciones inconclusas."
+      },
+      "expected_state": {
+        "en": "May report already up to date, advance by fast-forward, create a merge commit or pause for conflicts, depending on ancestry and configuration.",
+        "pt-BR": "Pode informar que já está atualizado, avançar por fast-forward, criar commit de merge ou pausar por conflitos, conforme ancestralidade e configuração.",
+        "es": "Puede informar que ya está actualizado, avanzar por fast-forward, crear commit de merge o pausar por conflictos, según ascendencia y configuración."
+      },
+      "effect_notes": {
+        "en": "May update working files, index, current ref, objects and merge metadata; no remote update is inherent.",
+        "pt-BR": "Pode atualizar arquivos, index, referência atual, objetos e metadados de merge; não implica atualização remota.",
+        "es": "Puede actualizar archivos, index, referencia actual, objetos y metadatos de merge; no implica actualización remota."
+      },
+      "common_errors": {
+        "en": "Running from the source rather than target branch or assuming merge always creates a commit.",
+        "pt-BR": "Executar na branch de origem em vez do destino ou presumir que merge sempre cria commit.",
+        "es": "Ejecutar desde rama de origen en vez de destino o suponer que merge siempre crea commit."
+      },
+      "alternatives": {
+        "en": "Use --ff-only when only a linear advancement is allowed; use rebase only under a suitable history policy.",
+        "pt-BR": "Use --ff-only quando só avanço linear for permitido; use rebase só sob política de histórico adequada.",
+        "es": "Usa --ff-only cuando solo se permita avance lineal; usa rebase solo bajo política de historial adecuada."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge feature",
+          "context": {
+            "en": "From clean main, integrate an existing local practice branch.",
+            "pt-BR": "Na main limpa, integre branch local de prática existente.",
+            "es": "Desde main limpia, integra una rama local de práctica existente."
+          }
+        },
+        "professional": {
+          "command": "git merge feat/docs",
+          "context": {
+            "en": "After verifying local target and reviewed documentation branch, integrate and test.",
+            "pt-BR": "Após verificar destino local e branch revisada de documentação, integre e teste.",
+            "es": "Tras verificar destino local y rama revisada de documentación, integra y prueba."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Integration can conflict or change the current tip; verify target and review the resulting diff and tests before sharing.",
+          "pt-BR": "Integração pode gerar conflitos ou alterar a ponta atual; verifique destino e revise diff resultante e testes antes de compartilhar.",
+          "es": "La integración puede generar conflictos o cambiar la punta actual; verifica destino y revisa diff resultante y pruebas antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/01-integration-safety",
+        "merge-and-conflicts/03-merge-commit",
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-merge-ff-only",
+      "command": "git merge --ff-only",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "beginner",
+      "intent_tags": [
+        "integrate-changes",
+        "protect-history"
+      ],
+      "syntax": "git merge --ff-only feature",
+      "purpose": {
+        "en": "Integrate only if the current tip can advance without a merge commit, or is already up to date.",
+        "pt-BR": "Integrar apenas se ponta atual puder avançar sem commit de merge ou já estiver atualizada.",
+        "es": "Integrar solo si la punta actual puede avanzar sin commit de merge o ya está actualizada."
+      },
+      "options": {
+        "en": "--ff-only refuses integration requiring a merge commit.",
+        "pt-BR": "--ff-only recusa integração que exige commit de merge.",
+        "es": "--ff-only rechaza integración que requiere commit de merge."
+      },
+      "when_to_use": {
+        "en": "When enforcing a linear integration path without rewriting commits.",
+        "pt-BR": "Ao exigir caminho linear de integração sem reescrever commits.",
+        "es": "Al exigir una vía de integración lineal sin reescribir commits."
+      },
+      "when_to_avoid": {
+        "en": "Do not use it expecting Git to reconcile divergent histories automatically.",
+        "pt-BR": "Não use esperando conciliação automática de históricos divergentes.",
+        "es": "No lo uses esperando conciliación automática de historiales divergentes."
+      },
+      "expected_state": {
+        "en": "Advances the current ref to the source tip when possible, leaves it unchanged if already contained, or refuses divergence.",
+        "pt-BR": "Avança referência atual até ponta da origem quando possível, mantém se já contida ou recusa divergência.",
+        "es": "Avanza referencia actual a punta de origen cuando es posible, la mantiene si ya está contenida o rechaza divergencia."
+      },
+      "effect_notes": {
+        "en": "May update working files, index and current ref; no new merge commit is created.",
+        "pt-BR": "Pode atualizar arquivos, index e referência atual; nenhum commit de merge novo é criado.",
+        "es": "Puede actualizar archivos, index y referencia actual; no crea un nuevo commit de merge."
+      },
+      "common_errors": {
+        "en": "Treating a refusal as a reason to force or reset the branch.",
+        "pt-BR": "Tratar recusa como motivo para forçar ou redefinir branch.",
+        "es": "Tratar un rechazo como motivo para forzar o restablecer la rama."
+      },
+      "alternatives": {
+        "en": "Inspect divergence and choose a reviewed merge or private rebase according to policy.",
+        "pt-BR": "Inspecione divergência e escolha merge revisado ou rebase privado conforme política.",
+        "es": "Inspecciona divergencia y elige merge revisado o rebase privado según política."
+      },
+      "recovery": {
+        "en": "If refused, inspect ancestry and status; if advanced incorrectly, use the saved original tip to assess recovery without overwriting shared history.",
+        "pt-BR": "Se recusado, inspecione ancestralidade e status; se avançou incorretamente, use ponta original salva para avaliar recuperação sem sobrescrever histórico compartilhado.",
+        "es": "Si se rechaza, inspecciona ascendencia y estado; si avanzó incorrectamente, usa punta original guardada para evaluar recuperación sin sobrescribir historial compartido."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge --ff-only feature",
+          "context": {
+            "en": "Integrate a local branch descending from main while on main.",
+            "pt-BR": "Integre branch local descendente da main estando na main.",
+            "es": "Integra una rama local descendiente de main desde main."
+          }
+        },
+        "professional": {
+          "command": "git merge --ff-only feat/docs",
+          "context": {
+            "en": "Enforce a linear local integration after checking ancestry.",
+            "pt-BR": "Exija integração local linear após conferir ancestralidade.",
+            "es": "Exige integración local lineal tras comprobar ascendencia."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Integration can conflict or change the current tip; verify target and review the resulting diff and tests before sharing.",
+          "pt-BR": "Integração pode gerar conflitos ou alterar a ponta atual; verifique destino e revise diff resultante e testes antes de compartilhar.",
+          "es": "La integración puede generar conflictos o cambiar la punta actual; verifica destino y revisa diff resultante y pruebas antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/02-fast-forward"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-merge-no-ff",
+      "command": "git merge --no-ff",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "intermediate",
+      "intent_tags": [
+        "integrate-changes"
+      ],
+      "syntax": "git merge --no-ff feature",
+      "purpose": {
+        "en": "Preserve an explicit merge boundary even when a fast-forward would otherwise be possible.",
+        "pt-BR": "Preservar limite explícito de merge mesmo quando fast-forward seria possível.",
+        "es": "Conservar un límite explícito de merge incluso cuando fast-forward sería posible."
+      },
+      "options": {
+        "en": "--no-ff requests a merge commit when changes need integrating; -m supplies its message.",
+        "pt-BR": "--no-ff solicita commit de merge quando mudanças precisam de integração; -m fornece mensagem.",
+        "es": "--no-ff solicita commit de merge cuando hay cambios que integrar; -m proporciona mensaje."
+      },
+      "when_to_use": {
+        "en": "When team policy requires an explicit integration commit.",
+        "pt-BR": "Quando política da equipe exige commit explícito de integração.",
+        "es": "Cuando la política del equipo exige un commit explícito de integración."
+      },
+      "when_to_avoid": {
+        "en": "Avoid on branches requiring strictly linear history.",
+        "pt-BR": "Evite em branches que exigem histórico estritamente linear.",
+        "es": "Evita en ramas que exigen historial estrictamente lineal."
+      },
+      "expected_state": {
+        "en": "On successful integration of a single non-contained branch, creates a commit with two parents; already-contained history may be unchanged.",
+        "pt-BR": "Em integração bem-sucedida de branch única não contida, cria commit com dois pais; histórico já contido pode ficar igual.",
+        "es": "Al integrar con éxito una única rama no contenida, crea commit con dos padres; historial ya contenido puede quedar igual."
+      },
+      "effect_notes": {
+        "en": "May update working tree, index, objects and ref; conflicts can pause before commit creation.",
+        "pt-BR": "Pode atualizar working tree, index, objetos e referência; conflitos podem pausar antes de criar commit.",
+        "es": "Puede actualizar working tree, index, objetos y referencia; conflictos pueden pausar antes de crear commit."
+      },
+      "common_errors": {
+        "en": "Expecting a merge commit even when there is nothing to integrate.",
+        "pt-BR": "Esperar commit de merge mesmo quando nada precisa ser integrado.",
+        "es": "Esperar commit de merge incluso cuando no hay nada que integrar."
+      },
+      "alternatives": {
+        "en": "Use --ff-only for linear advancement, or a reviewed squash workflow when policy requires one new commit without merge ancestry.",
+        "pt-BR": "Use --ff-only para avanço linear ou fluxo squash revisado quando política exige um commit novo sem ancestralidade de merge.",
+        "es": "Usa --ff-only para avance lineal o flujo squash revisado cuando política exige un commit nuevo sin ascendencia de merge."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge --no-ff feature",
+          "context": {
+            "en": "Integrate a non-contained practice branch with an explicit merge boundary.",
+            "pt-BR": "Integre branch de prática não contida com limite explícito de merge.",
+            "es": "Integra una rama de práctica no contenida con límite explícito de merge."
+          }
+        },
+        "professional": {
+          "command": "git merge --no-ff -m \"Merge documentation\" feat/docs",
+          "context": {
+            "en": "Record a reviewed integration where merge commits are permitted.",
+            "pt-BR": "Registre integração revisada onde commits de merge são permitidos.",
+            "es": "Registra integración revisada donde se permiten commits de merge."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Integration can conflict or change the current tip; verify target and review the resulting diff and tests before sharing.",
+          "pt-BR": "Integração pode gerar conflitos ou alterar a ponta atual; verifique destino e revise diff resultante e testes antes de compartilhar.",
+          "es": "La integración puede generar conflictos o cambiar la punta actual; verifica destino y revisa diff resultante y pruebas antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/03-merge-commit"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-merge-squash",
+      "command": "git merge --squash",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "intermediate",
+      "intent_tags": [
+        "integrate-changes",
+        "stage-changes"
+      ],
+      "syntax": "git merge --squash feature",
+      "purpose": {
+        "en": "Prepare the combined changes of another branch without moving HEAD or recording merge ancestry.",
+        "pt-BR": "Preparar mudanças combinadas de outra branch sem mover HEAD ou registrar ancestralidade de merge.",
+        "es": "Preparar cambios combinados de otra rama sin mover HEAD ni registrar ascendencia de merge."
+      },
+      "options": {
+        "en": "--squash prepares the integration result; a separate git commit records the staged snapshot.",
+        "pt-BR": "--squash prepara resultado de integração; git commit separado registra snapshot preparado.",
+        "es": "--squash prepara resultado de integración; git commit separado registra instantánea preparada."
+      },
+      "when_to_use": {
+        "en": "When a reviewed local integration should become one ordinary commit.",
+        "pt-BR": "Quando integração local revisada deve se tornar um commit comum.",
+        "es": "Cuando una integración local revisada debe convertirse en un commit ordinario."
+      },
+      "when_to_avoid": {
+        "en": "Avoid when preserving source commit ancestry is required or the index contains unrelated edits.",
+        "pt-BR": "Evite quando for necessário preservar ancestralidade da origem ou index contém edições alheias.",
+        "es": "Evita cuando se requiere conservar ascendencia de origen o index contiene ediciones ajenas."
+      },
+      "expected_state": {
+        "en": "On clean success, working tree and index reflect the combined result while HEAD stays unchanged; conflicts may require resolution.",
+        "pt-BR": "Em sucesso limpo, working tree e index refletem resultado combinado enquanto HEAD não muda; conflitos podem exigir resolução.",
+        "es": "Con éxito limpio, working tree e index reflejan resultado combinado mientras HEAD no cambia; conflictos pueden exigir resolución."
+      },
+      "effect_notes": {
+        "en": "Does not set MERGE_HEAD; the later ordinary commit has one parent. Local objects or squash metadata may be created.",
+        "pt-BR": "Não define MERGE_HEAD; commit comum posterior tem um pai. Objetos locais ou metadados de squash podem ser criados.",
+        "es": "No define MERGE_HEAD; el commit ordinario posterior tiene un padre. Pueden crearse objetos locales o metadatos de squash."
+      },
+      "common_errors": {
+        "en": "Assuming --squash commits automatically or that git merge --abort always works for a squash operation.",
+        "pt-BR": "Presumir que --squash registra automaticamente ou que git merge --abort sempre funciona para squash.",
+        "es": "Suponer que --squash confirma automáticamente o que git merge --abort siempre funciona para squash."
+      },
+      "alternatives": {
+        "en": "Use an ordinary merge when preserving ancestry is important.",
+        "pt-BR": "Use merge comum quando preservar ancestralidade for importante.",
+        "es": "Usa merge ordinario cuando conservar ascendencia sea importante."
+      },
+      "recovery": {
+        "en": "Inspect status and staged changes; since there is no MERGE_HEAD, do not rely on merge --abort. In a verified initially clean disposable lab, reset --merge HEAD may discard the attempted tracked integration after preserving needed edits; assess separately if work existed.",
+        "pt-BR": "Inspecione status e mudanças preparadas; sem MERGE_HEAD, não dependa de merge --abort. Em laboratório descartável verificado inicialmente limpo, reset --merge HEAD pode descartar tentativa de integração rastreada após preservar edições necessárias; avalie separadamente se havia trabalho.",
+        "es": "Inspecciona estado y cambios preparados; sin MERGE_HEAD, no dependas de merge --abort. En laboratorio desechable verificado inicialmente limpio, reset --merge HEAD puede descartar integración rastreada intentada tras preservar ediciones necesarias; evalúa aparte si había trabajo."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge --squash feature",
+          "context": {
+            "en": "Prepare combined changes from an existing practice branch, then inspect before committing.",
+            "pt-BR": "Prepare mudanças combinadas de branch de prática existente, depois inspecione antes do commit.",
+            "es": "Prepara cambios combinados de rama de práctica existente, luego inspecciona antes de confirmar."
+          }
+        },
+        "professional": {
+          "command": "git merge --squash feat/docs",
+          "context": {
+            "en": "Prepare reviewed documentation for a single later commit; verify diff and tests.",
+            "pt-BR": "Prepare documentação revisada para commit único posterior; verifique diff e testes.",
+            "es": "Prepara documentación revisada para un único commit posterior; verifica diff y pruebas."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Review the entire staged result before committing; source commits may remain outside target ancestry.",
+          "pt-BR": "Revise resultado preparado completo antes do commit; commits de origem podem continuar fora da ancestralidade do destino.",
+          "es": "Revisa resultado preparado completo antes del commit; commits de origen pueden quedar fuera de ascendencia de destino."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/05-squash-merge"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-merge-abort",
+      "command": "git merge --abort",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "intermediate",
+      "intent_tags": [
+        "resolve-conflicts",
+        "recover-work"
+      ],
+      "syntax": "git merge --abort",
+      "purpose": {
+        "en": "Attempt to cancel an in-progress ordinary merge and reconstruct its pre-merge state.",
+        "pt-BR": "Tentar cancelar merge comum em andamento e reconstruir estado anterior.",
+        "es": "Intentar cancelar merge ordinario en curso y reconstruir estado previo."
+      },
+      "options": {
+        "en": "--abort operates on an active merge; it is not a general undo command.",
+        "pt-BR": "--abort opera em merge ativo; não é comando genérico de desfazer.",
+        "es": "--abort opera en merge activo; no es un comando genérico de deshacer."
+      },
+      "when_to_use": {
+        "en": "When abandoning an unresolved ordinary merge in a disposable clean-start lab.",
+        "pt-BR": "Ao abandonar merge comum não resolvido em laboratório descartável inicialmente limpo.",
+        "es": "Al abandonar merge ordinario no resuelto en laboratorio desechable inicialmente limpio."
+      },
+      "when_to_avoid": {
+        "en": "Avoid if resolution work must be preserved or the merge already completed; squash merges lack MERGE_HEAD.",
+        "pt-BR": "Evite se trabalho de resolução precisa ser preservado ou merge já terminou; squash não possui MERGE_HEAD.",
+        "es": "Evita si trabajo de resolución debe conservarse o merge ya finalizó; squash carece de MERGE_HEAD."
+      },
+      "expected_state": {
+        "en": "Attempts to restore pre-merge state and clears the active merge on success; prior dirty work may not be reconstructed.",
+        "pt-BR": "Tenta restaurar estado pré-merge e encerra merge ativo em sucesso; trabalho sujo anterior pode não ser reconstruído.",
+        "es": "Intenta restaurar estado previo y cierra merge activo con éxito; trabajo previo sin confirmar puede no reconstruirse."
+      },
+      "effect_notes": {
+        "en": "May change working tree, index and merge metadata; auto-stash can be reapplied and may conflict.",
+        "pt-BR": "Pode alterar working tree, index e metadados de merge; auto-stash pode ser reaplicado e gerar conflitos.",
+        "es": "Puede cambiar working tree, index y metadatos de merge; auto-stash puede reaplicarse y generar conflictos."
+      },
+      "common_errors": {
+        "en": "Using abort after a completed merge or assuming it guarantees recovery of uncommitted work.",
+        "pt-BR": "Usar abort após merge concluído ou presumir recuperação garantida de trabalho não registrado.",
+        "es": "Usar abort tras merge finalizado o suponer recuperación garantizada de trabajo sin confirmar."
+      },
+      "alternatives": {
+        "en": "Resolve and stage conflicts then use git merge --continue if integration should finish.",
+        "pt-BR": "Resolva e prepare conflitos e use git merge --continue se integração deve terminar.",
+        "es": "Resuelve y prepara conflictos y usa git merge --continue si integración debe finalizar."
+      },
+      "recovery": {
+        "en": "Verify status and original tip after abort. If it fails, stop and inspect remaining state before further changes.",
+        "pt-BR": "Verifique status e ponta original após abort. Se falhar, pare e inspecione estado restante antes de novas mudanças.",
+        "es": "Verifica estado y punta original tras abort. Si falla, detente e inspecciona estado restante antes de nuevos cambios."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with the specified operation already paused; inspect git status and preserve any resolution edits you need.",
+        "pt-BR": "Use repositório próprio descartável com a operação indicada já pausada; inspecione git status e preserve edições de resolução necessárias.",
+        "es": "Usa un repositorio propio desechable con la operación indicada ya pausada; inspecciona git status y conserva las ediciones de resolución necesarias."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge --abort",
+          "context": {
+            "en": "Cancel a deliberately conflicted ordinary practice merge.",
+            "pt-BR": "Cancele merge comum de prática com conflito deliberado.",
+            "es": "Cancela merge ordinario de práctica con conflicto deliberado."
+          }
+        },
+        "professional": {
+          "command": "git merge --abort",
+          "context": {
+            "en": "After saving desired resolution edits, abandon an unsuitable local integration.",
+            "pt-BR": "Após salvar edições desejadas de resolução, abandone integração local inadequada.",
+            "es": "Tras guardar ediciones deseadas de resolución, abandona integración local inadecuada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Cancellation discards conflict-resolution work; preserve any desired edits separately first. Recovery of prior uncommitted work is not guaranteed.",
+          "pt-BR": "Cancelamento descarta trabalho de resolução de conflitos; preserve edições desejadas separadamente antes. Recuperação de trabalho anterior não registrado não é garantida.",
+          "es": "Cancelar descarta trabajo de resolución de conflictos; conserva antes las ediciones deseadas por separado. No se garantiza recuperar trabajo previo sin confirmar."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-merge-continue",
+      "command": "git merge --continue",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "intermediate",
+      "intent_tags": [
+        "resolve-conflicts",
+        "integrate-changes"
+      ],
+      "syntax": "git merge --continue",
+      "purpose": {
+        "en": "Finish an active ordinary merge after conflicts are resolved and staged.",
+        "pt-BR": "Finalizar merge comum ativo após resolver e preparar conflitos.",
+        "es": "Finalizar merge ordinario activo tras resolver y preparar conflictos."
+      },
+      "options": {
+        "en": "--continue checks for an active merge and invokes commit; the editor or hooks may require interaction.",
+        "pt-BR": "--continue verifica merge ativo e invoca commit; editor ou hooks podem exigir interação.",
+        "es": "--continue comprueba merge activo e invoca commit; editor o hooks pueden requerir interacción."
+      },
+      "when_to_use": {
+        "en": "When all intended conflict resolutions are staged and reviewed.",
+        "pt-BR": "Quando todas resoluções desejadas estão preparadas e revisadas.",
+        "es": "Cuando todas las resoluciones deseadas están preparadas y revisadas."
+      },
+      "when_to_avoid": {
+        "en": "Do not continue while unmerged paths remain or resolution content is unreviewed.",
+        "pt-BR": "Não continue enquanto houver caminhos não mesclados ou conteúdo de resolução não revisado.",
+        "es": "No continúes mientras haya rutas no fusionadas o contenido de resolución sin revisar."
+      },
+      "expected_state": {
+        "en": "On success creates the merge commit and clears merge state; otherwise may remain paused.",
+        "pt-BR": "Em sucesso cria commit de merge e limpa estado de merge; caso contrário pode continuar pausado.",
+        "es": "Con éxito crea commit de merge y limpia estado de merge; de lo contrario puede seguir pausado."
+      },
+      "effect_notes": {
+        "en": "May update ref, objects, index metadata and merge state; hooks can change local state.",
+        "pt-BR": "Pode atualizar referência, objetos, metadados de index e estado de merge; hooks podem alterar estado local.",
+        "es": "Puede actualizar referencia, objetos, metadatos de index y estado de merge; hooks pueden cambiar estado local."
+      },
+      "common_errors": {
+        "en": "Assuming removing conflict markers alone stages the resolution.",
+        "pt-BR": "Presumir que remover marcadores de conflito prepara resolução automaticamente.",
+        "es": "Suponer que quitar marcadores de conflicto prepara resolución automáticamente."
+      },
+      "alternatives": {
+        "en": "Use git commit to conclude an ordinary merge after inspecting its state, or abort if abandoning it.",
+        "pt-BR": "Use git commit para concluir merge comum após inspecionar estado ou abort se abandonar.",
+        "es": "Usa git commit para concluir merge ordinario tras inspeccionar su estado o abort si lo abandonas."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "In a disposable repository with the indicated operation paused, resolve conflicts, stage intended resolutions, review the staged diff and confirm fictional identity.",
+        "pt-BR": "Em repositório descartável com operação indicada pausada, resolva conflitos, prepare resoluções desejadas, revise diff preparado e confirme identidade fictícia.",
+        "es": "En repositorio desechable con la operación indicada pausada, resuelve conflictos, prepara resoluciones deseadas, revisa diff preparado y confirma identidad ficticia."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git merge --continue",
+          "context": {
+            "en": "Finish the practice merge after staging a resolved file.",
+            "pt-BR": "Finalize merge de prática após preparar arquivo resolvido.",
+            "es": "Finaliza merge de práctica tras preparar archivo resuelto."
+          }
+        },
+        "professional": {
+          "command": "git merge --continue",
+          "context": {
+            "en": "After reviewing resolution diff and running tests, complete a local merge.",
+            "pt-BR": "Após revisar diff da resolução e executar testes, conclua merge local.",
+            "es": "Tras revisar diff de resolución y ejecutar pruebas, completa merge local."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "state-change",
+        "notes": {
+          "en": "Integration can conflict or change the current tip; verify target and review the resulting diff and tests before sharing.",
+          "pt-BR": "Integração pode gerar conflitos ou alterar a ponta atual; verifique destino e revise diff resultante e testes antes de compartilhar.",
+          "es": "La integración puede generar conflictos o cambiar la punta actual; verifica destino y revisa diff resultante y pruebas antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/04-conflict-resolution"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-merge"
+      ]
+    },
+    {
+      "id": "git-rebase",
+      "command": "git rebase",
+      "kind": "native-command",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "advanced",
+      "intent_tags": [
+        "integrate-changes",
+        "rewrite-local-history"
+      ],
+      "syntax": "git rebase main",
+      "purpose": {
+        "en": "Replay selected commits on a different base to reorganize local history.",
+        "pt-BR": "Reaplicar commits selecionados em base diferente para reorganizar histórico local.",
+        "es": "Reaplicar commits seleccionados sobre otra base para reorganizar historial local."
+      },
+      "options": {
+        "en": "Specify the upstream revision; --onto allows a separate new base and requires careful range selection.",
+        "pt-BR": "Informe revisão upstream; --onto permite nova base separada e exige seleção cuidadosa de intervalo.",
+        "es": "Indica revisión upstream; --onto permite nueva base separada y exige selección cuidadosa del rango."
+      },
+      "when_to_use": {
+        "en": "When updating a private feature branch on a newer integration base.",
+        "pt-BR": "Ao atualizar branch privada de feature sobre base de integração mais nova.",
+        "es": "Al actualizar rama privada de feature sobre base de integración más nueva."
+      },
+      "when_to_avoid": {
+        "en": "Avoid rewriting shared commits without agreement, or rebasing with unfinished operations.",
+        "pt-BR": "Evite reescrever commits compartilhados sem acordo ou executar rebase com operações inacabadas.",
+        "es": "Evita reescribir commits compartidos sin acuerdo o rebase con operaciones inconclusas."
+      },
+      "expected_state": {
+        "en": "May replay commits with new IDs, skip equivalent changes, fast-forward, do nothing or pause for conflicts.",
+        "pt-BR": "Pode reaplicar commits com novos IDs, ignorar mudanças equivalentes, avançar fast-forward, não alterar ou pausar por conflitos.",
+        "es": "Puede reaplicar commits con nuevos IDs, omitir cambios equivalentes, avanzar fast-forward, no cambiar o pausar por conflictos."
+      },
+      "effect_notes": {
+        "en": "May change working files, index, objects, current ref and sequencer state; HEAD may be detached during replay.",
+        "pt-BR": "Pode alterar arquivos, index, objetos, referência atual e estado de sequência; HEAD pode ficar destacado durante reaplicação.",
+        "es": "Puede cambiar archivos, index, objetos, referencia actual y estado de secuencia; HEAD puede quedar separado durante reaplicación."
+      },
+      "common_errors": {
+        "en": "Assuming rebase preserves IDs or runs from the integration target instead of the branch being replayed.",
+        "pt-BR": "Presumir que rebase preserva IDs ou executar no destino de integração em vez da branch reaplicada.",
+        "es": "Suponer que rebase conserva IDs o ejecutarlo en destino de integración en vez de rama reaplicada."
+      },
+      "alternatives": {
+        "en": "Use merge to integrate without replacing existing source commits.",
+        "pt-BR": "Use merge para integrar sem substituir commits de origem existentes.",
+        "es": "Usa merge para integrar sin reemplazar commits de origen existentes."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rebase main",
+          "context": {
+            "en": "From a clean private feature branch, replay onto existing main.",
+            "pt-BR": "De branch privada limpa de feature, reaplique sobre main existente.",
+            "es": "Desde rama privada limpia de feature, reaplica sobre main existente."
+          }
+        },
+        "professional": {
+          "command": "git rebase main",
+          "context": {
+            "en": "After saving the private topic tip, update its base and compare the revised series.",
+            "pt-BR": "Após salvar ponta privada, atualize base e compare série revisada.",
+            "es": "Tras guardar punta privada, actualiza base y compara serie revisada."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "history-rewrite",
+        "notes": {
+          "en": "Replay can change commit IDs and disrupt collaborators. Use private history, retain the original tip and verify the result before sharing.",
+          "pt-BR": "Reaplicação pode alterar IDs e prejudicar colaboradores. Use histórico privado, preserve ponta original e verifique resultado antes de compartilhar.",
+          "es": "La reaplicación puede cambiar IDs y perjudicar colaboradores. Usa historial privado, conserva la punta original y verifica el resultado antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/06-rebase-and-conflicts"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rebase"
+      ]
+    },
+    {
+      "id": "git-rebase-interactive",
+      "command": "git rebase -i",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "advanced",
+      "intent_tags": [
+        "rewrite-local-history",
+        "review-changes"
+      ],
+      "syntax": "git rebase -i HEAD~2",
+      "purpose": {
+        "en": "Edit the sequence of selected private commits before replaying them.",
+        "pt-BR": "Editar sequência de commits privados selecionados antes de reaplicá-los.",
+        "es": "Editar secuencia de commits privados seleccionados antes de reaplicarlos."
+      },
+      "options": {
+        "en": "-i opens a todo list with actions such as pick, reword, edit, squash, fixup and drop; review the order and effects before saving.",
+        "pt-BR": "-i abre lista de tarefas com ações como pick, reword, edit, squash, fixup e drop; revise ordem e efeitos antes de salvar.",
+        "es": "-i abre lista de tareas con acciones como pick, reword, edit, squash, fixup y drop; revisa orden y efectos antes de guardar."
+      },
+      "when_to_use": {
+        "en": "When refining an unpublished patch series before review.",
+        "pt-BR": "Ao refinar série de patches não publicada antes de revisão.",
+        "es": "Al refinar serie de parches no publicada antes de revisión."
+      },
+      "when_to_avoid": {
+        "en": "Avoid changing shared history, dropping needed commits or blindly reordering dependent changes.",
+        "pt-BR": "Evite alterar histórico compartilhado, descartar commits necessários ou reordenar mudanças dependentes às cegas.",
+        "es": "Evita cambiar historial compartido, descartar commits necesarios o reordenar cambios dependientes a ciegas."
+      },
+      "expected_state": {
+        "en": "Applies the chosen actions; may replace, combine, omit or pause on commits. An unchanged todo may leave history unchanged.",
+        "pt-BR": "Aplica ações escolhidas; pode substituir, combinar, omitir ou pausar em commits. Lista inalterada pode deixar histórico igual.",
+        "es": "Aplica acciones elegidas; puede reemplazar, combinar, omitir o pausar en commits. Lista sin cambios puede dejar historial igual."
+      },
+      "effect_notes": {
+        "en": "May modify history, working files, index and rebase metadata; default behavior does not preserve merge topology.",
+        "pt-BR": "Pode modificar histórico, arquivos, index e metadados de rebase; comportamento padrão não preserva topologia de merges.",
+        "es": "Puede modificar historial, archivos, index y metadatos de rebase; comportamiento predeterminado no conserva topología de merges."
+      },
+      "common_errors": {
+        "en": "Confusing todo order with newest-first log order, or dropping a prerequisite commit.",
+        "pt-BR": "Confundir ordem da lista com ordem do log mais recente primeiro, ou descartar commit pré-requisito.",
+        "es": "Confundir orden de lista con orden del log más reciente primero, o descartar commit previo necesario."
+      },
+      "alternatives": {
+        "en": "Use an ordinary follow-up commit if history must remain intact; use range-diff to review revised series.",
+        "pt-BR": "Use commit complementar comum se histórico precisar permanecer intacto; use range-diff para revisar série revisada.",
+        "es": "Usa commit adicional ordinario si historial debe permanecer intacto; usa range-diff para revisar serie revisada."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository, clean status, verified refs and fictional identity. Save the original tip before integration.",
+        "pt-BR": "Use repositório próprio descartável, status limpo, referências verificadas e identidade fictícia. Salve a ponta original antes da integração.",
+        "es": "Usa un repositorio propio desechable, estado limpio, referencias verificadas e identidad ficticia. Guarda la punta original antes de integrar."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rebase -i HEAD~2",
+          "context": {
+            "en": "With at least two private commits after a base, inspect the todo list before changing it.",
+            "pt-BR": "Com pelo menos dois commits privados após uma base, inspecione lista antes de alterar.",
+            "es": "Con al menos dos commits privados después de una base, inspecciona lista antes de cambiar."
+          }
+        },
+        "professional": {
+          "command": "git rebase -i main",
+          "context": {
+            "en": "On a private linear feature series, review planned edits or fixup actions and validate afterward.",
+            "pt-BR": "Em série linear privada de feature, revise edições ou ações fixup planejadas e valide depois.",
+            "es": "En serie lineal privada de feature, revisa ediciones o acciones fixup planeadas y valida después."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "history-rewrite",
+        "notes": {
+          "en": "Replay can change commit IDs and disrupt collaborators. Use private history, retain the original tip and verify the result before sharing.",
+          "pt-BR": "Reaplicação pode alterar IDs e prejudicar colaboradores. Use histórico privado, preserve ponta original e verifique resultado antes de compartilhar.",
+          "es": "La reaplicación puede cambiar IDs y perjudicar colaboradores. Usa historial privado, conserva la punta original y verifica el resultado antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/07-interactive-rebase"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rebase"
+      ]
+    },
+    {
+      "id": "git-rebase-continue",
+      "command": "git rebase --continue",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "advanced",
+      "intent_tags": [
+        "resolve-conflicts",
+        "rewrite-local-history"
+      ],
+      "syntax": "git rebase --continue",
+      "purpose": {
+        "en": "Resume an interrupted rebase after handling its current stop.",
+        "pt-BR": "Retomar rebase interrompido após tratar a pausa atual.",
+        "es": "Reanudar rebase interrumpido tras gestionar su pausa actual."
+      },
+      "options": {
+        "en": "--continue resumes the active sequence; more conflicts or edit stops may follow.",
+        "pt-BR": "--continue retoma sequência ativa; outros conflitos ou pausas de edição podem ocorrer.",
+        "es": "--continue reanuda secuencia activa; pueden seguir otros conflictos o pausas de edición."
+      },
+      "when_to_use": {
+        "en": "When intended resolutions or planned edits are ready and reviewed.",
+        "pt-BR": "Quando resoluções desejadas ou edições planejadas estão prontas e revisadas.",
+        "es": "Cuando resoluciones deseadas o ediciones planeadas están listas y revisadas."
+      },
+      "when_to_avoid": {
+        "en": "Avoid continuing with unresolved paths or using --skip merely to silence a conflict.",
+        "pt-BR": "Evite continuar com caminhos não resolvidos ou usar --skip apenas para silenciar conflito.",
+        "es": "Evita continuar con rutas no resueltas o usar --skip solo para silenciar conflicto."
+      },
+      "expected_state": {
+        "en": "Resumes replay; may finish and update the branch or pause again.",
+        "pt-BR": "Retoma reaplicação; pode terminar e atualizar branch ou pausar novamente.",
+        "es": "Reanuda reaplicación; puede finalizar y actualizar rama o pausar de nuevo."
+      },
+      "effect_notes": {
+        "en": "May create replacement commits, update index and working tree, move HEAD and change sequencer metadata.",
+        "pt-BR": "Pode criar commits substitutos, atualizar index e working tree, mover HEAD e alterar metadados de sequência.",
+        "es": "Puede crear commits sustitutos, actualizar index y working tree, mover HEAD y cambiar metadatos de secuencia."
+      },
+      "common_errors": {
+        "en": "Assuming one continuation always completes the entire series.",
+        "pt-BR": "Presumir que uma continuação sempre conclui toda a série.",
+        "es": "Suponer que una continuación siempre completa toda la serie."
+      },
+      "alternatives": {
+        "en": "Use git rebase --abort to abandon the active rebase after preserving needed resolution work.",
+        "pt-BR": "Use git rebase --abort para abandonar rebase ativo após preservar resolução necessária.",
+        "es": "Usa git rebase --abort para abandonar rebase activo tras conservar resolución necesaria."
+      },
+      "recovery": {
+        "en": "Inspect status and the saved tip. If the operation is still paused, use its matching abort command when appropriate. After completion, choose recovery according to whether history was shared; do not reset blindly.",
+        "pt-BR": "Inspecione status e ponta salva. Se a operação estiver pausada, use o comando abort correspondente quando apropriado. Após conclusão, escolha recuperação conforme histórico compartilhado; não use reset às cegas.",
+        "es": "Inspecciona estado y punta guardada. Si la operación está pausada, usa el comando abort correspondiente cuando proceda. Tras finalizar, elige recuperación según si se compartió el historial; no uses reset a ciegas."
+      },
+      "prerequisites": {
+        "en": "In a disposable repository with the indicated operation paused, resolve conflicts, stage intended resolutions, review the staged diff and confirm fictional identity.",
+        "pt-BR": "Em repositório descartável com operação indicada pausada, resolva conflitos, prepare resoluções desejadas, revise diff preparado e confirme identidade fictícia.",
+        "es": "En repositorio desechable con la operación indicada pausada, resuelve conflictos, prepara resoluciones deseadas, revisa diff preparado y confirma identidad ficticia."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rebase --continue",
+          "context": {
+            "en": "After staging the resolved practice file, resume the replay.",
+            "pt-BR": "Após preparar arquivo de prática resolvido, retome reaplicação.",
+            "es": "Tras preparar archivo de práctica resuelto, reanuda reaplicación."
+          }
+        },
+        "professional": {
+          "command": "git rebase --continue",
+          "context": {
+            "en": "Review staged resolution and test the private series before resuming; repeat if paused again.",
+            "pt-BR": "Revise resolução preparada e teste série privada antes de retomar; repita se pausar novamente.",
+            "es": "Revisa resolución preparada y prueba serie privada antes de reanudar; repite si vuelve a pausar."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "history-rewrite",
+        "notes": {
+          "en": "Replay can change commit IDs and disrupt collaborators. Use private history, retain the original tip and verify the result before sharing.",
+          "pt-BR": "Reaplicação pode alterar IDs e prejudicar colaboradores. Use histórico privado, preserve ponta original e verifique resultado antes de compartilhar.",
+          "es": "La reaplicación puede cambiar IDs y perjudicar colaboradores. Usa historial privado, conserva la punta original y verifica el resultado antes de compartir."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/06-rebase-and-conflicts",
+        "merge-and-conflicts/07-interactive-rebase"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rebase"
+      ]
+    },
+    {
+      "id": "git-rebase-abort",
+      "command": "git rebase --abort",
+      "kind": "option-usage",
+      "category": "07-merge-rebase-and-conflicts",
+      "level": "advanced",
+      "intent_tags": [
+        "resolve-conflicts",
+        "recover-work"
+      ],
+      "syntax": "git rebase --abort",
+      "purpose": {
+        "en": "Cancel an active rebase and restore HEAD to the original branch or starting position.",
+        "pt-BR": "Cancelar rebase ativo e restaurar HEAD à branch original ou posição inicial.",
+        "es": "Cancelar rebase activo y restaurar HEAD a rama original o posición inicial."
+      },
+      "options": {
+        "en": "--abort cancels replay; --quit stops tracking the operation without the same reset of HEAD, index and working tree.",
+        "pt-BR": "--abort cancela reaplicação; --quit encerra acompanhamento da operação sem a mesma restauração de HEAD, index e working tree.",
+        "es": "--abort cancela reaplicación; --quit termina seguimiento de operación sin la misma restauración de HEAD, index y working tree."
+      },
+      "when_to_use": {
+        "en": "When abandoning an unfinished private rebase because its conflicts or plan are unsuitable.",
+        "pt-BR": "Ao abandonar rebase privado inacabado por conflitos ou plano inadequados.",
+        "es": "Al abandonar rebase privado inconcluso por conflictos o plan inadecuados."
+      },
+      "when_to_avoid": {
+        "en": "Avoid aborting if needed resolution changes are not saved separately; it is not an undo for completed rebase.",
+        "pt-BR": "Evite abortar se mudanças necessárias de resolução não estão salvas separadamente; não desfaz rebase concluído.",
+        "es": "Evita abortar si cambios necesarios de resolución no están guardados por separado; no deshace rebase concluido."
+      },
+      "expected_state": {
+        "en": "Restores the original checkout position and clears the active rebase on success; auto-stash may complicate restoration.",
+        "pt-BR": "Restaura posição original de checkout e limpa rebase ativo em sucesso; auto-stash pode complicar restauração.",
+        "es": "Restaura posición original de checkout y limpia rebase activo con éxito; auto-stash puede complicar restauración."
+      },
+      "effect_notes": {
+        "en": "May discard intermediate replay and resolution state, update working files, index and HEAD; created objects may remain until cleanup.",
+        "pt-BR": "Pode descartar estado intermediário de reaplicação e resolução, atualizar arquivos, index e HEAD; objetos criados podem permanecer até limpeza.",
+        "es": "Puede descartar estado intermedio de reaplicación y resolución, actualizar archivos, index y HEAD; objetos creados pueden permanecer hasta limpieza."
+      },
+      "common_errors": {
+        "en": "Expecting edits made during conflict resolution to survive cancellation.",
+        "pt-BR": "Esperar que edições feitas durante resolução sobrevivam ao cancelamento.",
+        "es": "Esperar que ediciones realizadas durante resolución sobrevivan a la cancelación."
+      },
+      "alternatives": {
+        "en": "Resolve and continue when the original integration plan is still appropriate.",
+        "pt-BR": "Resolva e continue quando plano original de integração ainda for adequado.",
+        "es": "Resuelve y continúa cuando plan original de integración siga siendo adecuado."
+      },
+      "recovery": {
+        "en": "Verify the saved original tip, status and any stash after cancellation; if restoration fails, preserve remaining data and inspect before further action.",
+        "pt-BR": "Verifique ponta original salva, status e eventual stash após cancelamento; se restauração falhar, preserve dados restantes e inspecione antes de agir.",
+        "es": "Verifica punta original guardada, estado y posible stash tras cancelar; si restauración falla, conserva datos restantes e inspecciona antes de actuar."
+      },
+      "prerequisites": {
+        "en": "Use an owned disposable repository with the specified operation already paused; inspect git status and preserve any resolution edits you need.",
+        "pt-BR": "Use repositório próprio descartável com a operação indicada já pausada; inspecione git status e preserve edições de resolução necessárias.",
+        "es": "Usa un repositorio propio desechable con la operación indicada ya pausada; inspecciona git status y conserva las ediciones de resolución necesarias."
+      },
+      "requirements": {
+        "en": "Standard Git syntax; use the guide's Git 2.40 or newer lab baseline. A trusted editor and local hooks may affect execution.",
+        "pt-BR": "Sintaxe padrão Git; use a base de laboratório do guia, Git 2.40 ou superior. Editor confiável e hooks locais podem afetar execução.",
+        "es": "Sintaxis estándar de Git; usa la base de laboratorio del guía, Git 2.40 o superior. Un editor confiable y hooks locales pueden afectar la ejecución."
+      },
+      "examples": {
+        "basic": {
+          "command": "git rebase --abort",
+          "context": {
+            "en": "Cancel a conflicted practice rebase started from clean state.",
+            "pt-BR": "Cancele rebase de prática com conflito iniciado em estado limpo.",
+            "es": "Cancela rebase de práctica con conflicto iniciado en estado limpio."
+          }
+        },
+        "professional": {
+          "command": "git rebase --abort",
+          "context": {
+            "en": "After preserving necessary resolution edits, abandon a private replay and verify the original tip.",
+            "pt-BR": "Após preservar edições necessárias de resolução, abandone reaplicação privada e verifique ponta original.",
+            "es": "Tras conservar ediciones necesarias de resolución, abandona reaplicación privada y verifica punta original."
+          }
+        }
+      },
+      "effects": {
+        "working_tree": "conditional",
+        "index": "conditional",
+        "history": "conditional",
+        "remote": "unchanged",
+        "other": "conditional"
+      },
+      "risk": {
+        "class": "destructive",
+        "notes": {
+          "en": "Cancellation discards conflict-resolution work; preserve any desired edits separately first. Recovery of prior uncommitted work is not guaranteed.",
+          "pt-BR": "Cancelamento descarta trabalho de resolução de conflitos; preserve edições desejadas separadamente antes. Recuperação de trabalho anterior não registrado não é garantida.",
+          "es": "Cancelar descarta trabajo de resolución de conflictos; conserva antes las ediciones deseadas por separado. No se garantiza recuperar trabajo previo sin confirmar."
+        }
+      },
+      "related_chapters": [
+        "merge-and-conflicts/06-rebase-and-conflicts"
+      ],
+      "references": [
+        "https://git-scm.com/docs/git-rebase"
+      ]
+    }
+  ]
+}
