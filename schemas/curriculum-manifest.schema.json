@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Study Guide curriculum manifest 1.0.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "guide_id": {
+      "const": "git-study-guide"
+    },
+    "default_locale": {
+      "const": "en"
+    },
+    "supported_locales": {
+      "const": [
+        "en",
+        "pt-BR",
+        "es"
+      ]
+    },
+    "association_status": {
+      "const": "complete"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+      },
+      "minItems": 0,
+      "uniqueItems": true
+    },
+    "banks": {
+      "type": "object",
+      "properties": {
+        "quizzes": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "records": {
+              "const": "exercises/01-quizzes/records.json"
+            },
+            "schema": {
+              "const": "schemas/assessment-bank.schema.json"
+            }
+          },
+          "required": [
+            "schema_version",
+            "records",
+            "schema"
+          ],
+          "additionalProperties": false
+        },
+        "exercises": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "records": {
+              "const": "exercises/02-challenges/records.json"
+            },
+            "schema": {
+              "const": "schemas/assessment-bank.schema.json"
+            }
+          },
+          "required": [
+            "schema_version",
+            "records",
+            "schema"
+          ],
+          "additionalProperties": false
+        },
+        "interviews": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "records": {
+              "const": "exercises/03-interviews/records.json"
+            },
+            "schema": {
+              "const": "schemas/assessment-bank.schema.json"
+            }
+          },
+          "required": [
+            "schema_version",
+            "records",
+            "schema"
+          ],
+          "additionalProperties": false
+        },
+        "mocks": {
+          "type": "object",
+          "properties": {
+            "schema_version": {
+              "const": 1
+            },
+            "records": {
+              "const": "exercises/04-mock-assessments/records.json"
+            },
+            "schema": {
+              "const": "schemas/assessment-bank.schema.json"
+            }
+          },
+          "required": [
+            "schema_version",
+            "records",
+            "schema"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "quizzes",
+        "exercises",
+        "interviews",
+        "mocks"
+      ],
+      "additionalProperties": false
+    },
+    "command_catalog": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "registry": {
+          "const": "scripts/command_catalog_categories.json"
+        },
+        "intent_registry": {
+          "const": "scripts/command_catalog_intents.json"
+        },
+        "schema": {
+          "const": "schemas/command-catalog.schema.json"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+              }
+            },
+            "required": [
+              "id",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "schema_version",
+        "registry",
+        "intent_registry",
+        "schema",
+        "categories"
+      ],
+      "additionalProperties": false
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+          },
+          "title": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "pt-BR": {
+                "type": "string",
+                "minLength": 1
+              },
+              "es": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "index": {
+            "type": "object",
+            "properties": {
+              "en": {
+                "type": "string",
+                "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+              },
+              "pt-BR": {
+                "type": "string",
+                "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+              },
+              "es": {
+                "type": "string",
+                "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+              }
+            },
+            "required": [
+              "en",
+              "pt-BR",
+              "es"
+            ],
+            "additionalProperties": false
+          },
+          "chapters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                },
+                "order": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "slug": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                },
+                "kind": {
+                  "enum": [
+                    "lesson",
+                    "reference",
+                    "project",
+                    "assessment"
+                  ]
+                },
+                "title": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "content": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                    },
+                    "es": {
+                      "type": "string",
+                      "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                },
+                "assets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "resources": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^(?!.*(?:^|/)\\.{1,2}(?:/|$))(?!.*(?:^|/)\\.git(?:/|$))[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "previous_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "next_id": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "exercise_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "quiz_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "interview_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "mock_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "command_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9]+(?:[.-][a-z0-9]+)*(?![\\s\\S])"
+                  },
+                  "minItems": 0,
+                  "uniqueItems": true
+                },
+                "execution": {
+                  "enum": [
+                    "unverified",
+                    "local_only"
+                  ]
+                },
+                "execution_reason": {
+                  "type": "object",
+                  "properties": {
+                    "en": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "pt-BR": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "es": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "en",
+                    "pt-BR",
+                    "es"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "order",
+                "slug",
+                "kind",
+                "title",
+                "content",
+                "assets",
+                "resources",
+                "previous_id",
+                "next_id",
+                "exercise_ids",
+                "quiz_ids",
+                "interview_ids",
+                "mock_ids",
+                "command_ids",
+                "execution"
+              ],
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "execution": {
+                        "const": "local_only"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "execution_reason"
+                    ]
+                  },
+                  "else": {
+                    "not": {
+                      "required": [
+                        "execution_reason"
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "order",
+          "slug",
+          "title",
+          "index",
+          "chapters"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "guide_id",
+    "default_locale",
+    "supported_locales",
+    "association_status",
+    "assets",
+    "banks",
+    "command_catalog",
+    "modules"
+  ],
+  "additionalProperties": false
+}
