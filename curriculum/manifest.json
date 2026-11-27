@@ -2379,6 +2379,1376 @@
           "execution": "unverified"
         }
       ]
+    },
+    {
+      "id": "security",
+      "order": 12,
+      "slug": "security",
+      "title": {
+        "en": "Security & Governance",
+        "pt-BR": "Security & Governance",
+        "es": "Security & Governance"
+      },
+      "index": {
+        "en": "security/README.md",
+        "pt-BR": "security/README.pt-BR.md",
+        "es": "security/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "security.01-security-foundations",
+          "order": 0,
+          "slug": "01-security-foundations",
+          "kind": "lesson",
+          "title": {
+            "en": "Git security foundations",
+            "pt-BR": "Fundamentos de segurança no Git",
+            "es": "Fundamentos de seguridad en Git"
+          },
+          "content": {
+            "en": "security/01-security-foundations/README.md",
+            "pt-BR": "security/01-security-foundations/README.pt-BR.md",
+            "es": "security/01-security-foundations/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "professional-workflows.13-integrated-professional-workflow-lab",
+          "next_id": "security.02-ssh-authentication",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.02-ssh-authentication",
+          "order": 1,
+          "slug": "02-ssh-authentication",
+          "kind": "lesson",
+          "title": {
+            "en": "SSH authentication and host identity",
+            "pt-BR": "Autenticação SSH e identidade do host",
+            "es": "Autenticación SSH e identidad del host"
+          },
+          "content": {
+            "en": "security/02-ssh-authentication/README.md",
+            "pt-BR": "security/02-ssh-authentication/README.pt-BR.md",
+            "es": "security/02-ssh-authentication/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.01-security-foundations",
+          "next_id": "security.03-https-and-access-tokens",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.03-https-and-access-tokens",
+          "order": 2,
+          "slug": "03-https-and-access-tokens",
+          "kind": "lesson",
+          "title": {
+            "en": "HTTPS and access tokens",
+            "pt-BR": "HTTPS e tokens de acesso",
+            "es": "HTTPS y tokens de acceso"
+          },
+          "content": {
+            "en": "security/03-https-and-access-tokens/README.md",
+            "pt-BR": "security/03-https-and-access-tokens/README.pt-BR.md",
+            "es": "security/03-https-and-access-tokens/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.02-ssh-authentication",
+          "next_id": "security.04-credential-managers",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.04-credential-managers",
+          "order": 3,
+          "slug": "04-credential-managers",
+          "kind": "lesson",
+          "title": {
+            "en": "Credential managers and configuration scope",
+            "pt-BR": "Credential managers e escopo de configuração",
+            "es": "Gestores de credenciales y ámbito de configuración"
+          },
+          "content": {
+            "en": "security/04-credential-managers/README.md",
+            "pt-BR": "security/04-credential-managers/README.pt-BR.md",
+            "es": "security/04-credential-managers/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.03-https-and-access-tokens",
+          "next_id": "security.05-secrets-and-disclosure-prevention",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.05-secrets-and-disclosure-prevention",
+          "order": 4,
+          "slug": "05-secrets-and-disclosure-prevention",
+          "kind": "lesson",
+          "title": {
+            "en": "Secrets and disclosure prevention",
+            "pt-BR": "Secrets e prevenção de vazamentos",
+            "es": "Secretos y prevención de filtraciones"
+          },
+          "content": {
+            "en": "security/05-secrets-and-disclosure-prevention/README.md",
+            "pt-BR": "security/05-secrets-and-disclosure-prevention/README.pt-BR.md",
+            "es": "security/05-secrets-and-disclosure-prevention/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.04-credential-managers",
+          "next_id": "security.06-permissions-and-least-privilege",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.06-permissions-and-least-privilege",
+          "order": 5,
+          "slug": "06-permissions-and-least-privilege",
+          "kind": "lesson",
+          "title": {
+            "en": "Permissions and least privilege",
+            "pt-BR": "Permissões e menor privilégio",
+            "es": "Permisos y mínimo privilegio"
+          },
+          "content": {
+            "en": "security/06-permissions-and-least-privilege/README.md",
+            "pt-BR": "security/06-permissions-and-least-privilege/README.pt-BR.md",
+            "es": "security/06-permissions-and-least-privilege/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.05-secrets-and-disclosure-prevention",
+          "next_id": "security.07-branch-protection-and-rulesets",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.07-branch-protection-and-rulesets",
+          "order": 6,
+          "slug": "07-branch-protection-and-rulesets",
+          "kind": "lesson",
+          "title": {
+            "en": "Branch protection and rulesets",
+            "pt-BR": "Proteção de branches e rulesets",
+            "es": "Protección de ramas y rulesets"
+          },
+          "content": {
+            "en": "security/07-branch-protection-and-rulesets/README.md",
+            "pt-BR": "security/07-branch-protection-and-rulesets/README.pt-BR.md",
+            "es": "security/07-branch-protection-and-rulesets/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.06-permissions-and-least-privilege",
+          "next_id": "security.08-codeowners-and-responsibilities",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.08-codeowners-and-responsibilities",
+          "order": 7,
+          "slug": "08-codeowners-and-responsibilities",
+          "kind": "lesson",
+          "title": {
+            "en": "CODEOWNERS and responsibilities",
+            "pt-BR": "CODEOWNERS e responsabilidades",
+            "es": "CODEOWNERS y responsabilidades"
+          },
+          "content": {
+            "en": "security/08-codeowners-and-responsibilities/README.md",
+            "pt-BR": "security/08-codeowners-and-responsibilities/README.pt-BR.md",
+            "es": "security/08-codeowners-and-responsibilities/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.07-branch-protection-and-rulesets",
+          "next_id": "security.09-commit-and-tag-signing",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.09-commit-and-tag-signing",
+          "order": 8,
+          "slug": "09-commit-and-tag-signing",
+          "kind": "lesson",
+          "title": {
+            "en": "Commit and tag signing",
+            "pt-BR": "Assinatura de commits e tags",
+            "es": "Firma de commits y tags"
+          },
+          "content": {
+            "en": "security/09-commit-and-tag-signing/README.md",
+            "pt-BR": "security/09-commit-and-tag-signing/README.pt-BR.md",
+            "es": "security/09-commit-and-tag-signing/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.08-codeowners-and-responsibilities",
+          "next_id": "security.10-software-supply-chain",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.10-software-supply-chain",
+          "order": 9,
+          "slug": "10-software-supply-chain",
+          "kind": "lesson",
+          "title": {
+            "en": "Software supply chain security",
+            "pt-BR": "Segurança da cadeia de suprimentos de software",
+            "es": "Seguridad de cadena de suministro de software"
+          },
+          "content": {
+            "en": "security/10-software-supply-chain/README.md",
+            "pt-BR": "security/10-software-supply-chain/README.pt-BR.md",
+            "es": "security/10-software-supply-chain/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.09-commit-and-tag-signing",
+          "next_id": "security.11-credential-exposure-and-incident-response",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.11-credential-exposure-and-incident-response",
+          "order": 10,
+          "slug": "11-credential-exposure-and-incident-response",
+          "kind": "lesson",
+          "title": {
+            "en": "Credential exposure and incident response",
+            "pt-BR": "Exposição de credenciais e resposta a incidentes",
+            "es": "Exposición de credenciales y respuesta a incidentes"
+          },
+          "content": {
+            "en": "security/11-credential-exposure-and-incident-response/README.md",
+            "pt-BR": "security/11-credential-exposure-and-incident-response/README.pt-BR.md",
+            "es": "security/11-credential-exposure-and-incident-response/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.10-software-supply-chain",
+          "next_id": "security.12-governance-audit-and-traceability",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.12-governance-audit-and-traceability",
+          "order": 11,
+          "slug": "12-governance-audit-and-traceability",
+          "kind": "lesson",
+          "title": {
+            "en": "Governance, audit and traceability",
+            "pt-BR": "Governança, auditoria e rastreabilidade",
+            "es": "Gobernanza, auditoría y trazabilidad"
+          },
+          "content": {
+            "en": "security/12-governance-audit-and-traceability/README.md",
+            "pt-BR": "security/12-governance-audit-and-traceability/README.pt-BR.md",
+            "es": "security/12-governance-audit-and-traceability/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.11-credential-exposure-and-incident-response",
+          "next_id": "security.13-integrated-security-lab",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "security.13-integrated-security-lab",
+          "order": 12,
+          "slug": "13-integrated-security-lab",
+          "kind": "lesson",
+          "title": {
+            "en": "Integrated security lab",
+            "pt-BR": "Laboratório integrado de segurança",
+            "es": "Laboratorio integrado de seguridad"
+          },
+          "content": {
+            "en": "security/13-integrated-security-lab/README.md",
+            "pt-BR": "security/13-integrated-security-lab/README.pt-BR.md",
+            "es": "security/13-integrated-security-lab/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.12-governance-audit-and-traceability",
+          "next_id": "advanced-git.01-bisect",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "advanced-git",
+      "order": 13,
+      "slug": "advanced-git",
+      "title": {
+        "en": "Advanced Git",
+        "pt-BR": "Git avançado",
+        "es": "Git avanzado"
+      },
+      "index": {
+        "en": "advanced-git/README.md",
+        "pt-BR": "advanced-git/README.pt-BR.md",
+        "es": "advanced-git/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "advanced-git.01-bisect",
+          "order": 0,
+          "slug": "01-bisect",
+          "kind": "lesson",
+          "title": {
+            "en": "Bisect: isolate a regression",
+            "pt-BR": "Bisect: localizar uma regressão",
+            "es": "Bisect: localizar una regresión"
+          },
+          "content": {
+            "en": "advanced-git/01-bisect/README.md",
+            "pt-BR": "advanced-git/01-bisect/README.pt-BR.md",
+            "es": "advanced-git/01-bisect/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "security.13-integrated-security-lab",
+          "next_id": "advanced-git.02-worktree",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.02-worktree",
+          "order": 1,
+          "slug": "02-worktree",
+          "kind": "lesson",
+          "title": {
+            "en": "Worktrees: parallel working directories",
+            "pt-BR": "Worktrees: diretórios de trabalho paralelos",
+            "es": "Worktrees: directorios de trabajo paralelos"
+          },
+          "content": {
+            "en": "advanced-git/02-worktree/README.md",
+            "pt-BR": "advanced-git/02-worktree/README.pt-BR.md",
+            "es": "advanced-git/02-worktree/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.01-bisect",
+          "next_id": "advanced-git.03-submodules",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.03-submodules",
+          "order": 2,
+          "slug": "03-submodules",
+          "kind": "lesson",
+          "title": {
+            "en": "Submodules: pinned repository dependencies",
+            "pt-BR": "Submodules: dependências fixadas por commit",
+            "es": "Submodules: dependencias fijadas por commit"
+          },
+          "content": {
+            "en": "advanced-git/03-submodules/README.md",
+            "pt-BR": "advanced-git/03-submodules/README.pt-BR.md",
+            "es": "advanced-git/03-submodules/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.02-worktree",
+          "next_id": "advanced-git.04-subtree",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.04-subtree",
+          "order": 3,
+          "slug": "04-subtree",
+          "kind": "lesson",
+          "title": {
+            "en": "Subtree: vendor content into a repository",
+            "pt-BR": "Subtree: integrar conteúdo de outra origem",
+            "es": "Subtree: integrar contenido de otro origen"
+          },
+          "content": {
+            "en": "advanced-git/04-subtree/README.md",
+            "pt-BR": "advanced-git/04-subtree/README.pt-BR.md",
+            "es": "advanced-git/04-subtree/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.03-submodules",
+          "next_id": "advanced-git.05-hooks",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.05-hooks",
+          "order": 4,
+          "slug": "05-hooks",
+          "kind": "lesson",
+          "title": {
+            "en": "Hooks: local automation and trust",
+            "pt-BR": "Hooks: automação local e confiança",
+            "es": "Hooks: automatización local y confianza"
+          },
+          "content": {
+            "en": "advanced-git/05-hooks/README.md",
+            "pt-BR": "advanced-git/05-hooks/README.pt-BR.md",
+            "es": "advanced-git/05-hooks/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.04-subtree",
+          "next_id": "advanced-git.06-rerere",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.06-rerere",
+          "order": 5,
+          "slug": "06-rerere",
+          "kind": "lesson",
+          "title": {
+            "en": "Rerere: reuse conflict resolutions",
+            "pt-BR": "Rerere: reutilizar resoluções de conflitos",
+            "es": "Rerere: reutilizar resoluciones de conflictos"
+          },
+          "content": {
+            "en": "advanced-git/06-rerere/README.md",
+            "pt-BR": "advanced-git/06-rerere/README.pt-BR.md",
+            "es": "advanced-git/06-rerere/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.05-hooks",
+          "next_id": "advanced-git.07-sparse-checkout",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.07-sparse-checkout",
+          "order": 6,
+          "slug": "07-sparse-checkout",
+          "kind": "lesson",
+          "title": {
+            "en": "Sparse checkout: select working files",
+            "pt-BR": "Sparse checkout: selecionar arquivos de trabalho",
+            "es": "Sparse checkout: seleccionar archivos de trabajo"
+          },
+          "content": {
+            "en": "advanced-git/07-sparse-checkout/README.md",
+            "pt-BR": "advanced-git/07-sparse-checkout/README.pt-BR.md",
+            "es": "advanced-git/07-sparse-checkout/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.06-rerere",
+          "next_id": "advanced-git.08-partial-and-shallow-clone",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.08-partial-and-shallow-clone",
+          "order": 7,
+          "slug": "08-partial-and-shallow-clone",
+          "kind": "lesson",
+          "title": {
+            "en": "Partial and shallow clones",
+            "pt-BR": "Clones parciais e rasos",
+            "es": "Clones parciales y superficiales"
+          },
+          "content": {
+            "en": "advanced-git/08-partial-and-shallow-clone/README.md",
+            "pt-BR": "advanced-git/08-partial-and-shallow-clone/README.pt-BR.md",
+            "es": "advanced-git/08-partial-and-shallow-clone/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.07-sparse-checkout",
+          "next_id": "advanced-git.09-blame-and-grep",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.09-blame-and-grep",
+          "order": 8,
+          "slug": "09-blame-and-grep",
+          "kind": "lesson",
+          "title": {
+            "en": "Blame and grep: investigate changes",
+            "pt-BR": "Blame e grep: investigar mudanças",
+            "es": "Blame y grep: investigar cambios"
+          },
+          "content": {
+            "en": "advanced-git/09-blame-and-grep/README.md",
+            "pt-BR": "advanced-git/09-blame-and-grep/README.pt-BR.md",
+            "es": "advanced-git/09-blame-and-grep/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.08-partial-and-shallow-clone",
+          "next_id": "advanced-git.10-archive-and-bundle",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.10-archive-and-bundle",
+          "order": 9,
+          "slug": "10-archive-and-bundle",
+          "kind": "lesson",
+          "title": {
+            "en": "Archive and bundle: distribute snapshots or history",
+            "pt-BR": "Archive e bundle: distribuir snapshots ou histórico",
+            "es": "Archive y bundle: distribuir snapshots o historial"
+          },
+          "content": {
+            "en": "advanced-git/10-archive-and-bundle/README.md",
+            "pt-BR": "advanced-git/10-archive-and-bundle/README.pt-BR.md",
+            "es": "advanced-git/10-archive-and-bundle/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.09-blame-and-grep",
+          "next_id": "advanced-git.11-integrated-advanced-lab",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "advanced-git.11-integrated-advanced-lab",
+          "order": 10,
+          "slug": "11-integrated-advanced-lab",
+          "kind": "lesson",
+          "title": {
+            "en": "Integrated advanced Git lab",
+            "pt-BR": "Laboratório integrado de Git avançado",
+            "es": "Laboratorio integrado de Git avanzado"
+          },
+          "content": {
+            "en": "advanced-git/11-integrated-advanced-lab/README.md",
+            "pt-BR": "advanced-git/11-integrated-advanced-lab/README.pt-BR.md",
+            "es": "advanced-git/11-integrated-advanced-lab/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.10-archive-and-bundle",
+          "next_id": "git-internals.01-object-database",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "git-internals",
+      "order": 14,
+      "slug": "git-internals",
+      "title": {
+        "en": "Git Internals",
+        "pt-BR": "Internals do Git",
+        "es": "Funcionamiento interno de Git"
+      },
+      "index": {
+        "en": "git-internals/README.md",
+        "pt-BR": "git-internals/README.pt-BR.md",
+        "es": "git-internals/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "git-internals.01-object-database",
+          "order": 0,
+          "slug": "01-object-database",
+          "kind": "lesson",
+          "title": {
+            "en": "Object database: the repository's content store",
+            "pt-BR": "Banco de objetos: armazenamento do repositório",
+            "es": "Base de objetos: almacenamiento del repositorio"
+          },
+          "content": {
+            "en": "git-internals/01-object-database/README.md",
+            "pt-BR": "git-internals/01-object-database/README.pt-BR.md",
+            "es": "git-internals/01-object-database/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "advanced-git.11-integrated-advanced-lab",
+          "next_id": "git-internals.02-blobs-and-trees",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.02-blobs-and-trees",
+          "order": 1,
+          "slug": "02-blobs-and-trees",
+          "kind": "lesson",
+          "title": {
+            "en": "Blobs and trees: names and content",
+            "pt-BR": "Blobs e trees: nomes e conteúdo",
+            "es": "Blobs y trees: nombres y contenido"
+          },
+          "content": {
+            "en": "git-internals/02-blobs-and-trees/README.md",
+            "pt-BR": "git-internals/02-blobs-and-trees/README.pt-BR.md",
+            "es": "git-internals/02-blobs-and-trees/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.01-object-database",
+          "next_id": "git-internals.03-commits-and-tags",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.03-commits-and-tags",
+          "order": 2,
+          "slug": "03-commits-and-tags",
+          "kind": "lesson",
+          "title": {
+            "en": "Commits and annotated tags",
+            "pt-BR": "Commits e tags anotadas",
+            "es": "Commits y tags anotados"
+          },
+          "content": {
+            "en": "git-internals/03-commits-and-tags/README.md",
+            "pt-BR": "git-internals/03-commits-and-tags/README.pt-BR.md",
+            "es": "git-internals/03-commits-and-tags/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.02-blobs-and-trees",
+          "next_id": "git-internals.04-object-hashes",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.04-object-hashes",
+          "order": 3,
+          "slug": "04-object-hashes",
+          "kind": "lesson",
+          "title": {
+            "en": "Hashes and object identity",
+            "pt-BR": "Hashes e identidade dos objetos",
+            "es": "Hashes e identidad de objetos"
+          },
+          "content": {
+            "en": "git-internals/04-object-hashes/README.md",
+            "pt-BR": "git-internals/04-object-hashes/README.pt-BR.md",
+            "es": "git-internals/04-object-hashes/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.03-commits-and-tags",
+          "next_id": "git-internals.05-refs-and-head",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.05-refs-and-head",
+          "order": 4,
+          "slug": "05-refs-and-head",
+          "kind": "lesson",
+          "title": {
+            "en": "Refs and HEAD: naming object IDs",
+            "pt-BR": "Refs e HEAD: nomear IDs de objetos",
+            "es": "Refs y HEAD: nombrar IDs de objetos"
+          },
+          "content": {
+            "en": "git-internals/05-refs-and-head/README.md",
+            "pt-BR": "git-internals/05-refs-and-head/README.pt-BR.md",
+            "es": "git-internals/05-refs-and-head/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.04-object-hashes",
+          "next_id": "git-internals.06-index-internals",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.06-index-internals",
+          "order": 5,
+          "slug": "06-index-internals",
+          "kind": "lesson",
+          "title": {
+            "en": "Index internals: staged entries",
+            "pt-BR": "Internals do index: entradas preparadas",
+            "es": "Internals del índice: entradas preparadas"
+          },
+          "content": {
+            "en": "git-internals/06-index-internals/README.md",
+            "pt-BR": "git-internals/06-index-internals/README.pt-BR.md",
+            "es": "git-internals/06-index-internals/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.05-refs-and-head",
+          "next_id": "git-internals.07-loose-objects-and-packfiles",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.07-loose-objects-and-packfiles",
+          "order": 6,
+          "slug": "07-loose-objects-and-packfiles",
+          "kind": "lesson",
+          "title": {
+            "en": "Loose objects and packfiles",
+            "pt-BR": "Objetos soltos e packfiles",
+            "es": "Objetos sueltos y packfiles"
+          },
+          "content": {
+            "en": "git-internals/07-loose-objects-and-packfiles/README.md",
+            "pt-BR": "git-internals/07-loose-objects-and-packfiles/README.pt-BR.md",
+            "es": "git-internals/07-loose-objects-and-packfiles/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.06-index-internals",
+          "next_id": "git-internals.08-gc-and-maintenance",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.08-gc-and-maintenance",
+          "order": 7,
+          "slug": "08-gc-and-maintenance",
+          "kind": "lesson",
+          "title": {
+            "en": "Garbage collection and maintenance",
+            "pt-BR": "Garbage collection e maintenance",
+            "es": "Garbage collection y maintenance"
+          },
+          "content": {
+            "en": "git-internals/08-gc-and-maintenance/README.md",
+            "pt-BR": "git-internals/08-gc-and-maintenance/README.pt-BR.md",
+            "es": "git-internals/08-gc-and-maintenance/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.07-loose-objects-and-packfiles",
+          "next_id": "git-internals.09-reflogs-and-reachability",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.09-reflogs-and-reachability",
+          "order": 8,
+          "slug": "09-reflogs-and-reachability",
+          "kind": "lesson",
+          "title": {
+            "en": "Reflogs and reachability",
+            "pt-BR": "Reflogs e alcançabilidade",
+            "es": "Reflogs y alcanzabilidad"
+          },
+          "content": {
+            "en": "git-internals/09-reflogs-and-reachability/README.md",
+            "pt-BR": "git-internals/09-reflogs-and-reachability/README.pt-BR.md",
+            "es": "git-internals/09-reflogs-and-reachability/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.08-gc-and-maintenance",
+          "next_id": "git-internals.10-porcelain-and-plumbing",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.10-porcelain-and-plumbing",
+          "order": 9,
+          "slug": "10-porcelain-and-plumbing",
+          "kind": "lesson",
+          "title": {
+            "en": "Porcelain and plumbing: stable inspection",
+            "pt-BR": "Porcelain e plumbing: inspeção estável",
+            "es": "Porcelain y plumbing: inspección estable"
+          },
+          "content": {
+            "en": "git-internals/10-porcelain-and-plumbing/README.md",
+            "pt-BR": "git-internals/10-porcelain-and-plumbing/README.pt-BR.md",
+            "es": "git-internals/10-porcelain-and-plumbing/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.09-reflogs-and-reachability",
+          "next_id": "git-internals.11-integrated-internals-lab",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "git-internals.11-integrated-internals-lab",
+          "order": 10,
+          "slug": "11-integrated-internals-lab",
+          "kind": "lesson",
+          "title": {
+            "en": "Integrated Git internals lab",
+            "pt-BR": "Laboratório integrado de Git internals",
+            "es": "Laboratorio integrado de Git internals"
+          },
+          "content": {
+            "en": "git-internals/11-integrated-internals-lab/README.md",
+            "pt-BR": "git-internals/11-integrated-internals-lab/README.pt-BR.md",
+            "es": "git-internals/11-integrated-internals-lab/README.es.md"
+          },
+          "assets": [],
+          "resources": [],
+          "previous_id": "git-internals.10-porcelain-and-plumbing",
+          "next_id": "command-reference.01-setup-and-configuration",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
+    },
+    {
+      "id": "command-reference",
+      "order": 15,
+      "slug": "command-reference",
+      "title": {
+        "en": "Command Reference",
+        "pt-BR": "Referência de comandos",
+        "es": "Referencia de comandos"
+      },
+      "index": {
+        "en": "command-reference/README.md",
+        "pt-BR": "command-reference/README.pt-BR.md",
+        "es": "command-reference/README.es.md"
+      },
+      "chapters": [
+        {
+          "id": "command-reference.01-setup-and-configuration",
+          "order": 0,
+          "slug": "01-setup-and-configuration",
+          "kind": "reference",
+          "title": {
+            "en": "Setup & Configuration",
+            "pt-BR": "Inicialização e configuração",
+            "es": "Inicio y configuración"
+          },
+          "content": {
+            "en": "command-reference/01-setup-and-configuration/README.md",
+            "pt-BR": "command-reference/01-setup-and-configuration/README.pt-BR.md",
+            "es": "command-reference/01-setup-and-configuration/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/01-setup-and-configuration/catalog.json"
+          ],
+          "previous_id": "git-internals.11-integrated-internals-lab",
+          "next_id": "command-reference.02-repository-inspection",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.02-repository-inspection",
+          "order": 1,
+          "slug": "02-repository-inspection",
+          "kind": "reference",
+          "title": {
+            "en": "Repository Inspection",
+            "pt-BR": "Inspeção do repositório",
+            "es": "Inspección del repositorio"
+          },
+          "content": {
+            "en": "command-reference/02-repository-inspection/README.md",
+            "pt-BR": "command-reference/02-repository-inspection/README.pt-BR.md",
+            "es": "command-reference/02-repository-inspection/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/02-repository-inspection/catalog.json"
+          ],
+          "previous_id": "command-reference.01-setup-and-configuration",
+          "next_id": "command-reference.03-working-tree-and-staging",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.03-working-tree-and-staging",
+          "order": 2,
+          "slug": "03-working-tree-and-staging",
+          "kind": "reference",
+          "title": {
+            "en": "Working Tree & Staging",
+            "pt-BR": "Working tree e staging",
+            "es": "Working tree y staging"
+          },
+          "content": {
+            "en": "command-reference/03-working-tree-and-staging/README.md",
+            "pt-BR": "command-reference/03-working-tree-and-staging/README.pt-BR.md",
+            "es": "command-reference/03-working-tree-and-staging/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/03-working-tree-and-staging/catalog.json"
+          ],
+          "previous_id": "command-reference.02-repository-inspection",
+          "next_id": "command-reference.04-commits-and-tags",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.04-commits-and-tags",
+          "order": 3,
+          "slug": "04-commits-and-tags",
+          "kind": "reference",
+          "title": {
+            "en": "Commits & Tags",
+            "pt-BR": "Commits e tags",
+            "es": "Commits y etiquetas"
+          },
+          "content": {
+            "en": "command-reference/04-commits-and-tags/README.md",
+            "pt-BR": "command-reference/04-commits-and-tags/README.pt-BR.md",
+            "es": "command-reference/04-commits-and-tags/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/04-commits-and-tags/catalog.json"
+          ],
+          "previous_id": "command-reference.03-working-tree-and-staging",
+          "next_id": "command-reference.05-history-and-comparison",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.05-history-and-comparison",
+          "order": 4,
+          "slug": "05-history-and-comparison",
+          "kind": "reference",
+          "title": {
+            "en": "History & Comparison",
+            "pt-BR": "Histórico e comparação",
+            "es": "Historial y comparación"
+          },
+          "content": {
+            "en": "command-reference/05-history-and-comparison/README.md",
+            "pt-BR": "command-reference/05-history-and-comparison/README.pt-BR.md",
+            "es": "command-reference/05-history-and-comparison/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/05-history-and-comparison/catalog.json"
+          ],
+          "previous_id": "command-reference.04-commits-and-tags",
+          "next_id": "command-reference.06-branch-management",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.06-branch-management",
+          "order": 5,
+          "slug": "06-branch-management",
+          "kind": "reference",
+          "title": {
+            "en": "Branch Management",
+            "pt-BR": "Gerenciamento de branches",
+            "es": "Gestión de ramas"
+          },
+          "content": {
+            "en": "command-reference/06-branch-management/README.md",
+            "pt-BR": "command-reference/06-branch-management/README.pt-BR.md",
+            "es": "command-reference/06-branch-management/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/06-branch-management/catalog.json"
+          ],
+          "previous_id": "command-reference.05-history-and-comparison",
+          "next_id": "command-reference.07-merge-rebase-and-conflicts",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.07-merge-rebase-and-conflicts",
+          "order": 6,
+          "slug": "07-merge-rebase-and-conflicts",
+          "kind": "reference",
+          "title": {
+            "en": "Merge, Rebase & Conflicts",
+            "pt-BR": "Merge, rebase e conflitos",
+            "es": "Merge, rebase y conflictos"
+          },
+          "content": {
+            "en": "command-reference/07-merge-rebase-and-conflicts/README.md",
+            "pt-BR": "command-reference/07-merge-rebase-and-conflicts/README.pt-BR.md",
+            "es": "command-reference/07-merge-rebase-and-conflicts/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/07-merge-rebase-and-conflicts/catalog.json"
+          ],
+          "previous_id": "command-reference.06-branch-management",
+          "next_id": "command-reference.08-remotes-and-synchronization",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.08-remotes-and-synchronization",
+          "order": 7,
+          "slug": "08-remotes-and-synchronization",
+          "kind": "reference",
+          "title": {
+            "en": "Remotes & Synchronization",
+            "pt-BR": "Remotos e sincronização",
+            "es": "Remotos y sincronización"
+          },
+          "content": {
+            "en": "command-reference/08-remotes-and-synchronization/README.md",
+            "pt-BR": "command-reference/08-remotes-and-synchronization/README.pt-BR.md",
+            "es": "command-reference/08-remotes-and-synchronization/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/08-remotes-and-synchronization/catalog.json"
+          ],
+          "previous_id": "command-reference.07-merge-rebase-and-conflicts",
+          "next_id": "command-reference.09-recovery-and-stash",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.09-recovery-and-stash",
+          "order": 8,
+          "slug": "09-recovery-and-stash",
+          "kind": "reference",
+          "title": {
+            "en": "Recovery & Stash",
+            "pt-BR": "Recuperação e stash",
+            "es": "Recuperación y stash"
+          },
+          "content": {
+            "en": "command-reference/09-recovery-and-stash/README.md",
+            "pt-BR": "command-reference/09-recovery-and-stash/README.pt-BR.md",
+            "es": "command-reference/09-recovery-and-stash/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/09-recovery-and-stash/catalog.json"
+          ],
+          "previous_id": "command-reference.08-remotes-and-synchronization",
+          "next_id": "command-reference.10-search-and-troubleshooting",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.10-search-and-troubleshooting",
+          "order": 9,
+          "slug": "10-search-and-troubleshooting",
+          "kind": "reference",
+          "title": {
+            "en": "Search & Troubleshooting",
+            "pt-BR": "Pesquisa e diagnóstico",
+            "es": "Búsqueda y diagnóstico"
+          },
+          "content": {
+            "en": "command-reference/10-search-and-troubleshooting/README.md",
+            "pt-BR": "command-reference/10-search-and-troubleshooting/README.pt-BR.md",
+            "es": "command-reference/10-search-and-troubleshooting/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/10-search-and-troubleshooting/catalog.json"
+          ],
+          "previous_id": "command-reference.09-recovery-and-stash",
+          "next_id": "command-reference.11-advanced-git-operations",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.11-advanced-git-operations",
+          "order": 10,
+          "slug": "11-advanced-git-operations",
+          "kind": "reference",
+          "title": {
+            "en": "Advanced Git Operations",
+            "pt-BR": "Operações avançadas",
+            "es": "Operaciones avanzadas"
+          },
+          "content": {
+            "en": "command-reference/11-advanced-git-operations/README.md",
+            "pt-BR": "command-reference/11-advanced-git-operations/README.pt-BR.md",
+            "es": "command-reference/11-advanced-git-operations/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/11-advanced-git-operations/catalog.json"
+          ],
+          "previous_id": "command-reference.10-search-and-troubleshooting",
+          "next_id": "command-reference.12-internals-and-plumbing",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.12-internals-and-plumbing",
+          "order": 11,
+          "slug": "12-internals-and-plumbing",
+          "kind": "reference",
+          "title": {
+            "en": "Internals & Plumbing",
+            "pt-BR": "Internals e plumbing",
+            "es": "Internals y plumbing"
+          },
+          "content": {
+            "en": "command-reference/12-internals-and-plumbing/README.md",
+            "pt-BR": "command-reference/12-internals-and-plumbing/README.pt-BR.md",
+            "es": "command-reference/12-internals-and-plumbing/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/12-internals-and-plumbing/catalog.json"
+          ],
+          "previous_id": "command-reference.11-advanced-git-operations",
+          "next_id": "command-reference.13-security-and-maintenance",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.13-security-and-maintenance",
+          "order": 12,
+          "slug": "13-security-and-maintenance",
+          "kind": "reference",
+          "title": {
+            "en": "Security & Maintenance",
+            "pt-BR": "Segurança e manutenção",
+            "es": "Seguridad y mantenimiento"
+          },
+          "content": {
+            "en": "command-reference/13-security-and-maintenance/README.md",
+            "pt-BR": "command-reference/13-security-and-maintenance/README.pt-BR.md",
+            "es": "command-reference/13-security-and-maintenance/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/13-security-and-maintenance/catalog.json"
+          ],
+          "previous_id": "command-reference.12-internals-and-plumbing",
+          "next_id": "command-reference.14-platforms-and-automation",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        },
+        {
+          "id": "command-reference.14-platforms-and-automation",
+          "order": 13,
+          "slug": "14-platforms-and-automation",
+          "kind": "reference",
+          "title": {
+            "en": "Platforms & Automation",
+            "pt-BR": "Plataformas e automação",
+            "es": "Plataformas y automatización"
+          },
+          "content": {
+            "en": "command-reference/14-platforms-and-automation/README.md",
+            "pt-BR": "command-reference/14-platforms-and-automation/README.pt-BR.md",
+            "es": "command-reference/14-platforms-and-automation/README.es.md"
+          },
+          "assets": [],
+          "resources": [
+            "command-reference/14-platforms-and-automation/catalog.json"
+          ],
+          "previous_id": "command-reference.13-security-and-maintenance",
+          "next_id": "practical-projects.01-my-first-repository",
+          "exercise_ids": [],
+          "quiz_ids": [],
+          "interview_ids": [],
+          "mock_ids": [],
+          "command_ids": [],
+          "execution": "unverified"
+        }
+      ]
     }
   ]
 }
