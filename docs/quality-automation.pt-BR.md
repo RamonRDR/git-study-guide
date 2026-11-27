@@ -23,6 +23,8 @@ Prepare as páginas geradas, execute `python scripts/validate.py --check command
 
 Ainda não há exemplos didáticos executáveis aprovados. O manifesto vazio é um gate que bloqueia por padrão: todos os arquivos em examples/ (incluindo arquivos inertes e variações de maiúsculas/minúsculas) são rejeitados, independentemente de extensão ou modo, e manifestos não vazios falham até existir protocolo de execução revisado. Não executar código arbitrário de estudantes. Teste inicial Git usa repo temporário isolado e verifica staging, branch, conteúdo commitado e status limpo. Sprints futuras ampliam cenários determinísticos. Rodar testes locais somente de revisões confiáveis e revisadas.
 
+A Sprint 16 adiciona oito testes fixos de integração para resultados dos projetos, incluindo estados intermediários, conflito esperado e snapshots registrados inválidos. Executam em repositórios temporários isolados e origens bare locais; os testes não extraem nem executam Markdown ou submissões de alunos. Fluxos hospedados permanecem simulações não executadas. Rode suíte completa e inspecione logs reais Ubuntu/Windows do SHA mais recente.
+
 CI usa runners padrão hospedados pelo GitHub Linux e Windows em pull_request e pushes na main, com permissão contents somente leitura, actions oficiais fixadas por SHA, sem credenciais persistidas de checkout, sem segredos, sem runners próprios e sem serviço pago. Cada job limitado a dez minutos. Código de PR continua não confiável; runners descartáveis não são ambientes privilegiados de deploy. Conferir runs reais na última revisão; checks obrigatórios exigem aprovação separada após observar nomes.
 
 - [Estrutura do projeto](project-structure.pt-BR.md)

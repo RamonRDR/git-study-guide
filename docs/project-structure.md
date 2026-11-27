@@ -8,5 +8,7 @@ Chapters use NN-topic/README.md, README.pt-BR.md and README.es.md. Register chap
 
 Module 15 uses one canonical catalog.json per category, plus category and intent registries in scripts/. Its trilingual Markdown pages are generated from those records using scripts/render_command_reference.py and the existing navigation registry. Edit JSON rather than generated pages; see [ADR 0005](adr/0005-command-catalog-architecture.md). This is an internal pilot, not the final integration contract.
 
+Module 16 provides eight manually executed trilingual projects under practical-projects/. Each uses a fresh disposable environment, explicit acceptance states and a public reference solution. Shared setup comes from project 01; no executable learner artifacts or new dependencies. The fixed tests in tests/test_git_practical_projects.py independently reproduce the intended states. Bash/Git Bash is for learners; Python's standard library is for repository QA.
+
 - [Learning path](learning-path.md)
 - [Quality automation](quality-automation.md)

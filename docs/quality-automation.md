@@ -23,6 +23,8 @@ Stage the generated pages, run `python scripts/validate.py --check command-catal
 
 No executable learning examples are approved yet. The empty manifest is a fail-closed gate: all files under examples/ (including inert files and case variants) are rejected, regardless of extension or mode, and nonempty manifests fail until a reviewed execution protocol exists. Do not run arbitrary learner code. Initial Git smoke test uses an isolated temporary repository and asserts staging, branch, committed content and clean status. Later sprints extend deterministic scenarios. Run local tests only from trusted reviewed revisions.
 
+Sprint 16 adds eight fixed integration tests for project outcomes, including intermediate states, expected conflict and invalid committed snapshots. They run in isolated temporary repositories and local bare origins; the tests do not extract or execute Markdown or learner submissions. Hosted workflows remain unexecuted simulations. Run the full suite and inspect actual Ubuntu/Windows logs for the latest SHA.
+
 CI uses standard GitHub-hosted Linux and Windows runners on pull_request and pushes to main, with read-only contents permissions, pinned first-party actions, no persisted checkout credentials, no secrets, no self-hosted runners and no paid service. Each job is limited to ten minutes. PR code remains untrusted; runners are disposable, not privileged deployment environments. Check actual runs on the latest PR revision; required status checks need separate approval after names are observed.
 
 - [Project structure](project-structure.md)
