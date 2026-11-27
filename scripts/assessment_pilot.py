@@ -20,7 +20,9 @@ CHECK_FIELDS = {"clean": set(), "branch": {"value"}, "head-content": {"file", "v
                 "index-content": {"file", "value"}, "work-content": {"file", "value"},
                 "tracked": {"file"}, "untracked": {"file"}, "ancestor": {"older", "newer"},
                 "same-ref": {"left", "right"}, "commit-count": {"value"},
-                "parent-count": {"value"}, "tag-type": {"tag", "value"}, "no-unmerged": set()}
+                "parent-count": {"value"}, "tag-type": {"tag", "value"}, "no-unmerged": set(),
+                "ref-content": {"ref", "file", "value"}, "same-tree": {"left", "right"},
+                "different-ref": {"left", "right"}}
 FILES = {"notes.txt", "review.txt", "catalog.txt", "ignored.txt", ".gitignore", "future.txt"}
 REF = re.compile(r"(?:HEAD(?:\^[12])?|main|feat/[a-z0-9-]+|recovery/[a-z0-9-]+|v[0-9]+\.[0-9]+\.[0-9]+)")
 VALUES = {"status: draft", "status: ready", "status: reviewed", "status: recovered",
@@ -44,7 +46,7 @@ def valid_check(check):
     for key, value in check.items():
         if key == "file" and (not isinstance(value, str) or value not in FILES):
             return False
-        if key in {"older", "newer", "left", "right", "tag"} and not valid_ref(value):
+        if key in {"older", "newer", "left", "right", "tag", "ref"} and not valid_ref(value):
             return False
         if key == "value":
             if kind in {"commit-count", "parent-count"}:
