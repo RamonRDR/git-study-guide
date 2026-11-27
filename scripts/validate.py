@@ -61,7 +61,9 @@ def check_structure(root, paths):
                 "scripts/validate.py", "tests/test_validate.py", ".github/workflows/quality.yml",
                 "scripts/command_catalog.py", "scripts/render_command_reference.py",
                 "scripts/command_catalog_categories.json", "scripts/command_catalog_intents.json",
-                "tests/test_command_catalog.py"}
+                "tests/test_command_catalog.py", "scripts/assessment_pilot.py",
+                "scripts/render_assessments.py", "scripts/assessment_state.py",
+                "tests/test_assessment_pilot.py", "tests/test_assessment_state.py"}
     required.update(n + ".md" for n in ROOT_DOCS)
     for missing in sorted(required - paths):
         errors.append("Missing required path: " + missing)
@@ -305,7 +307,14 @@ def check_command_catalog(root, paths):
         from render_command_reference import check_catalog
     return check_catalog(root, paths)
 
-CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets", "command-catalog")
+def check_assessment_pilot(root, paths):
+    if __package__:
+        from .render_assessments import check_assessments
+    else:
+        from render_assessments import check_assessments
+    return check_assessments(root, paths)
+
+CHECKS = ("structure", "locales", "links", "navigation", "examples", "secrets", "command-catalog", "assessment-pilot")
 
 def main():
     parser = argparse.ArgumentParser()
@@ -316,6 +325,7 @@ def main():
                   links=lambda: check_links(ROOT, paths), navigation=lambda: check_navigation(ROOT, paths),
                   examples=lambda: check_examples(ROOT, paths), secrets=lambda: check_secrets(ROOT, paths))
     checks["command-catalog"] = lambda: check_command_catalog(ROOT, paths)
+    checks["assessment-pilot"] = lambda: check_assessment_pilot(ROOT, paths)
     failed = False
     for name in CHECKS if args.check == "all" else (args.check,):
         try:
