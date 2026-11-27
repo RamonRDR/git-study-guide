@@ -65,6 +65,7 @@ def check_structure(root, paths):
                 "scripts/render_assessments.py", "scripts/assessment_state.py",
                 "tests/test_assessment_pilot.py", "tests/test_assessment_state.py",
                 "curriculum/manifest.json", "scripts/learning_hub_contract.py",
+                "scripts/learning_hub_consumer.py", "tests/test_learning_hub_contract.py",
                 "schemas/curriculum-manifest.schema.json", "schemas/assessment-bank.schema.json",
                 "schemas/command-catalog.schema.json", "schemas/revision-lock.schema.json"}
     required.update(n + ".md" for n in ROOT_DOCS)
