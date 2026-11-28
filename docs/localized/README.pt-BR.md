@@ -18,7 +18,7 @@
 <p align="center">
   <a href="README.pt-BR.md"><img src="../../docs/assets/learning-hub/study-git-pt-br.svg" alt="Estude Git" width="207" height="34" /></a>
   <a href="https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/localized/README.pt-BR.md"><img src="../../docs/assets/learning-hub/study-python-pt-br.svg" alt="Estude Python" width="207" height="34" /></a>
-  <br/><sub>Guia atual: Git (candidato à release)</sub>
+  <br/><sub>Guia atual: Git</sub>
 </p>
 <!-- learning-hub:end -->
 
@@ -129,7 +129,7 @@ Computador, Git e terminal ou editor. Siga a aula de instalação; muitos labora
 
 ## Status atual
 
-**Git Study Guide v1.0.0 candidato à release.** Módulos 00–17 implementados: 141 entradas (115 aulas, 14 categorias de referência, oito capítulos de projetos e quatro de bancos de avaliação), 120 operações catalogadas e 75 registros de avaliação (36 quizzes, 12 desafios, 24 perguntas de entrevista, três simulados). QA final e publicação exigem aprovação explícita. Contrato Learning Hub versionado preparado; runtime no navegador e integração do site são trabalhos separados.
+**Git Study Guide 1.0.** Módulos 00–17 implementados: 141 entradas (115 aulas, 14 categorias de referência, oito capítulos de projetos e quatro de bancos de avaliação), 120 operações catalogadas e 75 registros de avaliação (36 quizzes, 12 desafios, 24 perguntas de entrevista, três simulados). As evidências de QA final e publicação são registradas no [PR #22](https://github.com/RamonRDR/git-study-guide/pull/22); versões oficialmente publicadas constam em [Releases](https://github.com/RamonRDR/git-study-guide/releases). Contrato Learning Hub versionado preparado; runtime no navegador e integração do site são trabalhos separados.
 
 - [Handoff Learning Hub](../../docs/specs/project-foundation/handoff.pt-BR.md)
 
