@@ -100,3 +100,5 @@ Sprint 19A (FR-08 / AC-19 / T19-01): PR enfocado de estandarización CI/CD y gob
 Cierre Sprint 19A: [cierre PR #21](https://github.com/RamonRDR/git-study-guide/pull/21#issuecomment-7227417357); [CI push](https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750) y [CI manual](https://github.com/RamonRDR/git-study-guide/actions/runs/46062482507), ambos con 152 pruebas y nueve validadores por SO. Cancelación de ejecución obsoleta no ejercitada.
 
 Sprint 19B iniciada en base inmutable `03c30438a5490d6c8f9b22dbf457a644658e042f`; [evidencia de QA](audit.es.md#qa-final-sprint-19b--evidencia-de-base-en-curso). README final, aprobación de identidad o excepción explícita, badges, entrega y gates de release pendientes; T19-01 sigue en curso.
+
+Sprint 19B: mantenedor aprobó Identidad Visual V1; assets de presentación, READMEs candidatos finales, entrega y checks de regresión preparados. Base inmutable y verificación de rutas canónicas documentadas. Pendientes CI del HEAD, Codex Review, renderizado visual y auditoría final, autorización explícita de squash, verificación post-merge y autorización separada de release. AC-19 y T19-01 siguen en curso.

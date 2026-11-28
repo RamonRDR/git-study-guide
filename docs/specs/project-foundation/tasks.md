@@ -100,3 +100,5 @@ Sprint 19A (FR-08 / AC-19 / T19-01): focused CI/CD standardization and governanc
 Sprint 19A closure: [PR #21 closure](https://github.com/RamonRDR/git-study-guide/pull/21#issuecomment-7227417357); [push CI](https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750) and [manual CI](https://github.com/RamonRDR/git-study-guide/actions/runs/46062482507), both 152 tests and nine validators per OS. Superseded-run cancellation not exercised.
 
 Sprint 19B started on immutable baseline `03c30438a5490d6c8f9b22dbf457a644658e042f`; [baseline QA evidence](audit.md#sprint-19b-final-qa--baseline-evidence-in-progress). Final README, identity approval or explicit exception, badges, handoff and release gates remain pending; T19-01 remains in progress.
+
+Sprint 19B: maintainer approved Visual Identity V1; presentation assets, final candidate READMEs, handoff and regression checks prepared. Immutable baseline and canonical path verification documented. Pending exact-head CI, Codex Review, visual rendering and final audit, explicit squash approval, post-merge verification and separate release authorization. AC-19 and T19-01 remain in progress.
