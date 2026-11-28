@@ -20,6 +20,7 @@
   <a href="https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/localized/README.pt-BR.md"><img src="../../docs/assets/learning-hub/study-python-pt-br.svg" alt="Estude Python" width="207" height="34" /></a>
   <br/><sub>Guia atual: Git</sub>
 </p>
+<p align="center"><a href="../specs/project-foundation/related-guides.pt-BR.md">Temas de estudo relacionados: Git e Python</a></p>
 <!-- learning-hub:end -->
 
 <p align="center"><sub>Criado e mantido por Ramon Rodriguez</sub></p>

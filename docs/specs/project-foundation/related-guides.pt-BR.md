@@ -2,22 +2,29 @@
 
 [English](related-guides.md) · [Português](related-guides.pt-BR.md) · [Español](related-guides.es.md)
 
-O repositório Python existe e os caminhos ingleses listados foram verificados em 9102bbbf8f8dd846f2fb9682dd3f55bcacc10c95. Destinos Git abaixo são propostas, não destinos publicados na main; links recíprocos pendentes. Python responde por onboarding específico de sua linguagem; Git pelo aprofundamento independente. Nenhum guia é pré-requisito do outro.
+Python Study Guide v2.0.0 publicado. Estas referências opcionais conectam temas publicados do Git v1.0.0 ao conteúdo Python. Ambos os guias permanecem independentes. Este mapa é acessível pelo README atual; aulas congeladas, manifestos e tags são preservados.
 
-| Python (EN) | Destino Git proposto | Tema |
+| Tema | Origem Git (v1.0.0) | Complemento Python (v2.0.0) |
 | --- | --- | --- |
-| `README.md` | `README.md` | Introdução do guia |
-| `getting-started/README.md` | `getting-started/` | Instalação e fluxo básico |
-| `getting-started/04-virtual-environments/README.md` | `basic-commands/` | Regras de ignore e ambientes gerados |
-| `getting-started/05-packages-and-dependencies/README.md` | `basic-commands/` | Arquivos de dependência e reprodutibilidade |
-| `getting-started/06-git-and-version-control/README.md` | `fundamentals/; remote-repositories/; history-and-recovery/` | Fundamentos, remotes e recuperação segura |
-| `manual-programming-practices/04-professional-workflow/README.md` | `professional-workflows/` | Branch/PR/test/review profissional |
-| `CONTRIBUTING.md` | `CONTRIBUTING.md` | Fluxo de contribuição |
-| `docs/ai-assisted-development/README.en.md` | `docs/ai-assisted-development/` | Review assistido por IA e CI |
-| `docs/roadmap.en.md` | `docs/roadmap.md` | Roadmap entre guias |
-| `docs/specs/learning-hub-foundation/integration-contract.md` | `docs/specs/project-foundation/integration-contract.md` | Contratos e manifestos independentes |
+| Instalar Git | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/getting-started/01-install-git/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/README.pt-BR.md) |
+| Ignorar ambientes gerados | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/basic-commands/05-ignore-and-review/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/04-virtual-environments/README.pt-BR.md) |
+| Versionar declarações de dependências | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/basic-commands/02-status-add-commit/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/05-packages-and-dependencies/README.pt-BR.md) |
+| Fundamentos de controle de versão | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/fundamentals/01-version-control/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/06-git-and-version-control/README.pt-BR.md) |
+| Repositórios remotos | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/remote-repositories/01-remote-concepts/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/06-git-and-version-control/README.pt-BR.md) |
+| Recuperação segura | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/history-and-recovery/01-recovery-safety/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/getting-started/06-git-and-version-control/README.pt-BR.md) |
+| Fluxo com branches | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/professional-workflows/01-feature-branch-workflow/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/manual-programming-practices/04-professional-workflow/README.pt-BR.md) |
+| Desenvolvimento orientado a especificação | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/professional-workflows/09-spec-driven-development/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/manual-programming-practices/02-specification-driven-development/README.pt-BR.md) |
+| Desenvolvimento orientado a testes | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/professional-workflows/10-test-driven-development/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/manual-programming-practices/03-test-driven-development/README.pt-BR.md) |
+| Verificações de qualidade automatizadas | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/ci-cd/03-github-actions/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/manual-programming-practices/04-professional-workflow/README.pt-BR.md) |
+| Contribuição e revisão | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/github/04-pull-requests-and-review/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/localized/CONTRIBUTING.pt-BR.md) |
+| Revisão assistida por IA | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/professional-workflows/11-ai-assisted-development/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/ai-assisted-development/README.pt-BR.md) |
+| Roteiro curricular | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/docs/roadmap.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/roadmap.pt-BR.md) |
+| Contratos de integração independentes | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/docs/specs/project-foundation/integration-contract.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/specs/learning-hub-foundation/integration-contract.pt-BR.md) |
+| Apresentação do guia | [Git](https://github.com/RamonRDR/git-study-guide/blob/v1.0.0/docs/localized/README.pt-BR.md) | [Python](https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/localized/README.pt-BR.md) |
 
-Antes da publicação recíproca, confirmar destinos e locale maps nas revisões publicadas, verificar links e manter lições autossuficientes. Alterar cada repositório apenas com autorização separada e PR focado; atualizar três idiomas, executar CI aplicável, solicitar review e registrar commits. Não modificar Python nesta sprint. Referência: [Python related guides](https://github.com/RamonRDR/python-study-guide/blob/9102bbbf8f8dd846f2fb9682dd3f55bcacc10c95/docs/specs/learning-hub-foundation/related-guides.md).
+Os pares de temas espelham o mapa do Python publicado no PR #121. Nas futuras atualizações, verifique destinos publicados, paridade de idiomas e integridade canônica. Consumidores web devem usar os SHAs canônicos aprovados e contratos independentes, não links de apresentação.
+
+[Mapa de integração no Python](https://github.com/RamonRDR/python-study-guide/blob/ad560188ef074fd028f68580c76060ef00b19fb6/docs/specs/learning-hub-foundation/related-guides.pt-BR.md)
 
 ## Documentos relacionados
 
