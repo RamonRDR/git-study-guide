@@ -17,7 +17,7 @@
 <p align="center"><strong>Ramon Rodriguez Learning Hub</strong><br/><sub>Explora. Aprende. Construye.</sub></p>
 <p align="center">
   <a href="README.es.md"><img src="../../docs/assets/learning-hub/study-git-es.svg" alt="Estudia Git" width="207" height="34" /></a>
-  <a href="https://github.com/RamonRDR/python-study-guide/blob/v2.0.0/docs/localized/README.es.md"><img src="../../docs/assets/learning-hub/study-python-es.svg" alt="Estudia Python" width="207" height="34" /></a>
+  <a href="https://github.com/RamonRDR/python-study-guide/blob/main/docs/localized/README.es.md"><img src="../../docs/assets/learning-hub/study-python-es.svg" alt="Estudia Python" width="207" height="34" /></a>
   <br/><sub>Guía actual: Git</sub>
 </p>
 <p align="center"><a href="../specs/project-foundation/related-guides.es.md">Temas de estudio relacionados: Git y Python</a></p>
