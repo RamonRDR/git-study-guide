@@ -30,7 +30,7 @@ Foundation approved and integrated via PR #1 on 2026-11-25. Subsequent changes r
 | T16-01 | Module 16: eight practical projects (AC-16; depends on T15-01) | Done ([PR #18](https://github.com/RamonRDR/git-study-guide/pull/18)) |
 | T17-01 | Module 17: challenges, quizzes and interviews; pilot structured records (AC-17; depends on T16-01) | Done ([PR #19](https://github.com/RamonRDR/git-study-guide/pull/19)) |
 | T18-01 | Finalize content contract, manifests, schemas, consumer fixtures; evaluate optional playground separately (AC-18; depends on T17-01) | Done ([PR #20](https://github.com/RamonRDR/git-study-guide/pull/20)) |
-| T19-01 | Maintainer-supplied identity, final README, QA, release handoff (AC-19; depends on T18-01) | In progress |
+| T19-01 | Maintainer-supplied identity, final README, QA, release handoff (AC-19; depends on T18-01) | Complete |
 
 Update task evidence in each focused PR. A proposed deliverable or opened PR is not completion. Use actual check/review links and commit SHAs; after approved merge, verify main and branch deletion, and record handoff in the next authorized change if necessary.
 
@@ -102,3 +102,11 @@ Sprint 19A closure: [PR #21 closure](https://github.com/RamonRDR/git-study-guide
 Sprint 19B started on immutable baseline `03c30438a5490d6c8f9b22dbf457a644658e042f`; [baseline QA evidence](audit.md#sprint-19b-final-qa--baseline-evidence-in-progress). Final README, identity approval or explicit exception, badges, handoff and release gates remain pending; T19-01 remains in progress.
 
 Sprint 19B: maintainer approved Visual Identity V1; presentation assets, final candidate READMEs, handoff and regression checks prepared. Immutable baseline and canonical path verification documented. Pending exact-head CI, Codex Review, visual rendering and final audit, explicit squash approval, post-merge verification and separate release authorization. AC-19 and T19-01 remain in progress.
+
+## Sprint 19B closure: official release v1.0.0
+
+The maintainer approved Visual Identity V1, the three rendered READMEs on desktop and mobile, external links and social preview; visual confirmation is maintainer-reported. PRs #22 and #23 passed exact-head CI, Codex Review and Final Pre-Merge Audit, were explicitly authorized and squash merged. Both post-merge main runs passed 156 tests and nine validators per OS; no error/warning markers observed. All 503 canonical paths remained unchanged. Stable latest v1.0.0 was published by the maintainer on 2026-11-28 at 17:41:35 UTC; the tag points directly to `706105ee5ef51befd2282a143e7deafd256c61a8`. Content pin `03c30438a5490d6c8f9b22dbf457a644658e042f`; presentation revision `c26c41fee624a74f7ba7a70ac531063061a6559e`. AC-19 and T19-01 fulfilled; this post-release documentation reconciles the historical in-progress records and does not modify the published tag. Limitations: sampled semantic review, no exhaustive learner lab execution or macOS CI, no verified browser runtime or site deployment, no observed superseded-run cancellation. Reciprocal links to Python and the profile are separate follow-up PRs.
+
+- [Release v1.0.0](https://github.com/RamonRDR/git-study-guide/releases/tag/v1.0.0)
+- [Final main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/46170822488)
+- [PR #22](https://github.com/RamonRDR/git-study-guide/pull/22) · [PR #23](https://github.com/RamonRDR/git-study-guide/pull/23)

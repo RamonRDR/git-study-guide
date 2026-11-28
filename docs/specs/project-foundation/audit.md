@@ -24,3 +24,11 @@ Independent inventory check: 637 regular tracked files; 18 modules, 141 unique c
 Targeted semantic sampling of excerpts in six chapters across all three locales (18 files): first commit, merge conflict resolution, reset, secrets/disclosure prevention, refs and HEAD, and The Lost Commit. Compared key explanations, safety conditions and expected states; no material discrepancy identified in sampled excerpts. Fenced block contents match in all six sets. This is not a complete semantic translation audit, execution of every learner lab, macOS test, external link audit or browser runtime validation.
 
 AC-19 remains in progress: final localized READMEs, maintainer-approved visual assets or explicit exception, truthful badges, remaining applicable QA and limitations, reviewed handoff and approved immutable release evidence. Do not tag or publish yet. No other repository changes.
+
+## Sprint 19B closure: official release v1.0.0
+
+The maintainer approved Visual Identity V1, the three rendered READMEs on desktop and mobile, external links and social preview; visual confirmation is maintainer-reported. PRs #22 and #23 passed exact-head CI, Codex Review and Final Pre-Merge Audit, were explicitly authorized and squash merged. Both post-merge main runs passed 156 tests and nine validators per OS; no error/warning markers observed. All 503 canonical paths remained unchanged. Stable latest v1.0.0 was published by the maintainer on 2026-11-28 at 17:41:35 UTC; the tag points directly to `706105ee5ef51befd2282a143e7deafd256c61a8`. Content pin `03c30438a5490d6c8f9b22dbf457a644658e042f`; presentation revision `c26c41fee624a74f7ba7a70ac531063061a6559e`. AC-19 and T19-01 fulfilled; this post-release documentation reconciles the historical in-progress records and does not modify the published tag. Limitations: sampled semantic review, no exhaustive learner lab execution or macOS CI, no verified browser runtime or site deployment, no observed superseded-run cancellation. Reciprocal links to Python and the profile are separate follow-up PRs.
+
+- [Release v1.0.0](https://github.com/RamonRDR/git-study-guide/releases/tag/v1.0.0)
+- [Final main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/46170822488)
+- [PR #22](https://github.com/RamonRDR/git-study-guide/pull/22) · [PR #23](https://github.com/RamonRDR/git-study-guide/pull/23)

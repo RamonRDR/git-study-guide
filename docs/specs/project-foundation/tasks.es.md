@@ -30,7 +30,7 @@ Fundación aprobada e integrada mediante PR #1 el 25/11/2026. Cambios posteriore
 | T16-01 | Módulo 16: ocho proyectos prácticos (AC-16; depende de T15-01) | Completada ([PR #18](https://github.com/RamonRDR/git-study-guide/pull/18)) |
 | T17-01 | Módulo 17: desafíos, quizzes y entrevistas; piloto de registros estructurados (AC-17; depende de T16-01) | Completada ([PR #19](https://github.com/RamonRDR/git-study-guide/pull/19)) |
 | T18-01 | Finalizar contrato, manifiestos, esquemas, fixtures del consumidor; evaluar playground opcional por separado (AC-18; depende de T17-01) | Completado ([PR #20](https://github.com/RamonRDR/git-study-guide/pull/20)) |
-| T19-01 | Identidad aportada por el mantenedor, README final, QA, entrega (AC-19; depende de T18-01) | En curso |
+| T19-01 | Identidad aportada por el mantenedor, README final, QA, entrega (AC-19; depende de T18-01) | Completada |
 
 Actualizar evidencia en cada PR enfocado. Entrega propuesta o PR abierto no es finalización. Usar enlaces reales de checks/reviews y SHA; tras merge aprobado, verificar main y eliminación de rama, registrar entrega en el siguiente cambio autorizado si hace falta.
 
@@ -102,3 +102,11 @@ Cierre Sprint 19A: [cierre PR #21](https://github.com/RamonRDR/git-study-guide/p
 Sprint 19B iniciada en base inmutable `03c30438a5490d6c8f9b22dbf457a644658e042f`; [evidencia de QA](audit.es.md#qa-final-sprint-19b--evidencia-de-base-en-curso). README final, aprobación de identidad o excepción explícita, badges, entrega y gates de release pendientes; T19-01 sigue en curso.
 
 Sprint 19B: mantenedor aprobó Identidad Visual V1; assets de presentación, READMEs candidatos finales, entrega y checks de regresión preparados. Base inmutable y verificación de rutas canónicas documentadas. Pendientes CI del HEAD, Codex Review, renderizado visual y auditoría final, autorización explícita de squash, verificación post-merge y autorización separada de release. AC-19 y T19-01 siguen en curso.
+
+## Cierre de Sprint 19B: release oficial v1.0.0
+
+El mantenedor aprobó la Identidad Visual V1, los tres READMEs renderizados en desktop y móvil, enlaces externos y social preview; la confirmación visual fue comunicada por el mantenedor. PR #22 y #23 aprobaron CI en el HEAD exacto, Codex Review y Final Pre-Merge Audit, fueron autorizados explícitamente e integrados por squash. Ambos CI post-merge en main aprobaron 156 pruebas y nueve validadores por SO; no se observaron marcadores de error/aviso. Las 503 rutas canónicas permanecieron intactas. La v1.0.0 estable y latest fue publicada por el mantenedor el 28/11/2026 a las 17:41:35 UTC; la etiqueta apunta directamente a `706105ee5ef51befd2282a143e7deafd256c61a8`. Pin de contenido `03c30438a5490d6c8f9b22dbf457a644658e042f`; revisión de presentación `c26c41fee624a74f7ba7a70ac531063061a6559e`. AC-19 y T19-01 cumplidos; esta documentación post-release reconcilia los registros históricos en curso y no modifica la etiqueta publicada. Limitaciones: revisión semántica por muestreo, sin ejecución exhaustiva de labs de estudiantes ni CI macOS, sin runtime navegador o despliegue del sitio verificados, sin cancelación observada de ejecuciones sustituidas. Enlaces recíprocos con Python y perfil son PR posteriores separados.
+
+- [Release v1.0.0](https://github.com/RamonRDR/git-study-guide/releases/tag/v1.0.0)
+- [Final main CI](https://github.com/RamonRDR/git-study-guide/actions/runs/46170822488)
+- [PR #22](https://github.com/RamonRDR/git-study-guide/pull/22) · [PR #23](https://github.com/RamonRDR/git-study-guide/pull/23)
