@@ -12,5 +12,5 @@ Aprobada por el mantenedor en la conversación de finalización del 28/11/2026. 
 - [Social preview](repository-preview.svg) · [PNG](repository-preview.png)
 - [Card](study-guide-card.svg) · [PNG](study-guide-card.png)
 - [EN](study-git-en.svg) · [PT-BR](study-git-pt-br.svg) · [ES](study-git-es.svg)
-- [Paquete fuente y vista aprobada](https://drive.google.com/file/d/12oAimpYwVNFau7uKXSh_RYUNczPBQG08/view) · [Drive](https://drive.google.com/drive/folders/1PEfZ0Ip6fkYrig7j8YiMP8qBsRp_qWFH)
+- El paquete fuente aprobado y la lámina de revisión permanecen en el archivo privado del mantenedor; el acceso no es requisito para utilizar esta guía.
 - [MIT](../../../LICENSE) · [Python Study Guide v2.0.0](https://github.com/RamonRDR/python-study-guide/releases/tag/v2.0.0)
