@@ -55,7 +55,7 @@ Política de requisitos: módulo 00 presenta solo vocabulario mínimo para el pr
 | 18 | VI | Finalizar contrato, manifiestos, esquemas, fixtures del consumidor; evaluar playground opcional por separado |
 | 19 | VI | Identidad aportada por el mantenedor, README final, QA, entrega |
 
-Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Sprints 00–18 y Sprint complementaria 13.1 integradas mediante PR #1–20 (95%); Sprint 19 en curso. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
+Fases: I Fundación; II Esenciales; III Colaboración y recuperación; IV Plataformas e ingeniería; V Avanzado y práctica; VI Learning Hub y release. Las 20 sprints principales (00–19) y la Sprint complementaria 13.1 fueron entregadas (100%); v1.0.0 publicada el 28/11/2026. El registro de cierre sigue a la publicación sin cambiar la etiqueta. Las 20 sprints principales permanecen sin cambios. Dividir sprints grandes en PR enfocados sin cambiar alcance. No confundir numeración de sprints con módulos.
 
 ## Documentos relacionados
 
