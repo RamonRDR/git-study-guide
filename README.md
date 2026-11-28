@@ -56,9 +56,9 @@
 
 <p align="center"><strong>Testing &amp; Execution</strong></p>
 <p align="center">
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Ubuntu 152 PASS" src="https://img.shields.io/badge/Ubuntu-152%20PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Windows 152 PASS" src="https://img.shields.io/badge/Windows-152%20PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Validators 9 PASS per OS" src="https://img.shields.io/badge/Validators-9%20PASS%20per%20OS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Ubuntu 156 PASS" src="https://img.shields.io/badge/Ubuntu-156%20PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Windows 156 PASS" src="https://img.shields.io/badge/Windows-156%20PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Validators 9 PASS per OS" src="https://img.shields.io/badge/Validators-9%20PASS%20per%20OS-2E7D32" /></a>
 </p>
 
 <hr />
@@ -66,15 +66,15 @@
 <p align="center"><strong>Documentation &amp; Repository Integrity</strong></p>
 <p align="center">
   <img alt="Documentation EN · PT-BR · ES" src="https://img.shields.io/badge/Documentation-EN%20%C2%B7%20PT--BR%20%C2%B7%20ES-176B87" />
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Structure PASS" src="https://img.shields.io/badge/Structure-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Locales PASS" src="https://img.shields.io/badge/Locales-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Internal links PASS" src="https://img.shields.io/badge/Internal%20links-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Navigation PASS" src="https://img.shields.io/badge/Navigation-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Examples policy PASS" src="https://img.shields.io/badge/Examples%20policy-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Secrets check PASS" src="https://img.shields.io/badge/Secrets%20check-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Command catalog PASS" src="https://img.shields.io/badge/Command%20catalog-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Assessment pilot PASS" src="https://img.shields.io/badge/Assessment%20pilot-PASS-2E7D32" /></a>
-  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750"><img alt="Learning Hub contract PASS" src="https://img.shields.io/badge/Learning%20Hub%20contract-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Structure PASS" src="https://img.shields.io/badge/Structure-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Locales PASS" src="https://img.shields.io/badge/Locales-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Internal links PASS" src="https://img.shields.io/badge/Internal%20links-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Navigation PASS" src="https://img.shields.io/badge/Navigation-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Examples policy PASS" src="https://img.shields.io/badge/Examples%20policy-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Secrets check PASS" src="https://img.shields.io/badge/Secrets%20check-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Command catalog PASS" src="https://img.shields.io/badge/Command%20catalog-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Assessment pilot PASS" src="https://img.shields.io/badge/Assessment%20pilot-PASS-2E7D32" /></a>
+  <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018"><img alt="Learning Hub contract PASS" src="https://img.shields.io/badge/Learning%20Hub%20contract-PASS-2E7D32" /></a>
 </p>
 
 <hr />
@@ -86,7 +86,7 @@
   <a href="docs/ai-assisted-development/README.en.md"><img alt="ChatGPT / Codex AI-assisted" src="https://img.shields.io/badge/ChatGPT%20%2F%20Codex-AI--assisted-412991" /></a>
 </p>
 
-<sub>Verified quality snapshot: <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46061260750">GitHub Actions run 46061260750</a>. Post-merge main 03c3043, 2026-11-27 UTC. Counts are snapshots, not live metrics. Both OS jobs run the same 152-test suite; do not sum them. Examples checks policy, not execution of every learner lab; links checks internal Markdown links, not external URL availability; secrets checks are heuristic.</sub>
+<sub>Verified quality snapshot: <a href="https://github.com/RamonRDR/git-study-guide/actions/runs/46170050018">GitHub Actions run 46170050018</a>. Post-merge main c26c41f, 2026-11-28 UTC. Counts are snapshots, not live metrics. Both OS jobs run the same 156-test suite; do not sum them. Examples checks policy, not execution of every learner lab; links checks internal Markdown links, not external URL availability; secrets checks are heuristic.</sub>
 <!-- technical-badges:end -->
 
 </div>
